@@ -1,6 +1,6 @@
 ﻿# Create JSON from an Object
 
-This sample converts .NET values to LINQ to JSON using [FromObject(System.Object)](M:Newtonsoft.Json.Linq.JToken.FromObject(System.Object)).
+This sample converts .NET values to LINQ to JSON using [FromObject(Object)](M:Newtonsoft.Json.Linq.JToken.FromObject(System.Object)).
 
 ## Sample
 

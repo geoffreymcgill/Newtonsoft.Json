@@ -1,6 +1,6 @@
 ﻿# Parsing JSON Object using JObject.Parse
 
-This sample parses a JSON object using [JObject.Parse(System.String)](M:Newtonsoft.Json.Linq.JObject.Parse(System.String)).
+This sample parses a JSON object using [JObject.Parse(String)](M:Newtonsoft.Json.Linq.JObject.Parse(System.String)).
 
 ## Sample
 

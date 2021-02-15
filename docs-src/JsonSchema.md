@@ -10,14 +10,14 @@ JSON Schema is used to validate the structure and data types of a piece of JSON,
 
 ## Validating with JSON Schema
 
-The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the [IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)](M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)) method with the JSON Schema.
+The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the [IsValid(JToken,JsonSchema)](M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)) method with the JSON Schema.
 
 ```csharp Validate JSON with IsValid
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: IsValidBasic
 ```
 
-To get validation error messages, use the [IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList{System.String}@)](M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList{System.String}@)) or [Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)](M:Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)) overloads.
+To get validation error messages, use the [IsValid(JToken,JsonSchema,IList{String}@)](M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList{System.String}@)) or [Validate(JToken,JsonSchema,ValidationEventHandler)](M:Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)) overloads.
 
 ```csharp Validate JSON with IsValid
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs

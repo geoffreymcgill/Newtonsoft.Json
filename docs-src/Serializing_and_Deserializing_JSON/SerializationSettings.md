@@ -25,7 +25,7 @@ Member | Description
 [ReferenceLoopHandling](T:Newtonsoft.Json.ReferenceLoopHandling) controls how circular referencing objects,
 e.g. a Person object referencing itself via a Manager property, are serialized.
 
-The [Object.Equals(System.Object)](M:System.Object.Equals(System.Object)) method is used to test whether an object is in a circular reference.
+The [Object.Equals(Object)](M:System.Object.Equals(System.Object)) method is used to test whether an object is in a circular reference.
 By default `Object.Equals(Object)` will test whether the references are equal for reference types and private and public values
 are equal for value types. Classes and structs can override this method.
 

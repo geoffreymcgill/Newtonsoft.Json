@@ -196,10 +196,10 @@
         <span>Validating with JSON Schema</span>
     </h2>
 </doc-anchor-target>
-<p>The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the <a href="M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)">IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)</a> method with the JSON Schema.</p>
+<p>The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the <a href="M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema)">IsValid(JToken,JsonSchema)</a> method with the JSON Schema.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: IsValidBasic</code></pre>
-<p System.String="">To get validation error messages, use the <a href="M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList%7BSystem.String%7D@)">IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList@)</a> or <a href="M:Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)">Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)</a> overloads.</p>
+<p String="">To get validation error messages, use the <a href="M:Newtonsoft.Json.Schema.Extensions.IsValid(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,System.Collections.Generic.IList%7BSystem.String%7D@)">IsValid(JToken,JsonSchema,IList@)</a> or <a href="M:Newtonsoft.Json.Schema.Extensions.Validate(Newtonsoft.Json.Linq.JToken,Newtonsoft.Json.Schema.JsonSchema,Newtonsoft.Json.Schema.ValidationEventHandler)">Validate(JToken,JsonSchema,ValidationEventHandler)</a> overloads.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: IsValidMessages</code></pre>
 <p>Internally IsValid uses <a href="T:Newtonsoft.Json.JsonValidatingReader">JsonValidatingReader</a> to perform the JSON Schema validation. To skip the overhead of loading JSON into a JObject/JArray, validating the JSON, and then deserializing the JSON into a class, JsonValidatingReader can be used with JsonSerializer to validate JSON while the object is being deserialized.</p>
