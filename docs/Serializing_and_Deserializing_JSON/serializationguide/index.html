@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-cache-control" content="no-cache">
+
+    <title>Serialization Guide</title>
+
+    <meta name="description" content="The Json.NET serializer can serialize a wide variety of .NET objects. This guide looks at how it works, first at a high level and then in more detail." />
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="/resources/css/retype.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/resources/js/retype.js" defer></script>
+</head>
+    <body>
+        <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+
+    <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+    <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
+        <!-- Mobile menu button skeleton -->
+        <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center flex-shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+        <div v-cloak id="docs-sidebar-toggle"></div>
+
+        <!-- Logo -->
+        <div class="flex items-center h-full py-2">
+            <div class="flex items-center px-2 md:px-6 md:w-72">
+                <span class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                    <a href="/">Json.NET</a>
+                </span>
+                <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+            </div>
+
+            <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+        </div>
+
+        <div class="flex justify-between md:flex-grow">
+            <!-- Top Nav -->
+            <nav class="hidden md:flex">
+                <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/json">Json.NET</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/store">Pricing</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Right Skeleton -->
+            <div v-cloak class="flex justify-end flex-grow skeleton">
+
+                <!-- Search input mock -->
+                <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                    <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                    </div>
+
+                    <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                    style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search docs" />
+                </div>
+
+                <!-- Mobile search button mock -->
+                <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                </div>
+
+                <!-- Dark mode switch placehokder -->
+                <div class="w-10 h-10 lg:ml-2"></div>
+
+                <!-- History button mock -->
+                <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                </div>
+            </div>
+
+            <div v-cloak class="flex items-center justify-end flex-grow">
+                <div id="docs-mobile-search-button"></div>
+                <doc-search-desktop></doc-search-desktop>
+
+                <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                <doc-history></doc-history>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+<div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-72 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+
+    <!-- Render this div, if config.showSidebarFilter is `true` -->
+    <div class="mt-6 px-6">
+        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+    </div>
+
+    <div class="pl-6 mb-4 mt-6">
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+    </div>
+
+    <div class="flex-shrink-0 mt-auto bg-transparent dark:border-dark-650">
+        <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+    </div>
+</div>
+
+<!-- Sidebar component -->
+<doc-sidebar v-cloak>
+    <template #sidebar-footer>
+        <div
+            class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
+        >
+
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/json">Json.NET</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/store">Pricing</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+        </div>
+    </template>
+</doc-sidebar>
+
+
+        <div class="flex-grow min-w-0 dark:bg-dark-850">
+            <!-- inject "toolbar" template here on api pages -->
+
+            <div class="flex">
+    <div class="flex-grow min-w-0 px-6 md:px-16">
+        <main class="relative pt-6 pb-16">
+            <div class="docs-markdown" id="docs-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="docs-sidebar-right-toggle"></div>
+               
+                <!-- Page content  -->
+<doc-anchor-target id="serialization-guide" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#serialization-guide">#</doc-anchor-trigger>
+        <span>Serialization Guide</span>
+    </h1>
+</doc-anchor-target>
+<p>The Json.NET serializer can serialize a wide variety of .NET objects. This guide looks at how it works, first at a high level and then in more detail.</p>
+<doc-anchor-target id="summary">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#summary">#</doc-anchor-trigger>
+        <span>Summary</span>
+    </h2>
+</doc-anchor-target>
+<p>At a high level, the Json.NET serializer will convert primitive .NET values into primitive JSON values, will convert .NET arrays and collections to JSON arrays, and will convert everything else to JSON objects.</p>
+<p>Json.NET will throw an error if it encounters incorrect JSON when deserializing a value. For example, if the serializer encounters a JSON property with an array of values and the type of matching .NET property is not a collection, then an error will be thrown, and vice-versa.</p>
+<doc-anchor-target id="complex-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#complex-types">#</doc-anchor-trigger>
+        <span>Complex Types</span>
+    </h2>
+</doc-anchor-target>
+<table>
+<thead>
+<tr>
+<th>.NET</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>IList</code>, <code v-pre>IEnumerable</code>, <code v-pre>IList&lt;T&gt;</code>, <code v-pre>Array</code></td>
+<td>Array (properties on the collection will not be serialized)</td>
+</tr>
+<tr>
+<td><code v-pre>IDictionary</code>, <code v-pre>IDictionary&lt;TKey, TValue&gt;</code></td>
+<td>Object (dictionary name/values only, properties on the dictionary will not be serialized)</td>
+</tr>
+<tr>
+<td><code v-pre>Object</code> (more detail below)</td>
+<td>Object</td>
+</tr>
+</tbody>
+</table>
+<doc-anchor-target id="primitive-types">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#primitive-types">#</doc-anchor-trigger>
+        <span>Primitive Types</span>
+    </h2>
+</doc-anchor-target>
+<table>
+<thead>
+<tr>
+<th>.NET</th>
+<th>JSON</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code v-pre>String</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code v-pre>Byte</code> <code v-pre>SByte</code> <code v-pre>UInt16</code> <code v-pre>Int16</code> <code v-pre>UInt32</code> <code v-pre>Int32</code> <code v-pre>UInt64</code> <code v-pre>Int64</code></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code v-pre>Float</code> <code v-pre>Double</code> <code v-pre>Decimal</code></td>
+<td>Float</td>
+</tr>
+<tr>
+<td><code v-pre>Enum</code></td>
+<td>Integer (can be the enum value name with <a href="T:Newtonsoft.Json.Converters.StringEnumConverter">StringEnumConverter</a>)</td>
+</tr>
+<tr>
+<td><code v-pre>DateTime</code></td>
+<td>String (<a href="../DatesInJSON">DatesInJSON</a>)</td>
+</tr>
+<tr>
+<td><code v-pre>Byte[]</code></td>
+<td>String (base 64 encoded)</td>
+</tr>
+<tr>
+<td><code v-pre>Type</code></td>
+<td>String (type name)</td>
+</tr>
+<tr>
+<td><code v-pre>Guid</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code v-pre>[TypeConverter](T:System.ComponentModel.TypeConverter)</code> (convertible to String)</td>
+<td>String</td>
+</tr>
+</tbody>
+</table>
+<doc-anchor-target id="breakdown-of-type-serialization">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#breakdown-of-type-serialization">#</doc-anchor-trigger>
+        <span>Breakdown of Type Serialization</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="objects">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#objects">#</doc-anchor-trigger>
+        <span>Objects</span>
+    </h2>
+</doc-anchor-target>
+<p>.NET types that don't fall into any other category listed below (i.e. aren't lists, dictionaries, dynamic, implement ISerializable, etc.) are serialized as JSON objects. You can also force a type to be serialized as a JSON object by placing the JsonObjectAttribute on the type.</p>
+<p>By default a type's properties are serialized in opt-out mode. What that means is that all public fields and properties with getters are automatically serialized to JSON, and fields and properties that shouldn't be serialized are opted-out by placing JsonIgnoreAttribute on them. To serialize private members, the JsonPropertyAttribute can be placed on private fields and properties.</p>
+<p>Types can also be serialized using opt-in mode. Only properties and fields that have a JsonPropertyAttribute or DataMemberAttribute on them will be serialized. Opt-in mode for an object is specified by placing the JsonObjectAttribute or DataContractAttribute on the type.</p>
+<p>Finally, types can be serialized using a fields mode. All fields, both public and private, are serialized and properties are ignored. This can be specified by setting MemberSerialization.Fields on a type with the JsonObjectAttribute or by using the .NET <a href="T:System.SerializableAttribute">SerializableAttribute</a> and setting IgnoreSerializableAttribute on DefaultContractResolver to false.</p>
+<doc-anchor-target id="ienumerable-lists-and-arrays">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#ienumerable-lists-and-arrays">#</doc-anchor-trigger>
+        <span>IEnumerable, Lists, and Arrays</span>
+    </h2>
+</doc-anchor-target>
+<p>.NET lists (types that inherit from IEnumerable) and .NET arrays are converted to JSON arrays. Because JSON arrays only support a range of values and not properties, any additional properties and fields declared on .NET collections are not serialized. In situations where a type implements IEnumerable but a JSON array is not wanted, then the JsonObjectAttribute can be placed on the type to force it to be serialized as a JSON object instead.</p>
+<p>JsonArrayAttribute has options on it to customize the JsonConverter, type name handling, and reference handling that are applied to collection items.</p>
+<p>Note that if TypeNameHandling or PreserveReferencesHandling has been enabled for JSON arrays on the serializer, then JSON arrays are wrapped in a containing object. The object will have the type name/reference properties and a $values property, which will have the collection data.</p>
+<p>When deserializing, if a member is typed as the interface <code v-pre>IList&lt;T&gt;</code>, then it will be deserialized as a <code v-pre>List&lt;T&gt;</code>.</p>
+<p>You can read more about serializing collections here:</p>
+<ul>
+<li><a href="../serializingcollections">SerializingCollections</a></li>
+</ul>
+<doc-anchor-target id="dictionaries-and-hashtables">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dictionaries-and-hashtables">#</doc-anchor-trigger>
+        <span>Dictionaries and Hashtables</span>
+    </h2>
+</doc-anchor-target>
+<p>.NET dictionaries (types that inherit from IDictionary) are converted to JSON objects. Note that only the dictionary name/values will be written to the JSON object when serializing, and properties on the JSON object will be added to the dictionary's name/values when deserializing. Additional members on the .NET dictionary are ignored during serialization.</p>
+<p>When serializing a dictionary, the keys of the dictionary are converted to strings and used as the JSON object property names. The string written for a key can be customized by either overriding <a href="M:System.Object.ToString">ToString</a> for the key type or by implementing a <a href="T:System.ComponentModel.TypeConverter">TypeConverter</a>. A TypeConverter will also support converting a custom string back again when deserializing a dictionary.</p>
+<p>JsonDictionaryAttribute has options on it to customize the JsonConverter, type name handling, and reference handling that are applied to collection items.</p>
+<p>When deserializing, if a member is typed as the interface <code v-pre>IDictionary&lt;TKey, TValue&gt;</code> then it will be deserialized as a <code v-pre>Dictionary&lt;TKey, TValue&gt;</code>.</p>
+<p>You can read more about serializing collections here:</p>
+<ul>
+<li><a href="../serializingcollections">SerializingCollections</a></li>
+</ul>
+<doc-anchor-target id="untyped-objects">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#untyped-objects">#</doc-anchor-trigger>
+        <span>Untyped Objects</span>
+    </h2>
+</doc-anchor-target>
+<p>.NET properties on a class that don't specify a type (i.e. they are just <code v-pre>object</code>) are serialized as usual. When untyped properties are deserialized, the serializer has no way of knowing what type to create (unless type name handling is enabled and the JSON contains the type names).</p>
+<p>For these untyped properties, the Json.NET serializer will read the JSON into LINQ to JSON objects and set them to the property. JObject will be created for JSON objects; JArray will be created for JSON arrays, and JValue will be created for primitive JSON values.</p>
+<doc-anchor-target id="dynamic">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#dynamic">#</doc-anchor-trigger>
+        <span>Dynamic</span>
+    </h2>
+</doc-anchor-target>
+<p>There are two different usages of <code v-pre>dynamic</code> (introduced in .NET 4) in .NET. The first are .NET properties with a type of dynamic. Dynamic properties behave like properties declared as object: any value can be assigned to it, but the difference being that properties and methods can be called on a dynamic property without casting. In Json.NET, dynamic properties are serialized and deserialized exactly the same as untyped objects: because dynamic isn't an actual type, Json.NET falls back to deserializing the JSON as LINQ to JSON objects.</p>
+<p>The second usage of dynamic in .NET are by the types that implement <a href="T:System.Dynamic.IDynamicMetaObjectProvider">IDynamicMetaObjectProvider</a>. This interface lets the implementer create dynamic objects that intercept the property and method calls on an object and use them. <a href="T:System.Dynamic.ExpandoObject">ExpandoObject</a> is a good example of a dynamic object.</p>
+<p>Dynamic objects are serialized as JSON objects. A property is written for every member name returned by <a href="M:System.Dynamic.DynamicMetaObject.GetDynamicMemberNames">DynamicMetaObject.GetDynamicMemberNames</a>. A dynamic object's normal properties aren't serialized by default but can be included by placing the JsonPropertyAttribute on them.</p>
+<p>When deserializing dynamic objects, the serializer first attempts to set JSON property values on a normal .NET member with the matching name. If no .NET member is found with the property name, then the serializer will call SetMember on the dynamic object. Because there is no type information for dynamic members on a dynamic object, the values assigned to them will be LINQ to JSON objects.</p>
+<doc-anchor-target id="iserializable">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#iserializable">#</doc-anchor-trigger>
+        <span>ISerializable</span>
+    </h2>
+</doc-anchor-target>
+<p>Types that implement <a href="T:System.Runtime.Serialization.ISerializable">ISerializable</a> and are marked with <a href="T:System.SerializableAttribute">SerializableAttribute</a> are serialized as JSON objects. When serializing, only the values returned from ISerializable.GetObjectData are used; members on the type are ignored. When deserializing, the constructor with a SerializationInfo and StreamingContext is called, passing the JSON object's values.</p>
+<p>In situations where this behavior is not wanted, the JsonObjectAttribute can be placed on a .NET type that implements ISerializable to force it to be serialized as a normal JSON object.</p>
+<doc-anchor-target id="linq-to-json">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#linq-to-json">#</doc-anchor-trigger>
+        <span>LINQ to JSON</span>
+    </h2>
+</doc-anchor-target>
+<p>LINQ to JSON types (e.g. JObject and JArray) are automatically serialized and deserialized to their equivalent JSON when encountered by the Json.NET serializer.</p>
+<doc-anchor-target id="jsonconverter">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#jsonconverter">#</doc-anchor-trigger>
+        <span>JsonConverter</span>
+    </h2>
+</doc-anchor-target>
+<p>Serialization of values that are convertible by a <a href="T:Newtonsoft.Json.JsonConverter">JsonConverter</a> (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.</p>
+<p>JsonConverters can be defined and specified in a number of places: in an attribute on a member, in an attribute on a class, and added to the JsonSerializer's converters collection. The priority of which JsonConverter is used is the JsonConverter defined by attribute on a member, then the JsonConverter defined by an attribute on a class, and finally any converters passed to the JsonSerializer.</p>
+<doc-alert type="primary"><p>Because a JsonConverter creates a new value, a converter will not work with readonly properties because there is no way to assign the new value to the property. Either change the property to have a public setter or place a JsonPropertyAttribute or DataMemberAttribute on the property.</p>
+</doc-alert>
+<doc-anchor-target id="see-also">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
+        <span>See Also</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><a href="../serializationsettings">SerializationSettings</a></li>
+<li><a href="../serializationattributes">SerializationAttributes</a></li>
+<li><a href="../DatesInJSON">DatesInJSON</a></li>
+<li><a href="T:Newtonsoft.Json.JsonSerializer">JsonSerializer</a></li>
+<li><a href="T:Newtonsoft.Json.JsonSerializerSettings">JsonSerializerSettings</a></li>
+</ul>
+
+    
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results />
+            </div>
+        </main>
+        <footer class="flex flex-wrap items-center justify-between border-t dark:border-dark-650 pt-6 mb-8">
+    <div>
+        <ul class="flex flex-wrap items-center text-sm">
+            <li>
+                <a href="https://www.newtonsoft.com/store/termsandconditions" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Terms</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/store/privacy" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Privacy</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/contact" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+</div>
+</footer>
+
+    </div>
+    
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+        </div>
+    </div>
+    
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+        <div id="docs-overlay-target"></div>
+
+        <script>window.__DOCS__ = { "title": "Serialization Guide", icon: "file" }</script>
+    </body>
+</html>
