@@ -2,6 +2,8 @@
   "input": "./docs-src",
   "output": "./docs",
 
+  "base": "/Newtonsoft.Json/",
+
   "identity": 
   {
     "title": "Json.NET",
