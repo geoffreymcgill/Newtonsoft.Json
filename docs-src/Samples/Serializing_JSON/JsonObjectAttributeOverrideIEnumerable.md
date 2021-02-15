@@ -1,6 +1,6 @@
 ﻿# JsonObjectAttribute force object serialization
 
-This sample uses [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute) to serialize a class that implements [IEnumerable](T:System.Collections.Generic.IEnumerable`1) as a JSON object instead of a JSON array.
+This sample uses [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute) to serialize a class that implements [IEnumerable](T:System.Collections.Generic.IEnumerable) as a JSON object instead of a JSON array.
 
 ## Sample
 

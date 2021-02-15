@@ -1,6 +1,6 @@
 ﻿# Convert JSON to Value
 
-This sample converts LINQ to JSON objects to .NET types using [JToken.ToObject](M:Newtonsoft.Json.Linq.JToken.ToObject``1).
+This sample converts LINQ to JSON objects to .NET types using [JToken.ToObject](M:Newtonsoft.Json.Linq.JToken.ToObject).
 
 ## Sample
 
