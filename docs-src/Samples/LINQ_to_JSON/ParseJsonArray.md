@@ -1,6 +1,6 @@
 ﻿# Parsing JSON Array using JArray.Parse
 
-This sample parses a JSON array using [JArray.Parse(System.String)](M:Newtonsoft.Json.Linq.JArray.Parse(System.String)).
+This sample parses a JSON array using [JArray.Parse(String)](M:Newtonsoft.Json.Linq.JArray.Parse(System.String)).
 
 ## Sample
 

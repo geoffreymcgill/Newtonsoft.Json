@@ -1,6 +1,6 @@
 ﻿# Querying JSON with JSON Path
 
-This sample loads JSON and then queries values from it using [SelectToken(System.String)](M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String)). 
+This sample loads JSON and then queries values from it using [SelectToken(String)](M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String)). 
 
 ## Sample
 

@@ -4,7 +4,7 @@ LINQ to JSON provides a number of methods for getting data from its objects. The
 
 ## Getting values by Property Name or Collection Index
 
-The simplest way to get a value from LINQ to JSON is to use the [JToken.Item(System.Object)](P:Newtonsoft.Json.Linq.JToken.Item(System.Object)) index on JObject/JArray and then cast the returned [JValue](T:Newtonsoft.Json.Linq.JValue) to the type you want.
+The simplest way to get a value from LINQ to JSON is to use the [JToken.Item(Object)](P:Newtonsoft.Json.Linq.JToken.Item(System.Object)) index on JObject/JArray and then cast the returned [JValue](T:Newtonsoft.Json.Linq.JValue) to the type you want.
 
 ```csharp Getting JSON Values
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
@@ -41,5 +41,5 @@ region: LinqToJsonDeserializeExample
 ## See Also
 
 - [LINQ to JSON](LINQ_to_JSON/README.md)
-- [JToken.Item(System.Object)](P:Newtonsoft.Json.Linq.JToken.Item(System.Object))
+- [JToken.Item(Object)](P:Newtonsoft.Json.Linq.JToken.Item(System.Object))
 - [JToken.Children](M:Newtonsoft.Json.Linq.JToken.Children)
