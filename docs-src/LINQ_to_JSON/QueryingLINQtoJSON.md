@@ -40,6 +40,6 @@ region: LinqToJsonDeserializeExample
 
 ## See Also
 
-- [LINQ to JSON](LINQ_to_JSON/README.md)
+- [LINQ to JSON](README.md)
 - [JToken.Item(Object)](P:Newtonsoft.Json.Linq.JToken.Item(System.Object))
 - [JToken.Children](M:Newtonsoft.Json.Linq.JToken.Children)

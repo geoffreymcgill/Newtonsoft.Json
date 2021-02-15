@@ -33,5 +33,5 @@ region: SelectTokenLinq
 
 ## See Also
 
-- [LINQ to JSON](LINQ_to_JSON/README.md)
+- [LINQ to JSON](README.md)
 - [Overload:Newtonsoft.Json.Linq.JToken.SelectToken](Overload:Newtonsoft.Json.Linq.JToken.SelectToken)

@@ -26,6 +26,6 @@ region: LinqToJsonReadObject
 
 ## See Also
 
-- [LINQ to JSON](LINQ_to_JSON/README.md)
+- [LINQ to JSON](README.md)
 - [Parse(String)](M:Newtonsoft.Json.Linq.JToken.Parse(System.String))
 - [ReadFrom(JsonReader)](M:Newtonsoft.Json.Linq.JToken.ReadFrom(Newtonsoft.Json.JsonReader))
