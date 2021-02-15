@@ -33,5 +33,5 @@ region: LinqToJsonCreateFromObject
 
 ## See Also
 
-- [LINQ to JSON](LINQ_to_JSON/README.md)
+- [LINQ to JSON](README.md)
 - [Overload:Newtonsoft.Json.Linq.JObject.FromObject](Overload:Newtonsoft.Json.Linq.JObject.FromObject)
