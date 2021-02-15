@@ -1,0 +1,54 @@
+{
+  "input": "./docs-src",
+  "output": "./docs",
+
+  "identity": 
+  {
+    "title": "Json.NET",
+    "label": "Docs"
+  },
+
+  "links": [
+    {
+      "text": "Json.NET",
+      "link": "https://www.newtonsoft.com/json"
+    },
+    {
+      "text": "Json.NET Schema",
+      "link": "https://www.newtonsoft.com/jsonschema"
+    },
+    {
+      "text": "Pricing",
+      "link": "https://www.newtonsoft.com/store"
+    },
+    {
+      "text": "GitHub",
+      "link": "https://github.com/JamesNK/Newtonsoft.Json"
+    }
+  ],
+
+  "nav": [
+    {
+      "path": "/",
+      "icon": "home"
+    }
+  ],
+
+  "footer": {
+    "copyright": "© {{ year }} Newtonsoft",
+    "links": [
+      {
+        "text": "Terms",
+        "link": "https://www.newtonsoft.com/store/termsandconditions"
+      },
+      {
+        "text": "Privacy",
+        "link": "https://www.newtonsoft.com/store/privacy"
+      },
+      {
+        "text": "Contact",
+        "link": "https://www.newtonsoft.com/contact"
+      },
+    ]
+  }
+}
