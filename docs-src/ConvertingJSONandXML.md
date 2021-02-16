@@ -2,6 +2,8 @@
 
 Json.NET supports converting JSON to XML and vice versa using the [XmlNodeConverter](T:Newtonsoft.Json.Converters.XmlNodeConverter).
 
+[Home](/README.md)
+
 Elements, attributes, text, comments, character data, processing instructions, namespaces, and the XML declaration are all preserved when converting between the two. The only caveat is that it is possible to lose the order of differently named nodes at the same level when they are grouped together into an array.
 
 ## Conversion Rules
