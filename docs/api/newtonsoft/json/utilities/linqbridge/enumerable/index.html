@@ -1,0 +1,2856 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-cache-control" content="no-cache">
+
+    <title>Enumerable</title>
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="/Newtonsoft.Json/resources/css/retype.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/retype.js" defer></script>
+</head>
+    <body>
+        <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+
+    <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+    <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
+        <!-- Mobile menu button skeleton -->
+        <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center flex-shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+        <div v-cloak id="docs-sidebar-toggle"></div>
+
+        <!-- Logo -->
+        <div class="flex items-center h-full py-2">
+            <div class="flex items-center px-2 md:px-6 md:w-72">
+                <span class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                    <a href="/Newtonsoft.Json/">Json.NET</a>
+                </span>
+                <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+            </div>
+
+            <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+        </div>
+
+        <div class="flex justify-between md:flex-grow">
+            <!-- Top Nav -->
+            <nav class="hidden md:flex">
+                <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/json">Json.NET</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/store">Pricing</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Right Skeleton -->
+            <div v-cloak class="flex justify-end flex-grow skeleton">
+
+                <!-- Search input mock -->
+                <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                    <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                    </div>
+
+                    <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                    style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search docs" />
+                </div>
+
+                <!-- Mobile search button mock -->
+                <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                </div>
+
+                <!-- Dark mode switch placehokder -->
+                <div class="w-10 h-10 lg:ml-2"></div>
+
+                <!-- History button mock -->
+                <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                </div>
+            </div>
+
+            <div v-cloak class="flex items-center justify-end flex-grow">
+                <div id="docs-mobile-search-button"></div>
+                <doc-search-desktop></doc-search-desktop>
+
+                <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                <doc-history></doc-history>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+<div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-72 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+
+    <!-- Render this div, if config.showSidebarFilter is `true` -->
+    <div class="mt-6 px-6">
+        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+    </div>
+
+    <div class="pl-6 mb-4 mt-6">
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+    </div>
+
+    <div class="flex-shrink-0 mt-auto bg-transparent dark:border-dark-650">
+        <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+    </div>
+</div>
+
+<!-- Sidebar component -->
+<doc-sidebar v-cloak>
+    <template #sidebar-footer>
+        <div
+            class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
+        >
+
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/json">Json.NET</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/store">Pricing</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+        </div>
+    </template>
+</doc-sidebar>
+
+
+        <div class="flex-grow min-w-0 dark:bg-dark-850">
+            <!-- Render "toolbar" template here on api pages -->            <!-- Toolbar Skeleton -->
+<div v-cloak class="sticky z-20 flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200 md:h-20 md:pl-16 md:top-20 top-16 skeleton dark:bg-dark-850 dark:border-dark-650">
+    <div class="flex flex-grow">
+        <div class="w-24 h-8 mr-3 bg-gray-200 rounded loading dark:bg-dark-600"></div>
+        <div class="w-24 h-8 mr-3 bg-gray-200 rounded loading md:hidden lg:block dark:bg-dark-600"></div>
+        <div class="hidden w-24 h-8 mr-3 bg-gray-200 rounded loading sm:block md:hidden xl:block dark:bg-dark-600"></div>
+        <div class="hidden w-24 h-8 mr-3 bg-gray-200 rounded loading sm:block md:hidden xl:block dark:bg-dark-600"></div>
+    </div>
+    <div class="items-center hidden lg:flex">
+        <div class="w-24 h-4 ml-3 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+
+        <span class="relative ml-3 bg-white border border-gray-400 btn dark:bg-dark-600 dark:border-dark-650"><svg xmlns="http://www.w3.org/2000/svg" class="mr-1 -ml-1 icon-base" width="14" height="14" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M12 23c-.15 0-.31-.04-.45-.11C11.2 22.72 3 18.54 3 12V5c0-.42.26-.79.65-.94l8-3c.23-.08.48-.08.7 0l8 3c.39.15.65.52.65.94v7c0 6.54-8.2 10.72-8.55 10.89-.14.07-.3.11-.45.11zM5 5.69V12c0 4.55 5.39 7.95 7 8.86 1.61-.92 7-4.33 7-8.86V5.69l-7-2.63-7 2.63z"></path></g></svg><span>Access</span></span>
+
+        <div class="relative flex items-center ml-3" style="width: 12.4375rem;"><input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear border border-gray-400 rounded md:text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400" type="text" placeholder="Filter"></div>
+    </div>
+
+    <span class="relative inline-flex items-center justify-center w-8 h-8 p-0 text-sm font-medium leading-none text-gray-900 whitespace-no-wrap bg-white border border-gray-400 rounded cursor-pointer select-none lg:hidden sm:w-auto sm:px-3 dark:border-dark-650 dark:text-white dark:bg-dark-550 focus:outline-none"><svg xmlns="http://www.w3.org/2000/svg" class="mb-0 icon-base sm:mr-1" width="14" height="14" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"><g fill="currentColor"><path d="M14 22c-.15 0-.31-.04-.45-.11l-4-2A.988.988 0 019 19v-6.17L1.24 3.65a.995.995 0 01-.14-1.07c.16-.35.51-.58.9-.58h20c.39 0 .74.23.91.58s.11.77-.14 1.07L15 12.83V21a.999.999 0 01-1 1zm-3-3.62l2 1v-6.92c0-.24.08-.47.24-.65L19.84 4H4.16l6.61 7.81c.15.18.24.41.24.65v5.92z"></path></g></svg><span class="hidden sm:inline">Filters</span></span>
+</div>
+
+<doc-toolbar v-cloak></doc-toolbar>
+
+<!-- Render page content -->
+            <div class="flex">
+    <div class="flex-grow min-w-0 px-6 md:px-16">
+        <main class="relative pt-6 pb-16">
+            <div class="docs-markdown" id="docs-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="docs-sidebar-right-toggle"></div>
+               
+                <!-- Page content  -->
+<doc-anchor-target id="enumerable-class" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#enumerable-class">#</doc-anchor-trigger>
+        <span>Enumerable Class</span>
+    </h1>
+</doc-anchor-target>
+
+<p>Provides a set of static (Shared in Visual Basic) methods for
+querying objects that implement <see cref="!:IEnumerable&lt;T&gt;" />.</p>
+
+
+<doc-member-group id="methods">
+    <template #title>Methods</template>
+
+<doc-member id="method-asenumerable" name="AsEnumerable" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> AsEnumerable(IEnumerable<TSource> source)">
+        <template #name><h3>AsEnumerable</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the input typed as <see cref="!:IEnumerable&lt;T&gt;"/>.</p>
+
+    </doc-member>
+
+<doc-member id="method-empty" name="Empty" returns="IEnumerable<TResult>" signature="public static IEnumerable<TResult> Empty()">
+        <template #name><h3>Empty</h3></template>
+
+<p>Returns an empty <see cref="!:IEnumerable&lt;T&gt;"/> that has the
+specified type argument.</p>
+
+    </doc-member>
+
+<doc-member id="method-cast" name="Cast" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> Cast(IEnumerable source)">
+        <template #name><h3>Cast</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Converts the elements of an <see cref="!:IEnumerable"/> to the
+specified type.</p>
+
+    </doc-member>
+
+<doc-member id="method-castyield" name="CastYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> CastYield(IEnumerable source)">
+        <template #name><h3>CastYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-oftype" name="OfType" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> OfType(IEnumerable source)">
+        <template #name><h3>OfType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Filters the elements of an <see cref="!:IEnumerable"/> based on a specified type.</p>
+
+    </doc-member>
+
+<doc-member id="method-oftypeyield" name="OfTypeYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> OfTypeYield(IEnumerable source)">
+        <template #name><h3>OfTypeYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-range" name="Range" returns="IEnumerable<System.Int32>" params="Int32, Int32" signature="public static IEnumerable<Int32> Range(Int32 start, Int32 count)">
+        <template #name><h3>Range</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="start" type="System.Int32"></doc-parameter>
+                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Generates a sequence of integral numbers within a specified range.</p>
+
+    </doc-member>
+
+<doc-member id="method-rangeyield" name="RangeYield" returns="IEnumerable<System.Int32>" params="Int32, Int64" access="private" signature="private static IEnumerable<Int32> RangeYield(Int32 start, Int64 end)">
+        <template #name><h3>RangeYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="start" type="System.Int32"></doc-parameter>
+                <doc-parameter name="end" type="System.Int64"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-repeat" name="Repeat" returns="IEnumerable<TResult>" params="TResult, Int32" signature="public static IEnumerable<TResult> Repeat(TResult element, Int32 count)">
+        <template #name><h3>Repeat</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="element" type="TResult"></doc-parameter>
+                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Generates a sequence that contains one repeated value.</p>
+
+    </doc-member>
+
+<doc-member id="method-repeatyield" name="RepeatYield" returns="IEnumerable<TResult>" params="TResult, Int32" access="private" signature="private static IEnumerable<TResult> RepeatYield(TResult element, Int32 count)">
+        <template #name><h3>RepeatYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="element" type="TResult"></doc-parameter>
+                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static IEnumerable<TSource> Where(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>Where</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Filters a sequence of values based on a predicate.</p>
+
+    </doc-member>
+
+<doc-member id="method-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Boolean>" access="private" signature="private static IEnumerable<TSource> WhereYield(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>WhereYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" signature="public static IEnumerable<TSource> Where(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>Where</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Filters a sequence of values based on a predicate.
+Each element's index is used in the logic of the predicate function.</p>
+
+    </doc-member>
+
+<doc-member id="method-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" access="private" signature="private static IEnumerable<TSource> WhereYield(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>WhereYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static IEnumerable<TResult> Select(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+        <template #name><h3>Select</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence into a new form.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+        <template #name><h3>SelectYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, Int32, TResult>" signature="public static IEnumerable<TResult> Select(IEnumerable<TSource> source, Func<TSource, Int32, TResult> selector)">
+        <template #name><h3>Select</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence into a new form by
+incorporating the element's index.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, Int32, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield(IEnumerable<TSource> source, Func<TSource, Int32, TResult> selector)">
+        <template #name><h3>SelectYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)">
+        <template #name><h3>SelectMany</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, IEnumerable<TResult>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence to an <see cref="!:IEnumerable&lt;T&gt;" />
+and flattens the resulting sequences into one sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, Int32, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, Int32, IEnumerable<TResult>> selector)">
+        <template #name><h3>SelectMany</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, IEnumerable<TResult>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence to an <see cref="!:IEnumerable&lt;T&gt;" />,
+and flattens the resulting sequences into one sequence. The
+index of each source element is used in the projected form of
+that element.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+        <template #name><h3>SelectMany</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="collectionSelector" type="Newtonsoft.Json.Serialization.Func<TSource, IEnumerable<TCollection>>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TCollection, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence to an <see cref="!:IEnumerable&lt;T&gt;" />,
+flattens the resulting sequences into one sequence, and invokes
+a result selector function on each element therein.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, Int32, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, Int32, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+        <template #name><h3>SelectMany</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="collectionSelector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, IEnumerable<TCollection>>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TCollection, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Projects each element of a sequence to an <see cref="!:IEnumerable&lt;T&gt;" />,
+flattens the resulting sequences into one sequence, and invokes
+a result selector function on each element therein. The index of
+each source element is used in the intermediate projected form
+of that element.</p>
+
+    </doc-member>
+
+<doc-member id="method-selectmanyyield" name="SelectManyYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, Int32, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" access="private" signature="private static IEnumerable<TResult> SelectManyYield(IEnumerable<TSource> source, Func<TSource, Int32, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+        <template #name><h3>SelectManyYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="collectionSelector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, IEnumerable<TCollection>>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TCollection, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static IEnumerable<TSource> TakeWhile(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>TakeWhile</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns elements from a sequence as long as a specified condition is true.</p>
+
+    </doc-member>
+
+<doc-member id="method-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" signature="public static IEnumerable<TSource> TakeWhile(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>TakeWhile</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns elements from a sequence as long as a specified condition is true.
+The element's index is used in the logic of the predicate function.</p>
+
+    </doc-member>
+
+<doc-member id="method-takewhileyield" name="TakeWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" access="private" signature="private static IEnumerable<TSource> TakeWhileYield(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>TakeWhileYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-firstimpl" name="FirstImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource FirstImpl(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>FirstImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="empty" type="Newtonsoft.Json.Serialization.Func<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation of First operator.</p>
+
+    </doc-member>
+
+<doc-member id="method-first" name="First" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource First(IEnumerable<TSource> source)">
+        <template #name><h3>First</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the first element of a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-first" name="First" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource First(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>First</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the first element in a sequence that satisfies a specified condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource FirstOrDefault(IEnumerable<TSource> source)">
+        <template #name><h3>FirstOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the first element of a sequence, or a default value if
+the sequence contains no elements.</p>
+
+    </doc-member>
+
+<doc-member id="method-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource FirstOrDefault(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>FirstOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the first element of the sequence that satisfies a
+condition or a default value if no such element is found.</p>
+
+    </doc-member>
+
+<doc-member id="method-lastimpl" name="LastImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource LastImpl(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>LastImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="empty" type="Newtonsoft.Json.Serialization.Func<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation of Last operator.</p>
+
+    </doc-member>
+
+<doc-member id="method-last" name="Last" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Last(IEnumerable<TSource> source)">
+        <template #name><h3>Last</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the last element of a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-last" name="Last" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource Last(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>Last</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the last element of a sequence that satisfies a
+specified condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource LastOrDefault(IEnumerable<TSource> source)">
+        <template #name><h3>LastOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the last element of a sequence, or a default value if
+the sequence contains no elements.</p>
+
+    </doc-member>
+
+<doc-member id="method-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource LastOrDefault(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>LastOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the last element of a sequence that satisfies a
+condition or a default value if no such element is found.</p>
+
+    </doc-member>
+
+<doc-member id="method-singleimpl" name="SingleImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource SingleImpl(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>SingleImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="empty" type="Newtonsoft.Json.Serialization.Func<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation of Single operator.</p>
+
+    </doc-member>
+
+<doc-member id="method-single" name="Single" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Single(IEnumerable<TSource> source)">
+        <template #name><h3>Single</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the only element of a sequence, and throws an exception
+if there is not exactly one element in the sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-single" name="Single" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource Single(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>Single</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the only element of a sequence that satisfies a
+specified condition, and throws an exception if more than one
+such element exists.</p>
+
+    </doc-member>
+
+<doc-member id="method-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource SingleOrDefault(IEnumerable<TSource> source)">
+        <template #name><h3>SingleOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the only element of a sequence, or a default value if
+the sequence is empty; this method throws an exception if there
+is more than one element in the sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static TSource SingleOrDefault(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>SingleOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the only element of a sequence that satisfies a
+specified condition or a default value if no such element
+exists; this method throws an exception if more than one element
+satisfies the condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-elementat" name="ElementAt" returns="TSource" params="IEnumerable<TSource>, Int32" signature="public static TSource ElementAt(IEnumerable<TSource> source, Int32 index)">
+        <template #name><h3>ElementAt</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="index" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the element at a specified index in a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-elementatordefault" name="ElementAtOrDefault" returns="TSource" params="IEnumerable<TSource>, Int32" signature="public static TSource ElementAtOrDefault(IEnumerable<TSource> source, Int32 index)">
+        <template #name><h3>ElementAtOrDefault</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="index" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the element at a specified index in a sequence or a
+default value if the index is out of range.</p>
+
+    </doc-member>
+
+<doc-member id="method-reverse" name="Reverse" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Reverse(IEnumerable<TSource> source)">
+        <template #name><h3>Reverse</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Inverts the order of the elements in a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-reverseyield" name="ReverseYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ReverseYield(IEnumerable<TSource> source)">
+        <template #name><h3>ReverseYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-take" name="Take" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Int32" signature="public static IEnumerable<TSource> Take(IEnumerable<TSource> source, Int32 count)">
+        <template #name><h3>Take</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns a specified number of contiguous elements from the start
+of a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-skip" name="Skip" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Int32" signature="public static IEnumerable<TSource> Skip(IEnumerable<TSource> source, Int32 count)">
+        <template #name><h3>Skip</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Bypasses a specified number of elements in a sequence and then
+returns the remaining elements.</p>
+
+    </doc-member>
+
+<doc-member id="method-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static IEnumerable<TSource> SkipWhile(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>SkipWhile</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Bypasses elements in a sequence as long as a specified condition
+is true and then returns the remaining elements.</p>
+
+    </doc-member>
+
+<doc-member id="method-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" signature="public static IEnumerable<TSource> SkipWhile(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>SkipWhile</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Bypasses elements in a sequence as long as a specified condition
+is true and then returns the remaining elements. The element's
+index is used in the logic of the predicate function.</p>
+
+    </doc-member>
+
+<doc-member id="method-skipwhileyield" name="SkipWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, Int32, Boolean>" access="private" signature="private static IEnumerable<TSource> SkipWhileYield(IEnumerable<TSource> source, Func<TSource, Int32, Boolean> predicate)">
+        <template #name><h3>SkipWhileYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-count" name="Count" returns="System.Int32" params="IEnumerable<TSource>" signature="public static Int32 Count(IEnumerable<TSource> source)">
+        <template #name><h3>Count</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the number of elements in a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-count" name="Count" returns="System.Int32" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static Int32 Count(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>Count</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns a number that represents how many elements in the
+specified sequence satisfy a condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-longcount" name="LongCount" returns="System.Int64" params="IEnumerable<TSource>" signature="public static Int64 LongCount(IEnumerable<TSource> source)">
+        <template #name><h3>LongCount</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns a <see cref="!:Int64"/> that represents the total number
+of elements in a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-longcount" name="LongCount" returns="System.Int64" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static Int64 LongCount(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>LongCount</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns a <see cref="!:Int64"/> that represents how many elements
+in a sequence satisfy a condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-concat" name="Concat" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Concat(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>Concat</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Concatenates two sequences.</p>
+
+    </doc-member>
+
+<doc-member id="method-concatyield" name="ConcatYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ConcatYield(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>ConcatYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-tolist" name="ToList" returns="List<TSource>" params="IEnumerable<TSource>" signature="public static List<TSource> ToList(IEnumerable<TSource> source)">
+        <template #name><h3>ToList</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="!:List&lt;T&gt;"/> from an <see cref="!:IEnumerable&lt;T&gt;"/>.</p>
+
+    </doc-member>
+
+<doc-member id="method-toarray" name="ToArray" returns="TSource[]" params="IEnumerable<TSource>" signature="public static TSource[] ToArray(IEnumerable<TSource> source)">
+        <template #name><h3>ToArray</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates an array from an <see cref="!:IEnumerable&lt;T&gt;"/>.</p>
+
+    </doc-member>
+
+<doc-member id="method-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Distinct(IEnumerable<TSource> source)">
+        <template #name><h3>Distinct</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns distinct elements from a sequence by using the default
+equality comparer to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Distinct(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>Distinct</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns distinct elements from a sequence by using a specified
+<see cref="!:IEqualityComparer&lt;T&gt;"/> to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-distinctyield" name="DistinctYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" access="private" signature="private static IEnumerable<TSource> DistinctYield(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>DistinctYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-tolookup" name="ToLookup" returns="Newtonsoft.Json.Utilities.LinqBridge.ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static ILookup<TKey, TSource> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>ToLookup</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function.</p>
+
+    </doc-member>
+
+<doc-member id="method-tolookup" name="ToLookup" returns="Newtonsoft.Json.Utilities.LinqBridge.ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TSource> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>ToLookup</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function and a key comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-tolookup" name="ToLookup" returns="Newtonsoft.Json.Utilities.LinqBridge.ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static ILookup<TKey, TElement> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+        <template #name><h3>ToLookup</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to specified key
+and element selector functions.</p>
+
+    </doc-member>
+
+<doc-member id="method-tolookup" name="ToLookup" returns="Newtonsoft.Json.Utilities.LinqBridge.ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TElement> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>ToLookup</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function, a comparer and an element selector function.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and compares the keys by using a specified
+comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and projects the elements for each group by
+using a specified function.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and creates a result value from each group and
+its key.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TKey, IEnumerable<TSource>, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a key selector
+function. The keys are compared by using a comparer and each
+group's elements are projected by using a specified function.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TKey, IEnumerable<TSource>, TResult>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and creates a result value from each group and
+its key. The elements of each group are projected by using a
+specified function.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TKey, IEnumerable<TElement>, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and creates a result value from each group and
+its key. The keys are compared by using a specified comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>GroupBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TKey, IEnumerable<TElement>, TResult>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Groups the elements of a sequence according to a specified key
+selector function and creates a result value from each group and
+its key. Key values are compared by using a specified comparer,
+and the elements of each group are projected by using a
+specified function.</p>
+
+    </doc-member>
+
+<doc-member id="method-aggregate" name="Aggregate" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, TSource>" signature="public static TSource Aggregate(IEnumerable<TSource> source, Func<TSource, TSource, TSource> func)">
+        <template #name><h3>Aggregate</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="func" type="Newtonsoft.Json.Serialization.Func<TSource, TSource, TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Applies an accumulator function over a sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-aggregate" name="Aggregate" returns="TAccumulate" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>" signature="public static TAccumulate Aggregate(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func)">
+        <template #name><h3>Aggregate</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="seed" type="TAccumulate"></doc-parameter>
+                <doc-parameter name="func" type="Newtonsoft.Json.Serialization.Func<TAccumulate, TSource, TAccumulate>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Applies an accumulator function over a sequence. The specified
+seed value is used as the initial accumulator value.</p>
+
+    </doc-member>
+
+<doc-member id="method-aggregate" name="Aggregate" returns="TResult" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TResult>" signature="public static TResult Aggregate(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, TResult> resultSelector)">
+        <template #name><h3>Aggregate</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="seed" type="TAccumulate"></doc-parameter>
+                <doc-parameter name="func" type="Newtonsoft.Json.Serialization.Func<TAccumulate, TSource, TAccumulate>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TAccumulate, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Applies an accumulator function over a sequence. The specified
+seed value is used as the initial accumulator value, and the
+specified function is used to select the result value.</p>
+
+    </doc-member>
+
+<doc-member id="method-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Union(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>Union</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set union of two sequences by using the default
+equality comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Union(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>Union</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set union of two sequences by using a specified
+<see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
+
+    </doc-member>
+
+<doc-member id="method-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> DefaultIfEmpty(IEnumerable<TSource> source)">
+        <template #name><h3>DefaultIfEmpty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the elements of the specified sequence or the type
+parameter's default value in a singleton collection if the
+sequence is empty.</p>
+
+    </doc-member>
+
+<doc-member id="method-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" signature="public static IEnumerable<TSource> DefaultIfEmpty(IEnumerable<TSource> source, TSource defaultValue)">
+        <template #name><h3>DefaultIfEmpty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="defaultValue" type="TSource"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the elements of the specified sequence or the specified
+value in a singleton collection if the sequence is empty.</p>
+
+    </doc-member>
+
+<doc-member id="method-defaultifemptyyield" name="DefaultIfEmptyYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" access="private" signature="private static IEnumerable<TSource> DefaultIfEmptyYield(IEnumerable<TSource> source, TSource defaultValue)">
+        <template #name><h3>DefaultIfEmptyYield</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="defaultValue" type="TSource"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-all" name="All" returns="System.Boolean" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static Boolean All(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>All</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether all elements of a sequence satisfy a condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-any" name="Any" returns="System.Boolean" params="IEnumerable<TSource>" signature="public static Boolean Any(IEnumerable<TSource> source)">
+        <template #name><h3>Any</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether a sequence contains any elements.</p>
+
+    </doc-member>
+
+<doc-member id="method-any" name="Any" returns="System.Boolean" params="IEnumerable<TSource>, Func<TSource, Boolean>" signature="public static Boolean Any(IEnumerable<TSource> source, Func<TSource, Boolean> predicate)">
+        <template #name><h3>Any</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="predicate" type="Newtonsoft.Json.Serialization.Func<TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether any element of a sequence satisfies a
+condition.</p>
+
+    </doc-member>
+
+<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="IEnumerable<TSource>, TSource" signature="public static Boolean Contains(IEnumerable<TSource> source, TSource value)">
+        <template #name><h3>Contains</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="value" type="TSource"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether a sequence contains a specified element by
+using the default equality comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="IEnumerable<TSource>, TSource, IEqualityComparer<TSource>" signature="public static Boolean Contains(IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>Contains</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="value" type="TSource"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether a sequence contains a specified element by
+using a specified <see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
+
+    </doc-member>
+
+<doc-member id="method-sequenceequal" name="SequenceEqual" returns="System.Boolean" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static Boolean SequenceEqual(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>SequenceEqual</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether two sequences are equal by comparing the
+elements by using the default equality comparer for their type.</p>
+
+    </doc-member>
+
+<doc-member id="method-sequenceequal" name="SequenceEqual" returns="System.Boolean" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static Boolean SequenceEqual(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>SequenceEqual</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether two sequences are equal by comparing their
+elements by using a specified <see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
+
+    </doc-member>
+
+<doc-member id="method-minmaximpl" name="MinMaxImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, Boolean>" access="private" signature="private static TSource MinMaxImpl(IEnumerable<TSource> source, Func<TSource, TSource, Boolean> lesser)">
+        <template #name><h3>MinMaxImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="lesser" type="Newtonsoft.Json.Serialization.Func<TSource, TSource, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation for Min/Max operator.</p>
+
+    </doc-member>
+
+<doc-member id="method-minmaximpl" name="MinMaxImpl" returns="System.Nullable<TSource>" params="IEnumerable<Nullable<TSource>>, Nullable<TSource>, Func<Nullable<TSource>, Nullable<TSource>, Boolean>" access="private" signature="private static Nullable<TSource> MinMaxImpl(IEnumerable<Nullable<TSource>> source, Nullable<TSource> seed, Func<Nullable<TSource>, Nullable<TSource>, Boolean> lesser)">
+        <template #name><h3>MinMaxImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<TSource>>"></doc-parameter>
+                <doc-parameter name="seed" type="System.Nullable<TSource>"></doc-parameter>
+                <doc-parameter name="lesser" type="Newtonsoft.Json.Serialization.Func<System.Nullable<TSource>, System.Nullable<TSource>, System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation for Min/Max operator for nullable types.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Min(IEnumerable<TSource> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a generic sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Min(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a generic
+sequence and returns the minimum resulting value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Max(IEnumerable<TSource> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a generic sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Max(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a generic
+sequence and returns the maximum resulting value.</p>
+
+    </doc-member>
+
+<doc-member id="method-renumerable" name="Renumerable" returns="IEnumerable<T>" params="IEnumerator<T>" access="private" signature="private static IEnumerable<T> Renumerable(IEnumerator<T> e)">
+        <template #name><h3>Renumerable</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="e" type="IEnumerator<T>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Makes an enumerator seen as enumerable once more.</p>
+
+    </doc-member>
+
+<doc-member id="method-orderby" name="OrderBy" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>OrderBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sorts the elements of a sequence in ascending order according to a key.</p>
+
+    </doc-member>
+
+<doc-member id="method-orderby" name="OrderBy" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+        <template #name><h3>OrderBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sorts the elements of a sequence in ascending order by using a
+specified comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-orderbydescending" name="OrderByDescending" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>OrderByDescending</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sorts the elements of a sequence in descending order according to a key.</p>
+
+    </doc-member>
+
+<doc-member id="method-orderbydescending" name="OrderByDescending" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+        <template #name><h3>OrderByDescending</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sorts the elements of a sequence in descending order by using a
+specified comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-thenby" name="ThenBy" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>ThenBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Performs a subsequent ordering of the elements in a sequence in
+ascending order according to a key.</p>
+
+    </doc-member>
+
+<doc-member id="method-thenby" name="ThenBy" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+        <template #name><h3>ThenBy</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Performs a subsequent ordering of the elements in a sequence in
+ascending order by using a specified comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-thenbydescending" name="ThenByDescending" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>ThenByDescending</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Performs a subsequent ordering of the elements in a sequence in
+descending order, according to a key.</p>
+
+    </doc-member>
+
+<doc-member id="method-thenbydescending" name="ThenByDescending" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+        <template #name><h3>ThenByDescending</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Performs a subsequent ordering of the elements in a sequence in
+descending order by using a specified comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-intersectexceptimpl" name="IntersectExceptImpl" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>, Boolean" access="private" signature="private static IEnumerable<TSource> IntersectExceptImpl(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer, Boolean flag)">
+        <template #name><h3>IntersectExceptImpl</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+                <doc-parameter name="flag" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Base implementation for Intersect and Except operators.</p>
+
+    </doc-member>
+
+<doc-member id="method-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Intersect(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>Intersect</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set intersection of two sequences by using the
+default equality comparer to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Intersect(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>Intersect</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set intersection of two sequences by using the
+specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Except(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>Except</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set difference of two sequences by using the
+default equality comparer to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Except(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>Except</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="first" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="second" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Produces the set difference of two sequences by using the
+specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
+
+    </doc-member>
+
+<doc-member id="method-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+        <template #name><h3>ToDictionary</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="!:Dictionary&lt;TKey,TValue&gt;" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function.</p>
+
+    </doc-member>
+
+<doc-member id="method-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>ToDictionary</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="!:Dictionary&lt;TKey,TValue&gt;" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function and key comparer.</p>
+
+    </doc-member>
+
+<doc-member id="method-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static Dictionary<TKey, TElement> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+        <template #name><h3>ToDictionary</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="!:Dictionary&lt;TKey,TValue&gt;" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to specified key
+selector and element selector functions.</p>
+
+    </doc-member>
+
+<doc-member id="method-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TElement> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>ToDictionary</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TSource, TKey>"></doc-parameter>
+                <doc-parameter name="elementSelector" type="Newtonsoft.Json.Serialization.Func<TSource, TElement>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="!:Dictionary&lt;TKey,TValue&gt;" /> from an
+<see cref="!:IEnumerable&lt;T&gt;" /> according to a specified key
+selector function, a comparer, and an element selector function.</p>
+
+    </doc-member>
+
+<doc-member id="method-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>" signature="public static IEnumerable<TResult> Join(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector)">
+        <template #name><h3>Join</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="outer" type="IEnumerable<TOuter>"></doc-parameter>
+                <doc-parameter name="inner" type="IEnumerable<TInner>"></doc-parameter>
+                <doc-parameter name="outerKeySelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TKey>"></doc-parameter>
+                <doc-parameter name="innerKeySelector" type="Newtonsoft.Json.Serialization.Func<TInner, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TInner, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Correlates the elements of two sequences based on matching keys.
+The default equality comparer is used to compare keys.</p>
+
+    </doc-member>
+
+<doc-member id="method-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> Join(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>Join</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="outer" type="IEnumerable<TOuter>"></doc-parameter>
+                <doc-parameter name="inner" type="IEnumerable<TInner>"></doc-parameter>
+                <doc-parameter name="outerKeySelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TKey>"></doc-parameter>
+                <doc-parameter name="innerKeySelector" type="Newtonsoft.Json.Serialization.Func<TInner, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TInner, TResult>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Correlates the elements of two sequences based on matching keys.
+The default equality comparer is used to compare keys. A
+specified <see cref="!:IEqualityComparer&lt;T&gt;" /> is used to compare keys.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>" signature="public static IEnumerable<TResult> GroupJoin(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector)">
+        <template #name><h3>GroupJoin</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="outer" type="IEnumerable<TOuter>"></doc-parameter>
+                <doc-parameter name="inner" type="IEnumerable<TInner>"></doc-parameter>
+                <doc-parameter name="outerKeySelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TKey>"></doc-parameter>
+                <doc-parameter name="innerKeySelector" type="Newtonsoft.Json.Serialization.Func<TInner, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TOuter, IEnumerable<TInner>, TResult>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Correlates the elements of two sequences based on equality of
+keys and groups the results. The default equality comparer is
+used to compare keys.</p>
+
+    </doc-member>
+
+<doc-member id="method-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupJoin(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+        <template #name><h3>GroupJoin</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="outer" type="IEnumerable<TOuter>"></doc-parameter>
+                <doc-parameter name="inner" type="IEnumerable<TInner>"></doc-parameter>
+                <doc-parameter name="outerKeySelector" type="Newtonsoft.Json.Serialization.Func<TOuter, TKey>"></doc-parameter>
+                <doc-parameter name="innerKeySelector" type="Newtonsoft.Json.Serialization.Func<TInner, TKey>"></doc-parameter>
+                <doc-parameter name="resultSelector" type="Newtonsoft.Json.Serialization.Func<TOuter, IEnumerable<TInner>, TResult>"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TKey>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Correlates the elements of two sequences based on equality of
+keys and groups the results. The default equality comparer is
+used to compare keys. A specified <see cref="!:IEqualityComparer&lt;T&gt;" />
+is used to compare keys.</p>
+
+    </doc-member>
+
+<doc-member id="method-checknotnull" name="CheckNotNull" returns="System.Void" params="T, String" access="private" signature="private static Void CheckNotNull(T value, String name)">
+        <template #name><h3>CheckNotNull</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="T"></doc-parameter>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Int32" params="IEnumerable<Int32>" signature="public static Int32 Sum(IEnumerable<Int32> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Int32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Int32" params="IEnumerable<TSource>, Func<TSource, Int32>" signature="public static Int32 Sum(IEnumerable<TSource> source, Func<TSource, Int32> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Int32" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<Int32>" signature="public static Double Average(IEnumerable<Int32> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Int32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<TSource>, Func<TSource, Int32>" signature="public static Double Average(IEnumerable<TSource> source, Func<TSource, Int32> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Int32" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Int32>" params="IEnumerable<Nullable<Int32>>" signature="public static Nullable<Int32> Sum(IEnumerable<Nullable<Int32>> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Int32>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int32>>" signature="public static Nullable<Int32> Sum(IEnumerable<TSource> source, Func<TSource, Nullable<Int32>> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Int32" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Int32>>" signature="public static Nullable<Double> Average(IEnumerable<Nullable<Int32>> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int32>>" signature="public static Nullable<Double> Average(IEnumerable<TSource> source, Func<TSource, Nullable<Int32>> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Int32" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Int32>" params="IEnumerable<Nullable<Int32>>" signature="public static Nullable<Int32> Min(IEnumerable<Nullable<Int32>> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a sequence of nullable
+<see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Int32>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int32>>" signature="public static Nullable<Int32> Min(IEnumerable<TSource> source, Func<TSource, Nullable<Int32>> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the minimum nullable <see cref="!:System.Int32" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Int32>" params="IEnumerable<Nullable<Int32>>" signature="public static Nullable<Int32> Max(IEnumerable<Nullable<Int32>> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a sequence of nullable
+<see cref="!:System.Int32" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Int32>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int32>>" signature="public static Nullable<Int32> Max(IEnumerable<TSource> source, Func<TSource, Nullable<Int32>> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int32>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the maximum nullable <see cref="!:System.Int32" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Int64" params="IEnumerable<Int64>" signature="public static Int64 Sum(IEnumerable<Int64> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Int64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Int64" params="IEnumerable<TSource>, Func<TSource, Int64>" signature="public static Int64 Sum(IEnumerable<TSource> source, Func<TSource, Int64> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Int64" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<Int64>" signature="public static Double Average(IEnumerable<Int64> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Int64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<TSource>, Func<TSource, Int64>" signature="public static Double Average(IEnumerable<TSource> source, Func<TSource, Int64> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Int64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Int64" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Int64>" params="IEnumerable<Nullable<Int64>>" signature="public static Nullable<Int64> Sum(IEnumerable<Nullable<Int64>> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Int64>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int64>>" signature="public static Nullable<Int64> Sum(IEnumerable<TSource> source, Func<TSource, Nullable<Int64>> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Int64" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Int64>>" signature="public static Nullable<Double> Average(IEnumerable<Nullable<Int64>> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int64>>" signature="public static Nullable<Double> Average(IEnumerable<TSource> source, Func<TSource, Nullable<Int64>> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Int64" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Int64>" params="IEnumerable<Nullable<Int64>>" signature="public static Nullable<Int64> Min(IEnumerable<Nullable<Int64>> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a sequence of nullable
+<see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Int64>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int64>>" signature="public static Nullable<Int64> Min(IEnumerable<TSource> source, Func<TSource, Nullable<Int64>> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the minimum nullable <see cref="!:System.Int64" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Int64>" params="IEnumerable<Nullable<Int64>>" signature="public static Nullable<Int64> Max(IEnumerable<Nullable<Int64>> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a sequence of nullable
+<see cref="!:System.Int64" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Int64>" params="IEnumerable<TSource>, Func<TSource, Nullable<Int64>>" signature="public static Nullable<Int64> Max(IEnumerable<TSource> source, Func<TSource, Nullable<Int64>> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Int64>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the maximum nullable <see cref="!:System.Int64" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Single" params="IEnumerable<Single>" signature="public static Single Sum(IEnumerable<Single> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Single>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Single" params="IEnumerable<TSource>, Func<TSource, Single>" signature="public static Single Sum(IEnumerable<TSource> source, Func<TSource, Single> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Single>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Single" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Single" params="IEnumerable<Single>" signature="public static Single Average(IEnumerable<Single> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Single>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Single" params="IEnumerable<TSource>, Func<TSource, Single>" signature="public static Single Average(IEnumerable<TSource> source, Func<TSource, Single> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Single>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Single" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Single>" params="IEnumerable<Nullable<Single>>" signature="public static Nullable<Single> Sum(IEnumerable<Nullable<Single>> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Single>" params="IEnumerable<TSource>, Func<TSource, Nullable<Single>>" signature="public static Nullable<Single> Sum(IEnumerable<TSource> source, Func<TSource, Nullable<Single>> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Single" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Single>" params="IEnumerable<Nullable<Single>>" signature="public static Nullable<Single> Average(IEnumerable<Nullable<Single>> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Single>" params="IEnumerable<TSource>, Func<TSource, Nullable<Single>>" signature="public static Nullable<Single> Average(IEnumerable<TSource> source, Func<TSource, Nullable<Single>> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Single" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Single>" params="IEnumerable<Nullable<Single>>" signature="public static Nullable<Single> Min(IEnumerable<Nullable<Single>> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a sequence of nullable
+<see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Single>" params="IEnumerable<TSource>, Func<TSource, Nullable<Single>>" signature="public static Nullable<Single> Min(IEnumerable<TSource> source, Func<TSource, Nullable<Single>> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the minimum nullable <see cref="!:System.Single" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Single>" params="IEnumerable<Nullable<Single>>" signature="public static Nullable<Single> Max(IEnumerable<Nullable<Single>> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a sequence of nullable
+<see cref="!:System.Single" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Single>" params="IEnumerable<TSource>, Func<TSource, Nullable<Single>>" signature="public static Nullable<Single> Max(IEnumerable<TSource> source, Func<TSource, Nullable<Single>> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Single>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the maximum nullable <see cref="!:System.Single" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Double" params="IEnumerable<Double>" signature="public static Double Sum(IEnumerable<Double> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Double>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Double" params="IEnumerable<TSource>, Func<TSource, Double>" signature="public static Double Sum(IEnumerable<TSource> source, Func<TSource, Double> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Double>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Double" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<Double>" signature="public static Double Average(IEnumerable<Double> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Double>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Double" params="IEnumerable<TSource>, Func<TSource, Double>" signature="public static Double Average(IEnumerable<TSource> source, Func<TSource, Double> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Double>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Double" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Double>>" signature="public static Nullable<Double> Sum(IEnumerable<Nullable<Double>> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Double>>" signature="public static Nullable<Double> Sum(IEnumerable<TSource> source, Func<TSource, Nullable<Double>> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Double" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Double>>" signature="public static Nullable<Double> Average(IEnumerable<Nullable<Double>> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Double>>" signature="public static Nullable<Double> Average(IEnumerable<TSource> source, Func<TSource, Nullable<Double>> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Double" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Double>>" signature="public static Nullable<Double> Min(IEnumerable<Nullable<Double>> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a sequence of nullable
+<see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Double>>" signature="public static Nullable<Double> Min(IEnumerable<TSource> source, Func<TSource, Nullable<Double>> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the minimum nullable <see cref="!:System.Double" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Double>" params="IEnumerable<Nullable<Double>>" signature="public static Nullable<Double> Max(IEnumerable<Nullable<Double>> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a sequence of nullable
+<see cref="!:System.Double" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Double>" params="IEnumerable<TSource>, Func<TSource, Nullable<Double>>" signature="public static Nullable<Double> Max(IEnumerable<TSource> source, Func<TSource, Nullable<Double>> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Double>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the maximum nullable <see cref="!:System.Double" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Decimal" params="IEnumerable<Decimal>" signature="public static Decimal Sum(IEnumerable<Decimal> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Decimal>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Decimal" params="IEnumerable<TSource>, Func<TSource, Decimal>" signature="public static Decimal Sum(IEnumerable<TSource> source, Func<TSource, Decimal> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Decimal>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of <see cref="!:System.Decimal" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Decimal" params="IEnumerable<Decimal>" signature="public static Decimal Average(IEnumerable<Decimal> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Decimal>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Decimal" params="IEnumerable<TSource>, Func<TSource, Decimal>" signature="public static Decimal Average(IEnumerable<TSource> source, Func<TSource, Decimal> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Decimal>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of <see cref="!:System.Decimal" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Decimal>" params="IEnumerable<Nullable<Decimal>>" signature="public static Nullable<Decimal> Sum(IEnumerable<Nullable<Decimal>> source)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-sum" name="Sum" returns="System.Nullable<System.Decimal>" params="IEnumerable<TSource>, Func<TSource, Nullable<Decimal>>" signature="public static Nullable<Decimal> Sum(IEnumerable<TSource> source, Func<TSource, Nullable<Decimal>> selector)">
+        <template #name><h3>Sum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the sum of a sequence of nullable <see cref="!:System.Decimal" />
+values that are obtained by invoking a transform function on
+each element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Decimal>" params="IEnumerable<Nullable<Decimal>>" signature="public static Nullable<Decimal> Average(IEnumerable<Nullable<Decimal>> source)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-average" name="Average" returns="System.Nullable<System.Decimal>" params="IEnumerable<TSource>, Func<TSource, Nullable<Decimal>>" signature="public static Nullable<Decimal> Average(IEnumerable<TSource> source, Func<TSource, Nullable<Decimal>> selector)">
+        <template #name><h3>Average</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Computes the average of a sequence of nullable <see cref="!:System.Decimal" /> values
+that are obtained by invoking a transform function on each
+element of the input sequence.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Decimal>" params="IEnumerable<Nullable<Decimal>>" signature="public static Nullable<Decimal> Min(IEnumerable<Nullable<Decimal>> source)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the minimum value in a sequence of nullable
+<see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-min" name="Min" returns="System.Nullable<System.Decimal>" params="IEnumerable<TSource>, Func<TSource, Nullable<Decimal>>" signature="public static Nullable<Decimal> Min(IEnumerable<TSource> source, Func<TSource, Nullable<Decimal>> selector)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Decimal>" params="IEnumerable<Nullable<Decimal>>" signature="public static Nullable<Decimal> Max(IEnumerable<Nullable<Decimal>> source)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the maximum value in a sequence of nullable
+<see cref="!:System.Decimal" /> values.</p>
+
+    </doc-member>
+
+<doc-member id="method-max" name="Max" returns="System.Nullable<System.Decimal>" params="IEnumerable<TSource>, Func<TSource, Nullable<Decimal>>" signature="public static Nullable<Decimal> Max(IEnumerable<TSource> source, Func<TSource, Nullable<Decimal>> selector)">
+        <template #name><h3>Max</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="selector" type="Newtonsoft.Json.Serialization.Func<TSource, System.Nullable<System.Decimal>>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Invokes a transform function on each element of a sequence and
+returns the maximum nullable <see cref="!:System.Decimal" /> value.</p>
+
+    </doc-member>
+</doc-member-group>
+
+
+    
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results />
+            </div>
+        </main>
+        <footer class="flex flex-wrap items-center justify-between border-t dark:border-dark-650 pt-6 mb-8">
+    <div>
+        <ul class="flex flex-wrap items-center text-sm">
+            <li>
+                <a href="https://www.newtonsoft.com/store/termsandconditions" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Terms</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/store/privacy" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Privacy</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/contact" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+</div>
+</footer>
+
+    </div>
+    
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+        </div>
+    </div>
+    
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+        <div id="docs-overlay-target"></div>
+
+        <script>window.__DOCS__ = { "title": "Enumerable", icon: "file" }</script>
+    </body>
+</html>

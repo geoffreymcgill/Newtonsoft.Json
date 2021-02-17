@@ -1,0 +1,2458 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="turbo-cache-control" content="no-cache">
+
+    <title>JsonWriter</title>
+
+    <script>(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="/Newtonsoft.Json/resources/css/retype.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/retype.js" defer></script>
+</head>
+    <body>
+        <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+    <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+
+    <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+    <div class="container relative flex items-center justify-between flex-grow pr-6 md:justify-start">
+        <!-- Mobile menu button skeleton -->
+        <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center flex-shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px flex-shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+        <div v-cloak id="docs-sidebar-toggle"></div>
+
+        <!-- Logo -->
+        <div class="flex items-center h-full py-2">
+            <div class="flex items-center px-2 md:px-6 md:w-72">
+                <span class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                    <a href="/Newtonsoft.Json/">Json.NET</a>
+                </span>
+                <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
+            </div>
+
+            <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+        </div>
+
+        <div class="flex justify-between md:flex-grow">
+            <!-- Top Nav -->
+            <nav class="hidden md:flex">
+                <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/json">Json.NET</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://www.newtonsoft.com/store">Pricing</a>
+                    </li>
+                    <li class="md:mr-6">
+                        <a class="block py-2 text-sm text-gray-400 whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Header Right Skeleton -->
+            <div v-cloak class="flex justify-end flex-grow skeleton">
+
+                <!-- Search input mock -->
+                <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                    <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                    </div>
+
+                    <input class="w-full h-10 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400"
+                    style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search docs" />
+                </div>
+
+                <!-- Mobile search button mock -->
+                <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                </div>
+
+                <!-- Dark mode switch placehokder -->
+                <div class="w-10 h-10 lg:ml-2"></div>
+
+                <!-- History button mock -->
+                <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"  style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                </div>
+            </div>
+
+            <div v-cloak class="flex items-center justify-end flex-grow">
+                <div id="docs-mobile-search-button"></div>
+                <doc-search-desktop></doc-search-desktop>
+
+                <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                <doc-history></doc-history>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+    <div class="container relative flex bg-white">
+        <!-- Sidebar Skeleton -->
+<div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-72 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+
+    <!-- Render this div, if config.showSidebarFilter is `true` -->
+    <div class="mt-6 px-6">
+        <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
+    </div>
+
+    <div class="pl-6 mb-4 mt-6">
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+        <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+    </div>
+
+    <div class="flex-shrink-0 mt-auto bg-transparent dark:border-dark-650">
+        <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+    </div>
+</div>
+
+<!-- Sidebar component -->
+<doc-sidebar v-cloak>
+    <template #sidebar-footer>
+        <div
+            class="flex-shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650"
+        >
+
+            <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                <nav>
+                    <ul class="flex flex-wrap justify-center items-center">
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/json">Json.NET</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/jsonschema">Json.NET Schema</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://www.newtonsoft.com/store">Pricing</a>
+                        </li>
+                        <li class="mr-6">
+                            <a class="block py-1 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/JamesNK/Newtonsoft.Json">GitHub</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <a
+    class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in"
+    target="_blank"
+    href="https://retype.com"
+    rel="noopener"
+>
+    <span class="text-xs whitespace-nowrap">Powered by</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+</a>
+
+        </div>
+    </template>
+</doc-sidebar>
+
+
+        <div class="flex-grow min-w-0 dark:bg-dark-850">
+            <!-- Render "toolbar" template here on api pages -->            <!-- Toolbar Skeleton -->
+<div v-cloak class="sticky z-20 flex items-center justify-between h-16 px-6 bg-white border-b border-gray-200 md:h-20 md:pl-16 md:top-20 top-16 skeleton dark:bg-dark-850 dark:border-dark-650">
+    <div class="flex flex-grow">
+        <div class="w-24 h-8 mr-3 bg-gray-200 rounded loading dark:bg-dark-600"></div>
+        <div class="w-24 h-8 mr-3 bg-gray-200 rounded loading md:hidden lg:block dark:bg-dark-600"></div>
+        <div class="hidden w-24 h-8 mr-3 bg-gray-200 rounded loading sm:block md:hidden xl:block dark:bg-dark-600"></div>
+        <div class="hidden w-24 h-8 mr-3 bg-gray-200 rounded loading sm:block md:hidden xl:block dark:bg-dark-600"></div>
+    </div>
+    <div class="items-center hidden lg:flex">
+        <div class="w-24 h-4 ml-3 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+
+        <span class="relative ml-3 bg-white border border-gray-400 btn dark:bg-dark-600 dark:border-dark-650"><svg xmlns="http://www.w3.org/2000/svg" class="mr-1 -ml-1 icon-base" width="14" height="14" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M12 23c-.15 0-.31-.04-.45-.11C11.2 22.72 3 18.54 3 12V5c0-.42.26-.79.65-.94l8-3c.23-.08.48-.08.7 0l8 3c.39.15.65.52.65.94v7c0 6.54-8.2 10.72-8.55 10.89-.14.07-.3.11-.45.11zM5 5.69V12c0 4.55 5.39 7.95 7 8.86 1.61-.92 7-4.33 7-8.86V5.69l-7-2.63-7 2.63z"></path></g></svg><span>Access</span></span>
+
+        <div class="relative flex items-center ml-3" style="width: 12.4375rem;"><input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear border border-gray-400 rounded md:text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600 placeholder-gray-400 dark:placeholder-dark-400" type="text" placeholder="Filter"></div>
+    </div>
+
+    <span class="relative inline-flex items-center justify-center w-8 h-8 p-0 text-sm font-medium leading-none text-gray-900 whitespace-no-wrap bg-white border border-gray-400 rounded cursor-pointer select-none lg:hidden sm:w-auto sm:px-3 dark:border-dark-650 dark:text-white dark:bg-dark-550 focus:outline-none"><svg xmlns="http://www.w3.org/2000/svg" class="mb-0 icon-base sm:mr-1" width="14" height="14" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation"><g fill="currentColor"><path d="M14 22c-.15 0-.31-.04-.45-.11l-4-2A.988.988 0 019 19v-6.17L1.24 3.65a.995.995 0 01-.14-1.07c.16-.35.51-.58.9-.58h20c.39 0 .74.23.91.58s.11.77-.14 1.07L15 12.83V21a.999.999 0 01-1 1zm-3-3.62l2 1v-6.92c0-.24.08-.47.24-.65L19.84 4H4.16l6.61 7.81c.15.18.24.41.24.65v5.92z"></path></g></svg><span class="hidden sm:inline">Filters</span></span>
+</div>
+
+<doc-toolbar v-cloak></doc-toolbar>
+
+<!-- Render page content -->
+            <div class="flex">
+    <div class="flex-grow min-w-0 px-6 md:px-16">
+        <main class="relative pt-6 pb-16">
+            <div class="docs-markdown" id="docs-content">
+                <!-- Rendered if sidebar right is enabled -->
+                <div id="docs-sidebar-right-toggle"></div>
+               
+                <!-- Page content  -->
+<doc-anchor-target id="jsonwriter-class" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#jsonwriter-class">#</doc-anchor-trigger>
+        <span>JsonWriter Class</span>
+    </h1>
+</doc-anchor-target>
+
+<p>Represents a writer that provides a fast, non-cached, forward-only way of generating JSON data.</p>
+
+
+<doc-member-group id="fields">
+    <template #title>Fields</template>
+
+<doc-member id="field-statearray" name="StateArray" type="Newtonsoft.Json.JsonWriter.State[][]" access="private" signature="private readonly static State[][] StateArray">
+        <template #name><h3>StateArray</h3></template>
+    </doc-member>
+
+<doc-member id="field-statearraytempate" name="StateArrayTempate" type="Newtonsoft.Json.JsonWriter.State[][]" access="internal" signature="internal readonly static State[][] StateArrayTempate">
+        <template #name><h3>StateArrayTempate</h3></template>
+    </doc-member>
+
+<doc-member id="field-_stack" name="_stack" type="System.Nullable<List<Newtonsoft.Json.JsonPosition>>" access="private" signature="private Nullable<List<JsonPosition>> _stack">
+        <template #name><h3>_stack</h3></template>
+    </doc-member>
+
+<doc-member id="field-_currentposition" name="_currentPosition" type="Newtonsoft.Json.JsonPosition" access="private" signature="private JsonPosition _currentPosition">
+        <template #name><h3>_currentPosition</h3></template>
+    </doc-member>
+
+<doc-member id="field-_currentstate" name="_currentState" type="Newtonsoft.Json.JsonWriter.State" access="private" signature="private State _currentState">
+        <template #name><h3>_currentState</h3></template>
+    </doc-member>
+
+<doc-member id="field-_formatting" name="_formatting" type="Newtonsoft.Json.Formatting" access="private" signature="private Formatting _formatting">
+        <template #name><h3>_formatting</h3></template>
+    </doc-member>
+
+<doc-member id="field-_dateformathandling" name="_dateFormatHandling" type="Newtonsoft.Json.DateFormatHandling" access="private" signature="private DateFormatHandling _dateFormatHandling">
+        <template #name><h3>_dateFormatHandling</h3></template>
+    </doc-member>
+
+<doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
+        <template #name><h3>_dateTimeZoneHandling</h3></template>
+    </doc-member>
+
+<doc-member id="field-_stringescapehandling" name="_stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling" access="private" signature="private StringEscapeHandling _stringEscapeHandling">
+        <template #name><h3>_stringEscapeHandling</h3></template>
+    </doc-member>
+
+<doc-member id="field-_floatformathandling" name="_floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling" access="private" signature="private FloatFormatHandling _floatFormatHandling">
+        <template #name><h3>_floatFormatHandling</h3></template>
+    </doc-member>
+
+<doc-member id="field-_dateformatstring" name="_dateFormatString" type="System.Nullable<System.String>" access="private" signature="private Nullable<String> _dateFormatString">
+        <template #name><h3>_dateFormatString</h3></template>
+    </doc-member>
+
+<doc-member id="field-_culture" name="_culture" type="System.Nullable<CultureInfo>" access="private" signature="private Nullable<CultureInfo> _culture">
+        <template #name><h3>_culture</h3></template>
+    </doc-member>
+</doc-member-group>
+
+<doc-member-group id="properties">
+    <template #title>Properties</template>
+
+<doc-member id="property-closeoutput" name="CloseOutput" type="System.Boolean" signature="public Boolean CloseOutput { get; set; }">
+        <template #name><h3>CloseOutput</h3></template>
+
+<p>Gets or sets a value indicating whether the destination should be closed when this writer is closed.</p>
+
+    </doc-member>
+
+<doc-member id="property-autocompleteonclose" name="AutoCompleteOnClose" type="System.Boolean" signature="public Boolean AutoCompleteOnClose { get; set; }">
+        <template #name><h3>AutoCompleteOnClose</h3></template>
+
+<p>Gets or sets a value indicating whether the JSON should be auto-completed when this writer is closed.</p>
+
+    </doc-member>
+
+<doc-member id="property-top" name="Top" type="System.Int32" access="internal,protected" signature="internal,protected Int32 Top { internal,protected get; }">
+        <template #name><h3>Top</h3></template>
+
+<p>Gets the top.</p>
+
+    </doc-member>
+
+<doc-member id="property-writestate" name="WriteState" type="Newtonsoft.Json.WriteState" signature="public WriteState WriteState { get; }">
+        <template #name><h3>WriteState</h3></template>
+
+<p>Gets the state of the writer.</p>
+
+    </doc-member>
+
+<doc-member id="property-containerpath" name="ContainerPath" type="System.String" access="internal" signature="internal String ContainerPath { internal get; }">
+        <template #name><h3>ContainerPath</h3></template>
+    </doc-member>
+
+<doc-member id="property-path" name="Path" type="System.String" signature="public String Path { get; }">
+        <template #name><h3>Path</h3></template>
+
+<p>Gets the path of the writer.</p>
+
+    </doc-member>
+
+<doc-member id="property-formatting" name="Formatting" type="Newtonsoft.Json.Formatting" signature="public Formatting Formatting { get; set; }">
+        <template #name><h3>Formatting</h3></template>
+
+<p>Gets or sets a value indicating how JSON text output should be formatted.</p>
+
+    </doc-member>
+
+<doc-member id="property-dateformathandling" name="DateFormatHandling" type="Newtonsoft.Json.DateFormatHandling" signature="public DateFormatHandling DateFormatHandling { get; set; }">
+        <template #name><h3>DateFormatHandling</h3></template>
+
+<p>Gets or sets how dates are written to JSON text.</p>
+
+    </doc-member>
+
+<doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling" signature="public DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
+        <template #name><h3>DateTimeZoneHandling</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled when writing JSON text.</p>
+
+    </doc-member>
+
+<doc-member id="property-stringescapehandling" name="StringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling" signature="public StringEscapeHandling StringEscapeHandling { get; set; }">
+        <template #name><h3>StringEscapeHandling</h3></template>
+
+<p>Gets or sets how strings are escaped when writing JSON text.</p>
+
+    </doc-member>
+
+<doc-member id="property-floatformathandling" name="FloatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling" signature="public FloatFormatHandling FloatFormatHandling { get; set; }">
+        <template #name><h3>FloatFormatHandling</h3></template>
+
+<p>Gets or sets how special floating point numbers, e.g. <see cref="!:Double.NaN"/>,
+<see cref="!:Double.PositiveInfinity"/> and <see cref="!:Double.NegativeInfinity"/>,
+are written to JSON text.</p>
+
+    </doc-member>
+
+<doc-member id="property-dateformatstring" name="DateFormatString" type="System.Nullable<System.String>" signature="public Nullable<String> DateFormatString { get; set; }">
+        <template #name><h3>DateFormatString</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text.</p>
+
+    </doc-member>
+
+<doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
+        <template #name><h3>Culture</h3></template>
+
+<p>Gets or sets the culture used when writing JSON. Defaults to <see cref="!:CultureInfo.InvariantCulture"/>.</p>
+
+    </doc-member>
+</doc-member-group>
+
+<doc-member-group id="methods">
+    <template #title>Methods</template>
+
+<doc-member id="method-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="JsonToken, CancellationToken" access="internal" signature="internal Task AutoCompleteAsync(JsonToken tokenBeingWritten, CancellationToken cancellationToken)">
+        <template #name><h3>AutoCompleteAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="tokenBeingWritten" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="CancellationToken" access="private" signature="private async Task AutoCompleteAsync(CancellationToken cancellationToken)">
+        <template #name><h3>AutoCompleteAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-closeasync" name="CloseAsync" returns="Task" params="CancellationToken" signature="public virtual Task CloseAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>CloseAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously closes this writer.
+If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>, the destination is also closed.</p>
+
+    </doc-member>
+
+<doc-member id="method-flushasync" name="FlushAsync" returns="Task" params="CancellationToken" signature="public virtual Task FlushAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>FlushAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously flushes whatever is in the buffer to the destination and also flushes the destination.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendasync" name="WriteEndAsync" returns="Task" params="JsonToken, CancellationToken" access="protected" signature="protected virtual Task WriteEndAsync(JsonToken token, CancellationToken cancellationToken)">
+        <template #name><h3>WriteEndAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the specified end token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeindentasync" name="WriteIndentAsync" returns="Task" params="CancellationToken" access="protected" signature="protected virtual Task WriteIndentAsync(CancellationToken cancellationToken)">
+        <template #name><h3>WriteIndentAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes indent characters.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevaluedelimiterasync" name="WriteValueDelimiterAsync" returns="Task" params="CancellationToken" access="protected" signature="protected virtual Task WriteValueDelimiterAsync(CancellationToken cancellationToken)">
+        <template #name><h3>WriteValueDelimiterAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the JSON value delimiter.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeindentspaceasync" name="WriteIndentSpaceAsync" returns="Task" params="CancellationToken" access="protected" signature="protected virtual Task WriteIndentSpaceAsync(CancellationToken cancellationToken)">
+        <template #name><h3>WriteIndentSpaceAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes an indent space.</p>
+
+    </doc-member>
+
+<doc-member id="method-writerawasync" name="WriteRawAsync" returns="Task" params="Nullable<String>, CancellationToken" signature="public virtual Task WriteRawAsync(Nullable<String> json, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteRawAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes raw JSON without changing the writer's state.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendasync" name="WriteEndAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteEndAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the end of the current JSON object or array.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendinternalasync" name="WriteEndInternalAsync" returns="Task" params="CancellationToken" access="internal" signature="internal Task WriteEndInternalAsync(CancellationToken cancellationToken)">
+        <template #name><h3>WriteEndInternalAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwriteendasync" name="InternalWriteEndAsync" returns="Task" params="JsonContainerType, CancellationToken" access="internal" signature="internal Task InternalWriteEndAsync(JsonContainerType type, CancellationToken cancellationToken)">
+        <template #name><h3>InternalWriteEndAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writeendarrayasync" name="WriteEndArrayAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndArrayAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteEndArrayAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the end of an array.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendconstructorasync" name="WriteEndConstructorAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndConstructorAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteEndConstructorAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the end of a constructor.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendobjectasync" name="WriteEndObjectAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndObjectAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteEndObjectAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the end of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writenullasync" name="WriteNullAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteNullAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteNullAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a null value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writepropertynameasync" name="WritePropertyNameAsync" returns="Task" params="String, CancellationToken" signature="public virtual Task WritePropertyNameAsync(String name, CancellationToken cancellationToken = null)">
+        <template #name><h3>WritePropertyNameAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the property name of a name/value pair of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writepropertynameasync" name="WritePropertyNameAsync" returns="Task" params="String, Boolean, CancellationToken" signature="public virtual Task WritePropertyNameAsync(String name, Boolean escape, CancellationToken cancellationToken = null)">
+        <template #name><h3>WritePropertyNameAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="escape" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the property name of a name/value pair of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-internalwritepropertynameasync" name="InternalWritePropertyNameAsync" returns="Task" params="String, CancellationToken" access="internal" signature="internal Task InternalWritePropertyNameAsync(String name, CancellationToken cancellationToken)">
+        <template #name><h3>InternalWritePropertyNameAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writestartarrayasync" name="WriteStartArrayAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteStartArrayAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteStartArrayAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the beginning of a JSON array.</p>
+
+    </doc-member>
+
+<doc-member id="method-internalwritestartasync" name="InternalWriteStartAsync" returns="Task" params="JsonToken, JsonContainerType, CancellationToken" access="internal" signature="internal async Task InternalWriteStartAsync(JsonToken token, JsonContainerType container, CancellationToken cancellationToken)">
+        <template #name><h3>InternalWriteStartAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="container" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writecommentasync" name="WriteCommentAsync" returns="Task" params="Nullable<String>, CancellationToken" signature="public virtual Task WriteCommentAsync(Nullable<String> text, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteCommentAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="text" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a comment <c>/<em>...</em>/</c> containing the specified text.</p>
+
+    </doc-member>
+
+<doc-member id="method-internalwritecommentasync" name="InternalWriteCommentAsync" returns="Task" params="CancellationToken" access="internal" signature="internal Task InternalWriteCommentAsync(CancellationToken cancellationToken)">
+        <template #name><h3>InternalWriteCommentAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writerawvalueasync" name="WriteRawValueAsync" returns="Task" params="Nullable<String>, CancellationToken" signature="public virtual Task WriteRawValueAsync(Nullable<String> json, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteRawValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes raw JSON where a value is expected and updates the writer's state.</p>
+
+    </doc-member>
+
+<doc-member id="method-writestartconstructorasync" name="WriteStartConstructorAsync" returns="Task" params="String, CancellationToken" signature="public virtual Task WriteStartConstructorAsync(String name, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteStartConstructorAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the start of a constructor with the given name.</p>
+
+    </doc-member>
+
+<doc-member id="method-writestartobjectasync" name="WriteStartObjectAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteStartObjectAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteStartObjectAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the beginning of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, CancellationToken" signature="public Task WriteTokenAsync(JsonReader reader, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteTokenAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the current <see cref="T:Newtonsoft.Json.JsonReader"/> token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, Boolean, CancellationToken" signature="public Task WriteTokenAsync(JsonReader reader, Boolean writeChildren, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteTokenAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writeChildren" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the current <see cref="T:Newtonsoft.Json.JsonReader"/> token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteTokenAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, Nullable<Object>, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, Nullable<Object> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteTokenAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, Boolean, Boolean, Boolean, CancellationToken" access="internal" signature="internal async virtual Task WriteTokenAsync(JsonReader reader, Boolean writeChildren, Boolean writeDateConstructorAsDate, Boolean writeComments, CancellationToken cancellationToken)">
+        <template #name><h3>WriteTokenAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writeChildren" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="writeDateConstructorAsDate" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="writeComments" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writetokensyncreadingasync" name="WriteTokenSyncReadingAsync" returns="Task" params="JsonReader, CancellationToken" access="internal" signature="internal async Task WriteTokenSyncReadingAsync(JsonReader reader, CancellationToken cancellationToken)">
+        <template #name><h3>WriteTokenSyncReadingAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writeconstructordateasync" name="WriteConstructorDateAsync" returns="Task" params="JsonReader, CancellationToken" access="private" signature="private async Task WriteConstructorDateAsync(JsonReader reader, CancellationToken cancellationToken)">
+        <template #name><h3>WriteConstructorDateAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Boolean, CancellationToken" signature="public virtual Task WriteValueAsync(Boolean value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Boolean"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Boolean>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Boolean> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Boolean>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Boolean"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Byte, CancellationToken" signature="public virtual Task WriteValueAsync(Byte value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Byte"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Byte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Byte>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Byte> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Byte>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Byte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Byte[], CancellationToken" signature="public virtual Task WriteValueAsync(Byte[] value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Byte[]"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Byte"/>[] value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Char, CancellationToken" signature="public virtual Task WriteValueAsync(Char value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Char"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Char"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Char>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Char> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Char>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Char"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="DateTime, CancellationToken" signature="public virtual Task WriteValueAsync(DateTime value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="DateTime"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:DateTime"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<DateTime>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<DateTime> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<DateTime>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTime"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="DateTimeOffset, CancellationToken" signature="public virtual Task WriteValueAsync(DateTimeOffset value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:DateTimeOffset"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<DateTimeOffset>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<DateTimeOffset> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<DateTimeOffset>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTimeOffset"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Decimal, CancellationToken" signature="public virtual Task WriteValueAsync(Decimal value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Decimal"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Decimal>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Decimal> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Decimal>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Decimal"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Double, CancellationToken" signature="public virtual Task WriteValueAsync(Double value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Double"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Double"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Double>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Double> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Double>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Double"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Single, CancellationToken" signature="public virtual Task WriteValueAsync(Single value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Single"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Single"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Single>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Single> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Single>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Single"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid, CancellationToken" signature="public virtual Task WriteValueAsync(Guid value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="Guid"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Guid"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Guid>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Guid> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<Guid>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Guid"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Int32, CancellationToken" signature="public virtual Task WriteValueAsync(Int32 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int32"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Int32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Int32>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Int32> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int32>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Int32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Int64, CancellationToken" signature="public virtual Task WriteValueAsync(Int64 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int64"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Int64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Int64>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Int64> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int64>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Int64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Object>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Object> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Object"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="SByte, CancellationToken" signature="public virtual Task WriteValueAsync(SByte value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.SByte"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.SByte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<SByte>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<SByte> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.SByte>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.SByte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Int16, CancellationToken" signature="public virtual Task WriteValueAsync(Int16 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int16"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.Int16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Int16>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Int16> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int16>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.Int16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<String>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<String> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.String"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan, CancellationToken" signature="public virtual Task WriteValueAsync(TimeSpan value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:TimeSpan"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<TimeSpan>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<TimeSpan> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<TimeSpan>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:TimeSpan"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="UInt32, CancellationToken" signature="public virtual Task WriteValueAsync(UInt32 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt32"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.UInt32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<UInt32>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<UInt32> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt32>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.UInt32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="UInt64, CancellationToken" signature="public virtual Task WriteValueAsync(UInt64 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt64"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.UInt64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<UInt64>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<UInt64> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt64>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.UInt64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Uri>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Uri> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<Uri>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Uri"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="UInt16, CancellationToken" signature="public virtual Task WriteValueAsync(UInt16 value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt16"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:System.UInt16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<UInt16>, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<UInt16> value, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt16>"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.UInt16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeundefinedasync" name="WriteUndefinedAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteUndefinedAsync(CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteUndefinedAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes an undefined value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writewhitespaceasync" name="WriteWhitespaceAsync" returns="Task" params="String, CancellationToken" signature="public virtual Task WriteWhitespaceAsync(String ws, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteWhitespaceAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="ws" type="System.String"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously writes the given white space.</p>
+
+    </doc-member>
+
+<doc-member id="method-internalwritevalueasync" name="InternalWriteValueAsync" returns="Task" params="JsonToken, CancellationToken" access="internal" signature="internal Task InternalWriteValueAsync(JsonToken token, CancellationToken cancellationToken)">
+        <template #name><h3>InternalWriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-setwritestateasync" name="SetWriteStateAsync" returns="Task" params="JsonToken, Object, CancellationToken" access="protected" signature="protected Task SetWriteStateAsync(JsonToken token, Object value, CancellationToken cancellationToken)">
+        <template #name><h3>SetWriteStateAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously ets the state of the <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="JsonWriter, PrimitiveTypeCode, Object, CancellationToken" access="internal" signature="internal static Task WriteValueAsync(JsonWriter writer, PrimitiveTypeCode typeCode, Object value, CancellationToken cancellationToken)">
+        <template #name><h3>WriteValueAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="typeCode" type="Newtonsoft.Json.Utilities.PrimitiveTypeCode"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-buildstatearray" name="BuildStateArray" returns="Newtonsoft.Json.JsonWriter.State[][]" access="internal" signature="internal static State[][] BuildStateArray()">
+        <template #name><h3>BuildStateArray</h3></template>
+    </doc-member>
+
+<doc-member id="method-.cctor" name=".cctor" returns="System.Void" access="private" signature="private static JsonWriter()">
+        <template #name><h3>.cctor</h3></template>
+    </doc-member>
+
+<doc-member id="method-onstringescapehandlingchanged" name="OnStringEscapeHandlingChanged" returns="System.Void" access="internal" signature="internal virtual Void OnStringEscapeHandlingChanged()">
+        <template #name><h3>OnStringEscapeHandlingChanged</h3></template>
+    </doc-member>
+
+<doc-member id="method-.ctor" name=".ctor" returns="System.Void" access="protected" signature="protected JsonWriter()">
+        <template #name><h3>.ctor</h3></template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonWriter"/> class.</p>
+
+    </doc-member>
+
+<doc-member id="method-updatescopewithfinishedvalue" name="UpdateScopeWithFinishedValue" returns="System.Void" access="internal" signature="internal Void UpdateScopeWithFinishedValue()">
+        <template #name><h3>UpdateScopeWithFinishedValue</h3></template>
+    </doc-member>
+
+<doc-member id="method-push" name="Push" returns="System.Void" params="JsonContainerType" access="private" signature="private Void Push(JsonContainerType value)">
+        <template #name><h3>Push</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-pop" name="Pop" returns="Newtonsoft.Json.JsonContainerType" access="private" signature="private JsonContainerType Pop()">
+        <template #name><h3>Pop</h3></template>
+    </doc-member>
+
+<doc-member id="method-peek" name="Peek" returns="Newtonsoft.Json.JsonContainerType" access="private" signature="private JsonContainerType Peek()">
+        <template #name><h3>Peek</h3></template>
+    </doc-member>
+
+<doc-member id="method-flush" name="Flush" returns="System.Void" signature="public abstract Void Flush()">
+        <template #name><h3>Flush</h3></template>
+
+<p>Flushes whatever is in the buffer to the destination and also flushes the destination.</p>
+
+    </doc-member>
+
+<doc-member id="method-close" name="Close" returns="System.Void" signature="public virtual Void Close()">
+        <template #name><h3>Close</h3></template>
+
+<p>Closes this writer.
+If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>, the destination is also closed.
+If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>true</c>, the JSON is auto-completed.</p>
+
+    </doc-member>
+
+<doc-member id="method-writestartobject" name="WriteStartObject" returns="System.Void" signature="public virtual Void WriteStartObject()">
+        <template #name><h3>WriteStartObject</h3></template>
+
+<p>Writes the beginning of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendobject" name="WriteEndObject" returns="System.Void" signature="public virtual Void WriteEndObject()">
+        <template #name><h3>WriteEndObject</h3></template>
+
+<p>Writes the end of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writestartarray" name="WriteStartArray" returns="System.Void" signature="public virtual Void WriteStartArray()">
+        <template #name><h3>WriteStartArray</h3></template>
+
+<p>Writes the beginning of a JSON array.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendarray" name="WriteEndArray" returns="System.Void" signature="public virtual Void WriteEndArray()">
+        <template #name><h3>WriteEndArray</h3></template>
+
+<p>Writes the end of an array.</p>
+
+    </doc-member>
+
+<doc-member id="method-writestartconstructor" name="WriteStartConstructor" returns="System.Void" params="String" signature="public virtual Void WriteStartConstructor(String name)">
+        <template #name><h3>WriteStartConstructor</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the start of a constructor with the given name.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeendconstructor" name="WriteEndConstructor" returns="System.Void" signature="public virtual Void WriteEndConstructor()">
+        <template #name><h3>WriteEndConstructor</h3></template>
+
+<p>Writes the end constructor.</p>
+
+    </doc-member>
+
+<doc-member id="method-writepropertyname" name="WritePropertyName" returns="System.Void" params="String" signature="public virtual Void WritePropertyName(String name)">
+        <template #name><h3>WritePropertyName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the property name of a name/value pair of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writepropertyname" name="WritePropertyName" returns="System.Void" params="String, Boolean" signature="public virtual Void WritePropertyName(String name, Boolean escape)">
+        <template #name><h3>WritePropertyName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="escape" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the property name of a name/value pair of a JSON object.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeend" name="WriteEnd" returns="System.Void" signature="public virtual Void WriteEnd()">
+        <template #name><h3>WriteEnd</h3></template>
+
+<p>Writes the end of the current JSON object or array.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="JsonReader" signature="public Void WriteToken(JsonReader reader)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the current <see cref="T:Newtonsoft.Json.JsonReader"/> token and its children.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="JsonReader, Boolean" signature="public Void WriteToken(JsonReader reader, Boolean writeChildren)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writeChildren" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the current <see cref="T:Newtonsoft.Json.JsonReader"/> token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="JsonToken, Nullable<Object>" signature="public Void WriteToken(JsonToken token, Nullable<Object> value)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="JsonToken" signature="public Void WriteToken(JsonToken token)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="JsonReader, Boolean, Boolean, Boolean" access="internal" signature="internal virtual Void WriteToken(JsonReader reader, Boolean writeChildren, Boolean writeDateConstructorAsDate, Boolean writeComments)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writeChildren" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="writeDateConstructorAsDate" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="writeComments" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-iswritetokenincomplete" name="IsWriteTokenIncomplete" returns="System.Boolean" params="JsonReader, Boolean, Int32" access="private" signature="private Boolean IsWriteTokenIncomplete(JsonReader reader, Boolean writeChildren, Int32 initialDepth)">
+        <template #name><h3>IsWriteTokenIncomplete</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writeChildren" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="initialDepth" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-calculatewritetokeninitialdepth" name="CalculateWriteTokenInitialDepth" returns="System.Int32" params="JsonReader" access="private" signature="private Int32 CalculateWriteTokenInitialDepth(JsonReader reader)">
+        <template #name><h3>CalculateWriteTokenInitialDepth</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-calculatewritetokenfinaldepth" name="CalculateWriteTokenFinalDepth" returns="System.Int32" params="JsonReader" access="private" signature="private Int32 CalculateWriteTokenFinalDepth(JsonReader reader)">
+        <template #name><h3>CalculateWriteTokenFinalDepth</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writeconstructordate" name="WriteConstructorDate" returns="System.Void" params="JsonReader" access="private" signature="private Void WriteConstructorDate(JsonReader reader)">
+        <template #name><h3>WriteConstructorDate</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writeend" name="WriteEnd" returns="System.Void" params="JsonContainerType" access="private" signature="private Void WriteEnd(JsonContainerType type)">
+        <template #name><h3>WriteEnd</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-autocompleteall" name="AutoCompleteAll" returns="System.Void" access="private" signature="private Void AutoCompleteAll()">
+        <template #name><h3>AutoCompleteAll</h3></template>
+    </doc-member>
+
+<doc-member id="method-getclosetokenfortype" name="GetCloseTokenForType" returns="Newtonsoft.Json.JsonToken" params="JsonContainerType" access="private" signature="private JsonToken GetCloseTokenForType(JsonContainerType type)">
+        <template #name><h3>GetCloseTokenForType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-autocompleteclose" name="AutoCompleteClose" returns="System.Void" params="JsonContainerType" access="private" signature="private Void AutoCompleteClose(JsonContainerType type)">
+        <template #name><h3>AutoCompleteClose</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-calculatelevelstocomplete" name="CalculateLevelsToComplete" returns="System.Int32" params="JsonContainerType" access="private" signature="private Int32 CalculateLevelsToComplete(JsonContainerType type)">
+        <template #name><h3>CalculateLevelsToComplete</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-updatecurrentstate" name="UpdateCurrentState" returns="System.Void" access="private" signature="private Void UpdateCurrentState()">
+        <template #name><h3>UpdateCurrentState</h3></template>
+    </doc-member>
+
+<doc-member id="method-writeend" name="WriteEnd" returns="System.Void" params="JsonToken" access="protected" signature="protected virtual Void WriteEnd(JsonToken token)">
+        <template #name><h3>WriteEnd</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the specified end token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeindent" name="WriteIndent" returns="System.Void" access="protected" signature="protected virtual Void WriteIndent()">
+        <template #name><h3>WriteIndent</h3></template>
+
+<p>Writes indent characters.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevaluedelimiter" name="WriteValueDelimiter" returns="System.Void" access="protected" signature="protected virtual Void WriteValueDelimiter()">
+        <template #name><h3>WriteValueDelimiter</h3></template>
+
+<p>Writes the JSON value delimiter.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeindentspace" name="WriteIndentSpace" returns="System.Void" access="protected" signature="protected virtual Void WriteIndentSpace()">
+        <template #name><h3>WriteIndentSpace</h3></template>
+
+<p>Writes an indent space.</p>
+
+    </doc-member>
+
+<doc-member id="method-autocomplete" name="AutoComplete" returns="System.Void" params="JsonToken" access="internal" signature="internal Void AutoComplete(JsonToken tokenBeingWritten)">
+        <template #name><h3>AutoComplete</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="tokenBeingWritten" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-writenull" name="WriteNull" returns="System.Void" signature="public virtual Void WriteNull()">
+        <template #name><h3>WriteNull</h3></template>
+
+<p>Writes a null value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeundefined" name="WriteUndefined" returns="System.Void" signature="public virtual Void WriteUndefined()">
+        <template #name><h3>WriteUndefined</h3></template>
+
+<p>Writes an undefined value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writeraw" name="WriteRaw" returns="System.Void" params="Nullable<String>" signature="public virtual Void WriteRaw(Nullable<String> json)">
+        <template #name><h3>WriteRaw</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="System.Nullable<System.String>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes raw JSON without changing the writer's state.</p>
+
+    </doc-member>
+
+<doc-member id="method-writerawvalue" name="WriteRawValue" returns="System.Void" params="Nullable<String>" signature="public virtual Void WriteRawValue(Nullable<String> json)">
+        <template #name><h3>WriteRawValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="System.Nullable<System.String>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes raw JSON where a value is expected and updates the writer's state.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<String>" signature="public virtual Void WriteValue(Nullable<String> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:String"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int32" signature="public virtual Void WriteValue(Int32 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Int32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt32" signature="public virtual Void WriteValue(UInt32 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt32"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:UInt32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int64" signature="public virtual Void WriteValue(Int64 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int64"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Int64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt64" signature="public virtual Void WriteValue(UInt64 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt64"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:UInt64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Single" signature="public virtual Void WriteValue(Single value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Single"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Single"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Double" signature="public virtual Void WriteValue(Double value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Double"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Double"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Boolean" signature="public virtual Void WriteValue(Boolean value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Boolean"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int16" signature="public virtual Void WriteValue(Int16 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Int16"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Int16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt16" signature="public virtual Void WriteValue(UInt16 value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.UInt16"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:UInt16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Char" signature="public virtual Void WriteValue(Char value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Char"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Char"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Byte" signature="public virtual Void WriteValue(Byte value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Byte"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Byte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="SByte" signature="public virtual Void WriteValue(SByte value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.SByte"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:SByte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Decimal" signature="public virtual Void WriteValue(Decimal value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Decimal"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="DateTime" signature="public virtual Void WriteValue(DateTime value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="DateTime"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:DateTime"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="DateTimeOffset" signature="public virtual Void WriteValue(DateTimeOffset value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:DateTimeOffset"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Guid" signature="public virtual Void WriteValue(Guid value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="Guid"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Guid"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="TimeSpan" signature="public virtual Void WriteValue(TimeSpan value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:TimeSpan"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Int32>" signature="public virtual Void WriteValue(Nullable<Int32> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<UInt32>" signature="public virtual Void WriteValue(Nullable<UInt32> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt32>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:UInt32"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Int64>" signature="public virtual Void WriteValue(Nullable<Int64> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<UInt64>" signature="public virtual Void WriteValue(Nullable<UInt64> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt64>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:UInt64"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Single>" signature="public virtual Void WriteValue(Nullable<Single> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Single>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Single"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Double>" signature="public virtual Void WriteValue(Nullable<Double> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Double>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Double"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Boolean>" signature="public virtual Void WriteValue(Nullable<Boolean> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Boolean>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Boolean"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Int16>" signature="public virtual Void WriteValue(Nullable<Int16> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Int16>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<UInt16>" signature="public virtual Void WriteValue(Nullable<UInt16> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.UInt16>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:UInt16"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Char>" signature="public virtual Void WriteValue(Nullable<Char> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Char>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Char"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Byte>" signature="public virtual Void WriteValue(Nullable<Byte> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Byte>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Byte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<SByte>" signature="public virtual Void WriteValue(Nullable<SByte> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.SByte>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:SByte"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Decimal>" signature="public virtual Void WriteValue(Nullable<Decimal> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Decimal>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Decimal"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<DateTime>" signature="public virtual Void WriteValue(Nullable<DateTime> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<DateTime>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTime"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<DateTimeOffset>" signature="public virtual Void WriteValue(Nullable<DateTimeOffset> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<DateTimeOffset>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTimeOffset"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Guid>" signature="public virtual Void WriteValue(Nullable<Guid> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<Guid>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Guid"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<TimeSpan>" signature="public virtual Void WriteValue(Nullable<TimeSpan> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<TimeSpan>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:TimeSpan"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Byte[]" signature="public virtual Void WriteValue(Byte[] value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Byte[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Byte"/>[] value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Uri>" signature="public virtual Void WriteValue(Nullable<Uri> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<Uri>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Uri"/> value.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Nullable<Object>" signature="public virtual Void WriteValue(Nullable<Object> value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a <see cref="!:Object"/> value.
+An error will raised if the value cannot be written as a single JSON token.</p>
+
+    </doc-member>
+
+<doc-member id="method-writecomment" name="WriteComment" returns="System.Void" params="Nullable<String>" signature="public virtual Void WriteComment(Nullable<String> text)">
+        <template #name><h3>WriteComment</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="text" type="System.Nullable<System.String>"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a comment <c>/<em>...</em>/</c> containing the specified text.</p>
+
+    </doc-member>
+
+<doc-member id="method-writewhitespace" name="WriteWhitespace" returns="System.Void" params="String" signature="public virtual Void WriteWhitespace(String ws)">
+        <template #name><h3>WriteWhitespace</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="ws" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the given white space.</p>
+
+    </doc-member>
+
+<doc-member id="method-dispose" name="Dispose" returns="System.Void" params="Boolean" access="protected" signature="protected virtual Void Dispose(Boolean disposing)">
+        <template #name><h3>Dispose</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="disposing" type="System.Boolean"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Releases unmanaged and - optionally - managed resources.</p>
+
+    </doc-member>
+
+<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="JsonWriter, PrimitiveTypeCode, Object" access="internal" signature="internal static Void WriteValue(JsonWriter writer, PrimitiveTypeCode typeCode, Object value)">
+        <template #name><h3>WriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="typeCode" type="Newtonsoft.Json.Utilities.PrimitiveTypeCode"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-resolveconvertiblevalue" name="ResolveConvertibleValue" returns="System.Void" params="IConvertible, PrimitiveTypeCode, Object" access="private" signature="private static Void ResolveConvertibleValue(IConvertible convertible, PrimitiveTypeCode typeCode, Object value)">
+        <template #name><h3>ResolveConvertibleValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="convertible" type="IConvertible"></doc-parameter>
+                <doc-parameter name="typeCode" type="Newtonsoft.Json.Utilities.PrimitiveTypeCode"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-createunsupportedtypeexception" name="CreateUnsupportedTypeException" returns="Newtonsoft.Json.JsonWriterException" params="JsonWriter, Object" access="private" signature="private static JsonWriterException CreateUnsupportedTypeException(JsonWriter writer, Object value)">
+        <template #name><h3>CreateUnsupportedTypeException</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-setwritestate" name="SetWriteState" returns="System.Void" params="JsonToken, Object" access="protected" signature="protected Void SetWriteState(JsonToken token, Object value)">
+        <template #name><h3>SetWriteState</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="value" type="System.Object"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sets the state of the <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
+
+    </doc-member>
+
+<doc-member id="method-internalwriteend" name="InternalWriteEnd" returns="System.Void" params="JsonContainerType" access="internal" signature="internal Void InternalWriteEnd(JsonContainerType container)">
+        <template #name><h3>InternalWriteEnd</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="container" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwritepropertyname" name="InternalWritePropertyName" returns="System.Void" params="String" access="internal" signature="internal Void InternalWritePropertyName(String name)">
+        <template #name><h3>InternalWritePropertyName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwriteraw" name="InternalWriteRaw" returns="System.Void" access="internal" signature="internal Void InternalWriteRaw()">
+        <template #name><h3>InternalWriteRaw</h3></template>
+    </doc-member>
+
+<doc-member id="method-internalwritestart" name="InternalWriteStart" returns="System.Void" params="JsonToken, JsonContainerType" access="internal" signature="internal Void InternalWriteStart(JsonToken token, JsonContainerType container)">
+        <template #name><h3>InternalWriteStart</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                <doc-parameter name="container" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwritevalue" name="InternalWriteValue" returns="System.Void" params="JsonToken" access="internal" signature="internal Void InternalWriteValue(JsonToken token)">
+        <template #name><h3>InternalWriteValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwritewhitespace" name="InternalWriteWhitespace" returns="System.Void" params="String" access="internal" signature="internal Void InternalWriteWhitespace(String ws)">
+        <template #name><h3>InternalWriteWhitespace</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="ws" type="System.String"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+<doc-member id="method-internalwritecomment" name="InternalWriteComment" returns="System.Void" access="internal" signature="internal Void InternalWriteComment()">
+        <template #name><h3>InternalWriteComment</h3></template>
+    </doc-member>
+</doc-member-group>
+
+
+    
+                <!-- Required only on API pages -->
+                <doc-toolbar-member-filter-no-results />
+            </div>
+        </main>
+        <footer class="flex flex-wrap items-center justify-between border-t dark:border-dark-650 pt-6 mb-8">
+    <div>
+        <ul class="flex flex-wrap items-center text-sm">
+            <li>
+                <a href="https://www.newtonsoft.com/store/termsandconditions" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Terms</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/store/privacy" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Privacy</a>
+            </li>
+            <li>
+                <a href="https://www.newtonsoft.com/contact" class="block mr-4 py-2 text-sm whitespace-nowrap transition-colors duration-200 ease-linear text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 md:mb-0">Contact</a>
+            </li>
+        </ul>
+    </div>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+</div>
+</footer>
+
+    </div>
+    
+    <!-- Rendered if sidebar right is enabled -->
+    <!-- Sidebar right skeleton-->
+    <div v-cloak class="fixed top-0 bottom-0 right-0 transform translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:flex-shrink-0 lg:pt-6 lg:transform-none lg:w-56 lg:z-0 md:w-72 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+        <div class="pl-5">
+            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+        </div>
+    </div>
+    
+    <!-- User should be able to hide sidebar right -->
+    <doc-sidebar-right v-cloak></doc-sidebar-right>
+</div>
+
+        </div>
+    </div>
+
+    <doc-search-mobile></doc-search-mobile>
+    <doc-back-to-top></doc-back-to-top>
+</div>
+
+
+        <div id="docs-overlay-target"></div>
+
+        <script>window.__DOCS__ = { "title": "JsonWriter", icon: "file" }</script>
+    </body>
+</html>
