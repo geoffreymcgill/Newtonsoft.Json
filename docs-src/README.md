@@ -2,7 +2,7 @@
 
 Json.NET is a popular high-performance JSON framework for .NET.
 
-![Json.NET logo](logo.jpg)
+![Json.NET logo](jsonnet-logo.png)
 
 ## Benefits and Features
 
