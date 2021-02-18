@@ -245,20 +245,7 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JObject" signature="public JObject(JObject other)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JObject"/> class from another <see cref="T:Newtonsoft.Json.Linq.JObject"/> object.</p>
-
-        </doc-member>
-
-        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JObject(object[] content)">
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JObject(object[] content)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -271,7 +258,7 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="object" signature="public JObject(object content)">
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="object" signature="public JObject(object content)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -281,6 +268,19 @@
             </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JObject"/> class with the specified content.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="JObject" signature="public JObject(JObject other)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JObject"/> class from another <see cref="T:Newtonsoft.Json.Linq.JObject"/> object.</p>
 
         </doc-member>
     </doc-overload-group>
@@ -647,7 +647,21 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-trygetvalue">
-        <doc-member id="method-trygetvalue" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, StringComparison, JToken?" signature="public bool TryGetValue(string propertyName, StringComparison comparison, JToken? value)">
+        <doc-member id="method-trygetvalue" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, JToken?" signature="public bool TryGetValue(string propertyName, JToken? value)">
+            <template #name><h3>TryGetValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyName" type="string"></doc-parameter>
+                    <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Tries to get the <see cref="T:Newtonsoft.Json.Linq.JToken"/> with the specified property name.</p>
+
+        </doc-member>
+
+        <doc-member id="method-trygetvalue-1" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, StringComparison, JToken?" signature="public bool TryGetValue(string propertyName, StringComparison comparison, JToken? value)">
             <template #name><h3>TryGetValue</h3></template>
 
             <template #parameters>
@@ -661,20 +675,6 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
 <p>Tries to get the <see cref="T:Newtonsoft.Json.Linq.JToken"/> with the specified property name.
 The exact property name will be searched for first and if no matching property is found then
 the <see cref="!:StringComparison"/> will be used to match a property.</p>
-
-        </doc-member>
-
-        <doc-member id="method-trygetvalue-1" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, JToken?" signature="public bool TryGetValue(string propertyName, JToken? value)">
-            <template #name><h3>TryGetValue</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="propertyName" type="string"></doc-parameter>
-                    <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Tries to get the <see cref="T:Newtonsoft.Json.Linq.JToken"/> with the specified property name.</p>
 
         </doc-member>
     </doc-overload-group>
@@ -716,6 +716,24 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
         </template>
 
 <p>Writes this token to a <see cref="T:Newtonsoft.Json.JsonWriter"/> asynchronously.</p>
+
+    </doc-member>
+</doc-member-group>
+
+<doc-member-group id="events">
+    <template #title>Events</template>
+
+    <doc-member id="property-propertychanged" name="PropertyChanged" type="PropertyChangedEventHandler?" signature="public event PropertyChangedEventHandler? PropertyChanged">
+        <template #name><h3>PropertyChanged</h3></template>
+
+<p>Occurs when a property value changes.</p>
+
+    </doc-member>
+
+    <doc-member id="property-propertychanging" name="PropertyChanging" type="PropertyChangingEventHandler?" signature="public event PropertyChangingEventHandler? PropertyChanging">
+        <template #name><h3>PropertyChanging</h3></template>
+
+<p>Occurs when a property value is changing.</p>
 
     </doc-member>
 </doc-member-group>

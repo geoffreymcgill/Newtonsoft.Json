@@ -250,7 +250,14 @@
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-.ctor">
-        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="JContainer" signature="public JTokenWriter(JContainer container)">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JTokenWriter()">
+            <template #name><h3>.ctor</h3></template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JTokenWriter"/> class.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JContainer" signature="public JTokenWriter(JContainer container)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -260,13 +267,6 @@
             </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JTokenWriter"/> class writing to the given <see cref="T:Newtonsoft.Json.Linq.JContainer"/>.</p>
-
-        </doc-member>
-
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JTokenWriter()">
-            <template #name><h3>.ctor</h3></template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JTokenWriter"/> class.</p>
 
         </doc-member>
     </doc-overload-group>

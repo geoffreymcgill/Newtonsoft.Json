@@ -623,13 +623,12 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-load">
-        <doc-member id="method-load" overload-id="group-load" name="Load" returns="JToken" params="JsonReader, JsonLoadSettings?" signature="public static JToken Load(JsonReader reader, JsonLoadSettings? settings)">
+        <doc-member id="method-load" overload-id="group-load" name="Load" returns="JToken" params="JsonReader" signature="public static JToken Load(JsonReader reader)">
             <template #name><h3>Load</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -637,12 +636,13 @@
 
         </doc-member>
 
-        <doc-member id="method-load-1" overload-id="group-load" name="Load" returns="JToken" params="JsonReader" signature="public static JToken Load(JsonReader reader)">
+        <doc-member id="method-load-1" overload-id="group-load" name="Load" returns="JToken" params="JsonReader, JsonLoadSettings?" signature="public static JToken Load(JsonReader reader, JsonLoadSettings? settings)">
             <template #name><h3>Load</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -951,20 +951,7 @@
 
         </doc-member>
 
-        <doc-member id="method-toobject-1" overload-id="group-toobject" name="ToObject" returns="object?" params="Type" signature="public object? ToObject(Type objectType)">
-            <template #name><h3>ToObject</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="objectType" type="Type"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Creates an instance of the specified .NET type from the <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
-
-        </doc-member>
-
-        <doc-member id="method-toobject-2" overload-id="group-toobject" name="ToObject" returns="T?" params="JsonSerializer" signature="public T? ToObject(JsonSerializer jsonSerializer)">
+        <doc-member id="method-toobject-1" overload-id="group-toobject" name="ToObject" returns="T?" params="JsonSerializer" signature="public T? ToObject(JsonSerializer jsonSerializer)">
             <template #name><h3>ToObject</h3></template>
 
             <template #parameters>
@@ -974,6 +961,19 @@
             </template>
 
 <p>Creates an instance of the specified .NET type from the <see cref="T:Newtonsoft.Json.Linq.JToken"/> using the specified <see cref="T:Newtonsoft.Json.JsonSerializer"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-toobject-2" overload-id="group-toobject" name="ToObject" returns="object?" params="Type" signature="public object? ToObject(Type objectType)">
+            <template #name><h3>ToObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="objectType" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Creates an instance of the specified .NET type from the <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
 
         </doc-member>
 
@@ -1062,13 +1062,12 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-writetoasync">
-        <doc-member id="method-writetoasync" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public virtual Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+        <doc-member id="method-writetoasync" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, JsonConverter[]" signature="public Task WriteToAsync(JsonWriter writer, JsonConverter[] converters)">
             <template #name><h3>WriteToAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                     <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1077,12 +1076,13 @@
 
         </doc-member>
 
-        <doc-member id="method-writetoasync-1" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, JsonConverter[]" signature="public Task WriteToAsync(JsonWriter writer, JsonConverter[] converters)">
+        <doc-member id="method-writetoasync-1" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public virtual Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
             <template #name><h3>WriteToAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                     <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
                 </doc-parameters>
             </template>

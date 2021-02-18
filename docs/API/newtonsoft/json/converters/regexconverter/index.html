@@ -306,7 +306,19 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-writejson">
-        <doc-member id="method-writejson" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+        <doc-member id="method-writejson" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, Regex, JsonSerializer" access="private" signature="private void WriteJson(JsonWriter writer, Regex regex, JsonSerializer serializer)">
+            <template #name><h3>WriteJson</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="regex" type="Regex"></doc-parameter>
+                    <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writejson-1" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
             <template #name><h3>WriteJson</h3></template>
 
             <template #parameters>
@@ -319,18 +331,6 @@
 
 <p>Writes the JSON representation of the object.</p>
 
-        </doc-member>
-
-        <doc-member id="method-writejson-1" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, Regex, JsonSerializer" access="private" signature="private void WriteJson(JsonWriter writer, Regex regex, JsonSerializer serializer)">
-            <template #name><h3>WriteJson</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                    <doc-parameter name="regex" type="Regex"></doc-parameter>
-                    <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-                </doc-parameters>
-            </template>
         </doc-member>
     </doc-overload-group>
 </doc-member-group>

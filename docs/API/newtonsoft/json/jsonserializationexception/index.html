@@ -258,7 +258,21 @@ with a specified error message.</p>
 
         </doc-member>
 
-        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string, Exception" signature="public JsonSerializationException(string message, Exception innerException)">
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="SerializationInfo, StreamingContext" signature="public JsonSerializationException(SerializationInfo info, StreamingContext context)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="info" type="SerializationInfo"></doc-parameter>
+                    <doc-parameter name="context" type="StreamingContext"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonSerializationException"/> class.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="string, Exception" signature="public JsonSerializationException(string message, Exception innerException)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -270,20 +284,6 @@ with a specified error message.</p>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonSerializationException"/> class
 with a specified error message and a reference to the inner exception that is the cause of this exception.</p>
-
-        </doc-member>
-
-        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="SerializationInfo, StreamingContext" signature="public JsonSerializationException(SerializationInfo info, StreamingContext context)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="info" type="SerializationInfo"></doc-parameter>
-                    <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonSerializationException"/> class.</p>
 
         </doc-member>
 

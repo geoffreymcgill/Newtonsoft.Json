@@ -383,7 +383,33 @@
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-values">
-        <doc-member id="method-values" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>, object?" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source, object? key)">
+        <doc-member id="method-values" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source)">
+            <template #name><h3>Values</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a collection of child values of every object in the source collection.</p>
+
+        </doc-member>
+
+        <doc-member id="method-values-1" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source)">
+            <template #name><h3>Values</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a collection of converted child values of every object in the source collection.</p>
+
+        </doc-member>
+
+        <doc-member id="method-values-2" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>, object?" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source, object? key)">
             <template #name><h3>Values</h3></template>
 
             <template #parameters>
@@ -397,20 +423,7 @@
 
         </doc-member>
 
-        <doc-member id="method-values-1" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source)">
-            <template #name><h3>Values</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Returns a collection of child values of every object in the source collection.</p>
-
-        </doc-member>
-
-        <doc-member id="method-values-2" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>, object" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source, object key)">
+        <doc-member id="method-values-3" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>, object" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source, object key)">
             <template #name><h3>Values</h3></template>
 
             <template #parameters>
@@ -421,19 +434,6 @@
             </template>
 
 <p>Returns a collection of converted child values of every object in the source collection with the given key.</p>
-
-        </doc-member>
-
-        <doc-member id="method-values-3" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source)">
-            <template #name><h3>Values</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Returns a collection of converted child values of every object in the source collection.</p>
 
         </doc-member>
 

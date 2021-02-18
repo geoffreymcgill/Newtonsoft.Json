@@ -383,22 +383,22 @@ are written to JSON text.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-autocompleteasync">
-        <doc-member id="method-autocompleteasync" overload-id="group-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="JsonToken, CancellationToken" access="internal" signature="internal Task AutoCompleteAsync(JsonToken tokenBeingWritten, CancellationToken cancellationToken)">
+        <doc-member id="method-autocompleteasync" overload-id="group-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="CancellationToken" access="private" signature="private async Task AutoCompleteAsync(CancellationToken cancellationToken)">
             <template #name><h3>AutoCompleteAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="tokenBeingWritten" type="Newtonsoft.Json.JsonToken"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-autocompleteasync-1" overload-id="group-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="CancellationToken" access="private" signature="private async Task AutoCompleteAsync(CancellationToken cancellationToken)">
+        <doc-member id="method-autocompleteasync-1" overload-id="group-autocompleteasync" name="AutoCompleteAsync" returns="Task" params="JsonToken, CancellationToken" access="internal" signature="internal Task AutoCompleteAsync(JsonToken tokenBeingWritten, CancellationToken cancellationToken)">
             <template #name><h3>AutoCompleteAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
+                    <doc-parameter name="tokenBeingWritten" type="Newtonsoft.Json.JsonToken"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -779,17 +779,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writeend-1" overload-id="group-writeend" name="WriteEnd" returns="void" params="JsonContainerType" access="private" signature="private void WriteEnd(JsonContainerType type)">
-            <template #name><h3>WriteEnd</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-writeend-2" overload-id="group-writeend" name="WriteEnd" returns="void" params="JsonToken" access="protected" signature="protected virtual void WriteEnd(JsonToken token)">
+        <doc-member id="method-writeend-1" overload-id="group-writeend" name="WriteEnd" returns="void" params="JsonToken" access="protected" signature="protected virtual void WriteEnd(JsonToken token)">
             <template #name><h3>WriteEnd</h3></template>
 
             <template #parameters>
@@ -800,6 +790,16 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
 <p>Writes the specified end token.</p>
 
+        </doc-member>
+
+        <doc-member id="method-writeend-2" overload-id="group-writeend" name="WriteEnd" returns="void" params="JsonContainerType" access="private" signature="private void WriteEnd(JsonContainerType type)">
+            <template #name><h3>WriteEnd</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
+                </doc-parameters>
+            </template>
         </doc-member>
     </doc-overload-group>
 
@@ -824,7 +824,20 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
     </doc-member>
 
     <doc-overload-group overload-id="group-writeendasync">
-        <doc-member id="method-writeendasync" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="JsonToken, CancellationToken" access="protected" signature="protected virtual Task WriteEndAsync(JsonToken token, CancellationToken cancellationToken)">
+        <doc-member id="method-writeendasync" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndAsync(CancellationToken cancellationToken = null)">
+            <template #name><h3>WriteEndAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Asynchronously writes the end of the current JSON object or array.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writeendasync-1" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="JsonToken, CancellationToken" access="protected" signature="protected virtual Task WriteEndAsync(JsonToken token, CancellationToken cancellationToken)">
             <template #name><h3>WriteEndAsync</h3></template>
 
             <template #parameters>
@@ -835,19 +848,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
 
 <p>Asynchronously writes the specified end token.</p>
-
-        </doc-member>
-
-        <doc-member id="method-writeendasync-1" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="CancellationToken" signature="public virtual Task WriteEndAsync(CancellationToken cancellationToken = null)">
-            <template #name><h3>WriteEndAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Asynchronously writes the end of the current JSON object or array.</p>
 
         </doc-member>
     </doc-overload-group>
@@ -1157,7 +1157,20 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writetoken-1" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonReader, bool" signature="public void WriteToken(JsonReader reader, bool writeChildren)">
+        <doc-member id="method-writetoken-1" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken" signature="public void WriteToken(JsonToken token)">
+            <template #name><h3>WriteToken</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writetoken-2" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonReader, bool" signature="public void WriteToken(JsonReader reader, bool writeChildren)">
             <template #name><h3>WriteToken</h3></template>
 
             <template #parameters>
@@ -1171,7 +1184,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writetoken-2" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken, object?" signature="public void WriteToken(JsonToken token, object? value)">
+        <doc-member id="method-writetoken-3" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken, object?" signature="public void WriteToken(JsonToken token, object? value)">
             <template #name><h3>WriteToken</h3></template>
 
             <template #parameters>
@@ -1182,19 +1195,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
 
 <p>Writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
-
-        </doc-member>
-
-        <doc-member id="method-writetoken-3" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken" signature="public void WriteToken(JsonToken token)">
-            <template #name><h3>WriteToken</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token.</p>
 
         </doc-member>
 
@@ -1227,7 +1227,21 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writetokenasync-1" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, bool, CancellationToken" signature="public Task WriteTokenAsync(JsonReader reader, bool writeChildren, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writetokenasync-1" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, CancellationToken cancellationToken = null)">
+            <template #name><h3>WriteTokenAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Asynchronously writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writetokenasync-2" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, bool, CancellationToken" signature="public Task WriteTokenAsync(JsonReader reader, bool writeChildren, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteTokenAsync</h3></template>
 
             <template #parameters>
@@ -1239,20 +1253,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
 
 <p>Asynchronously writes the current <see cref="T:Newtonsoft.Json.JsonReader"/> token.</p>
-
-        </doc-member>
-
-        <doc-member id="method-writetokenasync-2" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, CancellationToken cancellationToken = null)">
-            <template #name><h3>WriteTokenAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Asynchronously writes the <see cref="T:Newtonsoft.Json.JsonToken"/> token and its value.</p>
 
         </doc-member>
 

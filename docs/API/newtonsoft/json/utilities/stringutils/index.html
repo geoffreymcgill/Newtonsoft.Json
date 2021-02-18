@@ -278,7 +278,19 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-formatwith-1" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1)">
+        <doc-member id="method-formatwith-1" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?[]" access="private" signature="private static string FormatWith(string format, IFormatProvider provider, object?[] args)">
+            <template #name><h3>FormatWith</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="format" type="string"></doc-parameter>
+                    <doc-parameter name="provider" type="IFormatProvider"></doc-parameter>
+                    <doc-parameter name="args" type="object?[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-formatwith-2" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1)">
             <template #name><h3>FormatWith</h3></template>
 
             <template #parameters>
@@ -291,7 +303,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-formatwith-2" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1, object? arg2)">
+        <doc-member id="method-formatwith-3" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1, object? arg2)">
             <template #name><h3>FormatWith</h3></template>
 
             <template #parameters>
@@ -305,7 +317,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-formatwith-3" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1, object? arg2, object? arg3)">
+        <doc-member id="method-formatwith-4" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?, object?, object?, object?" signature="public static string FormatWith(string format, IFormatProvider provider, object? arg0, object? arg1, object? arg2, object? arg3)">
             <template #name><h3>FormatWith</h3></template>
 
             <template #parameters>
@@ -316,18 +328,6 @@
                     <doc-parameter name="arg1" type="object?"></doc-parameter>
                     <doc-parameter name="arg2" type="object?"></doc-parameter>
                     <doc-parameter name="arg3" type="object?"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-formatwith-4" overload-id="group-formatwith" name="FormatWith" returns="string" params="string, IFormatProvider, object?[]" access="private" signature="private static string FormatWith(string format, IFormatProvider provider, object?[] args)">
-            <template #name><h3>FormatWith</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="format" type="string"></doc-parameter>
-                    <doc-parameter name="provider" type="IFormatProvider"></doc-parameter>
-                    <doc-parameter name="args" type="object?[]"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>

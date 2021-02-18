@@ -671,7 +671,21 @@ from <see cref="P:Newtonsoft.Json.JsonConvert.DefaultSettings"/> as well as the 
 
         </doc-member>
 
-        <doc-member id="method-deserialize-1" overload-id="group-deserialize" name="Deserialize" returns="object?" params="TextReader, Type" signature="public object? Deserialize(TextReader reader, Type objectType)">
+        <doc-member id="method-deserialize-1" overload-id="group-deserialize" name="Deserialize" returns="T?" params="JsonReader" signature="public T? Deserialize(JsonReader reader)">
+            <template #name><h3>Deserialize</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON structure contained by the specified <see cref="T:Newtonsoft.Json.JsonReader"/>
+into an instance of the specified type.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserialize-2" overload-id="group-deserialize" name="Deserialize" returns="object?" params="TextReader, Type" signature="public object? Deserialize(TextReader reader, Type objectType)">
             <template #name><h3>Deserialize</h3></template>
 
             <template #parameters>
@@ -682,20 +696,6 @@ from <see cref="P:Newtonsoft.Json.JsonConvert.DefaultSettings"/> as well as the 
             </template>
 
 <p>Deserializes the JSON structure contained by the specified <see cref="!:TextReader"/>
-into an instance of the specified type.</p>
-
-        </doc-member>
-
-        <doc-member id="method-deserialize-2" overload-id="group-deserialize" name="Deserialize" returns="T?" params="JsonReader" signature="public T? Deserialize(JsonReader reader)">
-            <template #name><h3>Deserialize</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Deserializes the JSON structure contained by the specified <see cref="T:Newtonsoft.Json.JsonReader"/>
 into an instance of the specified type.</p>
 
         </doc-member>
@@ -826,7 +826,22 @@ into an instance of the specified type.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-serialize">
-        <doc-member id="method-serialize" overload-id="group-serialize" name="Serialize" returns="void" params="TextWriter, object?" signature="public void Serialize(TextWriter textWriter, object? value)">
+        <doc-member id="method-serialize" overload-id="group-serialize" name="Serialize" returns="void" params="JsonWriter, object?" signature="public void Serialize(JsonWriter jsonWriter, object? value)">
+            <template #name><h3>Serialize</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified <see cref="!:Object"/> and writes the JSON structure
+using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serialize-1" overload-id="group-serialize" name="Serialize" returns="void" params="TextWriter, object?" signature="public void Serialize(TextWriter textWriter, object? value)">
             <template #name><h3>Serialize</h3></template>
 
             <template #parameters>
@@ -841,7 +856,7 @@ using the specified <see cref="!:TextWriter"/>.</p>
 
         </doc-member>
 
-        <doc-member id="method-serialize-1" overload-id="group-serialize" name="Serialize" returns="void" params="JsonWriter, object?, Type?" signature="public void Serialize(JsonWriter jsonWriter, object? value, Type? objectType)">
+        <doc-member id="method-serialize-2" overload-id="group-serialize" name="Serialize" returns="void" params="JsonWriter, object?, Type?" signature="public void Serialize(JsonWriter jsonWriter, object? value, Type? objectType)">
             <template #name><h3>Serialize</h3></template>
 
             <template #parameters>
@@ -857,7 +872,7 @@ using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
 
         </doc-member>
 
-        <doc-member id="method-serialize-2" overload-id="group-serialize" name="Serialize" returns="void" params="TextWriter, object?, Type" signature="public void Serialize(TextWriter textWriter, object? value, Type objectType)">
+        <doc-member id="method-serialize-3" overload-id="group-serialize" name="Serialize" returns="void" params="TextWriter, object?, Type" signature="public void Serialize(TextWriter textWriter, object? value, Type objectType)">
             <template #name><h3>Serialize</h3></template>
 
             <template #parameters>
@@ -870,21 +885,6 @@ using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
 
 <p>Serializes the specified <see cref="!:Object"/> and writes the JSON structure
 using the specified <see cref="!:TextWriter"/>.</p>
-
-        </doc-member>
-
-        <doc-member id="method-serialize-3" overload-id="group-serialize" name="Serialize" returns="void" params="JsonWriter, object?" signature="public void Serialize(JsonWriter jsonWriter, object? value)">
-            <template #name><h3>Serialize</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Serializes the specified <see cref="!:Object"/> and writes the JSON structure
-using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
 
         </doc-member>
     </doc-overload-group>
@@ -915,6 +915,17 @@ using the specified <see cref="T:Newtonsoft.Json.JsonWriter"/>.</p>
                 <doc-parameter name="previousDateFormatString" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
+    </doc-member>
+</doc-member-group>
+
+<doc-member-group id="events">
+    <template #title>Events</template>
+
+    <doc-member id="property-error" name="Error" type="EventHandler<ErrorEventArgs>?" signature="public virtual event EventHandler<ErrorEventArgs>? Error">
+        <template #name><h3>Error</h3></template>
+
+<p>Occurs when the <see cref="T:Newtonsoft.Json.JsonSerializer"/> errors during serialization and deserialization.</p>
+
     </doc-member>
 </doc-member-group>
 

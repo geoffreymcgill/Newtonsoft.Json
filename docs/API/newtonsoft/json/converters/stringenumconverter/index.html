@@ -259,13 +259,12 @@ The default value is <c>true</c>.</p>
 
         </doc-member>
 
-        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="NamingStrategy, bool" signature="public StringEnumConverter(NamingStrategy namingStrategy, bool allowIntegerValues = true)">
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="Type" signature="public StringEnumConverter(Type namingStrategyType)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
-                    <doc-parameter name="allowIntegerValues" type="bool"></doc-parameter>
+                    <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -273,12 +272,13 @@ The default value is <c>true</c>.</p>
 
         </doc-member>
 
-        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="Type" signature="public StringEnumConverter(Type namingStrategyType)">
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="NamingStrategy, bool" signature="public StringEnumConverter(NamingStrategy namingStrategy, bool allowIntegerValues = true)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
+                    <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
+                    <doc-parameter name="allowIntegerValues" type="bool"></doc-parameter>
                 </doc-parameters>
             </template>
 

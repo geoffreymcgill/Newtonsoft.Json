@@ -430,25 +430,25 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritepropertynameasync-1" overload-id="group-dowritepropertynameasync" name="DoWritePropertyNameAsync" returns="Task" params="Task, string, CancellationToken" access="private" signature="private async Task DoWritePropertyNameAsync(Task task, string name, CancellationToken cancellationToken)">
-            <template #name><h3>DoWritePropertyNameAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="task" type="Task"></doc-parameter>
-                    <doc-parameter name="name" type="string"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-dowritepropertynameasync-2" overload-id="group-dowritepropertynameasync" name="DoWritePropertyNameAsync" returns="Task" params="string, bool, CancellationToken" access="internal" signature="internal async Task DoWritePropertyNameAsync(string name, bool escape, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritepropertynameasync-1" overload-id="group-dowritepropertynameasync" name="DoWritePropertyNameAsync" returns="Task" params="string, bool, CancellationToken" access="internal" signature="internal async Task DoWritePropertyNameAsync(string name, bool escape, CancellationToken cancellationToken)">
             <template #name><h3>DoWritePropertyNameAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="name" type="string"></doc-parameter>
                     <doc-parameter name="escape" type="bool"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-dowritepropertynameasync-2" overload-id="group-dowritepropertynameasync" name="DoWritePropertyNameAsync" returns="Task" params="Task, string, CancellationToken" access="private" signature="private async Task DoWritePropertyNameAsync(Task task, string name, CancellationToken cancellationToken)">
+            <template #name><h3>DoWritePropertyNameAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="name" type="string"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -770,19 +770,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritevalueasync-18" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="Task, string?, CancellationToken" access="private" signature="private async Task DoWriteValueAsync(Task task, string? value, CancellationToken cancellationToken)">
-            <template #name><h3>DoWriteValueAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="task" type="Task"></doc-parameter>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-dowritevalueasync-19" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="TimeSpan, CancellationToken" access="internal" signature="internal async Task DoWriteValueAsync(TimeSpan value, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritevalueasync-18" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="TimeSpan, CancellationToken" access="internal" signature="internal async Task DoWriteValueAsync(TimeSpan value, CancellationToken cancellationToken)">
             <template #name><h3>DoWriteValueAsync</h3></template>
 
             <template #parameters>
@@ -793,7 +781,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritevalueasync-20" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="TimeSpan?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(TimeSpan? value, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritevalueasync-19" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="TimeSpan?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(TimeSpan? value, CancellationToken cancellationToken)">
             <template #name><h3>DoWriteValueAsync</h3></template>
 
             <template #parameters>
@@ -804,7 +792,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritevalueasync-21" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="uint?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(uint? value, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritevalueasync-20" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="uint?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(uint? value, CancellationToken cancellationToken)">
             <template #name><h3>DoWriteValueAsync</h3></template>
 
             <template #parameters>
@@ -815,7 +803,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritevalueasync-22" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="ulong?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(ulong? value, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritevalueasync-21" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="ulong?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(ulong? value, CancellationToken cancellationToken)">
             <template #name><h3>DoWriteValueAsync</h3></template>
 
             <template #parameters>
@@ -826,12 +814,24 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-dowritevalueasync-23" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="ushort?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(ushort? value, CancellationToken cancellationToken)">
+        <doc-member id="method-dowritevalueasync-22" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="ushort?, CancellationToken" access="internal" signature="internal Task DoWriteValueAsync(ushort? value, CancellationToken cancellationToken)">
             <template #name><h3>DoWriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="ushort?"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-dowritevalueasync-23" overload-id="group-dowritevalueasync" name="DoWriteValueAsync" returns="Task" params="Task, string?, CancellationToken" access="private" signature="private async Task DoWriteValueAsync(Task task, string? value, CancellationToken cancellationToken)">
+            <template #name><h3>DoWriteValueAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -860,7 +860,11 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
     </doc-member>
 
     <doc-overload-group overload-id="group-ensurewritebuffer">
-        <doc-member id="method-ensurewritebuffer" overload-id="group-ensurewritebuffer" name="EnsureWriteBuffer" returns="char[]" params="int, int" access="internal" signature="internal char[] EnsureWriteBuffer(int length, int copyTo)">
+        <doc-member id="method-ensurewritebuffer" overload-id="group-ensurewritebuffer" name="EnsureWriteBuffer" returns="void" access="private" signature="private void EnsureWriteBuffer()">
+            <template #name><h3>EnsureWriteBuffer</h3></template>
+        </doc-member>
+
+        <doc-member id="method-ensurewritebuffer-1" overload-id="group-ensurewritebuffer" name="EnsureWriteBuffer" returns="char[]" params="int, int" access="internal" signature="internal char[] EnsureWriteBuffer(int length, int copyTo)">
             <template #name><h3>EnsureWriteBuffer</h3></template>
 
             <template #parameters>
@@ -869,10 +873,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
                     <doc-parameter name="copyTo" type="int"></doc-parameter>
                 </doc-parameters>
             </template>
-        </doc-member>
-
-        <doc-member id="method-ensurewritebuffer-1" overload-id="group-ensurewritebuffer" name="EnsureWriteBuffer" returns="void" access="private" signature="private void EnsureWriteBuffer()">
-            <template #name><h3>EnsureWriteBuffer</h3></template>
         </doc-member>
     </doc-overload-group>
 
@@ -974,7 +974,20 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
     </doc-member>
 
     <doc-overload-group overload-id="group-writeendasync">
-        <doc-member id="method-writeendasync" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="JsonToken, CancellationToken" access="protected" signature="protected sealed Task WriteEndAsync(JsonToken token, CancellationToken cancellationToken)">
+        <doc-member id="method-writeendasync" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="CancellationToken" signature="public sealed Task WriteEndAsync(CancellationToken cancellationToken = null)">
+            <template #name><h3>WriteEndAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Asynchronously writes the end of the current JSON object or array.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writeendasync-1" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="JsonToken, CancellationToken" access="protected" signature="protected sealed Task WriteEndAsync(JsonToken token, CancellationToken cancellationToken)">
             <template #name><h3>WriteEndAsync</h3></template>
 
             <template #parameters>
@@ -985,19 +998,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
 
 <p>Asynchronously writes the specified end token.</p>
-
-        </doc-member>
-
-        <doc-member id="method-writeendasync-1" overload-id="group-writeendasync" name="WriteEndAsync" returns="Task" params="CancellationToken" signature="public sealed Task WriteEndAsync(CancellationToken cancellationToken = null)">
-            <template #name><h3>WriteEndAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Asynchronously writes the end of the current JSON object or array.</p>
 
         </doc-member>
     </doc-overload-group>
@@ -1116,23 +1116,23 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-writeintegervalue-1" overload-id="group-writeintegervalue" name="WriteIntegerValue" returns="void" params="ulong, bool" access="private" signature="private void WriteIntegerValue(ulong value, bool negative)">
+        <doc-member id="method-writeintegervalue-1" overload-id="group-writeintegervalue" name="WriteIntegerValue" returns="void" params="int" access="private" signature="private void WriteIntegerValue(int value)">
+            <template #name><h3>WriteIntegerValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writeintegervalue-2" overload-id="group-writeintegervalue" name="WriteIntegerValue" returns="void" params="ulong, bool" access="private" signature="private void WriteIntegerValue(ulong value, bool negative)">
             <template #name><h3>WriteIntegerValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="ulong"></doc-parameter>
                     <doc-parameter name="negative" type="bool"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-writeintegervalue-2" overload-id="group-writeintegervalue" name="WriteIntegerValue" returns="void" params="int" access="private" signature="private void WriteIntegerValue(int value)">
-            <template #name><h3>WriteIntegerValue</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="int"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -1150,32 +1150,18 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-writeintegervalueasync">
-        <doc-member id="method-writeintegervalueasync" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="ulong, bool, CancellationToken" access="private" signature="private Task WriteIntegerValueAsync(ulong uvalue, bool negative, CancellationToken cancellationToken)">
+        <doc-member id="method-writeintegervalueasync" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="ulong, CancellationToken" access="internal" signature="internal Task WriteIntegerValueAsync(ulong uvalue, CancellationToken cancellationToken)">
             <template #name><h3>WriteIntegerValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="uvalue" type="ulong"></doc-parameter>
-                    <doc-parameter name="negative" type="bool"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-writeintegervalueasync-1" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="Task, ulong, bool, CancellationToken" access="private" signature="private async Task WriteIntegerValueAsync(Task task, ulong uvalue, bool negative, CancellationToken cancellationToken)">
-            <template #name><h3>WriteIntegerValueAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="task" type="Task"></doc-parameter>
-                    <doc-parameter name="uvalue" type="ulong"></doc-parameter>
-                    <doc-parameter name="negative" type="bool"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-writeintegervalueasync-2" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="long, CancellationToken" access="internal" signature="internal Task WriteIntegerValueAsync(long value, CancellationToken cancellationToken)">
+        <doc-member id="method-writeintegervalueasync-1" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="long, CancellationToken" access="internal" signature="internal Task WriteIntegerValueAsync(long value, CancellationToken cancellationToken)">
             <template #name><h3>WriteIntegerValueAsync</h3></template>
 
             <template #parameters>
@@ -1186,12 +1172,26 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
             </template>
         </doc-member>
 
-        <doc-member id="method-writeintegervalueasync-3" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="ulong, CancellationToken" access="internal" signature="internal Task WriteIntegerValueAsync(ulong uvalue, CancellationToken cancellationToken)">
+        <doc-member id="method-writeintegervalueasync-2" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="ulong, bool, CancellationToken" access="private" signature="private Task WriteIntegerValueAsync(ulong uvalue, bool negative, CancellationToken cancellationToken)">
             <template #name><h3>WriteIntegerValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="uvalue" type="ulong"></doc-parameter>
+                    <doc-parameter name="negative" type="bool"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writeintegervalueasync-3" overload-id="group-writeintegervalueasync" name="WriteIntegerValueAsync" returns="Task" params="Task, ulong, bool, CancellationToken" access="private" signature="private async Task WriteIntegerValueAsync(Task task, ulong uvalue, bool negative, CancellationToken cancellationToken)">
+            <template #name><h3>WriteIntegerValueAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="uvalue" type="ulong"></doc-parameter>
+                    <doc-parameter name="negative" type="bool"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1929,19 +1929,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-14" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="double, bool, CancellationToken" access="internal" signature="internal Task WriteValueAsync(double value, bool nullable, CancellationToken cancellationToken)">
-            <template #name><h3>WriteValueAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="double"></doc-parameter>
-                    <doc-parameter name="nullable" type="bool"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-writevalueasync-15" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="double?, CancellationToken" signature="public sealed Task WriteValueAsync(double? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-14" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="double?, CancellationToken" signature="public sealed Task WriteValueAsync(double? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -1955,7 +1943,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-16" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float, CancellationToken" signature="public sealed Task WriteValueAsync(float value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-15" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float, CancellationToken" signature="public sealed Task WriteValueAsync(float value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -1969,19 +1957,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-17" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float, bool, CancellationToken" access="internal" signature="internal Task WriteValueAsync(float value, bool nullable, CancellationToken cancellationToken)">
-            <template #name><h3>WriteValueAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="float"></doc-parameter>
-                    <doc-parameter name="nullable" type="bool"></doc-parameter>
-                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-writevalueasync-18" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float?, CancellationToken" signature="public sealed Task WriteValueAsync(float? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-16" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float?, CancellationToken" signature="public sealed Task WriteValueAsync(float? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -1995,7 +1971,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-19" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid, CancellationToken" signature="public sealed Task WriteValueAsync(Guid value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-17" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid, CancellationToken" signature="public sealed Task WriteValueAsync(Guid value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2009,7 +1985,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-20" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid?, CancellationToken" signature="public sealed Task WriteValueAsync(Guid? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-18" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid?, CancellationToken" signature="public sealed Task WriteValueAsync(Guid? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2023,7 +1999,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-21" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="int, CancellationToken" signature="public sealed Task WriteValueAsync(int value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-19" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="int, CancellationToken" signature="public sealed Task WriteValueAsync(int value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2037,7 +2013,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-22" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="int?, CancellationToken" signature="public sealed Task WriteValueAsync(int? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-20" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="int?, CancellationToken" signature="public sealed Task WriteValueAsync(int? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2051,7 +2027,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-23" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="long, CancellationToken" signature="public sealed Task WriteValueAsync(long value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-21" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="long, CancellationToken" signature="public sealed Task WriteValueAsync(long value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2065,7 +2041,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-24" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="long?, CancellationToken" signature="public sealed Task WriteValueAsync(long? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-22" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="long?, CancellationToken" signature="public sealed Task WriteValueAsync(long? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2079,7 +2055,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-25" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="BigInteger, CancellationToken" access="internal" signature="internal Task WriteValueAsync(BigInteger value, CancellationToken cancellationToken)">
+        <doc-member id="method-writevalueasync-23" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="BigInteger, CancellationToken" access="internal" signature="internal Task WriteValueAsync(BigInteger value, CancellationToken cancellationToken)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2090,7 +2066,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
             </template>
         </doc-member>
 
-        <doc-member id="method-writevalueasync-26" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="object?, CancellationToken" signature="public sealed Task WriteValueAsync(object? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-24" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="object?, CancellationToken" signature="public sealed Task WriteValueAsync(object? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2104,7 +2080,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-27" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="sbyte, CancellationToken" signature="public sealed Task WriteValueAsync(sbyte value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-25" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="sbyte, CancellationToken" signature="public sealed Task WriteValueAsync(sbyte value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2118,7 +2094,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-28" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="sbyte?, CancellationToken" signature="public sealed Task WriteValueAsync(sbyte? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-26" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="sbyte?, CancellationToken" signature="public sealed Task WriteValueAsync(sbyte? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2132,7 +2108,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-29" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="short, CancellationToken" signature="public sealed Task WriteValueAsync(short value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-27" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="short, CancellationToken" signature="public sealed Task WriteValueAsync(short value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2146,7 +2122,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-30" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="short?, CancellationToken" signature="public sealed Task WriteValueAsync(short? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-28" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="short?, CancellationToken" signature="public sealed Task WriteValueAsync(short? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2160,7 +2136,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-31" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="string?, CancellationToken" signature="public sealed Task WriteValueAsync(string? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-29" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="string?, CancellationToken" signature="public sealed Task WriteValueAsync(string? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2174,7 +2150,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-32" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan, CancellationToken" signature="public sealed Task WriteValueAsync(TimeSpan value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-30" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan, CancellationToken" signature="public sealed Task WriteValueAsync(TimeSpan value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2188,7 +2164,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-33" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan?, CancellationToken" signature="public sealed Task WriteValueAsync(TimeSpan? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-31" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan?, CancellationToken" signature="public sealed Task WriteValueAsync(TimeSpan? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2202,7 +2178,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-34" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="uint, CancellationToken" signature="public sealed Task WriteValueAsync(uint value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-32" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="uint, CancellationToken" signature="public sealed Task WriteValueAsync(uint value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2216,7 +2192,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-35" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="uint?, CancellationToken" signature="public sealed Task WriteValueAsync(uint? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-33" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="uint?, CancellationToken" signature="public sealed Task WriteValueAsync(uint? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2230,7 +2206,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-36" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ulong, CancellationToken" signature="public sealed Task WriteValueAsync(ulong value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-34" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ulong, CancellationToken" signature="public sealed Task WriteValueAsync(ulong value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2244,7 +2220,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-37" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ulong?, CancellationToken" signature="public sealed Task WriteValueAsync(ulong? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-35" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ulong?, CancellationToken" signature="public sealed Task WriteValueAsync(ulong? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2258,7 +2234,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-38" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Uri?, CancellationToken" signature="public sealed Task WriteValueAsync(Uri? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-36" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Uri?, CancellationToken" signature="public sealed Task WriteValueAsync(Uri? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2272,7 +2248,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-39" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ushort, CancellationToken" signature="public sealed Task WriteValueAsync(ushort value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-37" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ushort, CancellationToken" signature="public sealed Task WriteValueAsync(ushort value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2286,7 +2262,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-40" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ushort?, CancellationToken" signature="public sealed Task WriteValueAsync(ushort? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-38" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ushort?, CancellationToken" signature="public sealed Task WriteValueAsync(ushort? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
@@ -2298,6 +2274,30 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
 <p>Asynchronously writes a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:System.UInt16"/> value.</p>
 
+        </doc-member>
+
+        <doc-member id="method-writevalueasync-39" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="double, bool, CancellationToken" access="internal" signature="internal Task WriteValueAsync(double value, bool nullable, CancellationToken cancellationToken)">
+            <template #name><h3>WriteValueAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                    <doc-parameter name="nullable" type="bool"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writevalueasync-40" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float, bool, CancellationToken" access="internal" signature="internal Task WriteValueAsync(float value, bool nullable, CancellationToken cancellationToken)">
+            <template #name><h3>WriteValueAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="float"></doc-parameter>
+                    <doc-parameter name="nullable" type="bool"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
         </doc-member>
     </doc-overload-group>
 
@@ -2333,24 +2333,24 @@ An error will raised if the value cannot be written as a single JSON token.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-writevalueinternalasync">
-        <doc-member id="method-writevalueinternalasync" overload-id="group-writevalueinternalasync" name="WriteValueInternalAsync" returns="Task" params="JsonToken, string, CancellationToken" access="private" signature="private Task WriteValueInternalAsync(JsonToken token, string value, CancellationToken cancellationToken)">
+        <doc-member id="method-writevalueinternalasync" overload-id="group-writevalueinternalasync" name="WriteValueInternalAsync" returns="Task" params="Task, string, CancellationToken" access="private" signature="private async Task WriteValueInternalAsync(Task task, string value, CancellationToken cancellationToken)">
             <template #name><h3>WriteValueInternalAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
                     <doc-parameter name="value" type="string"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-writevalueinternalasync-1" overload-id="group-writevalueinternalasync" name="WriteValueInternalAsync" returns="Task" params="Task, string, CancellationToken" access="private" signature="private async Task WriteValueInternalAsync(Task task, string value, CancellationToken cancellationToken)">
+        <doc-member id="method-writevalueinternalasync-1" overload-id="group-writevalueinternalasync" name="WriteValueInternalAsync" returns="Task" params="JsonToken, string, CancellationToken" access="private" signature="private Task WriteValueInternalAsync(JsonToken token, string value, CancellationToken cancellationToken)">
             <template #name><h3>WriteValueInternalAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
                     <doc-parameter name="value" type="string"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>

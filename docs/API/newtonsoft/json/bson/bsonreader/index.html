@@ -301,20 +301,7 @@
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-.ctor">
-        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="Stream" signature="public BsonReader(Stream stream)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="stream" type="Stream"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonReader"/> class.</p>
-
-        </doc-member>
-
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="BinaryReader" signature="public BsonReader(BinaryReader reader)">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="BinaryReader" signature="public BsonReader(BinaryReader reader)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -327,12 +314,25 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="Stream, bool, DateTimeKind" signature="public BsonReader(Stream stream, bool readRootValueAsArray, DateTimeKind dateTimeKindHandling)">
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="Stream" signature="public BsonReader(Stream stream)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="stream" type="Stream"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonReader"/> class.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="BinaryReader, bool, DateTimeKind" signature="public BsonReader(BinaryReader reader, bool readRootValueAsArray, DateTimeKind dateTimeKindHandling)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="BinaryReader"></doc-parameter>
                     <doc-parameter name="readRootValueAsArray" type="bool"></doc-parameter>
                     <doc-parameter name="dateTimeKindHandling" type="DateTimeKind"></doc-parameter>
                 </doc-parameters>
@@ -342,12 +342,12 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="BinaryReader, bool, DateTimeKind" signature="public BsonReader(BinaryReader reader, bool readRootValueAsArray, DateTimeKind dateTimeKindHandling)">
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="Stream, bool, DateTimeKind" signature="public BsonReader(Stream stream, bool readRootValueAsArray, DateTimeKind dateTimeKindHandling)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="reader" type="BinaryReader"></doc-parameter>
+                    <doc-parameter name="stream" type="Stream"></doc-parameter>
                     <doc-parameter name="readRootValueAsArray" type="bool"></doc-parameter>
                     <doc-parameter name="dateTimeKindHandling" type="DateTimeKind"></doc-parameter>
                 </doc-parameters>
@@ -492,7 +492,11 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
     </doc-member>
 
     <doc-overload-group overload-id="group-readtype">
-        <doc-member id="method-readtype" overload-id="group-readtype" name="ReadType" returns="void" params="BsonType" access="private" signature="private void ReadType(BsonType type)">
+        <doc-member id="method-readtype" overload-id="group-readtype" name="ReadType" returns="BsonType" access="private" signature="private BsonType ReadType()">
+            <template #name><h3>ReadType</h3></template>
+        </doc-member>
+
+        <doc-member id="method-readtype-1" overload-id="group-readtype" name="ReadType" returns="void" params="BsonType" access="private" signature="private void ReadType(BsonType type)">
             <template #name><h3>ReadType</h3></template>
 
             <template #parameters>
@@ -500,10 +504,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
                     <doc-parameter name="type" type="Newtonsoft.Json.Bson.BsonType"></doc-parameter>
                 </doc-parameters>
             </template>
-        </doc-member>
-
-        <doc-member id="method-readtype-1" overload-id="group-readtype" name="ReadType" returns="BsonType" access="private" signature="private BsonType ReadType()">
-            <template #name><h3>ReadType</h3></template>
         </doc-member>
     </doc-overload-group>
 </doc-member-group>
