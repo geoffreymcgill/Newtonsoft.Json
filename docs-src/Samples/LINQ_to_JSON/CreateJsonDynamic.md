@@ -1,6 +1,6 @@
 ﻿# Create JSON with dynamic
 
-This sample creates [JObject](/API/newtonsoft/json/linq/jobject/) and [JArray](/API/newtonsoft/json/linq/jarray/) instances using the C# dynamic functionality.
+This sample creates [JObject](/api/newtonsoft/json/linq/jobject/) and [JArray](/api/newtonsoft/json/linq/jarray/) instances using the C# dynamic functionality.
 
 ## Sample
 

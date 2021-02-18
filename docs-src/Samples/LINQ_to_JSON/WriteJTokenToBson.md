@@ -1,6 +1,6 @@
 ﻿# Write as BSON
 
-This sample writes a [JObject](/API/newtonsoft/json/linq/jobject/) to BSON using [BsonWriter](/API/newtonsoft/json/bson/bsonwriter/).
+This sample writes a [JObject](/api/newtonsoft/json/linq/jobject/) to BSON using [BsonWriter](/api/newtonsoft/json/bson/bsonwriter/).
 
 ## Sample
 

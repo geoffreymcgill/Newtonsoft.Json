@@ -1,6 +1,6 @@
 ﻿# JsonIgnoreAttribute
 
-This sample uses the [JsonIgnoreAttribute](/API/newtonsoft/json/jsonignoreattribute/) to exclude a property from serialization.
+This sample uses the [JsonIgnoreAttribute](/api/newtonsoft/json/jsonignoreattribute/) to exclude a property from serialization.
 
 ## Sample
 

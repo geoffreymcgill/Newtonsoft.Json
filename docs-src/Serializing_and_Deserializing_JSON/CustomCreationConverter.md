@@ -1,6 +1,6 @@
 ﻿# CustomCreationConverter
 
-The [CustomCreationConverter<T>](/API/newtonsoft/json/converters/customcreationconverter/) is a JsonConverter that provides a way to customize how an object is created during JSON deserialization. Once the object has been created it will then have values populated onto it by the serializer.
+The [CustomCreationConverter<T>](/api/newtonsoft/json/converters/customcreationconverter/) is a JsonConverter that provides a way to customize how an object is created during JSON deserialization. Once the object has been created it will then have values populated onto it by the serializer.
 
 ## Example
 
@@ -18,4 +18,4 @@ region: CustomCreationConverterExample
 
 ## See Also
 
-- [CustomCreationConverter](/API/newtonsoft/json/converters/customcreationconverter/)
+- [CustomCreationConverter](/api/newtonsoft/json/converters/customcreationconverter/)

@@ -1,6 +1,6 @@
 ﻿# MissingMemberHandling setting
 
-This sample attempts to deserialize JSON with [MissingMemberHandling](/API/newtonsoft/json/missingmemberhandling/) set to error and a JSON property that doesn't match to a member, causing an exception.
+This sample attempts to deserialize JSON with [MissingMemberHandling](/api/newtonsoft/json/missingmemberhandling/) set to error and a JSON property that doesn't match to a member, causing an exception.
 
 ## Sample
 

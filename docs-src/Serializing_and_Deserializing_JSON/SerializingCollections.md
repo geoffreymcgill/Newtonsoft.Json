@@ -32,5 +32,5 @@ region: SerializingCollectionsDeserializingDictionaries
 ## See Also
 
 - [Serialization Guide](SerializationGuide.md)
-- [JsonConvert](/API/newtonsoft/json/jsonconvert/)
-- [JsonSerializer](/API/newtonsoft/json/jsonserializer/)
+- [JsonConvert](/api/newtonsoft/json/jsonconvert/)
+- [JsonSerializer](/api/newtonsoft/json/jsonserializer/)

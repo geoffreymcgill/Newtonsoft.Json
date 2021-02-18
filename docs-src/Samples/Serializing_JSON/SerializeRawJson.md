@@ -1,6 +1,6 @@
 ﻿# SerializeRawJson
 
-This sample uses [JRaw](/API/newtonsoft/json/linq/jraw/) properties to serialize JSON with raw content.
+This sample uses [JRaw](/api/newtonsoft/json/linq/jraw/) properties to serialize JSON with raw content.
 
 ## Sample
 

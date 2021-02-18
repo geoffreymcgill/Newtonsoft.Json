@@ -1,6 +1,6 @@
 ﻿# Querying JSON with JSON Path
 
-This sample loads JSON and then queries values from it using [SelectToken(string)](/API/newtonsoft/json/linq/jtoken/#method-selecttoken). 
+This sample loads JSON and then queries values from it using [SelectToken(string)](/api/newtonsoft/json/linq/jtoken/#method-selecttoken). 
 
 ## Sample
 

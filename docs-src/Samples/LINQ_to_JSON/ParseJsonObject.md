@@ -1,6 +1,6 @@
 ﻿# Parsing JSON Object using JObject.Parse
 
-This sample parses a JSON object using [JObject.Parse(string)](/API/newtonsoft/json/linq/jobject/#method-parse).
+This sample parses a JSON object using [JObject.Parse(string)](/api/newtonsoft/json/linq/jobject/#method-parse).
 
 ## Sample
 

@@ -1,6 +1,6 @@
 ﻿# Using JsonSchemaResolver
 
-This sample uses a [JsonSchemaResolver](/API/newtonsoft/json/schema/jsonschemaresolver/) to resolve schema references from different JSON documents.
+This sample uses a [JsonSchemaResolver](/api/newtonsoft/json/schema/jsonschemaresolver/) to resolve schema references from different JSON documents.
 
 :::caution
 **Obsolete.** JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.

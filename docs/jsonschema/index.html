@@ -185,7 +185,7 @@
         <span>Validating JSON with JSON Schema</span>
     </h1>
 </doc-anchor-target>
-<p>Json.NET supports the JSON Schema standard via the <a href="/Newtonsoft.Json/API/newtonsoft/json/schema/jsonschema/">JsonSchema</a> and <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> classes. It sits under the <a href="N:Newtonsoft.Json.Schema">Schema</a> namespace.</p>
+<p>Json.NET supports the JSON Schema standard via the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> classes. It sits under the <a href="N:Newtonsoft.Json.Schema">Schema</a> namespace.</p>
 <p>JSON Schema is used to validate the structure and data types of a piece of JSON, similar to XML Schema for XML. You can read more about JSON Schema at <a href="http://json-schema.org/">json-schema.org</a>.</p>
 <doc-alert type="warning"><p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
 </doc-alert>
@@ -195,13 +195,13 @@
         <span>Validating with JSON Schema</span>
     </h2>
 </doc-anchor-target>
-<p>The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the <a href="/Newtonsoft.Json/API/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema)</a> method with the JSON Schema.</p>
+<p>The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema)</a> method with the JSON Schema.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: IsValidBasic</code></pre>
-<p String="">To get validation error messages, use the <a href="/Newtonsoft.Json/API/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema,IList@)</a> or <a href="/Newtonsoft.Json/API/newtonsoft/json/schema/extensions/#method-validate">Validate(JToken,JsonSchema,ValidationEventHandler)</a> overloads.</p>
+<p String="">To get validation error messages, use the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema,IList@)</a> or <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-validate">Validate(JToken,JsonSchema,ValidationEventHandler)</a> overloads.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: IsValidMessages</code></pre>
-<p>Internally IsValid uses <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> to perform the JSON Schema validation. To skip the overhead of loading JSON into a JObject/JArray, validating the JSON, and then deserializing the JSON into a class, JsonValidatingReader can be used with JsonSerializer to validate JSON while the object is being deserialized.</p>
+<p>Internally IsValid uses <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> to perform the JSON Schema validation. To skip the overhead of loading JSON into a JObject/JArray, validating the JSON, and then deserializing the JSON into a class, JsonValidatingReader can be used with JsonSerializer to validate JSON while the object is being deserialized.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: JsonValidatingReader</code></pre>
 <doc-anchor-target id="creating-json-schemas">
@@ -210,7 +210,7 @@ region: JsonValidatingReader</code></pre>
         <span>Creating JSON Schemas</span>
     </h2>
 </doc-anchor-target>
-<p>The simplest way to get a <a href="/Newtonsoft.Json/API/newtonsoft/json/schema/jsonschema/">JsonSchema</a> object is to load it from a string or a file.</p>
+<p>The simplest way to get a <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a> object is to load it from a string or a file.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
 region: LoadJsonSchema</code></pre>
 <p>It is also possible to create JsonSchema objects in code.</p>
@@ -223,8 +223,8 @@ region: ManuallyCreateJsonSchema</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/Newtonsoft.Json/API/newtonsoft/json/schema/jsonschema/">JsonSchema</a></li>
-<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a></li>
 </ul>
 
     

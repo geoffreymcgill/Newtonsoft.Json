@@ -1,6 +1,6 @@
 ﻿# Custom JsonConverter
 
-This sample creates a custom [JsonConverter](/API/newtonsoft/json/jsonconverter/) that overrides serialization to add a keys property.
+This sample creates a custom [JsonConverter](/api/newtonsoft/json/jsonconverter/) that overrides serialization to add a keys property.
 
 ## Sample
 
