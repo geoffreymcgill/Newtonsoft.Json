@@ -1,6 +1,6 @@
 ﻿# Create JSON from an Object
 
-This sample converts .NET values to LINQ to JSON using [FromObject(object)](/api/newtonsoft/json/linq/jtoken/#method-fromobject)(object).
+This sample converts .NET values to LINQ to JSON using [FromObject(object)](/api/newtonsoft/json/linq/jtoken/#method-fromobject).
 
 ## Sample
 
