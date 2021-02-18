@@ -17,7 +17,7 @@ region: LinqToJsonCreateParseArray
 
 ## Loading JSON from a file
 
-JSON can also be loaded directly from a file using [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom)(Newtonsoft.Json.JsonReader).
+JSON can also be loaded directly from a file using [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom).
 
 ```csharp Reading JSON from a file
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
@@ -28,4 +28,4 @@ region: LinqToJsonReadObject
 
 - [LINQ to JSON](README.md)
 - [Parse(string)](/api/newtonsoft/json/linq/jtoken/#method-parse)
-- [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom)(Newtonsoft.Json.JsonReader)
+- [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom)
