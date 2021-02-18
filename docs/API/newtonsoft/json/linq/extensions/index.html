@@ -27,7 +27,7 @@
         <!-- Logo -->
         <div class="flex items-center h-full py-2">
             <div class="flex items-center px-2 md:px-6 md:w-72">
-                <span class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                <span id="docs-site-logo" class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
                     <a href="/Newtonsoft.Json/">Json.NET</a>
                 </span>
                 <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
@@ -99,11 +99,11 @@
 <div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-72 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
 
     <!-- Render this div, if config.showSidebarFilter is `true` -->
-    <div class="mt-6 px-6">
+    <div class="flex items-center h-16 px-6">
         <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
     </div>
 
-    <div class="pl-6 mb-4 mt-6">
+    <div class="pl-6 mb-4 mt-1">
         <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
         <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
         <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
@@ -211,8 +211,8 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-ancestors" name="Ancestors" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Ancestors(IEnumerable<T> source)">
-        <template #name><h3>Ancestors</h3></template>
+    <doc-member id="method-ancestors" name="Ancestors" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Ancestors<T>(IEnumerable<T> source)">
+        <template #name><h3>Ancestors&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -224,8 +224,8 @@
 
     </doc-member>
 
-    <doc-member id="method-ancestorsandself" name="AncestorsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> AncestorsAndSelf(IEnumerable<T> source)">
-        <template #name><h3>AncestorsAndSelf</h3></template>
+    <doc-member id="method-ancestorsandself" name="AncestorsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> AncestorsAndSelf<T>(IEnumerable<T> source)">
+        <template #name><h3>AncestorsAndSelf&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -251,8 +251,8 @@
 
         </doc-member>
 
-        <doc-member id="method-asjenumerable-1" overload-id="group-asjenumerable" name="AsJEnumerable" returns="IJEnumerable<T>" params="IEnumerable<T>" signature="public static IJEnumerable<T> AsJEnumerable(IEnumerable<T> source)">
-            <template #name><h3>AsJEnumerable</h3></template>
+        <doc-member id="method-asjenumerable-1" overload-id="group-asjenumerable" name="AsJEnumerable" returns="IJEnumerable<T>" params="IEnumerable<T>" signature="public static IJEnumerable<T> AsJEnumerable<T>(IEnumerable<T> source)">
+            <template #name><h3>AsJEnumerable&lt;T&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -266,8 +266,8 @@
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-children">
-        <doc-member id="method-children" overload-id="group-children" name="Children" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Children(IEnumerable<T> source)">
-            <template #name><h3>Children</h3></template>
+        <doc-member id="method-children" overload-id="group-children" name="Children" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Children<T>(IEnumerable<T> source)">
+            <template #name><h3>Children&lt;T&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -279,8 +279,8 @@
 
         </doc-member>
 
-        <doc-member id="method-children-1" overload-id="group-children" name="Children" returns="IEnumerable<U?>" params="IEnumerable<T>" signature="public static IEnumerable<U?> Children(IEnumerable<T> source)">
-            <template #name><h3>Children</h3></template>
+        <doc-member id="method-children-1" overload-id="group-children" name="Children" returns="IEnumerable<U?>" params="IEnumerable<T>" signature="public static IEnumerable<U?> Children<T, U>(IEnumerable<T> source)">
+            <template #name><h3>Children&lt;T, U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -294,8 +294,8 @@
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-convert">
-        <doc-member id="method-convert" overload-id="group-convert" name="Convert" returns="IEnumerable<U?>" params="IEnumerable<T>" access="internal" signature="internal static IEnumerable<U?> Convert(IEnumerable<T> source)">
-            <template #name><h3>Convert</h3></template>
+        <doc-member id="method-convert" overload-id="group-convert" name="Convert" returns="IEnumerable<U?>" params="IEnumerable<T>" access="internal" signature="internal static IEnumerable<U?> Convert<T, U>(IEnumerable<T> source)">
+            <template #name><h3>Convert&lt;T, U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -304,8 +304,8 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-convert-1" overload-id="group-convert" name="Convert" returns="U?" params="T" access="internal" signature="internal static U? Convert(T token)">
-            <template #name><h3>Convert</h3></template>
+        <doc-member id="method-convert-1" overload-id="group-convert" name="Convert" returns="U?" params="T" access="internal" signature="internal static U? Convert<T, U>(T token)">
+            <template #name><h3>Convert&lt;T, U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -315,8 +315,8 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-descendants" name="Descendants" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Descendants(IEnumerable<T> source)">
-        <template #name><h3>Descendants</h3></template>
+    <doc-member id="method-descendants" name="Descendants" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Descendants<T>(IEnumerable<T> source)">
+        <template #name><h3>Descendants&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -328,8 +328,8 @@
 
     </doc-member>
 
-    <doc-member id="method-descendantsandself" name="DescendantsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> DescendantsAndSelf(IEnumerable<T> source)">
-        <template #name><h3>DescendantsAndSelf</h3></template>
+    <doc-member id="method-descendantsandself" name="DescendantsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> DescendantsAndSelf<T>(IEnumerable<T> source)">
+        <template #name><h3>DescendantsAndSelf&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -355,8 +355,8 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-value">
-        <doc-member id="method-value" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<JToken>" signature="public static U? Value(IEnumerable<JToken> value)">
-            <template #name><h3>Value</h3></template>
+        <doc-member id="method-value" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<JToken>" signature="public static U? Value<U>(IEnumerable<JToken> value)">
+            <template #name><h3>Value&lt;U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -368,8 +368,8 @@
 
         </doc-member>
 
-        <doc-member id="method-value-1" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<T>" signature="public static U? Value(IEnumerable<T> value)">
-            <template #name><h3>Value</h3></template>
+        <doc-member id="method-value-1" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<T>" signature="public static U? Value<T, U>(IEnumerable<T> value)">
+            <template #name><h3>Value&lt;T, U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -396,8 +396,8 @@
 
         </doc-member>
 
-        <doc-member id="method-values-1" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source)">
-            <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-1" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>" signature="public static IEnumerable<U?> Values<U>(IEnumerable<JToken> source)">
+            <template #name><h3>Values&lt;U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -423,8 +423,8 @@
 
         </doc-member>
 
-        <doc-member id="method-values-3" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>, object" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source, object key)">
-            <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-3" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>, object" signature="public static IEnumerable<U?> Values<U>(IEnumerable<JToken> source, object key)">
+            <template #name><h3>Values&lt;U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -437,8 +437,8 @@
 
         </doc-member>
 
-        <doc-member id="method-values-4" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<T>, object?" access="internal" signature="internal static IEnumerable<U?> Values(IEnumerable<T> source, object? key)">
-            <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-4" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<T>, object?" access="internal" signature="internal static IEnumerable<U?> Values<T, U>(IEnumerable<T> source, object? key)">
+            <template #name><h3>Values&lt;T, U&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
