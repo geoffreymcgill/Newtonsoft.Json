@@ -7,7 +7,7 @@ Json.NET supports serialization callback methods. A callback can be used to mani
 - **OnDeserializing**
 - **OnDeserialized**
 
-To tell the serializer which methods should be called during the object's serialization lifecycle, decorate a method with the appropriate attribute ([OnSerializingAttribute](T:System.Runtime.Serialization.OnSerializingAttribute), [OnSerializedAttribute](T:System.Runtime.Serialization.OnSerializedAttribute), [OnDeserializingAttribute](T:System.Runtime.Serialization.OnDeserializingAttribute), [OnDeserializedAttribute](T:System.Runtime.Serialization.OnDeserializedAttribute).
+To tell the serializer which methods should be called during the object's serialization lifecycle, decorate a method with the appropriate attribute ([OnSerializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializingattribute), [OnSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializedattribute), [OnDeserializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializingattribute), [OnDeserializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializedattribute).
 
 ## Example
 
@@ -27,7 +27,7 @@ region: SerializationCallbacksExample
 
 ## See Also
 
-- [OnSerializingAttribute](T:System.Runtime.Serialization.OnSerializingAttribute)
-- [OnSerializedAttribute](T:System.Runtime.Serialization.OnSerializedAttribute)
-- [OnDeserializingAttribute](T:System.Runtime.Serialization.OnDeserializingAttribute)
-- [OnDeserializedAttribute](T:System.Runtime.Serialization.OnDeserializedAttribute)
+- [OnSerializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializingattribute)
+- [OnSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializedattribute)
+- [OnDeserializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializingattribute)
+- [OnDeserializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializedattribute)

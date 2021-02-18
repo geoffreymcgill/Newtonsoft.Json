@@ -22,7 +22,7 @@ region: LinqToJsonCreateDeclaratively
 
 ## Creating JSON from an object
 
-The last option is to create a JSON object from a non-JSON type using the [Overload:Newtonsoft.Json.Linq.JObject.FromObject](Overload:Newtonsoft.Json.Linq.JObject.FromObject) method. Internally, FromObject will use the JsonSerializer to serialize the object to LINQ to JSON objects instead of text.
+The last option is to create a JSON object from a non-JSON type using the [FromObject](/API/newtonsoft/json/linq/JObject/#method-fromobject) method. Internally, FromObject will use the JsonSerializer to serialize the object to LINQ to JSON objects instead of text.
 
 The example below shows creating a JSON object from an anonymous object, but any .NET type can be used with FromObject to create JSON.
 
@@ -34,4 +34,4 @@ region: LinqToJsonCreateFromObject
 ## See Also
 
 - [LINQ to JSON](README.md)
-- [Overload:Newtonsoft.Json.Linq.JObject.FromObject](Overload:Newtonsoft.Json.Linq.JObject.FromObject)
+- [JObject.FromObject](/API/newtonsoft/json/linq/JObject/#method-fromobject)

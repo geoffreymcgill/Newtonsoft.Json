@@ -1,6 +1,6 @@
 ﻿# SerializeDataSet
 
-This sample serializes a [DataSet](T:System.Data.DataSet) to JSON. 
+This sample serializes a [DataSet](https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset) to JSON. 
 
 ## Sample
 

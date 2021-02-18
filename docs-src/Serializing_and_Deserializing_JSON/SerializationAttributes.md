@@ -12,7 +12,7 @@ Attributes can be used to control how Json.NET serializes and deserializes .NET 
 
 ## Standard .NET Serialization Attributes
 
-As well as using the built-in Json.NET attributes, Json.NET also looks for the [SerializableAttribute](T:System.SerializableAttribute) (if IgnoreSerializableAttribute on DefaultContractResolver is set to false) [DataContractAttribute](T:System.Runtime.Serialization.DataContractAttribute), [DataMemberAttribute](T:System.Runtime.Serialization.DataMemberAttribute), and [NonSerializedAttribute](T:System.NonSerializedAttribute) and attributes when determining how JSON is to be serialized and deserialized.
+As well as using the built-in Json.NET attributes, Json.NET also looks for the [SerializableAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute) (if IgnoreSerializableAttribute on DefaultContractResolver is set to false) [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute), [DataMemberAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute), and [NonSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.nonserializedattribute) and attributes when determining how JSON is to be serialized and deserialized.
 
 :::
 Json.NET attributes take precedence over standard .NET serialization attributes (e.g. if both JsonPropertyAttribute and DataMemberAttribute are present on a property and both customize the name, the name from JsonPropertyAttribute will be used).
@@ -29,7 +29,7 @@ region: SerializationAttributes
 
 The MemberSerialization flag on this attribute specifies whether member serialization is opt-in (a member must have the JsonProperty or DataMember attribute to be serialized), opt-out (everything is serialized by default but can be ignored with the JsonIgnoreAttribute, Json.NET's default behavior) or fields (all public and private fields are serialized and properties are ignored).
 
-Placing the the [DataContractAttribute](T:System.Runtime.Serialization.DataContractAttribute) on a type is another way to default member serialization to opt-in.
+Placing the the [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute) on a type is another way to default member serialization to opt-in.
 
 The NamingStrategy setting on this attributes can be set to a [NamingStrategy](/api/newtonsoft/json/serialization/namingstrategy/) type that specifies how property names are serialized.
 
@@ -58,7 +58,7 @@ The DataMemberAttribute can be used as a substitute for JsonPropertyAttribute.
 
 Excludes a field or property from serialization.
 
-The [NonSerializedAttribute](T:System.NonSerializedAttribute) can be used as a substitute for JsonIgnoreAttribute.
+The [NonSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.nonserializedattribute) can be used as a substitute for JsonIgnoreAttribute.
 
 ## JsonConverterAttribute
 

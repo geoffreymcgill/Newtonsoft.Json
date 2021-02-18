@@ -28,7 +28,7 @@ Json.NET will throw an error if it encounters incorrect JSON when deserializing 
 `Byte[]` | String (base 64 encoded)
 `Type` | String (type name)
 `Guid` | String
-`[TypeConverter](T:System.ComponentModel.TypeConverter)` (convertible to String) | String
+`[TypeConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter)` (convertible to String) | String
 
 ## Breakdown of Type Serialization
 
@@ -40,7 +40,7 @@ By default a type's properties are serialized in opt-out mode. What that means i
 
 Types can also be serialized using opt-in mode. Only properties and fields that have a JsonPropertyAttribute or DataMemberAttribute on them will be serialized. Opt-in mode for an object is specified by placing the JsonObjectAttribute or DataContractAttribute on the type.
 
-Finally, types can be serialized using a fields mode. All fields, both public and private, are serialized and properties are ignored. This can be specified by setting MemberSerialization.Fields on a type with the JsonObjectAttribute or by using the .NET [SerializableAttribute](T:System.SerializableAttribute) and setting IgnoreSerializableAttribute on DefaultContractResolver to false.
+Finally, types can be serialized using a fields mode. All fields, both public and private, are serialized and properties are ignored. This can be specified by setting MemberSerialization.Fields on a type with the JsonObjectAttribute or by using the .NET [SerializableAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute) and setting IgnoreSerializableAttribute on DefaultContractResolver to false.
 
 ## IEnumerable, Lists, and Arrays
 
@@ -60,7 +60,7 @@ You can read more about serializing collections here:
 
 .NET dictionaries (types that inherit from IDictionary) are converted to JSON objects. Note that only the dictionary name/values will be written to the JSON object when serializing, and properties on the JSON object will be added to the dictionary's name/values when deserializing. Additional members on the .NET dictionary are ignored during serialization.
 
-When serializing a dictionary, the keys of the dictionary are converted to strings and used as the JSON object property names. The string written for a key can be customized by either overriding [ToString](M:System.Object.ToString) for the key type or by implementing a [TypeConverter](T:System.ComponentModel.TypeConverter). A TypeConverter will also support converting a custom string back again when deserializing a dictionary.
+When serializing a dictionary, the keys of the dictionary are converted to strings and used as the JSON object property names. The string written for a key can be customized by either overriding [ToString](M:System.Object.ToString) for the key type or by implementing a [TypeConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter). A TypeConverter will also support converting a custom string back again when deserializing a dictionary.
 
 JsonDictionaryAttribute has options on it to customize the JsonConverter, type name handling, and reference handling that are applied to collection items.
 
@@ -80,7 +80,7 @@ For these untyped properties, the Json.NET serializer will read the JSON into LI
 
 There are two different usages of `dynamic` (introduced in .NET 4) in .NET. The first are .NET properties with a type of dynamic. Dynamic properties behave like properties declared as object: any value can be assigned to it, but the difference being that properties and methods can be called on a dynamic property without casting. In Json.NET, dynamic properties are serialized and deserialized exactly the same as untyped objects: because dynamic isn't an actual type, Json.NET falls back to deserializing the JSON as LINQ to JSON objects.
 
-The second usage of dynamic in .NET are by the types that implement [IDynamicMetaObjectProvider](T:System.Dynamic.IDynamicMetaObjectProvider). This interface lets the implementer create dynamic objects that intercept the property and method calls on an object and use them. [ExpandoObject](T:System.Dynamic.ExpandoObject) is a good example of a dynamic object.
+The second usage of dynamic in .NET are by the types that implement [IDynamicMetaObjectProvider](https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.idynamicmetaobjectprovider). This interface lets the implementer create dynamic objects that intercept the property and method calls on an object and use them. [ExpandoObject](https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.expandoobject) is a good example of a dynamic object.
 
 Dynamic objects are serialized as JSON objects. A property is written for every member name returned by [DynamicMetaObject.GetDynamicMemberNames](M:System.Dynamic.DynamicMetaObject.GetDynamicMemberNames). A dynamic object's normal properties aren't serialized by default but can be included by placing the JsonPropertyAttribute on them.
 
@@ -88,7 +88,7 @@ When deserializing dynamic objects, the serializer first attempts to set JSON pr
 
 ## ISerializable
 
-Types that implement [ISerializable](T:System.Runtime.Serialization.ISerializable) and are marked with [SerializableAttribute](T:System.SerializableAttribute) are serialized as JSON objects. When serializing, only the values returned from ISerializable.GetObjectData are used; members on the type are ignored. When deserializing, the constructor with a SerializationInfo and StreamingContext is called, passing the JSON object's values.
+Types that implement [ISerializable](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable) and are marked with [SerializableAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute) are serialized as JSON objects. When serializing, only the values returned from ISerializable.GetObjectData are used; members on the type are ignored. When deserializing, the constructor with a SerializationInfo and StreamingContext is called, passing the JSON object's values.
 
 In situations where this behavior is not wanted, the JsonObjectAttribute can be placed on a .NET type that implements ISerializable to force it to be serialized as a normal JSON object.
 

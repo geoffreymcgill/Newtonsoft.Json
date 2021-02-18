@@ -25,7 +25,7 @@ With PreserveReferencesHandling on, now only one Person object is created on des
 Metadata properties like `$id` must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then [MetadataPropertyHandling](/api/newtonsoft/json/metadatapropertyhandling/) can be used to remove this restriction.
 
 :::
-References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. [ISerializable](T:System.Runtime.Serialization.ISerializable) types are an example of a class whose values are populated with a non-default constructor and won't work with PreserveReferencesHandling.
+References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. [ISerializable](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable) types are an example of a class whose values are populated with a non-default constructor and won't work with PreserveReferencesHandling.
 :::
 
 ## IsReference

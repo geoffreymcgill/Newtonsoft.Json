@@ -269,7 +269,7 @@
 <td>String</td>
 </tr>
 <tr>
-<td><code v-pre>[TypeConverter](T:System.ComponentModel.TypeConverter)</code> (convertible to String)</td>
+<td><code v-pre>[TypeConverter](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter)</code> (convertible to String)</td>
 <td>String</td>
 </tr>
 </tbody>
@@ -289,7 +289,7 @@
 <p>.NET types that don't fall into any other category listed below (i.e. aren't lists, dictionaries, dynamic, implement ISerializable, etc.) are serialized as JSON objects. You can also force a type to be serialized as a JSON object by placing the JsonObjectAttribute on the type.</p>
 <p>By default a type's properties are serialized in opt-out mode. What that means is that all public fields and properties with getters are automatically serialized to JSON, and fields and properties that shouldn't be serialized are opted-out by placing JsonIgnoreAttribute on them. To serialize private members, the JsonPropertyAttribute can be placed on private fields and properties.</p>
 <p>Types can also be serialized using opt-in mode. Only properties and fields that have a JsonPropertyAttribute or DataMemberAttribute on them will be serialized. Opt-in mode for an object is specified by placing the JsonObjectAttribute or DataContractAttribute on the type.</p>
-<p>Finally, types can be serialized using a fields mode. All fields, both public and private, are serialized and properties are ignored. This can be specified by setting MemberSerialization.Fields on a type with the JsonObjectAttribute or by using the .NET <a href="T:System.SerializableAttribute">SerializableAttribute</a> and setting IgnoreSerializableAttribute on DefaultContractResolver to false.</p>
+<p>Finally, types can be serialized using a fields mode. All fields, both public and private, are serialized and properties are ignored. This can be specified by setting MemberSerialization.Fields on a type with the JsonObjectAttribute or by using the .NET <a href="https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute">SerializableAttribute</a> and setting IgnoreSerializableAttribute on DefaultContractResolver to false.</p>
 <doc-anchor-target id="ienumerable-lists-and-arrays">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#ienumerable-lists-and-arrays">#</doc-anchor-trigger>
@@ -311,7 +311,7 @@
     </h2>
 </doc-anchor-target>
 <p>.NET dictionaries (types that inherit from IDictionary) are converted to JSON objects. Note that only the dictionary name/values will be written to the JSON object when serializing, and properties on the JSON object will be added to the dictionary's name/values when deserializing. Additional members on the .NET dictionary are ignored during serialization.</p>
-<p>When serializing a dictionary, the keys of the dictionary are converted to strings and used as the JSON object property names. The string written for a key can be customized by either overriding <a href="M:System.Object.ToString">ToString</a> for the key type or by implementing a <a href="T:System.ComponentModel.TypeConverter">TypeConverter</a>. A TypeConverter will also support converting a custom string back again when deserializing a dictionary.</p>
+<p>When serializing a dictionary, the keys of the dictionary are converted to strings and used as the JSON object property names. The string written for a key can be customized by either overriding <a href="M:System.Object.ToString">ToString</a> for the key type or by implementing a <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.typeconverter">TypeConverter</a>. A TypeConverter will also support converting a custom string back again when deserializing a dictionary.</p>
 <p>JsonDictionaryAttribute has options on it to customize the JsonConverter, type name handling, and reference handling that are applied to collection items.</p>
 <p>When deserializing, if a member is typed as the interface <code v-pre>IDictionary&lt;TKey, TValue&gt;</code> then it will be deserialized as a <code v-pre>Dictionary&lt;TKey, TValue&gt;</code>.</p>
 <p>You can read more about serializing collections here:</p>
@@ -333,7 +333,7 @@
     </h2>
 </doc-anchor-target>
 <p>There are two different usages of <code v-pre>dynamic</code> (introduced in .NET 4) in .NET. The first are .NET properties with a type of dynamic. Dynamic properties behave like properties declared as object: any value can be assigned to it, but the difference being that properties and methods can be called on a dynamic property without casting. In Json.NET, dynamic properties are serialized and deserialized exactly the same as untyped objects: because dynamic isn't an actual type, Json.NET falls back to deserializing the JSON as LINQ to JSON objects.</p>
-<p>The second usage of dynamic in .NET are by the types that implement <a href="T:System.Dynamic.IDynamicMetaObjectProvider">IDynamicMetaObjectProvider</a>. This interface lets the implementer create dynamic objects that intercept the property and method calls on an object and use them. <a href="T:System.Dynamic.ExpandoObject">ExpandoObject</a> is a good example of a dynamic object.</p>
+<p>The second usage of dynamic in .NET are by the types that implement <a href="https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.idynamicmetaobjectprovider">IDynamicMetaObjectProvider</a>. This interface lets the implementer create dynamic objects that intercept the property and method calls on an object and use them. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.expandoobject">ExpandoObject</a> is a good example of a dynamic object.</p>
 <p>Dynamic objects are serialized as JSON objects. A property is written for every member name returned by <a href="M:System.Dynamic.DynamicMetaObject.GetDynamicMemberNames">DynamicMetaObject.GetDynamicMemberNames</a>. A dynamic object's normal properties aren't serialized by default but can be included by placing the JsonPropertyAttribute on them.</p>
 <p>When deserializing dynamic objects, the serializer first attempts to set JSON property values on a normal .NET member with the matching name. If no .NET member is found with the property name, then the serializer will call SetMember on the dynamic object. Because there is no type information for dynamic members on a dynamic object, the values assigned to them will be LINQ to JSON objects.</p>
 <doc-anchor-target id="iserializable">
@@ -342,7 +342,7 @@
         <span>ISerializable</span>
     </h2>
 </doc-anchor-target>
-<p>Types that implement <a href="T:System.Runtime.Serialization.ISerializable">ISerializable</a> and are marked with <a href="T:System.SerializableAttribute">SerializableAttribute</a> are serialized as JSON objects. When serializing, only the values returned from ISerializable.GetObjectData are used; members on the type are ignored. When deserializing, the constructor with a SerializationInfo and StreamingContext is called, passing the JSON object's values.</p>
+<p>Types that implement <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a> and are marked with <a href="https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute">SerializableAttribute</a> are serialized as JSON objects. When serializing, only the values returned from ISerializable.GetObjectData are used; members on the type are ignored. When deserializing, the constructor with a SerializationInfo and StreamingContext is called, passing the JSON object's values.</p>
 <p>In situations where this behavior is not wanted, the JsonObjectAttribute can be placed on a .NET type that implements ISerializable to force it to be serialized as a normal JSON object.</p>
 <doc-anchor-target id="linq-to-json">
     <h2>

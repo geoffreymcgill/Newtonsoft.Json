@@ -1,6 +1,6 @@
 ﻿# Custom SerializationBinder
 
-This sample creates a custom [SerializationBinder](T:System.Runtime.Serialization.SerializationBinder) that writes only the type name when including type data in JSON.
+This sample creates a custom [SerializationBinder](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.serializationbinder) that writes only the type name when including type data in JSON.
 
 ## Sample
 

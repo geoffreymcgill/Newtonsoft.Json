@@ -302,12 +302,12 @@ are equal for value types. Classes and structs can override this method.</p>
         <span>DefaultValueHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> controls how Json.NET uses default values set using the .NET <a href="T:System.ComponentModel.DefaultValueAttribute">DefaultValueAttribute</a> when serializing and deserializing.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> controls how Json.NET uses default values set using the .NET <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a> when serializing and deserializing.</p>
 <p>Member | Description
 --- | ---
 <code v-pre>Include</code> | By default Json.NET will write a field/property value to JSON when serializing if the value is the same as the field/property's default value.
 The Json.NET deserializer will continue setting a field/property if the JSON value is the same as the default value.
-<code v-pre>Ignore</code> | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property's default value, or the custom value specified in <a href="T:System.ComponentModel.DefaultValueAttribute">DefaultValueAttribute</a> if the attribute is present. The Json.NET deserializer will skip setting a .NET object's field/property if the JSON value is the same as the default value.</p>
+<code v-pre>Ignore</code> | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property's default value, or the custom value specified in <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a> if the attribute is present. The Json.NET deserializer will skip setting a .NET object's field/property if the JSON value is the same as the default value.</p>
 <p>DefaultValueHandling can also be customized on individual properties with JsonPropertyAttribute.</p>
 <doc-anchor-target id="objectcreationhandling">
     <h2>
@@ -391,7 +391,7 @@ deserialization.</p>
         <span>TypeNameAssemblyFormat</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle">FormatterAssemblyStyle</a> controls how type names are written during serialization.</p>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatters.formatterassemblystyle">FormatterAssemblyStyle</a> controls how type names are written during serialization.</p>
 <table>
 <thead>
 <tr>
@@ -410,7 +410,7 @@ deserialization.</p>
 </tr>
 </tbody>
 </table>
-<p>Read more about the valid values at <a href="T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle">FormatterAssemblyStyle</a>.</p>
+<p>Read more about the valid values at <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatters.formatterassemblystyle">FormatterAssemblyStyle</a>.</p>
 <doc-anchor-target id="serializationbinder">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serializationbinder">#</doc-anchor-trigger>
@@ -537,7 +537,7 @@ deserialization.</p>
 <li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a></li>
 <li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a></li>
 <li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a></li>
-<li><a href="T:System.Runtime.Serialization.SerializationBinder">SerializationBinder</a></li>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.serializationbinder">SerializationBinder</a></li>
 </ul>
 
     

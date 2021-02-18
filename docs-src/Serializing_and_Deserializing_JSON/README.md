@@ -4,7 +4,7 @@ The quickest method of converting between JSON text and a .NET object is using t
 
 ## JsonConvert
 
-For simple scenarios where you want to convert to and from a JSON string, the [Overload:Newtonsoft.Json.JsonConvert.SerializeObject](Overload:Newtonsoft.Json.JsonConvert.SerializeObject) and [Overload:Newtonsoft.Json.JsonConvert.DeserializeObject](Overload:Newtonsoft.Json.JsonConvert.DeserializeObject) methods on JsonConvert provide an easy-to-use wrapper over JsonSerializer.
+For simple scenarios where you want to convert to and from a JSON string, the [SerializeObject()](/API/newtonsoft/json/jsonconvert/#method-serializeobject) and [DeserializeObject()](/API/newtonsoft/json/jsonconvert/#method-deserializeobject) methods on JsonConvert provide an easy-to-use wrapper over JsonSerializer.
 
 ```csharp Serializing and Deserializing JSON with JsonConvert
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -15,9 +15,7 @@ SerializeObject and DeserializeObject both have overloads that take a [JsonSeria
 
 ## JsonSerializer
 
-For more control over how an object is serialized, the [JsonSerializer](/api/newtonsoft/json/jsonserializer/) can be used directly. The JsonSerializer is able to read and write JSON text directly to a stream via [JsonTextReader](/api/newtonsoft/json/jsontextreader/) and [JsonTextWriter](/api/newtonsoft/json/jsontextwriter/). Other kinds of JsonWriters can also be used, such as
-
-[JTokenReader](/api/newtonsoft/json/linq/jtokenreader/) T:Newtonsoft.Json.Linq.JTokenWriter](T:Newtonsoft.Json.Linq.JTokenReader</codeEntityReference>/<codeEntityReference>T:Newtonsoft.Json.Linq.JTokenWriter), to convert your object to and from LINQ to JSON objects, or [Bson.BsonReader</codeEntityReference>/<codeEntityReference>T:Newtonsoft.Json.Bson.BsonWriter](T:Newtonsoft.Json.Bson.BsonReader</codeEntityReference>/<codeEntityReference>T:Newtonsoft.Json.Bson.BsonWriter), to convert to and from BSON.
+For more control over how an object is serialized, the [JsonSerializer](/api/newtonsoft/json/jsonserializer/) can be used directly. The JsonSerializer is able to read and write JSON text directly to a stream via [JsonTextReader](/api/newtonsoft/json/jsontextreader/) and [JsonTextWriter](/api/newtonsoft/json/jsontextwriter/). Other kinds of JsonWriters can also be used, such as [JTokenReader](/API/newtonsoft/json/linq/JTokenReader/)/[JTokenWriter](/API/newtonsoft/json/linq/JTokenWriter/), to convert your object to and from LINQ to JSON objects, or [BsonReader](/API/newtonsoft/json/bson/bsonreader/)/[BsonWriter](/API/newtonsoft/json/bson/bsonwriter/), to convert to and from BSON.
 
 ```csharp Serializing JSON to a Stream with JsonSerializer
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs

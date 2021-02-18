@@ -50,13 +50,13 @@ NullValueHandling can also be customized on individual properties with JsonPrope
 
 ## DefaultValueHandling
 
-[DefaultValueHandling](/api/newtonsoft/json/defaultvaluehandling/) controls how Json.NET uses default values set using the .NET [DefaultValueAttribute](T:System.ComponentModel.DefaultValueAttribute) when serializing and deserializing.
+[DefaultValueHandling](/api/newtonsoft/json/defaultvaluehandling/) controls how Json.NET uses default values set using the .NET [DefaultValueAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute) when serializing and deserializing.
 
 Member | Description
 --- | ---
 `Include` | By default Json.NET will write a field/property value to JSON when serializing if the value is the same as the field/property's default value.
 The Json.NET deserializer will continue setting a field/property if the JSON value is the same as the default value.
-`Ignore` | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property's default value, or the custom value specified in [DefaultValueAttribute](T:System.ComponentModel.DefaultValueAttribute) if the attribute is present. The Json.NET deserializer will skip setting a .NET object's field/property if the JSON value is the same as the default value.
+`Ignore` | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property's default value, or the custom value specified in [DefaultValueAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute) if the attribute is present. The Json.NET deserializer will skip setting a .NET object's field/property if the JSON value is the same as the default value.
 
 DefaultValueHandling can also be customized on individual properties with JsonPropertyAttribute.
 
@@ -99,14 +99,14 @@ TypeNameHandling can be used as an argument when calling the serializer, it can 
 
 ## TypeNameAssemblyFormat
 
-[FormatterAssemblyStyle](T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle) controls how type names are written during serialization.
+[FormatterAssemblyStyle](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatters.formatterassemblystyle) controls how type names are written during serialization.
 
 Member | Description
 --- | ---
 `Simple` | By default Json.NET writes the partial assembly name with the type, e.g. System.Data.DataSet, System.Data. Note that Silverlight and Windows Phone are not able to use this format.
 `Full` | Json.NET will write the full assembly name, including version number, culture and public key token.
 
-Read more about the valid values at [FormatterAssemblyStyle](T:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle).
+Read more about the valid values at [FormatterAssemblyStyle](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.formatters.formatterassemblystyle).
 
 ## SerializationBinder
 
@@ -184,4 +184,4 @@ Read more about error handling here:
 - [JsonSerializer](/api/newtonsoft/json/jsonserializer/)
 - [JsonSerializerSettings](/api/newtonsoft/json/jsonserializersettings/)
 - [JsonConverter](/api/newtonsoft/json/jsonconverter/)
-- [SerializationBinder](T:System.Runtime.Serialization.SerializationBinder)
+- [SerializationBinder](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.serializationbinder)

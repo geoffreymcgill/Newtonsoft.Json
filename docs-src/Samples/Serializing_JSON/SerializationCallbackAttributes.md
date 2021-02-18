@@ -1,6 +1,6 @@
 ﻿# Serialization Callback Attributes
 
-This sample uses serialization callback attributes  ([OnSerializingAttribute](T:System.Runtime.Serialization.OnSerializingAttribute), [OnSerializedAttribute](T:System.Runtime.Serialization.OnSerializedAttribute), [OnDeserializingAttribute](T:System.Runtime.Serialization.OnDeserializingAttribute), [OnDeserializedAttribute](T:System.Runtime.Serialization.OnDeserializedAttribute) to manipulate an object before and after its serialization and deserialization.
+This sample uses serialization callback attributes  ([OnSerializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializingattribute), [OnSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.onserializedattribute), [OnDeserializingAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializingattribute), [OnDeserializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.ondeserializedattribute) to manipulate an object before and after its serialization and deserialization.
 
 ## Sample
 
