@@ -27,7 +27,7 @@
         <!-- Logo -->
         <div class="flex items-center h-full py-2">
             <div class="flex items-center px-2 md:px-6 md:w-72">
-                <span class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
+                <span id="docs-site-logo" class="dark:text-white text-2xl leading-snug font-semibold line-clamp-1 md:line-clamp-2">
                     <a href="/Newtonsoft.Json/">Json.NET</a>
                 </span>
                 <span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">Docs</span>
@@ -99,11 +99,11 @@
 <div v-cloak class="fixed flex flex-col flex-shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-72 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
 
     <!-- Render this div, if config.showSidebarFilter is `true` -->
-    <div class="mt-6 px-6">
+    <div class="flex items-center h-16 px-6">
         <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter" />
     </div>
 
-    <div class="pl-6 mb-4 mt-6">
+    <div class="pl-6 mb-4 mt-1">
         <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
         <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
         <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
@@ -213,8 +213,8 @@ querying objects that implement <see cref="!:IEnumerable&lt;T&gt;" />.</p>
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-aggregate">
-        <doc-member id="method-aggregate" overload-id="group-aggregate" name="Aggregate" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, TSource>" signature="public static TSource Aggregate(IEnumerable<TSource> source, Func<TSource, TSource, TSource> func)">
-            <template #name><h3>Aggregate</h3></template>
+        <doc-member id="method-aggregate" overload-id="group-aggregate" name="Aggregate" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, TSource>" signature="public static TSource Aggregate<TSource>(IEnumerable<TSource> source, Func<TSource, TSource, TSource> func)">
+            <template #name><h3>Aggregate&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -227,8 +227,8 @@ querying objects that implement <see cref="!:IEnumerable&lt;T&gt;" />.</p>
 
         </doc-member>
 
-        <doc-member id="method-aggregate-1" overload-id="group-aggregate" name="Aggregate" returns="TAccumulate" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>" signature="public static TAccumulate Aggregate(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func)">
-            <template #name><h3>Aggregate</h3></template>
+        <doc-member id="method-aggregate-1" overload-id="group-aggregate" name="Aggregate" returns="TAccumulate" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>" signature="public static TAccumulate Aggregate<TSource, TAccumulate>(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func)">
+            <template #name><h3>Aggregate&lt;TSource, TAccumulate&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -243,8 +243,8 @@ seed value is used as the initial accumulator value.</p>
 
         </doc-member>
 
-        <doc-member id="method-aggregate-2" overload-id="group-aggregate" name="Aggregate" returns="TResult" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TResult>" signature="public static TResult Aggregate(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, TResult> resultSelector)">
-            <template #name><h3>Aggregate</h3></template>
+        <doc-member id="method-aggregate-2" overload-id="group-aggregate" name="Aggregate" returns="TResult" params="IEnumerable<TSource>, TAccumulate, Func<TAccumulate, TSource, TAccumulate>, Func<TAccumulate, TResult>" signature="public static TResult Aggregate<TSource, TAccumulate, TResult>(IEnumerable<TSource> source, TAccumulate seed, Func<TAccumulate, TSource, TAccumulate> func, Func<TAccumulate, TResult> resultSelector)">
+            <template #name><h3>Aggregate&lt;TSource, TAccumulate, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -262,8 +262,8 @@ specified function is used to select the result value.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-all" name="All" returns="bool" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static bool All(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-        <template #name><h3>All</h3></template>
+    <doc-member id="method-all" name="All" returns="bool" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static bool All<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+        <template #name><h3>All&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -277,8 +277,8 @@ specified function is used to select the result value.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-any">
-        <doc-member id="method-any" overload-id="group-any" name="Any" returns="bool" params="IEnumerable<TSource>" signature="public static bool Any(IEnumerable<TSource> source)">
-            <template #name><h3>Any</h3></template>
+        <doc-member id="method-any" overload-id="group-any" name="Any" returns="bool" params="IEnumerable<TSource>" signature="public static bool Any<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Any&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -290,8 +290,8 @@ specified function is used to select the result value.</p>
 
         </doc-member>
 
-        <doc-member id="method-any-1" overload-id="group-any" name="Any" returns="bool" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static bool Any(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>Any</h3></template>
+        <doc-member id="method-any-1" overload-id="group-any" name="Any" returns="bool" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static bool Any<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>Any&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -306,8 +306,8 @@ condition.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-asenumerable" name="AsEnumerable" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> AsEnumerable(IEnumerable<TSource> source)">
-        <template #name><h3>AsEnumerable</h3></template>
+    <doc-member id="method-asenumerable" name="AsEnumerable" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> AsEnumerable<TSource>(IEnumerable<TSource> source)">
+        <template #name><h3>AsEnumerable&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -450,8 +450,8 @@ condition.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-10" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, int>" signature="public static double Average(IEnumerable<TSource> source, Func<TSource, int> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-10" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, int>" signature="public static double Average<TSource>(IEnumerable<TSource> source, Func<TSource, int> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -466,8 +466,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-11" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static double? Average(IEnumerable<TSource> source, Func<TSource, int?> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-11" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static double? Average<TSource>(IEnumerable<TSource> source, Func<TSource, int?> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -482,8 +482,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-12" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, long>" signature="public static double Average(IEnumerable<TSource> source, Func<TSource, long> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-12" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, long>" signature="public static double Average<TSource>(IEnumerable<TSource> source, Func<TSource, long> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -498,8 +498,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-13" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static double? Average(IEnumerable<TSource> source, Func<TSource, long?> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-13" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static double? Average<TSource>(IEnumerable<TSource> source, Func<TSource, long?> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -514,8 +514,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-14" overload-id="group-average" name="Average" returns="float" params="IEnumerable<TSource>, Func<TSource, float>" signature="public static float Average(IEnumerable<TSource> source, Func<TSource, float> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-14" overload-id="group-average" name="Average" returns="float" params="IEnumerable<TSource>, Func<TSource, float>" signature="public static float Average<TSource>(IEnumerable<TSource> source, Func<TSource, float> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -530,8 +530,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-15" overload-id="group-average" name="Average" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Average(IEnumerable<TSource> source, Func<TSource, float?> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-15" overload-id="group-average" name="Average" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Average<TSource>(IEnumerable<TSource> source, Func<TSource, float?> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -546,8 +546,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-16" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, double>" signature="public static double Average(IEnumerable<TSource> source, Func<TSource, double> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-16" overload-id="group-average" name="Average" returns="double" params="IEnumerable<TSource>, Func<TSource, double>" signature="public static double Average<TSource>(IEnumerable<TSource> source, Func<TSource, double> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -562,8 +562,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-17" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Average(IEnumerable<TSource> source, Func<TSource, double?> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-17" overload-id="group-average" name="Average" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Average<TSource>(IEnumerable<TSource> source, Func<TSource, double?> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -578,8 +578,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-18" overload-id="group-average" name="Average" returns="decimal" params="IEnumerable<TSource>, Func<TSource, decimal>" signature="public static decimal Average(IEnumerable<TSource> source, Func<TSource, decimal> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-18" overload-id="group-average" name="Average" returns="decimal" params="IEnumerable<TSource>, Func<TSource, decimal>" signature="public static decimal Average<TSource>(IEnumerable<TSource> source, Func<TSource, decimal> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -594,8 +594,8 @@ element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-average-19" overload-id="group-average" name="Average" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Average(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
-            <template #name><h3>Average</h3></template>
+        <doc-member id="method-average-19" overload-id="group-average" name="Average" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Average<TSource>(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
+            <template #name><h3>Average&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -611,8 +611,8 @@ element of the input sequence.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-cast" name="Cast" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> Cast(IEnumerable source)">
-        <template #name><h3>Cast</h3></template>
+    <doc-member id="method-cast" name="Cast" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> Cast<TResult>(IEnumerable source)">
+        <template #name><h3>Cast&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -625,8 +625,8 @@ specified type.</p>
 
     </doc-member>
 
-    <doc-member id="method-castyield" name="CastYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> CastYield(IEnumerable source)">
-        <template #name><h3>CastYield</h3></template>
+    <doc-member id="method-castyield" name="CastYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> CastYield<TResult>(IEnumerable source)">
+        <template #name><h3>CastYield&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -635,8 +635,8 @@ specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-checknotnull" name="CheckNotNull" returns="void" params="T, string" access="private" signature="private static void CheckNotNull(T value, string name)">
-        <template #name><h3>CheckNotNull</h3></template>
+    <doc-member id="method-checknotnull" name="CheckNotNull" returns="void" params="T, string" access="private" signature="private static void CheckNotNull<T>(T value, string name)">
+        <template #name><h3>CheckNotNull&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -646,8 +646,8 @@ specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-concat" name="Concat" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Concat(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-        <template #name><h3>Concat</h3></template>
+    <doc-member id="method-concat" name="Concat" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Concat<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>Concat&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -660,8 +660,8 @@ specified type.</p>
 
     </doc-member>
 
-    <doc-member id="method-concatyield" name="ConcatYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ConcatYield(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-        <template #name><h3>ConcatYield</h3></template>
+    <doc-member id="method-concatyield" name="ConcatYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ConcatYield<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+        <template #name><h3>ConcatYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -672,8 +672,8 @@ specified type.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-contains">
-        <doc-member id="method-contains" overload-id="group-contains" name="Contains" returns="bool" params="IEnumerable<TSource>, TSource" signature="public static bool Contains(IEnumerable<TSource> source, TSource value)">
-            <template #name><h3>Contains</h3></template>
+        <doc-member id="method-contains" overload-id="group-contains" name="Contains" returns="bool" params="IEnumerable<TSource>, TSource" signature="public static bool Contains<TSource>(IEnumerable<TSource> source, TSource value)">
+            <template #name><h3>Contains&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -687,8 +687,8 @@ using the default equality comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-contains-1" overload-id="group-contains" name="Contains" returns="bool" params="IEnumerable<TSource>, TSource, IEqualityComparer<TSource>" signature="public static bool Contains(IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>Contains</h3></template>
+        <doc-member id="method-contains-1" overload-id="group-contains" name="Contains" returns="bool" params="IEnumerable<TSource>, TSource, IEqualityComparer<TSource>" signature="public static bool Contains<TSource>(IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>Contains&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -705,8 +705,8 @@ using a specified <see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-count">
-        <doc-member id="method-count" overload-id="group-count" name="Count" returns="int" params="IEnumerable<TSource>" signature="public static int Count(IEnumerable<TSource> source)">
-            <template #name><h3>Count</h3></template>
+        <doc-member id="method-count" overload-id="group-count" name="Count" returns="int" params="IEnumerable<TSource>" signature="public static int Count<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Count&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -718,8 +718,8 @@ using a specified <see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
 
         </doc-member>
 
-        <doc-member id="method-count-1" overload-id="group-count" name="Count" returns="int" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static int Count(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>Count</h3></template>
+        <doc-member id="method-count-1" overload-id="group-count" name="Count" returns="int" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static int Count<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>Count&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -735,8 +735,8 @@ specified sequence satisfy a condition.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-defaultifempty">
-        <doc-member id="method-defaultifempty" overload-id="group-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> DefaultIfEmpty(IEnumerable<TSource> source)">
-            <template #name><h3>DefaultIfEmpty</h3></template>
+        <doc-member id="method-defaultifempty" overload-id="group-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> DefaultIfEmpty<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>DefaultIfEmpty&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -750,8 +750,8 @@ sequence is empty.</p>
 
         </doc-member>
 
-        <doc-member id="method-defaultifempty-1" overload-id="group-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" signature="public static IEnumerable<TSource> DefaultIfEmpty(IEnumerable<TSource> source, TSource defaultValue)">
-            <template #name><h3>DefaultIfEmpty</h3></template>
+        <doc-member id="method-defaultifempty-1" overload-id="group-defaultifempty" name="DefaultIfEmpty" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" signature="public static IEnumerable<TSource> DefaultIfEmpty<TSource>(IEnumerable<TSource> source, TSource defaultValue)">
+            <template #name><h3>DefaultIfEmpty&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -766,8 +766,8 @@ value in a singleton collection if the sequence is empty.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-defaultifemptyyield" name="DefaultIfEmptyYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" access="private" signature="private static IEnumerable<TSource> DefaultIfEmptyYield(IEnumerable<TSource> source, TSource defaultValue)">
-        <template #name><h3>DefaultIfEmptyYield</h3></template>
+    <doc-member id="method-defaultifemptyyield" name="DefaultIfEmptyYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, TSource" access="private" signature="private static IEnumerable<TSource> DefaultIfEmptyYield<TSource>(IEnumerable<TSource> source, TSource defaultValue)">
+        <template #name><h3>DefaultIfEmptyYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -778,8 +778,8 @@ value in a singleton collection if the sequence is empty.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-distinct">
-        <doc-member id="method-distinct" overload-id="group-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Distinct(IEnumerable<TSource> source)">
-            <template #name><h3>Distinct</h3></template>
+        <doc-member id="method-distinct" overload-id="group-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Distinct<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Distinct&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -792,8 +792,8 @@ equality comparer to compare values.</p>
 
         </doc-member>
 
-        <doc-member id="method-distinct-1" overload-id="group-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Distinct(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>Distinct</h3></template>
+        <doc-member id="method-distinct-1" overload-id="group-distinct" name="Distinct" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Distinct<TSource>(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>Distinct&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -808,8 +808,8 @@ equality comparer to compare values.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-distinctyield" name="DistinctYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" access="private" signature="private static IEnumerable<TSource> DistinctYield(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
-        <template #name><h3>DistinctYield</h3></template>
+    <doc-member id="method-distinctyield" name="DistinctYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEqualityComparer<TSource>" access="private" signature="private static IEnumerable<TSource> DistinctYield<TSource>(IEnumerable<TSource> source, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>DistinctYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -819,8 +819,8 @@ equality comparer to compare values.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-elementat" name="ElementAt" returns="TSource" params="IEnumerable<TSource>, int" signature="public static TSource ElementAt(IEnumerable<TSource> source, int index)">
-        <template #name><h3>ElementAt</h3></template>
+    <doc-member id="method-elementat" name="ElementAt" returns="TSource" params="IEnumerable<TSource>, int" signature="public static TSource ElementAt<TSource>(IEnumerable<TSource> source, int index)">
+        <template #name><h3>ElementAt&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -833,8 +833,8 @@ equality comparer to compare values.</p>
 
     </doc-member>
 
-    <doc-member id="method-elementatordefault" name="ElementAtOrDefault" returns="TSource" params="IEnumerable<TSource>, int" signature="public static TSource ElementAtOrDefault(IEnumerable<TSource> source, int index)">
-        <template #name><h3>ElementAtOrDefault</h3></template>
+    <doc-member id="method-elementatordefault" name="ElementAtOrDefault" returns="TSource" params="IEnumerable<TSource>, int" signature="public static TSource ElementAtOrDefault<TSource>(IEnumerable<TSource> source, int index)">
+        <template #name><h3>ElementAtOrDefault&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -848,8 +848,8 @@ default value if the index is out of range.</p>
 
     </doc-member>
 
-    <doc-member id="method-empty" name="Empty" returns="IEnumerable<TResult>" signature="public static IEnumerable<TResult> Empty()">
-        <template #name><h3>Empty</h3></template>
+    <doc-member id="method-empty" name="Empty" returns="IEnumerable<TResult>" signature="public static IEnumerable<TResult> Empty<TResult>()">
+        <template #name><h3>Empty&lt;TResult&gt;</h3></template>
 
 <p>Returns an empty <see cref="!:IEnumerable&lt;T&gt;"/> that has the
 specified type argument.</p>
@@ -857,8 +857,8 @@ specified type argument.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-except">
-        <doc-member id="method-except" overload-id="group-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Except(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-            <template #name><h3>Except</h3></template>
+        <doc-member id="method-except" overload-id="group-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Except<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+            <template #name><h3>Except&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -872,8 +872,8 @@ default equality comparer to compare values.</p>
 
         </doc-member>
 
-        <doc-member id="method-except-1" overload-id="group-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Except(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>Except</h3></template>
+        <doc-member id="method-except-1" overload-id="group-except" name="Except" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Except<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>Except&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -890,8 +890,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-first">
-        <doc-member id="method-first" overload-id="group-first" name="First" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource First(IEnumerable<TSource> source)">
-            <template #name><h3>First</h3></template>
+        <doc-member id="method-first" overload-id="group-first" name="First" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource First<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>First&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -903,8 +903,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
 
         </doc-member>
 
-        <doc-member id="method-first-1" overload-id="group-first" name="First" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource First(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>First</h3></template>
+        <doc-member id="method-first-1" overload-id="group-first" name="First" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource First<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>First&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -918,8 +918,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-firstimpl" name="FirstImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource FirstImpl(IEnumerable<TSource> source, Func<TSource> empty)">
-        <template #name><h3>FirstImpl</h3></template>
+    <doc-member id="method-firstimpl" name="FirstImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource FirstImpl<TSource>(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>FirstImpl&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -933,8 +933,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-firstordefault">
-        <doc-member id="method-firstordefault" overload-id="group-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource FirstOrDefault(IEnumerable<TSource> source)">
-            <template #name><h3>FirstOrDefault</h3></template>
+        <doc-member id="method-firstordefault" overload-id="group-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource FirstOrDefault<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>FirstOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -947,8 +947,8 @@ the sequence contains no elements.</p>
 
         </doc-member>
 
-        <doc-member id="method-firstordefault-1" overload-id="group-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource FirstOrDefault(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>FirstOrDefault</h3></template>
+        <doc-member id="method-firstordefault-1" overload-id="group-firstordefault" name="FirstOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource FirstOrDefault<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>FirstOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -964,8 +964,8 @@ condition or a default value if no such element is found.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-groupby">
-        <doc-member id="method-groupby" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>GroupBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -979,8 +979,8 @@ selector function.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-1" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-1" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TSource>>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TSource>> GroupBy<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>GroupBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -996,8 +996,8 @@ comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-2" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-2" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1013,8 +1013,8 @@ using a specified function.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-3" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-3" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>" signature="public static IEnumerable<TResult> GroupBy<TSource, TKey, TResult>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1030,8 +1030,8 @@ group's elements are projected by using a specified function.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-4" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-4" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<IGrouping<TKey, TElement>>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static IEnumerable<IGrouping<TKey, TElement>> GroupBy<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1048,8 +1048,8 @@ its key.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-5" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-5" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>" signature="public static IEnumerable<TResult> GroupBy<TSource, TKey, TElement, TResult>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TElement, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1066,8 +1066,8 @@ its key. The keys are compared by using a specified comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-6" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-6" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TKey, IEnumerable<TSource>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy<TSource, TKey, TResult>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TKey, IEnumerable<TSource>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1085,8 +1085,8 @@ specified function.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupby-7" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>GroupBy</h3></template>
+        <doc-member id="method-groupby-7" overload-id="group-groupby" name="GroupBy" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, Func<TKey, IEnumerable<TElement>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupBy<TSource, TKey, TElement, TResult>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, Func<TKey, IEnumerable<TElement>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>GroupBy&lt;TSource, TKey, TElement, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1108,8 +1108,8 @@ specified function.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-groupjoin">
-        <doc-member id="method-groupjoin" overload-id="group-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>" signature="public static IEnumerable<TResult> GroupJoin(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector)">
-            <template #name><h3>GroupJoin</h3></template>
+        <doc-member id="method-groupjoin" overload-id="group-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>" signature="public static IEnumerable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector)">
+            <template #name><h3>GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1127,8 +1127,8 @@ used to compare keys.</p>
 
         </doc-member>
 
-        <doc-member id="method-groupjoin-1" overload-id="group-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupJoin(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>GroupJoin</h3></template>
+        <doc-member id="method-groupjoin-1" overload-id="group-groupjoin" name="GroupJoin" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, IEnumerable<TInner>, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> GroupJoin<TOuter, TInner, TKey, TResult>(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, IEnumerable<TInner>, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>GroupJoin&lt;TOuter, TInner, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1150,8 +1150,8 @@ is used to compare keys.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-intersect">
-        <doc-member id="method-intersect" overload-id="group-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Intersect(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-            <template #name><h3>Intersect</h3></template>
+        <doc-member id="method-intersect" overload-id="group-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Intersect<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+            <template #name><h3>Intersect&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1165,8 +1165,8 @@ default equality comparer to compare values.</p>
 
         </doc-member>
 
-        <doc-member id="method-intersect-1" overload-id="group-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Intersect(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>Intersect</h3></template>
+        <doc-member id="method-intersect-1" overload-id="group-intersect" name="Intersect" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Intersect<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>Intersect&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1182,8 +1182,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-intersectexceptimpl" name="IntersectExceptImpl" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>, bool" access="private" signature="private static IEnumerable<TSource> IntersectExceptImpl(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer, bool flag)">
-        <template #name><h3>IntersectExceptImpl</h3></template>
+    <doc-member id="method-intersectexceptimpl" name="IntersectExceptImpl" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>, bool" access="private" signature="private static IEnumerable<TSource> IntersectExceptImpl<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer, bool flag)">
+        <template #name><h3>IntersectExceptImpl&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1199,8 +1199,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> to compare values.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-join">
-        <doc-member id="method-join" overload-id="group-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>" signature="public static IEnumerable<TResult> Join(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector)">
-            <template #name><h3>Join</h3></template>
+        <doc-member id="method-join" overload-id="group-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>" signature="public static IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector)">
+            <template #name><h3>Join&lt;TOuter, TInner, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1217,8 +1217,8 @@ The default equality comparer is used to compare keys.</p>
 
         </doc-member>
 
-        <doc-member id="method-join-1" overload-id="group-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> Join(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>Join</h3></template>
+        <doc-member id="method-join-1" overload-id="group-join" name="Join" returns="IEnumerable<TResult>" params="IEnumerable<TOuter>, IEnumerable<TInner>, Func<TOuter, TKey>, Func<TInner, TKey>, Func<TOuter, TInner, TResult>, IEqualityComparer<TKey>" signature="public static IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(IEnumerable<TOuter> outer, IEnumerable<TInner> inner, Func<TOuter, TKey> outerKeySelector, Func<TInner, TKey> innerKeySelector, Func<TOuter, TInner, TResult> resultSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>Join&lt;TOuter, TInner, TKey, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1239,8 +1239,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> is used to compare keys.</
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-last">
-        <doc-member id="method-last" overload-id="group-last" name="Last" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Last(IEnumerable<TSource> source)">
-            <template #name><h3>Last</h3></template>
+        <doc-member id="method-last" overload-id="group-last" name="Last" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Last<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Last&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1252,8 +1252,8 @@ specified <see cref="!:IEqualityComparer&lt;T&gt;" /> is used to compare keys.</
 
         </doc-member>
 
-        <doc-member id="method-last-1" overload-id="group-last" name="Last" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource Last(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>Last</h3></template>
+        <doc-member id="method-last-1" overload-id="group-last" name="Last" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource Last<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>Last&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1268,8 +1268,8 @@ specified condition.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-lastimpl" name="LastImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource LastImpl(IEnumerable<TSource> source, Func<TSource> empty)">
-        <template #name><h3>LastImpl</h3></template>
+    <doc-member id="method-lastimpl" name="LastImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource LastImpl<TSource>(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>LastImpl&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1283,8 +1283,8 @@ specified condition.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-lastordefault">
-        <doc-member id="method-lastordefault" overload-id="group-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource LastOrDefault(IEnumerable<TSource> source)">
-            <template #name><h3>LastOrDefault</h3></template>
+        <doc-member id="method-lastordefault" overload-id="group-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource LastOrDefault<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>LastOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1297,8 +1297,8 @@ the sequence contains no elements.</p>
 
         </doc-member>
 
-        <doc-member id="method-lastordefault-1" overload-id="group-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource LastOrDefault(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>LastOrDefault</h3></template>
+        <doc-member id="method-lastordefault-1" overload-id="group-lastordefault" name="LastOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource LastOrDefault<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>LastOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1314,8 +1314,8 @@ condition or a default value if no such element is found.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-longcount">
-        <doc-member id="method-longcount" overload-id="group-longcount" name="LongCount" returns="long" params="IEnumerable<TSource>" signature="public static long LongCount(IEnumerable<TSource> source)">
-            <template #name><h3>LongCount</h3></template>
+        <doc-member id="method-longcount" overload-id="group-longcount" name="LongCount" returns="long" params="IEnumerable<TSource>" signature="public static long LongCount<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>LongCount&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1328,8 +1328,8 @@ of elements in a sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-longcount-1" overload-id="group-longcount" name="LongCount" returns="long" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static long LongCount(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>LongCount</h3></template>
+        <doc-member id="method-longcount-1" overload-id="group-longcount" name="LongCount" returns="long" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static long LongCount<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>LongCount&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1345,8 +1345,8 @@ in a sequence satisfy a condition.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-max">
-        <doc-member id="method-max" overload-id="group-max" name="Max" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Max(IEnumerable<TSource> source)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max" overload-id="group-max" name="Max" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Max<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1428,8 +1428,8 @@ in a sequence satisfy a condition.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-6" overload-id="group-max" name="Max" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Max(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-6" overload-id="group-max" name="Max" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Max<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+            <template #name><h3>Max&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1443,8 +1443,8 @@ sequence and returns the maximum resulting value.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-7" overload-id="group-max" name="Max" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Max(IEnumerable<TSource> source, Func<TSource, int?> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-7" overload-id="group-max" name="Max" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Max<TSource>(IEnumerable<TSource> source, Func<TSource, int?> selector)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1458,8 +1458,8 @@ returns the maximum nullable <see cref="!:System.Int32" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-8" overload-id="group-max" name="Max" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Max(IEnumerable<TSource> source, Func<TSource, long?> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-8" overload-id="group-max" name="Max" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Max<TSource>(IEnumerable<TSource> source, Func<TSource, long?> selector)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1473,8 +1473,8 @@ returns the maximum nullable <see cref="!:System.Int64" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-9" overload-id="group-max" name="Max" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Max(IEnumerable<TSource> source, Func<TSource, float?> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-9" overload-id="group-max" name="Max" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Max<TSource>(IEnumerable<TSource> source, Func<TSource, float?> selector)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1488,8 +1488,8 @@ returns the maximum nullable <see cref="!:System.Single" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-10" overload-id="group-max" name="Max" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Max(IEnumerable<TSource> source, Func<TSource, double?> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-10" overload-id="group-max" name="Max" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Max<TSource>(IEnumerable<TSource> source, Func<TSource, double?> selector)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1503,8 +1503,8 @@ returns the maximum nullable <see cref="!:System.Double" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-max-11" overload-id="group-max" name="Max" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Max(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
-            <template #name><h3>Max</h3></template>
+        <doc-member id="method-max-11" overload-id="group-max" name="Max" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Max<TSource>(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
+            <template #name><h3>Max&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1520,8 +1520,8 @@ returns the maximum nullable <see cref="!:System.Decimal" /> value.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-min">
-        <doc-member id="method-min" overload-id="group-min" name="Min" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Min(IEnumerable<TSource> source)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min" overload-id="group-min" name="Min" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Min<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1603,8 +1603,8 @@ returns the maximum nullable <see cref="!:System.Decimal" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-6" overload-id="group-min" name="Min" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Min(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-6" overload-id="group-min" name="Min" returns="TResult" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static TResult Min<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+            <template #name><h3>Min&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1618,8 +1618,8 @@ sequence and returns the minimum resulting value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-7" overload-id="group-min" name="Min" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Min(IEnumerable<TSource> source, Func<TSource, int?> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-7" overload-id="group-min" name="Min" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Min<TSource>(IEnumerable<TSource> source, Func<TSource, int?> selector)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1633,8 +1633,8 @@ returns the minimum nullable <see cref="!:System.Int32" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-8" overload-id="group-min" name="Min" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Min(IEnumerable<TSource> source, Func<TSource, long?> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-8" overload-id="group-min" name="Min" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Min<TSource>(IEnumerable<TSource> source, Func<TSource, long?> selector)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1648,8 +1648,8 @@ returns the minimum nullable <see cref="!:System.Int64" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-9" overload-id="group-min" name="Min" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Min(IEnumerable<TSource> source, Func<TSource, float?> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-9" overload-id="group-min" name="Min" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Min<TSource>(IEnumerable<TSource> source, Func<TSource, float?> selector)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1663,8 +1663,8 @@ returns the minimum nullable <see cref="!:System.Single" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-10" overload-id="group-min" name="Min" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Min(IEnumerable<TSource> source, Func<TSource, double?> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-10" overload-id="group-min" name="Min" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Min<TSource>(IEnumerable<TSource> source, Func<TSource, double?> selector)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1678,8 +1678,8 @@ returns the minimum nullable <see cref="!:System.Double" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-min-11" overload-id="group-min" name="Min" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Min(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
-            <template #name><h3>Min</h3></template>
+        <doc-member id="method-min-11" overload-id="group-min" name="Min" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Min<TSource>(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
+            <template #name><h3>Min&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1695,8 +1695,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-minmaximpl">
-        <doc-member id="method-minmaximpl" overload-id="group-minmaximpl" name="MinMaxImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, bool>" access="private" signature="private static TSource MinMaxImpl(IEnumerable<TSource> source, Func<TSource, TSource, bool> lesser)">
-            <template #name><h3>MinMaxImpl</h3></template>
+        <doc-member id="method-minmaximpl" overload-id="group-minmaximpl" name="MinMaxImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource, TSource, bool>" access="private" signature="private static TSource MinMaxImpl<TSource>(IEnumerable<TSource> source, Func<TSource, TSource, bool> lesser)">
+            <template #name><h3>MinMaxImpl&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1709,8 +1709,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-minmaximpl-1" overload-id="group-minmaximpl" name="MinMaxImpl" returns="TSource?" params="IEnumerable<TSource?>, TSource?, Func<TSource?, TSource?, bool>" access="private" signature="private static TSource? MinMaxImpl(IEnumerable<TSource?> source, TSource? seed, Func<TSource?, TSource?, bool> lesser)">
-            <template #name><h3>MinMaxImpl</h3></template>
+        <doc-member id="method-minmaximpl-1" overload-id="group-minmaximpl" name="MinMaxImpl" returns="TSource?" params="IEnumerable<TSource?>, TSource?, Func<TSource?, TSource?, bool>" access="private" signature="private static TSource? MinMaxImpl<TSource>(IEnumerable<TSource?> source, TSource? seed, Func<TSource?, TSource?, bool> lesser)">
+            <template #name><h3>MinMaxImpl&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1725,8 +1725,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-oftype" name="OfType" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> OfType(IEnumerable source)">
-        <template #name><h3>OfType</h3></template>
+    <doc-member id="method-oftype" name="OfType" returns="IEnumerable<TResult>" params="IEnumerable" signature="public static IEnumerable<TResult> OfType<TResult>(IEnumerable source)">
+        <template #name><h3>OfType&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1738,8 +1738,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
 
     </doc-member>
 
-    <doc-member id="method-oftypeyield" name="OfTypeYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> OfTypeYield(IEnumerable source)">
-        <template #name><h3>OfTypeYield</h3></template>
+    <doc-member id="method-oftypeyield" name="OfTypeYield" returns="IEnumerable<TResult>" params="IEnumerable" access="private" signature="private static IEnumerable<TResult> OfTypeYield<TResult>(IEnumerable source)">
+        <template #name><h3>OfTypeYield&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1749,8 +1749,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-orderby">
-        <doc-member id="method-orderby" overload-id="group-orderby" name="OrderBy" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>OrderBy</h3></template>
+        <doc-member id="method-orderby" overload-id="group-orderby" name="OrderBy" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>OrderBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1763,8 +1763,8 @@ returns the minimum nullable <see cref="!:System.Decimal" /> value.</p>
 
         </doc-member>
 
-        <doc-member id="method-orderby-1" overload-id="group-orderby" name="OrderBy" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
-            <template #name><h3>OrderBy</h3></template>
+        <doc-member id="method-orderby-1" overload-id="group-orderby" name="OrderBy" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderBy<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+            <template #name><h3>OrderBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1781,8 +1781,8 @@ specified comparer.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-orderbydescending">
-        <doc-member id="method-orderbydescending" overload-id="group-orderbydescending" name="OrderByDescending" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>OrderByDescending</h3></template>
+        <doc-member id="method-orderbydescending" overload-id="group-orderbydescending" name="OrderByDescending" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>OrderByDescending&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1795,8 +1795,8 @@ specified comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-orderbydescending-1" overload-id="group-orderbydescending" name="OrderByDescending" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
-            <template #name><h3>OrderByDescending</h3></template>
+        <doc-member id="method-orderbydescending-1" overload-id="group-orderbydescending" name="OrderByDescending" returns="IOrderedEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> OrderByDescending<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+            <template #name><h3>OrderByDescending&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1837,8 +1837,8 @@ specified comparer.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-renumerable" name="Renumerable" returns="IEnumerable<T>" params="IEnumerator<T>" access="private" signature="private static IEnumerable<T> Renumerable(IEnumerator<T> e)">
-        <template #name><h3>Renumerable</h3></template>
+    <doc-member id="method-renumerable" name="Renumerable" returns="IEnumerable<T>" params="IEnumerator<T>" access="private" signature="private static IEnumerable<T> Renumerable<T>(IEnumerator<T> e)">
+        <template #name><h3>Renumerable&lt;T&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1850,8 +1850,8 @@ specified comparer.</p>
 
     </doc-member>
 
-    <doc-member id="method-repeat" name="Repeat" returns="IEnumerable<TResult>" params="TResult, int" signature="public static IEnumerable<TResult> Repeat(TResult element, int count)">
-        <template #name><h3>Repeat</h3></template>
+    <doc-member id="method-repeat" name="Repeat" returns="IEnumerable<TResult>" params="TResult, int" signature="public static IEnumerable<TResult> Repeat<TResult>(TResult element, int count)">
+        <template #name><h3>Repeat&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1864,8 +1864,8 @@ specified comparer.</p>
 
     </doc-member>
 
-    <doc-member id="method-repeatyield" name="RepeatYield" returns="IEnumerable<TResult>" params="TResult, int" access="private" signature="private static IEnumerable<TResult> RepeatYield(TResult element, int count)">
-        <template #name><h3>RepeatYield</h3></template>
+    <doc-member id="method-repeatyield" name="RepeatYield" returns="IEnumerable<TResult>" params="TResult, int" access="private" signature="private static IEnumerable<TResult> RepeatYield<TResult>(TResult element, int count)">
+        <template #name><h3>RepeatYield&lt;TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1875,8 +1875,8 @@ specified comparer.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-reverse" name="Reverse" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Reverse(IEnumerable<TSource> source)">
-        <template #name><h3>Reverse</h3></template>
+    <doc-member id="method-reverse" name="Reverse" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" signature="public static IEnumerable<TSource> Reverse<TSource>(IEnumerable<TSource> source)">
+        <template #name><h3>Reverse&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1888,8 +1888,8 @@ specified comparer.</p>
 
     </doc-member>
 
-    <doc-member id="method-reverseyield" name="ReverseYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ReverseYield(IEnumerable<TSource> source)">
-        <template #name><h3>ReverseYield</h3></template>
+    <doc-member id="method-reverseyield" name="ReverseYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>" access="private" signature="private static IEnumerable<TSource> ReverseYield<TSource>(IEnumerable<TSource> source)">
+        <template #name><h3>ReverseYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -1899,8 +1899,8 @@ specified comparer.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-select">
-        <doc-member id="method-select" overload-id="group-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static IEnumerable<TResult> Select(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
-            <template #name><h3>Select</h3></template>
+        <doc-member id="method-select" overload-id="group-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" signature="public static IEnumerable<TResult> Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+            <template #name><h3>Select&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1913,8 +1913,8 @@ specified comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-select-1" overload-id="group-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, TResult>" signature="public static IEnumerable<TResult> Select(IEnumerable<TSource> source, Func<TSource, int, TResult> selector)">
-            <template #name><h3>Select</h3></template>
+        <doc-member id="method-select-1" overload-id="group-select" name="Select" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, TResult>" signature="public static IEnumerable<TResult> Select<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, int, TResult> selector)">
+            <template #name><h3>Select&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1930,8 +1930,8 @@ incorporating the element's index.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-selectmany">
-        <doc-member id="method-selectmany" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)">
-            <template #name><h3>SelectMany</h3></template>
+        <doc-member id="method-selectmany" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, IEnumerable<TResult>> selector)">
+            <template #name><h3>SelectMany&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1945,8 +1945,8 @@ and flattens the resulting sequences into one sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-selectmany-1" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TResult>> selector)">
-            <template #name><h3>SelectMany</h3></template>
+        <doc-member id="method-selectmany-1" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TResult>>" signature="public static IEnumerable<TResult> SelectMany<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TResult>> selector)">
+            <template #name><h3>SelectMany&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1962,8 +1962,8 @@ that element.</p>
 
         </doc-member>
 
-        <doc-member id="method-selectmany-2" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
-            <template #name><h3>SelectMany</h3></template>
+        <doc-member id="method-selectmany-2" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(IEnumerable<TSource> source, Func<TSource, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+            <template #name><h3>SelectMany&lt;TSource, TCollection, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1979,8 +1979,8 @@ a result selector function on each element therein.</p>
 
         </doc-member>
 
-        <doc-member id="method-selectmany-3" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
-            <template #name><h3>SelectMany</h3></template>
+        <doc-member id="method-selectmany-3" overload-id="group-selectmany" name="SelectMany" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" signature="public static IEnumerable<TResult> SelectMany<TSource, TCollection, TResult>(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+            <template #name><h3>SelectMany&lt;TSource, TCollection, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -1999,8 +1999,8 @@ of that element.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-selectmanyyield" name="SelectManyYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" access="private" signature="private static IEnumerable<TResult> SelectManyYield(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
-        <template #name><h3>SelectManyYield</h3></template>
+    <doc-member id="method-selectmanyyield" name="SelectManyYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, IEnumerable<TCollection>>, Func<TSource, TCollection, TResult>" access="private" signature="private static IEnumerable<TResult> SelectManyYield<TSource, TCollection, TResult>(IEnumerable<TSource> source, Func<TSource, int, IEnumerable<TCollection>> collectionSelector, Func<TSource, TCollection, TResult> resultSelector)">
+        <template #name><h3>SelectManyYield&lt;TSource, TCollection, TResult&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2012,8 +2012,8 @@ of that element.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-selectyield">
-        <doc-member id="method-selectyield" overload-id="group-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
-            <template #name><h3>SelectYield</h3></template>
+        <doc-member id="method-selectyield" overload-id="group-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, TResult> selector)">
+            <template #name><h3>SelectYield&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2023,8 +2023,8 @@ of that element.</p>
             </template>
         </doc-member>
 
-        <doc-member id="method-selectyield-1" overload-id="group-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield(IEnumerable<TSource> source, Func<TSource, int, TResult> selector)">
-            <template #name><h3>SelectYield</h3></template>
+        <doc-member id="method-selectyield-1" overload-id="group-selectyield" name="SelectYield" returns="IEnumerable<TResult>" params="IEnumerable<TSource>, Func<TSource, int, TResult>" access="private" signature="private static IEnumerable<TResult> SelectYield<TSource, TResult>(IEnumerable<TSource> source, Func<TSource, int, TResult> selector)">
+            <template #name><h3>SelectYield&lt;TSource, TResult&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2036,8 +2036,8 @@ of that element.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-sequenceequal">
-        <doc-member id="method-sequenceequal" overload-id="group-sequenceequal" name="SequenceEqual" returns="bool" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static bool SequenceEqual(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-            <template #name><h3>SequenceEqual</h3></template>
+        <doc-member id="method-sequenceequal" overload-id="group-sequenceequal" name="SequenceEqual" returns="bool" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static bool SequenceEqual<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+            <template #name><h3>SequenceEqual&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2051,8 +2051,8 @@ elements by using the default equality comparer for their type.</p>
 
         </doc-member>
 
-        <doc-member id="method-sequenceequal-1" overload-id="group-sequenceequal" name="SequenceEqual" returns="bool" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static bool SequenceEqual(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>SequenceEqual</h3></template>
+        <doc-member id="method-sequenceequal-1" overload-id="group-sequenceequal" name="SequenceEqual" returns="bool" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static bool SequenceEqual<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>SequenceEqual&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2069,8 +2069,8 @@ elements by using a specified <see cref="!:IEqualityComparer&lt;T&gt;" />.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-single">
-        <doc-member id="method-single" overload-id="group-single" name="Single" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Single(IEnumerable<TSource> source)">
-            <template #name><h3>Single</h3></template>
+        <doc-member id="method-single" overload-id="group-single" name="Single" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource Single<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>Single&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2083,8 +2083,8 @@ if there is not exactly one element in the sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-single-1" overload-id="group-single" name="Single" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource Single(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>Single</h3></template>
+        <doc-member id="method-single-1" overload-id="group-single" name="Single" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource Single<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>Single&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2100,8 +2100,8 @@ such element exists.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-singleimpl" name="SingleImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource SingleImpl(IEnumerable<TSource> source, Func<TSource> empty)">
-        <template #name><h3>SingleImpl</h3></template>
+    <doc-member id="method-singleimpl" name="SingleImpl" returns="TSource" params="IEnumerable<TSource>, Func<TSource>" access="private" signature="private static TSource SingleImpl<TSource>(IEnumerable<TSource> source, Func<TSource> empty)">
+        <template #name><h3>SingleImpl&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2115,8 +2115,8 @@ such element exists.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-singleordefault">
-        <doc-member id="method-singleordefault" overload-id="group-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource SingleOrDefault(IEnumerable<TSource> source)">
-            <template #name><h3>SingleOrDefault</h3></template>
+        <doc-member id="method-singleordefault" overload-id="group-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>" signature="public static TSource SingleOrDefault<TSource>(IEnumerable<TSource> source)">
+            <template #name><h3>SingleOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2130,8 +2130,8 @@ is more than one element in the sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-singleordefault-1" overload-id="group-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource SingleOrDefault(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>SingleOrDefault</h3></template>
+        <doc-member id="method-singleordefault-1" overload-id="group-singleordefault" name="SingleOrDefault" returns="TSource" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static TSource SingleOrDefault<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>SingleOrDefault&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2148,8 +2148,8 @@ satisfies the condition.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-skip" name="Skip" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, int" signature="public static IEnumerable<TSource> Skip(IEnumerable<TSource> source, int count)">
-        <template #name><h3>Skip</h3></template>
+    <doc-member id="method-skip" name="Skip" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, int" signature="public static IEnumerable<TSource> Skip<TSource>(IEnumerable<TSource> source, int count)">
+        <template #name><h3>Skip&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2164,8 +2164,8 @@ returns the remaining elements.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-skipwhile">
-        <doc-member id="method-skipwhile" overload-id="group-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> SkipWhile(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>SkipWhile</h3></template>
+        <doc-member id="method-skipwhile" overload-id="group-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> SkipWhile<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>SkipWhile&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2179,8 +2179,8 @@ is true and then returns the remaining elements.</p>
 
         </doc-member>
 
-        <doc-member id="method-skipwhile-1" overload-id="group-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> SkipWhile(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-            <template #name><h3>SkipWhile</h3></template>
+        <doc-member id="method-skipwhile-1" overload-id="group-skipwhile" name="SkipWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> SkipWhile<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+            <template #name><h3>SkipWhile&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2196,8 +2196,8 @@ index is used in the logic of the predicate function.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-skipwhileyield" name="SkipWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> SkipWhileYield(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-        <template #name><h3>SkipWhileYield</h3></template>
+    <doc-member id="method-skipwhileyield" name="SkipWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> SkipWhileYield<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+        <template #name><h3>SkipWhileYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2338,8 +2338,8 @@ index is used in the logic of the predicate function.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-10" overload-id="group-sum" name="Sum" returns="int" params="IEnumerable<TSource>, Func<TSource, int>" signature="public static int Sum(IEnumerable<TSource> source, Func<TSource, int> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-10" overload-id="group-sum" name="Sum" returns="int" params="IEnumerable<TSource>, Func<TSource, int>" signature="public static int Sum<TSource>(IEnumerable<TSource> source, Func<TSource, int> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2354,8 +2354,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-11" overload-id="group-sum" name="Sum" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Sum(IEnumerable<TSource> source, Func<TSource, int?> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-11" overload-id="group-sum" name="Sum" returns="int?" params="IEnumerable<TSource>, Func<TSource, int?>" signature="public static int? Sum<TSource>(IEnumerable<TSource> source, Func<TSource, int?> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2370,8 +2370,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-12" overload-id="group-sum" name="Sum" returns="long" params="IEnumerable<TSource>, Func<TSource, long>" signature="public static long Sum(IEnumerable<TSource> source, Func<TSource, long> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-12" overload-id="group-sum" name="Sum" returns="long" params="IEnumerable<TSource>, Func<TSource, long>" signature="public static long Sum<TSource>(IEnumerable<TSource> source, Func<TSource, long> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2386,8 +2386,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-13" overload-id="group-sum" name="Sum" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Sum(IEnumerable<TSource> source, Func<TSource, long?> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-13" overload-id="group-sum" name="Sum" returns="long?" params="IEnumerable<TSource>, Func<TSource, long?>" signature="public static long? Sum<TSource>(IEnumerable<TSource> source, Func<TSource, long?> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2402,8 +2402,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-14" overload-id="group-sum" name="Sum" returns="float" params="IEnumerable<TSource>, Func<TSource, float>" signature="public static float Sum(IEnumerable<TSource> source, Func<TSource, float> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-14" overload-id="group-sum" name="Sum" returns="float" params="IEnumerable<TSource>, Func<TSource, float>" signature="public static float Sum<TSource>(IEnumerable<TSource> source, Func<TSource, float> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2418,8 +2418,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-15" overload-id="group-sum" name="Sum" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Sum(IEnumerable<TSource> source, Func<TSource, float?> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-15" overload-id="group-sum" name="Sum" returns="float?" params="IEnumerable<TSource>, Func<TSource, float?>" signature="public static float? Sum<TSource>(IEnumerable<TSource> source, Func<TSource, float?> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2434,8 +2434,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-16" overload-id="group-sum" name="Sum" returns="double" params="IEnumerable<TSource>, Func<TSource, double>" signature="public static double Sum(IEnumerable<TSource> source, Func<TSource, double> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-16" overload-id="group-sum" name="Sum" returns="double" params="IEnumerable<TSource>, Func<TSource, double>" signature="public static double Sum<TSource>(IEnumerable<TSource> source, Func<TSource, double> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2450,8 +2450,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-17" overload-id="group-sum" name="Sum" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Sum(IEnumerable<TSource> source, Func<TSource, double?> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-17" overload-id="group-sum" name="Sum" returns="double?" params="IEnumerable<TSource>, Func<TSource, double?>" signature="public static double? Sum<TSource>(IEnumerable<TSource> source, Func<TSource, double?> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2466,8 +2466,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-18" overload-id="group-sum" name="Sum" returns="decimal" params="IEnumerable<TSource>, Func<TSource, decimal>" signature="public static decimal Sum(IEnumerable<TSource> source, Func<TSource, decimal> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-18" overload-id="group-sum" name="Sum" returns="decimal" params="IEnumerable<TSource>, Func<TSource, decimal>" signature="public static decimal Sum<TSource>(IEnumerable<TSource> source, Func<TSource, decimal> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2482,8 +2482,8 @@ each element of the input sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-sum-19" overload-id="group-sum" name="Sum" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Sum(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
-            <template #name><h3>Sum</h3></template>
+        <doc-member id="method-sum-19" overload-id="group-sum" name="Sum" returns="decimal?" params="IEnumerable<TSource>, Func<TSource, decimal?>" signature="public static decimal? Sum<TSource>(IEnumerable<TSource> source, Func<TSource, decimal?> selector)">
+            <template #name><h3>Sum&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2499,8 +2499,8 @@ each element of the input sequence.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-take" name="Take" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, int" signature="public static IEnumerable<TSource> Take(IEnumerable<TSource> source, int count)">
-        <template #name><h3>Take</h3></template>
+    <doc-member id="method-take" name="Take" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, int" signature="public static IEnumerable<TSource> Take<TSource>(IEnumerable<TSource> source, int count)">
+        <template #name><h3>Take&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2515,8 +2515,8 @@ of a sequence.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-takewhile">
-        <doc-member id="method-takewhile" overload-id="group-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> TakeWhile(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>TakeWhile</h3></template>
+        <doc-member id="method-takewhile" overload-id="group-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> TakeWhile<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>TakeWhile&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2529,8 +2529,8 @@ of a sequence.</p>
 
         </doc-member>
 
-        <doc-member id="method-takewhile-1" overload-id="group-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> TakeWhile(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-            <template #name><h3>TakeWhile</h3></template>
+        <doc-member id="method-takewhile-1" overload-id="group-takewhile" name="TakeWhile" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> TakeWhile<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+            <template #name><h3>TakeWhile&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2545,8 +2545,8 @@ The element's index is used in the logic of the predicate function.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-takewhileyield" name="TakeWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> TakeWhileYield(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-        <template #name><h3>TakeWhileYield</h3></template>
+    <doc-member id="method-takewhileyield" name="TakeWhileYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> TakeWhileYield<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+        <template #name><h3>TakeWhileYield&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2557,8 +2557,8 @@ The element's index is used in the logic of the predicate function.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-thenby">
-        <doc-member id="method-thenby" overload-id="group-thenby" name="ThenBy" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>ThenBy</h3></template>
+        <doc-member id="method-thenby" overload-id="group-thenby" name="ThenBy" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>ThenBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2572,8 +2572,8 @@ ascending order according to a key.</p>
 
         </doc-member>
 
-        <doc-member id="method-thenby-1" overload-id="group-thenby" name="ThenBy" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
-            <template #name><h3>ThenBy</h3></template>
+        <doc-member id="method-thenby-1" overload-id="group-thenby" name="ThenBy" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenBy<TSource, TKey>(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+            <template #name><h3>ThenBy&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2590,8 +2590,8 @@ ascending order by using a specified comparer.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-thenbydescending">
-        <doc-member id="method-thenbydescending" overload-id="group-thenbydescending" name="ThenByDescending" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>ThenByDescending</h3></template>
+        <doc-member id="method-thenbydescending" overload-id="group-thenbydescending" name="ThenByDescending" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>ThenByDescending&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2605,8 +2605,8 @@ descending order, according to a key.</p>
 
         </doc-member>
 
-        <doc-member id="method-thenbydescending-1" overload-id="group-thenbydescending" name="ThenByDescending" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
-            <template #name><h3>ThenByDescending</h3></template>
+        <doc-member id="method-thenbydescending-1" overload-id="group-thenbydescending" name="ThenByDescending" returns="IOrderedEnumerable<TSource>" params="IOrderedEnumerable<TSource>, Func<TSource, TKey>, IComparer<TKey>" signature="public static IOrderedEnumerable<TSource> ThenByDescending<TSource, TKey>(IOrderedEnumerable<TSource> source, Func<TSource, TKey> keySelector, IComparer<TKey> comparer)">
+            <template #name><h3>ThenByDescending&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2622,8 +2622,8 @@ descending order by using a specified comparer.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-toarray" name="ToArray" returns="TSource[]" params="IEnumerable<TSource>" signature="public static TSource[] ToArray(IEnumerable<TSource> source)">
-        <template #name><h3>ToArray</h3></template>
+    <doc-member id="method-toarray" name="ToArray" returns="TSource[]" params="IEnumerable<TSource>" signature="public static TSource[] ToArray<TSource>(IEnumerable<TSource> source)">
+        <template #name><h3>ToArray&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2636,8 +2636,8 @@ descending order by using a specified comparer.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-todictionary">
-        <doc-member id="method-todictionary" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>ToDictionary</h3></template>
+        <doc-member id="method-todictionary" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>ToDictionary&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2652,8 +2652,8 @@ selector function.</p>
 
         </doc-member>
 
-        <doc-member id="method-todictionary-1" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>ToDictionary</h3></template>
+        <doc-member id="method-todictionary-1" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TSource> ToDictionary<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>ToDictionary&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2669,8 +2669,8 @@ selector function and key comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-todictionary-2" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static Dictionary<TKey, TElement> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
-            <template #name><h3>ToDictionary</h3></template>
+        <doc-member id="method-todictionary-2" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static Dictionary<TKey, TElement> ToDictionary<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+            <template #name><h3>ToDictionary&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2686,8 +2686,8 @@ selector and element selector functions.</p>
 
         </doc-member>
 
-        <doc-member id="method-todictionary-3" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TElement> ToDictionary(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>ToDictionary</h3></template>
+        <doc-member id="method-todictionary-3" overload-id="group-todictionary" name="ToDictionary" returns="Dictionary<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static Dictionary<TKey, TElement> ToDictionary<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>ToDictionary&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2705,8 +2705,8 @@ selector function, a comparer, and an element selector function.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-tolist" name="ToList" returns="List<TSource>" params="IEnumerable<TSource>" signature="public static List<TSource> ToList(IEnumerable<TSource> source)">
-        <template #name><h3>ToList</h3></template>
+    <doc-member id="method-tolist" name="ToList" returns="List<TSource>" params="IEnumerable<TSource>" signature="public static List<TSource> ToList<TSource>(IEnumerable<TSource> source)">
+        <template #name><h3>ToList&lt;TSource&gt;</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -2719,8 +2719,8 @@ selector function, a comparer, and an element selector function.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-tolookup">
-        <doc-member id="method-tolookup" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static ILookup<TKey, TSource> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
-            <template #name><h3>ToLookup</h3></template>
+        <doc-member id="method-tolookup" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>" signature="public static ILookup<TKey, TSource> ToLookup<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector)">
+            <template #name><h3>ToLookup&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2735,8 +2735,8 @@ selector function.</p>
 
         </doc-member>
 
-        <doc-member id="method-tolookup-1" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TSource> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>ToLookup</h3></template>
+        <doc-member id="method-tolookup-1" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TSource>" params="IEnumerable<TSource>, Func<TSource, TKey>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TSource> ToLookup<TSource, TKey>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>ToLookup&lt;TSource, TKey&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2752,8 +2752,8 @@ selector function and a key comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-tolookup-2" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static ILookup<TKey, TElement> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
-            <template #name><h3>ToLookup</h3></template>
+        <doc-member id="method-tolookup-2" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>" signature="public static ILookup<TKey, TElement> ToLookup<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector)">
+            <template #name><h3>ToLookup&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2769,8 +2769,8 @@ and element selector functions.</p>
 
         </doc-member>
 
-        <doc-member id="method-tolookup-3" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TElement> ToLookup(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
-            <template #name><h3>ToLookup</h3></template>
+        <doc-member id="method-tolookup-3" overload-id="group-tolookup" name="ToLookup" returns="ILookup<TKey, TElement>" params="IEnumerable<TSource>, Func<TSource, TKey>, Func<TSource, TElement>, IEqualityComparer<TKey>" signature="public static ILookup<TKey, TElement> ToLookup<TSource, TKey, TElement>(IEnumerable<TSource> source, Func<TSource, TKey> keySelector, Func<TSource, TElement> elementSelector, IEqualityComparer<TKey> comparer)">
+            <template #name><h3>ToLookup&lt;TSource, TKey, TElement&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2789,8 +2789,8 @@ selector function, a comparer and an element selector function.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-union">
-        <doc-member id="method-union" overload-id="group-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Union(IEnumerable<TSource> first, IEnumerable<TSource> second)">
-            <template #name><h3>Union</h3></template>
+        <doc-member id="method-union" overload-id="group-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>" signature="public static IEnumerable<TSource> Union<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second)">
+            <template #name><h3>Union&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2804,8 +2804,8 @@ equality comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-union-1" overload-id="group-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Union(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
-            <template #name><h3>Union</h3></template>
+        <doc-member id="method-union-1" overload-id="group-union" name="Union" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, IEnumerable<TSource>, IEqualityComparer<TSource>" signature="public static IEnumerable<TSource> Union<TSource>(IEnumerable<TSource> first, IEnumerable<TSource> second, IEqualityComparer<TSource> comparer)">
+            <template #name><h3>Union&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2822,8 +2822,8 @@ equality comparer.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-where">
-        <doc-member id="method-where" overload-id="group-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> Where(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>Where</h3></template>
+        <doc-member id="method-where" overload-id="group-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" signature="public static IEnumerable<TSource> Where<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>Where&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2836,8 +2836,8 @@ equality comparer.</p>
 
         </doc-member>
 
-        <doc-member id="method-where-1" overload-id="group-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> Where(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-            <template #name><h3>Where</h3></template>
+        <doc-member id="method-where-1" overload-id="group-where" name="Where" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" signature="public static IEnumerable<TSource> Where<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+            <template #name><h3>Where&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2853,8 +2853,8 @@ Each element's index is used in the logic of the predicate function.</p>
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-whereyield">
-        <doc-member id="method-whereyield" overload-id="group-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" access="private" signature="private static IEnumerable<TSource> WhereYield(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
-            <template #name><h3>WhereYield</h3></template>
+        <doc-member id="method-whereyield" overload-id="group-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, bool>" access="private" signature="private static IEnumerable<TSource> WhereYield<TSource>(IEnumerable<TSource> source, Func<TSource, bool> predicate)">
+            <template #name><h3>WhereYield&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
@@ -2864,8 +2864,8 @@ Each element's index is used in the logic of the predicate function.</p>
             </template>
         </doc-member>
 
-        <doc-member id="method-whereyield-1" overload-id="group-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> WhereYield(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
-            <template #name><h3>WhereYield</h3></template>
+        <doc-member id="method-whereyield-1" overload-id="group-whereyield" name="WhereYield" returns="IEnumerable<TSource>" params="IEnumerable<TSource>, Func<TSource, int, bool>" access="private" signature="private static IEnumerable<TSource> WhereYield<TSource>(IEnumerable<TSource> source, Func<TSource, int, bool> predicate)">
+            <template #name><h3>WhereYield&lt;TSource&gt;</h3></template>
 
             <template #parameters>
                 <doc-parameters>
