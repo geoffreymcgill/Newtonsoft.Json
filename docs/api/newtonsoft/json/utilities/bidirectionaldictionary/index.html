@@ -208,19 +208,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_firsttosecond" name="_firstToSecond" type="IDictionary<TFirst, TSecond>" access="private" signature="private readonly IDictionary<TFirst, TSecond> _firstToSecond">
+    <doc-member id="field-_firsttosecond" name="_firstToSecond" type="IDictionary<TFirst, TSecond>" access="private" signature="private readonly IDictionary<TFirst, TSecond> _firstToSecond">
         <template #name><h3>_firstToSecond</h3></template>
     </doc-member>
 
-<doc-member id="field-_secondtofirst" name="_secondToFirst" type="IDictionary<TSecond, TFirst>" access="private" signature="private readonly IDictionary<TSecond, TFirst> _secondToFirst">
+    <doc-member id="field-_secondtofirst" name="_secondToFirst" type="IDictionary<TSecond, TFirst>" access="private" signature="private readonly IDictionary<TSecond, TFirst> _secondToFirst">
         <template #name><h3>_secondToFirst</h3></template>
     </doc-member>
 
-<doc-member id="field-_duplicatefirsterrormessage" name="_duplicateFirstErrorMessage" type="System.String" access="private" signature="private readonly String _duplicateFirstErrorMessage">
+    <doc-member id="field-_duplicatefirsterrormessage" name="_duplicateFirstErrorMessage" type="string" access="private" signature="private readonly string _duplicateFirstErrorMessage">
         <template #name><h3>_duplicateFirstErrorMessage</h3></template>
     </doc-member>
 
-<doc-member id="field-_duplicateseconderrormessage" name="_duplicateSecondErrorMessage" type="System.String" access="private" signature="private readonly String _duplicateSecondErrorMessage">
+    <doc-member id="field-_duplicateseconderrormessage" name="_duplicateSecondErrorMessage" type="string" access="private" signature="private readonly string _duplicateSecondErrorMessage">
         <template #name><h3>_duplicateSecondErrorMessage</h3></template>
     </doc-member>
 </doc-member-group>
@@ -228,35 +228,37 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public BidirectionalDictionary()">
-        <template #name><h3>.ctor</h3></template>
-    </doc-member>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public BidirectionalDictionary()">
+            <template #name><h3>.ctor</h3></template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEqualityComparer<TFirst>, IEqualityComparer<TSecond>" signature="public BidirectionalDictionary(IEqualityComparer<TFirst> firstEqualityComparer, IEqualityComparer<TSecond> secondEqualityComparer)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="IEqualityComparer<TFirst>, IEqualityComparer<TSecond>" signature="public BidirectionalDictionary(IEqualityComparer<TFirst> firstEqualityComparer, IEqualityComparer<TSecond> secondEqualityComparer)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="firstEqualityComparer" type="IEqualityComparer<TFirst>"></doc-parameter>
-                <doc-parameter name="secondEqualityComparer" type="IEqualityComparer<TSecond>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="firstEqualityComparer" type="IEqualityComparer<TFirst>"></doc-parameter>
+                    <doc-parameter name="secondEqualityComparer" type="IEqualityComparer<TSecond>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEqualityComparer<TFirst>, IEqualityComparer<TSecond>, String, String" signature="public BidirectionalDictionary(IEqualityComparer<TFirst> firstEqualityComparer, IEqualityComparer<TSecond> secondEqualityComparer, String duplicateFirstErrorMessage, String duplicateSecondErrorMessage)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="IEqualityComparer<TFirst>, IEqualityComparer<TSecond>, string, string" signature="public BidirectionalDictionary(IEqualityComparer<TFirst> firstEqualityComparer, IEqualityComparer<TSecond> secondEqualityComparer, string duplicateFirstErrorMessage, string duplicateSecondErrorMessage)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="firstEqualityComparer" type="IEqualityComparer<TFirst>"></doc-parameter>
-                <doc-parameter name="secondEqualityComparer" type="IEqualityComparer<TSecond>"></doc-parameter>
-                <doc-parameter name="duplicateFirstErrorMessage" type="System.String"></doc-parameter>
-                <doc-parameter name="duplicateSecondErrorMessage" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="firstEqualityComparer" type="IEqualityComparer<TFirst>"></doc-parameter>
+                    <doc-parameter name="secondEqualityComparer" type="IEqualityComparer<TSecond>"></doc-parameter>
+                    <doc-parameter name="duplicateFirstErrorMessage" type="string"></doc-parameter>
+                    <doc-parameter name="duplicateSecondErrorMessage" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-set" name="Set" returns="System.Void" params="TFirst, TSecond" signature="public Void Set(TFirst first, TSecond second)">
+    <doc-member id="method-set" name="Set" returns="void" params="TFirst, TSecond" signature="public void Set(TFirst first, TSecond second)">
         <template #name><h3>Set</h3></template>
 
         <template #parameters>
@@ -267,7 +269,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-trygetbyfirst" name="TryGetByFirst" returns="System.Boolean" params="TFirst, TSecond" signature="public Boolean TryGetByFirst(TFirst first, TSecond second)">
+    <doc-member id="method-trygetbyfirst" name="TryGetByFirst" returns="bool" params="TFirst, TSecond" signature="public bool TryGetByFirst(TFirst first, TSecond second)">
         <template #name><h3>TryGetByFirst</h3></template>
 
         <template #parameters>
@@ -278,7 +280,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-trygetbysecond" name="TryGetBySecond" returns="System.Boolean" params="TSecond, TFirst" signature="public Boolean TryGetBySecond(TSecond second, TFirst first)">
+    <doc-member id="method-trygetbysecond" name="TryGetBySecond" returns="bool" params="TSecond, TFirst" signature="public bool TryGetBySecond(TSecond second, TFirst first)">
         <template #name><h3>TryGetBySecond</h3></template>
 
         <template #parameters>

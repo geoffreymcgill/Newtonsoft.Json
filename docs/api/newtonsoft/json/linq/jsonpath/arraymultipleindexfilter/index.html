@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-indexes" name="Indexes" type="List<System.Int32>" access="internal" signature="internal List<Int32> Indexes">
+    <doc-member id="field-indexes" name="Indexes" type="List<int>" access="internal" signature="internal List<int> Indexes">
         <template #name><h3>Indexes</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,24 +216,24 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="List<Int32>" signature="public ArrayMultipleIndexFilter(List<Int32> indexes)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="List<int>" signature="public ArrayMultipleIndexFilter(List<int> indexes)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="indexes" type="List<System.Int32>"></doc-parameter>
+                <doc-parameter name="indexes" type="List<int>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings settings)">
+    <doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings?" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)">
         <template #name><h3>ExecuteFilter</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="current" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

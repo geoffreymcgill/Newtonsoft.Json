@@ -208,11 +208,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-bytecount" name="ByteCount" type="System.Int32" signature="public Int32 ByteCount { get; set; }">
+    <doc-member id="property-bytecount" name="ByteCount" type="int" signature="public int ByteCount { get; set; }">
         <template #name><h3>ByteCount</h3></template>
     </doc-member>
 
-<doc-member id="property-includelength" name="IncludeLength" type="System.Boolean" signature="public Boolean IncludeLength { get; }">
+    <doc-member id="property-includelength" name="IncludeLength" type="bool" signature="public bool IncludeLength { get; }">
         <template #name><h3>IncludeLength</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,13 +220,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Object, Boolean" signature="public BsonString(Object value, Boolean includeLength)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object, bool" signature="public BsonString(object value, bool includeLength)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="includeLength" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="includeLength" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

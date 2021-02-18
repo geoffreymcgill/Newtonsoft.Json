@@ -208,7 +208,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-expressions" name="Expressions" type="List<Newtonsoft.Json.Linq.JsonPath.QueryExpression>" signature="public List<QueryExpression> Expressions { get; set; }">
+    <doc-member id="property-expressions" name="Expressions" type="List<QueryExpression>" signature="public List<QueryExpression> Expressions { get; set; }">
         <template #name><h3>Expressions</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="QueryOperator" signature="public CompositeExpression(QueryOperator operator)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="QueryOperator" signature="public CompositeExpression(QueryOperator operator)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -226,14 +226,14 @@
         </template>
     </doc-member>
 
-<doc-member id="method-ismatch" name="IsMatch" returns="System.Boolean" params="JToken, JToken, JsonSelectSettings" signature="public sealed Boolean IsMatch(JToken root, JToken t, JsonSelectSettings settings)">
+    <doc-member id="method-ismatch" name="IsMatch" returns="bool" params="JToken, JToken, JsonSelectSettings?" signature="public sealed bool IsMatch(JToken root, JToken t, JsonSelectSettings? settings)">
         <template #name><h3>IsMatch</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -208,23 +208,23 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-singlequotecharescapeflags" name="SingleQuoteCharEscapeFlags" type="System.Boolean[]" access="internal" signature="internal readonly static Boolean[] SingleQuoteCharEscapeFlags">
+    <doc-member id="field-singlequotecharescapeflags" name="SingleQuoteCharEscapeFlags" type="bool[]" access="internal" signature="internal readonly static bool[] SingleQuoteCharEscapeFlags">
         <template #name><h3>SingleQuoteCharEscapeFlags</h3></template>
     </doc-member>
 
-<doc-member id="field-doublequotecharescapeflags" name="DoubleQuoteCharEscapeFlags" type="System.Boolean[]" access="internal" signature="internal readonly static Boolean[] DoubleQuoteCharEscapeFlags">
+    <doc-member id="field-doublequotecharescapeflags" name="DoubleQuoteCharEscapeFlags" type="bool[]" access="internal" signature="internal readonly static bool[] DoubleQuoteCharEscapeFlags">
         <template #name><h3>DoubleQuoteCharEscapeFlags</h3></template>
     </doc-member>
 
-<doc-member id="field-htmlcharescapeflags" name="HtmlCharEscapeFlags" type="System.Boolean[]" access="internal" signature="internal readonly static Boolean[] HtmlCharEscapeFlags">
+    <doc-member id="field-htmlcharescapeflags" name="HtmlCharEscapeFlags" type="bool[]" access="internal" signature="internal readonly static bool[] HtmlCharEscapeFlags">
         <template #name><h3>HtmlCharEscapeFlags</h3></template>
     </doc-member>
 
-<doc-member id="field-unicodetextlength" name="UnicodeTextLength" type="System.Int32" access="private" signature="private const static Int32 UnicodeTextLength">
+    <doc-member id="field-unicodetextlength" name="UnicodeTextLength" type="int" access="private" signature="private const static int UnicodeTextLength">
         <template #name><h3>UnicodeTextLength</h3></template>
     </doc-member>
 
-<doc-member id="field-escapedunicodetext" name="EscapedUnicodeText" type="System.String" access="private" signature="private const static String EscapedUnicodeText">
+    <doc-member id="field-escapedunicodetext" name="EscapedUnicodeText" type="string" access="private" signature="private const static string EscapedUnicodeText">
         <template #name><h3>EscapedUnicodeText</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,193 +232,195 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.cctor" name=".cctor" returns="System.Void" access="private" signature="private static JavaScriptUtils()">
+    <doc-member id="method-.cctor" name=".cctor" returns="void" access="private" signature="private static JavaScriptUtils()">
         <template #name><h3>.cctor</h3></template>
     </doc-member>
 
-<doc-member id="method-getcharescapeflags" name="GetCharEscapeFlags" returns="System.Boolean[]" params="StringEscapeHandling, Char" signature="public static Boolean[] GetCharEscapeFlags(StringEscapeHandling stringEscapeHandling, Char quoteChar)">
+    <doc-member id="method-firstchartoescape" name="FirstCharToEscape" returns="int" params="string, bool[], StringEscapeHandling" access="private" signature="private static int FirstCharToEscape(string s, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling)">
+        <template #name><h3>FirstCharToEscape</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getcharescapeflags" name="GetCharEscapeFlags" returns="bool[]" params="StringEscapeHandling, char" signature="public static bool[] GetCharEscapeFlags(StringEscapeHandling stringEscapeHandling, char quoteChar)">
         <template #name><h3>GetCharEscapeFlags</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
+                <doc-parameter name="quoteChar" type="char"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-shouldescapejavascriptstring" name="ShouldEscapeJavaScriptString" returns="System.Boolean" params="Nullable<String>, Boolean[]" signature="public static Boolean ShouldEscapeJavaScriptString(Nullable<String> s, Boolean[] charEscapeFlags)">
+    <doc-member id="method-shouldescapejavascriptstring" name="ShouldEscapeJavaScriptString" returns="bool" params="string?, bool[]" signature="public static bool ShouldEscapeJavaScriptString(string? s, bool[] charEscapeFlags)">
         <template #name><h3>ShouldEscapeJavaScriptString</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
+                <doc-parameter name="s" type="string?"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writeescapedjavascriptstring" name="WriteEscapedJavaScriptString" returns="System.Void" params="TextWriter, Nullable<String>, Char, Boolean, Boolean[], StringEscapeHandling, IArrayPool<Char>, Char[]" signature="public static Void WriteEscapedJavaScriptString(TextWriter writer, Nullable<String> s, Char delimiter, Boolean appendDelimiters, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, IArrayPool<Char> bufferPool, Char[] writeBuffer)">
-        <template #name><h3>WriteEscapedJavaScriptString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="appendDelimiters" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-toescapedjavascriptstring" name="ToEscapedJavaScriptString" returns="System.String" params="Nullable<String>, Char, Boolean, StringEscapeHandling" signature="public static String ToEscapedJavaScriptString(Nullable<String> value, Char delimiter, Boolean appendDelimiters, StringEscapeHandling stringEscapeHandling)">
+    <doc-member id="method-toescapedjavascriptstring" name="ToEscapedJavaScriptString" returns="string" params="string?, char, bool, StringEscapeHandling" signature="public static string ToEscapedJavaScriptString(string? value, char delimiter, bool appendDelimiters, StringEscapeHandling stringEscapeHandling)">
         <template #name><h3>ToEscapedJavaScriptString</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="appendDelimiters" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="value" type="string?"></doc-parameter>
+                <doc-parameter name="delimiter" type="char"></doc-parameter>
+                <doc-parameter name="appendDelimiters" type="bool"></doc-parameter>
                 <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-firstchartoescape" name="FirstCharToEscape" returns="System.Int32" params="String, Boolean[], StringEscapeHandling" access="private" signature="private static Int32 FirstCharToEscape(String s, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling)">
-        <template #name><h3>FirstCharToEscape</h3></template>
+    <doc-member id="method-trygetdateconstructorvalue" name="TryGetDateConstructorValue" returns="bool" params="JsonReader, long?, string?" access="private" signature="private static bool TryGetDateConstructorValue(JsonReader reader, long? integer, string? errorMessage)">
+        <template #name><h3>TryGetDateConstructorValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="integer" type="long?"></doc-parameter>
+                <doc-parameter name="errorMessage" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writeescapedjavascriptstringasync" name="WriteEscapedJavaScriptStringAsync" returns="Task" params="TextWriter, String, Char, Boolean, Boolean[], StringEscapeHandling, JsonTextWriter, Char[], CancellationToken" signature="public static Task WriteEscapedJavaScriptStringAsync(TextWriter writer, String s, Char delimiter, Boolean appendDelimiters, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, Char[] writeBuffer, CancellationToken cancellationToken = null)">
-        <template #name><h3>WriteEscapedJavaScriptStringAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="appendDelimiters" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeescapedjavascriptstringwithdelimitersasync" name="WriteEscapedJavaScriptStringWithDelimitersAsync" returns="Task" params="TextWriter, String, Char, Boolean[], StringEscapeHandling, JsonTextWriter, Char[], CancellationToken" access="private" signature="private static Task WriteEscapedJavaScriptStringWithDelimitersAsync(TextWriter writer, String s, Char delimiter, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, Char[] writeBuffer, CancellationToken cancellationToken)">
-        <template #name><h3>WriteEscapedJavaScriptStringWithDelimitersAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeescapedjavascriptstringwithdelimitersasync" name="WriteEscapedJavaScriptStringWithDelimitersAsync" returns="Task" params="Task, TextWriter, String, Char, Boolean[], StringEscapeHandling, JsonTextWriter, Char[], CancellationToken" access="private" signature="private async static Task WriteEscapedJavaScriptStringWithDelimitersAsync(Task task, TextWriter writer, String s, Char delimiter, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, Char[] writeBuffer, CancellationToken cancellationToken)">
-        <template #name><h3>WriteEscapedJavaScriptStringWithDelimitersAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="task" type="Task"></doc-parameter>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writecharasync" name="WriteCharAsync" returns="Task" params="Task, TextWriter, Char, CancellationToken" signature="public async static Task WriteCharAsync(Task task, TextWriter writer, Char c, CancellationToken cancellationToken)">
-        <template #name><h3>WriteCharAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="task" type="Task"></doc-parameter>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="c" type="System.Char"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeescapedjavascriptstringwithoutdelimitersasync" name="WriteEscapedJavaScriptStringWithoutDelimitersAsync" returns="Task" params="TextWriter, String, Boolean[], StringEscapeHandling, JsonTextWriter, Char[], CancellationToken" access="private" signature="private static Task WriteEscapedJavaScriptStringWithoutDelimitersAsync(TextWriter writer, String s, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, Char[] writeBuffer, CancellationToken cancellationToken)">
-        <template #name><h3>WriteEscapedJavaScriptStringWithoutDelimitersAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writedefinitelyescapedjavascriptstringwithoutdelimitersasync" name="WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync" returns="Task" params="TextWriter, String, Int32, Boolean[], StringEscapeHandling, JsonTextWriter, Char[], CancellationToken" access="private" signature="private async static Task WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync(TextWriter writer, String s, Int32 lastWritePosition, Boolean[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, Char[] writeBuffer, CancellationToken cancellationToken)">
-        <template #name><h3>WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="lastWritePosition" type="System.Int32"></doc-parameter>
-                <doc-parameter name="charEscapeFlags" type="System.Boolean[]"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
-                <doc-parameter name="writeBuffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-trygetdatefromconstructorjson" name="TryGetDateFromConstructorJson" returns="System.Boolean" params="JsonReader, DateTime, Nullable<String>" signature="public static Boolean TryGetDateFromConstructorJson(JsonReader reader, DateTime dateTime, Nullable<String> errorMessage)">
+    <doc-member id="method-trygetdatefromconstructorjson" name="TryGetDateFromConstructorJson" returns="bool" params="JsonReader, DateTime, string?" signature="public static bool TryGetDateFromConstructorJson(JsonReader reader, DateTime dateTime, string? errorMessage)">
         <template #name><h3>TryGetDateFromConstructorJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
-                <doc-parameter name="errorMessage" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="errorMessage" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trygetdateconstructorvalue" name="TryGetDateConstructorValue" returns="System.Boolean" params="JsonReader, Nullable<Int64>, Nullable<String>" access="private" signature="private static Boolean TryGetDateConstructorValue(JsonReader reader, Nullable<Int64> integer, Nullable<String> errorMessage)">
-        <template #name><h3>TryGetDateConstructorValue</h3></template>
+    <doc-member id="method-writecharasync" name="WriteCharAsync" returns="Task" params="Task, TextWriter, char, CancellationToken" signature="public async static Task WriteCharAsync(Task task, TextWriter writer, char c, CancellationToken cancellationToken)">
+        <template #name><h3>WriteCharAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="integer" type="System.Nullable<System.Int64>"></doc-parameter>
-                <doc-parameter name="errorMessage" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="task" type="Task"></doc-parameter>
+                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                <doc-parameter name="c" type="char"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writedefinitelyescapedjavascriptstringwithoutdelimitersasync" name="WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync" returns="Task" params="TextWriter, string, int, bool[], StringEscapeHandling, JsonTextWriter, char[], CancellationToken" access="private" signature="private async static Task WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync(TextWriter writer, string s, int lastWritePosition, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, char[] writeBuffer, CancellationToken cancellationToken)">
+        <template #name><h3>WriteDefinitelyEscapedJavaScriptStringWithoutDelimitersAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="lastWritePosition" type="int"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
+                <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeescapedjavascriptstring" name="WriteEscapedJavaScriptString" returns="void" params="TextWriter, string?, char, bool, bool[], StringEscapeHandling, IArrayPool<char>?, char[]" signature="public static void WriteEscapedJavaScriptString(TextWriter writer, string? s, char delimiter, bool appendDelimiters, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, IArrayPool<char>? bufferPool, char[] writeBuffer)">
+        <template #name><h3>WriteEscapedJavaScriptString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                <doc-parameter name="s" type="string?"></doc-parameter>
+                <doc-parameter name="delimiter" type="char"></doc-parameter>
+                <doc-parameter name="appendDelimiters" type="bool"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeescapedjavascriptstringasync" name="WriteEscapedJavaScriptStringAsync" returns="Task" params="TextWriter, string, char, bool, bool[], StringEscapeHandling, JsonTextWriter, char[], CancellationToken" signature="public static Task WriteEscapedJavaScriptStringAsync(TextWriter writer, string s, char delimiter, bool appendDelimiters, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, char[] writeBuffer, CancellationToken cancellationToken = null)">
+        <template #name><h3>WriteEscapedJavaScriptStringAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="delimiter" type="char"></doc-parameter>
+                <doc-parameter name="appendDelimiters" type="bool"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
+                <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-writeescapedjavascriptstringwithdelimitersasync">
+        <doc-member id="method-writeescapedjavascriptstringwithdelimitersasync" overload-id="group-writeescapedjavascriptstringwithdelimitersasync" name="WriteEscapedJavaScriptStringWithDelimitersAsync" returns="Task" params="TextWriter, string, char, bool[], StringEscapeHandling, JsonTextWriter, char[], CancellationToken" access="private" signature="private static Task WriteEscapedJavaScriptStringWithDelimitersAsync(TextWriter writer, string s, char delimiter, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, char[] writeBuffer, CancellationToken cancellationToken)">
+            <template #name><h3>WriteEscapedJavaScriptStringWithDelimitersAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="s" type="string"></doc-parameter>
+                    <doc-parameter name="delimiter" type="char"></doc-parameter>
+                    <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                    <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                    <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
+                    <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writeescapedjavascriptstringwithdelimitersasync-1" overload-id="group-writeescapedjavascriptstringwithdelimitersasync" name="WriteEscapedJavaScriptStringWithDelimitersAsync" returns="Task" params="Task, TextWriter, string, char, bool[], StringEscapeHandling, JsonTextWriter, char[], CancellationToken" access="private" signature="private async static Task WriteEscapedJavaScriptStringWithDelimitersAsync(Task task, TextWriter writer, string s, char delimiter, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, char[] writeBuffer, CancellationToken cancellationToken)">
+            <template #name><h3>WriteEscapedJavaScriptStringWithDelimitersAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="s" type="string"></doc-parameter>
+                    <doc-parameter name="delimiter" type="char"></doc-parameter>
+                    <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                    <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                    <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
+                    <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-writeescapedjavascriptstringwithoutdelimitersasync" name="WriteEscapedJavaScriptStringWithoutDelimitersAsync" returns="Task" params="TextWriter, string, bool[], StringEscapeHandling, JsonTextWriter, char[], CancellationToken" access="private" signature="private static Task WriteEscapedJavaScriptStringWithoutDelimitersAsync(TextWriter writer, string s, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, JsonTextWriter client, char[] writeBuffer, CancellationToken cancellationToken)">
+        <template #name><h3>WriteEscapedJavaScriptStringWithoutDelimitersAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="charEscapeFlags" type="bool[]"></doc-parameter>
+                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                <doc-parameter name="client" type="Newtonsoft.Json.JsonTextWriter"></doc-parameter>
+                <doc-parameter name="writeBuffer" type="char[]"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

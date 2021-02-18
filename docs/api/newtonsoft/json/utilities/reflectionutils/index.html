@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-emptytypes" name="EmptyTypes" type="Type[]" signature="public readonly static Type[] EmptyTypes">
+    <doc-member id="field-emptytypes" name="EmptyTypes" type="Type[]" signature="public readonly static Type[] EmptyTypes">
         <template #name><h3>EmptyTypes</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,146 +216,40 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.cctor" name=".cctor" returns="System.Void" access="private" signature="private static ReflectionUtils()">
+    <doc-member id="method-.cctor" name=".cctor" returns="void" access="private" signature="private static ReflectionUtils()">
         <template #name><h3>.cctor</h3></template>
     </doc-member>
 
-<doc-member id="method-isvirtual" name="IsVirtual" returns="System.Boolean" params="PropertyInfo" signature="public static Boolean IsVirtual(PropertyInfo propertyInfo)">
-        <template #name><h3>IsVirtual</h3></template>
+    <doc-member id="method-canreadmembervalue" name="CanReadMemberValue" returns="bool" params="MemberInfo, bool" signature="public static bool CanReadMemberValue(MemberInfo member, bool nonPublic)">
+        <template #name><h3>CanReadMemberValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
+                <doc-parameter name="nonPublic" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>Determines whether the specified MemberInfo can be read.</p>
+
     </doc-member>
 
-<doc-member id="method-getbasedefinition" name="GetBaseDefinition" returns="System.Nullable<MethodInfo>" params="PropertyInfo" signature="public static Nullable<MethodInfo> GetBaseDefinition(PropertyInfo propertyInfo)">
-        <template #name><h3>GetBaseDefinition</h3></template>
+    <doc-member id="method-cansetmembervalue" name="CanSetMemberValue" returns="bool" params="MemberInfo, bool, bool" signature="public static bool CanSetMemberValue(MemberInfo member, bool nonPublic, bool canSetReadOnly)">
+        <template #name><h3>CanSetMemberValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
+                <doc-parameter name="nonPublic" type="bool"></doc-parameter>
+                <doc-parameter name="canSetReadOnly" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>Determines whether the specified MemberInfo can be set.</p>
+
     </doc-member>
 
-<doc-member id="method-ispublic" name="IsPublic" returns="System.Boolean" params="PropertyInfo" signature="public static Boolean IsPublic(PropertyInfo property)">
-        <template #name><h3>IsPublic</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="property" type="PropertyInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getobjecttype" name="GetObjectType" returns="System.Nullable<Type>" params="Nullable<Object>" signature="public static Nullable<Type> GetObjectType(Nullable<Object> v)">
-        <template #name><h3>GetObjectType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="v" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-gettypename" name="GetTypeName" returns="System.String" params="Type, TypeNameAssemblyFormatHandling, ISerializationBinder" signature="public static String GetTypeName(Type t, TypeNameAssemblyFormatHandling assemblyFormat, ISerializationBinder binder)">
-        <template #name><h3>GetTypeName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyFormat" type="Newtonsoft.Json.TypeNameAssemblyFormatHandling"></doc-parameter>
-                <doc-parameter name="binder" type="Newtonsoft.Json.Serialization.ISerializationBinder"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getfullyqualifiedtypename" name="GetFullyQualifiedTypeName" returns="System.String" params="Type, ISerializationBinder" access="private" signature="private static String GetFullyQualifiedTypeName(Type t, ISerializationBinder binder)">
-        <template #name><h3>GetFullyQualifiedTypeName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="binder" type="Newtonsoft.Json.Serialization.ISerializationBinder"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeassemblydetails" name="RemoveAssemblyDetails" returns="System.String" params="String" access="private" signature="private static String RemoveAssemblyDetails(String fullyQualifiedTypeName)">
-        <template #name><h3>RemoveAssemblyDetails</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fullyQualifiedTypeName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-hasdefaultconstructor" name="HasDefaultConstructor" returns="System.Boolean" params="Type, Boolean" signature="public static Boolean HasDefaultConstructor(Type t, Boolean nonPublic)">
-        <template #name><h3>HasDefaultConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="nonPublic" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getdefaultconstructor" name="GetDefaultConstructor" returns="ConstructorInfo" params="Type" signature="public static ConstructorInfo GetDefaultConstructor(Type t)">
-        <template #name><h3>GetDefaultConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getdefaultconstructor" name="GetDefaultConstructor" returns="ConstructorInfo" params="Type, Boolean" signature="public static ConstructorInfo GetDefaultConstructor(Type t, Boolean nonPublic)">
-        <template #name><h3>GetDefaultConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="nonPublic" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isnullable" name="IsNullable" returns="System.Boolean" params="Type" signature="public static Boolean IsNullable(Type t)">
-        <template #name><h3>IsNullable</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isnullabletype" name="IsNullableType" returns="System.Boolean" params="Type" signature="public static Boolean IsNullableType(Type t)">
-        <template #name><h3>IsNullableType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensurenotnullabletype" name="EnsureNotNullableType" returns="Type" params="Type" signature="public static Type EnsureNotNullableType(Type t)">
-        <template #name><h3>EnsureNotNullableType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensurenotbyreftype" name="EnsureNotByRefType" returns="Type" params="Type" signature="public static Type EnsureNotByRefType(Type t)">
+    <doc-member id="method-ensurenotbyreftype" name="EnsureNotByRefType" returns="Type" params="Type" signature="public static Type EnsureNotByRefType(Type t)">
         <template #name><h3>EnsureNotByRefType</h3></template>
 
         <template #parameters>
@@ -365,76 +259,109 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isgenericdefinition" name="IsGenericDefinition" returns="System.Boolean" params="Type, Type" signature="public static Boolean IsGenericDefinition(Type type, Type genericInterfaceDefinition)">
-        <template #name><h3>IsGenericDefinition</h3></template>
+    <doc-member id="method-ensurenotnullabletype" name="EnsureNotNullableType" returns="Type" params="Type" signature="public static Type EnsureNotNullableType(Type t)">
+        <template #name><h3>EnsureNotNullableType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
+                <doc-parameter name="t" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="System.Boolean" params="Type, Type" signature="public static Boolean ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition)">
-        <template #name><h3>ImplementsGenericDefinition</h3></template>
+    <doc-member id="method-getassemblydelimiterindex" name="GetAssemblyDelimiterIndex" returns="int?" params="string" access="private" signature="private static int? GetAssemblyDelimiterIndex(string fullyQualifiedTypeName)">
+        <template #name><h3>GetAssemblyDelimiterIndex</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
+                <doc-parameter name="fullyQualifiedTypeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="System.Boolean" params="Type, Type, Nullable<Type>" signature="public static Boolean ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, Nullable<Type> implementingType)">
-        <template #name><h3>ImplementsGenericDefinition</h3></template>
+    <doc-overload-group overload-id="group-getattribute">
+        <doc-member id="method-getattribute" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="object" signature="public static T? GetAttribute(object attributeProvider)">
+            <template #name><h3>GetAttribute</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="attributeProvider" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-getattribute-1" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="object, bool" signature="public static T? GetAttribute(object attributeProvider, bool inherit)">
+            <template #name><h3>GetAttribute</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="attributeProvider" type="object"></doc-parameter>
+                    <doc-parameter name="inherit" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-getattributes">
+        <doc-member id="method-getattributes" overload-id="group-getattributes" name="GetAttributes" returns="T[]" params="object, bool" signature="public static T[] GetAttributes(object attributeProvider, bool inherit)">
+            <template #name><h3>GetAttributes</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="attributeProvider" type="object"></doc-parameter>
+                    <doc-parameter name="inherit" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-getattributes-1" overload-id="group-getattributes" name="GetAttributes" returns="Attribute[]" params="object, Type?, bool" signature="public static Attribute[] GetAttributes(object attributeProvider, Type? attributeType, bool inherit)">
+            <template #name><h3>GetAttributes</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="attributeProvider" type="object"></doc-parameter>
+                    <doc-parameter name="attributeType" type="Type?"></doc-parameter>
+                    <doc-parameter name="inherit" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-getbasedefinition" name="GetBaseDefinition" returns="MethodInfo?" params="PropertyInfo" signature="public static MethodInfo? GetBaseDefinition(PropertyInfo propertyInfo)">
+        <template #name><h3>GetBaseDefinition</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
-                <doc-parameter name="implementingType" type="System.Nullable<Type>"></doc-parameter>
+                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="System.Boolean" params="Type, Type" signature="public static Boolean InheritsGenericDefinition(Type type, Type genericClassDefinition)">
-        <template #name><h3>InheritsGenericDefinition</h3></template>
+    <doc-member id="method-getchildprivatefields" name="GetChildPrivateFields" returns="void" params="IList<MemberInfo>, Type, BindingFlags" access="private" signature="private static void GetChildPrivateFields(IList<MemberInfo> initialFields, Type targetType, BindingFlags bindingAttr)">
+        <template #name><h3>GetChildPrivateFields</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
+                <doc-parameter name="initialFields" type="IList<MemberInfo>"></doc-parameter>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="System.Boolean" params="Type, Type, Nullable<Type>" signature="public static Boolean InheritsGenericDefinition(Type type, Type genericClassDefinition, Nullable<Type> implementingType)">
-        <template #name><h3>InheritsGenericDefinition</h3></template>
+    <doc-member id="method-getchildprivateproperties" name="GetChildPrivateProperties" returns="void" params="IList<PropertyInfo>, Type, BindingFlags" access="private" signature="private static void GetChildPrivateProperties(IList<PropertyInfo> initialProperties, Type targetType, BindingFlags bindingAttr)">
+        <template #name><h3>GetChildPrivateProperties</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
-                <doc-parameter name="implementingType" type="System.Nullable<Type>"></doc-parameter>
+                <doc-parameter name="initialProperties" type="IList<PropertyInfo>"></doc-parameter>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="System.Boolean" params="Type, Type, Nullable<Type>" access="private" signature="private static Boolean InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, Nullable<Type> implementingType)">
-        <template #name><h3>InheritsGenericDefinitionInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="currentType" type="Type"></doc-parameter>
-                <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
-                <doc-parameter name="implementingType" type="System.Nullable<Type>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getcollectionitemtype" name="GetCollectionItemType" returns="System.Nullable<Type>" params="Type" signature="public static Nullable<Type> GetCollectionItemType(Type type)">
+    <doc-member id="method-getcollectionitemtype" name="GetCollectionItemType" returns="Type?" params="Type" signature="public static Type? GetCollectionItemType(Type type)">
         <template #name><h3>GetCollectionItemType</h3></template>
 
         <template #parameters>
@@ -447,19 +374,96 @@
 
     </doc-member>
 
-<doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="System.Void" params="Type, Nullable<Type>, Nullable<Type>" signature="public static Void GetDictionaryKeyValueTypes(Type dictionaryType, Nullable<Type> keyType, Nullable<Type> valueType)">
+    <doc-overload-group overload-id="group-getdefaultconstructor">
+        <doc-member id="method-getdefaultconstructor" overload-id="group-getdefaultconstructor" name="GetDefaultConstructor" returns="ConstructorInfo" params="Type" signature="public static ConstructorInfo GetDefaultConstructor(Type t)">
+            <template #name><h3>GetDefaultConstructor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-getdefaultconstructor-1" overload-id="group-getdefaultconstructor" name="GetDefaultConstructor" returns="ConstructorInfo" params="Type, bool" signature="public static ConstructorInfo GetDefaultConstructor(Type t, bool nonPublic)">
+            <template #name><h3>GetDefaultConstructor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                    <doc-parameter name="nonPublic" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-getdefaultvalue" name="GetDefaultValue" returns="object?" params="Type" signature="public static object? GetDefaultValue(Type type)">
+        <template #name><h3>GetDefaultValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="void" params="Type, Type?, Type?" signature="public static void GetDictionaryKeyValueTypes(Type dictionaryType, Type? keyType, Type? valueType)">
         <template #name><h3>GetDictionaryKeyValueTypes</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="dictionaryType" type="Type"></doc-parameter>
-                <doc-parameter name="keyType" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="valueType" type="System.Nullable<Type>"></doc-parameter>
+                <doc-parameter name="keyType" type="Type?"></doc-parameter>
+                <doc-parameter name="valueType" type="Type?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getmemberunderlyingtype" name="GetMemberUnderlyingType" returns="Type" params="MemberInfo" signature="public static Type GetMemberUnderlyingType(MemberInfo member)">
+    <doc-member id="method-getfields" name="GetFields" returns="IEnumerable<FieldInfo>" params="Type, BindingFlags" signature="public static IEnumerable<FieldInfo> GetFields(Type targetType, BindingFlags bindingAttr)">
+        <template #name><h3>GetFields</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getfieldsandproperties" name="GetFieldsAndProperties" returns="List<MemberInfo>" params="Type, BindingFlags" signature="public static List<MemberInfo> GetFieldsAndProperties(Type type, BindingFlags bindingAttr)">
+        <template #name><h3>GetFieldsAndProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getfullyqualifiedtypename" name="GetFullyQualifiedTypeName" returns="string" params="Type, ISerializationBinder?" access="private" signature="private static string GetFullyQualifiedTypeName(Type t, ISerializationBinder? binder)">
+        <template #name><h3>GetFullyQualifiedTypeName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+                <doc-parameter name="binder" type="Newtonsoft.Json.Serialization.ISerializationBinder?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getmemberinfofromtype" name="GetMemberInfoFromType" returns="MemberInfo" params="Type, MemberInfo" signature="public static MemberInfo GetMemberInfoFromType(Type targetType, MemberInfo memberInfo)">
+        <template #name><h3>GetMemberInfoFromType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getmemberunderlyingtype" name="GetMemberUnderlyingType" returns="Type" params="MemberInfo" signature="public static Type GetMemberUnderlyingType(MemberInfo member)">
         <template #name><h3>GetMemberUnderlyingType</h3></template>
 
         <template #parameters>
@@ -472,7 +476,127 @@
 
     </doc-member>
 
-<doc-member id="method-isbyrefliketype" name="IsByRefLikeType" returns="System.Boolean" params="Type" signature="public static Boolean IsByRefLikeType(Type type)">
+    <doc-member id="method-getmembervalue" name="GetMemberValue" returns="object" params="MemberInfo, object" signature="public static object GetMemberValue(MemberInfo member, object target)">
+        <template #name><h3>GetMemberValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Gets the member's value on the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-getobjecttype" name="GetObjectType" returns="Type?" params="object?" signature="public static Type? GetObjectType(object? v)">
+        <template #name><h3>GetObjectType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="v" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getproperties" name="GetProperties" returns="IEnumerable<PropertyInfo>" params="Type, BindingFlags" signature="public static IEnumerable<PropertyInfo> GetProperties(Type targetType, BindingFlags bindingAttr)">
+        <template #name><h3>GetProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-gettypename" name="GetTypeName" returns="string" params="Type, TypeNameAssemblyFormatHandling, ISerializationBinder?" signature="public static string GetTypeName(Type t, TypeNameAssemblyFormatHandling assemblyFormat, ISerializationBinder? binder)">
+        <template #name><h3>GetTypeName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+                <doc-parameter name="assemblyFormat" type="Newtonsoft.Json.TypeNameAssemblyFormatHandling"></doc-parameter>
+                <doc-parameter name="binder" type="Newtonsoft.Json.Serialization.ISerializationBinder?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-hasdefaultconstructor" name="HasDefaultConstructor" returns="bool" params="Type, bool" signature="public static bool HasDefaultConstructor(Type t, bool nonPublic)">
+        <template #name><h3>HasDefaultConstructor</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+                <doc-parameter name="nonPublic" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-implementsgenericdefinition">
+        <doc-member id="method-implementsgenericdefinition" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition)">
+            <template #name><h3>ImplementsGenericDefinition</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-implementsgenericdefinition-1" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type, Type?" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, Type? implementingType)">
+            <template #name><h3>ImplementsGenericDefinition</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
+                    <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-inheritsgenericdefinition">
+        <doc-member id="method-inheritsgenericdefinition" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition)">
+            <template #name><h3>InheritsGenericDefinition</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-inheritsgenericdefinition-1" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type, Type?" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition, Type? implementingType)">
+            <template #name><h3>InheritsGenericDefinition</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
+                    <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="bool" params="Type, Type, Type?" access="private" signature="private static bool InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, Type? implementingType)">
+        <template #name><h3>InheritsGenericDefinitionInternal</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="currentType" type="Type"></doc-parameter>
+                <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
+                <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isbyrefliketype" name="IsByRefLikeType" returns="bool" params="Type" signature="public static bool IsByRefLikeType(Type type)">
         <template #name><h3>IsByRefLikeType</h3></template>
 
         <template #parameters>
@@ -482,7 +606,18 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isindexedproperty" name="IsIndexedProperty" returns="System.Boolean" params="PropertyInfo" signature="public static Boolean IsIndexedProperty(PropertyInfo property)">
+    <doc-member id="method-isgenericdefinition" name="IsGenericDefinition" returns="bool" params="Type, Type" signature="public static bool IsGenericDefinition(Type type, Type genericInterfaceDefinition)">
+        <template #name><h3>IsGenericDefinition</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isindexedproperty" name="IsIndexedProperty" returns="bool" params="PropertyInfo" signature="public static bool IsIndexedProperty(PropertyInfo property)">
         <template #name><h3>IsIndexedProperty</h3></template>
 
         <template #parameters>
@@ -495,76 +630,39 @@
 
     </doc-member>
 
-<doc-member id="method-getmembervalue" name="GetMemberValue" returns="System.Object" params="MemberInfo, Object" signature="public static Object GetMemberValue(MemberInfo member, Object target)">
-        <template #name><h3>GetMemberValue</h3></template>
+    <doc-member id="method-ismethodoverridden" name="IsMethodOverridden" returns="bool" params="Type, Type, string" signature="public static bool IsMethodOverridden(Type currentType, Type methodDeclaringType, string method)">
+        <template #name><h3>IsMethodOverridden</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Gets the member's value on the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-setmembervalue" name="SetMemberValue" returns="System.Void" params="MemberInfo, Object, Nullable<Object>" signature="public static Void SetMemberValue(MemberInfo member, Object target, Nullable<Object> value)">
-        <template #name><h3>SetMemberValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Sets the member's value on the target object.</p>
-
-    </doc-member>
-
-<doc-member id="method-canreadmembervalue" name="CanReadMemberValue" returns="System.Boolean" params="MemberInfo, Boolean" signature="public static Boolean CanReadMemberValue(MemberInfo member, Boolean nonPublic)">
-        <template #name><h3>CanReadMemberValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-                <doc-parameter name="nonPublic" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether the specified MemberInfo can be read.</p>
-
-    </doc-member>
-
-<doc-member id="method-cansetmembervalue" name="CanSetMemberValue" returns="System.Boolean" params="MemberInfo, Boolean, Boolean" signature="public static Boolean CanSetMemberValue(MemberInfo member, Boolean nonPublic, Boolean canSetReadOnly)">
-        <template #name><h3>CanSetMemberValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-                <doc-parameter name="nonPublic" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="canSetReadOnly" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether the specified MemberInfo can be set.</p>
-
-    </doc-member>
-
-<doc-member id="method-getfieldsandproperties" name="GetFieldsAndProperties" returns="List<MemberInfo>" params="Type, BindingFlags" signature="public static List<MemberInfo> GetFieldsAndProperties(Type type, BindingFlags bindingAttr)">
-        <template #name><h3>GetFieldsAndProperties</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
+                <doc-parameter name="currentType" type="Type"></doc-parameter>
+                <doc-parameter name="methodDeclaringType" type="Type"></doc-parameter>
+                <doc-parameter name="method" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isoverridengenericmember" name="IsOverridenGenericMember" returns="System.Boolean" params="MemberInfo, BindingFlags" access="private" signature="private static Boolean IsOverridenGenericMember(MemberInfo memberInfo, BindingFlags bindingAttr)">
+    <doc-member id="method-isnullable" name="IsNullable" returns="bool" params="Type" signature="public static bool IsNullable(Type t)">
+        <template #name><h3>IsNullable</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isnullabletype" name="IsNullableType" returns="bool" params="Type" signature="public static bool IsNullableType(Type t)">
+        <template #name><h3>IsNullableType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isoverridengenericmember" name="IsOverridenGenericMember" returns="bool" params="MemberInfo, BindingFlags" access="private" signature="private static bool IsOverridenGenericMember(MemberInfo memberInfo, BindingFlags bindingAttr)">
         <template #name><h3>IsOverridenGenericMember</h3></template>
 
         <template #parameters>
@@ -575,116 +673,37 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getattribute" name="GetAttribute" returns="T" params="Object" signature="public static T GetAttribute(Object attributeProvider)">
-        <template #name><h3>GetAttribute</h3></template>
+    <doc-member id="method-ispublic" name="IsPublic" returns="bool" params="PropertyInfo" signature="public static bool IsPublic(PropertyInfo property)">
+        <template #name><h3>IsPublic</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="attributeProvider" type="System.Object"></doc-parameter>
+                <doc-parameter name="property" type="PropertyInfo"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getattribute" name="GetAttribute" returns="T" params="Object, Boolean" signature="public static T GetAttribute(Object attributeProvider, Boolean inherit)">
-        <template #name><h3>GetAttribute</h3></template>
+    <doc-member id="method-isvirtual" name="IsVirtual" returns="bool" params="PropertyInfo" signature="public static bool IsVirtual(PropertyInfo propertyInfo)">
+        <template #name><h3>IsVirtual</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="attributeProvider" type="System.Object"></doc-parameter>
-                <doc-parameter name="inherit" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getattributes" name="GetAttributes" returns="T[]" params="Object, Boolean" signature="public static T[] GetAttributes(Object attributeProvider, Boolean inherit)">
-        <template #name><h3>GetAttributes</h3></template>
+    <doc-member id="method-removeassemblydetails" name="RemoveAssemblyDetails" returns="string" params="string" access="private" signature="private static string RemoveAssemblyDetails(string fullyQualifiedTypeName)">
+        <template #name><h3>RemoveAssemblyDetails</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="attributeProvider" type="System.Object"></doc-parameter>
-                <doc-parameter name="inherit" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="fullyQualifiedTypeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getattributes" name="GetAttributes" returns="Attribute[]" params="Object, Nullable<Type>, Boolean" signature="public static Attribute[] GetAttributes(Object attributeProvider, Nullable<Type> attributeType, Boolean inherit)">
-        <template #name><h3>GetAttributes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="attributeProvider" type="System.Object"></doc-parameter>
-                <doc-parameter name="attributeType" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="inherit" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-splitfullyqualifiedtypename" name="SplitFullyQualifiedTypeName" returns="Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<System.String>, System.String>" params="String" signature="public static StructMultiKey<Nullable<String>, String> SplitFullyQualifiedTypeName(String fullyQualifiedTypeName)">
-        <template #name><h3>SplitFullyQualifiedTypeName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fullyQualifiedTypeName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getassemblydelimiterindex" name="GetAssemblyDelimiterIndex" returns="System.Nullable<System.Int32>" params="String" access="private" signature="private static Nullable<Int32> GetAssemblyDelimiterIndex(String fullyQualifiedTypeName)">
-        <template #name><h3>GetAssemblyDelimiterIndex</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fullyQualifiedTypeName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getmemberinfofromtype" name="GetMemberInfoFromType" returns="MemberInfo" params="Type, MemberInfo" signature="public static MemberInfo GetMemberInfoFromType(Type targetType, MemberInfo memberInfo)">
-        <template #name><h3>GetMemberInfoFromType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getfields" name="GetFields" returns="IEnumerable<FieldInfo>" params="Type, BindingFlags" signature="public static IEnumerable<FieldInfo> GetFields(Type targetType, BindingFlags bindingAttr)">
-        <template #name><h3>GetFields</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getchildprivatefields" name="GetChildPrivateFields" returns="System.Void" params="IList<MemberInfo>, Type, BindingFlags" access="private" signature="private static Void GetChildPrivateFields(IList<MemberInfo> initialFields, Type targetType, BindingFlags bindingAttr)">
-        <template #name><h3>GetChildPrivateFields</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="initialFields" type="IList<MemberInfo>"></doc-parameter>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getproperties" name="GetProperties" returns="IEnumerable<PropertyInfo>" params="Type, BindingFlags" signature="public static IEnumerable<PropertyInfo> GetProperties(Type targetType, BindingFlags bindingAttr)">
-        <template #name><h3>GetProperties</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeflag" name="RemoveFlag" returns="BindingFlags" params="BindingFlags, BindingFlags" signature="public static BindingFlags RemoveFlag(BindingFlags bindingAttr, BindingFlags flag)">
+    <doc-member id="method-removeflag" name="RemoveFlag" returns="BindingFlags" params="BindingFlags, BindingFlags" signature="public static BindingFlags RemoveFlag(BindingFlags bindingAttr, BindingFlags flag)">
         <template #name><h3>RemoveFlag</h3></template>
 
         <template #parameters>
@@ -695,36 +714,27 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getchildprivateproperties" name="GetChildPrivateProperties" returns="System.Void" params="IList<PropertyInfo>, Type, BindingFlags" access="private" signature="private static Void GetChildPrivateProperties(IList<PropertyInfo> initialProperties, Type targetType, BindingFlags bindingAttr)">
-        <template #name><h3>GetChildPrivateProperties</h3></template>
+    <doc-member id="method-setmembervalue" name="SetMemberValue" returns="void" params="MemberInfo, object, object?" signature="public static void SetMemberValue(MemberInfo member, object target, object? value)">
+        <template #name><h3>SetMemberValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialProperties" type="IList<PropertyInfo>"></doc-parameter>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="bindingAttr" type="BindingFlags"></doc-parameter>
+                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>Sets the member's value on the target object.</p>
+
     </doc-member>
 
-<doc-member id="method-ismethodoverridden" name="IsMethodOverridden" returns="System.Boolean" params="Type, Type, String" signature="public static Boolean IsMethodOverridden(Type currentType, Type methodDeclaringType, String method)">
-        <template #name><h3>IsMethodOverridden</h3></template>
+    <doc-member id="method-splitfullyqualifiedtypename" name="SplitFullyQualifiedTypeName" returns="StructMultiKey<string?, string>" params="string" signature="public static StructMultiKey<string?, string> SplitFullyQualifiedTypeName(string fullyQualifiedTypeName)">
+        <template #name><h3>SplitFullyQualifiedTypeName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentType" type="Type"></doc-parameter>
-                <doc-parameter name="methodDeclaringType" type="Type"></doc-parameter>
-                <doc-parameter name="method" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getdefaultvalue" name="GetDefaultValue" returns="System.Nullable<System.Object>" params="Type" signature="public static Nullable<Object> GetDefaultValue(Type type)">
-        <template #name><h3>GetDefaultValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="fullyQualifiedTypeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

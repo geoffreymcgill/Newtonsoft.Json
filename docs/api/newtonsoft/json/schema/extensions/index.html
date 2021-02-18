@@ -216,35 +216,16 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-isvalid" name="IsValid" returns="System.Boolean" params="JToken, JsonSchema" signature="public static Boolean IsValid(JToken source, JsonSchema schema)">
-        <template #name><h3>IsValid</h3></template>
+    <doc-overload-group overload-id="group-isvalid">
+        <doc-member id="method-isvalid" overload-id="group-isvalid" name="IsValid" returns="bool" params="JToken, JsonSchema" signature="public static bool IsValid(JToken source, JsonSchema schema)">
+            <template #name><h3>IsValid</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<para>
-Determines whether the <see cref="T:Newtonsoft.Json.Linq.JToken"/> is valid.
-</para>
-<note type="caution">
-JSON Schema validation has been moved to its own package. See <see href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</see> for more details.
-</note>
-
-    </doc-member>
-
-<doc-member id="method-isvalid" name="IsValid" returns="System.Boolean" params="JToken, JsonSchema, IList<String>" signature="public static Boolean IsValid(JToken source, JsonSchema schema, IList<String> errorMessages)">
-        <template #name><h3>IsValid</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-                <doc-parameter name="errorMessages" type="IList<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <para>
 Determines whether the <see cref="T:Newtonsoft.Json.Linq.JToken"/> is valid.
@@ -253,17 +234,39 @@ Determines whether the <see cref="T:Newtonsoft.Json.Linq.JToken"/> is valid.
 JSON Schema validation has been moved to its own package. See <see href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</see> for more details.
 </note>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-validate" name="Validate" returns="System.Void" params="JToken, JsonSchema" signature="public static Void Validate(JToken source, JsonSchema schema)">
-        <template #name><h3>Validate</h3></template>
+        <doc-member id="method-isvalid-1" overload-id="group-isvalid" name="IsValid" returns="bool" params="JToken, JsonSchema, IList<string>" signature="public static bool IsValid(JToken source, JsonSchema schema, IList<string> errorMessages)">
+            <template #name><h3>IsValid</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                    <doc-parameter name="errorMessages" type="IList<string>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<para>
+Determines whether the <see cref="T:Newtonsoft.Json.Linq.JToken"/> is valid.
+</para>
+<note type="caution">
+JSON Schema validation has been moved to its own package. See <see href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</see> for more details.
+</note>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-validate">
+        <doc-member id="method-validate" overload-id="group-validate" name="Validate" returns="void" params="JToken, JsonSchema" signature="public static void Validate(JToken source, JsonSchema schema)">
+            <template #name><h3>Validate</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <para>
 Validates the specified <see cref="T:Newtonsoft.Json.Linq.JToken"/>.
@@ -272,18 +275,18 @@ Validates the specified <see cref="T:Newtonsoft.Json.Linq.JToken"/>.
 JSON Schema validation has been moved to its own package. See <see href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</see> for more details.
 </note>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-validate" name="Validate" returns="System.Void" params="JToken, JsonSchema, ValidationEventHandler" signature="public static Void Validate(JToken source, JsonSchema schema, ValidationEventHandler validationEventHandler)">
-        <template #name><h3>Validate</h3></template>
+        <doc-member id="method-validate-1" overload-id="group-validate" name="Validate" returns="void" params="JToken, JsonSchema, ValidationEventHandler" signature="public static void Validate(JToken source, JsonSchema schema, ValidationEventHandler validationEventHandler)">
+            <template #name><h3>Validate</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-                <doc-parameter name="validationEventHandler" type="Newtonsoft.Json.Schema.ValidationEventHandler"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                    <doc-parameter name="validationEventHandler" type="Newtonsoft.Json.Schema.ValidationEventHandler"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <para>
 Validates the specified <see cref="T:Newtonsoft.Json.Linq.JToken"/>.
@@ -292,7 +295,8 @@ Validates the specified <see cref="T:Newtonsoft.Json.Linq.JToken"/>.
 JSON Schema validation has been moved to its own package. See <see href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</see> for more details.
 </note>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-typecodemap" name="TypeCodeMap" type="Dictionary<Type, Newtonsoft.Json.Utilities.PrimitiveTypeCode>" access="private" signature="private readonly static Dictionary<Type, PrimitiveTypeCode> TypeCodeMap">
+    <doc-member id="field-typecodemap" name="TypeCodeMap" type="Dictionary<Type, PrimitiveTypeCode>" access="private" signature="private readonly static Dictionary<Type, PrimitiveTypeCode> TypeCodeMap">
         <template #name><h3>TypeCodeMap</h3></template>
     </doc-member>
 
-<doc-member id="field-primitivetypecodes" name="PrimitiveTypeCodes" type="Newtonsoft.Json.Utilities.TypeInformation[]" access="private" signature="private readonly static TypeInformation[] PrimitiveTypeCodes">
+    <doc-member id="field-primitivetypecodes" name="PrimitiveTypeCodes" type="TypeInformation[]" access="private" signature="private readonly static TypeInformation[] PrimitiveTypeCodes">
         <template #name><h3>PrimitiveTypeCodes</h3></template>
     </doc-member>
 
-<doc-member id="field-castconverters" name="CastConverters" type="Newtonsoft.Json.Utilities.ThreadSafeStore<Newtonsoft.Json.Utilities.StructMultiKey<Type, Type>, System.Nullable<Func<System.Nullable<System.Object>, System.Nullable<System.Object>>>>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<Object>, Nullable<Object>>>> CastConverters">
+    <doc-member id="field-castconverters" name="CastConverters" type="ThreadSafeStore<StructMultiKey<Type, Type>, Func<object?, object?>?>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Func<object?, object?>?> CastConverters">
         <template #name><h3>CastConverters</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,132 +224,24 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-gettypecode" name="GetTypeCode" returns="Newtonsoft.Json.Utilities.PrimitiveTypeCode" params="Type" signature="public static PrimitiveTypeCode GetTypeCode(Type t)">
-        <template #name><h3>GetTypeCode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-gettypecode" name="GetTypeCode" returns="Newtonsoft.Json.Utilities.PrimitiveTypeCode" params="Type, Boolean" signature="public static PrimitiveTypeCode GetTypeCode(Type t, Boolean isEnum)">
-        <template #name><h3>GetTypeCode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="isEnum" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-gettypeinformation" name="GetTypeInformation" returns="Newtonsoft.Json.Utilities.TypeInformation" params="IConvertible" signature="public static TypeInformation GetTypeInformation(IConvertible convertable)">
-        <template #name><h3>GetTypeInformation</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="convertable" type="IConvertible"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isconvertible" name="IsConvertible" returns="System.Boolean" params="Type" signature="public static Boolean IsConvertible(Type t)">
-        <template #name><h3>IsConvertible</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-parsetimespan" name="ParseTimeSpan" returns="TimeSpan" params="String" signature="public static TimeSpan ParseTimeSpan(String input)">
-        <template #name><h3>ParseTimeSpan</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="input" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createcastconverter" name="CreateCastConverter" returns="System.Nullable<Func<System.Nullable<System.Object>, System.Nullable<System.Object>>>" params="StructMultiKey<Type, Type>" access="private" signature="private static Nullable<Func<Nullable<Object>, Nullable<Object>>> CreateCastConverter(StructMultiKey<Type, Type> t)">
-        <template #name><h3>CreateCastConverter</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Newtonsoft.Json.Utilities.StructMultiKey<Type, Type>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tobiginteger" name="ToBigInteger" returns="BigInteger" params="Object" access="internal" signature="internal static BigInteger ToBigInteger(Object value)">
-        <template #name><h3>ToBigInteger</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-frombiginteger" name="FromBigInteger" returns="System.Object" params="BigInteger, Type" signature="public static Object FromBigInteger(BigInteger i, Type targetType)">
-        <template #name><h3>FromBigInteger</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="i" type="BigInteger"></doc-parameter>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convert" name="Convert" returns="System.Object" params="Object, CultureInfo, Type" signature="public static Object Convert(Object initialValue, CultureInfo culture, Type targetType)">
+    <doc-member id="method-convert" name="Convert" returns="object" params="object, CultureInfo, Type" signature="public static object Convert(object initialValue, CultureInfo culture, Type targetType)">
         <template #name><h3>Convert</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialValue" type="System.Object"></doc-parameter>
+                <doc-parameter name="initialValue" type="object"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryconvert" name="TryConvert" returns="System.Boolean" params="Nullable<Object>, CultureInfo, Type, Nullable<Object>" access="private" signature="private static Boolean TryConvert(Nullable<Object> initialValue, CultureInfo culture, Type targetType, Nullable<Object> value)">
-        <template #name><h3>TryConvert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="initialValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="Newtonsoft.Json.Utilities.ConvertUtils.ConvertResult" params="Nullable<Object>, CultureInfo, Type, Nullable<Object>" access="private" signature="private static ConvertResult TryConvertInternal(Nullable<Object> initialValue, CultureInfo culture, Type targetType, Nullable<Object> value)">
-        <template #name><h3>TryConvertInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="initialValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convertorcast" name="ConvertOrCast" returns="System.Nullable<System.Object>" params="Nullable<Object>, CultureInfo, Type" signature="public static Nullable<Object> ConvertOrCast(Nullable<Object> initialValue, CultureInfo culture, Type targetType)">
+    <doc-member id="method-convertorcast" name="ConvertOrCast" returns="object?" params="object?, CultureInfo, Type" signature="public static object? ConvertOrCast(object? initialValue, CultureInfo culture, Type targetType)">
         <template #name><h3>ConvertOrCast</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialValue" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="initialValue" type="object?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
@@ -360,98 +252,208 @@ value is checked whether it assignable to the specified type.</p>
 
     </doc-member>
 
-<doc-member id="method-ensuretypeassignable" name="EnsureTypeAssignable" returns="System.Nullable<System.Object>" params="Nullable<Object>, Type, Type" access="private" signature="private static Nullable<Object> EnsureTypeAssignable(Nullable<Object> value, Type initialType, Type targetType)">
+    <doc-member id="method-createcastconverter" name="CreateCastConverter" returns="Func<object?, object?>?" params="StructMultiKey<Type, Type>" access="private" signature="private static Func<object?, object?>? CreateCastConverter(StructMultiKey<Type, Type> t)">
+        <template #name><h3>CreateCastConverter</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Newtonsoft.Json.Utilities.StructMultiKey<Type, Type>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-decimaltryparse" name="DecimalTryParse" returns="ParseResult" params="char[], int, int, decimal" signature="public static ParseResult DecimalTryParse(char[] chars, int start, int length, decimal value)">
+        <template #name><h3>DecimalTryParse</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="length" type="int"></doc-parameter>
+                <doc-parameter name="value" type="decimal"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-ensuretypeassignable" name="EnsureTypeAssignable" returns="object?" params="object?, Type, Type" access="private" signature="private static object? EnsureTypeAssignable(object? value, Type initialType, Type targetType)">
         <template #name><h3>EnsureTypeAssignable</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
                 <doc-parameter name="initialType" type="Type"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-versiontryparse" name="VersionTryParse" returns="System.Boolean" params="String, Nullable<Version>" signature="public static Boolean VersionTryParse(String input, Nullable<Version> result)">
-        <template #name><h3>VersionTryParse</h3></template>
+    <doc-member id="method-frombiginteger" name="FromBigInteger" returns="object" params="BigInteger, Type" signature="public static object FromBigInteger(BigInteger i, Type targetType)">
+        <template #name><h3>FromBigInteger</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="input" type="System.String"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<Version>"></doc-parameter>
+                <doc-parameter name="i" type="BigInteger"></doc-parameter>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isinteger" name="IsInteger" returns="System.Boolean" params="Object" signature="public static Boolean IsInteger(Object value)">
-        <template #name><h3>IsInteger</h3></template>
+    <doc-overload-group overload-id="group-gettypecode">
+        <doc-member id="method-gettypecode" overload-id="group-gettypecode" name="GetTypeCode" returns="PrimitiveTypeCode" params="Type" signature="public static PrimitiveTypeCode GetTypeCode(Type t)">
+            <template #name><h3>GetTypeCode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-gettypecode-1" overload-id="group-gettypecode" name="GetTypeCode" returns="PrimitiveTypeCode" params="Type, bool" signature="public static PrimitiveTypeCode GetTypeCode(Type t, bool isEnum)">
+            <template #name><h3>GetTypeCode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                    <doc-parameter name="isEnum" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-gettypeinformation" name="GetTypeInformation" returns="TypeInformation" params="IConvertible" signature="public static TypeInformation GetTypeInformation(IConvertible convertable)">
+        <template #name><h3>GetTypeInformation</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="convertable" type="IConvertible"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-int32tryparse" name="Int32TryParse" returns="Newtonsoft.Json.Utilities.ParseResult" params="Char[], Int32, Int32, Int32" signature="public static ParseResult Int32TryParse(Char[] chars, Int32 start, Int32 length, Int32 value)">
+    <doc-member id="method-int32tryparse" name="Int32TryParse" returns="ParseResult" params="char[], int, int, int" signature="public static ParseResult Int32TryParse(char[] chars, int start, int length, int value)">
         <template #name><h3>Int32TryParse</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="System.Int32"></doc-parameter>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="length" type="int"></doc-parameter>
+                <doc-parameter name="value" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-int64tryparse" name="Int64TryParse" returns="Newtonsoft.Json.Utilities.ParseResult" params="Char[], Int32, Int32, Int64" signature="public static ParseResult Int64TryParse(Char[] chars, Int32 start, Int32 length, Int64 value)">
+    <doc-member id="method-int64tryparse" name="Int64TryParse" returns="ParseResult" params="char[], int, int, long" signature="public static ParseResult Int64TryParse(char[] chars, int start, int length, long value)">
         <template #name><h3>Int64TryParse</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="System.Int64"></doc-parameter>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="length" type="int"></doc-parameter>
+                <doc-parameter name="value" type="long"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-decimaltryparse" name="DecimalTryParse" returns="Newtonsoft.Json.Utilities.ParseResult" params="Char[], Int32, Int32, Decimal" signature="public static ParseResult DecimalTryParse(Char[] chars, Int32 start, Int32 length, Decimal value)">
-        <template #name><h3>DecimalTryParse</h3></template>
+    <doc-member id="method-isconvertible" name="IsConvertible" returns="bool" params="Type" signature="public static bool IsConvertible(Type t)">
+        <template #name><h3>IsConvertible</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
+                <doc-parameter name="t" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryconvertguid" name="TryConvertGuid" returns="System.Boolean" params="String, Guid" signature="public static Boolean TryConvertGuid(String s, Guid g)">
+    <doc-member id="method-isinteger" name="IsInteger" returns="bool" params="object" signature="public static bool IsInteger(object value)">
+        <template #name><h3>IsInteger</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-parsetimespan" name="ParseTimeSpan" returns="TimeSpan" params="string" signature="public static TimeSpan ParseTimeSpan(string input)">
+        <template #name><h3>ParseTimeSpan</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="input" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tobiginteger" name="ToBigInteger" returns="BigInteger" params="object" access="internal" signature="internal static BigInteger ToBigInteger(object value)">
+        <template #name><h3>ToBigInteger</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="object?, CultureInfo, Type, object?" access="private" signature="private static bool TryConvert(object? initialValue, CultureInfo culture, Type targetType, object? value)">
+        <template #name><h3>TryConvert</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="initialValue" type="object?"></doc-parameter>
+                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryconvertguid" name="TryConvertGuid" returns="bool" params="string, Guid" signature="public static bool TryConvertGuid(string s, Guid g)">
         <template #name><h3>TryConvertGuid</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
+                <doc-parameter name="s" type="string"></doc-parameter>
                 <doc-parameter name="g" type="Guid"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryhextexttoint" name="TryHexTextToInt" returns="System.Boolean" params="Char[], Int32, Int32, Int32" signature="public static Boolean TryHexTextToInt(Char[] text, Int32 start, Int32 end, Int32 value)">
+    <doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="ConvertResult" params="object?, CultureInfo, Type, object?" access="private" signature="private static ConvertResult TryConvertInternal(object? initialValue, CultureInfo culture, Type targetType, object? value)">
+        <template #name><h3>TryConvertInternal</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="initialValue" type="object?"></doc-parameter>
+                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                <doc-parameter name="targetType" type="Type"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryhextexttoint" name="TryHexTextToInt" returns="bool" params="char[], int, int, int" signature="public static bool TryHexTextToInt(char[] text, int start, int end, int value)">
         <template #name><h3>TryHexTextToInt</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="end" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="System.Int32"></doc-parameter>
+                <doc-parameter name="text" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="end" type="int"></doc-parameter>
+                <doc-parameter name="value" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-versiontryparse" name="VersionTryParse" returns="bool" params="string, Version?" signature="public static bool VersionTryParse(string input, Version? result)">
+        <template #name><h3>VersionTryParse</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="input" type="string"></doc-parameter>
+                <doc-parameter name="result" type="Version?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

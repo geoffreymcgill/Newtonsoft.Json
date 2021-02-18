@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_convertertype" name="_converterType" type="Type" access="private" signature="private readonly Type _converterType">
+    <doc-member id="field-_convertertype" name="_converterType" type="Type" access="private" signature="private readonly Type _converterType">
         <template #name><h3>_converterType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -219,14 +219,14 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-convertertype" name="ConverterType" type="Type" signature="public Type ConverterType { get; }">
+    <doc-member id="property-convertertype" name="ConverterType" type="Type" signature="public Type ConverterType { get; }">
         <template #name><h3>ConverterType</h3></template>
 
 <p>Gets the <see cref="!:Type"/> of the <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
 
     </doc-member>
 
-<doc-member id="property-converterparameters" name="ConverterParameters" type="System.Object[]" signature="public Object[] ConverterParameters { get; }">
+    <doc-member id="property-converterparameters" name="ConverterParameters" type="object[]" signature="public object[] ConverterParameters { get; }">
         <template #name><h3>ConverterParameters</h3></template>
 
 <p>The parameter list to use when constructing the <see cref="T:Newtonsoft.Json.JsonConverter"/> described by <see cref="P:Newtonsoft.Json.JsonConverterAttribute.ConverterType"/>.
@@ -238,32 +238,34 @@ If <c>null</c>, the default constructor is used.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type" signature="public JsonConverterAttribute(Type converterType)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="Type" signature="public JsonConverterAttribute(Type converterType)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="converterType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonConverterAttribute"/> class.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type, Object[]" signature="public JsonConverterAttribute(Type converterType, Object[] converterParameters)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="converterType" type="Type"></doc-parameter>
-                <doc-parameter name="converterParameters" type="System.Object[]"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="converterType" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonConverterAttribute"/> class.</p>
 
-    </doc-member>
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="Type, object[]" signature="public JsonConverterAttribute(Type converterType, object[] converterParameters)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="converterType" type="Type"></doc-parameter>
+                    <doc-parameter name="converterParameters" type="object[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonConverterAttribute"/> class.</p>
+
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

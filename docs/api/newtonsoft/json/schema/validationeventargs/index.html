@@ -216,7 +216,7 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_ex" name="_ex" type="Newtonsoft.Json.Schema.JsonSchemaException" access="private" signature="private readonly JsonSchemaException _ex">
+    <doc-member id="field-_ex" name="_ex" type="JsonSchemaException" access="private" signature="private readonly JsonSchemaException _ex">
         <template #name><h3>_ex</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,21 +224,21 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-exception" name="Exception" type="Newtonsoft.Json.Schema.JsonSchemaException" signature="public JsonSchemaException Exception { get; }">
+    <doc-member id="property-exception" name="Exception" type="JsonSchemaException" signature="public JsonSchemaException Exception { get; }">
         <template #name><h3>Exception</h3></template>
 
 <p>Gets the <see cref="T:Newtonsoft.Json.Schema.JsonSchemaException"/> associated with the validation error.</p>
 
     </doc-member>
 
-<doc-member id="property-path" name="Path" type="System.String" signature="public String Path { get; }">
+    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
         <template #name><h3>Path</h3></template>
 
 <p>Gets the path of the JSON location where the validation error occurred.</p>
 
     </doc-member>
 
-<doc-member id="property-message" name="Message" type="System.String" signature="public String Message { get; }">
+    <doc-member id="property-message" name="Message" type="string" signature="public string Message { get; }">
         <template #name><h3>Message</h3></template>
 
 <p>Gets the text description corresponding to the validation error.</p>
@@ -249,7 +249,7 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSchemaException" access="internal" signature="internal ValidationEventArgs(JsonSchemaException ex)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonSchemaException" access="internal" signature="internal ValidationEventArgs(JsonSchemaException ex)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>

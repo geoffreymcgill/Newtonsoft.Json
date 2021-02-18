@@ -211,27 +211,28 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-resolvereference" name="ResolveReference" returns="System.Object" params="Object, String" signature="public abstract Object ResolveReference(Object context, String reference)">
-        <template #name><h3>ResolveReference</h3></template>
+    <doc-member id="method-addreference" name="AddReference" returns="void" params="object, string, object" signature="public abstract void AddReference(object context, string reference, object value)">
+        <template #name><h3>AddReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="reference" type="string"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Resolves a reference to its object.</p>
+<p>Adds a reference to the specified object.</p>
 
     </doc-member>
 
-<doc-member id="method-getreference" name="GetReference" returns="System.String" params="Object, Object" signature="public abstract String GetReference(Object context, Object value)">
+    <doc-member id="method-getreference" name="GetReference" returns="string" params="object, object" signature="public abstract string GetReference(object context, object value)">
         <template #name><h3>GetReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -239,13 +240,13 @@
 
     </doc-member>
 
-<doc-member id="method-isreferenced" name="IsReferenced" returns="System.Boolean" params="Object, Object" signature="public abstract Boolean IsReferenced(Object context, Object value)">
+    <doc-member id="method-isreferenced" name="IsReferenced" returns="bool" params="object, object" signature="public abstract bool IsReferenced(object context, object value)">
         <template #name><h3>IsReferenced</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -253,18 +254,17 @@
 
     </doc-member>
 
-<doc-member id="method-addreference" name="AddReference" returns="System.Void" params="Object, String, Object" signature="public abstract Void AddReference(Object context, String reference, Object value)">
-        <template #name><h3>AddReference</h3></template>
+    <doc-member id="method-resolvereference" name="ResolveReference" returns="object" params="object, string" signature="public abstract object ResolveReference(object context, string reference)">
+        <template #name><h3>ResolveReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="reference" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Adds a reference to the specified object.</p>
+<p>Resolves a reference to its object.</p>
 
     </doc-member>
 </doc-member-group>

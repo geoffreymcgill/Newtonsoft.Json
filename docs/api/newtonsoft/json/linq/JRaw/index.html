@@ -211,47 +211,39 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-createasync" name="CreateAsync" returns="Task<Newtonsoft.Json.Linq.JRaw>" params="JsonReader, CancellationToken" signature="public async static Task<JRaw> CreateAsync(JsonReader reader, CancellationToken cancellationToken = null)">
-        <template #name><h3>CreateAsync</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="JRaw" signature="public JRaw(JRaw other)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Asynchronously creates an instance of <see cref="T:Newtonsoft.Json.Linq.JRaw"/> with the content of the reader's current token.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JRaw" signature="public JRaw(JRaw other)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JRaw"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JRaw"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JRaw"/> class from another <see cref="T:Newtonsoft.Json.Linq.JRaw"/> object.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>" signature="public JRaw(Nullable<Object> rawJson)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object?" signature="public JRaw(object? rawJson)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="rawJson" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="rawJson" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JRaw"/> class.</p>
 
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal sealed JToken CloneToken()">
+        <template #name><h3>CloneToken</h3></template>
     </doc-member>
 
-<doc-member id="method-create" name="Create" returns="Newtonsoft.Json.Linq.JRaw" params="JsonReader" signature="public static JRaw Create(JsonReader reader)">
+    <doc-member id="method-create" name="Create" returns="JRaw" params="JsonReader" signature="public static JRaw Create(JsonReader reader)">
         <template #name><h3>Create</h3></template>
 
         <template #parameters>
@@ -264,8 +256,18 @@
 
     </doc-member>
 
-<doc-member id="method-clonetoken" name="CloneToken" returns="Newtonsoft.Json.Linq.JToken" access="internal" signature="internal sealed JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
+    <doc-member id="method-createasync" name="CreateAsync" returns="Task<JRaw>" params="JsonReader, CancellationToken" signature="public async static Task<JRaw> CreateAsync(JsonReader reader, CancellationToken cancellationToken = null)">
+        <template #name><h3>CreateAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Asynchronously creates an instance of <see cref="T:Newtonsoft.Json.Linq.JRaw"/> with the content of the reader's current token.</p>
+
     </doc-member>
 </doc-member-group>
 

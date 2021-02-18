@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_itemcontract" name="_itemContract" type="Newtonsoft.Json.Serialization.JsonContract" access="private" signature="private JsonContract _itemContract">
+    <doc-member id="field-_itemcontract" name="_itemContract" type="JsonContract?" access="private" signature="private JsonContract? _itemContract">
         <template #name><h3>_itemContract</h3></template>
     </doc-member>
 
-<doc-member id="field-_finalitemcontract" name="_finalItemContract" type="Newtonsoft.Json.Serialization.JsonContract" access="private" signature="private JsonContract _finalItemContract">
+    <doc-member id="field-_finalitemcontract" name="_finalItemContract" type="JsonContract?" access="private" signature="private JsonContract? _finalItemContract">
         <template #name><h3>_finalItemContract</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,36 +223,36 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-itemcontract" name="ItemContract" type="Newtonsoft.Json.Serialization.JsonContract" access="internal" signature="internal JsonContract ItemContract { internal get; internal set; }">
+    <doc-member id="property-itemcontract" name="ItemContract" type="JsonContract?" access="internal" signature="internal JsonContract? ItemContract { internal get; internal set; }">
         <template #name><h3>ItemContract</h3></template>
     </doc-member>
 
-<doc-member id="property-finalitemcontract" name="FinalItemContract" type="Newtonsoft.Json.Serialization.JsonContract" access="internal" signature="internal JsonContract FinalItemContract { internal get; }">
+    <doc-member id="property-finalitemcontract" name="FinalItemContract" type="JsonContract?" access="internal" signature="internal JsonContract? FinalItemContract { internal get; }">
         <template #name><h3>FinalItemContract</h3></template>
     </doc-member>
 
-<doc-member id="property-itemconverter" name="ItemConverter" type="Newtonsoft.Json.JsonConverter" signature="public JsonConverter ItemConverter { get; set; }">
+    <doc-member id="property-itemconverter" name="ItemConverter" type="JsonConverter?" signature="public JsonConverter? ItemConverter { get; set; }">
         <template #name><h3>ItemConverter</h3></template>
 
 <p>Gets or sets the default collection items <see cref="T:Newtonsoft.Json.JsonConverter" />.</p>
 
     </doc-member>
 
-<doc-member id="property-itemisreference" name="ItemIsReference" type="System.Nullable<System.Boolean>" signature="public Nullable<Boolean> ItemIsReference { get; set; }">
+    <doc-member id="property-itemisreference" name="ItemIsReference" type="bool?" signature="public bool? ItemIsReference { get; set; }">
         <template #name><h3>ItemIsReference</h3></template>
 
 <p>Gets or sets a value indicating whether the collection items preserve object references.</p>
 
     </doc-member>
 
-<doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="System.Nullable<Newtonsoft.Json.ReferenceLoopHandling>" signature="public Nullable<ReferenceLoopHandling> ItemReferenceLoopHandling { get; set; }">
+    <doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="ReferenceLoopHandling?" signature="public ReferenceLoopHandling? ItemReferenceLoopHandling { get; set; }">
         <template #name><h3>ItemReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the collection item reference loop handling.</p>
 
     </doc-member>
 
-<doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="System.Nullable<Newtonsoft.Json.TypeNameHandling>" signature="public Nullable<TypeNameHandling> ItemTypeNameHandling { get; set; }">
+    <doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="TypeNameHandling?" signature="public TypeNameHandling? ItemTypeNameHandling { get; set; }">
         <template #name><h3>ItemTypeNameHandling</h3></template>
 
 <p>Gets or sets the collection item type name handling.</p>
@@ -263,7 +263,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type" access="internal" signature="internal JsonContainerContract(Type underlyingType)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Type" access="internal" signature="internal JsonContainerContract(Type underlyingType)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>

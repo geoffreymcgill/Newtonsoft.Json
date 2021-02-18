@@ -211,19 +211,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_memberserialization" name="_memberSerialization" type="Newtonsoft.Json.MemberSerialization" access="private" signature="private MemberSerialization _memberSerialization">
+    <doc-member id="field-_memberserialization" name="_memberSerialization" type="MemberSerialization" access="private" signature="private MemberSerialization _memberSerialization">
         <template #name><h3>_memberSerialization</h3></template>
     </doc-member>
 
-<doc-member id="field-_missingmemberhandling" name="_missingMemberHandling" type="System.Nullable<Newtonsoft.Json.MissingMemberHandling>" access="internal" signature="internal Nullable<MissingMemberHandling> _missingMemberHandling">
+    <doc-member id="field-_missingmemberhandling" name="_missingMemberHandling" type="MissingMemberHandling?" access="internal" signature="internal MissingMemberHandling? _missingMemberHandling">
         <template #name><h3>_missingMemberHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_itemrequired" name="_itemRequired" type="System.Nullable<Newtonsoft.Json.Required>" access="internal" signature="internal Nullable<Required> _itemRequired">
+    <doc-member id="field-_itemrequired" name="_itemRequired" type="Required?" access="internal" signature="internal Required? _itemRequired">
         <template #name><h3>_itemRequired</h3></template>
     </doc-member>
 
-<doc-member id="field-_itemnullvaluehandling" name="_itemNullValueHandling" type="System.Nullable<Newtonsoft.Json.NullValueHandling>" access="internal" signature="internal Nullable<NullValueHandling> _itemNullValueHandling">
+    <doc-member id="field-_itemnullvaluehandling" name="_itemNullValueHandling" type="NullValueHandling?" access="internal" signature="internal NullValueHandling? _itemNullValueHandling">
         <template #name><h3>_itemNullValueHandling</h3></template>
     </doc-member>
 </doc-member-group>
@@ -231,28 +231,28 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-memberserialization" name="MemberSerialization" type="Newtonsoft.Json.MemberSerialization" signature="public MemberSerialization MemberSerialization { get; set; }">
+    <doc-member id="property-memberserialization" name="MemberSerialization" type="MemberSerialization" signature="public MemberSerialization MemberSerialization { get; set; }">
         <template #name><h3>MemberSerialization</h3></template>
 
 <p>Gets or sets the member serialization.</p>
 
     </doc-member>
 
-<doc-member id="property-missingmemberhandling" name="MissingMemberHandling" type="Newtonsoft.Json.MissingMemberHandling" signature="public MissingMemberHandling MissingMemberHandling { get; set; }">
+    <doc-member id="property-missingmemberhandling" name="MissingMemberHandling" type="MissingMemberHandling" signature="public MissingMemberHandling MissingMemberHandling { get; set; }">
         <template #name><h3>MissingMemberHandling</h3></template>
 
 <p>Gets or sets the missing member handling used when deserializing this object.</p>
 
     </doc-member>
 
-<doc-member id="property-itemnullvaluehandling" name="ItemNullValueHandling" type="Newtonsoft.Json.NullValueHandling" signature="public NullValueHandling ItemNullValueHandling { get; set; }">
+    <doc-member id="property-itemnullvaluehandling" name="ItemNullValueHandling" type="NullValueHandling" signature="public NullValueHandling ItemNullValueHandling { get; set; }">
         <template #name><h3>ItemNullValueHandling</h3></template>
 
 <p>Gets or sets how the object's properties with null values are handled during serialization and deserialization.</p>
 
     </doc-member>
 
-<doc-member id="property-itemrequired" name="ItemRequired" type="Newtonsoft.Json.Required" signature="public Required ItemRequired { get; set; }">
+    <doc-member id="property-itemrequired" name="ItemRequired" type="Required" signature="public Required ItemRequired { get; set; }">
         <template #name><h3>ItemRequired</h3></template>
 
 <p>Gets or sets a value that indicates whether the object's properties are required.</p>
@@ -263,38 +263,40 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JsonObjectAttribute()">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JsonObjectAttribute()">
+            <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonObjectAttribute"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="MemberSerialization" signature="public JsonObjectAttribute(MemberSerialization memberSerialization)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="MemberSerialization" signature="public JsonObjectAttribute(MemberSerialization memberSerialization)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberSerialization" type="Newtonsoft.Json.MemberSerialization"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="memberSerialization" type="Newtonsoft.Json.MemberSerialization"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonObjectAttribute"/> class with the specified member serialization.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JsonObjectAttribute(String id)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string" signature="public JsonObjectAttribute(string id)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="id" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="id" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonObjectAttribute"/> class with the specified container Id.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

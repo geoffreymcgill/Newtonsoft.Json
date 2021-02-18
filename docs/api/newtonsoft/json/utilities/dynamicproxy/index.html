@@ -208,7 +208,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<System.String>" params="T" signature="public virtual IEnumerable<String> GetDynamicMemberNames(T instance)">
+    <doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<string>" params="T" signature="public virtual IEnumerable<string> GetDynamicMemberNames(T instance)">
         <template #name><h3>GetDynamicMemberNames</h3></template>
 
         <template #parameters>
@@ -218,57 +218,57 @@
         </template>
     </doc-member>
 
-<doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="System.Boolean" params="T, BinaryOperationBinder, Object, Nullable<Object>" signature="public virtual Boolean TryBinaryOperation(T instance, BinaryOperationBinder binder, Object arg, Nullable<Object> result)">
+    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="T, BinaryOperationBinder, object, object?" signature="public virtual bool TryBinaryOperation(T instance, BinaryOperationBinder binder, object arg, object? result)">
         <template #name><h3>TryBinaryOperation</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="BinaryOperationBinder"></doc-parameter>
-                <doc-parameter name="arg" type="System.Object"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="arg" type="object"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryconvert" name="TryConvert" returns="System.Boolean" params="T, ConvertBinder, Nullable<Object>" signature="public virtual Boolean TryConvert(T instance, ConvertBinder binder, Nullable<Object> result)">
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="T, ConvertBinder, object?" signature="public virtual bool TryConvert(T instance, ConvertBinder binder, object? result)">
         <template #name><h3>TryConvert</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trycreateinstance" name="TryCreateInstance" returns="System.Boolean" params="T, CreateInstanceBinder, Object[], Nullable<Object>" signature="public virtual Boolean TryCreateInstance(T instance, CreateInstanceBinder binder, Object[] args, Nullable<Object> result)">
+    <doc-member id="method-trycreateinstance" name="TryCreateInstance" returns="bool" params="T, CreateInstanceBinder, object[], object?" signature="public virtual bool TryCreateInstance(T instance, CreateInstanceBinder binder, object[] args, object? result)">
         <template #name><h3>TryCreateInstance</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="CreateInstanceBinder"></doc-parameter>
-                <doc-parameter name="args" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="args" type="object[]"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trydeleteindex" name="TryDeleteIndex" returns="System.Boolean" params="T, DeleteIndexBinder, Object[]" signature="public virtual Boolean TryDeleteIndex(T instance, DeleteIndexBinder binder, Object[] indexes)">
+    <doc-member id="method-trydeleteindex" name="TryDeleteIndex" returns="bool" params="T, DeleteIndexBinder, object[]" signature="public virtual bool TryDeleteIndex(T instance, DeleteIndexBinder binder, object[] indexes)">
         <template #name><h3>TryDeleteIndex</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="DeleteIndexBinder"></doc-parameter>
-                <doc-parameter name="indexes" type="System.Object[]"></doc-parameter>
+                <doc-parameter name="indexes" type="object[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trydeletemember" name="TryDeleteMember" returns="System.Boolean" params="T, DeleteMemberBinder" signature="public virtual Boolean TryDeleteMember(T instance, DeleteMemberBinder binder)">
+    <doc-member id="method-trydeletemember" name="TryDeleteMember" returns="bool" params="T, DeleteMemberBinder" signature="public virtual bool TryDeleteMember(T instance, DeleteMemberBinder binder)">
         <template #name><h3>TryDeleteMember</h3></template>
 
         <template #parameters>
@@ -279,90 +279,90 @@
         </template>
     </doc-member>
 
-<doc-member id="method-trygetindex" name="TryGetIndex" returns="System.Boolean" params="T, GetIndexBinder, Object[], Nullable<Object>" signature="public virtual Boolean TryGetIndex(T instance, GetIndexBinder binder, Object[] indexes, Nullable<Object> result)">
+    <doc-member id="method-trygetindex" name="TryGetIndex" returns="bool" params="T, GetIndexBinder, object[], object?" signature="public virtual bool TryGetIndex(T instance, GetIndexBinder binder, object[] indexes, object? result)">
         <template #name><h3>TryGetIndex</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="GetIndexBinder"></doc-parameter>
-                <doc-parameter name="indexes" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="indexes" type="object[]"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trygetmember" name="TryGetMember" returns="System.Boolean" params="T, GetMemberBinder, Nullable<Object>" signature="public virtual Boolean TryGetMember(T instance, GetMemberBinder binder, Nullable<Object> result)">
+    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="T, GetMemberBinder, object?" signature="public virtual bool TryGetMember(T instance, GetMemberBinder binder, object? result)">
         <template #name><h3>TryGetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="GetMemberBinder"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryinvoke" name="TryInvoke" returns="System.Boolean" params="T, InvokeBinder, Object[], Nullable<Object>" signature="public virtual Boolean TryInvoke(T instance, InvokeBinder binder, Object[] args, Nullable<Object> result)">
+    <doc-member id="method-tryinvoke" name="TryInvoke" returns="bool" params="T, InvokeBinder, object[], object?" signature="public virtual bool TryInvoke(T instance, InvokeBinder binder, object[] args, object? result)">
         <template #name><h3>TryInvoke</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="InvokeBinder"></doc-parameter>
-                <doc-parameter name="args" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="args" type="object[]"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryinvokemember" name="TryInvokeMember" returns="System.Boolean" params="T, InvokeMemberBinder, Object[], Nullable<Object>" signature="public virtual Boolean TryInvokeMember(T instance, InvokeMemberBinder binder, Object[] args, Nullable<Object> result)">
+    <doc-member id="method-tryinvokemember" name="TryInvokeMember" returns="bool" params="T, InvokeMemberBinder, object[], object?" signature="public virtual bool TryInvokeMember(T instance, InvokeMemberBinder binder, object[] args, object? result)">
         <template #name><h3>TryInvokeMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="InvokeMemberBinder"></doc-parameter>
-                <doc-parameter name="args" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="args" type="object[]"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trysetindex" name="TrySetIndex" returns="System.Boolean" params="T, SetIndexBinder, Object[], Object" signature="public virtual Boolean TrySetIndex(T instance, SetIndexBinder binder, Object[] indexes, Object value)">
+    <doc-member id="method-trysetindex" name="TrySetIndex" returns="bool" params="T, SetIndexBinder, object[], object" signature="public virtual bool TrySetIndex(T instance, SetIndexBinder binder, object[] indexes, object value)">
         <template #name><h3>TrySetIndex</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="SetIndexBinder"></doc-parameter>
-                <doc-parameter name="indexes" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="indexes" type="object[]"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trysetmember" name="TrySetMember" returns="System.Boolean" params="T, SetMemberBinder, Object" signature="public virtual Boolean TrySetMember(T instance, SetMemberBinder binder, Object value)">
+    <doc-member id="method-trysetmember" name="TrySetMember" returns="bool" params="T, SetMemberBinder, object" signature="public virtual bool TrySetMember(T instance, SetMemberBinder binder, object value)">
         <template #name><h3>TrySetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="SetMemberBinder"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryunaryoperation" name="TryUnaryOperation" returns="System.Boolean" params="T, UnaryOperationBinder, Nullable<Object>" signature="public virtual Boolean TryUnaryOperation(T instance, UnaryOperationBinder binder, Nullable<Object> result)">
+    <doc-member id="method-tryunaryoperation" name="TryUnaryOperation" returns="bool" params="T, UnaryOperationBinder, object?" signature="public virtual bool TryUnaryOperation(T instance, UnaryOperationBinder binder, object? result)">
         <template #name><h3>TryUnaryOperation</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="T"></doc-parameter>
                 <doc-parameter name="binder" type="UnaryOperationBinder"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

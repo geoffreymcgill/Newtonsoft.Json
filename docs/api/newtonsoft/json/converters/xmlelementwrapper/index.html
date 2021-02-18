@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_element" name="_element" type="XmlElement" access="private" signature="private readonly XmlElement _element">
+    <doc-member id="field-_element" name="_element" type="XmlElement" access="private" signature="private readonly XmlElement _element">
         <template #name><h3>_element</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-isempty" name="IsEmpty" type="System.Boolean" signature="public Boolean IsEmpty { get; }">
+    <doc-member id="property-isempty" name="IsEmpty" type="bool" signature="public bool IsEmpty { get; }">
         <template #name><h3>IsEmpty</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="XmlElement" signature="public XmlElementWrapper(XmlElement element)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="XmlElement" signature="public XmlElementWrapper(XmlElement element)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -234,22 +234,22 @@
         </template>
     </doc-member>
 
-<doc-member id="method-setattributenode" name="SetAttributeNode" returns="System.Void" params="IXmlNode" signature="public Void SetAttributeNode(IXmlNode attribute)">
+    <doc-member id="method-getprefixofnamespace" name="GetPrefixOfNamespace" returns="string" params="string" signature="public string GetPrefixOfNamespace(string namespaceUri)">
+        <template #name><h3>GetPrefixOfNamespace</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="namespaceUri" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-setattributenode" name="SetAttributeNode" returns="void" params="IXmlNode" signature="public void SetAttributeNode(IXmlNode attribute)">
         <template #name><h3>SetAttributeNode</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="attribute" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getprefixofnamespace" name="GetPrefixOfNamespace" returns="System.String" params="String" signature="public String GetPrefixOfNamespace(String namespaceUri)">
-        <template #name><h3>GetPrefixOfNamespace</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="namespaceUri" type="System.String"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

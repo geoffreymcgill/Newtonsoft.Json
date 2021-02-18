@@ -211,19 +211,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_writer" name="_writer" type="Newtonsoft.Json.Bson.BsonBinaryWriter" access="private" signature="private readonly BsonBinaryWriter _writer">
+    <doc-member id="field-_writer" name="_writer" type="BsonBinaryWriter" access="private" signature="private readonly BsonBinaryWriter _writer">
         <template #name><h3>_writer</h3></template>
     </doc-member>
 
-<doc-member id="field-_root" name="_root" type="Newtonsoft.Json.Bson.BsonToken" access="private" signature="private BsonToken _root">
+    <doc-member id="field-_root" name="_root" type="BsonToken" access="private" signature="private BsonToken _root">
         <template #name><h3>_root</h3></template>
     </doc-member>
 
-<doc-member id="field-_parent" name="_parent" type="Newtonsoft.Json.Bson.BsonToken" access="private" signature="private BsonToken _parent">
+    <doc-member id="field-_parent" name="_parent" type="BsonToken" access="private" signature="private BsonToken _parent">
         <template #name><h3>_parent</h3></template>
     </doc-member>
 
-<doc-member id="field-_propertyname" name="_propertyName" type="System.String" access="private" signature="private String _propertyName">
+    <doc-member id="field-_propertyname" name="_propertyName" type="string" access="private" signature="private string _propertyName">
         <template #name><h3>_propertyName</h3></template>
     </doc-member>
 </doc-member-group>
@@ -231,7 +231,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-datetimekindhandling" name="DateTimeKindHandling" type="DateTimeKind" signature="public DateTimeKind DateTimeKindHandling { get; set; }">
+    <doc-member id="property-datetimekindhandling" name="DateTimeKindHandling" type="DateTimeKind" signature="public DateTimeKind DateTimeKindHandling { get; set; }">
         <template #name><h3>DateTimeKindHandling</h3></template>
 
 <p>Gets or sets the <see cref="!:DateTimeKind" /> used when writing <see cref="!:DateTime"/> values to BSON.
@@ -243,40 +243,99 @@ When set to <see cref="!:DateTimeKind.Unspecified" /> no conversion will occur.<
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Stream" signature="public BsonWriter(Stream stream)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="Stream" signature="public BsonWriter(Stream stream)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="stream" type="Stream"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonWriter"/> class.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="BinaryWriter" signature="public BsonWriter(BinaryWriter writer)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="BinaryWriter"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="stream" type="Stream"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonWriter"/> class.</p>
 
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="BinaryWriter" signature="public BsonWriter(BinaryWriter writer)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="BinaryWriter"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Bson.BsonWriter"/> class.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-addparent" name="AddParent" returns="void" params="BsonToken" access="private" signature="private void AddParent(BsonToken container)">
+        <template #name><h3>AddParent</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="container" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
     </doc-member>
 
-<doc-member id="method-flush" name="Flush" returns="System.Void" signature="public sealed Void Flush()">
+    <doc-member id="method-addtoken" name="AddToken" returns="void" params="BsonToken" access="internal" signature="internal void AddToken(BsonToken token)">
+        <template #name><h3>AddToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-addvalue" name="AddValue" returns="void" params="object, BsonType" access="private" signature="private void AddValue(object value, BsonType type)">
+        <template #name><h3>AddValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="type" type="Newtonsoft.Json.Bson.BsonType"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
+        <template #name><h3>Close</h3></template>
+
+<p>Closes this writer.
+If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>, the underlying <see cref="!:Stream"/> is also closed.
+If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>true</c>, the JSON is auto-completed.</p>
+
+    </doc-member>
+
+    <doc-member id="method-flush" name="Flush" returns="void" signature="public sealed void Flush()">
         <template #name><h3>Flush</h3></template>
 
 <p>Flushes whatever is in the buffer to the underlying <see cref="!:Stream"/> and also flushes the underlying stream.</p>
 
     </doc-member>
 
-<doc-member id="method-writeend" name="WriteEnd" returns="System.Void" params="JsonToken" access="protected" signature="protected sealed Void WriteEnd(JsonToken token)">
+    <doc-member id="method-removeparent" name="RemoveParent" returns="void" access="private" signature="private void RemoveParent()">
+        <template #name><h3>RemoveParent</h3></template>
+    </doc-member>
+
+    <doc-member id="method-writecomment" name="WriteComment" returns="void" params="string" signature="public sealed void WriteComment(string text)">
+        <template #name><h3>WriteComment</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="text" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes a comment <c>/<em>...</em>/</c> containing the specified text.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writeend" name="WriteEnd" returns="void" params="JsonToken" access="protected" signature="protected sealed void WriteEnd(JsonToken token)">
         <template #name><h3>WriteEnd</h3></template>
 
         <template #parameters>
@@ -289,423 +348,19 @@ When set to <see cref="!:DateTimeKind.Unspecified" /> no conversion will occur.<
 
     </doc-member>
 
-<doc-member id="method-writecomment" name="WriteComment" returns="System.Void" params="String" signature="public sealed Void WriteComment(String text)">
-        <template #name><h3>WriteComment</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a comment <c>/<em>...</em>/</c> containing the specified text.</p>
-
-    </doc-member>
-
-<doc-member id="method-writestartconstructor" name="WriteStartConstructor" returns="System.Void" params="String" signature="public sealed Void WriteStartConstructor(String name)">
-        <template #name><h3>WriteStartConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the start of a constructor with the given name.</p>
-
-    </doc-member>
-
-<doc-member id="method-writeraw" name="WriteRaw" returns="System.Void" params="String" signature="public sealed Void WriteRaw(String json)">
-        <template #name><h3>WriteRaw</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="json" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes raw JSON.</p>
-
-    </doc-member>
-
-<doc-member id="method-writerawvalue" name="WriteRawValue" returns="System.Void" params="String" signature="public sealed Void WriteRawValue(String json)">
-        <template #name><h3>WriteRawValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="json" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes raw JSON where a value is expected and updates the writer's state.</p>
-
-    </doc-member>
-
-<doc-member id="method-writestartarray" name="WriteStartArray" returns="System.Void" signature="public sealed Void WriteStartArray()">
-        <template #name><h3>WriteStartArray</h3></template>
-
-<p>Writes the beginning of a JSON array.</p>
-
-    </doc-member>
-
-<doc-member id="method-writestartobject" name="WriteStartObject" returns="System.Void" signature="public sealed Void WriteStartObject()">
-        <template #name><h3>WriteStartObject</h3></template>
-
-<p>Writes the beginning of a JSON object.</p>
-
-    </doc-member>
-
-<doc-member id="method-writepropertyname" name="WritePropertyName" returns="System.Void" params="String" signature="public sealed Void WritePropertyName(String name)">
-        <template #name><h3>WritePropertyName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the property name of a name/value pair on a JSON object.</p>
-
-    </doc-member>
-
-<doc-member id="method-close" name="Close" returns="System.Void" signature="public sealed Void Close()">
-        <template #name><h3>Close</h3></template>
-
-<p>Closes this writer.
-If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>, the underlying <see cref="!:Stream"/> is also closed.
-If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>true</c>, the JSON is auto-completed.</p>
-
-    </doc-member>
-
-<doc-member id="method-addparent" name="AddParent" returns="System.Void" params="BsonToken" access="private" signature="private Void AddParent(BsonToken container)">
-        <template #name><h3>AddParent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="container" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeparent" name="RemoveParent" returns="System.Void" access="private" signature="private Void RemoveParent()">
-        <template #name><h3>RemoveParent</h3></template>
-    </doc-member>
-
-<doc-member id="method-addvalue" name="AddValue" returns="System.Void" params="Object, BsonType" access="private" signature="private Void AddValue(Object value, BsonType type)">
-        <template #name><h3>AddValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="type" type="Newtonsoft.Json.Bson.BsonType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addtoken" name="AddToken" returns="System.Void" params="BsonToken" access="internal" signature="internal Void AddToken(BsonToken token)">
-        <template #name><h3>AddToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Object" signature="public sealed Void WriteValue(Object value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Object"/> value.
-An error will raised if the value cannot be written as a single JSON token.</p>
-
-    </doc-member>
-
-<doc-member id="method-writenull" name="WriteNull" returns="System.Void" signature="public sealed Void WriteNull()">
+    <doc-member id="method-writenull" name="WriteNull" returns="void" signature="public sealed void WriteNull()">
         <template #name><h3>WriteNull</h3></template>
 
 <p>Writes a null value.</p>
 
     </doc-member>
 
-<doc-member id="method-writeundefined" name="WriteUndefined" returns="System.Void" signature="public sealed Void WriteUndefined()">
-        <template #name><h3>WriteUndefined</h3></template>
-
-<p>Writes an undefined value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="String" signature="public sealed Void WriteValue(String value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:String"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int32" signature="public sealed Void WriteValue(Int32 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Int32"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt32" signature="public sealed Void WriteValue(UInt32 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt32"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:UInt32"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int64" signature="public sealed Void WriteValue(Int64 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int64"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Int64"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt64" signature="public sealed Void WriteValue(UInt64 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt64"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:UInt64"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Single" signature="public sealed Void WriteValue(Single value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Single"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Single"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Double" signature="public sealed Void WriteValue(Double value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Double"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Boolean" signature="public sealed Void WriteValue(Boolean value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Boolean"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Int16" signature="public sealed Void WriteValue(Int16 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int16"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Int16"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="UInt16" signature="public sealed Void WriteValue(UInt16 value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt16"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:UInt16"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Char" signature="public sealed Void WriteValue(Char value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Char"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Byte" signature="public sealed Void WriteValue(Byte value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Byte"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Byte"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="SByte" signature="public sealed Void WriteValue(SByte value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.SByte"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:SByte"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Decimal" signature="public sealed Void WriteValue(Decimal value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Decimal"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="DateTime" signature="public sealed Void WriteValue(DateTime value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:DateTime"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="DateTimeOffset" signature="public sealed Void WriteValue(DateTimeOffset value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:DateTimeOffset"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Byte[]" signature="public sealed Void WriteValue(Byte[] value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Byte[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Byte"/>[] value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Guid" signature="public sealed Void WriteValue(Guid value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Guid"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Guid"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="TimeSpan" signature="public sealed Void WriteValue(TimeSpan value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:TimeSpan"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writevalue" name="WriteValue" returns="System.Void" params="Uri" signature="public sealed Void WriteValue(Uri value)">
-        <template #name><h3>WriteValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Uri"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes a <see cref="!:Uri"/> value.</p>
-
-    </doc-member>
-
-<doc-member id="method-writeobjectid" name="WriteObjectId" returns="System.Void" params="Byte[]" signature="public Void WriteObjectId(Byte[] value)">
+    <doc-member id="method-writeobjectid" name="WriteObjectId" returns="void" params="byte[]" signature="public void WriteObjectId(byte[] value)">
         <template #name><h3>WriteObjectId</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Byte[]"></doc-parameter>
+                <doc-parameter name="value" type="byte[]"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -713,19 +368,368 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
     </doc-member>
 
-<doc-member id="method-writeregex" name="WriteRegex" returns="System.Void" params="String, String" signature="public Void WriteRegex(String pattern, String options)">
+    <doc-member id="method-writepropertyname" name="WritePropertyName" returns="void" params="string" signature="public sealed void WritePropertyName(string name)">
+        <template #name><h3>WritePropertyName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the property name of a name/value pair on a JSON object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writeraw" name="WriteRaw" returns="void" params="string" signature="public sealed void WriteRaw(string json)">
+        <template #name><h3>WriteRaw</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes raw JSON.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writerawvalue" name="WriteRawValue" returns="void" params="string" signature="public sealed void WriteRawValue(string json)">
+        <template #name><h3>WriteRawValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="json" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes raw JSON where a value is expected and updates the writer's state.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writeregex" name="WriteRegex" returns="void" params="string, string" signature="public void WriteRegex(string pattern, string options)">
         <template #name><h3>WriteRegex</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="pattern" type="System.String"></doc-parameter>
-                <doc-parameter name="options" type="System.String"></doc-parameter>
+                <doc-parameter name="pattern" type="string"></doc-parameter>
+                <doc-parameter name="options" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
 <p>Writes a BSON regex.</p>
 
     </doc-member>
+
+    <doc-member id="method-writestartarray" name="WriteStartArray" returns="void" signature="public sealed void WriteStartArray()">
+        <template #name><h3>WriteStartArray</h3></template>
+
+<p>Writes the beginning of a JSON array.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writestartconstructor" name="WriteStartConstructor" returns="void" params="string" signature="public sealed void WriteStartConstructor(string name)">
+        <template #name><h3>WriteStartConstructor</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the start of a constructor with the given name.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writestartobject" name="WriteStartObject" returns="void" signature="public sealed void WriteStartObject()">
+        <template #name><h3>WriteStartObject</h3></template>
+
+<p>Writes the beginning of a JSON object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writeundefined" name="WriteUndefined" returns="void" signature="public sealed void WriteUndefined()">
+        <template #name><h3>WriteUndefined</h3></template>
+
+<p>Writes an undefined value.</p>
+
+    </doc-member>
+
+    <doc-overload-group overload-id="group-writevalue">
+        <doc-member id="method-writevalue" overload-id="group-writevalue" name="WriteValue" returns="void" params="object" signature="public sealed void WriteValue(object value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Object"/> value.
+An error will raised if the value cannot be written as a single JSON token.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-1" overload-id="group-writevalue" name="WriteValue" returns="void" params="string" signature="public sealed void WriteValue(string value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:String"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-2" overload-id="group-writevalue" name="WriteValue" returns="void" params="int" signature="public sealed void WriteValue(int value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Int32"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-3" overload-id="group-writevalue" name="WriteValue" returns="void" params="uint" signature="public sealed void WriteValue(uint value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="uint"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:UInt32"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-4" overload-id="group-writevalue" name="WriteValue" returns="void" params="long" signature="public sealed void WriteValue(long value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="long"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Int64"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-5" overload-id="group-writevalue" name="WriteValue" returns="void" params="ulong" signature="public sealed void WriteValue(ulong value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="ulong"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:UInt64"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-6" overload-id="group-writevalue" name="WriteValue" returns="void" params="float" signature="public sealed void WriteValue(float value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="float"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Single"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-7" overload-id="group-writevalue" name="WriteValue" returns="void" params="double" signature="public sealed void WriteValue(double value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Double"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-8" overload-id="group-writevalue" name="WriteValue" returns="void" params="bool" signature="public sealed void WriteValue(bool value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Boolean"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-9" overload-id="group-writevalue" name="WriteValue" returns="void" params="short" signature="public sealed void WriteValue(short value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="short"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Int16"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-10" overload-id="group-writevalue" name="WriteValue" returns="void" params="ushort" signature="public sealed void WriteValue(ushort value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="ushort"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:UInt16"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-11" overload-id="group-writevalue" name="WriteValue" returns="void" params="char" signature="public sealed void WriteValue(char value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Char"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-12" overload-id="group-writevalue" name="WriteValue" returns="void" params="byte" signature="public sealed void WriteValue(byte value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="byte"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Byte"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-13" overload-id="group-writevalue" name="WriteValue" returns="void" params="sbyte" signature="public sealed void WriteValue(sbyte value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="sbyte"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:SByte"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-14" overload-id="group-writevalue" name="WriteValue" returns="void" params="decimal" signature="public sealed void WriteValue(decimal value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="decimal"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Decimal"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-15" overload-id="group-writevalue" name="WriteValue" returns="void" params="DateTime" signature="public sealed void WriteValue(DateTime value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:DateTime"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-16" overload-id="group-writevalue" name="WriteValue" returns="void" params="DateTimeOffset" signature="public sealed void WriteValue(DateTimeOffset value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:DateTimeOffset"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-17" overload-id="group-writevalue" name="WriteValue" returns="void" params="byte[]" signature="public sealed void WriteValue(byte[] value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="byte[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Byte"/>[] value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-18" overload-id="group-writevalue" name="WriteValue" returns="void" params="Guid" signature="public sealed void WriteValue(Guid value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Guid"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Guid"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-19" overload-id="group-writevalue" name="WriteValue" returns="void" params="TimeSpan" signature="public sealed void WriteValue(TimeSpan value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:TimeSpan"/> value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writevalue-20" overload-id="group-writevalue" name="WriteValue" returns="void" params="Uri" signature="public sealed void WriteValue(Uri value)">
+            <template #name><h3>WriteValue</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Uri"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes a <see cref="!:Uri"/> value.</p>
+
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

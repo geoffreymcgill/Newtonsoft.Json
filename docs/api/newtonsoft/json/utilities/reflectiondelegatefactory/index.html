@@ -208,47 +208,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="MemberInfo" signature="public Func<T, Nullable<Object>> CreateGet(MemberInfo memberInfo)">
-        <template #name><h3>CreateGet</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="MemberInfo" signature="public Action<T, Nullable<Object>> CreateSet(MemberInfo memberInfo)">
-        <template #name><h3>CreateSet</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createmethodcall" name="CreateMethodCall" returns="Newtonsoft.Json.Utilities.MethodCall<T, System.Nullable<System.Object>>" params="MethodBase" signature="public abstract MethodCall<T, Nullable<Object>> CreateMethodCall(MethodBase method)">
-        <template #name><h3>CreateMethodCall</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>" params="MethodBase" signature="public abstract ObjectConstructor<Object> CreateParameterizedConstructor(MethodBase method)">
-        <template #name><h3>CreateParameterizedConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public abstract Func<T> CreateDefaultConstructor(Type type)">
+    <doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public abstract Func<T> CreateDefaultConstructor(Type type)">
         <template #name><h3>CreateDefaultConstructor</h3></template>
 
         <template #parameters>
@@ -258,45 +218,89 @@
         </template>
     </doc-member>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public abstract Func<T, Nullable<Object>> CreateGet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateGet</h3></template>
+    <doc-overload-group overload-id="group-createget">
+        <doc-member id="method-createget" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="MemberInfo" signature="public Func<T, object?> CreateGet(MemberInfo memberInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createget-1" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="PropertyInfo" signature="public abstract Func<T, object?> CreateGet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createget-2" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="FieldInfo" signature="public abstract Func<T, object?> CreateGet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-createmethodcall" name="CreateMethodCall" returns="MethodCall<T, object?>" params="MethodBase" signature="public abstract MethodCall<T, object?> CreateMethodCall(MethodBase method)">
+        <template #name><h3>CreateMethodCall</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public abstract Func<T, Nullable<Object>> CreateGet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateGet</h3></template>
+    <doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="ObjectConstructor<object>" params="MethodBase" signature="public abstract ObjectConstructor<object> CreateParameterizedConstructor(MethodBase method)">
+        <template #name><h3>CreateParameterizedConstructor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public abstract Action<T, Nullable<Object>> CreateSet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateSet</h3></template>
+    <doc-overload-group overload-id="group-createset">
+        <doc-member id="method-createset" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="MemberInfo" signature="public Action<T, object?> CreateSet(MemberInfo memberInfo)">
+            <template #name><h3>CreateSet</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public abstract Action<T, Nullable<Object>> CreateSet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateSet</h3></template>
+        <doc-member id="method-createset-1" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="FieldInfo" signature="public abstract Action<T, object?> CreateSet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateSet</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createset-2" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="PropertyInfo" signature="public abstract Action<T, object?> CreateSet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateSet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

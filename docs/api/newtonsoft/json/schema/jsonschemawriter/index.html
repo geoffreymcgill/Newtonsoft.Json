@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_writer" name="_writer" type="Newtonsoft.Json.JsonWriter" access="private" signature="private readonly JsonWriter _writer">
+    <doc-member id="field-_writer" name="_writer" type="JsonWriter" access="private" signature="private readonly JsonWriter _writer">
         <template #name><h3>_writer</h3></template>
     </doc-member>
 
-<doc-member id="field-_resolver" name="_resolver" type="Newtonsoft.Json.Schema.JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
+    <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
         <template #name><h3>_resolver</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,7 +220,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonWriter, JsonSchemaResolver" signature="public JsonSchemaWriter(JsonWriter writer, JsonSchemaResolver resolver)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonWriter, JsonSchemaResolver" signature="public JsonSchemaWriter(JsonWriter writer, JsonSchemaResolver resolver)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -231,7 +231,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-referenceorwriteschema" name="ReferenceOrWriteSchema" returns="System.Void" params="JsonSchema" access="private" signature="private Void ReferenceOrWriteSchema(JsonSchema schema)">
+    <doc-member id="method-referenceorwriteschema" name="ReferenceOrWriteSchema" returns="void" params="JsonSchema" access="private" signature="private void ReferenceOrWriteSchema(JsonSchema schema)">
         <template #name><h3>ReferenceOrWriteSchema</h3></template>
 
         <template #parameters>
@@ -241,29 +241,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-writeschema" name="WriteSchema" returns="System.Void" params="JsonSchema" signature="public Void WriteSchema(JsonSchema schema)">
-        <template #name><h3>WriteSchema</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeschemadictionaryifnotnull" name="WriteSchemaDictionaryIfNotNull" returns="System.Void" params="JsonWriter, String, IDictionary<String, JsonSchema>" access="private" signature="private Void WriteSchemaDictionaryIfNotNull(JsonWriter writer, String propertyName, IDictionary<String, JsonSchema> properties)">
-        <template #name><h3>WriteSchemaDictionaryIfNotNull</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="properties" type="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchema>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeitems" name="WriteItems" returns="System.Void" params="JsonSchema" access="private" signature="private Void WriteItems(JsonSchema schema)">
+    <doc-member id="method-writeitems" name="WriteItems" returns="void" params="JsonSchema" access="private" signature="private void WriteItems(JsonSchema schema)">
         <template #name><h3>WriteItems</h3></template>
 
         <template #parameters>
@@ -273,26 +251,48 @@
         </template>
     </doc-member>
 
-<doc-member id="method-writetype" name="WriteType" returns="System.Void" params="String, JsonWriter, JsonSchemaType" access="private" signature="private Void WriteType(String propertyName, JsonWriter writer, JsonSchemaType type)">
-        <template #name><h3>WriteType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="type" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writepropertyifnotnull" name="WritePropertyIfNotNull" returns="System.Void" params="JsonWriter, String, Object" access="private" signature="private Void WritePropertyIfNotNull(JsonWriter writer, String propertyName, Object value)">
+    <doc-member id="method-writepropertyifnotnull" name="WritePropertyIfNotNull" returns="void" params="JsonWriter, string, object" access="private" signature="private void WritePropertyIfNotNull(JsonWriter writer, string propertyName, object value)">
         <template #name><h3>WritePropertyIfNotNull</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeschema" name="WriteSchema" returns="void" params="JsonSchema" signature="public void WriteSchema(JsonSchema schema)">
+        <template #name><h3>WriteSchema</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeschemadictionaryifnotnull" name="WriteSchemaDictionaryIfNotNull" returns="void" params="JsonWriter, string, IDictionary<string, JsonSchema>" access="private" signature="private void WriteSchemaDictionaryIfNotNull(JsonWriter writer, string propertyName, IDictionary<string, JsonSchema> properties)">
+        <template #name><h3>WriteSchemaDictionaryIfNotNull</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="properties" type="IDictionary<string, Newtonsoft.Json.Schema.JsonSchema>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writetype" name="WriteType" returns="void" params="string, JsonWriter, JsonSchemaType" access="private" signature="private void WriteType(string propertyName, JsonWriter writer, JsonSchemaType type)">
+        <template #name><h3>WriteType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="type" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

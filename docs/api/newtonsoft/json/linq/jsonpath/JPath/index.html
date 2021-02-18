@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-floatcharacters" name="FloatCharacters" type="System.Char[]" access="private" signature="private readonly static Char[] FloatCharacters">
+    <doc-member id="field-floatcharacters" name="FloatCharacters" type="char[]" access="private" signature="private readonly static char[] FloatCharacters">
         <template #name><h3>FloatCharacters</h3></template>
     </doc-member>
 
-<doc-member id="field-_expression" name="_expression" type="System.String" access="private" signature="private readonly String _expression">
+    <doc-member id="field-_expression" name="_expression" type="string" access="private" signature="private readonly string _expression">
         <template #name><h3>_expression</h3></template>
     </doc-member>
 
-<doc-member id="field-_currentindex" name="_currentIndex" type="System.Int32" access="private" signature="private Int32 _currentIndex">
+    <doc-member id="field-_currentindex" name="_currentIndex" type="int" access="private" signature="private int _currentIndex">
         <template #name><h3>_currentIndex</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-filters" name="Filters" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>" signature="public List<PathFilter> Filters { get; }">
+    <doc-member id="property-filters" name="Filters" type="List<PathFilter>" signature="public List<PathFilter> Filters { get; }">
         <template #name><h3>Filters</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,175 +232,177 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JPath(String expression)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="string" signature="public JPath(string expression)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="expression" type="System.String"></doc-parameter>
+                <doc-parameter name="expression" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-parsemain" name="ParseMain" returns="System.Void" access="private" signature="private Void ParseMain()">
+    <doc-member id="method-createpathfilter" name="CreatePathFilter" returns="PathFilter" params="string?, bool" access="private" signature="private static PathFilter CreatePathFilter(string? member, bool scan)">
+        <template #name><h3>CreatePathFilter</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="member" type="string?"></doc-parameter>
+                <doc-parameter name="scan" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-createunexpectedcharacterexception" name="CreateUnexpectedCharacterException" returns="JsonException" access="private" signature="private JsonException CreateUnexpectedCharacterException()">
+        <template #name><h3>CreateUnexpectedCharacterException</h3></template>
+    </doc-member>
+
+    <doc-member id="method-eatwhitespace" name="EatWhitespace" returns="void" access="private" signature="private void EatWhitespace()">
+        <template #name><h3>EatWhitespace</h3></template>
+    </doc-member>
+
+    <doc-member id="method-ensurelength" name="EnsureLength" returns="void" params="string" access="private" signature="private void EnsureLength(string message)">
+        <template #name><h3>EnsureLength</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="message" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-evaluate">
+        <doc-member id="method-evaluate" overload-id="group-evaluate" name="Evaluate" returns="IEnumerable<JToken>" params="JToken, JToken, JsonSelectSettings?" access="internal" signature="internal IEnumerable<JToken> Evaluate(JToken root, JToken t, JsonSelectSettings? settings)">
+            <template #name><h3>Evaluate</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-evaluate-1" overload-id="group-evaluate" name="Evaluate" returns="IEnumerable<JToken>" params="List<PathFilter>, JToken, JToken, JsonSelectSettings?" access="internal" signature="internal static IEnumerable<JToken> Evaluate(List<PathFilter> filters, JToken root, JToken t, JsonSelectSettings? settings)">
+            <template #name><h3>Evaluate</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="filters" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>"></doc-parameter>
+                    <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-match" name="Match" returns="bool" params="string" access="private" signature="private bool Match(string s)">
+        <template #name><h3>Match</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="s" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-parsearrayindexer" name="ParseArrayIndexer" returns="PathFilter" params="char" access="private" signature="private PathFilter ParseArrayIndexer(char indexerCloseChar)">
+        <template #name><h3>ParseArrayIndexer</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="indexerCloseChar" type="char"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-parseexpression" name="ParseExpression" returns="QueryExpression" access="private" signature="private QueryExpression ParseExpression()">
+        <template #name><h3>ParseExpression</h3></template>
+    </doc-member>
+
+    <doc-member id="method-parseindexer" name="ParseIndexer" returns="PathFilter" params="char, bool" access="private" signature="private PathFilter ParseIndexer(char indexerOpenChar, bool scan)">
+        <template #name><h3>ParseIndexer</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="indexerOpenChar" type="char"></doc-parameter>
+                <doc-parameter name="scan" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-parsemain" name="ParseMain" returns="void" access="private" signature="private void ParseMain()">
         <template #name><h3>ParseMain</h3></template>
     </doc-member>
 
-<doc-member id="method-parsepath" name="ParsePath" returns="System.Boolean" params="List<PathFilter>, Int32, Boolean" access="private" signature="private Boolean ParsePath(List<PathFilter> filters, Int32 currentPartStartIndex, Boolean query)">
+    <doc-member id="method-parseoperator" name="ParseOperator" returns="QueryOperator" access="private" signature="private QueryOperator ParseOperator()">
+        <template #name><h3>ParseOperator</h3></template>
+    </doc-member>
+
+    <doc-member id="method-parsepath" name="ParsePath" returns="bool" params="List<PathFilter>, int, bool" access="private" signature="private bool ParsePath(List<PathFilter> filters, int currentPartStartIndex, bool query)">
         <template #name><h3>ParsePath</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="filters" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>"></doc-parameter>
-                <doc-parameter name="currentPartStartIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="query" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="currentPartStartIndex" type="int"></doc-parameter>
+                <doc-parameter name="query" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createpathfilter" name="CreatePathFilter" returns="Newtonsoft.Json.Linq.JsonPath.PathFilter" params="Nullable<String>, Boolean" access="private" signature="private static PathFilter CreatePathFilter(Nullable<String> member, Boolean scan)">
-        <template #name><h3>CreatePathFilter</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="scan" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-parseindexer" name="ParseIndexer" returns="Newtonsoft.Json.Linq.JsonPath.PathFilter" params="Char, Boolean" access="private" signature="private PathFilter ParseIndexer(Char indexerOpenChar, Boolean scan)">
-        <template #name><h3>ParseIndexer</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="indexerOpenChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="scan" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-parsearrayindexer" name="ParseArrayIndexer" returns="Newtonsoft.Json.Linq.JsonPath.PathFilter" params="Char" access="private" signature="private PathFilter ParseArrayIndexer(Char indexerCloseChar)">
-        <template #name><h3>ParseArrayIndexer</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="indexerCloseChar" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-eatwhitespace" name="EatWhitespace" returns="System.Void" access="private" signature="private Void EatWhitespace()">
-        <template #name><h3>EatWhitespace</h3></template>
-    </doc-member>
-
-<doc-member id="method-parsequery" name="ParseQuery" returns="Newtonsoft.Json.Linq.JsonPath.PathFilter" params="Char, Boolean" access="private" signature="private PathFilter ParseQuery(Char indexerCloseChar, Boolean scan)">
+    <doc-member id="method-parsequery" name="ParseQuery" returns="PathFilter" params="char, bool" access="private" signature="private PathFilter ParseQuery(char indexerCloseChar, bool scan)">
         <template #name><h3>ParseQuery</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="indexerCloseChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="scan" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="indexerCloseChar" type="char"></doc-parameter>
+                <doc-parameter name="scan" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryparseexpression" name="TryParseExpression" returns="System.Boolean" params="Nullable<List<PathFilter>>" access="private" signature="private Boolean TryParseExpression(Nullable<List<PathFilter>> expressionPath)">
-        <template #name><h3>TryParseExpression</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="expressionPath" type="System.Nullable<List<Newtonsoft.Json.Linq.JsonPath.PathFilter>>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createunexpectedcharacterexception" name="CreateUnexpectedCharacterException" returns="Newtonsoft.Json.JsonException" access="private" signature="private JsonException CreateUnexpectedCharacterException()">
-        <template #name><h3>CreateUnexpectedCharacterException</h3></template>
-    </doc-member>
-
-<doc-member id="method-parseside" name="ParseSide" returns="System.Object" access="private" signature="private Object ParseSide()">
-        <template #name><h3>ParseSide</h3></template>
-    </doc-member>
-
-<doc-member id="method-parseexpression" name="ParseExpression" returns="Newtonsoft.Json.Linq.JsonPath.QueryExpression" access="private" signature="private QueryExpression ParseExpression()">
-        <template #name><h3>ParseExpression</h3></template>
-    </doc-member>
-
-<doc-member id="method-tryparsevalue" name="TryParseValue" returns="System.Boolean" params="Nullable<Object>" access="private" signature="private Boolean TryParseValue(Nullable<Object> value)">
-        <template #name><h3>TryParseValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readquotedstring" name="ReadQuotedString" returns="System.String" access="private" signature="private String ReadQuotedString()">
-        <template #name><h3>ReadQuotedString</h3></template>
-    </doc-member>
-
-<doc-member id="method-readregexstring" name="ReadRegexString" returns="System.String" access="private" signature="private String ReadRegexString()">
-        <template #name><h3>ReadRegexString</h3></template>
-    </doc-member>
-
-<doc-member id="method-match" name="Match" returns="System.Boolean" params="String" access="private" signature="private Boolean Match(String s)">
-        <template #name><h3>Match</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-parseoperator" name="ParseOperator" returns="Newtonsoft.Json.Linq.JsonPath.QueryOperator" access="private" signature="private QueryOperator ParseOperator()">
-        <template #name><h3>ParseOperator</h3></template>
-    </doc-member>
-
-<doc-member id="method-parsequotedfield" name="ParseQuotedField" returns="Newtonsoft.Json.Linq.JsonPath.PathFilter" params="Char, Boolean" access="private" signature="private PathFilter ParseQuotedField(Char indexerCloseChar, Boolean scan)">
+    <doc-member id="method-parsequotedfield" name="ParseQuotedField" returns="PathFilter" params="char, bool" access="private" signature="private PathFilter ParseQuotedField(char indexerCloseChar, bool scan)">
         <template #name><h3>ParseQuotedField</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="indexerCloseChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="scan" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="indexerCloseChar" type="char"></doc-parameter>
+                <doc-parameter name="scan" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-ensurelength" name="EnsureLength" returns="System.Void" params="String" access="private" signature="private Void EnsureLength(String message)">
-        <template #name><h3>EnsureLength</h3></template>
+    <doc-member id="method-parseside" name="ParseSide" returns="object" access="private" signature="private object ParseSide()">
+        <template #name><h3>ParseSide</h3></template>
+    </doc-member>
+
+    <doc-member id="method-readquotedstring" name="ReadQuotedString" returns="string" access="private" signature="private string ReadQuotedString()">
+        <template #name><h3>ReadQuotedString</h3></template>
+    </doc-member>
+
+    <doc-member id="method-readregexstring" name="ReadRegexString" returns="string" access="private" signature="private string ReadRegexString()">
+        <template #name><h3>ReadRegexString</h3></template>
+    </doc-member>
+
+    <doc-member id="method-tryparseexpression" name="TryParseExpression" returns="bool" params="List<PathFilter>?" access="private" signature="private bool TryParseExpression(List<PathFilter>? expressionPath)">
+        <template #name><h3>TryParseExpression</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
+                <doc-parameter name="expressionPath" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-evaluate" name="Evaluate" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, JToken, JsonSelectSettings" access="internal" signature="internal IEnumerable<JToken> Evaluate(JToken root, JToken t, JsonSelectSettings settings)">
-        <template #name><h3>Evaluate</h3></template>
+    <doc-member id="method-tryparsevalue" name="TryParseValue" returns="bool" params="object?" access="private" signature="private bool TryParseValue(object? value)">
+        <template #name><h3>TryParseValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-evaluate" name="Evaluate" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="List<PathFilter>, JToken, JToken, JsonSelectSettings" access="internal" signature="internal static IEnumerable<JToken> Evaluate(List<PathFilter> filters, JToken root, JToken t, JsonSelectSettings settings)">
-        <template #name><h3>Evaluate</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="filters" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>"></doc-parameter>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

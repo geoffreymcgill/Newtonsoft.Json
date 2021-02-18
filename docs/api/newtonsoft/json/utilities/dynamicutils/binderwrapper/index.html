@@ -208,43 +208,43 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-csharpassemblyname" name="CSharpAssemblyName" type="System.String" signature="public const static String CSharpAssemblyName">
+    <doc-member id="field-csharpassemblyname" name="CSharpAssemblyName" type="string" signature="public const static string CSharpAssemblyName">
         <template #name><h3>CSharpAssemblyName</h3></template>
     </doc-member>
 
-<doc-member id="field-bindertypename" name="BinderTypeName" type="System.String" access="private" signature="private const static String BinderTypeName">
+    <doc-member id="field-bindertypename" name="BinderTypeName" type="string" access="private" signature="private const static string BinderTypeName">
         <template #name><h3>BinderTypeName</h3></template>
     </doc-member>
 
-<doc-member id="field-csharpargumentinfotypename" name="CSharpArgumentInfoTypeName" type="System.String" access="private" signature="private const static String CSharpArgumentInfoTypeName">
+    <doc-member id="field-csharpargumentinfotypename" name="CSharpArgumentInfoTypeName" type="string" access="private" signature="private const static string CSharpArgumentInfoTypeName">
         <template #name><h3>CSharpArgumentInfoTypeName</h3></template>
     </doc-member>
 
-<doc-member id="field-csharpargumentinfoflagstypename" name="CSharpArgumentInfoFlagsTypeName" type="System.String" access="private" signature="private const static String CSharpArgumentInfoFlagsTypeName">
+    <doc-member id="field-csharpargumentinfoflagstypename" name="CSharpArgumentInfoFlagsTypeName" type="string" access="private" signature="private const static string CSharpArgumentInfoFlagsTypeName">
         <template #name><h3>CSharpArgumentInfoFlagsTypeName</h3></template>
     </doc-member>
 
-<doc-member id="field-csharpbinderflagstypename" name="CSharpBinderFlagsTypeName" type="System.String" access="private" signature="private const static String CSharpBinderFlagsTypeName">
+    <doc-member id="field-csharpbinderflagstypename" name="CSharpBinderFlagsTypeName" type="string" access="private" signature="private const static string CSharpBinderFlagsTypeName">
         <template #name><h3>CSharpBinderFlagsTypeName</h3></template>
     </doc-member>
 
-<doc-member id="field-_getcsharpargumentinfoarray" name="_getCSharpArgumentInfoArray" type="System.Nullable<System.Object>" access="private" signature="private static Nullable<Object> _getCSharpArgumentInfoArray">
+    <doc-member id="field-_getcsharpargumentinfoarray" name="_getCSharpArgumentInfoArray" type="object?" access="private" signature="private static object? _getCSharpArgumentInfoArray">
         <template #name><h3>_getCSharpArgumentInfoArray</h3></template>
     </doc-member>
 
-<doc-member id="field-_setcsharpargumentinfoarray" name="_setCSharpArgumentInfoArray" type="System.Nullable<System.Object>" access="private" signature="private static Nullable<Object> _setCSharpArgumentInfoArray">
+    <doc-member id="field-_setcsharpargumentinfoarray" name="_setCSharpArgumentInfoArray" type="object?" access="private" signature="private static object? _setCSharpArgumentInfoArray">
         <template #name><h3>_setCSharpArgumentInfoArray</h3></template>
     </doc-member>
 
-<doc-member id="field-_getmembercall" name="_getMemberCall" type="Newtonsoft.Json.Utilities.MethodCall<System.Nullable<System.Object>, System.Nullable<System.Object>>" access="private" signature="private static MethodCall<Nullable<Object>, Nullable<Object>> _getMemberCall">
+    <doc-member id="field-_getmembercall" name="_getMemberCall" type="MethodCall<object?, object?>?" access="private" signature="private static MethodCall<object?, object?>? _getMemberCall">
         <template #name><h3>_getMemberCall</h3></template>
     </doc-member>
 
-<doc-member id="field-_setmembercall" name="_setMemberCall" type="Newtonsoft.Json.Utilities.MethodCall<System.Nullable<System.Object>, System.Nullable<System.Object>>" access="private" signature="private static MethodCall<Nullable<Object>, Nullable<Object>> _setMemberCall">
+    <doc-member id="field-_setmembercall" name="_setMemberCall" type="MethodCall<object?, object?>?" access="private" signature="private static MethodCall<object?, object?>? _setMemberCall">
         <template #name><h3>_setMemberCall</h3></template>
     </doc-member>
 
-<doc-member id="field-_init" name="_init" type="System.Boolean" access="private" signature="private static Boolean _init">
+    <doc-member id="field-_init" name="_init" type="bool" access="private" signature="private static bool _init">
         <template #name><h3>_init</h3></template>
     </doc-member>
 </doc-member-group>
@@ -252,41 +252,41 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-init" name="Init" returns="System.Void" access="private" signature="private static Void Init()">
-        <template #name><h3>Init</h3></template>
+    <doc-member id="method-createmembercalls" name="CreateMemberCalls" returns="void" access="private" signature="private static void CreateMemberCalls()">
+        <template #name><h3>CreateMemberCalls</h3></template>
     </doc-member>
 
-<doc-member id="method-createsharpargumentinfoarray" name="CreateSharpArgumentInfoArray" returns="System.Object" params="Int32[]" access="private" signature="private static Object CreateSharpArgumentInfoArray(Int32[] values)">
+    <doc-member id="method-createsharpargumentinfoarray" name="CreateSharpArgumentInfoArray" returns="object" params="int[]" access="private" signature="private static object CreateSharpArgumentInfoArray(int[] values)">
         <template #name><h3>CreateSharpArgumentInfoArray</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="values" type="System.Int32[]"></doc-parameter>
+                <doc-parameter name="values" type="int[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createmembercalls" name="CreateMemberCalls" returns="System.Void" access="private" signature="private static Void CreateMemberCalls()">
-        <template #name><h3>CreateMemberCalls</h3></template>
-    </doc-member>
-
-<doc-member id="method-getmember" name="GetMember" returns="CallSiteBinder" params="String, Type" signature="public static CallSiteBinder GetMember(String name, Type context)">
+    <doc-member id="method-getmember" name="GetMember" returns="CallSiteBinder" params="string, Type" signature="public static CallSiteBinder GetMember(string name, Type context)">
         <template #name><h3>GetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
                 <doc-parameter name="context" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-setmember" name="SetMember" returns="CallSiteBinder" params="String, Type" signature="public static CallSiteBinder SetMember(String name, Type context)">
+    <doc-member id="method-init" name="Init" returns="void" access="private" signature="private static void Init()">
+        <template #name><h3>Init</h3></template>
+    </doc-member>
+
+    <doc-member id="method-setmember" name="SetMember" returns="CallSiteBinder" params="string, Type" signature="public static CallSiteBinder SetMember(string name, Type context)">
         <template #name><h3>SetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
                 <doc-parameter name="context" type="Type"></doc-parameter>
             </doc-parameters>
         </template>

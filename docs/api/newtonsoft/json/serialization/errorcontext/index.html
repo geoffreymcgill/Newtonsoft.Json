@@ -211,39 +211,39 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-traced" name="Traced" type="System.Boolean" access="internal" signature="internal Boolean Traced { internal get; internal set; }">
+    <doc-member id="property-traced" name="Traced" type="bool" access="internal" signature="internal bool Traced { internal get; internal set; }">
         <template #name><h3>Traced</h3></template>
     </doc-member>
 
-<doc-member id="property-error" name="Error" type="Exception" signature="public Exception Error { get; }">
+    <doc-member id="property-error" name="Error" type="Exception" signature="public Exception Error { get; }">
         <template #name><h3>Error</h3></template>
 
 <p>Gets the error.</p>
 
     </doc-member>
 
-<doc-member id="property-originalobject" name="OriginalObject" type="System.Nullable<System.Object>" signature="public Nullable<Object> OriginalObject { get; }">
+    <doc-member id="property-originalobject" name="OriginalObject" type="object?" signature="public object? OriginalObject { get; }">
         <template #name><h3>OriginalObject</h3></template>
 
 <p>Gets the original object that caused the error.</p>
 
     </doc-member>
 
-<doc-member id="property-member" name="Member" type="System.Nullable<System.Object>" signature="public Nullable<Object> Member { get; }">
+    <doc-member id="property-member" name="Member" type="object?" signature="public object? Member { get; }">
         <template #name><h3>Member</h3></template>
 
 <p>Gets the member that caused the error.</p>
 
     </doc-member>
 
-<doc-member id="property-path" name="Path" type="System.String" signature="public String Path { get; }">
+    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
         <template #name><h3>Path</h3></template>
 
 <p>Gets the path of the JSON location where the error occurred.</p>
 
     </doc-member>
 
-<doc-member id="property-handled" name="Handled" type="System.Boolean" signature="public Boolean Handled { get; set; }">
+    <doc-member id="property-handled" name="Handled" type="bool" signature="public bool Handled { get; set; }">
         <template #name><h3>Handled</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.ErrorContext"/> is handled.</p>
@@ -254,14 +254,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>, Nullable<Object>, String, Exception" access="internal" signature="internal ErrorContext(Nullable<Object> originalObject, Nullable<Object> member, String path, Exception error)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object?, object?, string, Exception" access="internal" signature="internal ErrorContext(object? originalObject, object? member, string path, Exception error)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="originalObject" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="member" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="path" type="System.String"></doc-parameter>
+                <doc-parameter name="originalObject" type="object?"></doc-parameter>
+                <doc-parameter name="member" type="object?"></doc-parameter>
+                <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="error" type="Exception"></doc-parameter>
             </doc-parameters>
         </template>

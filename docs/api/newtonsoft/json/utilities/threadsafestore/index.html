@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_concurrentstore" name="_concurrentStore" type="ConcurrentDictionary<TKey, TValue>" access="private" signature="private readonly ConcurrentDictionary<TKey, TValue> _concurrentStore">
+    <doc-member id="field-_concurrentstore" name="_concurrentStore" type="ConcurrentDictionary<TKey, TValue>" access="private" signature="private readonly ConcurrentDictionary<TKey, TValue> _concurrentStore">
         <template #name><h3>_concurrentStore</h3></template>
     </doc-member>
 
-<doc-member id="field-_creator" name="_creator" type="Func<TKey, TValue>" access="private" signature="private readonly Func<TKey, TValue> _creator">
+    <doc-member id="field-_creator" name="_creator" type="Func<TKey, TValue>" access="private" signature="private readonly Func<TKey, TValue> _creator">
         <template #name><h3>_creator</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,7 +220,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Func<TKey, TValue>" signature="public ThreadSafeStore(Func<TKey, TValue> creator)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Func<TKey, TValue>" signature="public ThreadSafeStore(Func<TKey, TValue> creator)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -230,7 +230,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-get" name="Get" returns="TValue" params="TKey" signature="public TValue Get(TKey key)">
+    <doc-member id="method-get" name="Get" returns="TValue" params="TKey" signature="public TValue Get(TKey key)">
         <template #name><h3>Get</h3></template>
 
         <template #parameters>

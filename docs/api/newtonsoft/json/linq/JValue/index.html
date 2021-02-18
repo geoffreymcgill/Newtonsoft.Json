@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_valuetype" name="_valueType" type="Newtonsoft.Json.Linq.JTokenType" access="private" signature="private JTokenType _valueType">
+    <doc-member id="field-_valuetype" name="_valueType" type="JTokenType" access="private" signature="private JTokenType _valueType">
         <template #name><h3>_valueType</h3></template>
     </doc-member>
 
-<doc-member id="field-_value" name="_value" type="System.Nullable<System.Object>" access="private" signature="private Nullable<Object> _value">
+    <doc-member id="field-_value" name="_value" type="object?" access="private" signature="private object? _value">
         <template #name><h3>_value</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,21 +223,21 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-hasvalues" name="HasValues" type="System.Boolean" signature="public sealed Boolean HasValues { get; }">
+    <doc-member id="property-hasvalues" name="HasValues" type="bool" signature="public sealed bool HasValues { get; }">
         <template #name><h3>HasValues</h3></template>
 
 <p>Gets a value indicating whether this token has child tokens.</p>
 
     </doc-member>
 
-<doc-member id="property-type" name="Type" type="Newtonsoft.Json.Linq.JTokenType" signature="public sealed JTokenType Type { get; }">
+    <doc-member id="property-type" name="Type" type="JTokenType" signature="public sealed JTokenType Type { get; }">
         <template #name><h3>Type</h3></template>
 
 <p>Gets the node type for this <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
 
     </doc-member>
 
-<doc-member id="property-value" name="Value" type="System.Nullable<System.Object>" signature="public Nullable<Object> Value { get; set; }">
+    <doc-member id="property-value" name="Value" type="object?" signature="public object? Value { get; set; }">
         <template #name><h3>Value</h3></template>
 
 <p>Gets or sets the underlying token value.</p>
@@ -248,228 +248,306 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
-        <template #name><h3>WriteToAsync</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="object?, JTokenType" access="internal" signature="internal JValue(object? value, JTokenType type)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="type" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<p>Writes this token to a <see cref="T:Newtonsoft.Json.JsonWriter"/> asynchronously.</p>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JValue" signature="public JValue(JValue other)">
+            <template #name><h3>.ctor</h3></template>
 
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>, JTokenType" access="internal" signature="internal JValue(Nullable<Object> value, JTokenType type)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="type" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JValue" signature="public JValue(JValue other)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class from another <see cref="T:Newtonsoft.Json.Linq.JValue"/> object.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Int64" signature="public JValue(Int64 value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="long" signature="public JValue(long value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int64"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Decimal" signature="public JValue(Decimal value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="long"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Char" signature="public JValue(Char value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="decimal" signature="public JValue(decimal value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="UInt64" signature="public JValue(UInt64 value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt64"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="decimal"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Double" signature="public JValue(Double value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="char" signature="public JValue(char value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Single" signature="public JValue(Single value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Single"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="DateTime" signature="public JValue(DateTime value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-5" overload-id="group-.ctor" name=".ctor" returns="void" params="ulong" signature="public JValue(ulong value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="DateTimeOffset" signature="public JValue(DateTimeOffset value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="ulong"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Boolean" signature="public JValue(Boolean value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-6" overload-id="group-.ctor" name=".ctor" returns="void" params="double" signature="public JValue(double value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<String>" signature="public JValue(Nullable<String> value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Guid" signature="public JValue(Guid value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-7" overload-id="group-.ctor" name=".ctor" returns="void" params="float" signature="public JValue(float value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Guid"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Uri>" signature="public JValue(Nullable<Uri> value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<Uri>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="float"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="TimeSpan" signature="public JValue(TimeSpan value)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-8" overload-id="group-.ctor" name=".ctor" returns="void" params="DateTime" signature="public JValue(DateTime value)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>" signature="public JValue(Nullable<Object> value)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
+        </doc-member>
+
+        <doc-member id="method-.ctor-9" overload-id="group-.ctor" name=".ctor" returns="void" params="DateTimeOffset" signature="public JValue(DateTimeOffset value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-10" overload-id="group-.ctor" name=".ctor" returns="void" params="bool" signature="public JValue(bool value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-11" overload-id="group-.ctor" name=".ctor" returns="void" params="string?" signature="public JValue(string? value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-12" overload-id="group-.ctor" name=".ctor" returns="void" params="Guid" signature="public JValue(Guid value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Guid"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-13" overload-id="group-.ctor" name=".ctor" returns="void" params="Uri?" signature="public JValue(Uri? value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-14" overload-id="group-.ctor" name=".ctor" returns="void" params="TimeSpan" signature="public JValue(TimeSpan value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-15" overload-id="group-.ctor" name=".ctor" returns="void" params="object?" signature="public JValue(object? value)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal sealed JToken CloneToken()">
+        <template #name><h3>CloneToken</h3></template>
     </doc-member>
 
-<doc-member id="method-deepequals" name="DeepEquals" returns="System.Boolean" params="JToken" access="internal" signature="internal sealed Boolean DeepEquals(JToken node)">
+    <doc-member id="method-compare" name="Compare" returns="int" params="JTokenType, object?, object?" access="internal" signature="internal static int Compare(JTokenType valueType, object? objA, object? objB)">
+        <template #name><h3>Compare</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="valueType" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
+                <doc-parameter name="objA" type="object?"></doc-parameter>
+                <doc-parameter name="objB" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-comparebiginteger" name="CompareBigInteger" returns="int" params="BigInteger, object" access="private" signature="private static int CompareBigInteger(BigInteger i1, object i2)">
+        <template #name><h3>CompareBigInteger</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="i1" type="BigInteger"></doc-parameter>
+                <doc-parameter name="i2" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-comparefloat" name="CompareFloat" returns="int" params="object, object" access="private" signature="private static int CompareFloat(object objA, object objB)">
+        <template #name><h3>CompareFloat</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="objA" type="object"></doc-parameter>
+                <doc-parameter name="objB" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-compareto" name="CompareTo" returns="int" params="JValue" signature="public int CompareTo(JValue obj)">
+        <template #name><h3>CompareTo</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="obj" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-createcomment" name="CreateComment" returns="JValue" params="string?" signature="public static JValue CreateComment(string? value)">
+        <template #name><h3>CreateComment</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="string?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> comment with the given value.</p>
+
+    </doc-member>
+
+    <doc-member id="method-createnull" name="CreateNull" returns="JValue" signature="public static JValue CreateNull()">
+        <template #name><h3>CreateNull</h3></template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> null value.</p>
+
+    </doc-member>
+
+    <doc-member id="method-createstring" name="CreateString" returns="JValue" params="string?" signature="public static JValue CreateString(string? value)">
+        <template #name><h3>CreateString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="string?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> string with the given value.</p>
+
+    </doc-member>
+
+    <doc-member id="method-createundefined" name="CreateUndefined" returns="JValue" signature="public static JValue CreateUndefined()">
+        <template #name><h3>CreateUndefined</h3></template>
+
+<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> undefined value.</p>
+
+    </doc-member>
+
+    <doc-member id="method-deepequals" name="DeepEquals" returns="bool" params="JToken" access="internal" signature="internal sealed bool DeepEquals(JToken node)">
         <template #name><h3>DeepEquals</h3></template>
 
         <template #parameters>
@@ -479,119 +557,153 @@
         </template>
     </doc-member>
 
-<doc-member id="method-comparebiginteger" name="CompareBigInteger" returns="System.Int32" params="BigInteger, Object" access="private" signature="private static Int32 CompareBigInteger(BigInteger i1, Object i2)">
-        <template #name><h3>CompareBigInteger</h3></template>
+    <doc-overload-group overload-id="group-equals">
+        <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="JValue?" signature="public bool Equals(JValue? other)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JValue?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Indicates whether the current object is equal to another object of the same type.</p>
+
+        </doc-member>
+
+        <doc-member id="method-equals-1" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="obj" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Determines whether the specified <see cref="!:Object"/> is equal to the current <see cref="!:Object"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="int" access="internal" signature="internal sealed int GetDeepHashCode()">
+        <template #name><h3>GetDeepHashCode</h3></template>
+    </doc-member>
+
+    <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
+        <template #name><h3>GetHashCode</h3></template>
+
+<p>Serves as a hash function for a particular type.</p>
+
+    </doc-member>
+
+    <doc-member id="method-getmetaobject" name="GetMetaObject" returns="DynamicMetaObject" params="Expression" access="protected" signature="protected sealed DynamicMetaObject GetMetaObject(Expression parameter)">
+        <template #name><h3>GetMetaObject</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="i1" type="BigInteger"></doc-parameter>
-                <doc-parameter name="i2" type="System.Object"></doc-parameter>
+                <doc-parameter name="parameter" type="Expression"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Returns the <see cref="!:DynamicMetaObject"/> responsible for binding operations performed on this object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-getstringvaluetype" name="GetStringValueType" returns="JTokenType" params="JTokenType?" access="private" signature="private static JTokenType GetStringValueType(JTokenType? current)">
+        <template #name><h3>GetStringValueType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="current" type="Newtonsoft.Json.Linq.JTokenType?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-compare" name="Compare" returns="System.Int32" params="JTokenType, Nullable<Object>, Nullable<Object>" access="internal" signature="internal static Int32 Compare(JTokenType valueType, Nullable<Object> objA, Nullable<Object> objB)">
-        <template #name><h3>Compare</h3></template>
+    <doc-member id="method-getvaluetype" name="GetValueType" returns="JTokenType" params="JTokenType?, object?" access="private" signature="private static JTokenType GetValueType(JTokenType? current, object? value)">
+        <template #name><h3>GetValueType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="valueType" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
-                <doc-parameter name="objA" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="objB" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="current" type="Newtonsoft.Json.Linq.JTokenType?"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-comparefloat" name="CompareFloat" returns="System.Int32" params="Object, Object" access="private" signature="private static Int32 CompareFloat(Object objA, Object objB)">
-        <template #name><h3>CompareFloat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objA" type="System.Object"></doc-parameter>
-                <doc-parameter name="objB" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-operation" name="Operation" returns="System.Boolean" params="ExpressionType, Nullable<Object>, Nullable<Object>, Nullable<Object>" access="private" signature="private static Boolean Operation(ExpressionType operation, Nullable<Object> objA, Nullable<Object> objB, Nullable<Object> result)">
+    <doc-member id="method-operation" name="Operation" returns="bool" params="ExpressionType, object?, object?, object?" access="private" signature="private static bool Operation(ExpressionType operation, object? objA, object? objB, object? result)">
         <template #name><h3>Operation</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="operation" type="ExpressionType"></doc-parameter>
-                <doc-parameter name="objA" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="objB" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="objA" type="object?"></doc-parameter>
+                <doc-parameter name="objB" type="object?"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-clonetoken" name="CloneToken" returns="Newtonsoft.Json.Linq.JToken" access="internal" signature="internal sealed JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
-    </doc-member>
+    <doc-overload-group overload-id="group-tostring">
+        <doc-member id="method-tostring" overload-id="group-tostring" name="ToString" returns="string" signature="public sealed string ToString()">
+            <template #name><h3>ToString</h3></template>
 
-<doc-member id="method-createcomment" name="CreateComment" returns="Newtonsoft.Json.Linq.JValue" params="Nullable<String>" signature="public static JValue CreateComment(Nullable<String> value)">
-        <template #name><h3>CreateComment</h3></template>
+<p>Returns a <see cref="!:String"/> that represents this instance.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-1" overload-id="group-tostring" name="ToString" returns="string" params="string" signature="public string ToString(string format)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="format" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a <see cref="!:String"/> that represents this instance.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-2" overload-id="group-tostring" name="ToString" returns="string" params="IFormatProvider" signature="public string ToString(IFormatProvider formatProvider)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="formatProvider" type="IFormatProvider"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a <see cref="!:String"/> that represents this instance.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-3" overload-id="group-tostring" name="ToString" returns="string" params="string?, IFormatProvider" signature="public string ToString(string? format, IFormatProvider formatProvider)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="format" type="string?"></doc-parameter>
+                    <doc-parameter name="formatProvider" type="IFormatProvider"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a <see cref="!:String"/> that represents this instance.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-valuesequals" name="ValuesEquals" returns="bool" params="JValue, JValue" access="private" signature="private static bool ValuesEquals(JValue v1, JValue v2)">
+        <template #name><h3>ValuesEquals</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> comment with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-createstring" name="CreateString" returns="Newtonsoft.Json.Linq.JValue" params="Nullable<String>" signature="public static JValue CreateString(Nullable<String> value)">
-        <template #name><h3>CreateString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> string with the given value.</p>
-
-    </doc-member>
-
-<doc-member id="method-createnull" name="CreateNull" returns="Newtonsoft.Json.Linq.JValue" signature="public static JValue CreateNull()">
-        <template #name><h3>CreateNull</h3></template>
-
-<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> null value.</p>
-
-    </doc-member>
-
-<doc-member id="method-createundefined" name="CreateUndefined" returns="Newtonsoft.Json.Linq.JValue" signature="public static JValue CreateUndefined()">
-        <template #name><h3>CreateUndefined</h3></template>
-
-<p>Creates a <see cref="T:Newtonsoft.Json.Linq.JValue"/> undefined value.</p>
-
-    </doc-member>
-
-<doc-member id="method-getvaluetype" name="GetValueType" returns="Newtonsoft.Json.Linq.JTokenType" params="Nullable<JTokenType>, Nullable<Object>" access="private" signature="private static JTokenType GetValueType(Nullable<JTokenType> current, Nullable<Object> value)">
-        <template #name><h3>GetValueType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="current" type="System.Nullable<Newtonsoft.Json.Linq.JTokenType>"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="v1" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="v2" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getstringvaluetype" name="GetStringValueType" returns="Newtonsoft.Json.Linq.JTokenType" params="Nullable<JTokenType>" access="private" signature="private static JTokenType GetStringValueType(Nullable<JTokenType> current)">
-        <template #name><h3>GetStringValueType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="current" type="System.Nullable<Newtonsoft.Json.Linq.JTokenType>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeto" name="WriteTo" returns="System.Void" params="JsonWriter, JsonConverter[]" signature="public sealed Void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -605,124 +717,18 @@
 
     </doc-member>
 
-<doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="System.Int32" access="internal" signature="internal sealed Int32 GetDeepHashCode()">
-        <template #name><h3>GetDeepHashCode</h3></template>
-    </doc-member>
-
-<doc-member id="method-valuesequals" name="ValuesEquals" returns="System.Boolean" params="JValue, JValue" access="private" signature="private static Boolean ValuesEquals(JValue v1, JValue v2)">
-        <template #name><h3>ValuesEquals</h3></template>
+    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+        <template #name><h3>WriteToAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="v1" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="v2" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="JValue" signature="public Boolean Equals(JValue other)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Indicates whether the current object is equal to another object of the same type.</p>
-
-    </doc-member>
-
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Object" signature="public sealed Boolean Equals(Object obj)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="obj" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether the specified <see cref="!:Object"/> is equal to the current <see cref="!:Object"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-gethashcode" name="GetHashCode" returns="System.Int32" signature="public sealed Int32 GetHashCode()">
-        <template #name><h3>GetHashCode</h3></template>
-
-<p>Serves as a hash function for a particular type.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" signature="public sealed String ToString()">
-        <template #name><h3>ToString</h3></template>
-
-<p>Returns a <see cref="!:String"/> that represents this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="String" signature="public String ToString(String format)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="format" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns a <see cref="!:String"/> that represents this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="IFormatProvider" signature="public String ToString(IFormatProvider formatProvider)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="formatProvider" type="IFormatProvider"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns a <see cref="!:String"/> that represents this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<String>, IFormatProvider" signature="public String ToString(Nullable<String> format, IFormatProvider formatProvider)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="format" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="formatProvider" type="IFormatProvider"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns a <see cref="!:String"/> that represents this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-getmetaobject" name="GetMetaObject" returns="DynamicMetaObject" params="Expression" access="protected" signature="protected sealed DynamicMetaObject GetMetaObject(Expression parameter)">
-        <template #name><h3>GetMetaObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="parameter" type="Expression"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns the <see cref="!:DynamicMetaObject"/> responsible for binding operations performed on this object.</p>
-
-    </doc-member>
-
-<doc-member id="method-compareto" name="CompareTo" returns="System.Int32" params="JValue" signature="public Int32 CompareTo(JValue obj)">
-        <template #name><h3>CompareTo</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="obj" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Compares the current instance with another object of the same type and returns an integer that indicates whether the current instance precedes, follows, or occurs in the same position in the sort order as the other object.</p>
+<p>Writes this token to a <see cref="T:Newtonsoft.Json.JsonWriter"/> asynchronously.</p>
 
     </doc-member>
 </doc-member-group>

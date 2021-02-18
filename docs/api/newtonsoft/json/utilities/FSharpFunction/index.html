@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_instance" name="_instance" type="System.Nullable<System.Object>" access="private" signature="private readonly Nullable<Object> _instance">
+    <doc-member id="field-_instance" name="_instance" type="object?" access="private" signature="private readonly object? _instance">
         <template #name><h3>_instance</h3></template>
     </doc-member>
 
-<doc-member id="field-_invoker" name="_invoker" type="Newtonsoft.Json.Utilities.MethodCall<System.Nullable<System.Object>, System.Object>" access="private" signature="private readonly MethodCall<Nullable<Object>, Object> _invoker">
+    <doc-member id="field-_invoker" name="_invoker" type="MethodCall<object?, object>" access="private" signature="private readonly MethodCall<object?, object> _invoker">
         <template #name><h3>_invoker</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,23 +220,23 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>, MethodCall<Nullable<Object>, Object>" signature="public FSharpFunction(Nullable<Object> instance, MethodCall<Nullable<Object>, Object> invoker)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object?, MethodCall<object?, object>" signature="public FSharpFunction(object? instance, MethodCall<object?, object> invoker)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="instance" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="invoker" type="Newtonsoft.Json.Utilities.MethodCall<System.Nullable<System.Object>, System.Object>"></doc-parameter>
+                <doc-parameter name="instance" type="object?"></doc-parameter>
+                <doc-parameter name="invoker" type="Newtonsoft.Json.Utilities.MethodCall<object?, object>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-invoke" name="Invoke" returns="System.Object" params="Object[]" signature="public Object Invoke(Object[] args)">
+    <doc-member id="method-invoke" name="Invoke" returns="object" params="object[]" signature="public object Invoke(object[] args)">
         <template #name><h3>Invoke</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="args" type="System.Object[]"></doc-parameter>
+                <doc-parameter name="args" type="object[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -211,15 +211,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-typecontractcachelock" name="TypeContractCacheLock" type="System.Object" access="private" signature="private readonly static Object TypeContractCacheLock">
+    <doc-member id="field-typecontractcachelock" name="TypeContractCacheLock" type="object" access="private" signature="private readonly static object TypeContractCacheLock">
         <template #name><h3>TypeContractCacheLock</h3></template>
     </doc-member>
 
-<doc-member id="field-nametable" name="NameTable" type="Newtonsoft.Json.DefaultJsonNameTable" access="private" signature="private readonly static DefaultJsonNameTable NameTable">
+    <doc-member id="field-nametable" name="NameTable" type="DefaultJsonNameTable" access="private" signature="private readonly static DefaultJsonNameTable NameTable">
         <template #name><h3>NameTable</h3></template>
     </doc-member>
 
-<doc-member id="field-_contractcache" name="_contractCache" type="System.Nullable<Dictionary<Newtonsoft.Json.Utilities.StructMultiKey<Type, Type>, Newtonsoft.Json.Serialization.JsonContract>>" access="private" signature="private static Nullable<Dictionary<StructMultiKey<Type, Type>, JsonContract>> _contractCache">
+    <doc-member id="field-_contractcache" name="_contractCache" type="Dictionary<StructMultiKey<Type, Type>, JsonContract>?" access="private" signature="private static Dictionary<StructMultiKey<Type, Type>, JsonContract>? _contractCache">
         <template #name><h3>_contractCache</h3></template>
     </doc-member>
 </doc-member-group>
@@ -227,14 +227,18 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public CamelCasePropertyNamesContractResolver()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public CamelCasePropertyNamesContractResolver()">
         <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver"/> class.</p>
 
     </doc-member>
 
-<doc-member id="method-resolvecontract" name="ResolveContract" returns="Newtonsoft.Json.Serialization.JsonContract" params="Type" signature="public sealed JsonContract ResolveContract(Type type)">
+    <doc-member id="method-getnametable" name="GetNameTable" returns="DefaultJsonNameTable" access="internal" signature="internal sealed DefaultJsonNameTable GetNameTable()">
+        <template #name><h3>GetNameTable</h3></template>
+    </doc-member>
+
+    <doc-member id="method-resolvecontract" name="ResolveContract" returns="JsonContract" params="Type" signature="public sealed JsonContract ResolveContract(Type type)">
         <template #name><h3>ResolveContract</h3></template>
 
         <template #parameters>
@@ -245,10 +249,6 @@
 
 <p>Resolves the contract for a given type.</p>
 
-    </doc-member>
-
-<doc-member id="method-getnametable" name="GetNameTable" returns="Newtonsoft.Json.DefaultJsonNameTable" access="internal" signature="internal sealed DefaultJsonNameTable GetNameTable()">
-        <template #name><h3>GetNameTable</h3></template>
     </doc-member>
 </doc-member-group>
 

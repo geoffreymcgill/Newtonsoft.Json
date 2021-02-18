@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_roottype" name="_rootType" type="System.Nullable<Type>" access="private" signature="private Nullable<Type> _rootType">
+    <doc-member id="field-_roottype" name="_rootType" type="Type?" access="private" signature="private Type? _rootType">
         <template #name><h3>_rootType</h3></template>
     </doc-member>
 
-<doc-member id="field-_rootlevel" name="_rootLevel" type="System.Int32" access="private" signature="private Int32 _rootLevel">
+    <doc-member id="field-_rootlevel" name="_rootLevel" type="int" access="private" signature="private int _rootLevel">
         <template #name><h3>_rootLevel</h3></template>
     </doc-member>
 
-<doc-member id="field-_serializestack" name="_serializeStack" type="List<System.Object>" access="private" signature="private readonly List<Object> _serializeStack">
+    <doc-member id="field-_serializestack" name="_serializeStack" type="List<object>" access="private" signature="private readonly List<object> _serializeStack">
         <template #name><h3>_serializeStack</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSerializer" signature="public JsonSerializerInternalWriter(JsonSerializer serializer)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonSerializer" signature="public JsonSerializerInternalWriter(JsonSerializer serializer)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -234,439 +234,219 @@
         </template>
     </doc-member>
 
-<doc-member id="method-serialize" name="Serialize" returns="System.Void" params="JsonWriter, Nullable<Object>, Nullable<Type>" signature="public Void Serialize(JsonWriter jsonWriter, Nullable<Object> value, Nullable<Type> objectType)">
-        <template #name><h3>Serialize</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="objectType" type="System.Nullable<Type>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getinternalserializer" name="GetInternalSerializer" returns="Newtonsoft.Json.Serialization.JsonSerializerProxy" access="private" signature="private JsonSerializerProxy GetInternalSerializer()">
-        <template #name><h3>GetInternalSerializer</h3></template>
-    </doc-member>
-
-<doc-member id="method-getcontractsafe" name="GetContractSafe" returns="Newtonsoft.Json.Serialization.JsonContract" params="Nullable<Object>" access="private" signature="private JsonContract GetContractSafe(Nullable<Object> value)">
-        <template #name><h3>GetContractSafe</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getcontract" name="GetContract" returns="Newtonsoft.Json.Serialization.JsonContract" params="Object" access="private" signature="private JsonContract GetContract(Object value)">
-        <template #name><h3>GetContract</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializeprimitive" name="SerializePrimitive" returns="System.Void" params="JsonWriter, Object, JsonPrimitiveContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializePrimitive(JsonWriter writer, Object value, JsonPrimitiveContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializePrimitive</h3></template>
+    <doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="bool" params="JsonWriter, object, JsonContainerContract, JsonProperty?, JsonProperty, JsonContract?, object?" access="private" signature="private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, JsonProperty? member, JsonProperty property, JsonContract? memberContract, object? memberValue)">
+        <template #name><h3>CalculatePropertyValues</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonPrimitiveContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializevalue" name="SerializeValue" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeValue(JsonWriter writer, Nullable<Object> value, JsonContract valueContract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolveisreference" name="ResolveIsReference" returns="System.Nullable<System.Boolean>" params="JsonContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Nullable<Boolean> ResolveIsReference(JsonContract contract, JsonProperty property, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>ResolveIsReference</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="memberContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
+                <doc-parameter name="memberValue" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-shouldwritereference" name="ShouldWriteReference" returns="System.Boolean" params="Nullable<Object>, JsonProperty, JsonContract, JsonContainerContract, JsonProperty" access="private" signature="private Boolean ShouldWriteReference(Nullable<Object> value, JsonProperty property, JsonContract valueContract, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>ShouldWriteReference</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-shouldwriteproperty" name="ShouldWriteProperty" returns="System.Boolean" params="Nullable<Object>, JsonObjectContract, JsonProperty" access="private" signature="private Boolean ShouldWriteProperty(Nullable<Object> memberValue, JsonObjectContract containerContract, JsonProperty property)">
-        <template #name><h3>ShouldWriteProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-checkforcircularreference" name="CheckForCircularReference" returns="System.Boolean" params="JsonWriter, Nullable<Object>, JsonProperty, JsonContract, JsonContainerContract, JsonProperty" access="private" signature="private Boolean CheckForCircularReference(JsonWriter writer, Nullable<Object> value, JsonProperty property, JsonContract contract, JsonContainerContract containerContract, JsonProperty containerProperty)">
+    <doc-member id="method-checkforcircularreference" name="CheckForCircularReference" returns="bool" params="JsonWriter, object?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool CheckForCircularReference(JsonWriter writer, object? value, JsonProperty? property, JsonContract? contract, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
         <template #name><h3>CheckForCircularReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writereference" name="WriteReference" returns="System.Void" params="JsonWriter, Object" access="private" signature="private Void WriteReference(JsonWriter writer, Object value)">
-        <template #name><h3>WriteReference</h3></template>
+    <doc-member id="method-getcontract" name="GetContract" returns="JsonContract" params="object" access="private" signature="private JsonContract GetContract(object value)">
+        <template #name><h3>GetContract</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getcontractsafe" name="GetContractSafe" returns="JsonContract?" params="object?" access="private" signature="private JsonContract? GetContractSafe(object? value)">
+        <template #name><h3>GetContractSafe</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getinternalserializer" name="GetInternalSerializer" returns="JsonSerializerProxy" access="private" signature="private JsonSerializerProxy GetInternalSerializer()">
+        <template #name><h3>GetInternalSerializer</h3></template>
+    </doc-member>
+
+    <doc-member id="method-getpropertyname" name="GetPropertyName" returns="string" params="JsonWriter, object, JsonContract, bool" access="private" signature="private string GetPropertyName(JsonWriter writer, object name, JsonContract contract, bool escape)">
+        <template #name><h3>GetPropertyName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="name" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
+                <doc-parameter name="escape" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getreference" name="GetReference" returns="System.String" params="JsonWriter, Object" access="private" signature="private String GetReference(JsonWriter writer, Object value)">
+    <doc-member id="method-getreference" name="GetReference" returns="string" params="JsonWriter, object" access="private" signature="private string GetReference(JsonWriter writer, object value)">
         <template #name><h3>GetReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryconverttostring" name="TryConvertToString" returns="System.Boolean" params="Object, Type, Nullable<String>" access="internal" signature="internal static Boolean TryConvertToString(Object value, Type type, Nullable<String> s)">
-        <template #name><h3>TryConvertToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="s" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializestring" name="SerializeString" returns="System.Void" params="JsonWriter, Object, JsonStringContract" access="private" signature="private Void SerializeString(JsonWriter writer, Object value, JsonStringContract contract)">
-        <template #name><h3>SerializeString</h3></template>
+    <doc-member id="method-handleerror" name="HandleError" returns="void" params="JsonWriter, int" access="private" signature="private void HandleError(JsonWriter writer, int initialDepth)">
+        <template #name><h3>HandleError</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonStringContract"></doc-parameter>
+                <doc-parameter name="initialDepth" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-onserializing" name="OnSerializing" returns="System.Void" params="JsonWriter, JsonContract, Object" access="private" signature="private Void OnSerializing(JsonWriter writer, JsonContract contract, Object value)">
-        <template #name><h3>OnSerializing</h3></template>
+    <doc-member id="method-hascreatorparameter" name="HasCreatorParameter" returns="bool" params="JsonContainerContract?, JsonProperty" access="private" signature="private bool HasCreatorParameter(JsonContainerContract? contract, JsonProperty property)">
+        <template #name><h3>HasCreatorParameter</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-hasflag">
+        <doc-member id="method-hasflag" overload-id="group-hasflag" name="HasFlag" returns="bool" params="DefaultValueHandling, DefaultValueHandling" access="private" signature="private bool HasFlag(DefaultValueHandling value, DefaultValueHandling flag)">
+            <template #name><h3>HasFlag</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
+                    <doc-parameter name="flag" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-hasflag-1" overload-id="group-hasflag" name="HasFlag" returns="bool" params="PreserveReferencesHandling, PreserveReferencesHandling" access="private" signature="private bool HasFlag(PreserveReferencesHandling value, PreserveReferencesHandling flag)">
+            <template #name><h3>HasFlag</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Newtonsoft.Json.PreserveReferencesHandling"></doc-parameter>
+                    <doc-parameter name="flag" type="Newtonsoft.Json.PreserveReferencesHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-hasflag-2" overload-id="group-hasflag" name="HasFlag" returns="bool" params="TypeNameHandling, TypeNameHandling" access="private" signature="private bool HasFlag(TypeNameHandling value, TypeNameHandling flag)">
+            <template #name><h3>HasFlag</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
+                    <doc-parameter name="flag" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-isspecified" name="IsSpecified" returns="bool" params="JsonWriter, JsonProperty, object" access="private" signature="private bool IsSpecified(JsonWriter writer, JsonProperty property, object target)">
+        <template #name><h3>IsSpecified</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-onserialized" name="OnSerialized" returns="System.Void" params="JsonWriter, JsonContract, Object" access="private" signature="private Void OnSerialized(JsonWriter writer, JsonContract contract, Object value)">
+    <doc-member id="method-onserialized" name="OnSerialized" returns="void" params="JsonWriter, JsonContract, object" access="private" signature="private void OnSerialized(JsonWriter writer, JsonContract contract, object value)">
         <template #name><h3>OnSerialized</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.Void" params="JsonWriter, Object, JsonObjectContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeObject(JsonWriter writer, Object value, JsonObjectContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeObject</h3></template>
+    <doc-member id="method-onserializing" name="OnSerializing" returns="void" params="JsonWriter, JsonContract, object" access="private" signature="private void OnSerializing(JsonWriter writer, JsonContract contract, object value)">
+        <template #name><h3>OnSerializing</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="System.Boolean" params="JsonWriter, Object, JsonContainerContract, JsonProperty, JsonProperty, JsonContract, Nullable<Object>" access="private" signature="private Boolean CalculatePropertyValues(JsonWriter writer, Object value, JsonContainerContract contract, JsonProperty member, JsonProperty property, JsonContract memberContract, Nullable<Object> memberValue)">
-        <template #name><h3>CalculatePropertyValues</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="memberContract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="memberValue" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeobjectstart" name="WriteObjectStart" returns="System.Void" params="JsonWriter, Object, JsonContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void WriteObjectStart(JsonWriter writer, Object value, JsonContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>WriteObjectStart</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-hascreatorparameter" name="HasCreatorParameter" returns="System.Boolean" params="JsonContainerContract, JsonProperty" access="private" signature="private Boolean HasCreatorParameter(JsonContainerContract contract, JsonProperty property)">
-        <template #name><h3>HasCreatorParameter</h3></template>
+    <doc-member id="method-resolveisreference" name="ResolveIsReference" returns="bool?" params="JsonContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool? ResolveIsReference(JsonContract contract, JsonProperty? property, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>ResolveIsReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writereferenceidproperty" name="WriteReferenceIdProperty" returns="System.Void" params="JsonWriter, Type, Object" access="private" signature="private Void WriteReferenceIdProperty(JsonWriter writer, Type type, Object value)">
-        <template #name><h3>WriteReferenceIdProperty</h3></template>
+    <doc-member id="method-serialize" name="Serialize" returns="void" params="JsonWriter, object?, Type?" signature="public void Serialize(JsonWriter jsonWriter, object? value, Type? objectType)">
+        <template #name><h3>Serialize</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="objectType" type="Type?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writetypeproperty" name="WriteTypeProperty" returns="System.Void" params="JsonWriter, Type" access="private" signature="private Void WriteTypeProperty(JsonWriter writer, Type type)">
-        <template #name><h3>WriteTypeProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-hasflag" name="HasFlag" returns="System.Boolean" params="DefaultValueHandling, DefaultValueHandling" access="private" signature="private Boolean HasFlag(DefaultValueHandling value, DefaultValueHandling flag)">
-        <template #name><h3>HasFlag</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
-                <doc-parameter name="flag" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-hasflag" name="HasFlag" returns="System.Boolean" params="PreserveReferencesHandling, PreserveReferencesHandling" access="private" signature="private Boolean HasFlag(PreserveReferencesHandling value, PreserveReferencesHandling flag)">
-        <template #name><h3>HasFlag</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.PreserveReferencesHandling"></doc-parameter>
-                <doc-parameter name="flag" type="Newtonsoft.Json.PreserveReferencesHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-hasflag" name="HasFlag" returns="System.Boolean" params="TypeNameHandling, TypeNameHandling" access="private" signature="private Boolean HasFlag(TypeNameHandling value, TypeNameHandling flag)">
-        <template #name><h3>HasFlag</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
-                <doc-parameter name="flag" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializeconvertable" name="SerializeConvertable" returns="System.Void" params="JsonWriter, JsonConverter, Object, JsonContract, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeConvertable(JsonWriter writer, JsonConverter converter, Object value, JsonContract contract, JsonContainerContract collectionContract, JsonProperty containerProperty)">
+    <doc-member id="method-serializeconvertable" name="SerializeConvertable" returns="void" params="JsonWriter, JsonConverter, object, JsonContract, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeConvertable(JsonWriter writer, JsonConverter converter, object value, JsonContract contract, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
         <template #name><h3>SerializeConvertable</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
                 <doc-parameter name="converter" type="Newtonsoft.Json.JsonConverter"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-serializelist" name="SerializeList" returns="System.Void" params="JsonWriter, IEnumerable, JsonArrayContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeList</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="values" type="IEnumerable"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializemultidimensionalarray" name="SerializeMultidimensionalArray" returns="System.Void" params="JsonWriter, Array, JsonArrayContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeMultidimensionalArray(JsonWriter writer, Array values, JsonArrayContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeMultidimensionalArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="values" type="Array"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializemultidimensionalarray" name="SerializeMultidimensionalArray" returns="System.Void" params="JsonWriter, Array, JsonArrayContract, JsonProperty, Int32, Int32[]" access="private" signature="private Void SerializeMultidimensionalArray(JsonWriter writer, Array values, JsonArrayContract contract, JsonProperty member, Int32 initialDepth, Int32[] indices)">
-        <template #name><h3>SerializeMultidimensionalArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="values" type="Array"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="initialDepth" type="System.Int32"></doc-parameter>
-                <doc-parameter name="indices" type="System.Int32[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writestartarray" name="WriteStartArray" returns="System.Boolean" params="JsonWriter, Object, JsonArrayContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Boolean WriteStartArray(JsonWriter writer, Object values, JsonArrayContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)">
-        <template #name><h3>WriteStartArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="values" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializeiserializable" name="SerializeISerializable" returns="System.Void" params="JsonWriter, ISerializable, JsonISerializableContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeISerializable(JsonWriter writer, ISerializable value, JsonISerializableContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeISerializable</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="ISerializable"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonISerializableContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializedynamic" name="SerializeDynamic" returns="System.Void" params="JsonWriter, IDynamicMetaObjectProvider, JsonDynamicContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeDynamic(JsonWriter writer, IDynamicMetaObjectProvider value, JsonDynamicContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
-        <template #name><h3>SerializeDynamic</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="IDynamicMetaObjectProvider"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonDynamicContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-shouldwritedynamicproperty" name="ShouldWriteDynamicProperty" returns="System.Boolean" params="Nullable<Object>" access="private" signature="private Boolean ShouldWriteDynamicProperty(Nullable<Object> memberValue)">
-        <template #name><h3>ShouldWriteDynamicProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberValue" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-shouldwritetype" name="ShouldWriteType" returns="System.Boolean" params="TypeNameHandling, JsonContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Boolean ShouldWriteType(TypeNameHandling typeNameHandlingFlag, JsonContract contract, JsonProperty member, JsonContainerContract containerContract, JsonProperty containerProperty)">
-        <template #name><h3>ShouldWriteType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="typeNameHandlingFlag" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializedictionary" name="SerializeDictionary" returns="System.Void" params="JsonWriter, IDictionary, JsonDictionaryContract, JsonProperty, JsonContainerContract, JsonProperty" access="private" signature="private Void SerializeDictionary(JsonWriter writer, IDictionary values, JsonDictionaryContract contract, JsonProperty member, JsonContainerContract collectionContract, JsonProperty containerProperty)">
+    <doc-member id="method-serializedictionary" name="SerializeDictionary" returns="void" params="JsonWriter, IDictionary, JsonDictionaryContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeDictionary(JsonWriter writer, IDictionary values, JsonDictionaryContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
         <template #name><h3>SerializeDictionary</h3></template>
 
         <template #parameters>
@@ -674,57 +454,281 @@
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
                 <doc-parameter name="values" type="IDictionary"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonDictionaryContract"></doc-parameter>
-                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract"></doc-parameter>
-                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getpropertyname" name="GetPropertyName" returns="System.String" params="JsonWriter, Object, JsonContract, Boolean" access="private" signature="private String GetPropertyName(JsonWriter writer, Object name, JsonContract contract, Boolean escape)">
-        <template #name><h3>GetPropertyName</h3></template>
+    <doc-member id="method-serializedynamic" name="SerializeDynamic" returns="void" params="JsonWriter, IDynamicMetaObjectProvider, JsonDynamicContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeDynamic(JsonWriter writer, IDynamicMetaObjectProvider value, JsonDynamicContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializeDynamic</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="name" type="System.Object"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="escape" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="value" type="IDynamicMetaObjectProvider"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonDynamicContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-handleerror" name="HandleError" returns="System.Void" params="JsonWriter, Int32" access="private" signature="private Void HandleError(JsonWriter writer, Int32 initialDepth)">
-        <template #name><h3>HandleError</h3></template>
+    <doc-member id="method-serializeiserializable" name="SerializeISerializable" returns="void" params="JsonWriter, ISerializable, JsonISerializableContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeISerializable(JsonWriter writer, ISerializable value, JsonISerializableContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializeISerializable</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="initialDepth" type="System.Int32"></doc-parameter>
+                <doc-parameter name="value" type="ISerializable"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonISerializableContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-shouldserialize" name="ShouldSerialize" returns="System.Boolean" params="JsonWriter, JsonProperty, Object" access="private" signature="private Boolean ShouldSerialize(JsonWriter writer, JsonProperty property, Object target)">
+    <doc-member id="method-serializelist" name="SerializeList" returns="void" params="JsonWriter, IEnumerable, JsonArrayContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeList(JsonWriter writer, IEnumerable values, JsonArrayContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializeList</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="values" type="IEnumerable"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-serializemultidimensionalarray">
+        <doc-member id="method-serializemultidimensionalarray" overload-id="group-serializemultidimensionalarray" name="SerializeMultidimensionalArray" returns="void" params="JsonWriter, Array, JsonArrayContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeMultidimensionalArray(JsonWriter writer, Array values, JsonArrayContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+            <template #name><h3>SerializeMultidimensionalArray</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="values" type="Array"></doc-parameter>
+                    <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
+                    <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                    <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                    <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-serializemultidimensionalarray-1" overload-id="group-serializemultidimensionalarray" name="SerializeMultidimensionalArray" returns="void" params="JsonWriter, Array, JsonArrayContract, JsonProperty?, int, int[]" access="private" signature="private void SerializeMultidimensionalArray(JsonWriter writer, Array values, JsonArrayContract contract, JsonProperty? member, int initialDepth, int[] indices)">
+            <template #name><h3>SerializeMultidimensionalArray</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="values" type="Array"></doc-parameter>
+                    <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
+                    <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                    <doc-parameter name="initialDepth" type="int"></doc-parameter>
+                    <doc-parameter name="indices" type="int[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-serializeobject" name="SerializeObject" returns="void" params="JsonWriter, object, JsonObjectContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeObject(JsonWriter writer, object value, JsonObjectContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializeObject</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-serializeprimitive" name="SerializePrimitive" returns="void" params="JsonWriter, object, JsonPrimitiveContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializePrimitive(JsonWriter writer, object value, JsonPrimitiveContract contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializePrimitive</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonPrimitiveContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-serializestring" name="SerializeString" returns="void" params="JsonWriter, object, JsonStringContract" access="private" signature="private void SerializeString(JsonWriter writer, object value, JsonStringContract contract)">
+        <template #name><h3>SerializeString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonStringContract"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-serializevalue" name="SerializeValue" returns="void" params="JsonWriter, object?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeValue(JsonWriter writer, object? value, JsonContract? valueContract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+        <template #name><h3>SerializeValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-shouldserialize" name="ShouldSerialize" returns="bool" params="JsonWriter, JsonProperty, object" access="private" signature="private bool ShouldSerialize(JsonWriter writer, JsonProperty property, object target)">
         <template #name><h3>ShouldSerialize</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isspecified" name="IsSpecified" returns="System.Boolean" params="JsonWriter, JsonProperty, Object" access="private" signature="private Boolean IsSpecified(JsonWriter writer, JsonProperty property, Object target)">
-        <template #name><h3>IsSpecified</h3></template>
+    <doc-member id="method-shouldwritedynamicproperty" name="ShouldWriteDynamicProperty" returns="bool" params="object?" access="private" signature="private bool ShouldWriteDynamicProperty(object? memberValue)">
+        <template #name><h3>ShouldWriteDynamicProperty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="memberValue" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-shouldwriteproperty" name="ShouldWriteProperty" returns="bool" params="object?, JsonObjectContract?, JsonProperty" access="private" signature="private bool ShouldWriteProperty(object? memberValue, JsonObjectContract? containerContract, JsonProperty property)">
+        <template #name><h3>ShouldWriteProperty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="memberValue" type="object?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonObjectContract?"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-shouldwritereference" name="ShouldWriteReference" returns="bool" params="object?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool ShouldWriteReference(object? value, JsonProperty? property, JsonContract? valueContract, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>ShouldWriteReference</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-shouldwritetype" name="ShouldWriteType" returns="bool" params="TypeNameHandling, JsonContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool ShouldWriteType(TypeNameHandling typeNameHandlingFlag, JsonContract contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+        <template #name><h3>ShouldWriteType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="typeNameHandlingFlag" type="Newtonsoft.Json.TypeNameHandling"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryconverttostring" name="TryConvertToString" returns="bool" params="object, Type, string?" access="internal" signature="internal static bool TryConvertToString(object value, Type type, string? s)">
+        <template #name><h3>TryConvertToString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="s" type="string?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeobjectstart" name="WriteObjectStart" returns="void" params="JsonWriter, object, JsonContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void WriteObjectStart(JsonWriter writer, object value, JsonContract contract, JsonProperty? member, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+        <template #name><h3>WriteObjectStart</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writereference" name="WriteReference" returns="void" params="JsonWriter, object" access="private" signature="private void WriteReference(JsonWriter writer, object value)">
+        <template #name><h3>WriteReference</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writereferenceidproperty" name="WriteReferenceIdProperty" returns="void" params="JsonWriter, Type, object" access="private" signature="private void WriteReferenceIdProperty(JsonWriter writer, Type type, object value)">
+        <template #name><h3>WriteReferenceIdProperty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writestartarray" name="WriteStartArray" returns="bool" params="JsonWriter, object, JsonArrayContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool WriteStartArray(JsonWriter writer, object values, JsonArrayContract contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+        <template #name><h3>WriteStartArray</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="values" type="object"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
+                <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
+                <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writetypeproperty" name="WriteTypeProperty" returns="void" params="JsonWriter, Type" access="private" signature="private void WriteTypeProperty(JsonWriter writer, Type type)">
+        <template #name><h3>WriteTypeProperty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

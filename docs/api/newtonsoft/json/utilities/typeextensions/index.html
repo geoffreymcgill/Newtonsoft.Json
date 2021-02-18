@@ -208,77 +208,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-method" name="Method" returns="MethodInfo" params="Delegate" signature="public static MethodInfo Method(Delegate d)">
-        <template #name><h3>Method</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="d" type="Delegate"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-membertype" name="MemberType" returns="MemberTypes" params="MemberInfo" signature="public static MemberTypes MemberType(MemberInfo memberInfo)">
-        <template #name><h3>MemberType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-containsgenericparameters" name="ContainsGenericParameters" returns="System.Boolean" params="Type" signature="public static Boolean ContainsGenericParameters(Type type)">
-        <template #name><h3>ContainsGenericParameters</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isinterface" name="IsInterface" returns="System.Boolean" params="Type" signature="public static Boolean IsInterface(Type type)">
-        <template #name><h3>IsInterface</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isgenerictype" name="IsGenericType" returns="System.Boolean" params="Type" signature="public static Boolean IsGenericType(Type type)">
-        <template #name><h3>IsGenericType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isgenerictypedefinition" name="IsGenericTypeDefinition" returns="System.Boolean" params="Type" signature="public static Boolean IsGenericTypeDefinition(Type type)">
-        <template #name><h3>IsGenericTypeDefinition</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-basetype" name="BaseType" returns="Type" params="Type" signature="public static Type BaseType(Type type)">
-        <template #name><h3>BaseType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-assembly" name="Assembly" returns="Assembly" params="Type" signature="public static Assembly Assembly(Type type)">
+    <doc-member id="method-assembly" name="Assembly" returns="Assembly" params="Type" signature="public static Assembly Assembly(Type type)">
         <template #name><h3>Assembly</h3></template>
 
         <template #parameters>
@@ -288,8 +218,35 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isenum" name="IsEnum" returns="System.Boolean" params="Type" signature="public static Boolean IsEnum(Type type)">
-        <template #name><h3>IsEnum</h3></template>
+    <doc-overload-group overload-id="group-assignabletotypename">
+        <doc-member id="method-assignabletotypename" overload-id="group-assignabletotypename" name="AssignableToTypeName" returns="bool" params="Type, string, bool, Type?" signature="public static bool AssignableToTypeName(Type type, string fullTypeName, bool searchInterfaces, Type? match)">
+            <template #name><h3>AssignableToTypeName</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="fullTypeName" type="string"></doc-parameter>
+                    <doc-parameter name="searchInterfaces" type="bool"></doc-parameter>
+                    <doc-parameter name="match" type="Type?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-assignabletotypename-1" overload-id="group-assignabletotypename" name="AssignableToTypeName" returns="bool" params="Type, string, bool" signature="public static bool AssignableToTypeName(Type type, string fullTypeName, bool searchInterfaces)">
+            <template #name><h3>AssignableToTypeName</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="fullTypeName" type="string"></doc-parameter>
+                    <doc-parameter name="searchInterfaces" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-basetype" name="BaseType" returns="Type" params="Type" signature="public static Type BaseType(Type type)">
+        <template #name><h3>BaseType</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -298,8 +255,8 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isclass" name="IsClass" returns="System.Boolean" params="Type" signature="public static Boolean IsClass(Type type)">
-        <template #name><h3>IsClass</h3></template>
+    <doc-member id="method-containsgenericparameters" name="ContainsGenericParameters" returns="bool" params="Type" signature="public static bool ContainsGenericParameters(Type type)">
+        <template #name><h3>ContainsGenericParameters</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -308,17 +265,18 @@
         </template>
     </doc-member>
 
-<doc-member id="method-issealed" name="IsSealed" returns="System.Boolean" params="Type" signature="public static Boolean IsSealed(Type type)">
-        <template #name><h3>IsSealed</h3></template>
+    <doc-member id="method-implementinterface" name="ImplementInterface" returns="bool" params="Type, Type" signature="public static bool ImplementInterface(Type type, Type interfaceType)">
+        <template #name><h3>ImplementInterface</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type" type="Type"></doc-parameter>
+                <doc-parameter name="interfaceType" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isabstract" name="IsAbstract" returns="System.Boolean" params="Type" signature="public static Boolean IsAbstract(Type type)">
+    <doc-member id="method-isabstract" name="IsAbstract" returns="bool" params="Type" signature="public static bool IsAbstract(Type type)">
         <template #name><h3>IsAbstract</h3></template>
 
         <template #parameters>
@@ -328,8 +286,8 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isvisible" name="IsVisible" returns="System.Boolean" params="Type" signature="public static Boolean IsVisible(Type type)">
-        <template #name><h3>IsVisible</h3></template>
+    <doc-member id="method-isclass" name="IsClass" returns="bool" params="Type" signature="public static bool IsClass(Type type)">
+        <template #name><h3>IsClass</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -338,8 +296,8 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isvaluetype" name="IsValueType" returns="System.Boolean" params="Type" signature="public static Boolean IsValueType(Type type)">
-        <template #name><h3>IsValueType</h3></template>
+    <doc-member id="method-isenum" name="IsEnum" returns="bool" params="Type" signature="public static bool IsEnum(Type type)">
+        <template #name><h3>IsEnum</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -348,7 +306,37 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isprimitive" name="IsPrimitive" returns="System.Boolean" params="Type" signature="public static Boolean IsPrimitive(Type type)">
+    <doc-member id="method-isgenerictype" name="IsGenericType" returns="bool" params="Type" signature="public static bool IsGenericType(Type type)">
+        <template #name><h3>IsGenericType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isgenerictypedefinition" name="IsGenericTypeDefinition" returns="bool" params="Type" signature="public static bool IsGenericTypeDefinition(Type type)">
+        <template #name><h3>IsGenericTypeDefinition</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isinterface" name="IsInterface" returns="bool" params="Type" signature="public static bool IsInterface(Type type)">
+        <template #name><h3>IsInterface</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isprimitive" name="IsPrimitive" returns="bool" params="Type" signature="public static bool IsPrimitive(Type type)">
         <template #name><h3>IsPrimitive</h3></template>
 
         <template #parameters>
@@ -358,38 +346,52 @@
         </template>
     </doc-member>
 
-<doc-member id="method-assignabletotypename" name="AssignableToTypeName" returns="System.Boolean" params="Type, String, Boolean, Nullable<Type>" signature="public static Boolean AssignableToTypeName(Type type, String fullTypeName, Boolean searchInterfaces, Nullable<Type> match)">
-        <template #name><h3>AssignableToTypeName</h3></template>
+    <doc-member id="method-issealed" name="IsSealed" returns="bool" params="Type" signature="public static bool IsSealed(Type type)">
+        <template #name><h3>IsSealed</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="fullTypeName" type="System.String"></doc-parameter>
-                <doc-parameter name="searchInterfaces" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="match" type="System.Nullable<Type>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-assignabletotypename" name="AssignableToTypeName" returns="System.Boolean" params="Type, String, Boolean" signature="public static Boolean AssignableToTypeName(Type type, String fullTypeName, Boolean searchInterfaces)">
-        <template #name><h3>AssignableToTypeName</h3></template>
+    <doc-member id="method-isvaluetype" name="IsValueType" returns="bool" params="Type" signature="public static bool IsValueType(Type type)">
+        <template #name><h3>IsValueType</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="fullTypeName" type="System.String"></doc-parameter>
-                <doc-parameter name="searchInterfaces" type="System.Boolean"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-implementinterface" name="ImplementInterface" returns="System.Boolean" params="Type, Type" signature="public static Boolean ImplementInterface(Type type, Type interfaceType)">
-        <template #name><h3>ImplementInterface</h3></template>
+    <doc-member id="method-isvisible" name="IsVisible" returns="bool" params="Type" signature="public static bool IsVisible(Type type)">
+        <template #name><h3>IsVisible</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="interfaceType" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-membertype" name="MemberType" returns="MemberTypes" params="MemberInfo" signature="public static MemberTypes MemberType(MemberInfo memberInfo)">
+        <template #name><h3>MemberType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-method" name="Method" returns="MethodInfo" params="Delegate" signature="public static MethodInfo Method(Delegate d)">
+        <template #name><h3>Method</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="d" type="Delegate"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

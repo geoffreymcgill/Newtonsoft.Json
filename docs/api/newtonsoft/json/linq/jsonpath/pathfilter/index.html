@@ -208,38 +208,38 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings" signature="public abstract IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings settings)">
+    <doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings?" signature="public abstract IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)">
         <template #name><h3>ExecuteFilter</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="current" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-gettokenindex" name="GetTokenIndex" returns="Newtonsoft.Json.Linq.JToken" params="JToken, JsonSelectSettings, Int32" access="protected" signature="protected static JToken GetTokenIndex(JToken t, JsonSelectSettings settings, Int32 index)">
-        <template #name><h3>GetTokenIndex</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getnextscanvalue" name="GetNextScanValue" returns="Newtonsoft.Json.Linq.JToken" params="JToken, JToken, JToken" access="protected" signature="protected static JToken GetNextScanValue(JToken originalParent, JToken container, JToken value)">
+    <doc-member id="method-getnextscanvalue" name="GetNextScanValue" returns="JToken?" params="JToken, JToken?, JToken?" access="protected" signature="protected static JToken? GetNextScanValue(JToken originalParent, JToken? container, JToken? value)">
         <template #name><h3>GetNextScanValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="originalParent" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="container" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="container" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-gettokenindex" name="GetTokenIndex" returns="JToken?" params="JToken, JsonSelectSettings?, int" access="protected" signature="protected static JToken? GetTokenIndex(JToken t, JsonSelectSettings? settings, int index)">
+        <template #name><h3>GetTokenIndex</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

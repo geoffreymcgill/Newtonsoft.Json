@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_token" name="_token" type="Newtonsoft.Json.Linq.JToken" access="internal" signature="internal JToken _token">
+    <doc-member id="field-_token" name="_token" type="JToken?" access="internal" signature="internal JToken? _token">
         <template #name><h3>_token</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,11 +216,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-count" name="Count" type="System.Int32" signature="public Int32 Count { get; }">
+    <doc-member id="property-count" name="Count" type="int" signature="public int Count { get; }">
         <template #name><h3>Count</h3></template>
     </doc-member>
 
-<doc-member id="property-isreadonly" name="IsReadOnly" type="System.Boolean" signature="public Boolean IsReadOnly { get; }">
+    <doc-member id="property-isreadonly" name="IsReadOnly" type="bool" signature="public bool IsReadOnly { get; }">
         <template #name><h3>IsReadOnly</h3></template>
     </doc-member>
 </doc-member-group>
@@ -228,11 +228,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<Newtonsoft.Json.Linq.JToken>" signature="public IEnumerator<JToken> GetEnumerator()">
-        <template #name><h3>GetEnumerator</h3></template>
-    </doc-member>
-
-<doc-member id="method-add" name="Add" returns="System.Void" params="JToken" signature="public Void Add(JToken item)">
+    <doc-member id="method-add" name="Add" returns="void" params="JToken" signature="public void Add(JToken item)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
@@ -242,11 +238,11 @@
         </template>
     </doc-member>
 
-<doc-member id="method-clear" name="Clear" returns="System.Void" signature="public Void Clear()">
+    <doc-member id="method-clear" name="Clear" returns="void" signature="public void Clear()">
         <template #name><h3>Clear</h3></template>
     </doc-member>
 
-<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="JToken" signature="public Boolean Contains(JToken item)">
+    <doc-member id="method-contains" name="Contains" returns="bool" params="JToken" signature="public bool Contains(JToken item)">
         <template #name><h3>Contains</h3></template>
 
         <template #parameters>
@@ -256,28 +252,22 @@
         </template>
     </doc-member>
 
-<doc-member id="method-copyto" name="CopyTo" returns="System.Void" params="JToken[], Int32" signature="public Void CopyTo(JToken[] array, Int32 arrayIndex)">
+    <doc-member id="method-copyto" name="CopyTo" returns="void" params="JToken[], int" signature="public void CopyTo(JToken[] array, int arrayIndex)">
         <template #name><h3>CopyTo</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="array" type="Newtonsoft.Json.Linq.JToken[]"></doc-parameter>
-                <doc-parameter name="arrayIndex" type="System.Int32"></doc-parameter>
+                <doc-parameter name="arrayIndex" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-remove" name="Remove" returns="System.Boolean" params="JToken" signature="public Boolean Remove(JToken item)">
-        <template #name><h3>Remove</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<JToken>" signature="public IEnumerator<JToken> GetEnumerator()">
+        <template #name><h3>GetEnumerator</h3></template>
     </doc-member>
 
-<doc-member id="method-indexof" name="IndexOf" returns="System.Int32" params="JToken" signature="public Int32 IndexOf(JToken item)">
+    <doc-member id="method-indexof" name="IndexOf" returns="int" params="JToken" signature="public int IndexOf(JToken item)">
         <template #name><h3>IndexOf</h3></template>
 
         <template #parameters>
@@ -287,23 +277,33 @@
         </template>
     </doc-member>
 
-<doc-member id="method-insert" name="Insert" returns="System.Void" params="Int32, JToken" signature="public Void Insert(Int32 index, JToken item)">
+    <doc-member id="method-insert" name="Insert" returns="void" params="int, JToken" signature="public void Insert(int index, JToken item)">
         <template #name><h3>Insert</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
                 <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-removeat" name="RemoveAt" returns="System.Void" params="Int32" signature="public Void RemoveAt(Int32 index)">
+    <doc-member id="method-remove" name="Remove" returns="bool" params="JToken" signature="public bool Remove(JToken item)">
+        <template #name><h3>Remove</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-removeat" name="RemoveAt" returns="void" params="int" signature="public void RemoveAt(int index)">
         <template #name><h3>RemoveAt</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

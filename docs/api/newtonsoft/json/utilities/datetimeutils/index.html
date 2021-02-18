@@ -208,39 +208,39 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-initialjavascriptdateticks" name="InitialJavaScriptDateTicks" type="System.Int64" access="internal" signature="internal readonly static Int64 InitialJavaScriptDateTicks">
+    <doc-member id="field-initialjavascriptdateticks" name="InitialJavaScriptDateTicks" type="long" access="internal" signature="internal readonly static long InitialJavaScriptDateTicks">
         <template #name><h3>InitialJavaScriptDateTicks</h3></template>
     </doc-member>
 
-<doc-member id="field-isodateformat" name="IsoDateFormat" type="System.String" access="private" signature="private const static String IsoDateFormat">
+    <doc-member id="field-isodateformat" name="IsoDateFormat" type="string" access="private" signature="private const static string IsoDateFormat">
         <template #name><h3>IsoDateFormat</h3></template>
     </doc-member>
 
-<doc-member id="field-daysper100years" name="DaysPer100Years" type="System.Int32" access="private" signature="private const static Int32 DaysPer100Years">
+    <doc-member id="field-daysper100years" name="DaysPer100Years" type="int" access="private" signature="private const static int DaysPer100Years">
         <template #name><h3>DaysPer100Years</h3></template>
     </doc-member>
 
-<doc-member id="field-daysper400years" name="DaysPer400Years" type="System.Int32" access="private" signature="private const static Int32 DaysPer400Years">
+    <doc-member id="field-daysper400years" name="DaysPer400Years" type="int" access="private" signature="private const static int DaysPer400Years">
         <template #name><h3>DaysPer400Years</h3></template>
     </doc-member>
 
-<doc-member id="field-daysper4years" name="DaysPer4Years" type="System.Int32" access="private" signature="private const static Int32 DaysPer4Years">
+    <doc-member id="field-daysper4years" name="DaysPer4Years" type="int" access="private" signature="private const static int DaysPer4Years">
         <template #name><h3>DaysPer4Years</h3></template>
     </doc-member>
 
-<doc-member id="field-daysperyear" name="DaysPerYear" type="System.Int32" access="private" signature="private const static Int32 DaysPerYear">
+    <doc-member id="field-daysperyear" name="DaysPerYear" type="int" access="private" signature="private const static int DaysPerYear">
         <template #name><h3>DaysPerYear</h3></template>
     </doc-member>
 
-<doc-member id="field-ticksperday" name="TicksPerDay" type="System.Int64" access="private" signature="private const static Int64 TicksPerDay">
+    <doc-member id="field-ticksperday" name="TicksPerDay" type="long" access="private" signature="private const static long TicksPerDay">
         <template #name><h3>TicksPerDay</h3></template>
     </doc-member>
 
-<doc-member id="field-daystomonth365" name="DaysToMonth365" type="System.Int32[]" access="private" signature="private readonly static Int32[] DaysToMonth365">
+    <doc-member id="field-daystomonth365" name="DaysToMonth365" type="int[]" access="private" signature="private readonly static int[] DaysToMonth365">
         <template #name><h3>DaysToMonth365</h3></template>
     </doc-member>
 
-<doc-member id="field-daystomonth366" name="DaysToMonth366" type="System.Int32[]" access="private" signature="private readonly static Int32[] DaysToMonth366">
+    <doc-member id="field-daystomonth366" name="DaysToMonth366" type="int[]" access="private" signature="private readonly static int[] DaysToMonth366">
         <template #name><h3>DaysToMonth366</h3></template>
     </doc-member>
 </doc-member-group>
@@ -248,31 +248,78 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.cctor" name=".cctor" returns="System.Void" access="private" signature="private static DateTimeUtils()">
+    <doc-member id="method-.cctor" name=".cctor" returns="void" access="private" signature="private static DateTimeUtils()">
         <template #name><h3>.cctor</h3></template>
     </doc-member>
 
-<doc-member id="method-getutcoffset" name="GetUtcOffset" returns="TimeSpan" params="DateTime" signature="public static TimeSpan GetUtcOffset(DateTime d)">
-        <template #name><h3>GetUtcOffset</h3></template>
+    <doc-overload-group overload-id="group-convertdatetimetojavascriptticks">
+        <doc-member id="method-convertdatetimetojavascriptticks" overload-id="group-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="long" params="DateTime, TimeSpan" access="internal" signature="internal static long ConvertDateTimeToJavaScriptTicks(DateTime dateTime, TimeSpan offset)">
+            <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                    <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-convertdatetimetojavascriptticks-1" overload-id="group-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="long" params="DateTime" access="internal" signature="internal static long ConvertDateTimeToJavaScriptTicks(DateTime dateTime)">
+            <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-convertdatetimetojavascriptticks-2" overload-id="group-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="long" params="DateTime, bool" access="internal" signature="internal static long ConvertDateTimeToJavaScriptTicks(DateTime dateTime, bool convertToUtc)">
+            <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                    <doc-parameter name="convertToUtc" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-convertjavascripttickstodatetime" name="ConvertJavaScriptTicksToDateTime" returns="DateTime" params="long" access="internal" signature="internal static DateTime ConvertJavaScriptTicksToDateTime(long javaScriptTicks)">
+        <template #name><h3>ConvertJavaScriptTicksToDateTime</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="d" type="DateTime"></doc-parameter>
+                <doc-parameter name="javaScriptTicks" type="long"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-toserializationmode" name="ToSerializationMode" returns="XmlDateTimeSerializationMode" params="DateTimeKind" signature="public static XmlDateTimeSerializationMode ToSerializationMode(DateTimeKind kind)">
-        <template #name><h3>ToSerializationMode</h3></template>
+    <doc-member id="method-copyinttochararray" name="CopyIntToCharArray" returns="void" params="char[], int, int, int" access="private" signature="private static void CopyIntToCharArray(char[] chars, int start, int value, int digits)">
+        <template #name><h3>CopyIntToCharArray</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="value" type="int"></doc-parameter>
+                <doc-parameter name="digits" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-ensuredatetime" name="EnsureDateTime" returns="DateTime" params="DateTime, DateTimeZoneHandling" access="internal" signature="internal static DateTime EnsureDateTime(DateTime value, DateTimeZoneHandling timeZone)">
+    <doc-member id="method-createdatetime" name="CreateDateTime" returns="DateTime" params="DateTimeParser" access="private" signature="private static DateTime CreateDateTime(DateTimeParser dateTimeParser)">
+        <template #name><h3>CreateDateTime</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="dateTimeParser" type="Newtonsoft.Json.Utilities.DateTimeParser"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-ensuredatetime" name="EnsureDateTime" returns="DateTime" params="DateTime, DateTimeZoneHandling" access="internal" signature="internal static DateTime EnsureDateTime(DateTime value, DateTimeZoneHandling timeZone)">
         <template #name><h3>EnsureDateTime</h3></template>
 
         <template #parameters>
@@ -283,7 +330,30 @@
         </template>
     </doc-member>
 
-<doc-member id="method-switchtolocaltime" name="SwitchToLocalTime" returns="DateTime" params="DateTime" access="private" signature="private static DateTime SwitchToLocalTime(DateTime value)">
+    <doc-member id="method-getdatevalues" name="GetDateValues" returns="void" params="DateTime, int, int, int" access="private" signature="private static void GetDateValues(DateTime td, int year, int month, int day)">
+        <template #name><h3>GetDateValues</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="td" type="DateTime"></doc-parameter>
+                <doc-parameter name="year" type="int"></doc-parameter>
+                <doc-parameter name="month" type="int"></doc-parameter>
+                <doc-parameter name="day" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getutcoffset" name="GetUtcOffset" returns="TimeSpan" params="DateTime" signature="public static TimeSpan GetUtcOffset(DateTime d)">
+        <template #name><h3>GetUtcOffset</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="d" type="DateTime"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-switchtolocaltime" name="SwitchToLocalTime" returns="DateTime" params="DateTime" access="private" signature="private static DateTime SwitchToLocalTime(DateTime value)">
         <template #name><h3>SwitchToLocalTime</h3></template>
 
         <template #parameters>
@@ -293,7 +363,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-switchtoutctime" name="SwitchToUtcTime" returns="DateTime" params="DateTime" access="private" signature="private static DateTime SwitchToUtcTime(DateTime value)">
+    <doc-member id="method-switchtoutctime" name="SwitchToUtcTime" returns="DateTime" params="DateTime" access="private" signature="private static DateTime SwitchToUtcTime(DateTime value)">
         <template #name><h3>SwitchToUtcTime</h3></template>
 
         <template #parameters>
@@ -303,80 +373,84 @@
         </template>
     </doc-member>
 
-<doc-member id="method-touniversalticks" name="ToUniversalTicks" returns="System.Int64" params="DateTime" access="private" signature="private static Int64 ToUniversalTicks(DateTime dateTime)">
-        <template #name><h3>ToUniversalTicks</h3></template>
+    <doc-member id="method-toserializationmode" name="ToSerializationMode" returns="XmlDateTimeSerializationMode" params="DateTimeKind" signature="public static XmlDateTimeSerializationMode ToSerializationMode(DateTimeKind kind)">
+        <template #name><h3>ToSerializationMode</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-touniversalticks" name="ToUniversalTicks" returns="System.Int64" params="DateTime, TimeSpan" access="private" signature="private static Int64 ToUniversalTicks(DateTime dateTime, TimeSpan offset)">
-        <template #name><h3>ToUniversalTicks</h3></template>
+    <doc-overload-group overload-id="group-touniversalticks">
+        <doc-member id="method-touniversalticks" overload-id="group-touniversalticks" name="ToUniversalTicks" returns="long" params="DateTime" access="private" signature="private static long ToUniversalTicks(DateTime dateTime)">
+            <template #name><h3>ToUniversalTicks</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-touniversalticks-1" overload-id="group-touniversalticks" name="ToUniversalTicks" returns="long" params="DateTime, TimeSpan" access="private" signature="private static long ToUniversalTicks(DateTime dateTime, TimeSpan offset)">
+            <template #name><h3>ToUniversalTicks</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
+                    <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-tryparsedatetime">
+        <doc-member id="method-tryparsedatetime" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="StringReference, DateTimeZoneHandling, string?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(StringReference s, DateTimeZoneHandling dateTimeZoneHandling, string? dateFormatString, CultureInfo culture, DateTime dt)">
+            <template #name><h3>TryParseDateTime</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                    <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                    <doc-parameter name="dt" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tryparsedatetime-1" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="string, DateTimeZoneHandling, string?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(string s, DateTimeZoneHandling dateTimeZoneHandling, string? dateFormatString, CultureInfo culture, DateTime dt)">
+            <template #name><h3>TryParseDateTime</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="s" type="string"></doc-parameter>
+                    <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                    <doc-parameter name="dt" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-tryparsedatetimeexact" name="TryParseDateTimeExact" returns="bool" params="string, DateTimeZoneHandling, string, CultureInfo, DateTime" access="private" signature="private static bool TryParseDateTimeExact(string text, DateTimeZoneHandling dateTimeZoneHandling, string dateFormatString, CultureInfo culture, DateTime dt)">
+        <template #name><h3>TryParseDateTimeExact</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
-                <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
+                <doc-parameter name="text" type="string"></doc-parameter>
+                <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
+                <doc-parameter name="dateFormatString" type="string"></doc-parameter>
+                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                <doc-parameter name="dt" type="DateTime"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="System.Int64" params="DateTime, TimeSpan" access="internal" signature="internal static Int64 ConvertDateTimeToJavaScriptTicks(DateTime dateTime, TimeSpan offset)">
-        <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
-                <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="System.Int64" params="DateTime" access="internal" signature="internal static Int64 ConvertDateTimeToJavaScriptTicks(DateTime dateTime)">
-        <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convertdatetimetojavascriptticks" name="ConvertDateTimeToJavaScriptTicks" returns="System.Int64" params="DateTime, Boolean" access="internal" signature="internal static Int64 ConvertDateTimeToJavaScriptTicks(DateTime dateTime, Boolean convertToUtc)">
-        <template #name><h3>ConvertDateTimeToJavaScriptTicks</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="dateTime" type="DateTime"></doc-parameter>
-                <doc-parameter name="convertToUtc" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-universaltickstojavascriptticks" name="UniversalTicksToJavaScriptTicks" returns="System.Int64" params="Int64" access="private" signature="private static Int64 UniversalTicksToJavaScriptTicks(Int64 universalTicks)">
-        <template #name><h3>UniversalTicksToJavaScriptTicks</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="universalTicks" type="System.Int64"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convertjavascripttickstodatetime" name="ConvertJavaScriptTicksToDateTime" returns="DateTime" params="Int64" access="internal" signature="internal static DateTime ConvertJavaScriptTicksToDateTime(Int64 javaScriptTicks)">
-        <template #name><h3>ConvertJavaScriptTicksToDateTime</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="javaScriptTicks" type="System.Int64"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetimeiso" name="TryParseDateTimeIso" returns="System.Boolean" params="StringReference, DateTimeZoneHandling, DateTime" access="internal" signature="internal static Boolean TryParseDateTimeIso(StringReference text, DateTimeZoneHandling dateTimeZoneHandling, DateTime dt)">
+    <doc-member id="method-tryparsedatetimeiso" name="TryParseDateTimeIso" returns="bool" params="StringReference, DateTimeZoneHandling, DateTime" access="internal" signature="internal static bool TryParseDateTimeIso(StringReference text, DateTimeZoneHandling dateTimeZoneHandling, DateTime dt)">
         <template #name><h3>TryParseDateTimeIso</h3></template>
 
         <template #parameters>
@@ -388,95 +462,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-tryparsedatetimeoffsetiso" name="TryParseDateTimeOffsetIso" returns="System.Boolean" params="StringReference, DateTimeOffset" access="internal" signature="internal static Boolean TryParseDateTimeOffsetIso(StringReference text, DateTimeOffset dt)">
-        <template #name><h3>TryParseDateTimeOffsetIso</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="text" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createdatetime" name="CreateDateTime" returns="DateTime" params="DateTimeParser" access="private" signature="private static DateTime CreateDateTime(DateTimeParser dateTimeParser)">
-        <template #name><h3>CreateDateTime</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="dateTimeParser" type="Newtonsoft.Json.Utilities.DateTimeParser"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetime" name="TryParseDateTime" returns="System.Boolean" params="StringReference, DateTimeZoneHandling, Nullable<String>, CultureInfo, DateTime" access="internal" signature="internal static Boolean TryParseDateTime(StringReference s, DateTimeZoneHandling dateTimeZoneHandling, Nullable<String> dateFormatString, CultureInfo culture, DateTime dt)">
-        <template #name><h3>TryParseDateTime</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetime" name="TryParseDateTime" returns="System.Boolean" params="String, DateTimeZoneHandling, Nullable<String>, CultureInfo, DateTime" access="internal" signature="internal static Boolean TryParseDateTime(String s, DateTimeZoneHandling dateTimeZoneHandling, Nullable<String> dateFormatString, CultureInfo culture, DateTime dt)">
-        <template #name><h3>TryParseDateTime</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="System.Boolean" params="StringReference, Nullable<String>, CultureInfo, DateTimeOffset" access="internal" signature="internal static Boolean TryParseDateTimeOffset(StringReference s, Nullable<String> dateFormatString, CultureInfo culture, DateTimeOffset dt)">
-        <template #name><h3>TryParseDateTimeOffset</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="System.Boolean" params="String, Nullable<String>, CultureInfo, DateTimeOffset" access="internal" signature="internal static Boolean TryParseDateTimeOffset(String s, Nullable<String> dateFormatString, CultureInfo culture, DateTimeOffset dt)">
-        <template #name><h3>TryParseDateTimeOffset</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsemicrosoftdate" name="TryParseMicrosoftDate" returns="System.Boolean" params="StringReference, Int64, TimeSpan, DateTimeKind" access="private" signature="private static Boolean TryParseMicrosoftDate(StringReference text, Int64 ticks, TimeSpan offset, DateTimeKind kind)">
-        <template #name><h3>TryParseMicrosoftDate</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="text" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="ticks" type="System.Int64"></doc-parameter>
-                <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
-                <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tryparsedatetimemicrosoft" name="TryParseDateTimeMicrosoft" returns="System.Boolean" params="StringReference, DateTimeZoneHandling, DateTime" access="private" signature="private static Boolean TryParseDateTimeMicrosoft(StringReference text, DateTimeZoneHandling dateTimeZoneHandling, DateTime dt)">
+    <doc-member id="method-tryparsedatetimemicrosoft" name="TryParseDateTimeMicrosoft" returns="bool" params="StringReference, DateTimeZoneHandling, DateTime" access="private" signature="private static bool TryParseDateTimeMicrosoft(StringReference text, DateTimeZoneHandling dateTimeZoneHandling, DateTime dt)">
         <template #name><h3>TryParseDateTimeMicrosoft</h3></template>
 
         <template #parameters>
@@ -488,21 +474,59 @@
         </template>
     </doc-member>
 
-<doc-member id="method-tryparsedatetimeexact" name="TryParseDateTimeExact" returns="System.Boolean" params="String, DateTimeZoneHandling, String, CultureInfo, DateTime" access="private" signature="private static Boolean TryParseDateTimeExact(String text, DateTimeZoneHandling dateTimeZoneHandling, String dateFormatString, CultureInfo culture, DateTime dt)">
-        <template #name><h3>TryParseDateTimeExact</h3></template>
+    <doc-overload-group overload-id="group-tryparsedatetimeoffset">
+        <doc-member id="method-tryparsedatetimeoffset" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="StringReference, string?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(StringReference s, string? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
+            <template #name><h3>TryParseDateTimeOffset</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                    <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tryparsedatetimeoffset-1" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="string, string?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(string s, string? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
+            <template #name><h3>TryParseDateTimeOffset</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="s" type="string"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                    <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-tryparsedatetimeoffsetexact" name="TryParseDateTimeOffsetExact" returns="bool" params="string, string, CultureInfo, DateTimeOffset" access="private" signature="private static bool TryParseDateTimeOffsetExact(string text, string dateFormatString, CultureInfo culture, DateTimeOffset dt)">
+        <template #name><h3>TryParseDateTimeOffsetExact</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-                <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.String"></doc-parameter>
+                <doc-parameter name="text" type="string"></doc-parameter>
+                <doc-parameter name="dateFormatString" type="string"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTime"></doc-parameter>
+                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryparsedatetimeoffsetmicrosoft" name="TryParseDateTimeOffsetMicrosoft" returns="System.Boolean" params="StringReference, DateTimeOffset" access="private" signature="private static Boolean TryParseDateTimeOffsetMicrosoft(StringReference text, DateTimeOffset dt)">
+    <doc-member id="method-tryparsedatetimeoffsetiso" name="TryParseDateTimeOffsetIso" returns="bool" params="StringReference, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffsetIso(StringReference text, DateTimeOffset dt)">
+        <template #name><h3>TryParseDateTimeOffsetIso</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="text" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryparsedatetimeoffsetmicrosoft" name="TryParseDateTimeOffsetMicrosoft" returns="bool" params="StringReference, DateTimeOffset" access="private" signature="private static bool TryParseDateTimeOffsetMicrosoft(StringReference text, DateTimeOffset dt)">
         <template #name><h3>TryParseDateTimeOffsetMicrosoft</h3></template>
 
         <template #parameters>
@@ -513,99 +537,55 @@
         </template>
     </doc-member>
 
-<doc-member id="method-tryparsedatetimeoffsetexact" name="TryParseDateTimeOffsetExact" returns="System.Boolean" params="String, String, CultureInfo, DateTimeOffset" access="private" signature="private static Boolean TryParseDateTimeOffsetExact(String text, String dateFormatString, CultureInfo culture, DateTimeOffset dt)">
-        <template #name><h3>TryParseDateTimeOffsetExact</h3></template>
+    <doc-member id="method-tryparsemicrosoftdate" name="TryParseMicrosoftDate" returns="bool" params="StringReference, long, TimeSpan, DateTimeKind" access="private" signature="private static bool TryParseMicrosoftDate(StringReference text, long ticks, TimeSpan offset, DateTimeKind kind)">
+        <template #name><h3>TryParseMicrosoftDate</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-                <doc-parameter name="dateFormatString" type="System.String"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
-                <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
+                <doc-parameter name="text" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                <doc-parameter name="ticks" type="long"></doc-parameter>
+                <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
+                <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tryreadoffset" name="TryReadOffset" returns="System.Boolean" params="StringReference, Int32, TimeSpan" access="private" signature="private static Boolean TryReadOffset(StringReference offsetText, Int32 startIndex, TimeSpan offset)">
+    <doc-member id="method-tryreadoffset" name="TryReadOffset" returns="bool" params="StringReference, int, TimeSpan" access="private" signature="private static bool TryReadOffset(StringReference offsetText, int startIndex, TimeSpan offset)">
         <template #name><h3>TryReadOffset</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="offsetText" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="startIndex" type="System.Int32"></doc-parameter>
+                <doc-parameter name="startIndex" type="int"></doc-parameter>
                 <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writedatetimestring" name="WriteDateTimeString" returns="System.Void" params="TextWriter, DateTime, DateFormatHandling, Nullable<String>, CultureInfo" access="internal" signature="internal static Void WriteDateTimeString(TextWriter writer, DateTime value, DateFormatHandling format, Nullable<String> formatString, CultureInfo culture)">
-        <template #name><h3>WriteDateTimeString</h3></template>
+    <doc-member id="method-universaltickstojavascriptticks" name="UniversalTicksToJavaScriptTicks" returns="long" params="long" access="private" signature="private static long UniversalTicksToJavaScriptTicks(long universalTicks)">
+        <template #name><h3>UniversalTicksToJavaScriptTicks</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
-                <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-                <doc-parameter name="formatString" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                <doc-parameter name="universalTicks" type="long"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writedatetimestring" name="WriteDateTimeString" returns="System.Int32" params="Char[], Int32, DateTime, Nullable<TimeSpan>, DateTimeKind, DateFormatHandling" access="internal" signature="internal static Int32 WriteDateTimeString(Char[] chars, Int32 start, DateTime value, Nullable<TimeSpan> offset, DateTimeKind kind, DateFormatHandling format)">
-        <template #name><h3>WriteDateTimeString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
-                <doc-parameter name="offset" type="System.Nullable<TimeSpan>"></doc-parameter>
-                <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
-                <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writedefaultisodate" name="WriteDefaultIsoDate" returns="System.Int32" params="Char[], Int32, DateTime" access="internal" signature="internal static Int32 WriteDefaultIsoDate(Char[] chars, Int32 start, DateTime dt)">
-        <template #name><h3>WriteDefaultIsoDate</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="dt" type="DateTime"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-copyinttochararray" name="CopyIntToCharArray" returns="System.Void" params="Char[], Int32, Int32, Int32" access="private" signature="private static Void CopyIntToCharArray(Char[] chars, Int32 start, Int32 value, Int32 digits)">
-        <template #name><h3>CopyIntToCharArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="value" type="System.Int32"></doc-parameter>
-                <doc-parameter name="digits" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writedatetimeoffset" name="WriteDateTimeOffset" returns="System.Int32" params="Char[], Int32, TimeSpan, DateFormatHandling" access="internal" signature="internal static Int32 WriteDateTimeOffset(Char[] chars, Int32 start, TimeSpan offset, DateFormatHandling format)">
+    <doc-member id="method-writedatetimeoffset" name="WriteDateTimeOffset" returns="int" params="char[], int, TimeSpan, DateFormatHandling" access="internal" signature="internal static int WriteDateTimeOffset(char[] chars, int start, TimeSpan offset, DateFormatHandling format)">
         <template #name><h3>WriteDateTimeOffset</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
                 <doc-parameter name="offset" type="TimeSpan"></doc-parameter>
                 <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writedatetimeoffsetstring" name="WriteDateTimeOffsetString" returns="System.Void" params="TextWriter, DateTimeOffset, DateFormatHandling, Nullable<String>, CultureInfo" access="internal" signature="internal static Void WriteDateTimeOffsetString(TextWriter writer, DateTimeOffset value, DateFormatHandling format, Nullable<String> formatString, CultureInfo culture)">
+    <doc-member id="method-writedatetimeoffsetstring" name="WriteDateTimeOffsetString" returns="void" params="TextWriter, DateTimeOffset, DateFormatHandling, string?, CultureInfo" access="internal" signature="internal static void WriteDateTimeOffsetString(TextWriter writer, DateTimeOffset value, DateFormatHandling format, string? formatString, CultureInfo culture)">
         <template #name><h3>WriteDateTimeOffsetString</h3></template>
 
         <template #parameters>
@@ -613,21 +593,51 @@
                 <doc-parameter name="writer" type="TextWriter"></doc-parameter>
                 <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
                 <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-                <doc-parameter name="formatString" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="formatString" type="string?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getdatevalues" name="GetDateValues" returns="System.Void" params="DateTime, Int32, Int32, Int32" access="private" signature="private static Void GetDateValues(DateTime td, Int32 year, Int32 month, Int32 day)">
-        <template #name><h3>GetDateValues</h3></template>
+    <doc-overload-group overload-id="group-writedatetimestring">
+        <doc-member id="method-writedatetimestring" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="void" params="TextWriter, DateTime, DateFormatHandling, string?, CultureInfo" access="internal" signature="internal static void WriteDateTimeString(TextWriter writer, DateTime value, DateFormatHandling format, string? formatString, CultureInfo culture)">
+            <template #name><h3>WriteDateTimeString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                    <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
+                    <doc-parameter name="formatString" type="string?"></doc-parameter>
+                    <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writedatetimestring-1" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="int" params="char[], int, DateTime, TimeSpan?, DateTimeKind, DateFormatHandling" access="internal" signature="internal static int WriteDateTimeString(char[] chars, int start, DateTime value, TimeSpan? offset, DateTimeKind kind, DateFormatHandling format)">
+            <template #name><h3>WriteDateTimeString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="chars" type="char[]"></doc-parameter>
+                    <doc-parameter name="start" type="int"></doc-parameter>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                    <doc-parameter name="offset" type="TimeSpan?"></doc-parameter>
+                    <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
+                    <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-writedefaultisodate" name="WriteDefaultIsoDate" returns="int" params="char[], int, DateTime" access="internal" signature="internal static int WriteDefaultIsoDate(char[] chars, int start, DateTime dt)">
+        <template #name><h3>WriteDefaultIsoDate</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="td" type="DateTime"></doc-parameter>
-                <doc-parameter name="year" type="System.Int32"></doc-parameter>
-                <doc-parameter name="month" type="System.Int32"></doc-parameter>
-                <doc-parameter name="day" type="System.Int32"></doc-parameter>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="dt" type="DateTime"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

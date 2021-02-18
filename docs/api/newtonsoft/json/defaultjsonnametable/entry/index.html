@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-value" name="Value" type="System.String" access="internal" signature="internal readonly String Value">
+    <doc-member id="field-value" name="Value" type="string" access="internal" signature="internal readonly string Value">
         <template #name><h3>Value</h3></template>
     </doc-member>
 
-<doc-member id="field-hashcode" name="HashCode" type="System.Int32" access="internal" signature="internal readonly Int32 HashCode">
+    <doc-member id="field-hashcode" name="HashCode" type="int" access="internal" signature="internal readonly int HashCode">
         <template #name><h3>HashCode</h3></template>
     </doc-member>
 
-<doc-member id="field-next" name="Next" type="Newtonsoft.Json.DefaultJsonNameTable.Entry" access="internal" signature="internal Entry Next">
+    <doc-member id="field-next" name="Next" type="Entry" access="internal" signature="internal Entry Next">
         <template #name><h3>Next</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,13 +224,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String, Int32, Entry" access="internal" signature="internal Entry(String value, Int32 hashCode, Entry next)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="string, int, Entry" access="internal" signature="internal Entry(string value, int hashCode, Entry next)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="hashCode" type="System.Int32"></doc-parameter>
+                <doc-parameter name="value" type="string"></doc-parameter>
+                <doc-parameter name="hashCode" type="int"></doc-parameter>
                 <doc-parameter name="next" type="Newtonsoft.Json.DefaultJsonNameTable.Entry"></doc-parameter>
             </doc-parameters>
         </template>

@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_instance" name="_instance" type="Newtonsoft.Json.Utilities.ExpressionReflectionDelegateFactory" access="private" signature="private readonly static ExpressionReflectionDelegateFactory _instance">
+    <doc-member id="field-_instance" name="_instance" type="ExpressionReflectionDelegateFactory" access="private" signature="private readonly static ExpressionReflectionDelegateFactory _instance">
         <template #name><h3>_instance</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-instance" name="Instance" type="Newtonsoft.Json.Utilities.ReflectionDelegateFactory" access="internal" signature="internal static ReflectionDelegateFactory Instance { internal get; }">
+    <doc-member id="property-instance" name="Instance" type="ReflectionDelegateFactory" access="internal" signature="internal static ReflectionDelegateFactory Instance { internal get; }">
         <template #name><h3>Instance</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,40 +224,20 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>" params="MethodBase" signature="public sealed ObjectConstructor<Object> CreateParameterizedConstructor(MethodBase method)">
-        <template #name><h3>CreateParameterizedConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createmethodcall" name="CreateMethodCall" returns="Newtonsoft.Json.Utilities.MethodCall<T, System.Nullable<System.Object>>" params="MethodBase" signature="public sealed MethodCall<T, Nullable<Object>> CreateMethodCall(MethodBase method)">
-        <template #name><h3>CreateMethodCall</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-buildmethodcall" name="BuildMethodCall" returns="Expression" params="MethodBase, Type, Nullable<ParameterExpression>, ParameterExpression" access="private" signature="private Expression BuildMethodCall(MethodBase method, Type type, Nullable<ParameterExpression> targetParameterExpression, ParameterExpression argsParameterExpression)">
+    <doc-member id="method-buildmethodcall" name="BuildMethodCall" returns="Expression" params="MethodBase, Type, ParameterExpression?, ParameterExpression" access="private" signature="private Expression BuildMethodCall(MethodBase method, Type type, ParameterExpression? targetParameterExpression, ParameterExpression argsParameterExpression)">
         <template #name><h3>BuildMethodCall</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="method" type="MethodBase"></doc-parameter>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="targetParameterExpression" type="System.Nullable<ParameterExpression>"></doc-parameter>
+                <doc-parameter name="targetParameterExpression" type="ParameterExpression?"></doc-parameter>
                 <doc-parameter name="argsParameterExpression" type="ParameterExpression"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public sealed Func<T> CreateDefaultConstructor(Type type)">
+    <doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public sealed Func<T> CreateDefaultConstructor(Type type)">
         <template #name><h3>CreateDefaultConstructor</h3></template>
 
         <template #parameters>
@@ -267,54 +247,78 @@
         </template>
     </doc-member>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public sealed Func<T, Nullable<Object>> CreateGet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateGet</h3></template>
+    <doc-overload-group overload-id="group-createget">
+        <doc-member id="method-createget" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="PropertyInfo" signature="public sealed Func<T, object?> CreateGet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createget-1" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="FieldInfo" signature="public sealed Func<T, object?> CreateGet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-createmethodcall" name="CreateMethodCall" returns="MethodCall<T, object?>" params="MethodBase" signature="public sealed MethodCall<T, object?> CreateMethodCall(MethodBase method)">
+        <template #name><h3>CreateMethodCall</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public sealed Func<T, Nullable<Object>> CreateGet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateGet</h3></template>
+    <doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="ObjectConstructor<object>" params="MethodBase" signature="public sealed ObjectConstructor<object> CreateParameterizedConstructor(MethodBase method)">
+        <template #name><h3>CreateParameterizedConstructor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public sealed Action<T, Nullable<Object>> CreateSet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateSet</h3></template>
+    <doc-overload-group overload-id="group-createset">
+        <doc-member id="method-createset" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="FieldInfo" signature="public sealed Action<T, object?> CreateSet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateSet</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public sealed Action<T, Nullable<Object>> CreateSet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateSet</h3></template>
+        <doc-member id="method-createset-1" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="PropertyInfo" signature="public sealed Action<T, object?> CreateSet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateSet</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-ensurecastexpression" name="EnsureCastExpression" returns="Expression" params="Expression, Type, Boolean" access="private" signature="private Expression EnsureCastExpression(Expression expression, Type targetType, Boolean allowWidening = false)">
+    <doc-member id="method-ensurecastexpression" name="EnsureCastExpression" returns="Expression" params="Expression, Type, bool" access="private" signature="private Expression EnsureCastExpression(Expression expression, Type targetType, bool allowWidening = false)">
         <template #name><h3>EnsureCastExpression</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="expression" type="Expression"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="allowWidening" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="allowWidening" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

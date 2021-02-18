@@ -208,7 +208,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-instance" name="Instance" type="Newtonsoft.Json.Utilities.DynamicReflectionDelegateFactory" access="internal" signature="internal static DynamicReflectionDelegateFactory Instance { internal get; }">
+    <doc-member id="property-instance" name="Instance" type="DynamicReflectionDelegateFactory" access="internal" signature="internal static DynamicReflectionDelegateFactory Instance { internal get; }">
         <template #name><h3>Instance</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,52 +216,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-createdynamicmethod" name="CreateDynamicMethod" returns="DynamicMethod" params="String, Nullable<Type>, Type[], Type" access="private" signature="private static DynamicMethod CreateDynamicMethod(String name, Nullable<Type> returnType, Type[] parameterTypes, Type owner)">
-        <template #name><h3>CreateDynamicMethod</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-                <doc-parameter name="returnType" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="parameterTypes" type="Type[]"></doc-parameter>
-                <doc-parameter name="owner" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>" params="MethodBase" signature="public sealed ObjectConstructor<Object> CreateParameterizedConstructor(MethodBase method)">
-        <template #name><h3>CreateParameterizedConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createmethodcall" name="CreateMethodCall" returns="Newtonsoft.Json.Utilities.MethodCall<T, System.Nullable<System.Object>>" params="MethodBase" signature="public sealed MethodCall<T, Nullable<Object>> CreateMethodCall(MethodBase method)">
-        <template #name><h3>CreateMethodCall</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-generatecreatemethodcallil" name="GenerateCreateMethodCallIL" returns="System.Void" params="MethodBase, ILGenerator, Int32" access="private" signature="private Void GenerateCreateMethodCallIL(MethodBase method, ILGenerator generator, Int32 argsIndex)">
-        <template #name><h3>GenerateCreateMethodCallIL</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodBase"></doc-parameter>
-                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
-                <doc-parameter name="argsIndex" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public sealed Func<T> CreateDefaultConstructor(Type type)">
+    <doc-member id="method-createdefaultconstructor" name="CreateDefaultConstructor" returns="Func<T>" params="Type" signature="public sealed Func<T> CreateDefaultConstructor(Type type)">
         <template #name><h3>CreateDefaultConstructor</h3></template>
 
         <template #parameters>
@@ -271,7 +226,84 @@
         </template>
     </doc-member>
 
-<doc-member id="method-generatecreatedefaultconstructoril" name="GenerateCreateDefaultConstructorIL" returns="System.Void" params="Type, ILGenerator, Type" access="private" signature="private Void GenerateCreateDefaultConstructorIL(Type type, ILGenerator generator, Type delegateType)">
+    <doc-member id="method-createdynamicmethod" name="CreateDynamicMethod" returns="DynamicMethod" params="string, Type?, Type[], Type" access="private" signature="private static DynamicMethod CreateDynamicMethod(string name, Type? returnType, Type[] parameterTypes, Type owner)">
+        <template #name><h3>CreateDynamicMethod</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="name" type="string"></doc-parameter>
+                <doc-parameter name="returnType" type="Type?"></doc-parameter>
+                <doc-parameter name="parameterTypes" type="Type[]"></doc-parameter>
+                <doc-parameter name="owner" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-createget">
+        <doc-member id="method-createget" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="PropertyInfo" signature="public sealed Func<T, object?> CreateGet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createget-1" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="FieldInfo" signature="public sealed Func<T, object?> CreateGet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateGet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-createmethodcall" name="CreateMethodCall" returns="MethodCall<T, object?>" params="MethodBase" signature="public sealed MethodCall<T, object?> CreateMethodCall(MethodBase method)">
+        <template #name><h3>CreateMethodCall</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-createparameterizedconstructor" name="CreateParameterizedConstructor" returns="ObjectConstructor<object>" params="MethodBase" signature="public sealed ObjectConstructor<object> CreateParameterizedConstructor(MethodBase method)">
+        <template #name><h3>CreateParameterizedConstructor</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-createset">
+        <doc-member id="method-createset" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="FieldInfo" signature="public sealed Action<T, object?> CreateSet(FieldInfo fieldInfo)">
+            <template #name><h3>CreateSet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createset-1" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="PropertyInfo" signature="public sealed Action<T, object?> CreateSet(PropertyInfo propertyInfo)">
+            <template #name><h3>CreateSet</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-generatecreatedefaultconstructoril" name="GenerateCreateDefaultConstructorIL" returns="void" params="Type, ILGenerator, Type" access="private" signature="private void GenerateCreateDefaultConstructorIL(Type type, ILGenerator generator, Type delegateType)">
         <template #name><h3>GenerateCreateDefaultConstructorIL</h3></template>
 
         <template #parameters>
@@ -283,38 +315,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public sealed Func<T, Nullable<Object>> CreateGet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateGet</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-generatecreategetpropertyil" name="GenerateCreateGetPropertyIL" returns="System.Void" params="PropertyInfo, ILGenerator" access="private" signature="private Void GenerateCreateGetPropertyIL(PropertyInfo propertyInfo, ILGenerator generator)">
-        <template #name><h3>GenerateCreateGetPropertyIL</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
-                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createget" name="CreateGet" returns="Func<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public sealed Func<T, Nullable<Object>> CreateGet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateGet</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-generatecreategetfieldil" name="GenerateCreateGetFieldIL" returns="System.Void" params="FieldInfo, ILGenerator" access="private" signature="private Void GenerateCreateGetFieldIL(FieldInfo fieldInfo, ILGenerator generator)">
+    <doc-member id="method-generatecreategetfieldil" name="GenerateCreateGetFieldIL" returns="void" params="FieldInfo, ILGenerator" access="private" signature="private void GenerateCreateGetFieldIL(FieldInfo fieldInfo, ILGenerator generator)">
         <template #name><h3>GenerateCreateGetFieldIL</h3></template>
 
         <template #parameters>
@@ -325,17 +326,30 @@
         </template>
     </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="FieldInfo" signature="public sealed Action<T, Nullable<Object>> CreateSet(FieldInfo fieldInfo)">
-        <template #name><h3>CreateSet</h3></template>
+    <doc-member id="method-generatecreategetpropertyil" name="GenerateCreateGetPropertyIL" returns="void" params="PropertyInfo, ILGenerator" access="private" signature="private void GenerateCreateGetPropertyIL(PropertyInfo propertyInfo, ILGenerator generator)">
+        <template #name><h3>GenerateCreateGetPropertyIL</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="fieldInfo" type="FieldInfo"></doc-parameter>
+                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
+                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-generatecreatesetfieldil" name="GenerateCreateSetFieldIL" returns="System.Void" params="FieldInfo, ILGenerator" access="internal" signature="internal static Void GenerateCreateSetFieldIL(FieldInfo fieldInfo, ILGenerator generator)">
+    <doc-member id="method-generatecreatemethodcallil" name="GenerateCreateMethodCallIL" returns="void" params="MethodBase, ILGenerator, int" access="private" signature="private void GenerateCreateMethodCallIL(MethodBase method, ILGenerator generator, int argsIndex)">
+        <template #name><h3>GenerateCreateMethodCallIL</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="method" type="MethodBase"></doc-parameter>
+                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
+                <doc-parameter name="argsIndex" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-generatecreatesetfieldil" name="GenerateCreateSetFieldIL" returns="void" params="FieldInfo, ILGenerator" access="internal" signature="internal static void GenerateCreateSetFieldIL(FieldInfo fieldInfo, ILGenerator generator)">
         <template #name><h3>GenerateCreateSetFieldIL</h3></template>
 
         <template #parameters>
@@ -346,17 +360,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-createset" name="CreateSet" returns="Action<T, System.Nullable<System.Object>>" params="PropertyInfo" signature="public sealed Action<T, Nullable<Object>> CreateSet(PropertyInfo propertyInfo)">
-        <template #name><h3>CreateSet</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyInfo" type="PropertyInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-generatecreatesetpropertyil" name="GenerateCreateSetPropertyIL" returns="System.Void" params="PropertyInfo, ILGenerator" access="internal" signature="internal static Void GenerateCreateSetPropertyIL(PropertyInfo propertyInfo, ILGenerator generator)">
+    <doc-member id="method-generatecreatesetpropertyil" name="GenerateCreateSetPropertyIL" returns="void" params="PropertyInfo, ILGenerator" access="internal" signature="internal static void GenerateCreateSetPropertyIL(PropertyInfo propertyInfo, ILGenerator generator)">
         <template #name><h3>GenerateCreateSetPropertyIL</h3></template>
 
         <template #parameters>

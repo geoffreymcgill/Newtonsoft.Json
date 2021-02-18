@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-encoding" name="Encoding" type="Encoding" access="private" signature="private readonly static Encoding Encoding">
+    <doc-member id="field-encoding" name="Encoding" type="Encoding" access="private" signature="private readonly static Encoding Encoding">
         <template #name><h3>Encoding</h3></template>
     </doc-member>
 
-<doc-member id="field-_writer" name="_writer" type="BinaryWriter" access="private" signature="private readonly BinaryWriter _writer">
+    <doc-member id="field-_writer" name="_writer" type="BinaryWriter" access="private" signature="private readonly BinaryWriter _writer">
         <template #name><h3>_writer</h3></template>
     </doc-member>
 
-<doc-member id="field-_largebytebuffer" name="_largeByteBuffer" type="System.Byte[]" access="private" signature="private Byte[] _largeByteBuffer">
+    <doc-member id="field-_largebytebuffer" name="_largeByteBuffer" type="byte[]" access="private" signature="private byte[] _largeByteBuffer">
         <template #name><h3>_largeByteBuffer</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-datetimekindhandling" name="DateTimeKindHandling" type="DateTimeKind" signature="public DateTimeKind DateTimeKindHandling { get; set; }">
+    <doc-member id="property-datetimekindhandling" name="DateTimeKindHandling" type="DateTimeKind" signature="public DateTimeKind DateTimeKindHandling { get; set; }">
         <template #name><h3>DateTimeKindHandling</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,7 +232,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="BinaryWriter" signature="public BsonBinaryWriter(BinaryWriter writer)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="BinaryWriter" signature="public BsonBinaryWriter(BinaryWriter writer)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -242,15 +242,60 @@
         </template>
     </doc-member>
 
-<doc-member id="method-flush" name="Flush" returns="System.Void" signature="public Void Flush()">
-        <template #name><h3>Flush</h3></template>
+    <doc-overload-group overload-id="group-calculatesize">
+        <doc-member id="method-calculatesize" overload-id="group-calculatesize" name="CalculateSize" returns="int" params="int" access="private" signature="private int CalculateSize(int stringByteCount)">
+            <template #name><h3>CalculateSize</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="stringByteCount" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-calculatesize-1" overload-id="group-calculatesize" name="CalculateSize" returns="int" params="BsonToken" access="private" signature="private int CalculateSize(BsonToken t)">
+            <template #name><h3>CalculateSize</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-calculatesizewithlength" name="CalculateSizeWithLength" returns="int" params="int, bool" access="private" signature="private int CalculateSizeWithLength(int stringByteCount, bool includeSize)">
+        <template #name><h3>CalculateSizeWithLength</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="stringByteCount" type="int"></doc-parameter>
+                <doc-parameter name="includeSize" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
     </doc-member>
 
-<doc-member id="method-close" name="Close" returns="System.Void" signature="public Void Close()">
+    <doc-member id="method-close" name="Close" returns="void" signature="public void Close()">
         <template #name><h3>Close</h3></template>
     </doc-member>
 
-<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="BsonToken" signature="public Void WriteToken(BsonToken t)">
+    <doc-member id="method-flush" name="Flush" returns="void" signature="public void Flush()">
+        <template #name><h3>Flush</h3></template>
+    </doc-member>
+
+    <doc-member id="method-writestring" name="WriteString" returns="void" params="string, int, int?" access="private" signature="private void WriteString(string s, int byteCount, int? calculatedlengthPrefix)">
+        <template #name><h3>WriteString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="byteCount" type="int"></doc-parameter>
+                <doc-parameter name="calculatedlengthPrefix" type="int?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writetoken" name="WriteToken" returns="void" params="BsonToken" signature="public void WriteToken(BsonToken t)">
         <template #name><h3>WriteToken</h3></template>
 
         <template #parameters>
@@ -260,7 +305,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-writetokeninternal" name="WriteTokenInternal" returns="System.Void" params="BsonToken" access="private" signature="private Void WriteTokenInternal(BsonToken t)">
+    <doc-member id="method-writetokeninternal" name="WriteTokenInternal" returns="void" params="BsonToken" access="private" signature="private void WriteTokenInternal(BsonToken t)">
         <template #name><h3>WriteTokenInternal</h3></template>
 
         <template #parameters>
@@ -270,56 +315,13 @@
         </template>
     </doc-member>
 
-<doc-member id="method-writestring" name="WriteString" returns="System.Void" params="String, Int32, Nullable<Int32>" access="private" signature="private Void WriteString(String s, Int32 byteCount, Nullable<Int32> calculatedlengthPrefix)">
-        <template #name><h3>WriteString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="byteCount" type="System.Int32"></doc-parameter>
-                <doc-parameter name="calculatedlengthPrefix" type="System.Nullable<System.Int32>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeutf8bytes" name="WriteUtf8Bytes" returns="System.Void" params="String, Int32" signature="public Void WriteUtf8Bytes(String s, Int32 byteCount)">
+    <doc-member id="method-writeutf8bytes" name="WriteUtf8Bytes" returns="void" params="string, int" signature="public void WriteUtf8Bytes(string s, int byteCount)">
         <template #name><h3>WriteUtf8Bytes</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="s" type="System.String"></doc-parameter>
-                <doc-parameter name="byteCount" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-calculatesize" name="CalculateSize" returns="System.Int32" params="Int32" access="private" signature="private Int32 CalculateSize(Int32 stringByteCount)">
-        <template #name><h3>CalculateSize</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="stringByteCount" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-calculatesizewithlength" name="CalculateSizeWithLength" returns="System.Int32" params="Int32, Boolean" access="private" signature="private Int32 CalculateSizeWithLength(Int32 stringByteCount, Boolean includeSize)">
-        <template #name><h3>CalculateSizeWithLength</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="stringByteCount" type="System.Int32"></doc-parameter>
-                <doc-parameter name="includeSize" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-calculatesize" name="CalculateSize" returns="System.Int32" params="BsonToken" access="private" signature="private Int32 CalculateSize(BsonToken t)">
-        <template #name><h3>CalculateSize</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
+                <doc-parameter name="s" type="string"></doc-parameter>
+                <doc-parameter name="byteCount" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

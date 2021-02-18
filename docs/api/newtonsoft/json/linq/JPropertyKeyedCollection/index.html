@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-comparer" name="Comparer" type="IEqualityComparer<System.String>" access="private" signature="private readonly static IEqualityComparer<String> Comparer">
+    <doc-member id="field-comparer" name="Comparer" type="IEqualityComparer<string>" access="private" signature="private readonly static IEqualityComparer<string> Comparer">
         <template #name><h3>Comparer</h3></template>
     </doc-member>
 
-<doc-member id="field-_dictionary" name="_dictionary" type="System.Nullable<Dictionary<System.String, Newtonsoft.Json.Linq.JToken>>" access="private" signature="private Nullable<Dictionary<String, JToken>> _dictionary">
+    <doc-member id="field-_dictionary" name="_dictionary" type="Dictionary<string, JToken>?" access="private" signature="private Dictionary<string, JToken>? _dictionary">
         <template #name><h3>_dictionary</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,11 +220,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-keys" name="Keys" type="ICollection<System.String>" signature="public ICollection<String> Keys { get; }">
+    <doc-member id="property-keys" name="Keys" type="ICollection<string>" signature="public ICollection<string> Keys { get; }">
         <template #name><h3>Keys</h3></template>
     </doc-member>
 
-<doc-member id="property-values" name="Values" type="ICollection<Newtonsoft.Json.Linq.JToken>" signature="public ICollection<JToken> Values { get; }">
+    <doc-member id="property-values" name="Values" type="ICollection<JToken>" signature="public ICollection<JToken> Values { get; }">
         <template #name><h3>Values</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,47 +232,57 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JPropertyKeyedCollection()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public JPropertyKeyedCollection()">
         <template #name><h3>.ctor</h3></template>
     </doc-member>
 
-<doc-member id="method-addkey" name="AddKey" returns="System.Void" params="String, JToken" access="private" signature="private Void AddKey(String key, JToken item)">
+    <doc-member id="method-addkey" name="AddKey" returns="void" params="string, JToken" access="private" signature="private void AddKey(string key, JToken item)">
         <template #name><h3>AddKey</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
+                <doc-parameter name="key" type="string"></doc-parameter>
                 <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-changeitemkey" name="ChangeItemKey" returns="System.Void" params="JToken, String" access="protected" signature="protected Void ChangeItemKey(JToken item, String newKey)">
+    <doc-member id="method-changeitemkey" name="ChangeItemKey" returns="void" params="JToken, string" access="protected" signature="protected void ChangeItemKey(JToken item, string newKey)">
         <template #name><h3>ChangeItemKey</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="newKey" type="System.String"></doc-parameter>
+                <doc-parameter name="newKey" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-clearitems" name="ClearItems" returns="System.Void" access="protected" signature="protected sealed Void ClearItems()">
+    <doc-member id="method-clearitems" name="ClearItems" returns="void" access="protected" signature="protected sealed void ClearItems()">
         <template #name><h3>ClearItems</h3></template>
     </doc-member>
 
-<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="String" signature="public Boolean Contains(String key)">
+    <doc-member id="method-compare" name="Compare" returns="bool" params="JPropertyKeyedCollection" signature="public bool Compare(JPropertyKeyedCollection other)">
+        <template #name><h3>Compare</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JPropertyKeyedCollection"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-contains" name="Contains" returns="bool" params="string" signature="public bool Contains(string key)">
         <template #name><h3>Contains</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
+                <doc-parameter name="key" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-containsitem" name="ContainsItem" returns="System.Boolean" params="JToken" access="private" signature="private Boolean ContainsItem(JToken item)">
+    <doc-member id="method-containsitem" name="ContainsItem" returns="bool" params="JToken" access="private" signature="private bool ContainsItem(JToken item)">
         <template #name><h3>ContainsItem</h3></template>
 
         <template #parameters>
@@ -282,11 +292,11 @@
         </template>
     </doc-member>
 
-<doc-member id="method-ensuredictionary" name="EnsureDictionary" returns="System.Void" access="private" signature="private Void EnsureDictionary()">
+    <doc-member id="method-ensuredictionary" name="EnsureDictionary" returns="void" access="private" signature="private void EnsureDictionary()">
         <template #name><h3>EnsureDictionary</h3></template>
     </doc-member>
 
-<doc-member id="method-getkeyforitem" name="GetKeyForItem" returns="System.String" params="JToken" access="private" signature="private String GetKeyForItem(JToken item)">
+    <doc-member id="method-getkeyforitem" name="GetKeyForItem" returns="string" params="JToken" access="private" signature="private string GetKeyForItem(JToken item)">
         <template #name><h3>GetKeyForItem</h3></template>
 
         <template #parameters>
@@ -296,70 +306,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-insertitem" name="InsertItem" returns="System.Void" params="Int32, JToken" access="protected" signature="protected sealed Void InsertItem(Int32 index, JToken item)">
-        <template #name><h3>InsertItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-remove" name="Remove" returns="System.Boolean" params="String" signature="public Boolean Remove(String key)">
-        <template #name><h3>Remove</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeitem" name="RemoveItem" returns="System.Void" params="Int32" access="protected" signature="protected sealed Void RemoveItem(Int32 index)">
-        <template #name><h3>RemoveItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removekey" name="RemoveKey" returns="System.Void" params="String" access="private" signature="private Void RemoveKey(String key)">
-        <template #name><h3>RemoveKey</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-setitem" name="SetItem" returns="System.Void" params="Int32, JToken" access="protected" signature="protected sealed Void SetItem(Int32 index, JToken item)">
-        <template #name><h3>SetItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-trygetvalue" name="TryGetValue" returns="System.Boolean" params="String, JToken" signature="public Boolean TryGetValue(String key, JToken value)">
-        <template #name><h3>TryGetValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-indexofreference" name="IndexOfReference" returns="System.Int32" params="JToken" signature="public Int32 IndexOfReference(JToken t)">
+    <doc-member id="method-indexofreference" name="IndexOfReference" returns="int" params="JToken" signature="public int IndexOfReference(JToken t)">
         <template #name><h3>IndexOfReference</h3></template>
 
         <template #parameters>
@@ -369,12 +316,65 @@
         </template>
     </doc-member>
 
-<doc-member id="method-compare" name="Compare" returns="System.Boolean" params="JPropertyKeyedCollection" signature="public Boolean Compare(JPropertyKeyedCollection other)">
-        <template #name><h3>Compare</h3></template>
+    <doc-member id="method-insertitem" name="InsertItem" returns="void" params="int, JToken" access="protected" signature="protected sealed void InsertItem(int index, JToken item)">
+        <template #name><h3>InsertItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JPropertyKeyedCollection"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-remove" name="Remove" returns="bool" params="string" signature="public bool Remove(string key)">
+        <template #name><h3>Remove</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-removeitem" name="RemoveItem" returns="void" params="int" access="protected" signature="protected sealed void RemoveItem(int index)">
+        <template #name><h3>RemoveItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="index" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-removekey" name="RemoveKey" returns="void" params="string" access="private" signature="private void RemoveKey(string key)">
+        <template #name><h3>RemoveKey</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-setitem" name="SetItem" returns="void" params="int, JToken" access="protected" signature="protected sealed void SetItem(int index, JToken item)">
+        <template #name><h3>SetItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-trygetvalue" name="TryGetValue" returns="bool" params="string, JToken?" signature="public bool TryGetValue(string key, JToken? value)">
+        <template #name><h3>TryGetValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="string"></doc-parameter>
+                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-left" name="Left" type="System.Object" signature="public readonly Object Left">
+    <doc-member id="field-left" name="Left" type="object" signature="public readonly object Left">
         <template #name><h3>Left</h3></template>
     </doc-member>
 
-<doc-member id="field-right" name="Right" type="System.Nullable<System.Object>" signature="public readonly Nullable<Object> Right">
+    <doc-member id="field-right" name="Right" type="object?" signature="public readonly object? Right">
         <template #name><h3>Right</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,67 +220,30 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="QueryOperator, Object, Nullable<Object>" signature="public BooleanQueryExpression(QueryOperator operator, Object left, Nullable<Object> right)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="QueryOperator, object, object?" signature="public BooleanQueryExpression(QueryOperator operator, object left, object? right)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="operator" type="Newtonsoft.Json.Linq.JsonPath.QueryOperator"></doc-parameter>
-                <doc-parameter name="left" type="System.Object"></doc-parameter>
-                <doc-parameter name="right" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="left" type="object"></doc-parameter>
+                <doc-parameter name="right" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getresult" name="GetResult" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, JToken, Nullable<Object>" access="private" signature="private IEnumerable<JToken> GetResult(JToken root, JToken t, Nullable<Object> o)">
-        <template #name><h3>GetResult</h3></template>
+    <doc-member id="method-equalswithstrictmatch" name="EqualsWithStrictMatch" returns="bool" params="JValue, JValue" access="internal" signature="internal static bool EqualsWithStrictMatch(JValue value, JValue queryValue)">
+        <template #name><h3>EqualsWithStrictMatch</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="o" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="queryValue" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-ismatch" name="IsMatch" returns="System.Boolean" params="JToken, JToken, JsonSelectSettings" signature="public sealed Boolean IsMatch(JToken root, JToken t, JsonSelectSettings settings)">
-        <template #name><h3>IsMatch</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-matchtokens" name="MatchTokens" returns="System.Boolean" params="JToken, JToken, JsonSelectSettings" access="private" signature="private Boolean MatchTokens(JToken leftResult, JToken rightResult, JsonSelectSettings settings)">
-        <template #name><h3>MatchTokens</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="leftResult" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="rightResult" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-regexequals" name="RegexEquals" returns="System.Boolean" params="JValue, JValue, JsonSelectSettings" access="private" signature="private static Boolean RegexEquals(JValue input, JValue pattern, JsonSelectSettings settings)">
-        <template #name><h3>RegexEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="input" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="pattern" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-equalswithstringcoercion" name="EqualsWithStringCoercion" returns="System.Boolean" params="JValue, JValue" access="internal" signature="internal static Boolean EqualsWithStringCoercion(JValue value, JValue queryValue)">
+    <doc-member id="method-equalswithstringcoercion" name="EqualsWithStringCoercion" returns="bool" params="JValue, JValue" access="internal" signature="internal static bool EqualsWithStringCoercion(JValue value, JValue queryValue)">
         <template #name><h3>EqualsWithStringCoercion</h3></template>
 
         <template #parameters>
@@ -291,13 +254,50 @@
         </template>
     </doc-member>
 
-<doc-member id="method-equalswithstrictmatch" name="EqualsWithStrictMatch" returns="System.Boolean" params="JValue, JValue" access="internal" signature="internal static Boolean EqualsWithStrictMatch(JValue value, JValue queryValue)">
-        <template #name><h3>EqualsWithStrictMatch</h3></template>
+    <doc-member id="method-getresult" name="GetResult" returns="IEnumerable<JToken>" params="JToken, JToken, object?" access="private" signature="private IEnumerable<JToken> GetResult(JToken root, JToken t, object? o)">
+        <template #name><h3>GetResult</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="queryValue" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="o" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-ismatch" name="IsMatch" returns="bool" params="JToken, JToken, JsonSelectSettings?" signature="public sealed bool IsMatch(JToken root, JToken t, JsonSelectSettings? settings)">
+        <template #name><h3>IsMatch</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-matchtokens" name="MatchTokens" returns="bool" params="JToken, JToken, JsonSelectSettings?" access="private" signature="private bool MatchTokens(JToken leftResult, JToken rightResult, JsonSelectSettings? settings)">
+        <template #name><h3>MatchTokens</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="leftResult" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="rightResult" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-regexequals" name="RegexEquals" returns="bool" params="JValue, JValue, JsonSelectSettings?" access="private" signature="private static bool RegexEquals(JValue input, JValue pattern, JsonSelectSettings? settings)">
+        <template #name><h3>RegexEquals</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="input" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="pattern" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

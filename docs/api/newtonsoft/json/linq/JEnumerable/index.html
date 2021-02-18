@@ -211,14 +211,14 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-empty" name="Empty" type="Newtonsoft.Json.Linq.JEnumerable<T>" signature="public readonly static JEnumerable<T> Empty">
+    <doc-member id="field-empty" name="Empty" type="JEnumerable<T>" signature="public readonly static JEnumerable<T> Empty">
         <template #name><h3>Empty</h3></template>
 
 <p>An empty collection of <see cref="T:Newtonsoft.Json.Linq.JToken"/> objects.</p>
 
     </doc-member>
 
-<doc-member id="field-_enumerable" name="_enumerable" type="IEnumerable<T>" access="private" signature="private readonly IEnumerable<T> _enumerable">
+    <doc-member id="field-_enumerable" name="_enumerable" type="IEnumerable<T>" access="private" signature="private readonly IEnumerable<T> _enumerable">
         <template #name><h3>_enumerable</h3></template>
     </doc-member>
 </doc-member-group>
@@ -226,7 +226,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEnumerable<T>" signature="public JEnumerable(IEnumerable<T> enumerable)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="IEnumerable<T>" signature="public JEnumerable(IEnumerable<T> enumerable)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -239,40 +239,42 @@
 
     </doc-member>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public IEnumerator<T> GetEnumerator()">
+    <doc-overload-group overload-id="group-equals">
+        <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="JEnumerable<T>" signature="public bool Equals(JEnumerable<T> other)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Determines whether the specified <see cref="T:Newtonsoft.Json.Linq.JEnumerable`1"/> is equal to this instance.</p>
+
+        </doc-member>
+
+        <doc-member id="method-equals-1" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="obj" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Determines whether the specified <see cref="!:Object"/> is equal to this instance.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public IEnumerator<T> GetEnumerator()">
         <template #name><h3>GetEnumerator</h3></template>
 
 <p>Returns an enumerator that can be used to iterate through the collection.</p>
 
     </doc-member>
 
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="JEnumerable<T>" signature="public Boolean Equals(JEnumerable<T> other)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether the specified <see cref="T:Newtonsoft.Json.Linq.JEnumerable`1"/> is equal to this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Object" signature="public sealed Boolean Equals(Object obj)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="obj" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether the specified <see cref="!:Object"/> is equal to this instance.</p>
-
-    </doc-member>
-
-<doc-member id="method-gethashcode" name="GetHashCode" returns="System.Int32" signature="public sealed Int32 GetHashCode()">
+    <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
         <template #name><h3>GetHashCode</h3></template>
 
 <p>Returns a hash code for this instance.</p>

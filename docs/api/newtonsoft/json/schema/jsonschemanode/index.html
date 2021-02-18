@@ -208,31 +208,31 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-id" name="Id" type="System.String" signature="public String Id { get; }">
+    <doc-member id="property-id" name="Id" type="string" signature="public string Id { get; }">
         <template #name><h3>Id</h3></template>
     </doc-member>
 
-<doc-member id="property-schemas" name="Schemas" type="ReadOnlyCollection<Newtonsoft.Json.Schema.JsonSchema>" signature="public ReadOnlyCollection<JsonSchema> Schemas { get; }">
+    <doc-member id="property-schemas" name="Schemas" type="ReadOnlyCollection<JsonSchema>" signature="public ReadOnlyCollection<JsonSchema> Schemas { get; }">
         <template #name><h3>Schemas</h3></template>
     </doc-member>
 
-<doc-member id="property-properties" name="Properties" type="Dictionary<System.String, Newtonsoft.Json.Schema.JsonSchemaNode>" signature="public Dictionary<String, JsonSchemaNode> Properties { get; }">
+    <doc-member id="property-properties" name="Properties" type="Dictionary<string, JsonSchemaNode>" signature="public Dictionary<string, JsonSchemaNode> Properties { get; }">
         <template #name><h3>Properties</h3></template>
     </doc-member>
 
-<doc-member id="property-patternproperties" name="PatternProperties" type="Dictionary<System.String, Newtonsoft.Json.Schema.JsonSchemaNode>" signature="public Dictionary<String, JsonSchemaNode> PatternProperties { get; }">
+    <doc-member id="property-patternproperties" name="PatternProperties" type="Dictionary<string, JsonSchemaNode>" signature="public Dictionary<string, JsonSchemaNode> PatternProperties { get; }">
         <template #name><h3>PatternProperties</h3></template>
     </doc-member>
 
-<doc-member id="property-items" name="Items" type="List<Newtonsoft.Json.Schema.JsonSchemaNode>" signature="public List<JsonSchemaNode> Items { get; }">
+    <doc-member id="property-items" name="Items" type="List<JsonSchemaNode>" signature="public List<JsonSchemaNode> Items { get; }">
         <template #name><h3>Items</h3></template>
     </doc-member>
 
-<doc-member id="property-additionalproperties" name="AdditionalProperties" type="Newtonsoft.Json.Schema.JsonSchemaNode" signature="public JsonSchemaNode AdditionalProperties { get; set; }">
+    <doc-member id="property-additionalproperties" name="AdditionalProperties" type="JsonSchemaNode" signature="public JsonSchemaNode AdditionalProperties { get; set; }">
         <template #name><h3>AdditionalProperties</h3></template>
     </doc-member>
 
-<doc-member id="property-additionalitems" name="AdditionalItems" type="Newtonsoft.Json.Schema.JsonSchemaNode" signature="public JsonSchemaNode AdditionalItems { get; set; }">
+    <doc-member id="property-additionalitems" name="AdditionalItems" type="JsonSchemaNode" signature="public JsonSchemaNode AdditionalItems { get; set; }">
         <template #name><h3>AdditionalItems</h3></template>
     </doc-member>
 </doc-member-group>
@@ -240,28 +240,30 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSchema" signature="public JsonSchemaNode(JsonSchema schema)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="JsonSchema" signature="public JsonSchemaNode(JsonSchema schema)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSchemaNode, JsonSchema" access="private" signature="private JsonSchemaNode(JsonSchemaNode source, JsonSchema schema)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JsonSchemaNode, JsonSchema" access="private" signature="private JsonSchemaNode(JsonSchemaNode source, JsonSchema schema)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
+                    <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-combine" name="Combine" returns="Newtonsoft.Json.Schema.JsonSchemaNode" params="JsonSchema" signature="public JsonSchemaNode Combine(JsonSchema schema)">
+    <doc-member id="method-combine" name="Combine" returns="JsonSchemaNode" params="JsonSchema" signature="public JsonSchemaNode Combine(JsonSchema schema)">
         <template #name><h3>Combine</h3></template>
 
         <template #parameters>
@@ -271,7 +273,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getid" name="GetId" returns="System.String" params="IEnumerable<JsonSchema>" signature="public static String GetId(IEnumerable<JsonSchema> schemata)">
+    <doc-member id="method-getid" name="GetId" returns="string" params="IEnumerable<JsonSchema>" signature="public static string GetId(IEnumerable<JsonSchema> schemata)">
         <template #name><h3>GetId</h3></template>
 
         <template #parameters>

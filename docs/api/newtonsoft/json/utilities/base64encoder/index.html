@@ -208,27 +208,27 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-base64linesize" name="Base64LineSize" type="System.Int32" access="private" signature="private const static Int32 Base64LineSize">
+    <doc-member id="field-base64linesize" name="Base64LineSize" type="int" access="private" signature="private const static int Base64LineSize">
         <template #name><h3>Base64LineSize</h3></template>
     </doc-member>
 
-<doc-member id="field-linesizeinbytes" name="LineSizeInBytes" type="System.Int32" access="private" signature="private const static Int32 LineSizeInBytes">
+    <doc-member id="field-linesizeinbytes" name="LineSizeInBytes" type="int" access="private" signature="private const static int LineSizeInBytes">
         <template #name><h3>LineSizeInBytes</h3></template>
     </doc-member>
 
-<doc-member id="field-_charsline" name="_charsLine" type="System.Char[]" access="private" signature="private readonly Char[] _charsLine">
+    <doc-member id="field-_charsline" name="_charsLine" type="char[]" access="private" signature="private readonly char[] _charsLine">
         <template #name><h3>_charsLine</h3></template>
     </doc-member>
 
-<doc-member id="field-_writer" name="_writer" type="TextWriter" access="private" signature="private readonly TextWriter _writer">
+    <doc-member id="field-_writer" name="_writer" type="TextWriter" access="private" signature="private readonly TextWriter _writer">
         <template #name><h3>_writer</h3></template>
     </doc-member>
 
-<doc-member id="field-_leftoverbytes" name="_leftOverBytes" type="System.Byte[]" access="private" signature="private Byte[] _leftOverBytes">
+    <doc-member id="field-_leftoverbytes" name="_leftOverBytes" type="byte[]" access="private" signature="private byte[] _leftOverBytes">
         <template #name><h3>_leftOverBytes</h3></template>
     </doc-member>
 
-<doc-member id="field-_leftoverbytescount" name="_leftOverBytesCount" type="System.Int32" access="private" signature="private Int32 _leftOverBytesCount">
+    <doc-member id="field-_leftoverbytescount" name="_leftOverBytesCount" type="int" access="private" signature="private int _leftOverBytesCount">
         <template #name><h3>_leftOverBytesCount</h3></template>
     </doc-member>
 </doc-member-group>
@@ -236,7 +236,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="TextWriter" signature="public Base64Encoder(TextWriter writer)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="TextWriter" signature="public Base64Encoder(TextWriter writer)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -246,101 +246,101 @@
         </template>
     </doc-member>
 
-<doc-member id="method-validateencode" name="ValidateEncode" returns="System.Void" params="Byte[], Int32, Int32" access="private" signature="private Void ValidateEncode(Byte[] buffer, Int32 index, Int32 count)">
-        <template #name><h3>ValidateEncode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="buffer" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-encode" name="Encode" returns="System.Void" params="Byte[], Int32, Int32" signature="public Void Encode(Byte[] buffer, Int32 index, Int32 count)">
+    <doc-member id="method-encode" name="Encode" returns="void" params="byte[], int, int" signature="public void Encode(byte[] buffer, int index, int count)">
         <template #name><h3>Encode</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="buffer" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+                <doc-parameter name="buffer" type="byte[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-storeleftoverbytes" name="StoreLeftOverBytes" returns="System.Void" params="Byte[], Int32, Int32" access="private" signature="private Void StoreLeftOverBytes(Byte[] buffer, Int32 index, Int32 count)">
-        <template #name><h3>StoreLeftOverBytes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="buffer" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-fulfillfromleftover" name="FulfillFromLeftover" returns="System.Boolean" params="Byte[], Int32, Int32" access="private" signature="private Boolean FulfillFromLeftover(Byte[] buffer, Int32 index, Int32 count)">
-        <template #name><h3>FulfillFromLeftover</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="buffer" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-flush" name="Flush" returns="System.Void" signature="public Void Flush()">
-        <template #name><h3>Flush</h3></template>
-    </doc-member>
-
-<doc-member id="method-writechars" name="WriteChars" returns="System.Void" params="Char[], Int32, Int32" access="private" signature="private Void WriteChars(Char[] chars, Int32 index, Int32 count)">
-        <template #name><h3>WriteChars</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-encodeasync" name="EncodeAsync" returns="Task" params="Byte[], Int32, Int32, CancellationToken" signature="public async Task EncodeAsync(Byte[] buffer, Int32 index, Int32 count, CancellationToken cancellationToken)">
+    <doc-member id="method-encodeasync" name="EncodeAsync" returns="Task" params="byte[], int, int, CancellationToken" signature="public async Task EncodeAsync(byte[] buffer, int index, int count, CancellationToken cancellationToken)">
         <template #name><h3>EncodeAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="buffer" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
+                <doc-parameter name="buffer" type="byte[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-writecharsasync" name="WriteCharsAsync" returns="Task" params="Char[], Int32, Int32, CancellationToken" access="private" signature="private Task WriteCharsAsync(Char[] chars, Int32 index, Int32 count, CancellationToken cancellationToken)">
-        <template #name><h3>WriteCharsAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="chars" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
+    <doc-member id="method-flush" name="Flush" returns="void" signature="public void Flush()">
+        <template #name><h3>Flush</h3></template>
     </doc-member>
 
-<doc-member id="method-flushasync" name="FlushAsync" returns="Task" params="CancellationToken" signature="public Task FlushAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-flushasync" name="FlushAsync" returns="Task" params="CancellationToken" signature="public Task FlushAsync(CancellationToken cancellationToken)">
         <template #name><h3>FlushAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-fulfillfromleftover" name="FulfillFromLeftover" returns="bool" params="byte[], int, int" access="private" signature="private bool FulfillFromLeftover(byte[] buffer, int index, int count)">
+        <template #name><h3>FulfillFromLeftover</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="buffer" type="byte[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-storeleftoverbytes" name="StoreLeftOverBytes" returns="void" params="byte[], int, int" access="private" signature="private void StoreLeftOverBytes(byte[] buffer, int index, int count)">
+        <template #name><h3>StoreLeftOverBytes</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="buffer" type="byte[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validateencode" name="ValidateEncode" returns="void" params="byte[], int, int" access="private" signature="private void ValidateEncode(byte[] buffer, int index, int count)">
+        <template #name><h3>ValidateEncode</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="buffer" type="byte[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writechars" name="WriteChars" returns="void" params="char[], int, int" access="private" signature="private void WriteChars(char[] chars, int index, int count)">
+        <template #name><h3>WriteChars</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writecharsasync" name="WriteCharsAsync" returns="Task" params="char[], int, int, CancellationToken" access="private" signature="private Task WriteCharsAsync(char[] chars, int index, int count, CancellationToken cancellationToken)">
+        <template #name><h3>WriteCharsAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="chars" type="char[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>

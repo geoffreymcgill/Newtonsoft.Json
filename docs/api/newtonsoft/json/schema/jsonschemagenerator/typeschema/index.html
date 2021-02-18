@@ -208,11 +208,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-type" name="Type" type="Type" signature="public Type Type { get; }">
+    <doc-member id="property-type" name="Type" type="Type" signature="public Type Type { get; }">
         <template #name><h3>Type</h3></template>
     </doc-member>
 
-<doc-member id="property-schema" name="Schema" type="Newtonsoft.Json.Schema.JsonSchema" signature="public JsonSchema Schema { get; }">
+    <doc-member id="property-schema" name="Schema" type="JsonSchema" signature="public JsonSchema Schema { get; }">
         <template #name><h3>Schema</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,7 +220,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type, JsonSchema" signature="public TypeSchema(Type type, JsonSchema schema)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Type, JsonSchema" signature="public TypeSchema(Type type, JsonSchema schema)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>

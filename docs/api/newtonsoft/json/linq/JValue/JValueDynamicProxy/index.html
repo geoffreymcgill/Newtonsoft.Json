@@ -208,27 +208,27 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-tryconvert" name="TryConvert" returns="System.Boolean" params="JValue, ConvertBinder, Nullable<Object>" signature="public sealed Boolean TryConvert(JValue instance, ConvertBinder binder, Nullable<Object> result)">
-        <template #name><h3>TryConvert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="System.Boolean" params="JValue, BinaryOperationBinder, Object, Nullable<Object>" signature="public sealed Boolean TryBinaryOperation(JValue instance, BinaryOperationBinder binder, Object arg, Nullable<Object> result)">
+    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="JValue, BinaryOperationBinder, object, object?" signature="public sealed bool TryBinaryOperation(JValue instance, BinaryOperationBinder binder, object arg, object? result)">
         <template #name><h3>TryBinaryOperation</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
                 <doc-parameter name="binder" type="BinaryOperationBinder"></doc-parameter>
-                <doc-parameter name="arg" type="System.Object"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="arg" type="object"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="JValue, ConvertBinder, object?" signature="public sealed bool TryConvert(JValue instance, ConvertBinder binder, object? result)">
+        <template #name><h3>TryConvert</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
+                <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

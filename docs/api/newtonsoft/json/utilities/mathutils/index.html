@@ -208,66 +208,68 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-intlength" name="IntLength" returns="System.Int32" params="UInt64" signature="public static Int32 IntLength(UInt64 i)">
-        <template #name><h3>IntLength</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="i" type="System.UInt64"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-inttohex" name="IntToHex" returns="System.Char" params="Int32" signature="public static Char IntToHex(Int32 n)">
-        <template #name><h3>IntToHex</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="n" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-min" name="Min" returns="System.Nullable<System.Int32>" params="Nullable<Int32>, Nullable<Int32>" signature="public static Nullable<Int32> Min(Nullable<Int32> val1, Nullable<Int32> val2)">
-        <template #name><h3>Min</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="val1" type="System.Nullable<System.Int32>"></doc-parameter>
-                <doc-parameter name="val2" type="System.Nullable<System.Int32>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-max" name="Max" returns="System.Nullable<System.Int32>" params="Nullable<Int32>, Nullable<Int32>" signature="public static Nullable<Int32> Max(Nullable<Int32> val1, Nullable<Int32> val2)">
-        <template #name><h3>Max</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="val1" type="System.Nullable<System.Int32>"></doc-parameter>
-                <doc-parameter name="val2" type="System.Nullable<System.Int32>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-max" name="Max" returns="System.Nullable<System.Double>" params="Nullable<Double>, Nullable<Double>" signature="public static Nullable<Double> Max(Nullable<Double> val1, Nullable<Double> val2)">
-        <template #name><h3>Max</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="val1" type="System.Nullable<System.Double>"></doc-parameter>
-                <doc-parameter name="val2" type="System.Nullable<System.Double>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-approxequals" name="ApproxEquals" returns="System.Boolean" params="Double, Double" signature="public static Boolean ApproxEquals(Double d1, Double d2)">
+    <doc-member id="method-approxequals" name="ApproxEquals" returns="bool" params="double, double" signature="public static bool ApproxEquals(double d1, double d2)">
         <template #name><h3>ApproxEquals</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="d1" type="System.Double"></doc-parameter>
-                <doc-parameter name="d2" type="System.Double"></doc-parameter>
+                <doc-parameter name="d1" type="double"></doc-parameter>
+                <doc-parameter name="d2" type="double"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-intlength" name="IntLength" returns="int" params="ulong" signature="public static int IntLength(ulong i)">
+        <template #name><h3>IntLength</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="i" type="ulong"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-inttohex" name="IntToHex" returns="char" params="int" signature="public static char IntToHex(int n)">
+        <template #name><h3>IntToHex</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="n" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-max">
+        <doc-member id="method-max" overload-id="group-max" name="Max" returns="int?" params="int?, int?" signature="public static int? Max(int? val1, int? val2)">
+            <template #name><h3>Max</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="val1" type="int?"></doc-parameter>
+                    <doc-parameter name="val2" type="int?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-max-1" overload-id="group-max" name="Max" returns="double?" params="double?, double?" signature="public static double? Max(double? val1, double? val2)">
+            <template #name><h3>Max</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="val1" type="double?"></doc-parameter>
+                    <doc-parameter name="val2" type="double?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-min" name="Min" returns="int?" params="int?, int?" signature="public static int? Min(int? val1, int? val2)">
+        <template #name><h3>Min</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="val1" type="int?"></doc-parameter>
+                <doc-parameter name="val2" type="int?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-value" name="Value" type="Expression" signature="public Expression Value">
+    <doc-member id="field-value" name="Value" type="Expression" signature="public Expression Value">
         <template #name><h3>Value</h3></template>
     </doc-member>
 
-<doc-member id="field-variable" name="Variable" type="ParameterExpression" signature="public ParameterExpression Variable">
+    <doc-member id="field-variable" name="Variable" type="ParameterExpression" signature="public ParameterExpression Variable">
         <template #name><h3>Variable</h3></template>
     </doc-member>
 
-<doc-member id="field-isout" name="IsOut" type="System.Boolean" signature="public Boolean IsOut">
+    <doc-member id="field-isout" name="IsOut" type="bool" signature="public bool IsOut">
         <template #name><h3>IsOut</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,14 +224,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Expression, ParameterExpression, Boolean" signature="public ByRefParameter(Expression value, ParameterExpression variable, Boolean isOut)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Expression, ParameterExpression, bool" signature="public ByRefParameter(Expression value, ParameterExpression variable, bool isOut)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="value" type="Expression"></doc-parameter>
                 <doc-parameter name="variable" type="ParameterExpression"></doc-parameter>
-                <doc-parameter name="isOut" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="isOut" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

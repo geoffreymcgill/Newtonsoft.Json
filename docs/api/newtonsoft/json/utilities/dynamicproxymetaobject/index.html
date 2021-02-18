@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_proxy" name="_proxy" type="Newtonsoft.Json.Utilities.DynamicProxy<T>" access="private" signature="private readonly DynamicProxy<T> _proxy">
+    <doc-member id="field-_proxy" name="_proxy" type="DynamicProxy<T>" access="private" signature="private readonly DynamicProxy<T> _proxy">
         <template #name><h3>_proxy</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-noargs" name="NoArgs" type="Expression[]" access="private" signature="private static Expression[] NoArgs { private get; }">
+    <doc-member id="property-noargs" name="NoArgs" type="Expression[]" access="private" signature="private static Expression[] NoArgs { private get; }">
         <template #name><h3>NoArgs</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Expression, T, DynamicProxy<T>" access="internal" signature="internal DynamicProxyMetaObject(Expression expression, T value, DynamicProxy<T> proxy)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Expression, T, DynamicProxy<T>" access="internal" signature="internal DynamicProxyMetaObject(Expression expression, T value, DynamicProxy<T> proxy)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -236,91 +236,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-isoverridden" name="IsOverridden" returns="System.Boolean" params="String" access="private" signature="private Boolean IsOverridden(String method)">
-        <template #name><h3>IsOverridden</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindgetmember" name="BindGetMember" returns="DynamicMetaObject" params="GetMemberBinder" signature="public sealed DynamicMetaObject BindGetMember(GetMemberBinder binder)">
-        <template #name><h3>BindGetMember</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="GetMemberBinder"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindsetmember" name="BindSetMember" returns="DynamicMetaObject" params="SetMemberBinder, DynamicMetaObject" signature="public sealed DynamicMetaObject BindSetMember(SetMemberBinder binder, DynamicMetaObject value)">
-        <template #name><h3>BindSetMember</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="SetMemberBinder"></doc-parameter>
-                <doc-parameter name="value" type="DynamicMetaObject"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-binddeletemember" name="BindDeleteMember" returns="DynamicMetaObject" params="DeleteMemberBinder" signature="public sealed DynamicMetaObject BindDeleteMember(DeleteMemberBinder binder)">
-        <template #name><h3>BindDeleteMember</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="DeleteMemberBinder"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindconvert" name="BindConvert" returns="DynamicMetaObject" params="ConvertBinder" signature="public sealed DynamicMetaObject BindConvert(ConvertBinder binder)">
-        <template #name><h3>BindConvert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindinvokemember" name="BindInvokeMember" returns="DynamicMetaObject" params="InvokeMemberBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindInvokeMember(InvokeMemberBinder binder, DynamicMetaObject[] args)">
-        <template #name><h3>BindInvokeMember</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="InvokeMemberBinder"></doc-parameter>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindcreateinstance" name="BindCreateInstance" returns="DynamicMetaObject" params="CreateInstanceBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindCreateInstance(CreateInstanceBinder binder, DynamicMetaObject[] args)">
-        <template #name><h3>BindCreateInstance</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="CreateInstanceBinder"></doc-parameter>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindinvoke" name="BindInvoke" returns="DynamicMetaObject" params="InvokeBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindInvoke(InvokeBinder binder, DynamicMetaObject[] args)">
-        <template #name><h3>BindInvoke</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binder" type="InvokeBinder"></doc-parameter>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindbinaryoperation" name="BindBinaryOperation" returns="DynamicMetaObject" params="BinaryOperationBinder, DynamicMetaObject" signature="public sealed DynamicMetaObject BindBinaryOperation(BinaryOperationBinder binder, DynamicMetaObject arg)">
+    <doc-member id="method-bindbinaryoperation" name="BindBinaryOperation" returns="DynamicMetaObject" params="BinaryOperationBinder, DynamicMetaObject" signature="public sealed DynamicMetaObject BindBinaryOperation(BinaryOperationBinder binder, DynamicMetaObject arg)">
         <template #name><h3>BindBinaryOperation</h3></template>
 
         <template #parameters>
@@ -331,17 +247,49 @@
         </template>
     </doc-member>
 
-<doc-member id="method-bindunaryoperation" name="BindUnaryOperation" returns="DynamicMetaObject" params="UnaryOperationBinder" signature="public sealed DynamicMetaObject BindUnaryOperation(UnaryOperationBinder binder)">
-        <template #name><h3>BindUnaryOperation</h3></template>
+    <doc-member id="method-bindconvert" name="BindConvert" returns="DynamicMetaObject" params="ConvertBinder" signature="public sealed DynamicMetaObject BindConvert(ConvertBinder binder)">
+        <template #name><h3>BindConvert</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="binder" type="UnaryOperationBinder"></doc-parameter>
+                <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-bindgetindex" name="BindGetIndex" returns="DynamicMetaObject" params="GetIndexBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindGetIndex(GetIndexBinder binder, DynamicMetaObject[] indexes)">
+    <doc-member id="method-bindcreateinstance" name="BindCreateInstance" returns="DynamicMetaObject" params="CreateInstanceBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindCreateInstance(CreateInstanceBinder binder, DynamicMetaObject[] args)">
+        <template #name><h3>BindCreateInstance</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="CreateInstanceBinder"></doc-parameter>
+                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-binddeleteindex" name="BindDeleteIndex" returns="DynamicMetaObject" params="DeleteIndexBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindDeleteIndex(DeleteIndexBinder binder, DynamicMetaObject[] indexes)">
+        <template #name><h3>BindDeleteIndex</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="DeleteIndexBinder"></doc-parameter>
+                <doc-parameter name="indexes" type="DynamicMetaObject[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-binddeletemember" name="BindDeleteMember" returns="DynamicMetaObject" params="DeleteMemberBinder" signature="public sealed DynamicMetaObject BindDeleteMember(DeleteMemberBinder binder)">
+        <template #name><h3>BindDeleteMember</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="DeleteMemberBinder"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-bindgetindex" name="BindGetIndex" returns="DynamicMetaObject" params="GetIndexBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindGetIndex(GetIndexBinder binder, DynamicMetaObject[] indexes)">
         <template #name><h3>BindGetIndex</h3></template>
 
         <template #parameters>
@@ -352,7 +300,39 @@
         </template>
     </doc-member>
 
-<doc-member id="method-bindsetindex" name="BindSetIndex" returns="DynamicMetaObject" params="SetIndexBinder, DynamicMetaObject[], DynamicMetaObject" signature="public sealed DynamicMetaObject BindSetIndex(SetIndexBinder binder, DynamicMetaObject[] indexes, DynamicMetaObject value)">
+    <doc-member id="method-bindgetmember" name="BindGetMember" returns="DynamicMetaObject" params="GetMemberBinder" signature="public sealed DynamicMetaObject BindGetMember(GetMemberBinder binder)">
+        <template #name><h3>BindGetMember</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="GetMemberBinder"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-bindinvoke" name="BindInvoke" returns="DynamicMetaObject" params="InvokeBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindInvoke(InvokeBinder binder, DynamicMetaObject[] args)">
+        <template #name><h3>BindInvoke</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="InvokeBinder"></doc-parameter>
+                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-bindinvokemember" name="BindInvokeMember" returns="DynamicMetaObject" params="InvokeMemberBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindInvokeMember(InvokeMemberBinder binder, DynamicMetaObject[] args)">
+        <template #name><h3>BindInvokeMember</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="InvokeMemberBinder"></doc-parameter>
+                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-bindsetindex" name="BindSetIndex" returns="DynamicMetaObject" params="SetIndexBinder, DynamicMetaObject[], DynamicMetaObject" signature="public sealed DynamicMetaObject BindSetIndex(SetIndexBinder binder, DynamicMetaObject[] indexes, DynamicMetaObject value)">
         <template #name><h3>BindSetIndex</h3></template>
 
         <template #parameters>
@@ -364,114 +344,47 @@
         </template>
     </doc-member>
 
-<doc-member id="method-binddeleteindex" name="BindDeleteIndex" returns="DynamicMetaObject" params="DeleteIndexBinder, DynamicMetaObject[]" signature="public sealed DynamicMetaObject BindDeleteIndex(DeleteIndexBinder binder, DynamicMetaObject[] indexes)">
-        <template #name><h3>BindDeleteIndex</h3></template>
+    <doc-member id="method-bindsetmember" name="BindSetMember" returns="DynamicMetaObject" params="SetMemberBinder, DynamicMetaObject" signature="public sealed DynamicMetaObject BindSetMember(SetMemberBinder binder, DynamicMetaObject value)">
+        <template #name><h3>BindSetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="binder" type="DeleteIndexBinder"></doc-parameter>
-                <doc-parameter name="indexes" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getargs" name="GetArgs" returns="IEnumerable<Expression>" params="DynamicMetaObject[]" access="private" signature="private static IEnumerable<Expression> GetArgs(DynamicMetaObject[] args)">
-        <template #name><h3>GetArgs</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getargarray" name="GetArgArray" returns="Expression[]" params="DynamicMetaObject[]" access="private" signature="private static Expression[] GetArgArray(DynamicMetaObject[] args)">
-        <template #name><h3>GetArgArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getargarray" name="GetArgArray" returns="Expression[]" params="DynamicMetaObject[], DynamicMetaObject" access="private" signature="private static Expression[] GetArgArray(DynamicMetaObject[] args, DynamicMetaObject value)">
-        <template #name><h3>GetArgArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+                <doc-parameter name="binder" type="SetMemberBinder"></doc-parameter>
                 <doc-parameter name="value" type="DynamicMetaObject"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-constant" name="Constant" returns="ConstantExpression" params="DynamicMetaObjectBinder" access="private" signature="private static ConstantExpression Constant(DynamicMetaObjectBinder binder)">
-        <template #name><h3>Constant</h3></template>
+    <doc-member id="method-bindunaryoperation" name="BindUnaryOperation" returns="DynamicMetaObject" params="UnaryOperationBinder" signature="public sealed DynamicMetaObject BindUnaryOperation(UnaryOperationBinder binder)">
+        <template #name><h3>BindUnaryOperation</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
+                <doc-parameter name="binder" type="UnaryOperationBinder"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-callmethodwithresult" name="CallMethodWithResult" returns="DynamicMetaObject" params="String, DynamicMetaObjectBinder, IEnumerable<Expression>, Fallback, Fallback" access="private" signature="private DynamicMetaObject CallMethodWithResult(String methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, Fallback fallback, Fallback fallbackInvoke = null)">
-        <template #name><h3>CallMethodWithResult</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="methodName" type="System.String"></doc-parameter>
-                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
-                <doc-parameter name="args" type="IEnumerable<Expression>"></doc-parameter>
-                <doc-parameter name="fallback" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
-                <doc-parameter name="fallbackInvoke" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Helper method for generating a MetaObject which calls a
-specific method on Dynamic that returns a result</p>
-
-    </doc-member>
-
-<doc-member id="method-buildcallmethodwithresult" name="BuildCallMethodWithResult" returns="DynamicMetaObject" params="String, DynamicMetaObjectBinder, IEnumerable<Expression>, DynamicMetaObject, Fallback" access="private" signature="private DynamicMetaObject BuildCallMethodWithResult(String methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, DynamicMetaObject fallbackResult, Fallback fallbackInvoke)">
+    <doc-member id="method-buildcallmethodwithresult" name="BuildCallMethodWithResult" returns="DynamicMetaObject" params="string, DynamicMetaObjectBinder, IEnumerable<Expression>, DynamicMetaObject, Fallback?" access="private" signature="private DynamicMetaObject BuildCallMethodWithResult(string methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, DynamicMetaObject fallbackResult, Fallback? fallbackInvoke)">
         <template #name><h3>BuildCallMethodWithResult</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="methodName" type="System.String"></doc-parameter>
+                <doc-parameter name="methodName" type="string"></doc-parameter>
                 <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
                 <doc-parameter name="args" type="IEnumerable<Expression>"></doc-parameter>
                 <doc-parameter name="fallbackResult" type="DynamicMetaObject"></doc-parameter>
-                <doc-parameter name="fallbackInvoke" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
+                <doc-parameter name="fallbackInvoke" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-callmethodreturnlast" name="CallMethodReturnLast" returns="DynamicMetaObject" params="String, DynamicMetaObjectBinder, IEnumerable<Expression>, Fallback" access="private" signature="private DynamicMetaObject CallMethodReturnLast(String methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, Fallback fallback)">
-        <template #name><h3>CallMethodReturnLast</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="methodName" type="System.String"></doc-parameter>
-                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
-                <doc-parameter name="args" type="IEnumerable<Expression>"></doc-parameter>
-                <doc-parameter name="fallback" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Helper method for generating a MetaObject which calls a
-specific method on Dynamic, but uses one of the arguments for
-the result.</p>
-
-    </doc-member>
-
-<doc-member id="method-callmethodnoresult" name="CallMethodNoResult" returns="DynamicMetaObject" params="String, DynamicMetaObjectBinder, Expression[], Fallback" access="private" signature="private DynamicMetaObject CallMethodNoResult(String methodName, DynamicMetaObjectBinder binder, Expression[] args, Fallback fallback)">
+    <doc-member id="method-callmethodnoresult" name="CallMethodNoResult" returns="DynamicMetaObject" params="string, DynamicMetaObjectBinder, Expression[], Fallback" access="private" signature="private DynamicMetaObject CallMethodNoResult(string methodName, DynamicMetaObjectBinder binder, Expression[] args, Fallback fallback)">
         <template #name><h3>CallMethodNoResult</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="methodName" type="System.String"></doc-parameter>
+                <doc-parameter name="methodName" type="string"></doc-parameter>
                 <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
                 <doc-parameter name="args" type="Expression[]"></doc-parameter>
                 <doc-parameter name="fallback" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
@@ -484,7 +397,90 @@ the result.</p>
 
     </doc-member>
 
-<doc-member id="method-getrestrictions" name="GetRestrictions" returns="BindingRestrictions" access="private" signature="private BindingRestrictions GetRestrictions()">
+    <doc-member id="method-callmethodreturnlast" name="CallMethodReturnLast" returns="DynamicMetaObject" params="string, DynamicMetaObjectBinder, IEnumerable<Expression>, Fallback" access="private" signature="private DynamicMetaObject CallMethodReturnLast(string methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, Fallback fallback)">
+        <template #name><h3>CallMethodReturnLast</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="methodName" type="string"></doc-parameter>
+                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
+                <doc-parameter name="args" type="IEnumerable<Expression>"></doc-parameter>
+                <doc-parameter name="fallback" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Helper method for generating a MetaObject which calls a
+specific method on Dynamic, but uses one of the arguments for
+the result.</p>
+
+    </doc-member>
+
+    <doc-member id="method-callmethodwithresult" name="CallMethodWithResult" returns="DynamicMetaObject" params="string, DynamicMetaObjectBinder, IEnumerable<Expression>, Fallback, Fallback?" access="private" signature="private DynamicMetaObject CallMethodWithResult(string methodName, DynamicMetaObjectBinder binder, IEnumerable<Expression> args, Fallback fallback, Fallback? fallbackInvoke = null)">
+        <template #name><h3>CallMethodWithResult</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="methodName" type="string"></doc-parameter>
+                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
+                <doc-parameter name="args" type="IEnumerable<Expression>"></doc-parameter>
+                <doc-parameter name="fallback" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback"></doc-parameter>
+                <doc-parameter name="fallbackInvoke" type="Newtonsoft.Json.Utilities.DynamicProxyMetaObject.Fallback?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Helper method for generating a MetaObject which calls a
+specific method on Dynamic that returns a result</p>
+
+    </doc-member>
+
+    <doc-member id="method-constant" name="Constant" returns="ConstantExpression" params="DynamicMetaObjectBinder" access="private" signature="private static ConstantExpression Constant(DynamicMetaObjectBinder binder)">
+        <template #name><h3>Constant</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="binder" type="DynamicMetaObjectBinder"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-getargarray">
+        <doc-member id="method-getargarray" overload-id="group-getargarray" name="GetArgArray" returns="Expression[]" params="DynamicMetaObject[]" access="private" signature="private static Expression[] GetArgArray(DynamicMetaObject[] args)">
+            <template #name><h3>GetArgArray</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-getargarray-1" overload-id="group-getargarray" name="GetArgArray" returns="Expression[]" params="DynamicMetaObject[], DynamicMetaObject" access="private" signature="private static Expression[] GetArgArray(DynamicMetaObject[] args, DynamicMetaObject value)">
+            <template #name><h3>GetArgArray</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+                    <doc-parameter name="value" type="DynamicMetaObject"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-getargs" name="GetArgs" returns="IEnumerable<Expression>" params="DynamicMetaObject[]" access="private" signature="private static IEnumerable<Expression> GetArgs(DynamicMetaObject[] args)">
+        <template #name><h3>GetArgs</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="args" type="DynamicMetaObject[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<string>" signature="public sealed IEnumerable<string> GetDynamicMemberNames()">
+        <template #name><h3>GetDynamicMemberNames</h3></template>
+    </doc-member>
+
+    <doc-member id="method-getrestrictions" name="GetRestrictions" returns="BindingRestrictions" access="private" signature="private BindingRestrictions GetRestrictions()">
         <template #name><h3>GetRestrictions</h3></template>
 
 <p>Returns a Restrictions object which includes our current restrictions merged
@@ -492,8 +488,14 @@ with a restriction limiting our type</p>
 
     </doc-member>
 
-<doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<System.String>" signature="public sealed IEnumerable<String> GetDynamicMemberNames()">
-        <template #name><h3>GetDynamicMemberNames</h3></template>
+    <doc-member id="method-isoverridden" name="IsOverridden" returns="bool" params="string" access="private" signature="private bool IsOverridden(string method)">
+        <template #name><h3>IsOverridden</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="method" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
     </doc-member>
 </doc-member-group>
 

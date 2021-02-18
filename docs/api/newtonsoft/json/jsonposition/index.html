@@ -208,23 +208,23 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-specialcharacters" name="SpecialCharacters" type="System.Char[]" access="private" signature="private readonly static Char[] SpecialCharacters">
+    <doc-member id="field-specialcharacters" name="SpecialCharacters" type="char[]" access="private" signature="private readonly static char[] SpecialCharacters">
         <template #name><h3>SpecialCharacters</h3></template>
     </doc-member>
 
-<doc-member id="field-type" name="Type" type="Newtonsoft.Json.JsonContainerType" access="internal" signature="internal JsonContainerType Type">
+    <doc-member id="field-type" name="Type" type="JsonContainerType" access="internal" signature="internal JsonContainerType Type">
         <template #name><h3>Type</h3></template>
     </doc-member>
 
-<doc-member id="field-position" name="Position" type="System.Int32" access="internal" signature="internal Int32 Position">
+    <doc-member id="field-position" name="Position" type="int" access="internal" signature="internal int Position">
         <template #name><h3>Position</h3></template>
     </doc-member>
 
-<doc-member id="field-propertyname" name="PropertyName" type="System.Nullable<System.String>" access="internal" signature="internal Nullable<String> PropertyName">
+    <doc-member id="field-propertyname" name="PropertyName" type="string?" access="internal" signature="internal string? PropertyName">
         <template #name><h3>PropertyName</h3></template>
     </doc-member>
 
-<doc-member id="field-hasindex" name="HasIndex" type="System.Boolean" access="internal" signature="internal Boolean HasIndex">
+    <doc-member id="field-hasindex" name="HasIndex" type="bool" access="internal" signature="internal bool HasIndex">
         <template #name><h3>HasIndex</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,7 +232,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonContainerType" signature="public JsonPosition(JsonContainerType type)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonContainerType" signature="public JsonPosition(JsonContainerType type)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -242,23 +242,34 @@
         </template>
     </doc-member>
 
-<doc-member id="method-calculatelength" name="CalculateLength" returns="System.Int32" access="internal" signature="internal Int32 CalculateLength()">
-        <template #name><h3>CalculateLength</h3></template>
-    </doc-member>
-
-<doc-member id="method-writeto" name="WriteTo" returns="System.Void" params="StringBuilder, Nullable<StringWriter>, Char[]" access="internal" signature="internal Void WriteTo(StringBuilder sb, Nullable<StringWriter> writer, Char[] buffer)">
-        <template #name><h3>WriteTo</h3></template>
+    <doc-member id="method-buildpath" name="BuildPath" returns="string" params="List<JsonPosition>, JsonPosition?" access="internal" signature="internal static string BuildPath(List<JsonPosition> positions, JsonPosition? currentPosition)">
+        <template #name><h3>BuildPath</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="sb" type="StringBuilder"></doc-parameter>
-                <doc-parameter name="writer" type="System.Nullable<StringWriter>"></doc-parameter>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
+                <doc-parameter name="positions" type="List<Newtonsoft.Json.JsonPosition>"></doc-parameter>
+                <doc-parameter name="currentPosition" type="Newtonsoft.Json.JsonPosition?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-typehasindex" name="TypeHasIndex" returns="System.Boolean" params="JsonContainerType" access="internal" signature="internal static Boolean TypeHasIndex(JsonContainerType type)">
+    <doc-member id="method-calculatelength" name="CalculateLength" returns="int" access="internal" signature="internal int CalculateLength()">
+        <template #name><h3>CalculateLength</h3></template>
+    </doc-member>
+
+    <doc-member id="method-formatmessage" name="FormatMessage" returns="string" params="IJsonLineInfo?, string, string" access="internal" signature="internal static string FormatMessage(IJsonLineInfo? lineInfo, string path, string message)">
+        <template #name><h3>FormatMessage</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
+                <doc-parameter name="path" type="string"></doc-parameter>
+                <doc-parameter name="message" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-typehasindex" name="TypeHasIndex" returns="bool" params="JsonContainerType" access="internal" signature="internal static bool TypeHasIndex(JsonContainerType type)">
         <template #name><h3>TypeHasIndex</h3></template>
 
         <template #parameters>
@@ -268,25 +279,14 @@
         </template>
     </doc-member>
 
-<doc-member id="method-buildpath" name="BuildPath" returns="System.String" params="List<JsonPosition>, Nullable<JsonPosition>" access="internal" signature="internal static String BuildPath(List<JsonPosition> positions, Nullable<JsonPosition> currentPosition)">
-        <template #name><h3>BuildPath</h3></template>
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="StringBuilder, StringWriter?, char[]" access="internal" signature="internal void WriteTo(StringBuilder sb, StringWriter? writer, char[] buffer)">
+        <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="positions" type="List<Newtonsoft.Json.JsonPosition>"></doc-parameter>
-                <doc-parameter name="currentPosition" type="System.Nullable<Newtonsoft.Json.JsonPosition>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-formatmessage" name="FormatMessage" returns="System.String" params="IJsonLineInfo, String, String" access="internal" signature="internal static String FormatMessage(IJsonLineInfo lineInfo, String path, String message)">
-        <template #name><h3>FormatMessage</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo"></doc-parameter>
-                <doc-parameter name="path" type="System.String"></doc-parameter>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
+                <doc-parameter name="sb" type="StringBuilder"></doc-parameter>
+                <doc-parameter name="writer" type="StringWriter?"></doc-parameter>
+                <doc-parameter name="buffer" type="char[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

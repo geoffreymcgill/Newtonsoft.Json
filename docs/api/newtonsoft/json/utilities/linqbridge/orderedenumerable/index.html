@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_source" name="_source" type="IEnumerable<T>" access="private" signature="private readonly IEnumerable<T> _source">
+    <doc-member id="field-_source" name="_source" type="IEnumerable<T>" access="private" signature="private readonly IEnumerable<T> _source">
         <template #name><h3>_source</h3></template>
     </doc-member>
 
-<doc-member id="field-_comparisons" name="_comparisons" type="List<Comparison<T>>" access="private" signature="private readonly List<Comparison<T>> _comparisons">
+    <doc-member id="field-_comparisons" name="_comparisons" type="List<Comparison<T>>" access="private" signature="private readonly List<Comparison<T>> _comparisons">
         <template #name><h3>_comparisons</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,66 +220,68 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEnumerable<T>, Func<T, K>, IComparer<K>, Boolean" signature="public OrderedEnumerable(IEnumerable<T> source, Func<T, K> keySelector, IComparer<K> comparer, Boolean descending)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="IEnumerable<T>, Func<T, K>, IComparer<K>, bool" signature="public OrderedEnumerable(IEnumerable<T> source, Func<T, K> keySelector, IComparer<K> comparer, bool descending)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<T, K>"></doc-parameter>
-                <doc-parameter name="comparer" type="IComparer<K>"></doc-parameter>
-                <doc-parameter name="descending" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                    <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<T, K>"></doc-parameter>
+                    <doc-parameter name="comparer" type="IComparer<K>"></doc-parameter>
+                    <doc-parameter name="descending" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEnumerable<T>, List<Comparison<T>>, Func<T, K>, IComparer<K>, Boolean" access="private" signature="private OrderedEnumerable(IEnumerable<T> source, List<Comparison<T>> comparisons, Func<T, K> keySelector, IComparer<K> comparer, Boolean descending)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="IEnumerable<T>, List<Comparison<T>>, Func<T, K>, IComparer<K>, bool" access="private" signature="private OrderedEnumerable(IEnumerable<T> source, List<Comparison<T>> comparisons, Func<T, K> keySelector, IComparer<K> comparer, bool descending)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-                <doc-parameter name="comparisons" type="List<Comparison<T>>"></doc-parameter>
-                <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<T, K>"></doc-parameter>
-                <doc-parameter name="comparer" type="IComparer<K>"></doc-parameter>
-                <doc-parameter name="descending" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                    <doc-parameter name="comparisons" type="List<Comparison<T>>"></doc-parameter>
+                    <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<T, K>"></doc-parameter>
+                    <doc-parameter name="comparer" type="IComparer<K>"></doc-parameter>
+                    <doc-parameter name="descending" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-createorderedenumerable" name="CreateOrderedEnumerable" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<T>" params="Func<T, KK>, IComparer<KK>, Boolean" signature="public IOrderedEnumerable<T> CreateOrderedEnumerable(Func<T, KK> keySelector, IComparer<KK> comparer, Boolean descending)">
+    <doc-member id="method-createorderedenumerable" name="CreateOrderedEnumerable" returns="IOrderedEnumerable<T>" params="Func<T, KK>, IComparer<KK>, bool" signature="public IOrderedEnumerable<T> CreateOrderedEnumerable(Func<T, KK> keySelector, IComparer<KK> comparer, bool descending)">
         <template #name><h3>CreateOrderedEnumerable</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<T, KK>"></doc-parameter>
                 <doc-parameter name="comparer" type="IComparer<KK>"></doc-parameter>
-                <doc-parameter name="descending" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="descending" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public IEnumerator<T> GetEnumerator()">
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public IEnumerator<T> GetEnumerator()">
         <template #name><h3>GetEnumerator</h3></template>
     </doc-member>
 
-<doc-member id="method-tagposition" name="TagPosition" returns="Newtonsoft.Json.Utilities.LinqBridge.Tuple<T, System.Int32>" params="T, Int32" access="private" signature="private static Tuple<T, Int32> TagPosition(T e, Int32 i)">
+    <doc-member id="method-getfirst" name="GetFirst" returns="T" params="Tuple<T, int>" access="private" signature="private static T GetFirst(Tuple<T, int> pv)">
+        <template #name><h3>GetFirst</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="pv" type="Newtonsoft.Json.Utilities.LinqBridge.Tuple<T, int>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tagposition" name="TagPosition" returns="Tuple<T, int>" params="T, int" access="private" signature="private static Tuple<T, int> TagPosition(T e, int i)">
         <template #name><h3>TagPosition</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="e" type="T"></doc-parameter>
-                <doc-parameter name="i" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getfirst" name="GetFirst" returns="T" params="Tuple<T, Int32>" access="private" signature="private static T GetFirst(Tuple<T, Int32> pv)">
-        <template #name><h3>GetFirst</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="pv" type="Newtonsoft.Json.Utilities.LinqBridge.Tuple<T, System.Int32>"></doc-parameter>
+                <doc-parameter name="i" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

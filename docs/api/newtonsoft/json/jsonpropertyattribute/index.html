@@ -211,47 +211,47 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_nullvaluehandling" name="_nullValueHandling" type="System.Nullable<Newtonsoft.Json.NullValueHandling>" access="internal" signature="internal Nullable<NullValueHandling> _nullValueHandling">
+    <doc-member id="field-_nullvaluehandling" name="_nullValueHandling" type="NullValueHandling?" access="internal" signature="internal NullValueHandling? _nullValueHandling">
         <template #name><h3>_nullValueHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_defaultvaluehandling" name="_defaultValueHandling" type="System.Nullable<Newtonsoft.Json.DefaultValueHandling>" access="internal" signature="internal Nullable<DefaultValueHandling> _defaultValueHandling">
+    <doc-member id="field-_defaultvaluehandling" name="_defaultValueHandling" type="DefaultValueHandling?" access="internal" signature="internal DefaultValueHandling? _defaultValueHandling">
         <template #name><h3>_defaultValueHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_referenceloophandling" name="_referenceLoopHandling" type="System.Nullable<Newtonsoft.Json.ReferenceLoopHandling>" access="internal" signature="internal Nullable<ReferenceLoopHandling> _referenceLoopHandling">
+    <doc-member id="field-_referenceloophandling" name="_referenceLoopHandling" type="ReferenceLoopHandling?" access="internal" signature="internal ReferenceLoopHandling? _referenceLoopHandling">
         <template #name><h3>_referenceLoopHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_objectcreationhandling" name="_objectCreationHandling" type="System.Nullable<Newtonsoft.Json.ObjectCreationHandling>" access="internal" signature="internal Nullable<ObjectCreationHandling> _objectCreationHandling">
+    <doc-member id="field-_objectcreationhandling" name="_objectCreationHandling" type="ObjectCreationHandling?" access="internal" signature="internal ObjectCreationHandling? _objectCreationHandling">
         <template #name><h3>_objectCreationHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_typenamehandling" name="_typeNameHandling" type="System.Nullable<Newtonsoft.Json.TypeNameHandling>" access="internal" signature="internal Nullable<TypeNameHandling> _typeNameHandling">
+    <doc-member id="field-_typenamehandling" name="_typeNameHandling" type="TypeNameHandling?" access="internal" signature="internal TypeNameHandling? _typeNameHandling">
         <template #name><h3>_typeNameHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_isreference" name="_isReference" type="System.Nullable<System.Boolean>" access="internal" signature="internal Nullable<Boolean> _isReference">
+    <doc-member id="field-_isreference" name="_isReference" type="bool?" access="internal" signature="internal bool? _isReference">
         <template #name><h3>_isReference</h3></template>
     </doc-member>
 
-<doc-member id="field-_order" name="_order" type="System.Nullable<System.Int32>" access="internal" signature="internal Nullable<Int32> _order">
+    <doc-member id="field-_order" name="_order" type="int?" access="internal" signature="internal int? _order">
         <template #name><h3>_order</h3></template>
     </doc-member>
 
-<doc-member id="field-_required" name="_required" type="System.Nullable<Newtonsoft.Json.Required>" access="internal" signature="internal Nullable<Required> _required">
+    <doc-member id="field-_required" name="_required" type="Required?" access="internal" signature="internal Required? _required">
         <template #name><h3>_required</h3></template>
     </doc-member>
 
-<doc-member id="field-_itemisreference" name="_itemIsReference" type="System.Nullable<System.Boolean>" access="internal" signature="internal Nullable<Boolean> _itemIsReference">
+    <doc-member id="field-_itemisreference" name="_itemIsReference" type="bool?" access="internal" signature="internal bool? _itemIsReference">
         <template #name><h3>_itemIsReference</h3></template>
     </doc-member>
 
-<doc-member id="field-_itemreferenceloophandling" name="_itemReferenceLoopHandling" type="System.Nullable<Newtonsoft.Json.ReferenceLoopHandling>" access="internal" signature="internal Nullable<ReferenceLoopHandling> _itemReferenceLoopHandling">
+    <doc-member id="field-_itemreferenceloophandling" name="_itemReferenceLoopHandling" type="ReferenceLoopHandling?" access="internal" signature="internal ReferenceLoopHandling? _itemReferenceLoopHandling">
         <template #name><h3>_itemReferenceLoopHandling</h3></template>
     </doc-member>
 
-<doc-member id="field-_itemtypenamehandling" name="_itemTypeNameHandling" type="System.Nullable<Newtonsoft.Json.TypeNameHandling>" access="internal" signature="internal Nullable<TypeNameHandling> _itemTypeNameHandling">
+    <doc-member id="field-_itemtypenamehandling" name="_itemTypeNameHandling" type="TypeNameHandling?" access="internal" signature="internal TypeNameHandling? _itemTypeNameHandling">
         <template #name><h3>_itemTypeNameHandling</h3></template>
     </doc-member>
 </doc-member-group>
@@ -259,14 +259,14 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-itemconvertertype" name="ItemConverterType" type="System.Nullable<Type>" signature="public Nullable<Type> ItemConverterType { get; set; }">
+    <doc-member id="property-itemconvertertype" name="ItemConverterType" type="Type?" signature="public Type? ItemConverterType { get; set; }">
         <template #name><h3>ItemConverterType</h3></template>
 
 <p>Gets or sets the <see cref="T:Newtonsoft.Json.JsonConverter"/> type used when serializing the property's collection items.</p>
 
     </doc-member>
 
-<doc-member id="property-itemconverterparameters" name="ItemConverterParameters" type="System.Object[]" signature="public Object[] ItemConverterParameters { get; set; }">
+    <doc-member id="property-itemconverterparameters" name="ItemConverterParameters" type="object[]" signature="public object[] ItemConverterParameters { get; set; }">
         <template #name><h3>ItemConverterParameters</h3></template>
 
 <p>The parameter list to use when constructing the <see cref="T:Newtonsoft.Json.JsonConverter"/> described by <see cref="P:Newtonsoft.Json.JsonPropertyAttribute.ItemConverterType"/>.
@@ -276,14 +276,14 @@ order, and type of these parameters.</p>
 
     </doc-member>
 
-<doc-member id="property-namingstrategytype" name="NamingStrategyType" type="System.Nullable<Type>" signature="public Nullable<Type> NamingStrategyType { get; set; }">
+    <doc-member id="property-namingstrategytype" name="NamingStrategyType" type="Type?" signature="public Type? NamingStrategyType { get; set; }">
         <template #name><h3>NamingStrategyType</h3></template>
 
 <p>Gets or sets the <see cref="!:Type"/> of the <see cref="T:Newtonsoft.Json.Serialization.NamingStrategy"/>.</p>
 
     </doc-member>
 
-<doc-member id="property-namingstrategyparameters" name="NamingStrategyParameters" type="System.Object[]" signature="public Object[] NamingStrategyParameters { get; set; }">
+    <doc-member id="property-namingstrategyparameters" name="NamingStrategyParameters" type="object[]" signature="public object[] NamingStrategyParameters { get; set; }">
         <template #name><h3>NamingStrategyParameters</h3></template>
 
 <p>The parameter list to use when constructing the <see cref="T:Newtonsoft.Json.Serialization.NamingStrategy"/> described by <see cref="P:Newtonsoft.Json.JsonPropertyAttribute.NamingStrategyType"/>.
@@ -293,84 +293,84 @@ order, and type of these parameters.</p>
 
     </doc-member>
 
-<doc-member id="property-nullvaluehandling" name="NullValueHandling" type="Newtonsoft.Json.NullValueHandling" signature="public NullValueHandling NullValueHandling { get; set; }">
+    <doc-member id="property-nullvaluehandling" name="NullValueHandling" type="NullValueHandling" signature="public NullValueHandling NullValueHandling { get; set; }">
         <template #name><h3>NullValueHandling</h3></template>
 
 <p>Gets or sets the null value handling used when serializing this property.</p>
 
     </doc-member>
 
-<doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="Newtonsoft.Json.DefaultValueHandling" signature="public DefaultValueHandling DefaultValueHandling { get; set; }">
+    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling" signature="public DefaultValueHandling DefaultValueHandling { get; set; }">
         <template #name><h3>DefaultValueHandling</h3></template>
 
 <p>Gets or sets the default value handling used when serializing this property.</p>
 
     </doc-member>
 
-<doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="Newtonsoft.Json.ReferenceLoopHandling" signature="public ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
+    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling" signature="public ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
         <template #name><h3>ReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the reference loop handling used when serializing this property.</p>
 
     </doc-member>
 
-<doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="Newtonsoft.Json.ObjectCreationHandling" signature="public ObjectCreationHandling ObjectCreationHandling { get; set; }">
+    <doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="ObjectCreationHandling" signature="public ObjectCreationHandling ObjectCreationHandling { get; set; }">
         <template #name><h3>ObjectCreationHandling</h3></template>
 
 <p>Gets or sets the object creation handling used when deserializing this property.</p>
 
     </doc-member>
 
-<doc-member id="property-typenamehandling" name="TypeNameHandling" type="Newtonsoft.Json.TypeNameHandling" signature="public TypeNameHandling TypeNameHandling { get; set; }">
+    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling" signature="public TypeNameHandling TypeNameHandling { get; set; }">
         <template #name><h3>TypeNameHandling</h3></template>
 
 <p>Gets or sets the type name handling used when serializing this property.</p>
 
     </doc-member>
 
-<doc-member id="property-isreference" name="IsReference" type="System.Boolean" signature="public Boolean IsReference { get; set; }">
+    <doc-member id="property-isreference" name="IsReference" type="bool" signature="public bool IsReference { get; set; }">
         <template #name><h3>IsReference</h3></template>
 
 <p>Gets or sets whether this property's value is serialized as a reference.</p>
 
     </doc-member>
 
-<doc-member id="property-order" name="Order" type="System.Int32" signature="public Int32 Order { get; set; }">
+    <doc-member id="property-order" name="Order" type="int" signature="public int Order { get; set; }">
         <template #name><h3>Order</h3></template>
 
 <p>Gets or sets the order of serialization of a member.</p>
 
     </doc-member>
 
-<doc-member id="property-required" name="Required" type="Newtonsoft.Json.Required" signature="public Required Required { get; set; }">
+    <doc-member id="property-required" name="Required" type="Required" signature="public Required Required { get; set; }">
         <template #name><h3>Required</h3></template>
 
 <p>Gets or sets a value indicating whether this property is required.</p>
 
     </doc-member>
 
-<doc-member id="property-propertyname" name="PropertyName" type="System.Nullable<System.String>" signature="public Nullable<String> PropertyName { get; set; }">
+    <doc-member id="property-propertyname" name="PropertyName" type="string?" signature="public string? PropertyName { get; set; }">
         <template #name><h3>PropertyName</h3></template>
 
 <p>Gets or sets the name of the property.</p>
 
     </doc-member>
 
-<doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="Newtonsoft.Json.ReferenceLoopHandling" signature="public ReferenceLoopHandling ItemReferenceLoopHandling { get; set; }">
+    <doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="ReferenceLoopHandling" signature="public ReferenceLoopHandling ItemReferenceLoopHandling { get; set; }">
         <template #name><h3>ItemReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the reference loop handling used when serializing the property's collection items.</p>
 
     </doc-member>
 
-<doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="Newtonsoft.Json.TypeNameHandling" signature="public TypeNameHandling ItemTypeNameHandling { get; set; }">
+    <doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="TypeNameHandling" signature="public TypeNameHandling ItemTypeNameHandling { get; set; }">
         <template #name><h3>ItemTypeNameHandling</h3></template>
 
 <p>Gets or sets the type name handling used when serializing the property's collection items.</p>
 
     </doc-member>
 
-<doc-member id="property-itemisreference" name="ItemIsReference" type="System.Boolean" signature="public Boolean ItemIsReference { get; set; }">
+    <doc-member id="property-itemisreference" name="ItemIsReference" type="bool" signature="public bool ItemIsReference { get; set; }">
         <template #name><h3>ItemIsReference</h3></template>
 
 <p>Gets or sets whether this property's collection items are serialized as a reference.</p>
@@ -381,25 +381,27 @@ order, and type of these parameters.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JsonPropertyAttribute()">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JsonPropertyAttribute()">
+            <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JsonPropertyAttribute(String propertyName)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="string" signature="public JsonPropertyAttribute(string propertyName)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="propertyName" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/> class with the specified name.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

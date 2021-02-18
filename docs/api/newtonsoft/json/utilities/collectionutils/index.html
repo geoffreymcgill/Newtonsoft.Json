@@ -208,20 +208,32 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-isnullorempty" name="IsNullOrEmpty" returns="System.Boolean" params="ICollection<T>" signature="public static Boolean IsNullOrEmpty(ICollection<T> collection)">
-        <template #name><h3>IsNullOrEmpty</h3></template>
+    <doc-overload-group overload-id="group-adddistinct">
+        <doc-member id="method-adddistinct" overload-id="group-adddistinct" name="AddDistinct" returns="bool" params="IList<T>, T" signature="public static bool AddDistinct(IList<T> list, T value)">
+            <template #name><h3>AddDistinct</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="collection" type="ICollection<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="list" type="IList<T>"></doc-parameter>
+                    <doc-parameter name="value" type="T"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<p>Determines whether the collection is <c>null</c> or empty.</p>
+        <doc-member id="method-adddistinct-1" overload-id="group-adddistinct" name="AddDistinct" returns="bool" params="IList<T>, T, IEqualityComparer<T>" signature="public static bool AddDistinct(IList<T> list, T value, IEqualityComparer<T> comparer)">
+            <template #name><h3>AddDistinct</h3></template>
 
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="list" type="IList<T>"></doc-parameter>
+                    <doc-parameter name="value" type="T"></doc-parameter>
+                    <doc-parameter name="comparer" type="IEqualityComparer<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-addrange" name="AddRange" returns="System.Void" params="IList<T>, IEnumerable<T>" signature="public static Void AddRange(IList<T> initial, IEnumerable<T> collection)">
+    <doc-member id="method-addrange" name="AddRange" returns="void" params="IList<T>, IEnumerable<T>" signature="public static void AddRange(IList<T> initial, IEnumerable<T> collection)">
         <template #name><h3>AddRange</h3></template>
 
         <template #parameters>
@@ -235,75 +247,7 @@
 
     </doc-member>
 
-<doc-member id="method-isdictionarytype" name="IsDictionaryType" returns="System.Boolean" params="Type" signature="public static Boolean IsDictionaryType(Type type)">
-        <template #name><h3>IsDictionaryType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolveenumerablecollectionconstructor" name="ResolveEnumerableCollectionConstructor" returns="System.Nullable<ConstructorInfo>" params="Type, Type" signature="public static Nullable<ConstructorInfo> ResolveEnumerableCollectionConstructor(Type collectionType, Type collectionItemType)">
-        <template #name><h3>ResolveEnumerableCollectionConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="collectionType" type="Type"></doc-parameter>
-                <doc-parameter name="collectionItemType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolveenumerablecollectionconstructor" name="ResolveEnumerableCollectionConstructor" returns="System.Nullable<ConstructorInfo>" params="Type, Type, Type" signature="public static Nullable<ConstructorInfo> ResolveEnumerableCollectionConstructor(Type collectionType, Type collectionItemType, Type constructorArgumentType)">
-        <template #name><h3>ResolveEnumerableCollectionConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="collectionType" type="Type"></doc-parameter>
-                <doc-parameter name="collectionItemType" type="Type"></doc-parameter>
-                <doc-parameter name="constructorArgumentType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-adddistinct" name="AddDistinct" returns="System.Boolean" params="IList<T>, T" signature="public static Boolean AddDistinct(IList<T> list, T value)">
-        <template #name><h3>AddDistinct</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="list" type="IList<T>"></doc-parameter>
-                <doc-parameter name="value" type="T"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-adddistinct" name="AddDistinct" returns="System.Boolean" params="IList<T>, T, IEqualityComparer<T>" signature="public static Boolean AddDistinct(IList<T> list, T value, IEqualityComparer<T> comparer)">
-        <template #name><h3>AddDistinct</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="list" type="IList<T>"></doc-parameter>
-                <doc-parameter name="value" type="T"></doc-parameter>
-                <doc-parameter name="comparer" type="IEqualityComparer<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-containsvalue" name="ContainsValue" returns="System.Boolean" params="IEnumerable<TSource>, TSource, IEqualityComparer<TSource>" signature="public static Boolean ContainsValue(IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)">
-        <template #name><h3>ContainsValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
-                <doc-parameter name="value" type="TSource"></doc-parameter>
-                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addrangedistinct" name="AddRangeDistinct" returns="System.Boolean" params="IList<T>, IEnumerable<T>, IEqualityComparer<T>" signature="public static Boolean AddRangeDistinct(IList<T> list, IEnumerable<T> values, IEqualityComparer<T> comparer)">
+    <doc-member id="method-addrangedistinct" name="AddRangeDistinct" returns="bool" params="IList<T>, IEnumerable<T>, IEqualityComparer<T>" signature="public static bool AddRangeDistinct(IList<T> list, IEnumerable<T> values, IEqualityComparer<T> comparer)">
         <template #name><h3>AddRangeDistinct</h3></template>
 
         <template #parameters>
@@ -315,18 +259,11 @@
         </template>
     </doc-member>
 
-<doc-member id="method-indexof" name="IndexOf" returns="System.Int32" params="IEnumerable<T>, Func<T, Boolean>" signature="public static Int32 IndexOf(IEnumerable<T> collection, Func<T, Boolean> predicate)">
-        <template #name><h3>IndexOf</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="collection" type="IEnumerable<T>"></doc-parameter>
-                <doc-parameter name="predicate" type="Func<T, System.Boolean>"></doc-parameter>
-            </doc-parameters>
-        </template>
+    <doc-member id="method-arrayempty" name="ArrayEmpty" returns="T[]" signature="public static T[] ArrayEmpty()">
+        <template #name><h3>ArrayEmpty</h3></template>
     </doc-member>
 
-<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="List<T>, T, IEqualityComparer" signature="public static Boolean Contains(List<T> list, T value, IEqualityComparer comparer)">
+    <doc-member id="method-contains" name="Contains" returns="bool" params="List<T>, T, IEqualityComparer" signature="public static bool Contains(List<T> list, T value, IEqualityComparer comparer)">
         <template #name><h3>Contains</h3></template>
 
         <template #parameters>
@@ -338,7 +275,63 @@
         </template>
     </doc-member>
 
-<doc-member id="method-indexofreference" name="IndexOfReference" returns="System.Int32" params="List<T>, T" signature="public static Int32 IndexOfReference(List<T> list, T item)">
+    <doc-member id="method-containsvalue" name="ContainsValue" returns="bool" params="IEnumerable<TSource>, TSource, IEqualityComparer<TSource>" signature="public static bool ContainsValue(IEnumerable<TSource> source, TSource value, IEqualityComparer<TSource> comparer)">
+        <template #name><h3>ContainsValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IEnumerable<TSource>"></doc-parameter>
+                <doc-parameter name="value" type="TSource"></doc-parameter>
+                <doc-parameter name="comparer" type="IEqualityComparer<TSource>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-copyfromjaggedtomultidimensionalarray" name="CopyFromJaggedToMultidimensionalArray" returns="void" params="IList, Array, int[]" access="private" signature="private static void CopyFromJaggedToMultidimensionalArray(IList values, Array multidimensionalArray, int[] indices)">
+        <template #name><h3>CopyFromJaggedToMultidimensionalArray</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="values" type="IList"></doc-parameter>
+                <doc-parameter name="multidimensionalArray" type="Array"></doc-parameter>
+                <doc-parameter name="indices" type="int[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-fastreverse" name="FastReverse" returns="void" params="List<T>" signature="public static void FastReverse(List<T> list)">
+        <template #name><h3>FastReverse</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="list" type="List<T>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getdimensions" name="GetDimensions" returns="IList<int>" params="IList, int" access="private" signature="private static IList<int> GetDimensions(IList values, int dimensionsCount)">
+        <template #name><h3>GetDimensions</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="values" type="IList"></doc-parameter>
+                <doc-parameter name="dimensionsCount" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-indexof" name="IndexOf" returns="int" params="IEnumerable<T>, Func<T, bool>" signature="public static int IndexOf(IEnumerable<T> collection, Func<T, bool> predicate)">
+        <template #name><h3>IndexOf</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="collection" type="IEnumerable<T>"></doc-parameter>
+                <doc-parameter name="predicate" type="Func<T, bool>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-indexofreference" name="IndexOfReference" returns="int" params="List<T>, T" signature="public static int IndexOfReference(List<T> list, T item)">
         <template #name><h3>IndexOfReference</h3></template>
 
         <template #parameters>
@@ -349,64 +342,75 @@
         </template>
     </doc-member>
 
-<doc-member id="method-fastreverse" name="FastReverse" returns="System.Void" params="List<T>" signature="public static Void FastReverse(List<T> list)">
-        <template #name><h3>FastReverse</h3></template>
+    <doc-member id="method-isdictionarytype" name="IsDictionaryType" returns="bool" params="Type" signature="public static bool IsDictionaryType(Type type)">
+        <template #name><h3>IsDictionaryType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="list" type="List<T>"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getdimensions" name="GetDimensions" returns="IList<System.Int32>" params="IList, Int32" access="private" signature="private static IList<Int32> GetDimensions(IList values, Int32 dimensionsCount)">
-        <template #name><h3>GetDimensions</h3></template>
+    <doc-member id="method-isnullorempty" name="IsNullOrEmpty" returns="bool" params="ICollection<T>" signature="public static bool IsNullOrEmpty(ICollection<T> collection)">
+        <template #name><h3>IsNullOrEmpty</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="values" type="IList"></doc-parameter>
-                <doc-parameter name="dimensionsCount" type="System.Int32"></doc-parameter>
+                <doc-parameter name="collection" type="ICollection<T>"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>Determines whether the collection is <c>null</c> or empty.</p>
+
     </doc-member>
 
-<doc-member id="method-copyfromjaggedtomultidimensionalarray" name="CopyFromJaggedToMultidimensionalArray" returns="System.Void" params="IList, Array, Int32[]" access="private" signature="private static Void CopyFromJaggedToMultidimensionalArray(IList values, Array multidimensionalArray, Int32[] indices)">
-        <template #name><h3>CopyFromJaggedToMultidimensionalArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="values" type="IList"></doc-parameter>
-                <doc-parameter name="multidimensionalArray" type="Array"></doc-parameter>
-                <doc-parameter name="indices" type="System.Int32[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-jaggedarraygetvalue" name="JaggedArrayGetValue" returns="System.Object" params="IList, Int32[]" access="private" signature="private static Object JaggedArrayGetValue(IList values, Int32[] indices)">
+    <doc-member id="method-jaggedarraygetvalue" name="JaggedArrayGetValue" returns="object" params="IList, int[]" access="private" signature="private static object JaggedArrayGetValue(IList values, int[] indices)">
         <template #name><h3>JaggedArrayGetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="values" type="IList"></doc-parameter>
-                <doc-parameter name="indices" type="System.Int32[]"></doc-parameter>
+                <doc-parameter name="indices" type="int[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tomultidimensionalarray" name="ToMultidimensionalArray" returns="Array" params="IList, Type, Int32" signature="public static Array ToMultidimensionalArray(IList values, Type type, Int32 rank)">
+    <doc-overload-group overload-id="group-resolveenumerablecollectionconstructor">
+        <doc-member id="method-resolveenumerablecollectionconstructor" overload-id="group-resolveenumerablecollectionconstructor" name="ResolveEnumerableCollectionConstructor" returns="ConstructorInfo?" params="Type, Type" signature="public static ConstructorInfo? ResolveEnumerableCollectionConstructor(Type collectionType, Type collectionItemType)">
+            <template #name><h3>ResolveEnumerableCollectionConstructor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="collectionType" type="Type"></doc-parameter>
+                    <doc-parameter name="collectionItemType" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-resolveenumerablecollectionconstructor-1" overload-id="group-resolveenumerablecollectionconstructor" name="ResolveEnumerableCollectionConstructor" returns="ConstructorInfo?" params="Type, Type, Type" signature="public static ConstructorInfo? ResolveEnumerableCollectionConstructor(Type collectionType, Type collectionItemType, Type constructorArgumentType)">
+            <template #name><h3>ResolveEnumerableCollectionConstructor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="collectionType" type="Type"></doc-parameter>
+                    <doc-parameter name="collectionItemType" type="Type"></doc-parameter>
+                    <doc-parameter name="constructorArgumentType" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-tomultidimensionalarray" name="ToMultidimensionalArray" returns="Array" params="IList, Type, int" signature="public static Array ToMultidimensionalArray(IList values, Type type, int rank)">
         <template #name><h3>ToMultidimensionalArray</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="values" type="IList"></doc-parameter>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="rank" type="System.Int32"></doc-parameter>
+                <doc-parameter name="rank" type="int"></doc-parameter>
             </doc-parameters>
         </template>
-    </doc-member>
-
-<doc-member id="method-arrayempty" name="ArrayEmpty" returns="T[]" signature="public static T[] ArrayEmpty()">
-        <template #name><h3>ArrayEmpty</h3></template>
     </doc-member>
 </doc-member-group>
 

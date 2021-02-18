@@ -208,11 +208,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-first" name="First" type="TFirst" signature="public TFirst First { get; }">
+    <doc-member id="property-first" name="First" type="TFirst" signature="public TFirst First { get; }">
         <template #name><h3>First</h3></template>
     </doc-member>
 
-<doc-member id="property-second" name="Second" type="TSecond" signature="public TSecond Second { get; }">
+    <doc-member id="property-second" name="Second" type="TSecond" signature="public TSecond Second { get; }">
         <template #name><h3>Second</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,7 +220,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="TFirst, TSecond" signature="public Tuple(TFirst first, TSecond second)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="TFirst, TSecond" signature="public Tuple(TFirst first, TSecond second)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -231,31 +231,33 @@
         </template>
     </doc-member>
 
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Object" signature="public sealed Boolean Equals(Object obj)">
-        <template #name><h3>Equals</h3></template>
+    <doc-overload-group overload-id="group-equals">
+        <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
+            <template #name><h3>Equals</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="obj" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="obj" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Tuple<TFirst, TSecond>" signature="public Boolean Equals(Tuple<TFirst, TSecond> other)">
-        <template #name><h3>Equals</h3></template>
+        <doc-member id="method-equals-1" overload-id="group-equals" name="Equals" returns="bool" params="Tuple<TFirst, TSecond>" signature="public bool Equals(Tuple<TFirst, TSecond> other)">
+            <template #name><h3>Equals</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Utilities.LinqBridge.Tuple<TFirst, TSecond>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Utilities.LinqBridge.Tuple<TFirst, TSecond>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-gethashcode" name="GetHashCode" returns="System.Int32" signature="public sealed Int32 GetHashCode()">
+    <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
         <template #name><h3>GetHashCode</h3></template>
     </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" signature="public sealed String ToString()">
+    <doc-member id="method-tostring" name="ToString" returns="string" signature="public sealed string ToString()">
         <template #name><h3>ToString</h3></template>
     </doc-member>
 </doc-member-group>

@@ -211,15 +211,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-keyname" name="KeyName" type="System.String" access="private" signature="private const static String KeyName">
+    <doc-member id="field-keyname" name="KeyName" type="string" access="private" signature="private const static string KeyName">
         <template #name><h3>KeyName</h3></template>
     </doc-member>
 
-<doc-member id="field-valuename" name="ValueName" type="System.String" access="private" signature="private const static String ValueName">
+    <doc-member id="field-valuename" name="ValueName" type="string" access="private" signature="private const static string ValueName">
         <template #name><h3>ValueName</h3></template>
     </doc-member>
 
-<doc-member id="field-reflectionobjectpertype" name="ReflectionObjectPerType" type="Newtonsoft.Json.Utilities.ThreadSafeStore<Type, Newtonsoft.Json.Utilities.ReflectionObject>" access="private" signature="private readonly static ThreadSafeStore<Type, ReflectionObject> ReflectionObjectPerType">
+    <doc-member id="field-reflectionobjectpertype" name="ReflectionObjectPerType" type="ThreadSafeStore<Type, ReflectionObject>" access="private" signature="private readonly static ThreadSafeStore<Type, ReflectionObject> ReflectionObjectPerType">
         <template #name><h3>ReflectionObjectPerType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -227,48 +227,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-initializereflectionobject" name="InitializeReflectionObject" returns="Newtonsoft.Json.Utilities.ReflectionObject" params="Type" access="private" signature="private static ReflectionObject InitializeReflectionObject(Type t)">
-        <template #name><h3>InitializeReflectionObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonSerializer" signature="public sealed Void WriteJson(JsonWriter writer, Nullable<Object> value, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-readjson" name="ReadJson" returns="System.Nullable<System.Object>" params="JsonReader, Type, Nullable<Object>, JsonSerializer" signature="public sealed Nullable<Object> ReadJson(JsonReader reader, Type objectType, Nullable<Object> existingValue, JsonSerializer serializer)">
-        <template #name><h3>ReadJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Reads the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-canconvert" name="CanConvert" returns="System.Boolean" params="Type" signature="public sealed Boolean CanConvert(Type objectType)">
+    <doc-member id="method-canconvert" name="CanConvert" returns="bool" params="Type" signature="public sealed bool CanConvert(Type objectType)">
         <template #name><h3>CanConvert</h3></template>
 
         <template #parameters>
@@ -278,6 +237,47 @@
         </template>
 
 <p>Determines whether this instance can convert the specified object type.</p>
+
+    </doc-member>
+
+    <doc-member id="method-initializereflectionobject" name="InitializeReflectionObject" returns="ReflectionObject" params="Type" access="private" signature="private static ReflectionObject InitializeReflectionObject(Type t)">
+        <template #name><h3>InitializeReflectionObject</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="t" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+        <template #name><h3>ReadJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="objectType" type="Type"></doc-parameter>
+                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Reads the JSON representation of the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+        <template #name><h3>WriteJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the JSON representation of the object.</p>
 
     </doc-member>
 </doc-member-group>

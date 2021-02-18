@@ -211,13 +211,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-bindtotype" name="BindToType" returns="Type" params="Nullable<String>, String" signature="public abstract Type BindToType(Nullable<String> assemblyName, String typeName)">
-        <template #name><h3>BindToType</h3></template>
+    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, string?, string?" signature="public abstract void BindToName(Type serializedType, string? assemblyName, string? typeName)">
+        <template #name><h3>BindToName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.String"></doc-parameter>
+                <doc-parameter name="serializedType" type="Type"></doc-parameter>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -225,14 +226,13 @@
 
     </doc-member>
 
-<doc-member id="method-bindtoname" name="BindToName" returns="System.Void" params="Type, Nullable<String>, Nullable<String>" signature="public abstract Void BindToName(Type serializedType, Nullable<String> assemblyName, Nullable<String> typeName)">
-        <template #name><h3>BindToName</h3></template>
+    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="string?, string" signature="public abstract Type BindToType(string? assemblyName, string typeName)">
+        <template #name><h3>BindToType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="serializedType" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 

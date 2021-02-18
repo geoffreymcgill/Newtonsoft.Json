@@ -211,14 +211,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-createorderedenumerable" name="CreateOrderedEnumerable" returns="Newtonsoft.Json.Utilities.LinqBridge.IOrderedEnumerable<TElement>" params="Func<TElement, TKey>, IComparer<TKey>, Boolean" signature="public abstract IOrderedEnumerable<TElement> CreateOrderedEnumerable(Func<TElement, TKey> keySelector, IComparer<TKey> comparer, Boolean descending)">
+    <doc-member id="method-createorderedenumerable" name="CreateOrderedEnumerable" returns="IOrderedEnumerable<TElement>" params="Func<TElement, TKey>, IComparer<TKey>, bool" signature="public abstract IOrderedEnumerable<TElement> CreateOrderedEnumerable(Func<TElement, TKey> keySelector, IComparer<TKey> comparer, bool descending)">
         <template #name><h3>CreateOrderedEnumerable</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="keySelector" type="Newtonsoft.Json.Serialization.Func<TElement, TKey>"></doc-parameter>
                 <doc-parameter name="comparer" type="IComparer<TKey>"></doc-parameter>
-                <doc-parameter name="descending" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="descending" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
 

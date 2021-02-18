@@ -211,31 +211,31 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_required" name="_required" type="System.Nullable<Newtonsoft.Json.Required>" access="internal" signature="internal Nullable<Required> _required">
+    <doc-member id="field-_required" name="_required" type="Required?" access="internal" signature="internal Required? _required">
         <template #name><h3>_required</h3></template>
     </doc-member>
 
-<doc-member id="field-_hasexplicitdefaultvalue" name="_hasExplicitDefaultValue" type="System.Boolean" access="internal" signature="internal Boolean _hasExplicitDefaultValue">
+    <doc-member id="field-_hasexplicitdefaultvalue" name="_hasExplicitDefaultValue" type="bool" access="internal" signature="internal bool _hasExplicitDefaultValue">
         <template #name><h3>_hasExplicitDefaultValue</h3></template>
     </doc-member>
 
-<doc-member id="field-_defaultvalue" name="_defaultValue" type="System.Nullable<System.Object>" access="private" signature="private Nullable<Object> _defaultValue">
+    <doc-member id="field-_defaultvalue" name="_defaultValue" type="object?" access="private" signature="private object? _defaultValue">
         <template #name><h3>_defaultValue</h3></template>
     </doc-member>
 
-<doc-member id="field-_hasgenerateddefaultvalue" name="_hasGeneratedDefaultValue" type="System.Boolean" access="private" signature="private Boolean _hasGeneratedDefaultValue">
+    <doc-member id="field-_hasgenerateddefaultvalue" name="_hasGeneratedDefaultValue" type="bool" access="private" signature="private bool _hasGeneratedDefaultValue">
         <template #name><h3>_hasGeneratedDefaultValue</h3></template>
     </doc-member>
 
-<doc-member id="field-_propertyname" name="_propertyName" type="System.Nullable<System.String>" access="private" signature="private Nullable<String> _propertyName">
+    <doc-member id="field-_propertyname" name="_propertyName" type="string?" access="private" signature="private string? _propertyName">
         <template #name><h3>_propertyName</h3></template>
     </doc-member>
 
-<doc-member id="field-_skippropertynameescape" name="_skipPropertyNameEscape" type="System.Boolean" access="internal" signature="internal Boolean _skipPropertyNameEscape">
+    <doc-member id="field-_skippropertynameescape" name="_skipPropertyNameEscape" type="bool" access="internal" signature="internal bool _skipPropertyNameEscape">
         <template #name><h3>_skipPropertyNameEscape</h3></template>
     </doc-member>
 
-<doc-member id="field-_propertytype" name="_propertyType" type="System.Nullable<Type>" access="private" signature="private Nullable<Type> _propertyType">
+    <doc-member id="field-_propertytype" name="_propertyType" type="Type?" access="private" signature="private Type? _propertyType">
         <template #name><h3>_propertyType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -243,60 +243,60 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-propertycontract" name="PropertyContract" type="Newtonsoft.Json.Serialization.JsonContract" access="internal" signature="internal JsonContract PropertyContract { internal get; internal set; }">
+    <doc-member id="property-propertycontract" name="PropertyContract" type="JsonContract?" access="internal" signature="internal JsonContract? PropertyContract { internal get; internal set; }">
         <template #name><h3>PropertyContract</h3></template>
     </doc-member>
 
-<doc-member id="property-propertyname" name="PropertyName" type="System.Nullable<System.String>" signature="public Nullable<String> PropertyName { get; set; }">
+    <doc-member id="property-propertyname" name="PropertyName" type="string?" signature="public string? PropertyName { get; set; }">
         <template #name><h3>PropertyName</h3></template>
 
 <p>Gets or sets the name of the property.</p>
 
     </doc-member>
 
-<doc-member id="property-declaringtype" name="DeclaringType" type="System.Nullable<Type>" signature="public Nullable<Type> DeclaringType { get; set; }">
+    <doc-member id="property-declaringtype" name="DeclaringType" type="Type?" signature="public Type? DeclaringType { get; set; }">
         <template #name><h3>DeclaringType</h3></template>
 
 <p>Gets or sets the type that declared this property.</p>
 
     </doc-member>
 
-<doc-member id="property-order" name="Order" type="System.Nullable<System.Int32>" signature="public Nullable<Int32> Order { get; set; }">
+    <doc-member id="property-order" name="Order" type="int?" signature="public int? Order { get; set; }">
         <template #name><h3>Order</h3></template>
 
 <p>Gets or sets the order of serialization of a member.</p>
 
     </doc-member>
 
-<doc-member id="property-underlyingname" name="UnderlyingName" type="System.Nullable<System.String>" signature="public Nullable<String> UnderlyingName { get; set; }">
+    <doc-member id="property-underlyingname" name="UnderlyingName" type="string?" signature="public string? UnderlyingName { get; set; }">
         <template #name><h3>UnderlyingName</h3></template>
 
 <p>Gets or sets the name of the underlying member or parameter.</p>
 
     </doc-member>
 
-<doc-member id="property-valueprovider" name="ValueProvider" type="Newtonsoft.Json.Serialization.IValueProvider" signature="public IValueProvider ValueProvider { get; set; }">
+    <doc-member id="property-valueprovider" name="ValueProvider" type="IValueProvider?" signature="public IValueProvider? ValueProvider { get; set; }">
         <template #name><h3>ValueProvider</h3></template>
 
 <p>Gets the <see cref="T:Newtonsoft.Json.Serialization.IValueProvider"/> that will get and set the <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> during serialization.</p>
 
     </doc-member>
 
-<doc-member id="property-attributeprovider" name="AttributeProvider" type="Newtonsoft.Json.Serialization.IAttributeProvider" signature="public IAttributeProvider AttributeProvider { get; set; }">
+    <doc-member id="property-attributeprovider" name="AttributeProvider" type="IAttributeProvider?" signature="public IAttributeProvider? AttributeProvider { get; set; }">
         <template #name><h3>AttributeProvider</h3></template>
 
 <p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.IAttributeProvider"/> for this property.</p>
 
     </doc-member>
 
-<doc-member id="property-propertytype" name="PropertyType" type="System.Nullable<Type>" signature="public Nullable<Type> PropertyType { get; set; }">
+    <doc-member id="property-propertytype" name="PropertyType" type="Type?" signature="public Type? PropertyType { get; set; }">
         <template #name><h3>PropertyType</h3></template>
 
 <p>Gets or sets the type of the property.</p>
 
     </doc-member>
 
-<doc-member id="property-converter" name="Converter" type="Newtonsoft.Json.JsonConverter" signature="public JsonConverter Converter { get; set; }">
+    <doc-member id="property-converter" name="Converter" type="JsonConverter?" signature="public JsonConverter? Converter { get; set; }">
         <template #name><h3>Converter</h3></template>
 
 <p>Gets or sets the <see cref="T:Newtonsoft.Json.JsonConverter" /> for the property.
@@ -304,154 +304,154 @@ If set this converter takes precedence over the contract converter for the prope
 
     </doc-member>
 
-<doc-member id="property-memberconverter" name="MemberConverter" type="Newtonsoft.Json.JsonConverter" signature="public JsonConverter MemberConverter { get; set; }">
+    <doc-member id="property-memberconverter" name="MemberConverter" type="JsonConverter?" signature="public JsonConverter? MemberConverter { get; set; }">
         <template #name><h3>MemberConverter</h3></template>
 
 <p>Gets or sets the member converter.</p>
 
     </doc-member>
 
-<doc-member id="property-ignored" name="Ignored" type="System.Boolean" signature="public Boolean Ignored { get; set; }">
+    <doc-member id="property-ignored" name="Ignored" type="bool" signature="public bool Ignored { get; set; }">
         <template #name><h3>Ignored</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> is ignored.</p>
 
     </doc-member>
 
-<doc-member id="property-readable" name="Readable" type="System.Boolean" signature="public Boolean Readable { get; set; }">
+    <doc-member id="property-readable" name="Readable" type="bool" signature="public bool Readable { get; set; }">
         <template #name><h3>Readable</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> is readable.</p>
 
     </doc-member>
 
-<doc-member id="property-writable" name="Writable" type="System.Boolean" signature="public Boolean Writable { get; set; }">
+    <doc-member id="property-writable" name="Writable" type="bool" signature="public bool Writable { get; set; }">
         <template #name><h3>Writable</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> is writable.</p>
 
     </doc-member>
 
-<doc-member id="property-hasmemberattribute" name="HasMemberAttribute" type="System.Boolean" signature="public Boolean HasMemberAttribute { get; set; }">
+    <doc-member id="property-hasmemberattribute" name="HasMemberAttribute" type="bool" signature="public bool HasMemberAttribute { get; set; }">
         <template #name><h3>HasMemberAttribute</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> has a member attribute.</p>
 
     </doc-member>
 
-<doc-member id="property-defaultvalue" name="DefaultValue" type="System.Nullable<System.Object>" signature="public Nullable<Object> DefaultValue { get; set; }">
+    <doc-member id="property-defaultvalue" name="DefaultValue" type="object?" signature="public object? DefaultValue { get; set; }">
         <template #name><h3>DefaultValue</h3></template>
 
 <p>Gets the default value.</p>
 
     </doc-member>
 
-<doc-member id="property-required" name="Required" type="Newtonsoft.Json.Required" signature="public Required Required { get; set; }">
+    <doc-member id="property-required" name="Required" type="Required" signature="public Required Required { get; set; }">
         <template #name><h3>Required</h3></template>
 
 <p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> is required.</p>
 
     </doc-member>
 
-<doc-member id="property-isrequiredspecified" name="IsRequiredSpecified" type="System.Boolean" signature="public Boolean IsRequiredSpecified { get; }">
+    <doc-member id="property-isrequiredspecified" name="IsRequiredSpecified" type="bool" signature="public bool IsRequiredSpecified { get; }">
         <template #name><h3>IsRequiredSpecified</h3></template>
 
 <p>Gets a value indicating whether <see cref="P:Newtonsoft.Json.Serialization.JsonProperty.Required"/> has a value specified.</p>
 
     </doc-member>
 
-<doc-member id="property-isreference" name="IsReference" type="System.Nullable<System.Boolean>" signature="public Nullable<Boolean> IsReference { get; set; }">
+    <doc-member id="property-isreference" name="IsReference" type="bool?" signature="public bool? IsReference { get; set; }">
         <template #name><h3>IsReference</h3></template>
 
 <p>Gets or sets a value indicating whether this property preserves object references.</p>
 
     </doc-member>
 
-<doc-member id="property-nullvaluehandling" name="NullValueHandling" type="System.Nullable<Newtonsoft.Json.NullValueHandling>" signature="public Nullable<NullValueHandling> NullValueHandling { get; set; }">
+    <doc-member id="property-nullvaluehandling" name="NullValueHandling" type="NullValueHandling?" signature="public NullValueHandling? NullValueHandling { get; set; }">
         <template #name><h3>NullValueHandling</h3></template>
 
 <p>Gets or sets the property null value handling.</p>
 
     </doc-member>
 
-<doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="System.Nullable<Newtonsoft.Json.DefaultValueHandling>" signature="public Nullable<DefaultValueHandling> DefaultValueHandling { get; set; }">
+    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling?" signature="public DefaultValueHandling? DefaultValueHandling { get; set; }">
         <template #name><h3>DefaultValueHandling</h3></template>
 
 <p>Gets or sets the property default value handling.</p>
 
     </doc-member>
 
-<doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="System.Nullable<Newtonsoft.Json.ReferenceLoopHandling>" signature="public Nullable<ReferenceLoopHandling> ReferenceLoopHandling { get; set; }">
+    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling?" signature="public ReferenceLoopHandling? ReferenceLoopHandling { get; set; }">
         <template #name><h3>ReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the property reference loop handling.</p>
 
     </doc-member>
 
-<doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="System.Nullable<Newtonsoft.Json.ObjectCreationHandling>" signature="public Nullable<ObjectCreationHandling> ObjectCreationHandling { get; set; }">
+    <doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="ObjectCreationHandling?" signature="public ObjectCreationHandling? ObjectCreationHandling { get; set; }">
         <template #name><h3>ObjectCreationHandling</h3></template>
 
 <p>Gets or sets the property object creation handling.</p>
 
     </doc-member>
 
-<doc-member id="property-typenamehandling" name="TypeNameHandling" type="System.Nullable<Newtonsoft.Json.TypeNameHandling>" signature="public Nullable<TypeNameHandling> TypeNameHandling { get; set; }">
+    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling?" signature="public TypeNameHandling? TypeNameHandling { get; set; }">
         <template #name><h3>TypeNameHandling</h3></template>
 
 <p>Gets or sets or sets the type name handling.</p>
 
     </doc-member>
 
-<doc-member id="property-shouldserialize" name="ShouldSerialize" type="System.Nullable<Predicate<System.Object>>" signature="public Nullable<Predicate<Object>> ShouldSerialize { get; set; }">
+    <doc-member id="property-shouldserialize" name="ShouldSerialize" type="Predicate<object>?" signature="public Predicate<object>? ShouldSerialize { get; set; }">
         <template #name><h3>ShouldSerialize</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be serialized.</p>
 
     </doc-member>
 
-<doc-member id="property-shoulddeserialize" name="ShouldDeserialize" type="System.Nullable<Predicate<System.Object>>" signature="public Nullable<Predicate<Object>> ShouldDeserialize { get; set; }">
+    <doc-member id="property-shoulddeserialize" name="ShouldDeserialize" type="Predicate<object>?" signature="public Predicate<object>? ShouldDeserialize { get; set; }">
         <template #name><h3>ShouldDeserialize</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be deserialized.</p>
 
     </doc-member>
 
-<doc-member id="property-getisspecified" name="GetIsSpecified" type="System.Nullable<Predicate<System.Object>>" signature="public Nullable<Predicate<Object>> GetIsSpecified { get; set; }">
+    <doc-member id="property-getisspecified" name="GetIsSpecified" type="Predicate<object>?" signature="public Predicate<object>? GetIsSpecified { get; set; }">
         <template #name><h3>GetIsSpecified</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be serialized.</p>
 
     </doc-member>
 
-<doc-member id="property-setisspecified" name="SetIsSpecified" type="System.Nullable<Action<System.Object, System.Nullable<System.Object>>>" signature="public Nullable<Action<Object, Nullable<Object>>> SetIsSpecified { get; set; }">
+    <doc-member id="property-setisspecified" name="SetIsSpecified" type="Action<object, object?>?" signature="public Action<object, object?>? SetIsSpecified { get; set; }">
         <template #name><h3>SetIsSpecified</h3></template>
 
 <p>Gets or sets an action used to set whether the property has been deserialized.</p>
 
     </doc-member>
 
-<doc-member id="property-itemconverter" name="ItemConverter" type="Newtonsoft.Json.JsonConverter" signature="public JsonConverter ItemConverter { get; set; }">
+    <doc-member id="property-itemconverter" name="ItemConverter" type="JsonConverter?" signature="public JsonConverter? ItemConverter { get; set; }">
         <template #name><h3>ItemConverter</h3></template>
 
 <p>Gets or sets the converter used when serializing the property's collection items.</p>
 
     </doc-member>
 
-<doc-member id="property-itemisreference" name="ItemIsReference" type="System.Nullable<System.Boolean>" signature="public Nullable<Boolean> ItemIsReference { get; set; }">
+    <doc-member id="property-itemisreference" name="ItemIsReference" type="bool?" signature="public bool? ItemIsReference { get; set; }">
         <template #name><h3>ItemIsReference</h3></template>
 
 <p>Gets or sets whether this property's collection items are serialized as a reference.</p>
 
     </doc-member>
 
-<doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="System.Nullable<Newtonsoft.Json.TypeNameHandling>" signature="public Nullable<TypeNameHandling> ItemTypeNameHandling { get; set; }">
+    <doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="TypeNameHandling?" signature="public TypeNameHandling? ItemTypeNameHandling { get; set; }">
         <template #name><h3>ItemTypeNameHandling</h3></template>
 
 <p>Gets or sets the type name handling used when serializing the property's collection items.</p>
 
     </doc-member>
 
-<doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="System.Nullable<Newtonsoft.Json.ReferenceLoopHandling>" signature="public Nullable<ReferenceLoopHandling> ItemReferenceLoopHandling { get; set; }">
+    <doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="ReferenceLoopHandling?" signature="public ReferenceLoopHandling? ItemReferenceLoopHandling { get; set; }">
         <template #name><h3>ItemReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the reference loop handling used when serializing the property's collection items.</p>
@@ -462,18 +462,18 @@ If set this converter takes precedence over the contract converter for the prope
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getresolveddefaultvalue" name="GetResolvedDefaultValue" returns="System.Nullable<System.Object>" access="internal" signature="internal Nullable<Object> GetResolvedDefaultValue()">
+    <doc-member id="method-getresolveddefaultvalue" name="GetResolvedDefaultValue" returns="object?" access="internal" signature="internal object? GetResolvedDefaultValue()">
         <template #name><h3>GetResolvedDefaultValue</h3></template>
     </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" signature="public sealed String ToString()">
+    <doc-member id="method-tostring" name="ToString" returns="string" signature="public sealed string ToString()">
         <template #name><h3>ToString</h3></template>
 
 <p>Returns a <see cref="!:String"/> that represents this instance.</p>
 
     </doc-member>
 
-<doc-member id="method-writepropertyname" name="WritePropertyName" returns="System.Void" params="JsonWriter" access="internal" signature="internal Void WritePropertyName(JsonWriter writer)">
+    <doc-member id="method-writepropertyname" name="WritePropertyName" returns="void" params="JsonWriter" access="internal" signature="internal void WritePropertyName(JsonWriter writer)">
         <template #name><h3>WritePropertyName</h3></template>
 
         <template #parameters>

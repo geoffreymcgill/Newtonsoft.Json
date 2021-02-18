@@ -211,14 +211,14 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-currentobject" name="CurrentObject" type="System.Nullable<System.Object>" signature="public Nullable<Object> CurrentObject { get; }">
+    <doc-member id="property-currentobject" name="CurrentObject" type="object?" signature="public object? CurrentObject { get; }">
         <template #name><h3>CurrentObject</h3></template>
 
 <p>Gets the current object the error event is being raised against.</p>
 
     </doc-member>
 
-<doc-member id="property-errorcontext" name="ErrorContext" type="Newtonsoft.Json.Serialization.ErrorContext" signature="public ErrorContext ErrorContext { get; }">
+    <doc-member id="property-errorcontext" name="ErrorContext" type="ErrorContext" signature="public ErrorContext ErrorContext { get; }">
         <template #name><h3>ErrorContext</h3></template>
 
 <p>Gets the error context.</p>
@@ -229,12 +229,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<Object>, ErrorContext" signature="public ErrorEventArgs(Nullable<Object> currentObject, ErrorContext errorContext)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object?, ErrorContext" signature="public ErrorEventArgs(object? currentObject, ErrorContext errorContext)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentObject" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="currentObject" type="object?"></doc-parameter>
                 <doc-parameter name="errorContext" type="Newtonsoft.Json.Serialization.ErrorContext"></doc-parameter>
             </doc-parameters>
         </template>

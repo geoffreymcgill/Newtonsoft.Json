@@ -208,36 +208,36 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-trygetmember" name="TryGetMember" returns="System.Boolean" params="JObject, GetMemberBinder, Nullable<Object>" signature="public sealed Boolean TryGetMember(JObject instance, GetMemberBinder binder, Nullable<Object> result)">
+    <doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<string>" params="JObject" signature="public sealed IEnumerable<string> GetDynamicMemberNames(JObject instance)">
+        <template #name><h3>GetDynamicMemberNames</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="JObject, GetMemberBinder, object?" signature="public sealed bool TryGetMember(JObject instance, GetMemberBinder binder, object? result)">
         <template #name><h3>TryGetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
                 <doc-parameter name="binder" type="GetMemberBinder"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="result" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-trysetmember" name="TrySetMember" returns="System.Boolean" params="JObject, SetMemberBinder, Object" signature="public sealed Boolean TrySetMember(JObject instance, SetMemberBinder binder, Object value)">
+    <doc-member id="method-trysetmember" name="TrySetMember" returns="bool" params="JObject, SetMemberBinder, object" signature="public sealed bool TrySetMember(JObject instance, SetMemberBinder binder, object value)">
         <template #name><h3>TrySetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
                 <doc-parameter name="binder" type="SetMemberBinder"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getdynamicmembernames" name="GetDynamicMemberNames" returns="IEnumerable<System.String>" params="JObject" signature="public sealed IEnumerable<String> GetDynamicMemberNames(JObject instance)">
-        <template #name><h3>GetDynamicMemberNames</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -211,64 +211,66 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JsonException()">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JsonException()">
+            <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonException"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JsonException(String message)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="string" signature="public JsonException(string message)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="message" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonException"/> class
 with a specified error message.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String, Nullable<Exception>" signature="public JsonException(String message, Nullable<Exception> innerException)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string, Exception?" signature="public JsonException(string message, Exception? innerException)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
-                <doc-parameter name="innerException" type="System.Nullable<Exception>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="message" type="string"></doc-parameter>
+                    <doc-parameter name="innerException" type="Exception?"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonException"/> class
 with a specified error message and a reference to the inner exception that is the cause of this exception.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="SerializationInfo, StreamingContext" signature="public JsonException(SerializationInfo info, StreamingContext context)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="SerializationInfo, StreamingContext" signature="public JsonException(SerializationInfo info, StreamingContext context)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="info" type="SerializationInfo"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="info" type="SerializationInfo"></doc-parameter>
+                    <doc-parameter name="context" type="StreamingContext"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonException"/> class.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-create" name="Create" returns="Newtonsoft.Json.JsonException" params="IJsonLineInfo, String, String" access="internal" signature="internal static JsonException Create(IJsonLineInfo lineInfo, String path, String message)">
+    <doc-member id="method-create" name="Create" returns="JsonException" params="IJsonLineInfo, string, string" access="internal" signature="internal static JsonException Create(IJsonLineInfo lineInfo, string path, string message)">
         <template #name><h3>Create</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo"></doc-parameter>
-                <doc-parameter name="path" type="System.String"></doc-parameter>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
+                <doc-parameter name="path" type="string"></doc-parameter>
+                <doc-parameter name="message" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

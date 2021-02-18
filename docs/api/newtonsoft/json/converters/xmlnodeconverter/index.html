@@ -211,35 +211,35 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-emptychildnodes" name="EmptyChildNodes" type="List<Newtonsoft.Json.Converters.IXmlNode>" access="internal" signature="internal readonly static List<IXmlNode> EmptyChildNodes">
+    <doc-member id="field-emptychildnodes" name="EmptyChildNodes" type="List<IXmlNode>" access="internal" signature="internal readonly static List<IXmlNode> EmptyChildNodes">
         <template #name><h3>EmptyChildNodes</h3></template>
     </doc-member>
 
-<doc-member id="field-textname" name="TextName" type="System.String" access="private" signature="private const static String TextName">
+    <doc-member id="field-textname" name="TextName" type="string" access="private" signature="private const static string TextName">
         <template #name><h3>TextName</h3></template>
     </doc-member>
 
-<doc-member id="field-commentname" name="CommentName" type="System.String" access="private" signature="private const static String CommentName">
+    <doc-member id="field-commentname" name="CommentName" type="string" access="private" signature="private const static string CommentName">
         <template #name><h3>CommentName</h3></template>
     </doc-member>
 
-<doc-member id="field-cdataname" name="CDataName" type="System.String" access="private" signature="private const static String CDataName">
+    <doc-member id="field-cdataname" name="CDataName" type="string" access="private" signature="private const static string CDataName">
         <template #name><h3>CDataName</h3></template>
     </doc-member>
 
-<doc-member id="field-whitespacename" name="WhitespaceName" type="System.String" access="private" signature="private const static String WhitespaceName">
+    <doc-member id="field-whitespacename" name="WhitespaceName" type="string" access="private" signature="private const static string WhitespaceName">
         <template #name><h3>WhitespaceName</h3></template>
     </doc-member>
 
-<doc-member id="field-significantwhitespacename" name="SignificantWhitespaceName" type="System.String" access="private" signature="private const static String SignificantWhitespaceName">
+    <doc-member id="field-significantwhitespacename" name="SignificantWhitespaceName" type="string" access="private" signature="private const static string SignificantWhitespaceName">
         <template #name><h3>SignificantWhitespaceName</h3></template>
     </doc-member>
 
-<doc-member id="field-declarationname" name="DeclarationName" type="System.String" access="private" signature="private const static String DeclarationName">
+    <doc-member id="field-declarationname" name="DeclarationName" type="string" access="private" signature="private const static string DeclarationName">
         <template #name><h3>DeclarationName</h3></template>
     </doc-member>
 
-<doc-member id="field-jsonnamespaceuri" name="JsonNamespaceUri" type="System.String" access="private" signature="private const static String JsonNamespaceUri">
+    <doc-member id="field-jsonnamespaceuri" name="JsonNamespaceUri" type="string" access="private" signature="private const static string JsonNamespaceUri">
         <template #name><h3>JsonNamespaceUri</h3></template>
     </doc-member>
 </doc-member-group>
@@ -247,14 +247,14 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-deserializerootelementname" name="DeserializeRootElementName" type="System.Nullable<System.String>" signature="public Nullable<String> DeserializeRootElementName { get; set; }">
+    <doc-member id="property-deserializerootelementname" name="DeserializeRootElementName" type="string?" signature="public string? DeserializeRootElementName { get; set; }">
         <template #name><h3>DeserializeRootElementName</h3></template>
 
 <p>Gets or sets the name of the root element to insert when deserializing to XML if the JSON structure has produced multiple root elements.</p>
 
     </doc-member>
 
-<doc-member id="property-writearrayattribute" name="WriteArrayAttribute" type="System.Boolean" signature="public Boolean WriteArrayAttribute { get; set; }">
+    <doc-member id="property-writearrayattribute" name="WriteArrayAttribute" type="bool" signature="public bool WriteArrayAttribute { get; set; }">
         <template #name><h3>WriteArrayAttribute</h3></template>
 
 <p>Gets or sets a value to indicate whether to write the Json.NET array attribute.
@@ -262,14 +262,14 @@ This attribute helps preserve arrays when converting the written XML back to JSO
 
     </doc-member>
 
-<doc-member id="property-omitrootobject" name="OmitRootObject" type="System.Boolean" signature="public Boolean OmitRootObject { get; set; }">
+    <doc-member id="property-omitrootobject" name="OmitRootObject" type="bool" signature="public bool OmitRootObject { get; set; }">
         <template #name><h3>OmitRootObject</h3></template>
 
 <p>Gets or sets a value indicating whether to write the root JSON object.</p>
 
     </doc-member>
 
-<doc-member id="property-encodespecialcharacters" name="EncodeSpecialCharacters" type="System.Boolean" signature="public Boolean EncodeSpecialCharacters { get; set; }">
+    <doc-member id="property-encodespecialcharacters" name="EncodeSpecialCharacters" type="bool" signature="public bool EncodeSpecialCharacters { get; set; }">
         <template #name><h3>EncodeSpecialCharacters</h3></template>
 
 <p>Gets or sets a value indicating whether to encode special characters when converting JSON to XML.
@@ -283,199 +283,7 @@ as part of the XML element name.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonSerializer" signature="public sealed Void WriteJson(JsonWriter writer, Nullable<Object> value, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-wrapxml" name="WrapXml" returns="Newtonsoft.Json.Converters.IXmlNode" params="Object" access="private" signature="private IXmlNode WrapXml(Object value)">
-        <template #name><h3>WrapXml</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-pushparentnamespaces" name="PushParentNamespaces" returns="System.Void" params="IXmlNode, XmlNamespaceManager" access="private" signature="private Void PushParentNamespaces(IXmlNode node, XmlNamespaceManager manager)">
-        <template #name><h3>PushParentNamespaces</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolvefullname" name="ResolveFullName" returns="System.String" params="IXmlNode, XmlNamespaceManager" access="private" signature="private String ResolveFullName(IXmlNode node, XmlNamespaceManager manager)">
-        <template #name><h3>ResolveFullName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getpropertyname" name="GetPropertyName" returns="System.String" params="IXmlNode, XmlNamespaceManager" access="private" signature="private String GetPropertyName(IXmlNode node, XmlNamespaceManager manager)">
-        <template #name><h3>GetPropertyName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isarray" name="IsArray" returns="System.Boolean" params="IXmlNode" access="private" signature="private Boolean IsArray(IXmlNode node)">
-        <template #name><h3>IsArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializegroupednodes" name="SerializeGroupedNodes" returns="System.Void" params="JsonWriter, IXmlNode, XmlNamespaceManager, Boolean" access="private" signature="private Void SerializeGroupedNodes(JsonWriter writer, IXmlNode node, XmlNamespaceManager manager, Boolean writePropertyName)">
-        <template #name><h3>SerializeGroupedNodes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="writePropertyName" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writegroupednodes" name="WriteGroupedNodes" returns="System.Void" params="JsonWriter, XmlNamespaceManager, Boolean, List<IXmlNode>, String" access="private" signature="private Void WriteGroupedNodes(JsonWriter writer, XmlNamespaceManager manager, Boolean writePropertyName, List<IXmlNode> groupedNodes, String elementNames)">
-        <template #name><h3>WriteGroupedNodes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="writePropertyName" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="groupedNodes" type="List<Newtonsoft.Json.Converters.IXmlNode>"></doc-parameter>
-                <doc-parameter name="elementNames" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writegroupednodes" name="WriteGroupedNodes" returns="System.Void" params="JsonWriter, XmlNamespaceManager, Boolean, IXmlNode, String" access="private" signature="private Void WriteGroupedNodes(JsonWriter writer, XmlNamespaceManager manager, Boolean writePropertyName, IXmlNode node, String elementNames)">
-        <template #name><h3>WriteGroupedNodes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="writePropertyName" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="elementNames" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-serializenode" name="SerializeNode" returns="System.Void" params="JsonWriter, IXmlNode, XmlNamespaceManager, Boolean" access="private" signature="private Void SerializeNode(JsonWriter writer, IXmlNode node, XmlNamespaceManager manager, Boolean writePropertyName)">
-        <template #name><h3>SerializeNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="writePropertyName" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-allsamename" name="AllSameName" returns="System.Boolean" params="IXmlNode" access="private" signature="private static Boolean AllSameName(IXmlNode node)">
-        <template #name><h3>AllSameName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readjson" name="ReadJson" returns="System.Nullable<System.Object>" params="JsonReader, Type, Nullable<Object>, JsonSerializer" signature="public sealed Nullable<Object> ReadJson(JsonReader reader, Type objectType, Nullable<Object> existingValue, JsonSerializer serializer)">
-        <template #name><h3>ReadJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Reads the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializevalue" name="DeserializeValue" returns="System.Void" params="JsonReader, IXmlDocument, XmlNamespaceManager, String, IXmlNode" access="private" signature="private Void DeserializeValue(JsonReader reader, IXmlDocument document, XmlNamespaceManager manager, String propertyName, IXmlNode currentNode)">
-        <template #name><h3>DeserializeValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readelement" name="ReadElement" returns="System.Void" params="JsonReader, IXmlDocument, IXmlNode, String, XmlNamespaceManager" access="private" signature="private Void ReadElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, String propertyName, XmlNamespaceManager manager)">
-        <template #name><h3>ReadElement</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createelement" name="CreateElement" returns="System.Void" params="JsonReader, IXmlDocument, IXmlNode, String, XmlNamespaceManager, Nullable<String>, Nullable<Dictionary<String, Nullable<String>>>" access="private" signature="private Void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, String elementName, XmlNamespaceManager manager, Nullable<String> elementPrefix, Nullable<Dictionary<String, Nullable<String>>> attributeNameValues)">
-        <template #name><h3>CreateElement</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="elementName" type="System.String"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="elementPrefix" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="attributeNameValues" type="System.Nullable<Dictionary<System.String, System.Nullable<System.String>>>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addattribute" name="AddAttribute" returns="System.Void" params="JsonReader, IXmlDocument, IXmlNode, String, String, XmlNamespaceManager, Nullable<String>" access="private" signature="private static Void AddAttribute(JsonReader reader, IXmlDocument document, IXmlNode currentNode, String propertyName, String attributeName, XmlNamespaceManager manager, Nullable<String> attributePrefix)">
+    <doc-member id="method-addattribute" name="AddAttribute" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, string, XmlNamespaceManager, string?" access="private" signature="private static void AddAttribute(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string propertyName, string attributeName, XmlNamespaceManager manager, string? attributePrefix)">
         <template #name><h3>AddAttribute</h3></template>
 
         <template #parameters>
@@ -483,39 +291,15 @@ as part of the XML element name.</p>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
                 <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="attributeName" type="System.String"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="attributeName" type="string"></doc-parameter>
                 <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="attributePrefix" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="attributePrefix" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-converttokentoxmlvalue" name="ConvertTokenToXmlValue" returns="System.Nullable<System.String>" params="JsonReader" access="private" signature="private static Nullable<String> ConvertTokenToXmlValue(JsonReader reader)">
-        <template #name><h3>ConvertTokenToXmlValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readarrayelements" name="ReadArrayElements" returns="System.Void" params="JsonReader, IXmlDocument, String, IXmlNode, XmlNamespaceManager" access="private" signature="private Void ReadArrayElements(JsonReader reader, IXmlDocument document, String propertyName, IXmlNode currentNode, XmlNamespaceManager manager)">
-        <template #name><h3>ReadArrayElements</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addjsonarrayattribute" name="AddJsonArrayAttribute" returns="System.Void" params="IXmlElement, IXmlDocument" access="private" signature="private Void AddJsonArrayAttribute(IXmlElement element, IXmlDocument document)">
+    <doc-member id="method-addjsonarrayattribute" name="AddJsonArrayAttribute" returns="void" params="IXmlElement, IXmlDocument" access="private" signature="private void AddJsonArrayAttribute(IXmlElement element, IXmlDocument document)">
         <template #name><h3>AddJsonArrayAttribute</h3></template>
 
         <template #parameters>
@@ -526,103 +310,17 @@ as part of the XML element name.</p>
         </template>
     </doc-member>
 
-<doc-member id="method-shouldreadinto" name="ShouldReadInto" returns="System.Boolean" params="JsonReader" access="private" signature="private Boolean ShouldReadInto(JsonReader reader)">
-        <template #name><h3>ShouldReadInto</h3></template>
+    <doc-member id="method-allsamename" name="AllSameName" returns="bool" params="IXmlNode" access="private" signature="private static bool AllSameName(IXmlNode node)">
+        <template #name><h3>AllSameName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-readattributeelements" name="ReadAttributeElements" returns="System.Nullable<Dictionary<System.String, System.Nullable<System.String>>>" params="JsonReader, XmlNamespaceManager" access="private" signature="private Nullable<Dictionary<String, Nullable<String>>> ReadAttributeElements(JsonReader reader, XmlNamespaceManager manager)">
-        <template #name><h3>ReadAttributeElements</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createinstruction" name="CreateInstruction" returns="System.Void" params="JsonReader, IXmlDocument, IXmlNode, String" access="private" signature="private Void CreateInstruction(JsonReader reader, IXmlDocument document, IXmlNode currentNode, String propertyName)">
-        <template #name><h3>CreateInstruction</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createdocumenttype" name="CreateDocumentType" returns="System.Void" params="JsonReader, IXmlDocument, IXmlNode" access="private" signature="private Void CreateDocumentType(JsonReader reader, IXmlDocument document, IXmlNode currentNode)">
-        <template #name><h3>CreateDocumentType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createelement" name="CreateElement" returns="Newtonsoft.Json.Converters.IXmlElement" params="String, IXmlDocument, Nullable<String>, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(String elementName, IXmlDocument document, Nullable<String> elementPrefix, XmlNamespaceManager manager)">
-        <template #name><h3>CreateElement</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="elementName" type="System.String"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="elementPrefix" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-deserializenode" name="DeserializeNode" returns="System.Void" params="JsonReader, IXmlDocument, XmlNamespaceManager, IXmlNode" access="private" signature="private Void DeserializeNode(JsonReader reader, IXmlDocument document, XmlNamespaceManager manager, IXmlNode currentNode)">
-        <template #name><h3>DeserializeNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-isnamespaceattribute" name="IsNamespaceAttribute" returns="System.Boolean" params="String, Nullable<String>" access="private" signature="private Boolean IsNamespaceAttribute(String attributeName, Nullable<String> prefix)">
-        <template #name><h3>IsNamespaceAttribute</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="attributeName" type="System.String"></doc-parameter>
-                <doc-parameter name="prefix" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Checks if the <paramref name="attributeName"/> is a namespace attribute.</p>
-
-    </doc-member>
-
-<doc-member id="method-valueattributes" name="ValueAttributes" returns="System.Boolean" params="List<IXmlNode>" access="private" signature="private Boolean ValueAttributes(List<IXmlNode> c)">
-        <template #name><h3>ValueAttributes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="c" type="List<Newtonsoft.Json.Converters.IXmlNode>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-canconvert" name="CanConvert" returns="System.Boolean" params="Type" signature="public sealed Boolean CanConvert(Type valueType)">
+    <doc-member id="method-canconvert" name="CanConvert" returns="bool" params="Type" signature="public sealed bool CanConvert(Type valueType)">
         <template #name><h3>CanConvert</h3></template>
 
         <template #parameters>
@@ -635,7 +333,145 @@ as part of the XML element name.</p>
 
     </doc-member>
 
-<doc-member id="method-isxobject" name="IsXObject" returns="System.Boolean" params="Type" access="private" signature="private Boolean IsXObject(Type valueType)">
+    <doc-member id="method-converttokentoxmlvalue" name="ConvertTokenToXmlValue" returns="string?" params="JsonReader" access="private" signature="private static string? ConvertTokenToXmlValue(JsonReader reader)">
+        <template #name><h3>ConvertTokenToXmlValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-createdocumenttype" name="CreateDocumentType" returns="void" params="JsonReader, IXmlDocument, IXmlNode" access="private" signature="private void CreateDocumentType(JsonReader reader, IXmlDocument document, IXmlNode currentNode)">
+        <template #name><h3>CreateDocumentType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-createelement">
+        <doc-member id="method-createelement" overload-id="group-createelement" name="CreateElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager, string?, Dictionary<string, string?>?" access="private" signature="private void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string elementName, XmlNamespaceManager manager, string? elementPrefix, Dictionary<string, string?>? attributeNameValues)">
+            <template #name><h3>CreateElement</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                    <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                    <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                    <doc-parameter name="elementName" type="string"></doc-parameter>
+                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
+                    <doc-parameter name="attributeNameValues" type="Dictionary<string, string?>?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createelement-1" overload-id="group-createelement" name="CreateElement" returns="IXmlElement" params="string, IXmlDocument, string?, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(string elementName, IXmlDocument document, string? elementPrefix, XmlNamespaceManager manager)">
+            <template #name><h3>CreateElement</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="elementName" type="string"></doc-parameter>
+                    <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
+                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-createinstruction" name="CreateInstruction" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string" access="private" signature="private void CreateInstruction(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string propertyName)">
+        <template #name><h3>CreateInstruction</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-deserializenode" name="DeserializeNode" returns="void" params="JsonReader, IXmlDocument, XmlNamespaceManager, IXmlNode" access="private" signature="private void DeserializeNode(JsonReader reader, IXmlDocument document, XmlNamespaceManager manager, IXmlNode currentNode)">
+        <template #name><h3>DeserializeNode</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-deserializevalue" name="DeserializeValue" returns="void" params="JsonReader, IXmlDocument, XmlNamespaceManager, string, IXmlNode" access="private" signature="private void DeserializeValue(JsonReader reader, IXmlDocument document, XmlNamespaceManager manager, string propertyName, IXmlNode currentNode)">
+        <template #name><h3>DeserializeValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getpropertyname" name="GetPropertyName" returns="string" params="IXmlNode, XmlNamespaceManager" access="private" signature="private string GetPropertyName(IXmlNode node, XmlNamespaceManager manager)">
+        <template #name><h3>GetPropertyName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isarray" name="IsArray" returns="bool" params="IXmlNode" access="private" signature="private bool IsArray(IXmlNode node)">
+        <template #name><h3>IsArray</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isnamespaceattribute" name="IsNamespaceAttribute" returns="bool" params="string, string?" access="private" signature="private bool IsNamespaceAttribute(string attributeName, string? prefix)">
+        <template #name><h3>IsNamespaceAttribute</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="attributeName" type="string"></doc-parameter>
+                <doc-parameter name="prefix" type="string?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Checks if the <paramref name="attributeName"/> is a namespace attribute.</p>
+
+    </doc-member>
+
+    <doc-member id="method-isxmlnode" name="IsXmlNode" returns="bool" params="Type" access="private" signature="private bool IsXmlNode(Type valueType)">
+        <template #name><h3>IsXmlNode</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="valueType" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isxobject" name="IsXObject" returns="bool" params="Type" access="private" signature="private bool IsXObject(Type valueType)">
         <template #name><h3>IsXObject</h3></template>
 
         <template #parameters>
@@ -645,14 +481,182 @@ as part of the XML element name.</p>
         </template>
     </doc-member>
 
-<doc-member id="method-isxmlnode" name="IsXmlNode" returns="System.Boolean" params="Type" access="private" signature="private Boolean IsXmlNode(Type valueType)">
-        <template #name><h3>IsXmlNode</h3></template>
+    <doc-member id="method-pushparentnamespaces" name="PushParentNamespaces" returns="void" params="IXmlNode, XmlNamespaceManager" access="private" signature="private void PushParentNamespaces(IXmlNode node, XmlNamespaceManager manager)">
+        <template #name><h3>PushParentNamespaces</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="valueType" type="Type"></doc-parameter>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
             </doc-parameters>
         </template>
+    </doc-member>
+
+    <doc-member id="method-readarrayelements" name="ReadArrayElements" returns="void" params="JsonReader, IXmlDocument, string, IXmlNode, XmlNamespaceManager" access="private" signature="private void ReadArrayElements(JsonReader reader, IXmlDocument document, string propertyName, IXmlNode currentNode, XmlNamespaceManager manager)">
+        <template #name><h3>ReadArrayElements</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-readattributeelements" name="ReadAttributeElements" returns="Dictionary<string, string?>?" params="JsonReader, XmlNamespaceManager" access="private" signature="private Dictionary<string, string?>? ReadAttributeElements(JsonReader reader, XmlNamespaceManager manager)">
+        <template #name><h3>ReadAttributeElements</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-readelement" name="ReadElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager" access="private" signature="private void ReadElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string propertyName, XmlNamespaceManager manager)">
+        <template #name><h3>ReadElement</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+        <template #name><h3>ReadJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="objectType" type="Type"></doc-parameter>
+                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Reads the JSON representation of the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-resolvefullname" name="ResolveFullName" returns="string" params="IXmlNode, XmlNamespaceManager" access="private" signature="private string ResolveFullName(IXmlNode node, XmlNamespaceManager manager)">
+        <template #name><h3>ResolveFullName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-serializegroupednodes" name="SerializeGroupedNodes" returns="void" params="JsonWriter, IXmlNode, XmlNamespaceManager, bool" access="private" signature="private void SerializeGroupedNodes(JsonWriter writer, IXmlNode node, XmlNamespaceManager manager, bool writePropertyName)">
+        <template #name><h3>SerializeGroupedNodes</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                <doc-parameter name="writePropertyName" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-serializenode" name="SerializeNode" returns="void" params="JsonWriter, IXmlNode, XmlNamespaceManager, bool" access="private" signature="private void SerializeNode(JsonWriter writer, IXmlNode node, XmlNamespaceManager manager, bool writePropertyName)">
+        <template #name><h3>SerializeNode</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                <doc-parameter name="writePropertyName" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-shouldreadinto" name="ShouldReadInto" returns="bool" params="JsonReader" access="private" signature="private bool ShouldReadInto(JsonReader reader)">
+        <template #name><h3>ShouldReadInto</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-valueattributes" name="ValueAttributes" returns="bool" params="List<IXmlNode>" access="private" signature="private bool ValueAttributes(List<IXmlNode> c)">
+        <template #name><h3>ValueAttributes</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="c" type="List<Newtonsoft.Json.Converters.IXmlNode>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-wrapxml" name="WrapXml" returns="IXmlNode" params="object" access="private" signature="private IXmlNode WrapXml(object value)">
+        <template #name><h3>WrapXml</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-writegroupednodes">
+        <doc-member id="method-writegroupednodes" overload-id="group-writegroupednodes" name="WriteGroupedNodes" returns="void" params="JsonWriter, XmlNamespaceManager, bool, List<IXmlNode>, string" access="private" signature="private void WriteGroupedNodes(JsonWriter writer, XmlNamespaceManager manager, bool writePropertyName, List<IXmlNode> groupedNodes, string elementNames)">
+            <template #name><h3>WriteGroupedNodes</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                    <doc-parameter name="writePropertyName" type="bool"></doc-parameter>
+                    <doc-parameter name="groupedNodes" type="List<Newtonsoft.Json.Converters.IXmlNode>"></doc-parameter>
+                    <doc-parameter name="elementNames" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writegroupednodes-1" overload-id="group-writegroupednodes" name="WriteGroupedNodes" returns="void" params="JsonWriter, XmlNamespaceManager, bool, IXmlNode, string" access="private" signature="private void WriteGroupedNodes(JsonWriter writer, XmlNamespaceManager manager, bool writePropertyName, IXmlNode node, string elementNames)">
+            <template #name><h3>WriteGroupedNodes</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                    <doc-parameter name="writePropertyName" type="bool"></doc-parameter>
+                    <doc-parameter name="node" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+                    <doc-parameter name="elementNames" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+        <template #name><h3>WriteJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the JSON representation of the object.</p>
+
     </doc-member>
 </doc-member-group>
 

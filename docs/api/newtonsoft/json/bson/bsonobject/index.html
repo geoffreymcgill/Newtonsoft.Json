@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_children" name="_children" type="List<Newtonsoft.Json.Bson.BsonProperty>" access="private" signature="private readonly List<BsonProperty> _children">
+    <doc-member id="field-_children" name="_children" type="List<BsonProperty>" access="private" signature="private readonly List<BsonProperty> _children">
         <template #name><h3>_children</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-type" name="Type" type="Newtonsoft.Json.Bson.BsonType" signature="public sealed BsonType Type { get; }">
+    <doc-member id="property-type" name="Type" type="BsonType" signature="public sealed BsonType Type { get; }">
         <template #name><h3>Type</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,18 +224,18 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-add" name="Add" returns="System.Void" params="String, BsonToken" signature="public Void Add(String name, BsonToken token)">
+    <doc-member id="method-add" name="Add" returns="void" params="string, BsonToken" signature="public void Add(string name, BsonToken token)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
                 <doc-parameter name="token" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<Newtonsoft.Json.Bson.BsonProperty>" signature="public IEnumerator<BsonProperty> GetEnumerator()">
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<BsonProperty>" signature="public IEnumerator<BsonProperty> GetEnumerator()">
         <template #name><h3>GetEnumerator</h3></template>
     </doc-member>
 </doc-member-group>

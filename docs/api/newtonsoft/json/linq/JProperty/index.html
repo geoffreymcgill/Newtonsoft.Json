@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_content" name="_content" type="Newtonsoft.Json.Linq.JProperty.JPropertyList" access="private" signature="private readonly JPropertyList _content">
+    <doc-member id="field-_content" name="_content" type="JPropertyList" access="private" signature="private readonly JPropertyList _content">
         <template #name><h3>_content</h3></template>
     </doc-member>
 
-<doc-member id="field-_name" name="_name" type="System.String" access="private" signature="private readonly String _name">
+    <doc-member id="field-_name" name="_name" type="string" access="private" signature="private readonly string _name">
         <template #name><h3>_name</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,28 +223,28 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-childrentokens" name="ChildrenTokens" type="IList<Newtonsoft.Json.Linq.JToken>" access="protected" signature="protected sealed IList<JToken> ChildrenTokens { protected get; }">
+    <doc-member id="property-childrentokens" name="ChildrenTokens" type="IList<JToken>" access="protected" signature="protected sealed IList<JToken> ChildrenTokens { protected get; }">
         <template #name><h3>ChildrenTokens</h3></template>
 
 <p>Gets the container's children tokens.</p>
 
     </doc-member>
 
-<doc-member id="property-name" name="Name" type="System.String" signature="public String Name { get; }">
+    <doc-member id="property-name" name="Name" type="string" signature="public string Name { get; }">
         <template #name><h3>Name</h3></template>
 
 <p>Gets the property name.</p>
 
     </doc-member>
 
-<doc-member id="property-value" name="Value" type="Newtonsoft.Json.Linq.JToken" signature="public JToken Value { get; set; }">
+    <doc-member id="property-value" name="Value" type="JToken" signature="public JToken Value { get; set; }">
         <template #name><h3>Value</h3></template>
 
 <p>Gets or sets the property value.</p>
 
     </doc-member>
 
-<doc-member id="property-type" name="Type" type="Newtonsoft.Json.Linq.JTokenType" signature="public sealed JTokenType Type { get; }">
+    <doc-member id="property-type" name="Type" type="JTokenType" signature="public sealed JTokenType Type { get; }">
         <template #name><h3>Type</h3></template>
 
 <p>Gets the node type for this <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
@@ -255,177 +255,78 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
-        <template #name><h3>WriteToAsync</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="JProperty" signature="public JProperty(JProperty other)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes this token to a <see cref="T:Newtonsoft.Json.JsonWriter"/> asynchronously.</p>
-
-    </doc-member>
-
-<doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="Task, JsonWriter, CancellationToken, JsonConverter[]" access="private" signature="private async Task WriteToAsync(Task task, JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
-        <template #name><h3>WriteToAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="task" type="Task"></doc-parameter>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" access="private" signature="private Task WriteValueAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
-        <template #name><h3>WriteValueAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-loadasync" name="LoadAsync" returns="Task<Newtonsoft.Json.Linq.JProperty>" params="JsonReader, CancellationToken" signature="public static Task<JProperty> LoadAsync(JsonReader reader, CancellationToken cancellationToken = null)">
-        <template #name><h3>LoadAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Asynchronously loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-loadasync" name="LoadAsync" returns="Task<Newtonsoft.Json.Linq.JProperty>" params="JsonReader, JsonLoadSettings, CancellationToken" signature="public async static Task<JProperty> LoadAsync(JsonReader reader, JsonLoadSettings settings, CancellationToken cancellationToken = null)">
-        <template #name><h3>LoadAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Asynchronously loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JProperty" signature="public JProperty(JProperty other)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Linq.JProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JProperty"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class from another <see cref="T:Newtonsoft.Json.Linq.JProperty"/> object.</p>
 
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="string" access="internal" signature="internal JProperty(string name)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="name" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string, object[]" signature="public JProperty(string name, object[] content)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="name" type="string"></doc-parameter>
+                    <doc-parameter name="content" type="object[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class.</p>
+
+        </doc-member>
+
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="string, object?" signature="public JProperty(string name, object? content)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="name" type="string"></doc-parameter>
+                    <doc-parameter name="content" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-clearitems" name="ClearItems" returns="void" access="internal" signature="internal sealed void ClearItems()">
+        <template #name><h3>ClearItems</h3></template>
     </doc-member>
 
-<doc-member id="method-getitem" name="GetItem" returns="Newtonsoft.Json.Linq.JToken" params="Int32" access="internal" signature="internal sealed JToken GetItem(Int32 index)">
-        <template #name><h3>GetItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
+    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal sealed JToken CloneToken()">
+        <template #name><h3>CloneToken</h3></template>
     </doc-member>
 
-<doc-member id="method-setitem" name="SetItem" returns="System.Void" params="Int32, JToken" access="internal" signature="internal sealed Void SetItem(Int32 index, JToken item)">
-        <template #name><h3>SetItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeitem" name="RemoveItem" returns="System.Boolean" params="JToken" access="internal" signature="internal sealed Boolean RemoveItem(JToken item)">
-        <template #name><h3>RemoveItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-removeitemat" name="RemoveItemAt" returns="System.Void" params="Int32" access="internal" signature="internal sealed Void RemoveItemAt(Int32 index)">
-        <template #name><h3>RemoveItemAt</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-indexofitem" name="IndexOfItem" returns="System.Int32" params="JToken" access="internal" signature="internal sealed Int32 IndexOfItem(JToken item)">
-        <template #name><h3>IndexOfItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-insertitem" name="InsertItem" returns="System.Void" params="Int32, JToken, Boolean" access="internal" signature="internal sealed Void InsertItem(Int32 index, JToken item, Boolean skipParentCheck)">
-        <template #name><h3>InsertItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="skipParentCheck" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-containsitem" name="ContainsItem" returns="System.Boolean" params="JToken" access="internal" signature="internal sealed Boolean ContainsItem(JToken item)">
+    <doc-member id="method-containsitem" name="ContainsItem" returns="bool" params="JToken?" access="internal" signature="internal sealed bool ContainsItem(JToken? item)">
         <template #name><h3>ContainsItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-mergeitem" name="MergeItem" returns="System.Void" params="Object, JsonMergeSettings" access="internal" signature="internal sealed Void MergeItem(Object content, JsonMergeSettings settings)">
-        <template #name><h3>MergeItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="System.Object"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonMergeSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-clearitems" name="ClearItems" returns="System.Void" access="internal" signature="internal sealed Void ClearItems()">
-        <template #name><h3>ClearItems</h3></template>
-    </doc-member>
-
-<doc-member id="method-deepequals" name="DeepEquals" returns="System.Boolean" params="JToken" access="internal" signature="internal sealed Boolean DeepEquals(JToken node)">
+    <doc-member id="method-deepequals" name="DeepEquals" returns="bool" params="JToken" access="internal" signature="internal sealed bool DeepEquals(JToken node)">
         <template #name><h3>DeepEquals</h3></template>
 
         <template #parameters>
@@ -435,49 +336,145 @@
         </template>
     </doc-member>
 
-<doc-member id="method-clonetoken" name="CloneToken" returns="Newtonsoft.Json.Linq.JToken" access="internal" signature="internal sealed JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
+    <doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="int" access="internal" signature="internal sealed int GetDeepHashCode()">
+        <template #name><h3>GetDeepHashCode</h3></template>
     </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" access="internal" signature="internal JProperty(String name)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-member id="method-getitem" name="GetItem" returns="JToken" params="int" access="internal" signature="internal sealed JToken GetItem(int index)">
+        <template #name><h3>GetItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String, Object[]" signature="public JProperty(String name, Object[] content)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-member id="method-indexofitem" name="IndexOfItem" returns="int" params="JToken?" access="internal" signature="internal sealed int IndexOfItem(JToken? item)">
+        <template #name><h3>IndexOfItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-                <doc-parameter name="content" type="System.Object[]"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
             </doc-parameters>
         </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class.</p>
-
     </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String, Nullable<Object>" signature="public JProperty(String name, Nullable<Object> content)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-member id="method-insertitem" name="InsertItem" returns="void" params="int, JToken?, bool" access="internal" signature="internal sealed void InsertItem(int index, JToken? item, bool skipParentCheck)">
+        <template #name><h3>InsertItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-                <doc-parameter name="content" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+                <doc-parameter name="skipParentCheck" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class.</p>
-
     </doc-member>
 
-<doc-member id="method-writeto" name="WriteTo" returns="System.Void" params="JsonWriter, JsonConverter[]" signature="public sealed Void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-overload-group overload-id="group-load">
+        <doc-member id="method-load" overload-id="group-load" name="Load" returns="JProperty" params="JsonReader" signature="public static JProperty Load(JsonReader reader)">
+            <template #name><h3>Load</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-load-1" overload-id="group-load" name="Load" returns="JProperty" params="JsonReader, JsonLoadSettings?" signature="public static JProperty Load(JsonReader reader, JsonLoadSettings? settings)">
+            <template #name><h3>Load</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-loadasync">
+        <doc-member id="method-loadasync" overload-id="group-loadasync" name="LoadAsync" returns="Task<JProperty>" params="JsonReader, CancellationToken" signature="public static Task<JProperty> LoadAsync(JsonReader reader, CancellationToken cancellationToken = null)">
+            <template #name><h3>LoadAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Asynchronously loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-loadasync-1" overload-id="group-loadasync" name="LoadAsync" returns="Task<JProperty>" params="JsonReader, JsonLoadSettings?, CancellationToken" signature="public async static Task<JProperty> LoadAsync(JsonReader reader, JsonLoadSettings? settings, CancellationToken cancellationToken = null)">
+            <template #name><h3>LoadAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Asynchronously loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-mergeitem" name="MergeItem" returns="void" params="object, JsonMergeSettings?" access="internal" signature="internal sealed void MergeItem(object content, JsonMergeSettings? settings)">
+        <template #name><h3>MergeItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="content" type="object"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonMergeSettings?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-removeitem" name="RemoveItem" returns="bool" params="JToken?" access="internal" signature="internal sealed bool RemoveItem(JToken? item)">
+        <template #name><h3>RemoveItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-removeitemat" name="RemoveItemAt" returns="void" params="int" access="internal" signature="internal sealed void RemoveItemAt(int index)">
+        <template #name><h3>RemoveItemAt</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="index" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-setitem" name="SetItem" returns="void" params="int, JToken?" access="internal" signature="internal sealed void SetItem(int index, JToken? item)">
+        <template #name><h3>SetItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -491,35 +488,46 @@
 
     </doc-member>
 
-<doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="System.Int32" access="internal" signature="internal sealed Int32 GetDeepHashCode()">
-        <template #name><h3>GetDeepHashCode</h3></template>
-    </doc-member>
+    <doc-overload-group overload-id="group-writetoasync">
+        <doc-member id="method-writetoasync" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+            <template #name><h3>WriteToAsync</h3></template>
 
-<doc-member id="method-load" name="Load" returns="Newtonsoft.Json.Linq.JProperty" params="JsonReader" signature="public static JProperty Load(JsonReader reader)">
-        <template #name><h3>Load</h3></template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes this token to a <see cref="T:Newtonsoft.Json.JsonWriter"/> asynchronously.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writetoasync-1" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="Task, JsonWriter, CancellationToken, JsonConverter[]" access="private" signature="private async Task WriteToAsync(Task task, JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+            <template #name><h3>WriteToAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task"></doc-parameter>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-writevalueasync" name="WriteValueAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" access="private" signature="private Task WriteValueAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+        <template #name><h3>WriteValueAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
             </doc-parameters>
         </template>
-
-<p>Loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-load" name="Load" returns="Newtonsoft.Json.Linq.JProperty" params="JsonReader, JsonLoadSettings" signature="public static JProperty Load(JsonReader reader, JsonLoadSettings settings)">
-        <template #name><h3>Load</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Loads a <see cref="T:Newtonsoft.Json.Linq.JProperty"/> from a <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
-
     </doc-member>
 </doc-member-group>
 
