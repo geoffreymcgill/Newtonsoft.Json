@@ -1,6 +1,6 @@
 ﻿# Serialize DateFormatString
 
-This sample uses the DateFormatString setting to control how [DateTime](T:System.DateTime) and [DateTimeOffset](T:System.DateTimeOffset) are deserialized.
+This sample uses the DateFormatString setting to control how [DateTime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime) and [DateTimeOffset](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset) are deserialized.
 
 ## Sample
 

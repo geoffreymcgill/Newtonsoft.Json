@@ -11,7 +11,7 @@ The default format used by Json.NET is the [ISO 8601 standard](http://en.wikiped
 Prior to Json.NET 4.5 dates were written using the Microsoft format: `"\/Date(1198908717056)\/"`. If you want to use this format, or you want to maintain compatibility with Microsoft JSON serializers or older versions of Json.NET, then change the [DateFormatHandling](/api/newtonsoft/json/dateformathandling/)
 setting to MicrosoftDateFormat.
 
-The [DateTimeZoneHandling](/api/newtonsoft/json/datetimezonehandling/) setting can be used to convert a DateTime's [DateTimeKind](T:System.DateTimeKind) when serializing. For example set DateTimeZoneHandling to Utc to serialize all DateTimes as UTC dates. Note that this setting does not effect DateTimeOffsets.
+The [DateTimeZoneHandling](/api/newtonsoft/json/datetimezonehandling/) setting can be used to convert a DateTime's [DateTimeKind](https://docs.microsoft.com/en-us/dotnet/api/system.datetimekind) when serializing. For example set DateTimeZoneHandling to Utc to serialize all DateTimes as UTC dates. Note that this setting does not effect DateTimeOffsets.
 
 If your dates don't follow the ISO 8601 standard, then the DateFormatString setting can be used to customize the format of date strings that are read and written using .NET's [custom date and time format syntax](https://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx).
 

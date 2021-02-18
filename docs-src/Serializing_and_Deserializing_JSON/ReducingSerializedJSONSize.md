@@ -13,7 +13,7 @@ source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeOptOut
 ```
 
-If a class has many properties and you only want to serialize a small subset of them, then adding JsonIgnore to all the others will be tedious and error prone. The way to tackle this scenario is to add the [DataContractAttribute](T:System.Runtime.Serialization.DataContractAttribute) to the class and [DataMemberAttribute](T:System.Runtime.Serialization.DataMemberAttribute) to the properties to serialize. This is opt-in serialization - only the properties you mark up will be serialized, unlike opt-out serialization using JsonIgnoreAttribute.
+If a class has many properties and you only want to serialize a small subset of them, then adding JsonIgnore to all the others will be tedious and error prone. The way to tackle this scenario is to add the [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute) to the class and [DataMemberAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute) to the properties to serialize. This is opt-in serialization - only the properties you mark up will be serialized, unlike opt-out serialization using JsonIgnoreAttribute.
 
 ```csharp Opt-in Serialization Example
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -45,7 +45,7 @@ NullValueHandling can also be customized on individual properties using the [Jso
 [DefaultValueHandling](/api/newtonsoft/json/defaultvaluehandling/) is an option on the JsonSerializer and controls how the serializer handles properties with a default value. Setting a value of DefaultValueHandling.Ignore will make the JsonSerializer skip writing any properties that have a default value to the JSON result. For object references this will be null. For value types like int and DateTime the serializer will skip the default uninitialized value for that value type.
 
 Json.NET also allows you to customize what the default value of an individual
-property is using the [DefaultValueAttribute](T:System.ComponentModel.DefaultValueAttribute). For example, if a string property called Department always returns an empty string in its default state and you don't want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.
+property is using the [DefaultValueAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute). For example, if a string property called Department always returns an empty string in its default state and you don't want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.
 
 ```csharp DefaultValueHandling Class
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs

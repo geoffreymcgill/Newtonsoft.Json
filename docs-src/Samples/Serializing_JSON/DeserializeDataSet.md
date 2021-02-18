@@ -1,6 +1,6 @@
 ﻿# Deserialize a DataSet
 
-This sample deserializes JSON to a [DataSet](T:System.Data.DataSet). 
+This sample deserializes JSON to a [DataSet](https://docs.microsoft.com/en-us/dotnet/api/system.data.dataset). 
 
 ## Sample
 

@@ -192,7 +192,7 @@
         <span>JsonConvert</span>
     </h2>
 </doc-anchor-target>
-<p>For simple scenarios where you want to convert to and from a JSON string, the <a href="Overload:Newtonsoft.Json.JsonConvert.SerializeObject">Overload:Newtonsoft.Json.JsonConvert.SerializeObject</a> and <a href="Overload:Newtonsoft.Json.JsonConvert.DeserializeObject">Overload:Newtonsoft.Json.JsonConvert.DeserializeObject</a> methods on JsonConvert provide an easy-to-use wrapper over JsonSerializer.</p>
+<p>For simple scenarios where you want to convert to and from a JSON string, the <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-serializeobject">SerializeObject()</a> and <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-deserializeobject">DeserializeObject()</a> methods on JsonConvert provide an easy-to-use wrapper over JsonSerializer.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: SerializeObject</code></pre>
 <p>SerializeObject and DeserializeObject both have overloads that take a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a> object. JsonSerializerSettings lets you use many of the JsonSerializer settings listed below while still using the simple serialization methods.</p>
@@ -202,8 +202,7 @@ region: SerializeObject</code></pre>
         <span>JsonSerializer</span>
     </h2>
 </doc-anchor-target>
-<p>For more control over how an object is serialized, the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> can be used directly. The JsonSerializer is able to read and write JSON text directly to a stream via <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a>. Other kinds of JsonWriters can also be used, such as</p>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a> T:Newtonsoft.Json.Linq.JTokenWriter](T:Newtonsoft.Json.Linq.JTokenReader</codeEntityReference>/<codeEntityReference>T:Newtonsoft.Json.Linq.JTokenWriter), to convert your object to and from LINQ to JSON objects, or <a href="T:Newtonsoft.Json.Bson.BsonReader%3C/codeEntityReference%3E/%3CcodeEntityReference%3ET:Newtonsoft.Json.Bson.BsonWriter">Bson.BsonReader</codeEntityReference>/<codeEntityReference>T:Newtonsoft.Json.Bson.BsonWriter</a>, to convert to and from BSON.</p>
+<p>For more control over how an object is serialized, the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> can be used directly. The JsonSerializer is able to read and write JSON text directly to a stream via <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a>. Other kinds of JsonWriters can also be used, such as <a href="/Newtonsoft.Json/API/newtonsoft/json/linq/JTokenReader/">JTokenReader</a>/<a href="/Newtonsoft.Json/API/newtonsoft/json/linq/JTokenWriter/">JTokenWriter</a>, to convert your object to and from LINQ to JSON objects, or <a href="/Newtonsoft.Json/API/newtonsoft/json/bson/bsonreader/">BsonReader</a>/<a href="/Newtonsoft.Json/API/newtonsoft/json/bson/bsonwriter/">BsonWriter</a>, to convert to and from BSON.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: JsonSerializerToStream</code></pre>
 <p>JsonSerializer has a number of properties on it to customize how it serializes JSON. These can also be used with the methods on JsonConvert via the JsonSerializerSettings overloads.</p>

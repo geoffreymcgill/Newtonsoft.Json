@@ -1,6 +1,6 @@
 ﻿# DataContract and DataMember Attributes
 
-This sample shows how .NET Framework attributes such as [DataContractAttribute](T:System.Runtime.Serialization.DataContractAttribute), [DataMemberAttribute](T:System.Runtime.Serialization.DataMemberAttribute) and [NonSerializedAttribute](T:System.NonSerializedAttribute) can be used with Json.NET instead of Json.NET's own attributes.
+This sample shows how .NET Framework attributes such as [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute), [DataMemberAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute) and [NonSerializedAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.nonserializedattribute) can be used with Json.NET instead of Json.NET's own attributes.
 
 ## Sample
 
