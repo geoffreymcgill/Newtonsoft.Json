@@ -1,6 +1,6 @@
 ﻿# ContractResolver setting
 
-This sample uses a custom [IContractResolver](T:Newtonsoft.Json.Serialization.IContractResolver) to modify how objects are serialized.
+This sample uses a custom [IContractResolver](/api/newtonsoft/json/serialization/icontractresolver/) to modify how objects are serialized.
 
 ## Sample
 

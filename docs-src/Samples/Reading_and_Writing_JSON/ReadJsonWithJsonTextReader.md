@@ -1,6 +1,6 @@
 ﻿# Read JSON with JsonTextReader
 
-This sample reads JSON using the [JsonTextReader](T:Newtonsoft.Json.JsonTextReader). 
+This sample reads JSON using the [JsonTextReader](/api/newtonsoft/json/jsontextreader/). 
 
 ## Sample
 

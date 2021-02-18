@@ -185,14 +185,14 @@
         <span>Querying JSON with LINQ</span>
     </h1>
 </doc-anchor-target>
-<p>LINQ to JSON provides a number of methods for getting data from its objects. The index methods on JObject/JArray let you quickly get data by its property name on an object or index in a collection, while <a href="M:Newtonsoft.Json.Linq.JToken.Children">JToken.Children</a> lets you get ranges of data as <code v-pre>IEnumerable&lt;JToken&gt;</code> to then query using LINQ.</p>
+<p>LINQ to JSON provides a number of methods for getting data from its objects. The index methods on JObject/JArray let you quickly get data by its property name on an object or index in a collection, while <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> lets you get ranges of data as <code v-pre>IEnumerable&lt;JToken&gt;</code> to then query using LINQ.</p>
 <doc-anchor-target id="getting-values-by-property-name-or-collection-index">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#getting-values-by-property-name-or-collection-index">#</doc-anchor-trigger>
         <span>Getting values by Property Name or Collection Index</span>
     </h2>
 </doc-anchor-target>
-<p>The simplest way to get a value from LINQ to JSON is to use the <a href="P:Newtonsoft.Json.Linq.JToken.Item(System.Object)">JToken.Item(Object)</a> index on JObject/JArray and then cast the returned <a href="T:Newtonsoft.Json.Linq.JValue">JValue</a> to the type you want.</p>
+<p>The simplest way to get a value from LINQ to JSON is to use the <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#property-item">JToken.Item(object)</a>(object) index on JObject/JArray and then cast the returned <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jvalue/">JValue</a> to the type you want.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
 region: LinqToJsonSimpleQuerying</code></pre>
 <doc-anchor-target id="querying-with-linq">
@@ -201,8 +201,8 @@ region: LinqToJsonSimpleQuerying</code></pre>
         <span>Querying with LINQ</span>
     </h2>
 </doc-anchor-target>
-<p>JObject/JArray can also be queried using LINQ. <a href="M:Newtonsoft.Json.Linq.JToken.Children">JToken.Children</a> returns the children values of a JObject/JArray as an <code v-pre>IEnumerable&lt;JToken&gt;</code> that can then be queried with the standard Where/OrderBy/Select LINQ operators.</p>
-<doc-alert type="primary"><p><a href="M:Newtonsoft.Json.Linq.JToken.Children">JToken.Children</a> returns all the children of a token. If it is a JObject it will return a collection of properties to work with, and if it is a JArray you will get a collection of the array's values.</p>
+<p>JObject/JArray can also be queried using LINQ. <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns the children values of a JObject/JArray as an <code v-pre>IEnumerable&lt;JToken&gt;</code> that can then be queried with the standard Where/OrderBy/Select LINQ operators.</p>
+<doc-alert type="primary"><p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns all the children of a token. If it is a JObject it will return a collection of properties to work with, and if it is a JArray you will get a collection of the array's values.</p>
 </doc-alert>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
 region: LinqToJsonQuerying</code></pre>
@@ -220,8 +220,8 @@ region: LinqToJsonDeserializeExample</code></pre>
 </doc-anchor-target>
 <ul>
 <li><a href="">LINQ to JSON</a></li>
-<li><a href="P:Newtonsoft.Json.Linq.JToken.Item(System.Object)">JToken.Item(Object)</a></li>
-<li><a href="M:Newtonsoft.Json.Linq.JToken.Children">JToken.Children</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#property-item">JToken.Item(object)</a>(object)</li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a></li>
 </ul>
 
     

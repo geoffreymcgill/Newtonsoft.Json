@@ -250,11 +250,11 @@
 </tr>
 <tr>
 <td><code v-pre>Enum</code></td>
-<td>Integer (can be the enum value name with <a href="T:Newtonsoft.Json.Converters.StringEnumConverter">StringEnumConverter</a>)</td>
+<td>Integer (can be the enum value name with <a href="/Newtonsoft.Json/api/newtonsoft/json/converters/stringenumconverter/">StringEnumConverter</a></td>
 </tr>
 <tr>
 <td><code v-pre>DateTime</code></td>
-<td>String (<a href="../DatesInJSON">DatesInJSON</a>)</td>
+<td>String (<a href="../DatesInJSON">Serializing Dates in JSON</a>)</td>
 </tr>
 <tr>
 <td><code v-pre>Byte[]</code></td>
@@ -357,7 +357,7 @@
         <span>JsonConverter</span>
     </h2>
 </doc-anchor-target>
-<p>Serialization of values that are convertible by a <a href="T:Newtonsoft.Json.JsonConverter">JsonConverter</a> (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.</p>
+<p>Serialization of values that are convertible by a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.</p>
 <p>JsonConverters can be defined and specified in a number of places: in an attribute on a member, in an attribute on a class, and added to the JsonSerializer's converters collection. The priority of which JsonConverter is used is the JsonConverter defined by attribute on a member, then the JsonConverter defined by an attribute on a class, and finally any converters passed to the JsonSerializer.</p>
 <doc-alert type="primary"><p>Because a JsonConverter creates a new value, a converter will not work with readonly properties because there is no way to assign the new value to the property. Either change the property to have a public setter or place a JsonPropertyAttribute or DataMemberAttribute on the property.</p>
 </doc-alert>
@@ -368,11 +368,11 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="../serializationsettings">SerializationSettings</a></li>
-<li><a href="../serializationattributes">SerializationAttributes</a></li>
-<li><a href="../DatesInJSON">DatesInJSON</a></li>
-<li><a href="T:Newtonsoft.Json.JsonSerializer">JsonSerializer</a></li>
-<li><a href="T:Newtonsoft.Json.JsonSerializerSettings">JsonSerializerSettings</a></li>
+<li><a href="../serializationsettings">Serialization Settings</a></li>
+<li><a href="../serializationattributes">Serialization Attributes</a></li>
+<li><a href="../DatesInJSON">Serializing Dates in JSON</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a></li>
 </ul>
 
     

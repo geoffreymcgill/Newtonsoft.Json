@@ -1,6 +1,6 @@
 ﻿# Create JSON manually
 
-This sample creates [JObject](T:Newtonsoft.Json.Linq.JObject) and [JArray](T:Newtonsoft.Json.Linq.JArray) instances one at a time programatically.
+This sample creates [JObject](/api/newtonsoft/json/linq/jobject/) and [JArray](/api/newtonsoft/json/linq/jarray/) instances one at a time programatically.
 
 ## Sample
 

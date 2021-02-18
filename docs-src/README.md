@@ -19,9 +19,9 @@ LINQ to JSON is good for situations where you are only interested in getting val
 
 ## Getting Started
 
-- [SerializingJSON](SerializingJSON)
+- [Serializing and Deserializing JSON](Serializing_and_Deserializing_JSON/README.md)
 - [LINQ to JSON](LINQ_to_JSON/README.md)
-- [Samples](Samples)
+- [Samples](samples/README.md)
 
 ## History
 
@@ -33,6 +33,6 @@ Json.NET was first released in June 2006. Since then Json.NET has been downloade
 
 ## See Also
 
-- [SerializingJSON](SerializingJSON.md)
+- [Serializing and Deserializing JSON](Serializing_and_Deserializing_JSON/README.md)
 - [LINQ to JSON](LINQ_to_JSON/README.md)
 - [Samples](samples/README.md)

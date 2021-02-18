@@ -1,6 +1,6 @@
 ﻿# JsonObjectAttribute opt-in serialization
 
-This sample uses [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute) and [MemberSerialization](T:Newtonsoft.Json.MemberSerialization) to specify that  only properties that have been explicitly specified with [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) should be serialized.
+This sample uses [JsonObjectAttribute](/api/newtonsoft/json/jsonobjectattribute/) and [MemberSerialization](/api/newtonsoft/json/memberserialization/) to specify that  only properties that have been explicitly specified with [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) should be serialized.
 
 ## Sample
 

@@ -4,7 +4,7 @@ LINQ to JSON has methods available for parsing JSON from a string or loading JSO
 
 ## Parsing JSON text
 
-JSON values can be read from a string using [Parse(String)](M:Newtonsoft.Json.Linq.JToken.Parse(System.String)).
+JSON values can be read from a string using [Parse(string)](/api/newtonsoft/json/linq/jtoken/#method-parse)(string).
 
 ```csharp
 lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs" region="LinqToJsonCreateParse" title="Parsing a JSON Object from text
@@ -17,7 +17,7 @@ region: LinqToJsonCreateParseArray
 
 ## Loading JSON from a file
 
-JSON can also be loaded directly from a file using [ReadFrom(JsonReader)](M:Newtonsoft.Json.Linq.JToken.ReadFrom(Newtonsoft.Json.JsonReader)).
+JSON can also be loaded directly from a file using [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom)(Newtonsoft.Json.JsonReader).
 
 ```csharp Reading JSON from a file
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
@@ -27,5 +27,5 @@ region: LinqToJsonReadObject
 ## See Also
 
 - [LINQ to JSON](README.md)
-- [Parse(String)](M:Newtonsoft.Json.Linq.JToken.Parse(System.String))
-- [ReadFrom(JsonReader)](M:Newtonsoft.Json.Linq.JToken.ReadFrom(Newtonsoft.Json.JsonReader))
+- [Parse(string)](/api/newtonsoft/json/linq/jtoken/#method-parse)(string)
+- [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom)(Newtonsoft.Json.JsonReader)

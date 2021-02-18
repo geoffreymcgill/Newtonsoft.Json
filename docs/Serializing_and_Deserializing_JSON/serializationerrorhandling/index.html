@@ -186,14 +186,14 @@
     </h1>
 </doc-anchor-target>
 <p>Json.NET supports error handling during serialization and deserialization. Error handling lets you catch an error and choose whether to handle it and continue with serialization or let the error bubble up and be thrown in your application.</p>
-<p>Error handling is defined through two methods: the <a href="E:Newtonsoft.Json.JsonSerializer.Error">JsonSerializer.Error</a> event on JsonSerializer and the <a href="T:Newtonsoft.Json.Serialization.OnErrorAttribute">OnErrorAttribute</a>.</p>
+<p>Error handling is defined through two methods: the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/#event-error">JsonSerializer.Error</a> event on JsonSerializer and the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a>.</p>
 <doc-anchor-target id="error-event">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#error-event">#</doc-anchor-trigger>
         <span>Error Event</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="E:Newtonsoft.Json.JsonSerializer.Error">JsonSerializer.Error</a> event is an event handler found on <a href="T:Newtonsoft.Json.JsonSerializer">JsonSerializer</a>. The error event is raised whenever an exception is thrown while serializing or deserializing JSON. Like all settings found on JsonSerializer, it can also be set on <a href="T:Newtonsoft.Json.JsonSerializerSettings">JsonSerializerSettings</a> and passed to the serialization methods on JsonConvert.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/#event-error">JsonSerializer.Error</a> event is an event handler found on <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a>. The error event is raised whenever an exception is thrown while serializing or deserializing JSON. Like all settings found on JsonSerializer, it can also be set on <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a> and passed to the serialization methods on JsonConvert.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: SerializationErrorHandling</code></pre>
 <p>In this example we are deserializing a JSON array to a collection of DateTimes. On the JsonSerializerSettings a handler has been assigned to the <code v-pre>Error</code> event which will log the error message and mark the error as handled.</p>
@@ -201,14 +201,14 @@ region: SerializationErrorHandling</code></pre>
 <p>One thing to note with error handling in Json.NET is that an unhandled error will bubble up and raise the event on each of its parents. For example an unhandled error when serializing a collection of objects will be raised twice, once against the object and then again on the collection. This will let you handle an error either where it occurred or on one of its parents.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: SerializationErrorHandlingWithParent</code></pre>
-<p>If you aren't immediately handling an error and only want to perform an action against it once, then you can check to see whether the <a href="T:Newtonsoft.Json.Serialization.ErrorEventArgs">ErrorEventArgs</a>'s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.</p>
+<p>If you aren't immediately handling an error and only want to perform an action against it once, then you can check to see whether the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/erroreventargs/">ErrorEventArgs</a>'s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.</p>
 <doc-anchor-target id="onerrorattribute">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#onerrorattribute">#</doc-anchor-trigger>
         <span>OnErrorAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="T:Newtonsoft.Json.Serialization.OnErrorAttribute">OnErrorAttribute</a> works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn't matter.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a> works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn't matter.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: SerializationErrorHandlingAttributeObject</code></pre>
 <p>In this example accessing the Roles property will throw an
@@ -224,9 +224,9 @@ region: SerializationErrorHandlingAttributeExample</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="../serializationattributes">SerializationAttributes</a></li>
-<li><a href="E:Newtonsoft.Json.JsonSerializer.Error">JsonSerializer.Error</a></li>
-<li><a href="T:Newtonsoft.Json.Serialization.OnErrorAttribute">OnErrorAttribute</a></li>
+<li><a href="../serializationattributes">Serialization Attributes</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/#event-error">JsonSerializer.Error</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a></li>
 </ul>
 
     

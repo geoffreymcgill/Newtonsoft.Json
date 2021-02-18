@@ -1,6 +1,6 @@
 ﻿# JsonConverterAttribute on a class
 
-This sample uses the [JsonConverterAttribute](T:Newtonsoft.Json.JsonConverterAttribute) to specify that a [JsonConverter](T:Newtonsoft.Json.JsonConverter) should be used when serializing and deserializing a class.
+This sample uses the [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/) to specify that a [JsonConverter](/api/newtonsoft/json/jsonconverter/) should be used when serializing and deserializing a class.
 
 ## Sample
 

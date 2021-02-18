@@ -1,6 +1,6 @@
 ﻿# Write JSON with JsonTextWriter
 
-This sample writes JSON using the [JsonTextWriter](T:Newtonsoft.Json.JsonTextWriter). 
+This sample writes JSON using the [JsonTextWriter](/api/newtonsoft/json/jsontextwriter/). 
 
 ## Sample
 

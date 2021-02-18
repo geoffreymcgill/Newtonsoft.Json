@@ -1,6 +1,6 @@
 ﻿# Deserialize with CustomCreationConverter
 
-This sample creates a class that inherits from [CustomCreationConverter](T:Newtonsoft.Json.Converters.CustomCreationConverter) that instantiates Employee instances for the Person type.
+This sample creates a class that inherits from [CustomCreationConverter](/api/newtonsoft/json/converters/customcreationconverter/) that instantiates Employee instances for the Person type.
 
 ## Sample
 

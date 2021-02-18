@@ -1,6 +1,6 @@
 ﻿# DateTimeZoneHandling setting
 
-This sample uses the [DateTimeZoneHandling](T:Newtonsoft.Json.DateTimeZoneHandling) setting to control how [DateTime](T:System.DateTime) and [DateTimeOffset](T:System.DateTimeOffset) are serialized.
+This sample uses the [DateTimeZoneHandling](/api/newtonsoft/json/datetimezonehandling/) setting to control how [DateTime](T:System.DateTime) and [DateTimeOffset](T:System.DateTimeOffset) are serialized.
 
 ## Sample
 

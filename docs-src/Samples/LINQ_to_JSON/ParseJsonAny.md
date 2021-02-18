@@ -1,6 +1,6 @@
 ﻿# Parsing all JSON using JToken.Parse
 
-This sample parses JSON using [JToken.Parse(String)](M:Newtonsoft.Json.Linq.JToken.Parse(System.String)).
+This sample parses JSON using [JToken.Parse(string)](/api/newtonsoft/json/linq/jtoken/#method-parse)(string).
 
 ## Sample
 

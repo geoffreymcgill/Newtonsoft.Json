@@ -11,13 +11,13 @@ region: LinqToJsonBasic
 
 Select a topic below for more information:
 
-- [ParsingLINQtoJSON](ParsingLINQtoJSON.md)
-- [CreatingLINQtoJSON](CreatingLINQtoJSON.md)
-- [QueryingLINQtoJSON](QueryingLINQtoJSON.md)
-- [SelectToken](SelectToken.md)
+- [Parsing JSON](ParsingLINQtoJSON.md)
+- [Creating JSON](CreatingLINQtoJSON.md)
+- [Querying JSON with LINQ](QueryingLINQtoJSON.md)
+- [Querying JSON with SelectToken](SelectToken.md)
 
 ## See Also
 
-- [JObject](T:Newtonsoft.Json.Linq.JObject)
-- [JArray](T:Newtonsoft.Json.Linq.JArray)
-- [JValue](T:Newtonsoft.Json.Linq.JValue)
+- [JObject](/api/newtonsoft/json/linq/jobject/)
+- [JArray](/api/newtonsoft/json/linq/jarray/)
+- [JValue](/api/newtonsoft/json/linq/jvalue/)

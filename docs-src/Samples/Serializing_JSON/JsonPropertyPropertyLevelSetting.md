@@ -1,6 +1,6 @@
 ﻿# JsonPropertyAttribute property setting
 
-This sample uses [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) to change how the property value is serialized.
+This sample uses [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) to change how the property value is serialized.
 
 ## Sample
 

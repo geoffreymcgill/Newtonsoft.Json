@@ -1,6 +1,6 @@
 ﻿# Read from BSON
 
-This sample reads a [JObject](T:Newtonsoft.Json.Linq.JObject) from BSON using [BsonReader](T:Newtonsoft.Json.Bson.BsonReader).
+This sample reads a [JObject](/api/newtonsoft/json/linq/jobject/) from BSON using [BsonReader](/api/newtonsoft/json/bson/bsonreader/).
 
 ## Sample
 
