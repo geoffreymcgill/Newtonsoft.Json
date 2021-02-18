@@ -289,23 +289,23 @@
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-add">
-        <doc-member id="method-add" overload-id="group-add" name="Add" returns="void" params="TKey, TValue" signature="public void Add(TKey key, TValue value)">
+        <doc-member id="method-add" overload-id="group-add" name="Add" returns="void" params="KeyValuePair<TKey, TValue>" signature="public void Add(KeyValuePair<TKey, TValue> item)">
+            <template #name><h3>Add</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="item" type="KeyValuePair<TKey, TValue>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-add-1" overload-id="group-add" name="Add" returns="void" params="TKey, TValue" signature="public void Add(TKey key, TValue value)">
             <template #name><h3>Add</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="key" type="TKey"></doc-parameter>
                     <doc-parameter name="value" type="TValue"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-add-1" overload-id="group-add" name="Add" returns="void" params="KeyValuePair<TKey, TValue>" signature="public void Add(KeyValuePair<TKey, TValue> item)">
-            <template #name><h3>Add</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="item" type="KeyValuePair<TKey, TValue>"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -351,22 +351,22 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-remove">
-        <doc-member id="method-remove" overload-id="group-remove" name="Remove" returns="bool" params="TKey" signature="public bool Remove(TKey key)">
-            <template #name><h3>Remove</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="key" type="TKey"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-remove-1" overload-id="group-remove" name="Remove" returns="bool" params="KeyValuePair<TKey, TValue>" signature="public bool Remove(KeyValuePair<TKey, TValue> item)">
+        <doc-member id="method-remove" overload-id="group-remove" name="Remove" returns="bool" params="KeyValuePair<TKey, TValue>" signature="public bool Remove(KeyValuePair<TKey, TValue> item)">
             <template #name><h3>Remove</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="item" type="KeyValuePair<TKey, TValue>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-remove-1" overload-id="group-remove" name="Remove" returns="bool" params="TKey" signature="public bool Remove(TKey key)">
+            <template #name><h3>Remove</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="key" type="TKey"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>

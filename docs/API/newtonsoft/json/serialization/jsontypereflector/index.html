@@ -337,17 +337,7 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-getattribute">
-        <doc-member id="method-getattribute" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="Type" access="private" signature="private static T? GetAttribute(Type type)">
-            <template #name><h3>GetAttribute</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="type" type="Type"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-getattribute-1" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="MemberInfo" access="private" signature="private static T? GetAttribute(MemberInfo memberInfo)">
+        <doc-member id="method-getattribute" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="MemberInfo" access="private" signature="private static T? GetAttribute(MemberInfo memberInfo)">
             <template #name><h3>GetAttribute</h3></template>
 
             <template #parameters>
@@ -357,12 +347,22 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-getattribute-2" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="object" signature="public static T? GetAttribute(object provider)">
+        <doc-member id="method-getattribute-1" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="object" signature="public static T? GetAttribute(object provider)">
             <template #name><h3>GetAttribute</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="provider" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-getattribute-2" overload-id="group-getattribute" name="GetAttribute" returns="T?" params="Type" access="private" signature="private static T? GetAttribute(Type type)">
+            <template #name><h3>GetAttribute</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>

@@ -256,7 +256,17 @@
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-.ctor">
-        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="JProperty" signature="public JProperty(JProperty other)">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="string" access="internal" signature="internal JProperty(string name)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="name" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JProperty" signature="public JProperty(JProperty other)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -267,16 +277,6 @@
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JProperty"/> class from another <see cref="T:Newtonsoft.Json.Linq.JProperty"/> object.</p>
 
-        </doc-member>
-
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="string" access="internal" signature="internal JProperty(string name)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="name" type="string"></doc-parameter>
-                </doc-parameters>
-            </template>
         </doc-member>
 
         <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string, object[]" signature="public JProperty(string name, object[] content)">

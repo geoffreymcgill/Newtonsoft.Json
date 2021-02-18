@@ -1055,23 +1055,23 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
     </doc-member>
 
     <doc-overload-group overload-id="group-processcarriagereturnasync">
-        <doc-member id="method-processcarriagereturnasync" overload-id="group-processcarriagereturnasync" name="ProcessCarriageReturnAsync" returns="Task" params="bool, CancellationToken" access="private" signature="private Task ProcessCarriageReturnAsync(bool append, CancellationToken cancellationToken)">
+        <doc-member id="method-processcarriagereturnasync" overload-id="group-processcarriagereturnasync" name="ProcessCarriageReturnAsync" returns="Task" params="Task<bool>" access="private" signature="private async Task ProcessCarriageReturnAsync(Task<bool> task)">
+            <template #name><h3>ProcessCarriageReturnAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="task" type="Task<bool>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-processcarriagereturnasync-1" overload-id="group-processcarriagereturnasync" name="ProcessCarriageReturnAsync" returns="Task" params="bool, CancellationToken" access="private" signature="private Task ProcessCarriageReturnAsync(bool append, CancellationToken cancellationToken)">
             <template #name><h3>ProcessCarriageReturnAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="append" type="bool"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-processcarriagereturnasync-1" overload-id="group-processcarriagereturnasync" name="ProcessCarriageReturnAsync" returns="Task" params="Task<bool>" access="private" signature="private async Task ProcessCarriageReturnAsync(Task<bool> task)">
-            <template #name><h3>ProcessCarriageReturnAsync</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="task" type="Task<bool>"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>

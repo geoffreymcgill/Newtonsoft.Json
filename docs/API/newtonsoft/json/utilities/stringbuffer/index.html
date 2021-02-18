@@ -240,23 +240,23 @@
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-.ctor">
-        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="IArrayPool<char>?, int" signature="public StringBuffer(IArrayPool<char>? bufferPool, int initalSize)">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="char[]" access="private" signature="private StringBuffer(char[] buffer)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="buffer" type="char[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="IArrayPool<char>?, int" signature="public StringBuffer(IArrayPool<char>? bufferPool, int initalSize)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
                     <doc-parameter name="initalSize" type="int"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="char[]" access="private" signature="private StringBuffer(char[] buffer)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="buffer" type="char[]"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>

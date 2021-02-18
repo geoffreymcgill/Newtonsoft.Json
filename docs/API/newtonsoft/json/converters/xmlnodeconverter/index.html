@@ -356,7 +356,20 @@ as part of the XML element name.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-createelement">
-        <doc-member id="method-createelement" overload-id="group-createelement" name="CreateElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager, string?, Dictionary<string, string?>?" access="private" signature="private void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string elementName, XmlNamespaceManager manager, string? elementPrefix, Dictionary<string, string?>? attributeNameValues)">
+        <doc-member id="method-createelement" overload-id="group-createelement" name="CreateElement" returns="IXmlElement" params="string, IXmlDocument, string?, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(string elementName, IXmlDocument document, string? elementPrefix, XmlNamespaceManager manager)">
+            <template #name><h3>CreateElement</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="elementName" type="string"></doc-parameter>
+                    <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
+                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
+                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-createelement-1" overload-id="group-createelement" name="CreateElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager, string?, Dictionary<string, string?>?" access="private" signature="private void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string elementName, XmlNamespaceManager manager, string? elementPrefix, Dictionary<string, string?>? attributeNameValues)">
             <template #name><h3>CreateElement</h3></template>
 
             <template #parameters>
@@ -368,19 +381,6 @@ as part of the XML element name.</p>
                     <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
                     <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
                     <doc-parameter name="attributeNameValues" type="Dictionary<string, string?>?"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-createelement-1" overload-id="group-createelement" name="CreateElement" returns="IXmlElement" params="string, IXmlDocument, string?, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(string elementName, IXmlDocument document, string? elementPrefix, XmlNamespaceManager manager)">
-            <template #name><h3>CreateElement</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="elementName" type="string"></doc-parameter>
-                    <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
-                    <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
