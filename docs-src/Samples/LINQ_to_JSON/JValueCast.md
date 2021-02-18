@@ -1,6 +1,6 @@
 ﻿# Casting JValue
 
-This sample casts [JValue](T:Newtonsoft.Json.Linq.JValue) instances to .NET values.
+This sample casts [JValue](/api/newtonsoft/json/linq/jvalue/) instances to .NET values.
 
 ## Sample
 

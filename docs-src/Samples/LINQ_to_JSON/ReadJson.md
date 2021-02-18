@@ -1,6 +1,6 @@
 ﻿# Read JSON from a file
 
-This sample reads JSON from a file into a [JObject](T:Newtonsoft.Json.Linq.JObject). 
+This sample reads JSON from a file into a [JObject](/api/newtonsoft/json/linq/jobject/). 
 
 ## Sample
 

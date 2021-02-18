@@ -1,6 +1,6 @@
 ﻿# Converting between JSON and XML
 
-Json.NET supports converting JSON to XML and vice versa using the [XmlNodeConverter](T:Newtonsoft.Json.Converters.XmlNodeConverter).
+Json.NET supports converting JSON to XML and vice versa using the [XmlNodeConverter](/api/newtonsoft/json/converters/xmlnodeconverter/).
 
 [Home](/README.md)
 
@@ -57,5 +57,5 @@ region: DeserializeXmlNode
 
 ## See Also
 
-- [XmlNodeConverter](T:Newtonsoft.Json.Converters.XmlNodeConverter)
-- [JsonConvert](T:Newtonsoft.Json.JsonConvert)
+- [XmlNodeConverter](/api/newtonsoft/json/converters/xmlnodeconverter/)
+- [JsonConvert](/api/newtonsoft/json/jsonconvert/)

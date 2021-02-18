@@ -1,6 +1,6 @@
 ﻿# Configure NamingStrategy property name serialization
 
-This sample configures a [CamelCaseNamingStrategy](T:Newtonsoft.Json.Serialization.CamelCaseNamingStrategy) to not camel case properties that already have a name specified with an attribute.
+This sample configures a [CamelCaseNamingStrategy](/api/newtonsoft/json/serialization/camelcasenamingstrategy/) to not camel case properties that already have a name specified with an attribute.
 
 ## Sample
 

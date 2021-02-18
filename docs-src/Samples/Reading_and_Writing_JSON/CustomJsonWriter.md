@@ -1,6 +1,6 @@
 ﻿# Custom JsonWriter
 
-This sample creates a custom [JsonWriter](T:Newtonsoft.Json.JsonWriter). 
+This sample creates a custom [JsonWriter](/api/newtonsoft/json/jsonwriter/). 
 
 ## Sample
 

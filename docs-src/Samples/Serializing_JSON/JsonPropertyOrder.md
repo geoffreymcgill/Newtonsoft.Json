@@ -1,6 +1,6 @@
 ﻿# JsonPropertyAttribute order
 
-This sample uses [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) to order of properties when they are serialized to JSON.
+This sample uses [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) to order of properties when they are serialized to JSON.
 
 ## Sample
 

@@ -2,13 +2,15 @@
 
 Attributes can be used to control how Json.NET serializes and deserializes .NET objects.
 
-- [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute) - Placed on classes to control how they should be serialized as a JSON object.
-- [JsonArrayAttribute](T:Newtonsoft.Json.JsonArrayAttribute) - Placed on collections to control how they should be serialized as a JSON array.
-- [JsonDictionaryAttribute](T:Newtonsoft.Json.JsonDictionaryAttribute) - Placed on dictionaries to control how they should be serialized as a JSON object.
-- [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) - Placed on fields and properties to control how they should be serialized as a property in a JSON object.
-- [JsonConverterAttribute](T:Newtonsoft.Json.JsonConverterAttribute) - Placed on either classes or fields and properties to specify which JsonConverter should be used during serialization.
-- [JsonExtensionDataAttribute](T:Newtonsoft.Json.JsonExtensionDataAttribute) - Placed on a collection field or property to deserialize properties with no matching class member into the specified collection and write values during serialization.
-- [JsonConstructorAttribute](T:Newtonsoft.Json.JsonConstructorAttribute) - Placed on a constructor to specify that it should be used to create the class during deserialization.
+https://geoffreymcgill.github.io/Newtonsoft.Json/api/newtonsoft/json/jsonobjectattribute/
+
+- [JsonObjectAttribute](/api/newtonsoft/json/jsonobjectattribute/) - Placed on classes to control how they should be serialized as a JSON object.
+- [JsonArrayAttribute](/api/newtonsoft/json/jsonarrayattribute/) - Placed on collections to control how they should be serialized as a JSON array.
+- [JsonDictionaryAttribute](/api/newtonsoft/json/jsondictionaryattribute/) - Placed on dictionaries to control how they should be serialized as a JSON object.
+- [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) - Placed on fields and properties to control how they should be serialized as a property in a JSON object.
+- [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/) - Placed on either classes or fields and properties to specify which JsonConverter should be used during serialization.
+- [JsonExtensionDataAttribute](/api/newtonsoft/json/jsonextensiondataattribute/) - Placed on a collection field or property to deserialize properties with no matching class member into the specified collection and write values during serialization.
+- [JsonConstructorAttribute](/api/newtonsoft/json/jsonconstructorattribute/) - Placed on a constructor to specify that it should be used to create the class during deserialization.
 
 ## Standard .NET Serialization Attributes
 
@@ -31,13 +33,13 @@ The MemberSerialization flag on this attribute specifies whether member serializ
 
 Placing the the [DataContractAttribute](T:System.Runtime.Serialization.DataContractAttribute) on a type is another way to default member serialization to opt-in.
 
-The NamingStrategy setting on this attributes can be set to a [NamingStrategy](T:Newtonsoft.Json.Serialization.NamingStrategy) type that specifies how property names are serialized.
+The NamingStrategy setting on this attributes can be set to a [NamingStrategy](/api/newtonsoft/json/serialization/namingstrategy/) type that specifies how property names are serialized.
 
-Json.NET serializes .NET classes that implement IEnumerable as a JSON array populated with the IEnumerable values. Placing the [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute) overrides this behavior and forces the serializer to serialize the class's fields and properties.
+Json.NET serializes .NET classes that implement IEnumerable as a JSON array populated with the IEnumerable values. Placing the [JsonObjectAttribute](/api/newtonsoft/json/jsonobjectattribute/) overrides this behavior and forces the serializer to serialize the class's fields and properties.
 
 ## JsonArrayAttribute/JsonDictionaryAttribute
 
-The [JsonArrayAttribute](T:Newtonsoft.Json.JsonArrayAttribute) and [JsonDictionaryAttribute](T:Newtonsoft.Json.JsonDictionaryAttribute) are used to specify whether a class is serialized as that collection type.
+The [JsonArrayAttribute](/api/newtonsoft/json/jsonarrayattribute/) and [JsonDictionaryAttribute](/api/newtonsoft/json/jsondictionaryattribute/) are used to specify whether a class is serialized as that collection type.
 
 The collection attributes have options to customize the JsonConverter, type name handling, and reference handling that are applied to collection items.
 
@@ -49,7 +51,7 @@ JsonPropertyAttribute has a number of uses:
 - JsonPropertyAttribute indicates that a property should be serialized when member serialization is set to opt-in.
 - It includes non-public properties in serialization and deserialization.
 - It can be used to customize type name, reference, null, and default value handling for the property value.
-- It can be used to customize the [NamingStrategy](T:Newtonsoft.Json.Serialization.NamingStrategy) of the serialized property name.
+- It can be used to customize the [NamingStrategy](/api/newtonsoft/json/serialization/namingstrategy/) of the serialized property name.
 - It can be used to customize the property's collection items JsonConverter, type name handling, and reference handling.
 
 The DataMemberAttribute can be used as a substitute for JsonPropertyAttribute.
@@ -62,7 +64,7 @@ The [NonSerializedAttribute](T:System.NonSerializedAttribute) can be used as a s
 
 ## JsonConverterAttribute
 
-The [JsonConverterAttribute](T:Newtonsoft.Json.JsonConverterAttribute) specifies which [JsonConverter](T:Newtonsoft.Json.JsonConverter) is used to convert an object.
+The [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/) specifies which [JsonConverter](/api/newtonsoft/json/jsonconverter/) is used to convert an object.
 
 The attribute can be placed on a class or a member. When placed on a class, the JsonConverter specified by the attribute will be the default way of serializing that class. When the attribute is on a field or property, then the specified JsonConverter will always be used to serialize that value.
 
@@ -75,11 +77,11 @@ region: Types
 
 This example shows the JsonConverterAttribute being applied to a property.
 
-To apply a JsonConverter to the items in a collection, use either [JsonArrayAttribute](T:Newtonsoft.Json.JsonArrayAttribute), [JsonDictionaryAttribute](T:Newtonsoft.Json.JsonDictionaryAttribute) or [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) and set the ItemConverterType property to the converter type you want to use.
+To apply a JsonConverter to the items in a collection, use either [JsonArrayAttribute](/api/newtonsoft/json/jsonarrayattribute/), [JsonDictionaryAttribute](/api/newtonsoft/json/jsondictionaryattribute/) or [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) and set the ItemConverterType property to the converter type you want to use.
 
 ## JsonExtensionDataAttribute
 
-The [JsonExtensionDataAttribute](T:Newtonsoft.Json.JsonExtensionDataAttribute) instructs the [JsonSerializer](T:Newtonsoft.Json.JsonSerializer) to deserialize properties with no matching field or property on the type into the specified collection. During serialization the values in this collection are written back to the instance's JSON object.
+The [JsonExtensionDataAttribute](/api/newtonsoft/json/jsonextensiondataattribute/) instructs the [JsonSerializer](/api/newtonsoft/json/jsonserializer/) to deserialize properties with no matching field or property on the type into the specified collection. During serialization the values in this collection are written back to the instance's JSON object.
 
 :::
 All extension data values will be written during serialization, even if a property the same name has already been written.
@@ -99,7 +101,7 @@ region: Usage
 
 ## JsonConstructorAttribute
 
-The [JsonConstructorAttribute](T:Newtonsoft.Json.JsonConstructorAttribute) instructs the [JsonSerializer](T:Newtonsoft.Json.JsonSerializer) to use a specific constructor when deserializing a class. It can be used to create a class using a parameterized constructor instead of the default constructor, or to pick which specific parameterized constructor to use if there are multiple.
+The [JsonConstructorAttribute](/api/newtonsoft/json/jsonconstructorattribute/) instructs the [JsonSerializer](/api/newtonsoft/json/jsonserializer/) to use a specific constructor when deserializing a class. It can be used to create a class using a parameterized constructor instead of the default constructor, or to pick which specific parameterized constructor to use if there are multiple.
 
 ```csharp Types
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonConstructorAttribute.cs
@@ -113,10 +115,10 @@ region: Usage
 
 ## See Also
 
-- [JsonObjectAttribute](T:Newtonsoft.Json.JsonObjectAttribute)
-- [JsonArrayAttribute](T:Newtonsoft.Json.JsonArrayAttribute)
-- [JsonDictionaryAttribute](T:Newtonsoft.Json.JsonDictionaryAttribute)
-- [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute)
-- [JsonConverterAttribute](T:Newtonsoft.Json.JsonConverterAttribute)
-- [JsonExtensionDataAttribute](T:Newtonsoft.Json.JsonExtensionDataAttribute)
-- [JsonConstructorAttribute](T:Newtonsoft.Json.JsonConstructorAttribute)
+- [JsonObjectAttribute](/api/newtonsoft/json/jsonobjectattribute/)
+- [JsonArrayAttribute](/api/newtonsoft/json/jsonarrayattribute/)
+- [JsonDictionaryAttribute](/api/newtonsoft/json/jsondictionaryattribute/)
+- [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/)
+- [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/)
+- [JsonExtensionDataAttribute](/api/newtonsoft/json/jsonextensiondataattribute/)
+- [JsonConstructorAttribute](/api/newtonsoft/json/jsonconstructorattribute/)

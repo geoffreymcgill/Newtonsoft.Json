@@ -1,6 +1,6 @@
 ﻿# JsonConstructorAttribute
 
-This sample uses the [JsonConstructorAttribute](T:Newtonsoft.Json.JsonConstructorAttribute) to specify that a constructor should be used to create a class during deserialization.
+This sample uses the [JsonConstructorAttribute](/api/newtonsoft/json/jsonconstructorattribute/) to specify that a constructor should be used to create a class during deserialization.
 
 ## Sample
 

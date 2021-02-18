@@ -1,6 +1,6 @@
 ﻿# Querying JSON with SelectToken
 
-[Overload:Newtonsoft.Json.Linq.JToken.SelectToken](Overload:Newtonsoft.Json.Linq.JToken.SelectToken) provides a method to query LINQ to JSON using a single string path to a desired [JToken](T:Newtonsoft.Json.Linq.JToken). SelectToken makes dynamic queries easy because the entire query is defined in a string.
+[Overload:Newtonsoft.Json.Linq.JToken.SelectToken](Overload:Newtonsoft.Json.Linq.JToken.SelectToken) provides a method to query LINQ to JSON using a single string path to a desired [JToken](/api/newtonsoft/json/linq/jtoken/). SelectToken makes dynamic queries easy because the entire query is defined in a string.
 
 ## SelectToken
 

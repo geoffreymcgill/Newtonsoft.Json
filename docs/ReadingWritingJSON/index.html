@@ -185,7 +185,7 @@
         <span>Basic Reading and Writing JSON</span>
     </h1>
 </doc-anchor-target>
-<p>To manually read and write JSON, Json.NET provides the <a href="T:Newtonsoft.Json.JsonReader">JsonReader</a> and <a href="T:Newtonsoft.Json.JsonWriter">JsonWriter</a> classes.</p>
+<p>To manually read and write JSON, Json.NET provides the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonreader/">JsonReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonwriter/">JsonWriter</a> classes.</p>
 <doc-anchor-target id="jsontextreader-and-jsontextwriter">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#jsontextreader-and-jsontextwriter">#</doc-anchor-trigger>
@@ -194,7 +194,7 @@
 </doc-anchor-target>
 <doc-alert type="primary"><p>JsonReader and JsonWriter are low-level classes and are primarily for internal use by Json.NET. To quickly work with JSON, either the serializer - <a href="../Serializing_and_Deserializing_JSON">Serializing and Deserializing JSON</a> - or using <a href="../LINQ_to_JSON">LINQ to JSON</a> is recommended.</p>
 </doc-alert>
-<p><a href="T:Newtonsoft.Json.JsonTextReader">JsonTextReader</a> and <a href="T:Newtonsoft.Json.JsonTextWriter">JsonTextWriter</a> are used to read and write JSON text. The JsonTextWriter has a number of settings on it to control how JSON is formatted when it is written. These options include formatting, indentation character, indent count, and quote character.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a> are used to read and write JSON text. The JsonTextWriter has a number of settings on it to control how JSON is formatted when it is written. These options include formatting, indentation character, indent count, and quote character.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ReadingAndWritingJsonTests.cs
 region: ReadingAndWritingJsonText</code></pre>
 <p>JsonTextReader has settings on it for reading different date formats, time zones, and the cultures when reading text values.</p>
@@ -206,7 +206,7 @@ region: ReadingJsonText</code></pre>
         <span>JTokenReader and JTokenWriter</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.Linq.JTokenReader">JTokenReader</a> and <a href="T:Newtonsoft.Json.Linq.JTokenWriter">JTokenWriter</a> read and write LINQ to JSON objects. They are located in the <a href="N:Newtonsoft.Json.Linq">Newtonsoft.Json.Linq</a> namespace. These objects allow you to use LINQ to JSON objects with objects that read and write JSON, such as the JsonSerializer. For example you can deserialize from a LINQ to JSON object into a regular .NET object and vice versa.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenwriter/">JTokenWriter</a> read and write LINQ to JSON objects. They are located in the <a href="N:Newtonsoft.Json.Linq">Newtonsoft.Json.Linq</a> namespace. These objects allow you to use LINQ to JSON objects with objects that read and write JSON, such as the JsonSerializer. For example you can deserialize from a LINQ to JSON object into a regular .NET object and vice versa.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ReadingAndWritingJsonTests.cs
 region: ReadingAndWritingJsonLinq</code></pre>
 <doc-anchor-target id="see-also">
@@ -216,12 +216,12 @@ region: ReadingAndWritingJsonLinq</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="T:Newtonsoft.Json.JsonReader">JsonReader</a></li>
-<li><a href="T:Newtonsoft.Json.JsonWriter">JsonWriter</a></li>
-<li><a href="T:Newtonsoft.Json.Linq.JTokenReader">JTokenReader</a></li>
-<li><a href="T:Newtonsoft.Json.Linq.JTokenWriter">JTokenWriter</a></li>
-<li><a href="T:Newtonsoft.Json.Bson.BsonReader">BsonReader</a></li>
-<li><a href="T:Newtonsoft.Json.Bson.BsonWriter">BsonWriter</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonreader/">JsonReader</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonwriter/">JsonWriter</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenwriter/">JTokenWriter</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/bson/bsonreader/">BsonReader</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/bson/bsonwriter/">BsonWriter</a></li>
 </ul>
 
     

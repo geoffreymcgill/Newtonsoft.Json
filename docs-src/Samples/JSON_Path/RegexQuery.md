@@ -1,6 +1,6 @@
 ﻿# JSON Path regex operator
 
-This sample loads JSON and then queries values from it using [SelectToken(String)](M:Newtonsoft.Json.Linq.JToken.SelectToken(System.String)) with a regex JSON Path. 
+This sample loads JSON and then queries values from it using [SelectToken(string)](/api/newtonsoft/json/linq/jtoken/#method-selecttoken)(string) with a regex JSON Path. 
 
 ## Sample
 

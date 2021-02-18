@@ -1,6 +1,6 @@
 ﻿# JsonPropertyAttribute name
 
-This sample uses [JsonPropertyAttribute](T:Newtonsoft.Json.JsonPropertyAttribute) to change the names of properties when they are serialized to JSON.
+This sample uses [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) to change the names of properties when they are serialized to JSON.
 
 ## Sample
 

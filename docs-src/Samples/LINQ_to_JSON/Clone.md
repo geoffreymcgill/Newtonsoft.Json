@@ -1,6 +1,6 @@
 ﻿# Cloning JSON with JToken.DeepClone
 
-This sample recursively clones a [JToken](T:Newtonsoft.Json.Linq.JToken) and all its children using [DeepClone](M:Newtonsoft.Json.Linq.JToken.DeepClone).
+This sample recursively clones a [JToken](/api/newtonsoft/json/linq/jtoken/) and all its children using [DeepClone](/api/newtonsoft/json/linq/jtoken/#method-deepclone).
 
 ## Sample
 

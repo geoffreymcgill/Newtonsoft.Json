@@ -1,6 +1,6 @@
 ﻿# Snake case property names
 
-This sample uses a [SnakeCaseNamingStrategy](T:Newtonsoft.Json.Serialization.SnakeCaseNamingStrategy)
+This sample uses a [SnakeCaseNamingStrategy](/api/newtonsoft/json/serialization/snakecasenamingstrategy/)
 specified using a contract resolver to snake case serialized property names.
 
 ## Sample

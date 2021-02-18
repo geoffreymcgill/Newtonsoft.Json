@@ -185,14 +185,14 @@
         <span>Serialization Settings</span>
     </h1>
 </doc-anchor-target>
-<p>JsonSerializer has a number of properties on it to customize how it serializes JSON. These can also be used with the methods on JsonConvert via the <a href="T:Newtonsoft.Json.JsonSerializerSettings">JsonSerializerSettings</a> overloads.</p>
+<p>JsonSerializer has a number of properties on it to customize how it serializes JSON. These can also be used with the methods on JsonConvert via the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a> overloads.</p>
 <doc-anchor-target id="dateformathandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#dateformathandling">#</doc-anchor-trigger>
         <span>DateFormatHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.DateFormatHandling">DateFormatHandling</a> controls how dates are serialized.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/dateformathandling/">DateFormatHandling</a> controls how dates are serialized.</p>
 <table>
 <thead>
 <tr>
@@ -217,7 +217,7 @@
         <span>MissingMemberHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.MissingMemberHandling">MissingMemberHandling</a> controls how missing members, e.g. JSON contains a property that isn't a member on the object, are handled during deserialization.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/missingmemberhandling/">MissingMemberHandling</a> controls how missing members, e.g. JSON contains a property that isn't a member on the object, are handled during deserialization.</p>
 <table>
 <thead>
 <tr>
@@ -242,10 +242,10 @@
         <span>ReferenceLoopHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.ReferenceLoopHandling">ReferenceLoopHandling</a> controls how circular referencing objects,
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/referenceloophandling/">ReferenceLoopHandling</a> controls how circular referencing objects,
 e.g. a Person object referencing itself via a Manager property, are serialized.</p>
-<p>The <a href="M:System.Object.Equals(System.Object)">Object.Equals(Object)</a> method is used to test whether an object is in a circular reference.
-By default <code v-pre>Object.Equals(Object)</code> will test whether the references are equal for reference types and private and public values
+<p>The <a href="M:System.Object.Equals(System.Object)">Object.Equals(object)</a> method is used to test whether an object is in a circular reference.
+By default <code v-pre>Object.Equals(object)</code> will test whether the references are equal for reference types and private and public values
 are equal for value types. Classes and structs can override this method.</p>
 <table>
 <thead>
@@ -269,14 +269,14 @@ are equal for value types. Classes and structs can override this method.</p>
 </tr>
 </tbody>
 </table>
-<p>ReferenceLoopHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="P:Newtonsoft.Json.JsonContainerAttribute.ItemReferenceLoopHandling">JsonContainerAttribute.ItemReferenceLoopHandling</a>, customized on a property with <a href="P:Newtonsoft.Json.JsonPropertyAttribute.ReferenceLoopHandling">JsonPropertyAttribute.ReferenceLoopHandling</a> or a property's object properties or collection items using <a href="P:Newtonsoft.Json.JsonPropertyAttribute.ItemReferenceLoopHandling">JsonPropertyAttribute.ItemReferenceLoopHandling</a>.</p>
+<p>ReferenceLoopHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonContainerAttribute.ItemReferenceLoopHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/referenceloophandling/#property-referenceloophandling">JsonPropertyAttribute.ReferenceLoopHandling</a> or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonPropertyAttribute.ItemReferenceLoopHandling</a>.</p>
 <doc-anchor-target id="nullvaluehandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#nullvaluehandling">#</doc-anchor-trigger>
         <span>NullValueHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.NullValueHandling">NullValueHandling</a> controls how null values on .NET objects are handled during serialization and how null values in JSON are handled during deserialization.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/nullvaluehandling/">NullValueHandling</a> controls how null values on .NET objects are handled during serialization and how null values in JSON are handled during deserialization.</p>
 <table>
 <thead>
 <tr>
@@ -302,7 +302,7 @@ are equal for value types. Classes and structs can override this method.</p>
         <span>DefaultValueHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.DefaultValueHandling">DefaultValueHandling</a> controls how Json.NET uses default values set using the .NET [DefaultValueAttribute](T:Newtonsoft.Json.DefaultValueHandling](T:System.ComponentModel.DefaultValueAttribute](T:Newtonsoft.Json.DefaultValueHandling)) controls how Json.NET uses default values set using the .NET <a href="T:System.ComponentModel.DefaultValueAttribute">DefaultValueAttribute</a> when serializing and deserializing.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> controls how Json.NET uses default values set using the .NET <a href="T:System.ComponentModel.DefaultValueAttribute">DefaultValueAttribute</a> when serializing and deserializing.</p>
 <p>Member | Description
 --- | ---
 <code v-pre>Include</code> | By default Json.NET will write a field/property value to JSON when serializing if the value is the same as the field/property's default value.
@@ -316,7 +316,7 @@ The Json.NET deserializer will continue setting a field/property if the JSON val
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="T:Newtonsoft.Json.ObjectCreationHandling">ObjectCreationHandling</a> controls how objects are created and deserialized to during deserialization.</li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/objectcreationhandling/">ObjectCreationHandling</a> controls how objects are created and deserialized to during deserialization.</li>
 </ul>
 <table>
 <thead>
@@ -347,13 +347,13 @@ The Json.NET deserializer will continue setting a field/property if the JSON val
         <span>TypeNameHandling</span>
     </h2>
 </doc-anchor-target>
-<doc-alert type="warning"><p><a href="T:Newtonsoft.Json.TypeNameHandling">TypeNameHandling</a> should be used with caution when your application deserializes JSON from an external source.</p>
-<p>Incoming types should be validated with a custom <a href="T:Newtonsoft.Json.Serialization.ISerializationBinder">ISerializationBinder</a> when deserializing with a value other than <code v-pre>TypeNameHandling.None</code>.</p>
+<doc-alert type="warning"><p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> should be used with caution when your application deserializes JSON from an external source.</p>
+<p>Incoming types should be validated with a custom <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a> when deserializing with a value other than <code v-pre>TypeNameHandling.None</code>.</p>
 </doc-alert>
-<p><a href="T:Newtonsoft.Json.TypeNameHandling">TypeNameHandling</a> controls whether Json.NET includes .NET type names during serialization with a <code v-pre>$type</code> property and reads .NET type names from that property to determine what type to create during
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> controls whether Json.NET includes .NET type names during serialization with a <code v-pre>$type</code> property and reads .NET type names from that property to determine what type to create during
 deserialization.</p>
-<p>Metadata properties like <code v-pre>$type</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="T:Newtonsoft.Json.MetadataPropertyHandling">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
-<p>The value of the <code v-pre>$type</code> property can be customized and validated by creating your own <a href="T:Newtonsoft.Json.Serialization.ISerializationBinder">ISerializationBinder</a>.</p>
+<p>Metadata properties like <code v-pre>$type</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
+<p>The value of the <code v-pre>$type</code> property can be customized and validated by creating your own <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a>.</p>
 <table>
 <thead>
 <tr>
@@ -384,7 +384,7 @@ deserialization.</p>
 </tr>
 </tbody>
 </table>
-<p>TypeNameHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="P:Newtonsoft.Json.JsonContainerAttribute.ItemTypeNameHandling">JsonContainerAttribute.ItemTypeNameHandling</a>, customized on a property with <a href="P:Newtonsoft.Json.JsonPropertyAttribute.TypeNameHandling">JsonPropertyAttribute.TypeNameHandling</a> or a property's object properties or collection items using <a href="P:Newtonsoft.Json.JsonPropertyAttribute.ItemTypeNameHandling">JsonPropertyAttribute.ItemTypeNameHandling</a>.</p>
+<p>TypeNameHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonContainerAttribute.ItemTypeNameHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/typenamehandling/#property-typenamehandling">JsonPropertyAttribute.TypeNameHandling</a> or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonPropertyAttribute.ItemTypeNameHandling</a>.</p>
 <doc-anchor-target id="typenameassemblyformat">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#typenameassemblyformat">#</doc-anchor-trigger>
@@ -417,15 +417,15 @@ deserialization.</p>
         <span>SerializationBinder</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="T:Newtonsoft.Json.Serialization.ISerializationBinder">ISerializationBinder</a> is used to resolve .NET types to type names during serialization and type names to .NET types during deserialization.</p>
-<p>If TypeNameHandling is enabled then it is strongly recommended that a custom <a href="T:Newtonsoft.Json.Serialization.ISerializationBinder">ISerializationBinder</a> is used to validate incoming type names for security reasons.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a> is used to resolve .NET types to type names during serialization and type names to .NET types during deserialization.</p>
+<p>If TypeNameHandling is enabled then it is strongly recommended that a custom <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a> is used to validate incoming type names for security reasons.</p>
 <doc-anchor-target id="metadatapropertyhandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#metadatapropertyhandling">#</doc-anchor-trigger>
         <span>MetadataPropertyHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.MetadataPropertyHandling">MetadataPropertyHandling</a> controls how metadata properties like <code v-pre>$type</code> and <code v-pre>$id</code> are read during deserialization.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> controls how metadata properties like <code v-pre>$type</code> and <code v-pre>$id</code> are read during deserialization.</p>
 <p>For performance reasons by default the JsonSerializer assumes that any metadata properties are located at the beginning of a JSON object. If you are unable to guarantee the order of properties in JSON you are deserializing then <code v-pre>MetadataPropertyHandling.ReadAhead</code> removes this restriction at the cost of some performance.</p>
 <table>
 <thead>
@@ -455,7 +455,7 @@ deserialization.</p>
         <span>ConstructorHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="T:Newtonsoft.Json.ConstructorHandling">ConstructorHandling</a> controls how constructors are used when initializing objects during deserialization.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/constructorhandling/">ConstructorHandling</a> controls how constructors are used when initializing objects during deserialization.</p>
 <table>
 <thead>
 <tr>
@@ -481,15 +481,15 @@ deserialization.</p>
     </h2>
 </doc-anchor-target>
 <p>This is the collection of JsonConverters that will be used during serialization and deserialization.</p>
-<p>A <a href="T:Newtonsoft.Json.JsonConverter">JsonConverter</a> allows JSON to be manually written during serialization and read during deserialization. This is useful for particularly complex JSON structures or for when you want to change how a type is serialized.</p>
+<p>A <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> allows JSON to be manually written during serialization and read during deserialization. This is useful for particularly complex JSON structures or for when you want to change how a type is serialized.</p>
 <p>When a JsonConverter has been added to a JsonSerializer it will be checked for every value that is being serialized/deserialized using its CanConvert to see if it should be used. If CanConvert returns true then the JsonConverter will be used to read or write the JSON for that value. Note that while a JsonConverter gives you complete control over that values JSON, many Json.NET serialization features are no longer available like type name and reference handling.</p>
-<p>JsonConverters can be used as an argument when calling the serializer, it can be set on an object or property using <a href="T:Newtonsoft.Json.JsonConverterAttribute">JsonConverterAttribute</a>, it be set on an object's properties or a collection's items using <a href="P:Newtonsoft.Json.JsonContainerAttribute.ItemConverterType">JsonContainerAttribute.ItemConverterType</a>, or a property's object properties or collection items using <a href="P:Newtonsoft.Json.JsonPropertyAttribute.ItemConverterType">JsonPropertyAttribute.ItemConverterType</a>.</p>
+<p>JsonConverters can be used as an argument when calling the serializer, it can be set on an object or property using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a>, it be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemconvertertype/#property-itemconvertertype">JsonContainerAttribute.ItemConverterType</a>, or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemconvertertype/#property-itemconvertertype">JsonPropertyAttribute.ItemConverterType</a>.</p>
 <p>To create your own custom converter inherit from the JsonConverter class. Read more about the built-in JsonConverters below:</p>
 <ul>
-<li><a href="../DatesInJSON">DatesInJSON</a></li>
-<li><a href="ConvertingJSONandXML">ConvertingJSONandXML</a></li>
+<li><a href="../DatesInJSON">Serializing Dates in JSON</a></li>
+<li><a href="../../ConvertingJSONandXML">Converting between JSON and XML</a></li>
 <li><a href="../customcreationconverter">CustomCreationConverter</a></li>
-<li><a href="T:Newtonsoft.Json.Converters.StringEnumConverter">StringEnumConverter</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/converters/stringenumconverter/">StringEnumConverter</a></li>
 </ul>
 <doc-anchor-target id="contractresolver">
     <h2>
@@ -497,7 +497,7 @@ deserialization.</p>
         <span>ContractResolver</span>
     </h2>
 </doc-anchor-target>
-<p>Internally for every .NET type the JsonSerializer will create a contract of how the type should be serialized and deserialized, based on type metadata and attributes applied to the class. Specifying a custom <a href="T:Newtonsoft.Json.Serialization.IContractResolver">IContractResolver</a> allows the creation of contracts to be customized.</p>
+<p>Internally for every .NET type the JsonSerializer will create a contract of how the type should be serialized and deserialized, based on type metadata and attributes applied to the class. Specifying a custom <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> allows the creation of contracts to be customized.</p>
 <p>Read more about Contract Resolvers here:</p>
 <ul>
 <li><a href="#contractresolver">ContractResolver</a>(ContractResolver.md.</li>
@@ -508,7 +508,7 @@ deserialization.</p>
         <span>TraceWriter</span>
     </h2>
 </doc-anchor-target>
-<p>The Json.NET serializer supports logging and debugging using the <a href="T:Newtonsoft.Json.Serialization.ITraceWriter">ITraceWriter</a> interface. By assigning a trace writer you can debug what happens inside the Json.NET serializer when serializing and deserializing JSON.</p>
+<p>The Json.NET serializer supports logging and debugging using the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/itracewriter/">ITraceWriter</a> interface. By assigning a trace writer you can debug what happens inside the Json.NET serializer when serializing and deserializing JSON.</p>
 <p>Read more about TraceWriters here:</p>
 <ul>
 <li>[SerializationTracing](SerializationTracing.md.</li>
@@ -519,7 +519,7 @@ deserialization.</p>
         <span>Error</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="E:Newtonsoft.Json.JsonSerializer.Error">JsonSerializer.Error</a> event can catch errors during serialization and either handle the event and continue with serialization or let the error bubble up and be thrown to the application.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/#event-error">JsonSerializer.Error</a> event can catch errors during serialization and either handle the event and continue with serialization or let the error bubble up and be thrown to the application.</p>
 <p>Read more about error handling here:</p>
 <ul>
 <li><a href="../serializationerrorhandling">SerializationErrorHandling</a></li>
@@ -531,12 +531,12 @@ deserialization.</p>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="../serializationguide">SerializationGuide</a></li>
-<li><a href="../serializationattributes">SerializationAttributes</a></li>
-<li><a href="../DatesInJSON">DatesInJSON</a></li>
-<li><a href="T:Newtonsoft.Json.JsonSerializer">JsonSerializer</a></li>
-<li><a href="T:Newtonsoft.Json.JsonSerializerSettings">JsonSerializerSettings</a></li>
-<li><a href="T:Newtonsoft.Json.JsonConverter">JsonConverter</a></li>
+<li><a href="../serializationguide">Serialization Guide</a></li>
+<li><a href="../serializationattributes">Serialization Attributes</a></li>
+<li><a href="../DatesInJSON">Serializing Dates in JSON</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a></li>
+<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a></li>
 <li><a href="T:System.Runtime.Serialization.SerializationBinder">SerializationBinder</a></li>
 </ul>
 

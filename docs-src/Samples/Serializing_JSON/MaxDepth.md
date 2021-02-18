@@ -1,6 +1,6 @@
 ﻿# MaxDepth setting
 
-This sample uses the [JsonSerializerSettings.MaxDepth](P:Newtonsoft.Json.JsonSerializerSettings.MaxDepth) setting to constrain JSON to a maximum depth when deserializing.
+This sample uses the [JsonSerializerSettings.MaxDepth](/api/newtonsoft/json/jsonserializersettings/maxdepth/#property-maxdepth) setting to constrain JSON to a maximum depth when deserializing.
 
 ## Sample
 

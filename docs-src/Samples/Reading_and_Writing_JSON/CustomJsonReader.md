@@ -1,6 +1,6 @@
 ﻿# Custom JsonReader
 
-This sample creates a custom [JsonReader](T:Newtonsoft.Json.JsonReader). 
+This sample creates a custom [JsonReader](/api/newtonsoft/json/jsonreader/). 
 
 ## Sample
 

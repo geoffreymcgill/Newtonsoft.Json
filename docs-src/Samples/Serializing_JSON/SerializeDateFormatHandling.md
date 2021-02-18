@@ -1,6 +1,6 @@
 ﻿# DateFormatHandling setting
 
-This sample uses the [DateFormatHandling](T:Newtonsoft.Json.DateFormatHandling) setting to control how [DateTime](T:System.DateTimeOffset) and [DateTimeOffset](T:System.DateTimeOffset) are serialized.
+This sample uses the [DateFormatHandling](/api/newtonsoft/json/dateformathandling/) setting to control how [DateTime](T:System.DateTimeOffset) and [DateTimeOffset](T:System.DateTimeOffset) are serialized.
 
 ## Sample
 

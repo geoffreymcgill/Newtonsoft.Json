@@ -1,6 +1,6 @@
 ﻿# Using JToken.CreateReader
 
-This sample creates a [JTokenReader](T:Newtonsoft.Json.Linq.JTokenReader) from a [JToken](T:Newtonsoft.Json.Linq.JToken).
+This sample creates a [JTokenReader](/api/newtonsoft/json/linq/jtokenreader/) from a [JToken](/api/newtonsoft/json/linq/jtoken/).
 
 ## Sample
 
