@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-false" name="False" type="Task<System.Boolean>" signature="public readonly static Task<Boolean> False">
+    <doc-member id="field-false" name="False" type="Task<bool>" signature="public readonly static Task<bool> False">
         <template #name><h3>False</h3></template>
     </doc-member>
 
-<doc-member id="field-true" name="True" type="Task<System.Boolean>" signature="public readonly static Task<Boolean> True">
+    <doc-member id="field-true" name="True" type="Task<bool>" signature="public readonly static Task<bool> True">
         <template #name><h3>True</h3></template>
     </doc-member>
 
-<doc-member id="field-completedtask" name="CompletedTask" type="Task" access="internal" signature="internal readonly static Task CompletedTask">
+    <doc-member id="field-completedtask" name="CompletedTask" type="Task" access="internal" signature="internal readonly static Task CompletedTask">
         <template #name><h3>CompletedTask</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,109 +224,51 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-toasync" name="ToAsync" returns="Task<System.Boolean>" params="Boolean" access="internal" signature="internal static Task<Boolean> ToAsync(Boolean value)">
-        <template #name><h3>ToAsync</h3></template>
+    <doc-overload-group overload-id="group-cancelifrequestedasync">
+        <doc-member id="method-cancelifrequestedasync" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Task?" params="CancellationToken" signature="public static Task? CancelIfRequestedAsync(CancellationToken cancellationToken)">
+            <template #name><h3>CancelIfRequestedAsync</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="System.Nullable<Task>" params="CancellationToken" signature="public static Nullable<Task> CancelIfRequestedAsync(CancellationToken cancellationToken)">
-        <template #name><h3>CancelIfRequestedAsync</h3></template>
+        <doc-member id="method-cancelifrequestedasync-1" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Task<T>?" params="CancellationToken" signature="public static Task<T>? CancelIfRequestedAsync(CancellationToken cancellationToken)">
+            <template #name><h3>CancelIfRequestedAsync</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="System.Nullable<Task<T>>" params="CancellationToken" signature="public static Nullable<Task<T>> CancelIfRequestedAsync(CancellationToken cancellationToken)">
-        <template #name><h3>CancelIfRequestedAsync</h3></template>
+    <doc-overload-group overload-id="group-fromcanceled">
+        <doc-member id="method-fromcanceled" overload-id="group-fromcanceled" name="FromCanceled" returns="Task" params="CancellationToken" signature="public static Task FromCanceled(CancellationToken cancellationToken)">
+            <template #name><h3>FromCanceled</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-fromcanceled" name="FromCanceled" returns="Task" params="CancellationToken" signature="public static Task FromCanceled(CancellationToken cancellationToken)">
-        <template #name><h3>FromCanceled</h3></template>
+        <doc-member id="method-fromcanceled-1" overload-id="group-fromcanceled" name="FromCanceled" returns="Task<T>" params="CancellationToken" signature="public static Task<T> FromCanceled(CancellationToken cancellationToken)">
+            <template #name><h3>FromCanceled</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-fromcanceled" name="FromCanceled" returns="Task<T>" params="CancellationToken" signature="public static Task<T> FromCanceled(CancellationToken cancellationToken)">
-        <template #name><h3>FromCanceled</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeasync" name="WriteAsync" returns="Task" params="TextWriter, Char, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, Char value, CancellationToken cancellationToken)">
-        <template #name><h3>WriteAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Char"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeasync" name="WriteAsync" returns="Task" params="TextWriter, Nullable<String>, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, Nullable<String> value, CancellationToken cancellationToken)">
-        <template #name><h3>WriteAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writeasync" name="WriteAsync" returns="Task" params="TextWriter, Char[], Int32, Int32, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, Char[] value, Int32 start, Int32 count, CancellationToken cancellationToken)">
-        <template #name><h3>WriteAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readasync" name="ReadAsync" returns="Task<System.Int32>" params="TextReader, Char[], Int32, Int32, CancellationToken" signature="public static Task<Int32> ReadAsync(TextReader reader, Char[] buffer, Int32 index, Int32 count, CancellationToken cancellationToken)">
-        <template #name><h3>ReadAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="TextReader"></doc-parameter>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-iscompletedsucessfully" name="IsCompletedSucessfully" returns="System.Boolean" params="Task" signature="public static Boolean IsCompletedSucessfully(Task task)">
+    <doc-member id="method-iscompletedsucessfully" name="IsCompletedSucessfully" returns="bool" params="Task" signature="public static bool IsCompletedSucessfully(Task task)">
         <template #name><h3>IsCompletedSucessfully</h3></template>
 
         <template #parameters>
@@ -335,6 +277,70 @@
             </doc-parameters>
         </template>
     </doc-member>
+
+    <doc-member id="method-readasync" name="ReadAsync" returns="Task<int>" params="TextReader, char[], int, int, CancellationToken" signature="public static Task<int> ReadAsync(TextReader reader, char[] buffer, int index, int count, CancellationToken cancellationToken)">
+        <template #name><h3>ReadAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="TextReader"></doc-parameter>
+                <doc-parameter name="buffer" type="char[]"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="count" type="int"></doc-parameter>
+                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-toasync" name="ToAsync" returns="Task<bool>" params="bool" access="internal" signature="internal static Task<bool> ToAsync(bool value)">
+        <template #name><h3>ToAsync</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="bool"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-writeasync">
+        <doc-member id="method-writeasync" overload-id="group-writeasync" name="WriteAsync" returns="Task" params="TextWriter, char, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, char value, CancellationToken cancellationToken)">
+            <template #name><h3>WriteAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="value" type="char"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writeasync-1" overload-id="group-writeasync" name="WriteAsync" returns="Task" params="TextWriter, string?, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, string? value, CancellationToken cancellationToken)">
+            <template #name><h3>WriteAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-writeasync-2" overload-id="group-writeasync" name="WriteAsync" returns="Task" params="TextWriter, char[], int, int, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, char[] value, int start, int count, CancellationToken cancellationToken)">
+            <template #name><h3>WriteAsync</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="TextWriter"></doc-parameter>
+                    <doc-parameter name="value" type="char[]"></doc-parameter>
+                    <doc-parameter name="start" type="int"></doc-parameter>
+                    <doc-parameter name="count" type="int"></doc-parameter>
+                    <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

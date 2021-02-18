@@ -208,27 +208,27 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-name" name="Name" type="System.String" signature="public readonly String Name">
+    <doc-member id="field-name" name="Name" type="string" signature="public readonly string Name">
         <template #name><h3>Name</h3></template>
     </doc-member>
 
-<doc-member id="field-property" name="Property" type="Newtonsoft.Json.Serialization.JsonProperty" signature="public JsonProperty Property">
+    <doc-member id="field-property" name="Property" type="JsonProperty?" signature="public JsonProperty? Property">
         <template #name><h3>Property</h3></template>
     </doc-member>
 
-<doc-member id="field-constructorproperty" name="ConstructorProperty" type="Newtonsoft.Json.Serialization.JsonProperty" signature="public JsonProperty ConstructorProperty">
+    <doc-member id="field-constructorproperty" name="ConstructorProperty" type="JsonProperty?" signature="public JsonProperty? ConstructorProperty">
         <template #name><h3>ConstructorProperty</h3></template>
     </doc-member>
 
-<doc-member id="field-presence" name="Presence" type="System.Nullable<Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PropertyPresence>" signature="public Nullable<PropertyPresence> Presence">
+    <doc-member id="field-presence" name="Presence" type="PropertyPresence?" signature="public PropertyPresence? Presence">
         <template #name><h3>Presence</h3></template>
     </doc-member>
 
-<doc-member id="field-value" name="Value" type="System.Nullable<System.Object>" signature="public Nullable<Object> Value">
+    <doc-member id="field-value" name="Value" type="object?" signature="public object? Value">
         <template #name><h3>Value</h3></template>
     </doc-member>
 
-<doc-member id="field-used" name="Used" type="System.Boolean" signature="public Boolean Used">
+    <doc-member id="field-used" name="Used" type="bool" signature="public bool Used">
         <template #name><h3>Used</h3></template>
     </doc-member>
 </doc-member-group>
@@ -236,12 +236,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public CreatorPropertyContext(String name)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="string" signature="public CreatorPropertyContext(string name)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

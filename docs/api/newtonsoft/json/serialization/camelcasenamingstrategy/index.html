@@ -211,48 +211,50 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Boolean, Boolean" signature="public CamelCaseNamingStrategy(Boolean processDictionaryKeys, Boolean overrideSpecifiedNames)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="bool, bool" signature="public CamelCaseNamingStrategy(bool processDictionaryKeys, bool overrideSpecifiedNames)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="processDictionaryKeys" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="overrideSpecifiedNames" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.CamelCaseNamingStrategy"/> class.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Boolean, Boolean, Boolean" signature="public CamelCaseNamingStrategy(Boolean processDictionaryKeys, Boolean overrideSpecifiedNames, Boolean processExtensionDataNames)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="processDictionaryKeys" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="overrideSpecifiedNames" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="processExtensionDataNames" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="processDictionaryKeys" type="bool"></doc-parameter>
+                    <doc-parameter name="overrideSpecifiedNames" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.CamelCaseNamingStrategy"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public CamelCaseNamingStrategy()">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="bool, bool, bool" signature="public CamelCaseNamingStrategy(bool processDictionaryKeys, bool overrideSpecifiedNames, bool processExtensionDataNames)">
+            <template #name><h3>.ctor</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="processDictionaryKeys" type="bool"></doc-parameter>
+                    <doc-parameter name="overrideSpecifiedNames" type="bool"></doc-parameter>
+                    <doc-parameter name="processExtensionDataNames" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.CamelCaseNamingStrategy"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-resolvepropertyname" name="ResolvePropertyName" returns="System.String" params="String" access="protected" signature="protected sealed String ResolvePropertyName(String name)">
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" signature="public CamelCaseNamingStrategy()">
+            <template #name><h3>.ctor</h3></template>
+
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.CamelCaseNamingStrategy"/> class.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-resolvepropertyname" name="ResolvePropertyName" returns="string" params="string" access="protected" signature="protected sealed string ResolvePropertyName(string name)">
         <template #name><h3>ResolvePropertyName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 

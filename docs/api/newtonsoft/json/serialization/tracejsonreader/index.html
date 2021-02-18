@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_innerreader" name="_innerReader" type="Newtonsoft.Json.JsonReader" access="private" signature="private readonly JsonReader _innerReader">
+    <doc-member id="field-_innerreader" name="_innerReader" type="JsonReader" access="private" signature="private readonly JsonReader _innerReader">
         <template #name><h3>_innerReader</h3></template>
     </doc-member>
 
-<doc-member id="field-_textwriter" name="_textWriter" type="Newtonsoft.Json.JsonTextWriter" access="private" signature="private readonly JsonTextWriter _textWriter">
+    <doc-member id="field-_textwriter" name="_textWriter" type="JsonTextWriter" access="private" signature="private readonly JsonTextWriter _textWriter">
         <template #name><h3>_textWriter</h3></template>
     </doc-member>
 
-<doc-member id="field-_sw" name="_sw" type="StringWriter" access="private" signature="private readonly StringWriter _sw">
+    <doc-member id="field-_sw" name="_sw" type="StringWriter" access="private" signature="private readonly StringWriter _sw">
         <template #name><h3>_sw</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,27 +224,27 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-depth" name="Depth" type="System.Int32" signature="public sealed Int32 Depth { get; }">
+    <doc-member id="property-depth" name="Depth" type="int" signature="public sealed int Depth { get; }">
         <template #name><h3>Depth</h3></template>
     </doc-member>
 
-<doc-member id="property-path" name="Path" type="System.String" signature="public sealed String Path { get; }">
+    <doc-member id="property-path" name="Path" type="string" signature="public sealed string Path { get; }">
         <template #name><h3>Path</h3></template>
     </doc-member>
 
-<doc-member id="property-quotechar" name="QuoteChar" type="System.Char" signature="public sealed Char QuoteChar { get; internal,protected set; }">
+    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public sealed char QuoteChar { get; internal,protected set; }">
         <template #name><h3>QuoteChar</h3></template>
     </doc-member>
 
-<doc-member id="property-tokentype" name="TokenType" type="Newtonsoft.Json.JsonToken" signature="public sealed JsonToken TokenType { get; }">
+    <doc-member id="property-tokentype" name="TokenType" type="JsonToken" signature="public sealed JsonToken TokenType { get; }">
         <template #name><h3>TokenType</h3></template>
     </doc-member>
 
-<doc-member id="property-value" name="Value" type="System.Nullable<System.Object>" signature="public sealed Nullable<Object> Value { get; }">
+    <doc-member id="property-value" name="Value" type="object?" signature="public sealed object? Value { get; }">
         <template #name><h3>Value</h3></template>
     </doc-member>
 
-<doc-member id="property-valuetype" name="ValueType" type="System.Nullable<Type>" signature="public sealed Nullable<Type> ValueType { get; }">
+    <doc-member id="property-valuetype" name="ValueType" type="Type?" signature="public sealed Type? ValueType { get; }">
         <template #name><h3>ValueType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -252,7 +252,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonReader" signature="public TraceJsonReader(JsonReader innerReader)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonReader" signature="public TraceJsonReader(JsonReader innerReader)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -262,52 +262,52 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getdeserializedjsonmessage" name="GetDeserializedJsonMessage" returns="System.String" signature="public String GetDeserializedJsonMessage()">
+    <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
+        <template #name><h3>Close</h3></template>
+    </doc-member>
+
+    <doc-member id="method-getdeserializedjsonmessage" name="GetDeserializedJsonMessage" returns="string" signature="public string GetDeserializedJsonMessage()">
         <template #name><h3>GetDeserializedJsonMessage</h3></template>
     </doc-member>
 
-<doc-member id="method-read" name="Read" returns="System.Boolean" signature="public sealed Boolean Read()">
+    <doc-member id="method-read" name="Read" returns="bool" signature="public sealed bool Read()">
         <template #name><h3>Read</h3></template>
     </doc-member>
 
-<doc-member id="method-readasint32" name="ReadAsInt32" returns="System.Nullable<System.Int32>" signature="public sealed Nullable<Int32> ReadAsInt32()">
-        <template #name><h3>ReadAsInt32</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasstring" name="ReadAsString" returns="System.Nullable<System.String>" signature="public sealed Nullable<String> ReadAsString()">
-        <template #name><h3>ReadAsString</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasbytes" name="ReadAsBytes" returns="System.Byte[]" signature="public sealed Byte[] ReadAsBytes()">
-        <template #name><h3>ReadAsBytes</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="System.Nullable<System.Decimal>" signature="public sealed Nullable<Decimal> ReadAsDecimal()">
-        <template #name><h3>ReadAsDecimal</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasdouble" name="ReadAsDouble" returns="System.Nullable<System.Double>" signature="public sealed Nullable<Double> ReadAsDouble()">
-        <template #name><h3>ReadAsDouble</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasboolean" name="ReadAsBoolean" returns="System.Nullable<System.Boolean>" signature="public sealed Nullable<Boolean> ReadAsBoolean()">
+    <doc-member id="method-readasboolean" name="ReadAsBoolean" returns="bool?" signature="public sealed bool? ReadAsBoolean()">
         <template #name><h3>ReadAsBoolean</h3></template>
     </doc-member>
 
-<doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="System.Nullable<DateTime>" signature="public sealed Nullable<DateTime> ReadAsDateTime()">
+    <doc-member id="method-readasbytes" name="ReadAsBytes" returns="byte[]" signature="public sealed byte[] ReadAsBytes()">
+        <template #name><h3>ReadAsBytes</h3></template>
+    </doc-member>
+
+    <doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="DateTime?" signature="public sealed DateTime? ReadAsDateTime()">
         <template #name><h3>ReadAsDateTime</h3></template>
     </doc-member>
 
-<doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="System.Nullable<DateTimeOffset>" signature="public sealed Nullable<DateTimeOffset> ReadAsDateTimeOffset()">
+    <doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="DateTimeOffset?" signature="public sealed DateTimeOffset? ReadAsDateTimeOffset()">
         <template #name><h3>ReadAsDateTimeOffset</h3></template>
     </doc-member>
 
-<doc-member id="method-writecurrenttoken" name="WriteCurrentToken" returns="System.Void" signature="public Void WriteCurrentToken()">
-        <template #name><h3>WriteCurrentToken</h3></template>
+    <doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="decimal?" signature="public sealed decimal? ReadAsDecimal()">
+        <template #name><h3>ReadAsDecimal</h3></template>
     </doc-member>
 
-<doc-member id="method-close" name="Close" returns="System.Void" signature="public sealed Void Close()">
-        <template #name><h3>Close</h3></template>
+    <doc-member id="method-readasdouble" name="ReadAsDouble" returns="double?" signature="public sealed double? ReadAsDouble()">
+        <template #name><h3>ReadAsDouble</h3></template>
+    </doc-member>
+
+    <doc-member id="method-readasint32" name="ReadAsInt32" returns="int?" signature="public sealed int? ReadAsInt32()">
+        <template #name><h3>ReadAsInt32</h3></template>
+    </doc-member>
+
+    <doc-member id="method-readasstring" name="ReadAsString" returns="string?" signature="public sealed string? ReadAsString()">
+        <template #name><h3>ReadAsString</h3></template>
+    </doc-member>
+
+    <doc-member id="method-writecurrenttoken" name="WriteCurrentToken" returns="void" signature="public void WriteCurrentToken()">
+        <template #name><h3>WriteCurrentToken</h3></template>
     </doc-member>
 </doc-member-group>
 

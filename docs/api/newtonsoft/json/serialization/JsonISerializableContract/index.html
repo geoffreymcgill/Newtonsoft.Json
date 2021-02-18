@@ -211,7 +211,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-iserializablecreator" name="ISerializableCreator" type="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>" signature="public ObjectConstructor<Object> ISerializableCreator { get; set; }">
+    <doc-member id="property-iserializablecreator" name="ISerializableCreator" type="ObjectConstructor<object>?" signature="public ObjectConstructor<object>? ISerializableCreator { get; set; }">
         <template #name><h3>ISerializableCreator</h3></template>
 
 <p>Gets or sets the <see cref="!:ISerializable"/> object constructor.</p>
@@ -222,7 +222,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type" signature="public JsonISerializableContract(Type underlyingType)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Type" signature="public JsonISerializableContract(Type underlyingType)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>

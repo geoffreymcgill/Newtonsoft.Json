@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_attributeprovider" name="_attributeProvider" type="System.Object" access="private" signature="private readonly Object _attributeProvider">
+    <doc-member id="field-_attributeprovider" name="_attributeProvider" type="object" access="private" signature="private readonly object _attributeProvider">
         <template #name><h3>_attributeProvider</h3></template>
     </doc-member>
 </doc-member-group>
@@ -219,12 +219,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Object" signature="public ReflectionAttributeProvider(Object attributeProvider)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object" signature="public ReflectionAttributeProvider(object attributeProvider)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="attributeProvider" type="System.Object"></doc-parameter>
+                <doc-parameter name="attributeProvider" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -232,32 +232,34 @@
 
     </doc-member>
 
-<doc-member id="method-getattributes" name="GetAttributes" returns="IList<Attribute>" params="Boolean" signature="public IList<Attribute> GetAttributes(Boolean inherit)">
-        <template #name><h3>GetAttributes</h3></template>
+    <doc-overload-group overload-id="group-getattributes">
+        <doc-member id="method-getattributes" overload-id="group-getattributes" name="GetAttributes" returns="IList<Attribute>" params="bool" signature="public IList<Attribute> GetAttributes(bool inherit)">
+            <template #name><h3>GetAttributes</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="inherit" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="inherit" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of all of the attributes, or an empty collection if there are no attributes.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-getattributes" name="GetAttributes" returns="IList<Attribute>" params="Type, Boolean" signature="public IList<Attribute> GetAttributes(Type attributeType, Boolean inherit)">
-        <template #name><h3>GetAttributes</h3></template>
+        <doc-member id="method-getattributes-1" overload-id="group-getattributes" name="GetAttributes" returns="IList<Attribute>" params="Type, bool" signature="public IList<Attribute> GetAttributes(Type attributeType, bool inherit)">
+            <template #name><h3>GetAttributes</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="attributeType" type="Type"></doc-parameter>
-                <doc-parameter name="inherit" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="attributeType" type="Type"></doc-parameter>
+                    <doc-parameter name="inherit" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of attributes, identified by type, or an empty collection if there are no attributes.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

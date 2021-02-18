@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_list" name="_list" type="System.Nullable<IList>" access="private" signature="private readonly Nullable<IList> _list">
+    <doc-member id="field-_list" name="_list" type="IList?" access="private" signature="private readonly IList? _list">
         <template #name><h3>_list</h3></template>
     </doc-member>
 
-<doc-member id="field-_genericcollection" name="_genericCollection" type="System.Nullable<ICollection<T>>" access="private" signature="private readonly Nullable<ICollection<T>> _genericCollection">
+    <doc-member id="field-_genericcollection" name="_genericCollection" type="ICollection<T>?" access="private" signature="private readonly ICollection<T>? _genericCollection">
         <template #name><h3>_genericCollection</h3></template>
     </doc-member>
 
-<doc-member id="field-_syncroot" name="_syncRoot" type="System.Nullable<System.Object>" access="private" signature="private Nullable<Object> _syncRoot">
+    <doc-member id="field-_syncroot" name="_syncRoot" type="object?" access="private" signature="private object? _syncRoot">
         <template #name><h3>_syncRoot</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,15 +224,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-count" name="Count" type="System.Int32" signature="public virtual Int32 Count { get; }">
+    <doc-member id="property-count" name="Count" type="int" signature="public virtual int Count { get; }">
         <template #name><h3>Count</h3></template>
     </doc-member>
 
-<doc-member id="property-isreadonly" name="IsReadOnly" type="System.Boolean" signature="public virtual Boolean IsReadOnly { get; }">
+    <doc-member id="property-isreadonly" name="IsReadOnly" type="bool" signature="public virtual bool IsReadOnly { get; }">
         <template #name><h3>IsReadOnly</h3></template>
     </doc-member>
 
-<doc-member id="property-underlyingcollection" name="UnderlyingCollection" type="System.Object" signature="public Object UnderlyingCollection { get; }">
+    <doc-member id="property-underlyingcollection" name="UnderlyingCollection" type="object" signature="public object UnderlyingCollection { get; }">
         <template #name><h3>UnderlyingCollection</h3></template>
     </doc-member>
 </doc-member-group>
@@ -240,27 +240,29 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IList" signature="public CollectionWrapper(IList list)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="IList" signature="public CollectionWrapper(IList list)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="list" type="IList"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="list" type="IList"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="ICollection<T>" signature="public CollectionWrapper(ICollection<T> list)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="ICollection<T>" signature="public CollectionWrapper(ICollection<T> list)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="list" type="ICollection<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="list" type="ICollection<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-add" name="Add" returns="System.Void" params="T" signature="public virtual Void Add(T item)">
+    <doc-member id="method-add" name="Add" returns="void" params="T" signature="public virtual void Add(T item)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
@@ -270,11 +272,11 @@
         </template>
     </doc-member>
 
-<doc-member id="method-clear" name="Clear" returns="System.Void" signature="public virtual Void Clear()">
+    <doc-member id="method-clear" name="Clear" returns="void" signature="public virtual void Clear()">
         <template #name><h3>Clear</h3></template>
     </doc-member>
 
-<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="T" signature="public virtual Boolean Contains(T item)">
+    <doc-member id="method-contains" name="Contains" returns="bool" params="T" signature="public virtual bool Contains(T item)">
         <template #name><h3>Contains</h3></template>
 
         <template #parameters>
@@ -284,18 +286,32 @@
         </template>
     </doc-member>
 
-<doc-member id="method-copyto" name="CopyTo" returns="System.Void" params="T[], Int32" signature="public virtual Void CopyTo(T[] array, Int32 arrayIndex)">
+    <doc-member id="method-copyto" name="CopyTo" returns="void" params="T[], int" signature="public virtual void CopyTo(T[] array, int arrayIndex)">
         <template #name><h3>CopyTo</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="array" type="T[]"></doc-parameter>
-                <doc-parameter name="arrayIndex" type="System.Int32"></doc-parameter>
+                <doc-parameter name="arrayIndex" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-remove" name="Remove" returns="System.Boolean" params="T" signature="public virtual Boolean Remove(T item)">
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public virtual IEnumerator<T> GetEnumerator()">
+        <template #name><h3>GetEnumerator</h3></template>
+    </doc-member>
+
+    <doc-member id="method-iscompatibleobject" name="IsCompatibleObject" returns="bool" params="object" access="private" signature="private static bool IsCompatibleObject(object value)">
+        <template #name><h3>IsCompatibleObject</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-remove" name="Remove" returns="bool" params="T" signature="public virtual bool Remove(T item)">
         <template #name><h3>Remove</h3></template>
 
         <template #parameters>
@@ -305,26 +321,12 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<T>" signature="public virtual IEnumerator<T> GetEnumerator()">
-        <template #name><h3>GetEnumerator</h3></template>
-    </doc-member>
-
-<doc-member id="method-verifyvaluetype" name="VerifyValueType" returns="System.Void" params="Object" access="private" signature="private static Void VerifyValueType(Object value)">
+    <doc-member id="method-verifyvaluetype" name="VerifyValueType" returns="void" params="object" access="private" signature="private static void VerifyValueType(object value)">
         <template #name><h3>VerifyValueType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-iscompatibleobject" name="IsCompatibleObject" returns="System.Boolean" params="Object" access="private" signature="private static Boolean IsCompatibleObject(Object value)">
-        <template #name><h3>IsCompatibleObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

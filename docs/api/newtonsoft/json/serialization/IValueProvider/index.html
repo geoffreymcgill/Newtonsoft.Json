@@ -211,30 +211,30 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-setvalue" name="SetValue" returns="System.Void" params="Object, Nullable<Object>" signature="public abstract Void SetValue(Object target, Nullable<Object> value)">
-        <template #name><h3>SetValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Sets the value.</p>
-
-    </doc-member>
-
-<doc-member id="method-getvalue" name="GetValue" returns="System.Nullable<System.Object>" params="Object" signature="public abstract Nullable<Object> GetValue(Object target)">
+    <doc-member id="method-getvalue" name="GetValue" returns="object?" params="object" signature="public abstract object? GetValue(object target)">
         <template #name><h3>GetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
 <p>Gets the value.</p>
+
+    </doc-member>
+
+    <doc-member id="method-setvalue" name="SetValue" returns="void" params="object, object?" signature="public abstract void SetValue(object target, object? value)">
+        <template #name><h3>SetValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="target" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Sets the value.</p>
 
     </doc-member>
 </doc-member-group>

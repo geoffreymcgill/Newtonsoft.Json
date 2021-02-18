@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_map" name="_map" type="Dictionary<TKey, Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TElement>>" access="private" signature="private readonly Dictionary<TKey, IGrouping<TKey, TElement>> _map">
+    <doc-member id="field-_map" name="_map" type="Dictionary<TKey, IGrouping<TKey, TElement>>" access="private" signature="private readonly Dictionary<TKey, IGrouping<TKey, TElement>> _map">
         <template #name><h3>_map</h3></template>
     </doc-member>
 </doc-member-group>
@@ -219,7 +219,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-count" name="Count" type="System.Int32" signature="public Int32 Count { get; }">
+    <doc-member id="property-count" name="Count" type="int" signature="public int Count { get; }">
         <template #name><h3>Count</h3></template>
 
 <p>Gets the number of key/value collection pairs in the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" />.</p>
@@ -230,7 +230,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IEqualityComparer<TKey>" access="internal" signature="internal Lookup(IEqualityComparer<TKey> comparer)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="IEqualityComparer<TKey>" access="internal" signature="internal Lookup(IEqualityComparer<TKey> comparer)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -240,7 +240,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-add" name="Add" returns="System.Void" params="IGrouping<TKey, TElement>" access="internal" signature="internal Void Add(IGrouping<TKey, TElement> item)">
+    <doc-member id="method-add" name="Add" returns="void" params="IGrouping<TKey, TElement>" access="internal" signature="internal void Add(IGrouping<TKey, TElement> item)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
@@ -250,30 +250,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-find" name="Find" returns="IEnumerable<TElement>" params="TKey" access="internal" signature="internal IEnumerable<TElement> Find(TKey key)">
-        <template #name><h3>Find</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="TKey"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-contains" name="Contains" returns="System.Boolean" params="TKey" signature="public Boolean Contains(TKey key)">
-        <template #name><h3>Contains</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="TKey"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Determines whether a specified key is in the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" />.</p>
-
-    </doc-member>
-
-<doc-member id="method-applyresultselector" name="ApplyResultSelector" returns="IEnumerable<TResult>" params="Func<TKey, IEnumerable<TElement>, TResult>" signature="public IEnumerable<TResult> ApplyResultSelector(Func<TKey, IEnumerable<TElement>, TResult> resultSelector)">
+    <doc-member id="method-applyresultselector" name="ApplyResultSelector" returns="IEnumerable<TResult>" params="Func<TKey, IEnumerable<TElement>, TResult>" signature="public IEnumerable<TResult> ApplyResultSelector(Func<TKey, IEnumerable<TElement>, TResult> resultSelector)">
         <template #name><h3>ApplyResultSelector</h3></template>
 
         <template #parameters>
@@ -287,7 +264,30 @@ values and returns the results.</p>
 
     </doc-member>
 
-<doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<Newtonsoft.Json.Utilities.LinqBridge.IGrouping<TKey, TElement>>" signature="public IEnumerator<IGrouping<TKey, TElement>> GetEnumerator()">
+    <doc-member id="method-contains" name="Contains" returns="bool" params="TKey" signature="public bool Contains(TKey key)">
+        <template #name><h3>Contains</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="TKey"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Determines whether a specified key is in the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" />.</p>
+
+    </doc-member>
+
+    <doc-member id="method-find" name="Find" returns="IEnumerable<TElement>" params="TKey" access="internal" signature="internal IEnumerable<TElement> Find(TKey key)">
+        <template #name><h3>Find</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="TKey"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<IGrouping<TKey, TElement>>" signature="public IEnumerator<IGrouping<TKey, TElement>> GetEnumerator()">
         <template #name><h3>GetEnumerator</h3></template>
 
 <p>Returns a generic enumerator that iterates through the <see cref="T:Newtonsoft.Json.Utilities.LinqBridge.Lookup`2" />.</p>

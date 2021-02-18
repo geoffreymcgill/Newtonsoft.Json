@@ -208,14 +208,14 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-primitivetypes" name="PrimitiveTypes" type="Type[]" access="private" signature="private readonly static Type[] PrimitiveTypes">
+    <doc-member id="field-primitivetypes" name="PrimitiveTypes" type="Type[]" access="private" signature="private readonly static Type[] PrimitiveTypes">
         <template #name><h3>PrimitiveTypes</h3></template>
 
 <p>List of primitive types which can be widened.</p>
 
     </doc-member>
 
-<doc-member id="field-wideningmasks" name="WideningMasks" type="System.Int32[]" access="private" signature="private readonly static Int32[] WideningMasks">
+    <doc-member id="field-wideningmasks" name="WideningMasks" type="int[]" access="private" signature="private readonly static int[] WideningMasks">
         <template #name><h3>WideningMasks</h3></template>
 
 <p>Widening masks for primitive types above.
@@ -230,7 +230,7 @@ i.e. bool values can be assigned only to bool.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-canconvertprimitive" name="CanConvertPrimitive" returns="System.Boolean" params="Type, Type" access="private" signature="private static Boolean CanConvertPrimitive(Type from, Type to)">
+    <doc-member id="method-canconvertprimitive" name="CanConvertPrimitive" returns="bool" params="Type, Type" access="private" signature="private static bool CanConvertPrimitive(Type from, Type to)">
         <template #name><h3>CanConvertPrimitive</h3></template>
 
         <template #parameters>
@@ -245,14 +245,14 @@ assigned to parameter of primitive type <paramref name="to"/>.</p>
 
     </doc-member>
 
-<doc-member id="method-filterparameters" name="FilterParameters" returns="System.Boolean" params="ParameterInfo[], IList<Type>, Boolean" access="private" signature="private static Boolean FilterParameters(ParameterInfo[] parameters, IList<Type> types, Boolean enableParamArray)">
+    <doc-member id="method-filterparameters" name="FilterParameters" returns="bool" params="ParameterInfo[], IList<Type>, bool" access="private" signature="private static bool FilterParameters(ParameterInfo[] parameters, IList<Type> types, bool enableParamArray)">
         <template #name><h3>FilterParameters</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="parameters" type="ParameterInfo[]"></doc-parameter>
                 <doc-parameter name="types" type="IList<Type>"></doc-parameter>
-                <doc-parameter name="enableParamArray" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="enableParamArray" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -261,7 +261,7 @@ to invoke a method with specified <paramref name="parameters"/>.</p>
 
     </doc-member>
 
-<doc-member id="method-selectmethod" name="SelectMethod" returns="TMethod" params="IEnumerable<TMethod>, IList<Type>" signature="public static TMethod SelectMethod(IEnumerable<TMethod> candidates, IList<Type> types)">
+    <doc-member id="method-selectmethod" name="SelectMethod" returns="TMethod" params="IEnumerable<TMethod>, IList<Type>" signature="public static TMethod SelectMethod(IEnumerable<TMethod> candidates, IList<Type> types)">
         <template #name><h3>SelectMethod</h3></template>
 
         <template #parameters>

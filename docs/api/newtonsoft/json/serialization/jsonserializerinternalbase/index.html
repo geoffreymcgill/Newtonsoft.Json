@@ -208,23 +208,23 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_currenterrorcontext" name="_currentErrorContext" type="Newtonsoft.Json.Serialization.ErrorContext" access="private" signature="private ErrorContext _currentErrorContext">
+    <doc-member id="field-_currenterrorcontext" name="_currentErrorContext" type="ErrorContext?" access="private" signature="private ErrorContext? _currentErrorContext">
         <template #name><h3>_currentErrorContext</h3></template>
     </doc-member>
 
-<doc-member id="field-_mappings" name="_mappings" type="Newtonsoft.Json.Utilities.BidirectionalDictionary<System.String, System.Object>" access="private" signature="private BidirectionalDictionary<String, Object> _mappings">
+    <doc-member id="field-_mappings" name="_mappings" type="BidirectionalDictionary<string, object>?" access="private" signature="private BidirectionalDictionary<string, object>? _mappings">
         <template #name><h3>_mappings</h3></template>
     </doc-member>
 
-<doc-member id="field-serializer" name="Serializer" type="Newtonsoft.Json.JsonSerializer" access="internal" signature="internal readonly JsonSerializer Serializer">
+    <doc-member id="field-serializer" name="Serializer" type="JsonSerializer" access="internal" signature="internal readonly JsonSerializer Serializer">
         <template #name><h3>Serializer</h3></template>
     </doc-member>
 
-<doc-member id="field-tracewriter" name="TraceWriter" type="Newtonsoft.Json.Serialization.ITraceWriter" access="internal" signature="internal readonly ITraceWriter TraceWriter">
+    <doc-member id="field-tracewriter" name="TraceWriter" type="ITraceWriter?" access="internal" signature="internal readonly ITraceWriter? TraceWriter">
         <template #name><h3>TraceWriter</h3></template>
     </doc-member>
 
-<doc-member id="field-internalserializer" name="InternalSerializer" type="Newtonsoft.Json.Serialization.JsonSerializerProxy" access="protected" signature="protected JsonSerializerProxy InternalSerializer">
+    <doc-member id="field-internalserializer" name="InternalSerializer" type="JsonSerializerProxy?" access="protected" signature="protected JsonSerializerProxy? InternalSerializer">
         <template #name><h3>InternalSerializer</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,7 +232,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-defaultreferencemappings" name="DefaultReferenceMappings" type="Newtonsoft.Json.Utilities.BidirectionalDictionary<System.String, System.Object>" access="internal" signature="internal BidirectionalDictionary<String, Object> DefaultReferenceMappings { internal get; }">
+    <doc-member id="property-defaultreferencemappings" name="DefaultReferenceMappings" type="BidirectionalDictionary<string, object>" access="internal" signature="internal BidirectionalDictionary<string, object> DefaultReferenceMappings { internal get; }">
         <template #name><h3>DefaultReferenceMappings</h3></template>
     </doc-member>
 </doc-member-group>
@@ -240,7 +240,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSerializer" access="protected" signature="protected JsonSerializerInternalBase(JsonSerializer serializer)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonSerializer" access="protected" signature="protected JsonSerializerInternalBase(JsonSerializer serializer)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -250,45 +250,45 @@
         </template>
     </doc-member>
 
-<doc-member id="method-resolvednullvaluehandling" name="ResolvedNullValueHandling" returns="Newtonsoft.Json.NullValueHandling" params="JsonObjectContract, JsonProperty" access="protected" signature="protected NullValueHandling ResolvedNullValueHandling(JsonObjectContract containerContract, JsonProperty property)">
-        <template #name><h3>ResolvedNullValueHandling</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
+    <doc-member id="method-clearerrorcontext" name="ClearErrorContext" returns="void" access="protected" signature="protected void ClearErrorContext()">
+        <template #name><h3>ClearErrorContext</h3></template>
     </doc-member>
 
-<doc-member id="method-geterrorcontext" name="GetErrorContext" returns="Newtonsoft.Json.Serialization.ErrorContext" params="Nullable<Object>, Nullable<Object>, String, Exception" access="private" signature="private ErrorContext GetErrorContext(Nullable<Object> currentObject, Nullable<Object> member, String path, Exception error)">
+    <doc-member id="method-geterrorcontext" name="GetErrorContext" returns="ErrorContext" params="object?, object?, string, Exception" access="private" signature="private ErrorContext GetErrorContext(object? currentObject, object? member, string path, Exception error)">
         <template #name><h3>GetErrorContext</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentObject" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="member" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="path" type="System.String"></doc-parameter>
+                <doc-parameter name="currentObject" type="object?"></doc-parameter>
+                <doc-parameter name="member" type="object?"></doc-parameter>
+                <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="error" type="Exception"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-clearerrorcontext" name="ClearErrorContext" returns="System.Void" access="protected" signature="protected Void ClearErrorContext()">
-        <template #name><h3>ClearErrorContext</h3></template>
-    </doc-member>
-
-<doc-member id="method-iserrorhandled" name="IsErrorHandled" returns="System.Boolean" params="Nullable<Object>, JsonContract, Nullable<Object>, IJsonLineInfo, String, Exception" access="protected" signature="protected Boolean IsErrorHandled(Nullable<Object> currentObject, JsonContract contract, Nullable<Object> keyValue, IJsonLineInfo lineInfo, String path, Exception ex)">
+    <doc-member id="method-iserrorhandled" name="IsErrorHandled" returns="bool" params="object?, JsonContract?, object?, IJsonLineInfo?, string, Exception" access="protected" signature="protected bool IsErrorHandled(object? currentObject, JsonContract? contract, object? keyValue, IJsonLineInfo? lineInfo, string path, Exception ex)">
         <template #name><h3>IsErrorHandled</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentObject" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="keyValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo"></doc-parameter>
-                <doc-parameter name="path" type="System.String"></doc-parameter>
+                <doc-parameter name="currentObject" type="object?"></doc-parameter>
+                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
+                <doc-parameter name="keyValue" type="object?"></doc-parameter>
+                <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
+                <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="ex" type="Exception"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-resolvednullvaluehandling" name="ResolvedNullValueHandling" returns="NullValueHandling" params="JsonObjectContract?, JsonProperty" access="protected" signature="protected NullValueHandling ResolvedNullValueHandling(JsonObjectContract? containerContract, JsonProperty property)">
+        <template #name><h3>ResolvedNullValueHandling</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonObjectContract?"></doc-parameter>
+                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

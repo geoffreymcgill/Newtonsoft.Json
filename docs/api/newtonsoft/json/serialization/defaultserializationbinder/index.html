@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-instance" name="Instance" type="Newtonsoft.Json.Serialization.DefaultSerializationBinder" access="internal" signature="internal readonly static DefaultSerializationBinder Instance">
+    <doc-member id="field-instance" name="Instance" type="DefaultSerializationBinder" access="internal" signature="internal readonly static DefaultSerializationBinder Instance">
         <template #name><h3>Instance</h3></template>
     </doc-member>
 
-<doc-member id="field-_typecache" name="_typeCache" type="Newtonsoft.Json.Utilities.ThreadSafeStore<Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<System.String>, System.String>, Type>" access="private" signature="private readonly ThreadSafeStore<StructMultiKey<Nullable<String>, String>, Type> _typeCache">
+    <doc-member id="field-_typecache" name="_typeCache" type="ThreadSafeStore<StructMultiKey<string?, string>, Type>" access="private" signature="private readonly ThreadSafeStore<StructMultiKey<string?, string>, Type> _typeCache">
         <template #name><h3>_typeCache</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,71 +223,71 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public DefaultSerializationBinder()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public DefaultSerializationBinder()">
         <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.DefaultSerializationBinder"/> class.</p>
 
     </doc-member>
 
-<doc-member id="method-gettypefromtypenamekey" name="GetTypeFromTypeNameKey" returns="Type" params="StructMultiKey<Nullable<String>, String>" access="private" signature="private Type GetTypeFromTypeNameKey(StructMultiKey<Nullable<String>, String> typeNameKey)">
-        <template #name><h3>GetTypeFromTypeNameKey</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<System.String>, System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getgenerictypefromtypename" name="GetGenericTypeFromTypeName" returns="System.Nullable<Type>" params="String, Assembly" access="private" signature="private Nullable<Type> GetGenericTypeFromTypeName(String typeName, Assembly assembly)">
-        <template #name><h3>GetGenericTypeFromTypeName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="typeName" type="System.String"></doc-parameter>
-                <doc-parameter name="assembly" type="Assembly"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-gettypebyname" name="GetTypeByName" returns="Type" params="StructMultiKey<Nullable<String>, String>" access="private" signature="private Type GetTypeByName(StructMultiKey<Nullable<String>, String> typeNameKey)">
-        <template #name><h3>GetTypeByName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<System.String>, System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindtotype" name="BindToType" returns="Type" params="Nullable<String>, String" signature="public sealed Type BindToType(Nullable<String> assemblyName, String typeName)">
-        <template #name><h3>BindToType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>When overridden in a derived class, controls the binding of a serialized object to a type.</p>
-
-    </doc-member>
-
-<doc-member id="method-bindtoname" name="BindToName" returns="System.Void" params="Type, Nullable<String>, Nullable<String>" signature="public sealed Void BindToName(Type serializedType, Nullable<String> assemblyName, Nullable<String> typeName)">
+    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, string?, string?" signature="public sealed void BindToName(Type serializedType, string? assemblyName, string? typeName)">
         <template #name><h3>BindToName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="serializedType" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
 
 <p>When overridden in a derived class, controls the binding of a serialized object to a type.</p>
 
+    </doc-member>
+
+    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="string?, string" signature="public sealed Type BindToType(string? assemblyName, string typeName)">
+        <template #name><h3>BindToType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>When overridden in a derived class, controls the binding of a serialized object to a type.</p>
+
+    </doc-member>
+
+    <doc-member id="method-getgenerictypefromtypename" name="GetGenericTypeFromTypeName" returns="Type?" params="string, Assembly" access="private" signature="private Type? GetGenericTypeFromTypeName(string typeName, Assembly assembly)">
+        <template #name><h3>GetGenericTypeFromTypeName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="typeName" type="string"></doc-parameter>
+                <doc-parameter name="assembly" type="Assembly"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-gettypebyname" name="GetTypeByName" returns="Type" params="StructMultiKey<string?, string>" access="private" signature="private Type GetTypeByName(StructMultiKey<string?, string> typeNameKey)">
+        <template #name><h3>GetTypeByName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<string?, string>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-gettypefromtypenamekey" name="GetTypeFromTypeNameKey" returns="Type" params="StructMultiKey<string?, string>" access="private" signature="private Type GetTypeFromTypeNameKey(StructMultiKey<string?, string> typeNameKey)">
+        <template #name><h3>GetTypeFromTypeNameKey</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<string?, string>"></doc-parameter>
+            </doc-parameters>
+        </template>
     </doc-member>
 </doc-member-group>
 

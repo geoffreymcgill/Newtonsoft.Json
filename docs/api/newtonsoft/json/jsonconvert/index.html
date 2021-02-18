@@ -211,49 +211,49 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-true" name="True" type="System.String" signature="public readonly static String True">
+    <doc-member id="field-true" name="True" type="string" signature="public readonly static string True">
         <template #name><h3>True</h3></template>
 
 <p>Represents JavaScript's boolean value <c>true</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-false" name="False" type="System.String" signature="public readonly static String False">
+    <doc-member id="field-false" name="False" type="string" signature="public readonly static string False">
         <template #name><h3>False</h3></template>
 
 <p>Represents JavaScript's boolean value <c>false</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-null" name="Null" type="System.String" signature="public readonly static String Null">
+    <doc-member id="field-null" name="Null" type="string" signature="public readonly static string Null">
         <template #name><h3>Null</h3></template>
 
 <p>Represents JavaScript's <c>null</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-undefined" name="Undefined" type="System.String" signature="public readonly static String Undefined">
+    <doc-member id="field-undefined" name="Undefined" type="string" signature="public readonly static string Undefined">
         <template #name><h3>Undefined</h3></template>
 
 <p>Represents JavaScript's <c>undefined</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-positiveinfinity" name="PositiveInfinity" type="System.String" signature="public readonly static String PositiveInfinity">
+    <doc-member id="field-positiveinfinity" name="PositiveInfinity" type="string" signature="public readonly static string PositiveInfinity">
         <template #name><h3>PositiveInfinity</h3></template>
 
 <p>Represents JavaScript's positive infinity as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-negativeinfinity" name="NegativeInfinity" type="System.String" signature="public readonly static String NegativeInfinity">
+    <doc-member id="field-negativeinfinity" name="NegativeInfinity" type="string" signature="public readonly static string NegativeInfinity">
         <template #name><h3>NegativeInfinity</h3></template>
 
 <p>Represents JavaScript's negative infinity as a string. This field is read-only.</p>
 
     </doc-member>
 
-<doc-member id="field-nan" name="NaN" type="System.String" signature="public readonly static String NaN">
+    <doc-member id="field-nan" name="NaN" type="string" signature="public readonly static string NaN">
         <template #name><h3>NaN</h3></template>
 
 <p>Represents JavaScript's <c>NaN</c> as a string. This field is read-only.</p>
@@ -264,7 +264,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-defaultsettings" name="DefaultSettings" type="System.Nullable<Func<Newtonsoft.Json.JsonSerializerSettings>>" signature="public static Nullable<Func<JsonSerializerSettings>> DefaultSettings { get; set; }">
+    <doc-member id="property-defaultsettings" name="DefaultSettings" type="Func<JsonSerializerSettings>?" signature="public static Func<JsonSerializerSettings>? DefaultSettings { get; set; }">
         <template #name><h3>DefaultSettings</h3></template>
 
 <p>Gets or sets a function that creates default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
@@ -279,166 +279,954 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="DateTime" signature="public static String ToString(DateTime value)">
-        <template #name><h3>ToString</h3></template>
+    <doc-overload-group overload-id="group-deserializeanonymoustype">
+        <doc-member id="method-deserializeanonymoustype" overload-id="group-deserializeanonymoustype" name="DeserializeAnonymousType" returns="T?" params="string, T" signature="public static T? DeserializeAnonymousType(string value, T anonymousTypeObject)">
+            <template #name><h3>DeserializeAnonymousType</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="anonymousTypeObject" type="T"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the given anonymous type.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeanonymoustype-1" overload-id="group-deserializeanonymoustype" name="DeserializeAnonymousType" returns="T?" params="string, T, JsonSerializerSettings" signature="public static T? DeserializeAnonymousType(string value, T anonymousTypeObject, JsonSerializerSettings settings)">
+            <template #name><h3>DeserializeAnonymousType</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="anonymousTypeObject" type="T"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the given anonymous type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-deserializeobject">
+        <doc-member id="method-deserializeobject" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string" signature="public static object? DeserializeObject(string value)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to a .NET object.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-1" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, JsonSerializerSettings" signature="public static object? DeserializeObject(string value, JsonSerializerSettings settings)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to a .NET object using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-2" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type" signature="public static object? DeserializeObject(string value, Type type)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-3" overload-id="group-deserializeobject" name="DeserializeObject" returns="T?" params="string" signature="public static T? DeserializeObject(string value)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-4" overload-id="group-deserializeobject" name="DeserializeObject" returns="T?" params="string, JsonConverter[]" signature="public static T? DeserializeObject(string value, JsonConverter[] converters)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-5" overload-id="group-deserializeobject" name="DeserializeObject" returns="T?" params="string, JsonSerializerSettings?" signature="public static T? DeserializeObject(string value, JsonSerializerSettings? settings)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-6" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type, JsonConverter[]" signature="public static object? DeserializeObject(string value, Type type, JsonConverter[] converters)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="type" type="Type"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializeobject-7" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type?, JsonSerializerSettings?" signature="public static object? DeserializeObject(string value, Type? type, JsonSerializerSettings? settings)">
+            <template #name><h3>DeserializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the JSON to the specified .NET type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-deserializexmlnode">
+        <doc-member id="method-deserializexmlnode" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string" signature="public static XmlDocument? DeserializeXmlNode(string value)">
+            <template #name><h3>DeserializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexmlnode-1" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName)">
+            <template #name><h3>DeserializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexmlnode-2" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?, bool" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName, bool writeArrayAttribute)">
+            <template #name><h3>DeserializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>
+and writes a Json.NET array attribute for collections.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexmlnode-3" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?, bool, bool" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
+            <template #name><h3>DeserializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
+                    <doc-parameter name="encodeSpecialCharacters" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>,
+writes a Json.NET array attribute for collections, and encodes special characters.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-deserializexnode">
+        <doc-member id="method-deserializexnode" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string" signature="public static XDocument? DeserializeXNode(string value)">
+            <template #name><h3>DeserializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XNode"/> from a JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexnode-1" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName)">
+            <template #name><h3>DeserializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexnode-2" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?, bool" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName, bool writeArrayAttribute)">
+            <template #name><h3>DeserializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>
+and writes a Json.NET array attribute for collections.</p>
+
+        </doc-member>
+
+        <doc-member id="method-deserializexnode-3" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?, bool, bool" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
+            <template #name><h3>DeserializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
+                    <doc-parameter name="encodeSpecialCharacters" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>,
+writes a Json.NET array attribute for collections, and encodes special characters.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-ensuredecimalplace">
+        <doc-member id="method-ensuredecimalplace" overload-id="group-ensuredecimalplace" name="EnsureDecimalPlace" returns="string" params="double, string" access="private" signature="private static string EnsureDecimalPlace(double value, string text)">
+            <template #name><h3>EnsureDecimalPlace</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                    <doc-parameter name="text" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-ensuredecimalplace-1" overload-id="group-ensuredecimalplace" name="EnsureDecimalPlace" returns="string" params="string" access="private" signature="private static string EnsureDecimalPlace(string text)">
+            <template #name><h3>EnsureDecimalPlace</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="text" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-ensurefloatformat" name="EnsureFloatFormat" returns="string" params="double, string, FloatFormatHandling, char, bool" access="private" signature="private static string EnsureFloatFormat(double value, string text, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
+        <template #name><h3>EnsureFloatFormat</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
+                <doc-parameter name="value" type="double"></doc-parameter>
+                <doc-parameter name="text" type="string"></doc-parameter>
+                <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
+                <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                <doc-parameter name="nullable" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-populateobject">
+        <doc-member id="method-populateobject" overload-id="group-populateobject" name="PopulateObject" returns="void" params="string, object" signature="public static void PopulateObject(string value, object target)">
+            <template #name><h3>PopulateObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="target" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Populates the object with values from the JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-populateobject-1" overload-id="group-populateobject" name="PopulateObject" returns="void" params="string, object, JsonSerializerSettings?" signature="public static void PopulateObject(string value, object target, JsonSerializerSettings? settings)">
+            <template #name><h3>PopulateObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string"></doc-parameter>
+                    <doc-parameter name="target" type="object"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Populates the object with values from the JSON string using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-serializeobject">
+        <doc-member id="method-serializeobject" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?" signature="public static string SerializeObject(object? value)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-1" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting" signature="public static string SerializeObject(object? value, Formatting formatting)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using formatting.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-2" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, JsonConverter[]" signature="public static string SerializeObject(object? value, JsonConverter[] converters)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-3" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting, JsonConverter[]" signature="public static string SerializeObject(object? value, Formatting formatting, JsonConverter[] converters)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                    <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using formatting and a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-4" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, JsonSerializerSettings? settings)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-5" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Type?, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Type? type, JsonSerializerSettings? settings)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using a type, formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-6" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Formatting formatting, JsonSerializerSettings? settings)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializeobject-7" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Type?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Type? type, Formatting formatting, JsonSerializerSettings? settings)">
+            <template #name><h3>SerializeObject</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the specified object to a JSON string using a type, formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-serializeobjectinternal" name="SerializeObjectInternal" returns="string" params="object?, Type?, JsonSerializer" access="private" signature="private static string SerializeObjectInternal(object? value, Type? type, JsonSerializer jsonSerializer)">
+        <template #name><h3>SerializeObjectInternal</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="type" type="Type?"></doc-parameter>
+                <doc-parameter name="jsonSerializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-serializexmlnode">
+        <doc-member id="method-serializexmlnode" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?" signature="public static string SerializeXmlNode(XmlNode? node)">
+            <template #name><h3>SerializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XmlNode"/> to a JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializexmlnode-1" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?, Formatting" signature="public static string SerializeXmlNode(XmlNode? node, Formatting formatting)">
+            <template #name><h3>SerializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XmlNode"/> to a JSON string using formatting.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializexmlnode-2" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?, Formatting, bool" signature="public static string SerializeXmlNode(XmlNode? node, Formatting formatting, bool omitRootObject)">
+            <template #name><h3>SerializeXmlNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                    <doc-parameter name="omitRootObject" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XmlNode"/> to a JSON string using formatting and omits the root object if <paramref name="omitRootObject"/> is <c>true</c>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-serializexnode">
+        <doc-member id="method-serializexnode" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?" signature="public static string SerializeXNode(XObject? node)">
+            <template #name><h3>SerializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XNode"/> to a JSON string.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializexnode-1" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?, Formatting" signature="public static string SerializeXNode(XObject? node, Formatting formatting)">
+            <template #name><h3>SerializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XNode"/> to a JSON string using formatting.</p>
+
+        </doc-member>
+
+        <doc-member id="method-serializexnode-2" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?, Formatting, bool" signature="public static string SerializeXNode(XObject? node, Formatting formatting, bool omitRootObject)">
+            <template #name><h3>SerializeXNode</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                    <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
+                    <doc-parameter name="omitRootObject" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Serializes the <see cref="!:XNode"/> to a JSON string using formatting and omits the root object if <paramref name="omitRootObject"/> is <c>true</c>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-tostring">
+        <doc-member id="method-tostring" overload-id="group-tostring" name="ToString" returns="string" params="DateTime" signature="public static string ToString(DateTime value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:DateTime"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="DateTime, DateFormatHandling, DateTimeZoneHandling" signature="public static String ToString(DateTime value, DateFormatHandling format, DateTimeZoneHandling timeZoneHandling)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-1" overload-id="group-tostring" name="ToString" returns="string" params="DateTime, DateFormatHandling, DateTimeZoneHandling" signature="public static string ToString(DateTime value, DateFormatHandling format, DateTimeZoneHandling timeZoneHandling)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTime"></doc-parameter>
-                <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-                <doc-parameter name="timeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTime"></doc-parameter>
+                    <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
+                    <doc-parameter name="timeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:DateTime"/> to its JSON string representation using the <see cref="T:Newtonsoft.Json.DateFormatHandling"/> specified.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="DateTimeOffset" signature="public static String ToString(DateTimeOffset value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-2" overload-id="group-tostring" name="ToString" returns="string" params="DateTimeOffset" signature="public static string ToString(DateTimeOffset value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:DateTimeOffset"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="DateTimeOffset, DateFormatHandling" signature="public static String ToString(DateTimeOffset value, DateFormatHandling format)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-3" overload-id="group-tostring" name="ToString" returns="string" params="DateTimeOffset, DateFormatHandling" signature="public static string ToString(DateTimeOffset value, DateFormatHandling format)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
-                <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
+                    <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:DateTimeOffset"/> to its JSON string representation using the <see cref="T:Newtonsoft.Json.DateFormatHandling"/> specified.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Boolean" signature="public static String ToString(Boolean value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-4" overload-id="group-tostring" name="ToString" returns="string" params="bool" signature="public static string ToString(bool value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Boolean"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Char" signature="public static String ToString(Char value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-5" overload-id="group-tostring" name="ToString" returns="string" params="char" signature="public static string ToString(char value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Char"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Enum" signature="public static String ToString(Enum value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-6" overload-id="group-tostring" name="ToString" returns="string" params="Enum" signature="public static string ToString(Enum value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Enum"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Enum"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Enum"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Int32" signature="public static String ToString(Int32 value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-7" overload-id="group-tostring" name="ToString" returns="string" params="int" signature="public static string ToString(int value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Int32"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Int16" signature="public static String ToString(Int16 value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-8" overload-id="group-tostring" name="ToString" returns="string" params="short" signature="public static string ToString(short value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int16"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="short"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Int16"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="UInt16" signature="public static String ToString(UInt16 value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-9" overload-id="group-tostring" name="ToString" returns="string" params="ushort" signature="public static string ToString(ushort value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt16"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="ushort"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:UInt16"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="UInt32" signature="public static String ToString(UInt32 value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-10" overload-id="group-tostring" name="ToString" returns="string" params="uint" signature="public static string ToString(uint value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt32"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="uint"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:UInt32"/> to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Int64" signature="public static String ToString(Int64 value)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-11" overload-id="group-tostring" name="ToString" returns="string" params="long" signature="public static string ToString(long value)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Int64"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="long"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Converts the <see cref="!:Int64"/>  to its JSON string representation.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-tostringinternal" name="ToStringInternal" returns="System.String" params="BigInteger" access="private" signature="private static String ToStringInternal(BigInteger value)">
+        <doc-member id="method-tostring-12" overload-id="group-tostring" name="ToString" returns="string" params="ulong" signature="public static string ToString(ulong value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="ulong"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:UInt64"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-13" overload-id="group-tostring" name="ToString" returns="string" params="float" signature="public static string ToString(float value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="float"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Single"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-14" overload-id="group-tostring" name="ToString" returns="string" params="float, FloatFormatHandling, char, bool" access="internal" signature="internal static string ToString(float value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="float"></doc-parameter>
+                    <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
+                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                    <doc-parameter name="nullable" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tostring-15" overload-id="group-tostring" name="ToString" returns="string" params="double" signature="public static string ToString(double value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Double"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-16" overload-id="group-tostring" name="ToString" returns="string" params="double, FloatFormatHandling, char, bool" access="internal" signature="internal static string ToString(double value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="double"></doc-parameter>
+                    <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
+                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                    <doc-parameter name="nullable" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tostring-17" overload-id="group-tostring" name="ToString" returns="string" params="byte" signature="public static string ToString(byte value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="byte"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Byte"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-18" overload-id="group-tostring" name="ToString" returns="string" params="sbyte" signature="public static string ToString(sbyte value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="sbyte"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:SByte"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-19" overload-id="group-tostring" name="ToString" returns="string" params="decimal" signature="public static string ToString(decimal value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="decimal"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Decimal"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-20" overload-id="group-tostring" name="ToString" returns="string" params="Guid" signature="public static string ToString(Guid value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Guid"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Guid"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-21" overload-id="group-tostring" name="ToString" returns="string" params="Guid, char" access="internal" signature="internal static string ToString(Guid value, char quoteChar)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Guid"></doc-parameter>
+                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tostring-22" overload-id="group-tostring" name="ToString" returns="string" params="TimeSpan" signature="public static string ToString(TimeSpan value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:TimeSpan"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-23" overload-id="group-tostring" name="ToString" returns="string" params="TimeSpan, char" access="internal" signature="internal static string ToString(TimeSpan value, char quoteChar)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="TimeSpan"></doc-parameter>
+                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tostring-24" overload-id="group-tostring" name="ToString" returns="string" params="Uri?" signature="public static string ToString(Uri? value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Uri"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-25" overload-id="group-tostring" name="ToString" returns="string" params="Uri, char" access="internal" signature="internal static string ToString(Uri value, char quoteChar)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="Uri"></doc-parameter>
+                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-tostring-26" overload-id="group-tostring" name="ToString" returns="string" params="string?" signature="public static string ToString(string? value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-27" overload-id="group-tostring" name="ToString" returns="string" params="string?, char" signature="public static string ToString(string? value, char delimiter)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="delimiter" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-28" overload-id="group-tostring" name="ToString" returns="string" params="string?, char, StringEscapeHandling" signature="public static string ToString(string? value, char delimiter, StringEscapeHandling stringEscapeHandling)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="delimiter" type="char"></doc-parameter>
+                    <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
+
+        </doc-member>
+
+        <doc-member id="method-tostring-29" overload-id="group-tostring" name="ToString" returns="string" params="object?" signature="public static string ToString(object? value)">
+            <template #name><h3>ToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the <see cref="!:Object"/> to its JSON string representation.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-tostringinternal" name="ToStringInternal" returns="string" params="BigInteger" access="private" signature="private static string ToStringInternal(BigInteger value)">
         <template #name><h3>ToStringInternal</h3></template>
 
         <template #parameters>
@@ -446,774 +1234,6 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
                 <doc-parameter name="value" type="BigInteger"></doc-parameter>
             </doc-parameters>
         </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="UInt64" signature="public static String ToString(UInt64 value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.UInt64"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:UInt64"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Single" signature="public static String ToString(Single value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Single"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Single"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Single, FloatFormatHandling, Char, Boolean" access="internal" signature="internal static String ToString(Single value, FloatFormatHandling floatFormatHandling, Char quoteChar, Boolean nullable)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Single"></doc-parameter>
-                <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="nullable" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensurefloatformat" name="EnsureFloatFormat" returns="System.String" params="Double, String, FloatFormatHandling, Char, Boolean" access="private" signature="private static String EnsureFloatFormat(Double value, String text, FloatFormatHandling floatFormatHandling, Char quoteChar, Boolean nullable)">
-        <template #name><h3>EnsureFloatFormat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-                <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="nullable" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Double" signature="public static String ToString(Double value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Double"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Double, FloatFormatHandling, Char, Boolean" access="internal" signature="internal static String ToString(Double value, FloatFormatHandling floatFormatHandling, Char quoteChar, Boolean nullable)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-                <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-                <doc-parameter name="nullable" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensuredecimalplace" name="EnsureDecimalPlace" returns="System.String" params="Double, String" access="private" signature="private static String EnsureDecimalPlace(Double value, String text)">
-        <template #name><h3>EnsureDecimalPlace</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensuredecimalplace" name="EnsureDecimalPlace" returns="System.String" params="String" access="private" signature="private static String EnsureDecimalPlace(String text)">
-        <template #name><h3>EnsureDecimalPlace</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Byte" signature="public static String ToString(Byte value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Byte"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Byte"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="SByte" signature="public static String ToString(SByte value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.SByte"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:SByte"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Decimal" signature="public static String ToString(Decimal value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Decimal"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Decimal"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Guid" signature="public static String ToString(Guid value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Guid"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Guid"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Guid, Char" access="internal" signature="internal static String ToString(Guid value, Char quoteChar)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Guid"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="TimeSpan" signature="public static String ToString(TimeSpan value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:TimeSpan"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="TimeSpan, Char" access="internal" signature="internal static String ToString(TimeSpan value, Char quoteChar)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="TimeSpan"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<Uri>" signature="public static String ToString(Nullable<Uri> value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<Uri>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Uri"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Uri, Char" access="internal" signature="internal static String ToString(Uri value, Char quoteChar)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Uri"></doc-parameter>
-                <doc-parameter name="quoteChar" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<String>" signature="public static String ToString(Nullable<String> value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<String>, Char" signature="public static String ToString(Nullable<String> value, Char delimiter)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<String>, Char, StringEscapeHandling" signature="public static String ToString(Nullable<String> value, Char delimiter, StringEscapeHandling stringEscapeHandling)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="delimiter" type="System.Char"></doc-parameter>
-                <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:String"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<Object>" signature="public static String ToString(Nullable<Object> value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the <see cref="!:Object"/> to its JSON string representation.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>" signature="public static String SerializeObject(Nullable<Object> value)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, Formatting" signature="public static String SerializeObject(Nullable<Object> value, Formatting formatting)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using formatting.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, JsonConverter[]" signature="public static String SerializeObject(Nullable<Object> value, JsonConverter[] converters)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, Formatting, JsonConverter[]" signature="public static String SerializeObject(Nullable<Object> value, Formatting formatting, JsonConverter[] converters)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using formatting and a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, JsonSerializerSettings" signature="public static String SerializeObject(Nullable<Object> value, JsonSerializerSettings settings)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, Nullable<Type>, JsonSerializerSettings" signature="public static String SerializeObject(Nullable<Object> value, Nullable<Type> type, JsonSerializerSettings settings)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="type" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using a type, formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, Formatting, JsonSerializerSettings" signature="public static String SerializeObject(Nullable<Object> value, Formatting formatting, JsonSerializerSettings settings)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobject" name="SerializeObject" returns="System.String" params="Nullable<Object>, Nullable<Type>, Formatting, JsonSerializerSettings" signature="public static String SerializeObject(Nullable<Object> value, Nullable<Type> type, Formatting formatting, JsonSerializerSettings settings)">
-        <template #name><h3>SerializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="type" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the specified object to a JSON string using a type, formatting and <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializeobjectinternal" name="SerializeObjectInternal" returns="System.String" params="Nullable<Object>, Nullable<Type>, JsonSerializer" access="private" signature="private static String SerializeObjectInternal(Nullable<Object> value, Nullable<Type> type, JsonSerializer jsonSerializer)">
-        <template #name><h3>SerializeObjectInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="type" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="jsonSerializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="System.Nullable<System.Object>" params="String" signature="public static Nullable<Object> DeserializeObject(String value)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to a .NET object.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="System.Nullable<System.Object>" params="String, JsonSerializerSettings" signature="public static Nullable<Object> DeserializeObject(String value, JsonSerializerSettings settings)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to a .NET object using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="System.Nullable<System.Object>" params="String, Type" signature="public static Nullable<Object> DeserializeObject(String value, Type type)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="T" params="String" signature="public static T DeserializeObject(String value)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeanonymoustype" name="DeserializeAnonymousType" returns="T" params="String, T" signature="public static T DeserializeAnonymousType(String value, T anonymousTypeObject)">
-        <template #name><h3>DeserializeAnonymousType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="anonymousTypeObject" type="T"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the given anonymous type.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeanonymoustype" name="DeserializeAnonymousType" returns="T" params="String, T, JsonSerializerSettings" signature="public static T DeserializeAnonymousType(String value, T anonymousTypeObject, JsonSerializerSettings settings)">
-        <template #name><h3>DeserializeAnonymousType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="anonymousTypeObject" type="T"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the given anonymous type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="T" params="String, JsonConverter[]" signature="public static T DeserializeObject(String value, JsonConverter[] converters)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="T" params="String, JsonSerializerSettings" signature="public static T DeserializeObject(String value, JsonSerializerSettings settings)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="System.Nullable<System.Object>" params="String, Type, JsonConverter[]" signature="public static Nullable<Object> DeserializeObject(String value, Type type, JsonConverter[] converters)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type using a collection of <see cref="T:Newtonsoft.Json.JsonConverter"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializeobject" name="DeserializeObject" returns="System.Nullable<System.Object>" params="String, Nullable<Type>, JsonSerializerSettings" signature="public static Nullable<Object> DeserializeObject(String value, Nullable<Type> type, JsonSerializerSettings settings)">
-        <template #name><h3>DeserializeObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="type" type="System.Nullable<Type>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the JSON to the specified .NET type using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-populateobject" name="PopulateObject" returns="System.Void" params="String, Object" signature="public static Void PopulateObject(String value, Object target)">
-        <template #name><h3>PopulateObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Populates the object with values from the JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-populateobject" name="PopulateObject" returns="System.Void" params="String, Object, JsonSerializerSettings" signature="public static Void PopulateObject(String value, Object target, JsonSerializerSettings settings)">
-        <template #name><h3>PopulateObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Populates the object with values from the JSON string using <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexmlnode" name="SerializeXmlNode" returns="System.String" params="Nullable<XmlNode>" signature="public static String SerializeXmlNode(Nullable<XmlNode> node)">
-        <template #name><h3>SerializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XmlNode>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XmlNode"/> to a JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexmlnode" name="SerializeXmlNode" returns="System.String" params="Nullable<XmlNode>, Formatting" signature="public static String SerializeXmlNode(Nullable<XmlNode> node, Formatting formatting)">
-        <template #name><h3>SerializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XmlNode>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XmlNode"/> to a JSON string using formatting.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexmlnode" name="SerializeXmlNode" returns="System.String" params="Nullable<XmlNode>, Formatting, Boolean" signature="public static String SerializeXmlNode(Nullable<XmlNode> node, Formatting formatting, Boolean omitRootObject)">
-        <template #name><h3>SerializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XmlNode>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-                <doc-parameter name="omitRootObject" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XmlNode"/> to a JSON string using formatting and omits the root object if <paramref name="omitRootObject"/> is <c>true</c>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexmlnode" name="DeserializeXmlNode" returns="System.Nullable<XmlDocument>" params="String" signature="public static Nullable<XmlDocument> DeserializeXmlNode(String value)">
-        <template #name><h3>DeserializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexmlnode" name="DeserializeXmlNode" returns="System.Nullable<XmlDocument>" params="String, Nullable<String>" signature="public static Nullable<XmlDocument> DeserializeXmlNode(String value, Nullable<String> deserializeRootElementName)">
-        <template #name><h3>DeserializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexmlnode" name="DeserializeXmlNode" returns="System.Nullable<XmlDocument>" params="String, Nullable<String>, Boolean" signature="public static Nullable<XmlDocument> DeserializeXmlNode(String value, Nullable<String> deserializeRootElementName, Boolean writeArrayAttribute)">
-        <template #name><h3>DeserializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="writeArrayAttribute" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>
-and writes a Json.NET array attribute for collections.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexmlnode" name="DeserializeXmlNode" returns="System.Nullable<XmlDocument>" params="String, Nullable<String>, Boolean, Boolean" signature="public static Nullable<XmlDocument> DeserializeXmlNode(String value, Nullable<String> deserializeRootElementName, Boolean writeArrayAttribute, Boolean encodeSpecialCharacters)">
-        <template #name><h3>DeserializeXmlNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="writeArrayAttribute" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="encodeSpecialCharacters" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XmlNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>,
-writes a Json.NET array attribute for collections, and encodes special characters.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexnode" name="SerializeXNode" returns="System.String" params="Nullable<XObject>" signature="public static String SerializeXNode(Nullable<XObject> node)">
-        <template #name><h3>SerializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XObject>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XNode"/> to a JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexnode" name="SerializeXNode" returns="System.String" params="Nullable<XObject>, Formatting" signature="public static String SerializeXNode(Nullable<XObject> node, Formatting formatting)">
-        <template #name><h3>SerializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XObject>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XNode"/> to a JSON string using formatting.</p>
-
-    </doc-member>
-
-<doc-member id="method-serializexnode" name="SerializeXNode" returns="System.String" params="Nullable<XObject>, Formatting, Boolean" signature="public static String SerializeXNode(Nullable<XObject> node, Formatting formatting, Boolean omitRootObject)">
-        <template #name><h3>SerializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="System.Nullable<XObject>"></doc-parameter>
-                <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
-                <doc-parameter name="omitRootObject" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Serializes the <see cref="!:XNode"/> to a JSON string using formatting and omits the root object if <paramref name="omitRootObject"/> is <c>true</c>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexnode" name="DeserializeXNode" returns="System.Nullable<XDocument>" params="String" signature="public static Nullable<XDocument> DeserializeXNode(String value)">
-        <template #name><h3>DeserializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XNode"/> from a JSON string.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexnode" name="DeserializeXNode" returns="System.Nullable<XDocument>" params="String, Nullable<String>" signature="public static Nullable<XDocument> DeserializeXNode(String value, Nullable<String> deserializeRootElementName)">
-        <template #name><h3>DeserializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexnode" name="DeserializeXNode" returns="System.Nullable<XDocument>" params="String, Nullable<String>, Boolean" signature="public static Nullable<XDocument> DeserializeXNode(String value, Nullable<String> deserializeRootElementName, Boolean writeArrayAttribute)">
-        <template #name><h3>DeserializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="writeArrayAttribute" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>
-and writes a Json.NET array attribute for collections.</p>
-
-    </doc-member>
-
-<doc-member id="method-deserializexnode" name="DeserializeXNode" returns="System.Nullable<XDocument>" params="String, Nullable<String>, Boolean, Boolean" signature="public static Nullable<XDocument> DeserializeXNode(String value, Nullable<String> deserializeRootElementName, Boolean writeArrayAttribute, Boolean encodeSpecialCharacters)">
-        <template #name><h3>DeserializeXNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="deserializeRootElementName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="writeArrayAttribute" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="encodeSpecialCharacters" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Deserializes the <see cref="!:XNode"/> from a JSON string nested in a root element specified by <paramref name="deserializeRootElementName"/>,
-writes a Json.NET array attribute for collections, and encodes special characters.</p>
-
     </doc-member>
 </doc-member-group>
 

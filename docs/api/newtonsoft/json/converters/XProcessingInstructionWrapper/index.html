@@ -208,15 +208,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-processinginstruction" name="ProcessingInstruction" type="XProcessingInstruction" access="private" signature="private XProcessingInstruction ProcessingInstruction { private get; }">
+    <doc-member id="property-processinginstruction" name="ProcessingInstruction" type="XProcessingInstruction" access="private" signature="private XProcessingInstruction ProcessingInstruction { private get; }">
         <template #name><h3>ProcessingInstruction</h3></template>
     </doc-member>
 
-<doc-member id="property-localname" name="LocalName" type="System.Nullable<System.String>" signature="public sealed Nullable<String> LocalName { get; }">
+    <doc-member id="property-localname" name="LocalName" type="string?" signature="public sealed string? LocalName { get; }">
         <template #name><h3>LocalName</h3></template>
     </doc-member>
 
-<doc-member id="property-value" name="Value" type="System.Nullable<System.String>" signature="public sealed Nullable<String> Value { get; set; }">
+    <doc-member id="property-value" name="Value" type="string?" signature="public sealed string? Value { get; set; }">
         <template #name><h3>Value</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="XProcessingInstruction" signature="public XProcessingInstructionWrapper(XProcessingInstruction processingInstruction)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="XProcessingInstruction" signature="public XProcessingInstructionWrapper(XProcessingInstruction processingInstruction)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>

@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_buffer" name="_buffer" type="System.Char[]" access="private" signature="private Char[] _buffer">
+    <doc-member id="field-_buffer" name="_buffer" type="char[]" access="private" signature="private char[] _buffer">
         <template #name><h3>_buffer</h3></template>
     </doc-member>
 
-<doc-member id="field-_position" name="_position" type="System.Int32" access="private" signature="private Int32 _position">
+    <doc-member id="field-_position" name="_position" type="int" access="private" signature="private int _position">
         <template #name><h3>_position</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,15 +223,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-position" name="Position" type="System.Int32" signature="public Int32 Position { get; set; }">
+    <doc-member id="property-position" name="Position" type="int" signature="public int Position { get; set; }">
         <template #name><h3>Position</h3></template>
     </doc-member>
 
-<doc-member id="property-isempty" name="IsEmpty" type="System.Boolean" signature="public Boolean IsEmpty { get; }">
+    <doc-member id="property-isempty" name="IsEmpty" type="bool" signature="public bool IsEmpty { get; }">
         <template #name><h3>IsEmpty</h3></template>
     </doc-member>
 
-<doc-member id="property-internalbuffer" name="InternalBuffer" type="System.Char[]" signature="public Char[] InternalBuffer { get; }">
+    <doc-member id="property-internalbuffer" name="InternalBuffer" type="char[]" signature="public char[] InternalBuffer { get; }">
         <template #name><h3>InternalBuffer</h3></template>
     </doc-member>
 </doc-member-group>
@@ -239,86 +239,92 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IArrayPool<Char>, Int32" signature="public StringBuffer(IArrayPool<Char> bufferPool, Int32 initalSize)">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" params="IArrayPool<char>?, int" signature="public StringBuffer(IArrayPool<char>? bufferPool, int initalSize)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="initalSize" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                    <doc-parameter name="initalSize" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Char[]" access="private" signature="private StringBuffer(Char[] buffer)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="char[]" access="private" signature="private StringBuffer(char[] buffer)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="buffer" type="char[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-append" name="Append" returns="System.Void" params="IArrayPool<Char>, Char" signature="public Void Append(IArrayPool<Char> bufferPool, Char value)">
-        <template #name><h3>Append</h3></template>
+    <doc-overload-group overload-id="group-append">
+        <doc-member id="method-append" overload-id="group-append" name="Append" returns="void" params="IArrayPool<char>?, char" signature="public void Append(IArrayPool<char>? bufferPool, char value)">
+            <template #name><h3>Append</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="value" type="System.Char"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                    <doc-parameter name="value" type="char"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-append" name="Append" returns="System.Void" params="IArrayPool<Char>, Char[], Int32, Int32" signature="public Void Append(IArrayPool<Char> bufferPool, Char[] buffer, Int32 startIndex, Int32 count)">
-        <template #name><h3>Append</h3></template>
+        <doc-member id="method-append-1" overload-id="group-append" name="Append" returns="void" params="IArrayPool<char>?, char[], int, int" signature="public void Append(IArrayPool<char>? bufferPool, char[] buffer, int startIndex, int count)">
+            <template #name><h3>Append</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="startIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="count" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                    <doc-parameter name="buffer" type="char[]"></doc-parameter>
+                    <doc-parameter name="startIndex" type="int"></doc-parameter>
+                    <doc-parameter name="count" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-clear" name="Clear" returns="System.Void" params="IArrayPool<Char>" signature="public Void Clear(IArrayPool<Char> bufferPool)">
+    <doc-member id="method-clear" name="Clear" returns="void" params="IArrayPool<char>?" signature="public void Clear(IArrayPool<char>? bufferPool)">
         <template #name><h3>Clear</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-ensuresize" name="EnsureSize" returns="System.Void" params="IArrayPool<Char>, Int32" access="private" signature="private Void EnsureSize(IArrayPool<Char> bufferPool, Int32 appendLength)">
+    <doc-member id="method-ensuresize" name="EnsureSize" returns="void" params="IArrayPool<char>?, int" access="private" signature="private void EnsureSize(IArrayPool<char>? bufferPool, int appendLength)">
         <template #name><h3>EnsureSize</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="appendLength" type="System.Int32"></doc-parameter>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                <doc-parameter name="appendLength" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" signature="public sealed String ToString()">
-        <template #name><h3>ToString</h3></template>
-    </doc-member>
+    <doc-overload-group overload-id="group-tostring">
+        <doc-member id="method-tostring" overload-id="group-tostring" name="ToString" returns="string" signature="public sealed string ToString()">
+            <template #name><h3>ToString</h3></template>
+        </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Int32, Int32" signature="public String ToString(Int32 start, Int32 length)">
-        <template #name><h3>ToString</h3></template>
+        <doc-member id="method-tostring-1" overload-id="group-tostring" name="ToString" returns="string" params="int, int" signature="public string ToString(int start, int length)">
+            <template #name><h3>ToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="start" type="int"></doc-parameter>
+                    <doc-parameter name="length" type="int"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

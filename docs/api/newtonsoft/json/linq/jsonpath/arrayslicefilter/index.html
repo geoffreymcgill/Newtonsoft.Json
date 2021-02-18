@@ -208,15 +208,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-start" name="Start" type="System.Nullable<System.Int32>" signature="public Nullable<Int32> Start { get; set; }">
+    <doc-member id="property-start" name="Start" type="int?" signature="public int? Start { get; set; }">
         <template #name><h3>Start</h3></template>
     </doc-member>
 
-<doc-member id="property-end" name="End" type="System.Nullable<System.Int32>" signature="public Nullable<Int32> End { get; set; }">
+    <doc-member id="property-end" name="End" type="int?" signature="public int? End { get; set; }">
         <template #name><h3>End</h3></template>
     </doc-member>
 
-<doc-member id="property-step" name="Step" type="System.Nullable<System.Int32>" signature="public Nullable<Int32> Step { get; set; }">
+    <doc-member id="property-step" name="Step" type="int?" signature="public int? Step { get; set; }">
         <template #name><h3>Step</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,26 +224,26 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings settings)">
+    <doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings?" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)">
         <template #name><h3>ExecuteFilter</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="current" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isvalid" name="IsValid" returns="System.Boolean" params="Int32, Int32, Boolean" access="private" signature="private Boolean IsValid(Int32 index, Int32 stopIndex, Boolean positiveStep)">
+    <doc-member id="method-isvalid" name="IsValid" returns="bool" params="int, int, bool" access="private" signature="private bool IsValid(int index, int stopIndex, bool positiveStep)">
         <template #name><h3>IsValid</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="stopIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="positiveStep" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="stopIndex" type="int"></doc-parameter>
+                <doc-parameter name="positiveStep" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

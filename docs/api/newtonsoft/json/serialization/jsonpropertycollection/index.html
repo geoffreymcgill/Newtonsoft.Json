@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_type" name="_type" type="Type" access="private" signature="private readonly Type _type">
+    <doc-member id="field-_type" name="_type" type="Type" access="private" signature="private readonly Type _type">
         <template #name><h3>_type</h3></template>
     </doc-member>
 
-<doc-member id="field-_list" name="_list" type="List<Newtonsoft.Json.Serialization.JsonProperty>" access="private" signature="private readonly List<JsonProperty> _list">
+    <doc-member id="field-_list" name="_list" type="List<JsonProperty>" access="private" signature="private readonly List<JsonProperty> _list">
         <template #name><h3>_list</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,7 +223,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type" signature="public JsonPropertyCollection(Type type)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Type" signature="public JsonPropertyCollection(Type type)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -236,20 +236,7 @@
 
     </doc-member>
 
-<doc-member id="method-getkeyforitem" name="GetKeyForItem" returns="System.String" params="JsonProperty" access="protected" signature="protected sealed String GetKeyForItem(JsonProperty item)">
-        <template #name><h3>GetKeyForItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>When implemented in a derived class, extracts the key from the specified element.</p>
-
-    </doc-member>
-
-<doc-member id="method-addproperty" name="AddProperty" returns="System.Void" params="JsonProperty" signature="public Void AddProperty(JsonProperty property)">
+    <doc-member id="method-addproperty" name="AddProperty" returns="void" params="JsonProperty" signature="public void AddProperty(JsonProperty property)">
         <template #name><h3>AddProperty</h3></template>
 
         <template #parameters>
@@ -262,12 +249,12 @@
 
     </doc-member>
 
-<doc-member id="method-getclosestmatchproperty" name="GetClosestMatchProperty" returns="Newtonsoft.Json.Serialization.JsonProperty" params="String" signature="public JsonProperty GetClosestMatchProperty(String propertyName)">
+    <doc-member id="method-getclosestmatchproperty" name="GetClosestMatchProperty" returns="JsonProperty?" params="string" signature="public JsonProperty? GetClosestMatchProperty(string propertyName)">
         <template #name><h3>GetClosestMatchProperty</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -277,29 +264,42 @@ a case insensitive match.</p>
 
     </doc-member>
 
-<doc-member id="method-trygetvalue" name="TryGetValue" returns="System.Boolean" params="String, JsonProperty" access="private" signature="private Boolean TryGetValue(String key, JsonProperty item)">
-        <template #name><h3>TryGetValue</h3></template>
+    <doc-member id="method-getkeyforitem" name="GetKeyForItem" returns="string" params="JsonProperty" access="protected" signature="protected sealed string GetKeyForItem(JsonProperty item)">
+        <template #name><h3>GetKeyForItem</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
                 <doc-parameter name="item" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>When implemented in a derived class, extracts the key from the specified element.</p>
+
     </doc-member>
 
-<doc-member id="method-getproperty" name="GetProperty" returns="Newtonsoft.Json.Serialization.JsonProperty" params="String, StringComparison" signature="public JsonProperty GetProperty(String propertyName, StringComparison comparisonType)">
+    <doc-member id="method-getproperty" name="GetProperty" returns="JsonProperty?" params="string, StringComparison" signature="public JsonProperty? GetProperty(string propertyName, StringComparison comparisonType)">
         <template #name><h3>GetProperty</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
                 <doc-parameter name="comparisonType" type="StringComparison"></doc-parameter>
             </doc-parameters>
         </template>
 
 <p>Gets a property by property name.</p>
 
+    </doc-member>
+
+    <doc-member id="method-trygetvalue" name="TryGetValue" returns="bool" params="string, JsonProperty?" access="private" signature="private bool TryGetValue(string key, JsonProperty? item)">
+        <template #name><h3>TryGetValue</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="string"></doc-parameter>
+                <doc-parameter name="item" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
+            </doc-parameters>
+        </template>
     </doc-member>
 </doc-member-group>
 

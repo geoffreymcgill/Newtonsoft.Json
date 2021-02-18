@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-serializationbinder" name="SerializationBinder" type="SerializationBinder" signature="public readonly SerializationBinder SerializationBinder">
+    <doc-member id="field-serializationbinder" name="SerializationBinder" type="SerializationBinder" signature="public readonly SerializationBinder SerializationBinder">
         <template #name><h3>SerializationBinder</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="SerializationBinder" signature="public SerializationBinderAdapter(SerializationBinder serializationBinder)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="SerializationBinder" signature="public SerializationBinderAdapter(SerializationBinder serializationBinder)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -226,25 +226,25 @@
         </template>
     </doc-member>
 
-<doc-member id="method-bindtotype" name="BindToType" returns="Type" params="Nullable<String>, String" signature="public Type BindToType(Nullable<String> assemblyName, String typeName)">
-        <template #name><h3>BindToType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bindtoname" name="BindToName" returns="System.Void" params="Type, Nullable<String>, Nullable<String>" signature="public Void BindToName(Type serializedType, Nullable<String> assemblyName, Nullable<String> typeName)">
+    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, string?, string?" signature="public void BindToName(Type serializedType, string? assemblyName, string? typeName)">
         <template #name><h3>BindToName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="serializedType" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyName" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="typeName" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="string?, string" signature="public Type BindToType(string? assemblyName, string typeName)">
+        <template #name><h3>BindToType</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="typeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

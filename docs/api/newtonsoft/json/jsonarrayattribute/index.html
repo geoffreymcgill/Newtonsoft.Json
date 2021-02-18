@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_allownullitems" name="_allowNullItems" type="System.Boolean" access="private" signature="private Boolean _allowNullItems">
+    <doc-member id="field-_allownullitems" name="_allowNullItems" type="bool" access="private" signature="private bool _allowNullItems">
         <template #name><h3>_allowNullItems</h3></template>
     </doc-member>
 </doc-member-group>
@@ -219,7 +219,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-allownullitems" name="AllowNullItems" type="System.Boolean" signature="public Boolean AllowNullItems { get; set; }">
+    <doc-member id="property-allownullitems" name="AllowNullItems" type="bool" signature="public bool AllowNullItems { get; set; }">
         <template #name><h3>AllowNullItems</h3></template>
 
 <p>Gets or sets a value indicating whether null items are allowed in the collection.</p>
@@ -230,38 +230,40 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JsonArrayAttribute()">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public JsonArrayAttribute()">
+            <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonArrayAttribute"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Boolean" signature="public JsonArrayAttribute(Boolean allowNullItems)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="bool" signature="public JsonArrayAttribute(bool allowNullItems)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="allowNullItems" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="allowNullItems" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonObjectAttribute"/> class with a flag indicating whether the array can contain null items.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JsonArrayAttribute(String id)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="string" signature="public JsonArrayAttribute(string id)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="id" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="id" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.JsonArrayAttribute"/> class with the specified container Id.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

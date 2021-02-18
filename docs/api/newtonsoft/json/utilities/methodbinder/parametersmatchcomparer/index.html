@@ -212,11 +212,11 @@ which one suits better for given argument types.</p>
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_types" name="_types" type="IList<Type>" access="private" signature="private readonly IList<Type> _types">
+    <doc-member id="field-_types" name="_types" type="IList<Type>" access="private" signature="private readonly IList<Type> _types">
         <template #name><h3>_types</h3></template>
     </doc-member>
 
-<doc-member id="field-_enableparamarray" name="_enableParamArray" type="System.Boolean" access="private" signature="private readonly Boolean _enableParamArray">
+    <doc-member id="field-_enableparamarray" name="_enableParamArray" type="bool" access="private" signature="private readonly bool _enableParamArray">
         <template #name><h3>_enableParamArray</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,35 +224,35 @@ which one suits better for given argument types.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="IList<Type>, Boolean" signature="public ParametersMatchComparer(IList<Type> types, Boolean enableParamArray)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="IList<Type>, bool" signature="public ParametersMatchComparer(IList<Type> types, bool enableParamArray)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="types" type="IList<Type>"></doc-parameter>
-                <doc-parameter name="enableParamArray" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="enableParamArray" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-compare" name="Compare" returns="System.Int32" params="ParameterInfo[], ParameterInfo[]" signature="public Int32 Compare(ParameterInfo[] parameters1, ParameterInfo[] parameters2)">
-        <template #name><h3>Compare</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="parameters1" type="ParameterInfo[]"></doc-parameter>
-                <doc-parameter name="parameters2" type="ParameterInfo[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-choosemoreprecisetype" name="ChooseMorePreciseType" returns="System.Int32" params="Type, Type" access="private" signature="private static Int32 ChooseMorePreciseType(Type type1, Type type2)">
+    <doc-member id="method-choosemoreprecisetype" name="ChooseMorePreciseType" returns="int" params="Type, Type" access="private" signature="private static int ChooseMorePreciseType(Type type1, Type type2)">
         <template #name><h3>ChooseMorePreciseType</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type1" type="Type"></doc-parameter>
                 <doc-parameter name="type2" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-compare" name="Compare" returns="int" params="ParameterInfo[], ParameterInfo[]" signature="public int Compare(ParameterInfo[] parameters1, ParameterInfo[] parameters2)">
+        <template #name><h3>Compare</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="parameters1" type="ParameterInfo[]"></doc-parameter>
+                <doc-parameter name="parameters2" type="ParameterInfo[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

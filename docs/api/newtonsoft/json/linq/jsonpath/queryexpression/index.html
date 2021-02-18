@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-operator" name="Operator" type="Newtonsoft.Json.Linq.JsonPath.QueryOperator" access="internal" signature="internal QueryOperator Operator">
+    <doc-member id="field-operator" name="Operator" type="QueryOperator" access="internal" signature="internal QueryOperator Operator">
         <template #name><h3>Operator</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,7 +216,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="QueryOperator" signature="public QueryExpression(QueryOperator operator)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="QueryOperator" signature="public QueryExpression(QueryOperator operator)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -226,28 +226,30 @@
         </template>
     </doc-member>
 
-<doc-member id="method-ismatch" name="IsMatch" returns="System.Boolean" params="JToken, JToken" signature="public Boolean IsMatch(JToken root, JToken t)">
-        <template #name><h3>IsMatch</h3></template>
+    <doc-overload-group overload-id="group-ismatch">
+        <doc-member id="method-ismatch" overload-id="group-ismatch" name="IsMatch" returns="bool" params="JToken, JToken" signature="public bool IsMatch(JToken root, JToken t)">
+            <template #name><h3>IsMatch</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-ismatch" name="IsMatch" returns="System.Boolean" params="JToken, JToken, JsonSelectSettings" signature="public abstract Boolean IsMatch(JToken root, JToken t, JsonSelectSettings settings)">
-        <template #name><h3>IsMatch</h3></template>
+        <doc-member id="method-ismatch-1" overload-id="group-ismatch" name="IsMatch" returns="bool" params="JToken, JToken, JsonSelectSettings?" signature="public abstract bool IsMatch(JToken root, JToken t, JsonSelectSettings? settings)">
+            <template #name><h3>IsMatch</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

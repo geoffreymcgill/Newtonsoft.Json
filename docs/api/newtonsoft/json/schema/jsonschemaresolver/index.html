@@ -216,7 +216,7 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-loadedschemas" name="LoadedSchemas" type="IList<Newtonsoft.Json.Schema.JsonSchema>" signature="public IList<JsonSchema> LoadedSchemas { get; protected set; }">
+    <doc-member id="property-loadedschemas" name="LoadedSchemas" type="IList<JsonSchema>" signature="public IList<JsonSchema> LoadedSchemas { get; protected set; }">
         <template #name><h3>LoadedSchemas</h3></template>
 
 <p>Gets or sets the loaded schemas.</p>
@@ -227,19 +227,19 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public JsonSchemaResolver()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public JsonSchemaResolver()">
         <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Schema.JsonSchemaResolver"/> class.</p>
 
     </doc-member>
 
-<doc-member id="method-getschema" name="GetSchema" returns="Newtonsoft.Json.Schema.JsonSchema" params="String" signature="public virtual JsonSchema GetSchema(String reference)">
+    <doc-member id="method-getschema" name="GetSchema" returns="JsonSchema" params="string" signature="public virtual JsonSchema GetSchema(string reference)">
         <template #name><h3>GetSchema</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
+                <doc-parameter name="reference" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 

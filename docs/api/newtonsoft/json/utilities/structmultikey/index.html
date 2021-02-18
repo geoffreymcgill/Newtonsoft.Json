@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-value1" name="Value1" type="T1" signature="public readonly T1 Value1">
+    <doc-member id="field-value1" name="Value1" type="T1" signature="public readonly T1 Value1">
         <template #name><h3>Value1</h3></template>
     </doc-member>
 
-<doc-member id="field-value2" name="Value2" type="T2" signature="public readonly T2 Value2">
+    <doc-member id="field-value2" name="Value2" type="T2" signature="public readonly T2 Value2">
         <template #name><h3>Value2</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,7 +220,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="T1, T2" signature="public StructMultiKey(T1 v1, T2 v2)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="T1, T2" signature="public StructMultiKey(T1 v1, T2 v2)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -231,28 +231,30 @@
         </template>
     </doc-member>
 
-<doc-member id="method-gethashcode" name="GetHashCode" returns="System.Int32" signature="public sealed Int32 GetHashCode()">
+    <doc-overload-group overload-id="group-equals">
+        <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="obj" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-equals-1" overload-id="group-equals" name="Equals" returns="bool" params="StructMultiKey<T1, T2>" signature="public bool Equals(StructMultiKey<T1, T2> other)">
+            <template #name><h3>Equals</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Utilities.StructMultiKey<T1, T2>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
         <template #name><h3>GetHashCode</h3></template>
-    </doc-member>
-
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Object" signature="public sealed Boolean Equals(Object obj)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="obj" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="StructMultiKey<T1, T2>" signature="public Boolean Equals(StructMultiKey<T1, T2> other)">
-        <template #name><h3>Equals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Utilities.StructMultiKey<T1, T2>"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 </doc-member-group>
 

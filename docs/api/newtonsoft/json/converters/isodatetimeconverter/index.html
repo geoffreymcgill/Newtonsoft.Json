@@ -211,19 +211,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-defaultdatetimeformat" name="DefaultDateTimeFormat" type="System.String" access="private" signature="private const static String DefaultDateTimeFormat">
+    <doc-member id="field-defaultdatetimeformat" name="DefaultDateTimeFormat" type="string" access="private" signature="private const static string DefaultDateTimeFormat">
         <template #name><h3>DefaultDateTimeFormat</h3></template>
     </doc-member>
 
-<doc-member id="field-_datetimestyles" name="_dateTimeStyles" type="DateTimeStyles" access="private" signature="private DateTimeStyles _dateTimeStyles">
+    <doc-member id="field-_datetimestyles" name="_dateTimeStyles" type="DateTimeStyles" access="private" signature="private DateTimeStyles _dateTimeStyles">
         <template #name><h3>_dateTimeStyles</h3></template>
     </doc-member>
 
-<doc-member id="field-_datetimeformat" name="_dateTimeFormat" type="System.Nullable<System.String>" access="private" signature="private Nullable<String> _dateTimeFormat">
+    <doc-member id="field-_datetimeformat" name="_dateTimeFormat" type="string?" access="private" signature="private string? _dateTimeFormat">
         <template #name><h3>_dateTimeFormat</h3></template>
     </doc-member>
 
-<doc-member id="field-_culture" name="_culture" type="System.Nullable<CultureInfo>" access="private" signature="private Nullable<CultureInfo> _culture">
+    <doc-member id="field-_culture" name="_culture" type="CultureInfo?" access="private" signature="private CultureInfo? _culture">
         <template #name><h3>_culture</h3></template>
     </doc-member>
 </doc-member-group>
@@ -231,21 +231,21 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-datetimestyles" name="DateTimeStyles" type="DateTimeStyles" signature="public DateTimeStyles DateTimeStyles { get; set; }">
+    <doc-member id="property-datetimestyles" name="DateTimeStyles" type="DateTimeStyles" signature="public DateTimeStyles DateTimeStyles { get; set; }">
         <template #name><h3>DateTimeStyles</h3></template>
 
 <p>Gets or sets the date time styles used when converting a date to and from JSON.</p>
 
     </doc-member>
 
-<doc-member id="property-datetimeformat" name="DateTimeFormat" type="System.Nullable<System.String>" signature="public Nullable<String> DateTimeFormat { get; set; }">
+    <doc-member id="property-datetimeformat" name="DateTimeFormat" type="string?" signature="public string? DateTimeFormat { get; set; }">
         <template #name><h3>DateTimeFormat</h3></template>
 
 <p>Gets or sets the date time format used when converting a date to and from JSON.</p>
 
     </doc-member>
 
-<doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
+    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
         <template #name><h3>Culture</h3></template>
 
 <p>Gets or sets the culture used when converting a date to and from JSON.</p>
@@ -256,34 +256,34 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonSerializer" signature="public sealed Void WriteJson(JsonWriter writer, Nullable<Object> value, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-readjson" name="ReadJson" returns="System.Nullable<System.Object>" params="JsonReader, Type, Nullable<Object>, JsonSerializer" signature="public sealed Nullable<Object> ReadJson(JsonReader reader, Type objectType, Nullable<Object> existingValue, JsonSerializer serializer)">
+    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
         <template #name><h3>ReadJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="System.Nullable<System.Object>"></doc-parameter>
+                <doc-parameter name="existingValue" type="object?"></doc-parameter>
                 <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
 
 <p>Reads the JSON representation of the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+        <template #name><h3>WriteJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the JSON representation of the object.</p>
 
     </doc-member>
 </doc-member-group>

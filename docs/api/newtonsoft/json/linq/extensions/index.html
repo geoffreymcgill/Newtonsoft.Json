@@ -211,7 +211,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-ancestors" name="Ancestors" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Ancestors(IEnumerable<T> source)">
+    <doc-member id="method-ancestors" name="Ancestors" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Ancestors(IEnumerable<T> source)">
         <template #name><h3>Ancestors</h3></template>
 
         <template #parameters>
@@ -224,7 +224,7 @@
 
     </doc-member>
 
-<doc-member id="method-ancestorsandself" name="AncestorsAndSelf" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> AncestorsAndSelf(IEnumerable<T> source)">
+    <doc-member id="method-ancestorsandself" name="AncestorsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> AncestorsAndSelf(IEnumerable<T> source)">
         <template #name><h3>AncestorsAndSelf</h3></template>
 
         <template #parameters>
@@ -237,7 +237,85 @@
 
     </doc-member>
 
-<doc-member id="method-descendants" name="Descendants" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Descendants(IEnumerable<T> source)">
+    <doc-overload-group overload-id="group-asjenumerable">
+        <doc-member id="method-asjenumerable" overload-id="group-asjenumerable" name="AsJEnumerable" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> AsJEnumerable(IEnumerable<JToken> source)">
+            <template #name><h3>AsJEnumerable</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns the input typed as <see cref="T:Newtonsoft.Json.Linq.IJEnumerable`1"/>.</p>
+
+        </doc-member>
+
+        <doc-member id="method-asjenumerable-1" overload-id="group-asjenumerable" name="AsJEnumerable" returns="IJEnumerable<T>" params="IEnumerable<T>" signature="public static IJEnumerable<T> AsJEnumerable(IEnumerable<T> source)">
+            <template #name><h3>AsJEnumerable</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns the input typed as <see cref="T:Newtonsoft.Json.Linq.IJEnumerable`1"/>.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-children">
+        <doc-member id="method-children" overload-id="group-children" name="Children" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Children(IEnumerable<T> source)">
+            <template #name><h3>Children</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a collection of child tokens of every array in the source collection.</p>
+
+        </doc-member>
+
+        <doc-member id="method-children-1" overload-id="group-children" name="Children" returns="IEnumerable<U?>" params="IEnumerable<T>" signature="public static IEnumerable<U?> Children(IEnumerable<T> source)">
+            <template #name><h3>Children</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Returns a collection of converted child tokens of every array in the source collection.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-convert">
+        <doc-member id="method-convert" overload-id="group-convert" name="Convert" returns="IEnumerable<U?>" params="IEnumerable<T>" access="internal" signature="internal static IEnumerable<U?> Convert(IEnumerable<T> source)">
+            <template #name><h3>Convert</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-convert-1" overload-id="group-convert" name="Convert" returns="U?" params="T" access="internal" signature="internal static U? Convert(T token)">
+            <template #name><h3>Convert</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="token" type="T"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-descendants" name="Descendants" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Descendants(IEnumerable<T> source)">
         <template #name><h3>Descendants</h3></template>
 
         <template #parameters>
@@ -250,7 +328,7 @@
 
     </doc-member>
 
-<doc-member id="method-descendantsandself" name="DescendantsAndSelf" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> DescendantsAndSelf(IEnumerable<T> source)">
+    <doc-member id="method-descendantsandself" name="DescendantsAndSelf" returns="IJEnumerable<JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> DescendantsAndSelf(IEnumerable<T> source)">
         <template #name><h3>DescendantsAndSelf</h3></template>
 
         <template #parameters>
@@ -263,7 +341,7 @@
 
     </doc-member>
 
-<doc-member id="method-properties" name="Properties" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JProperty>" params="IEnumerable<JObject>" signature="public static IJEnumerable<JProperty> Properties(IEnumerable<JObject> source)">
+    <doc-member id="method-properties" name="Properties" returns="IJEnumerable<JProperty>" params="IEnumerable<JObject>" signature="public static IJEnumerable<JProperty> Properties(IEnumerable<JObject> source)">
         <template #name><h3>Properties</h3></template>
 
         <template #parameters>
@@ -276,168 +354,100 @@
 
     </doc-member>
 
-<doc-member id="method-values" name="Values" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<JToken>, Nullable<Object>" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source, Nullable<Object> key)">
-        <template #name><h3>Values</h3></template>
+    <doc-overload-group overload-id="group-value">
+        <doc-member id="method-value" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<JToken>" signature="public static U? Value(IEnumerable<JToken> value)">
+            <template #name><h3>Value</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="key" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the value.</p>
+
+        </doc-member>
+
+        <doc-member id="method-value-1" overload-id="group-value" name="Value" returns="U?" params="IEnumerable<T>" signature="public static U? Value(IEnumerable<T> value)">
+            <template #name><h3>Value</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="value" type="IEnumerable<T>"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Converts the value.</p>
+
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-overload-group overload-id="group-values">
+        <doc-member id="method-values" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>, object?" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source, object? key)">
+            <template #name><h3>Values</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                    <doc-parameter name="key" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of child values of every object in the source collection with the given key.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-values" name="Values" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source)">
-        <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-1" overload-id="group-values" name="Values" returns="IJEnumerable<JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> Values(IEnumerable<JToken> source)">
+            <template #name><h3>Values</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of child values of every object in the source collection.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-values" name="Values" returns="IEnumerable<U>" params="IEnumerable<JToken>, Object" signature="public static IEnumerable<U> Values(IEnumerable<JToken> source, Object key)">
-        <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-2" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>, object" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source, object key)">
+            <template #name><h3>Values</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="key" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                    <doc-parameter name="key" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of converted child values of every object in the source collection with the given key.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-values" name="Values" returns="IEnumerable<U>" params="IEnumerable<JToken>" signature="public static IEnumerable<U> Values(IEnumerable<JToken> source)">
-        <template #name><h3>Values</h3></template>
+        <doc-member id="method-values-3" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<JToken>" signature="public static IEnumerable<U?> Values(IEnumerable<JToken> source)">
+            <template #name><h3>Values</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Returns a collection of converted child values of every object in the source collection.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-value" name="Value" returns="U" params="IEnumerable<JToken>" signature="public static U Value(IEnumerable<JToken> value)">
-        <template #name><h3>Value</h3></template>
+        <doc-member id="method-values-4" overload-id="group-values" name="Values" returns="IEnumerable<U?>" params="IEnumerable<T>, object?" access="internal" signature="internal static IEnumerable<U?> Values(IEnumerable<T> source, object? key)">
+            <template #name><h3>Values</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the value.</p>
-
-    </doc-member>
-
-<doc-member id="method-value" name="Value" returns="U" params="IEnumerable<T>" signature="public static U Value(IEnumerable<T> value)">
-        <template #name><h3>Value</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="IEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Converts the value.</p>
-
-    </doc-member>
-
-<doc-member id="method-values" name="Values" returns="IEnumerable<U>" params="IEnumerable<T>, Nullable<Object>" access="internal" signature="internal static IEnumerable<U> Values(IEnumerable<T> source, Nullable<Object> key)">
-        <template #name><h3>Values</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-                <doc-parameter name="key" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-children" name="Children" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<T>" signature="public static IJEnumerable<JToken> Children(IEnumerable<T> source)">
-        <template #name><h3>Children</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns a collection of child tokens of every array in the source collection.</p>
-
-    </doc-member>
-
-<doc-member id="method-children" name="Children" returns="IEnumerable<U>" params="IEnumerable<T>" signature="public static IEnumerable<U> Children(IEnumerable<T> source)">
-        <template #name><h3>Children</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns a collection of converted child tokens of every array in the source collection.</p>
-
-    </doc-member>
-
-<doc-member id="method-convert" name="Convert" returns="IEnumerable<U>" params="IEnumerable<T>" access="internal" signature="internal static IEnumerable<U> Convert(IEnumerable<T> source)">
-        <template #name><h3>Convert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-convert" name="Convert" returns="U" params="T" access="internal" signature="internal static U Convert(T token)">
-        <template #name><h3>Convert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="T"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-asjenumerable" name="AsJEnumerable" returns="Newtonsoft.Json.Linq.IJEnumerable<Newtonsoft.Json.Linq.JToken>" params="IEnumerable<JToken>" signature="public static IJEnumerable<JToken> AsJEnumerable(IEnumerable<JToken> source)">
-        <template #name><h3>AsJEnumerable</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns the input typed as <see cref="T:Newtonsoft.Json.Linq.IJEnumerable`1"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-asjenumerable" name="AsJEnumerable" returns="Newtonsoft.Json.Linq.IJEnumerable<T>" params="IEnumerable<T>" signature="public static IJEnumerable<T> AsJEnumerable(IEnumerable<T> source)">
-        <template #name><h3>AsJEnumerable</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Returns the input typed as <see cref="T:Newtonsoft.Json.Linq.IJEnumerable`1"/>.</p>
-
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="source" type="IEnumerable<T>"></doc-parameter>
+                    <doc-parameter name="key" type="object?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

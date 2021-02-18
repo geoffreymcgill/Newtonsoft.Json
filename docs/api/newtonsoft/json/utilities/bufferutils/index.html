@@ -208,36 +208,36 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-rentbuffer" name="RentBuffer" returns="System.Char[]" params="IArrayPool<Char>, Int32" signature="public static Char[] RentBuffer(IArrayPool<Char> bufferPool, Int32 minSize)">
-        <template #name><h3>RentBuffer</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="minSize" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-returnbuffer" name="ReturnBuffer" returns="System.Void" params="IArrayPool<Char>, Char[]" signature="public static Void ReturnBuffer(IArrayPool<Char> bufferPool, Char[] buffer)">
-        <template #name><h3>ReturnBuffer</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ensurebuffersize" name="EnsureBufferSize" returns="System.Char[]" params="IArrayPool<Char>, Int32, Char[]" signature="public static Char[] EnsureBufferSize(IArrayPool<Char> bufferPool, Int32 size, Char[] buffer)">
+    <doc-member id="method-ensurebuffersize" name="EnsureBufferSize" returns="char[]" params="IArrayPool<char>?, int, char[]" signature="public static char[] EnsureBufferSize(IArrayPool<char>? bufferPool, int size, char[] buffer)">
         <template #name><h3>EnsureBufferSize</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<System.Char>"></doc-parameter>
-                <doc-parameter name="size" type="System.Int32"></doc-parameter>
-                <doc-parameter name="buffer" type="System.Char[]"></doc-parameter>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                <doc-parameter name="size" type="int"></doc-parameter>
+                <doc-parameter name="buffer" type="char[]"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-rentbuffer" name="RentBuffer" returns="char[]" params="IArrayPool<char>?, int" signature="public static char[] RentBuffer(IArrayPool<char>? bufferPool, int minSize)">
+        <template #name><h3>RentBuffer</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                <doc-parameter name="minSize" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-returnbuffer" name="ReturnBuffer" returns="void" params="IArrayPool<char>?, char[]" signature="public static void ReturnBuffer(IArrayPool<char>? bufferPool, char[] buffer)">
+        <template #name><h3>ReturnBuffer</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="bufferPool" type="Newtonsoft.Json.IArrayPool<char>?"></doc-parameter>
+                <doc-parameter name="buffer" type="char[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

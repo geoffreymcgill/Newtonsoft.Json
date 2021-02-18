@@ -208,37 +208,37 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-indexof" name="IndexOf" returns="System.Int32" params="StringReference, Char, Int32, Int32" signature="public static Int32 IndexOf(StringReference s, Char c, Int32 startIndex, Int32 length)">
-        <template #name><h3>IndexOf</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="c" type="System.Char"></doc-parameter>
-                <doc-parameter name="startIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-startswith" name="StartsWith" returns="System.Boolean" params="StringReference, String" signature="public static Boolean StartsWith(StringReference s, String text)">
-        <template #name><h3>StartsWith</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-endswith" name="EndsWith" returns="System.Boolean" params="StringReference, String" signature="public static Boolean EndsWith(StringReference s, String text)">
+    <doc-member id="method-endswith" name="EndsWith" returns="bool" params="StringReference, string" signature="public static bool EndsWith(StringReference s, string text)">
         <template #name><h3>EndsWith</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                <doc-parameter name="text" type="System.String"></doc-parameter>
+                <doc-parameter name="text" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-indexof" name="IndexOf" returns="int" params="StringReference, char, int, int" signature="public static int IndexOf(StringReference s, char c, int startIndex, int length)">
+        <template #name><h3>IndexOf</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                <doc-parameter name="c" type="char"></doc-parameter>
+                <doc-parameter name="startIndex" type="int"></doc-parameter>
+                <doc-parameter name="length" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-startswith" name="StartsWith" returns="bool" params="StringReference, string" signature="public static bool StartsWith(StringReference s, string text)">
+        <template #name><h3>StartsWith</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
+                <doc-parameter name="text" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -208,30 +208,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-pushinstance" name="PushInstance" returns="System.Void" params="ILGenerator, Type" signature="public static Void PushInstance(ILGenerator generator, Type type)">
-        <template #name><h3>PushInstance</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-pusharrayinstance" name="PushArrayInstance" returns="System.Void" params="ILGenerator, Int32, Int32" signature="public static Void PushArrayInstance(ILGenerator generator, Int32 argsIndex, Int32 arrayIndex)">
-        <template #name><h3>PushArrayInstance</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
-                <doc-parameter name="argsIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="arrayIndex" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-boxifneeded" name="BoxIfNeeded" returns="System.Void" params="ILGenerator, Type" signature="public static Void BoxIfNeeded(ILGenerator generator, Type type)">
+    <doc-member id="method-boxifneeded" name="BoxIfNeeded" returns="void" params="ILGenerator, Type" signature="public static void BoxIfNeeded(ILGenerator generator, Type type)">
         <template #name><h3>BoxIfNeeded</h3></template>
 
         <template #parameters>
@@ -242,18 +219,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-unboxifneeded" name="UnboxIfNeeded" returns="System.Void" params="ILGenerator, Type" signature="public static Void UnboxIfNeeded(ILGenerator generator, Type type)">
-        <template #name><h3>UnboxIfNeeded</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-callmethod" name="CallMethod" returns="System.Void" params="ILGenerator, MethodInfo" signature="public static Void CallMethod(ILGenerator generator, MethodInfo methodInfo)">
+    <doc-member id="method-callmethod" name="CallMethod" returns="void" params="ILGenerator, MethodInfo" signature="public static void CallMethod(ILGenerator generator, MethodInfo methodInfo)">
         <template #name><h3>CallMethod</h3></template>
 
         <template #parameters>
@@ -264,12 +230,46 @@
         </template>
     </doc-member>
 
-<doc-member id="method-return" name="Return" returns="System.Void" params="ILGenerator" signature="public static Void Return(ILGenerator generator)">
+    <doc-member id="method-pusharrayinstance" name="PushArrayInstance" returns="void" params="ILGenerator, int, int" signature="public static void PushArrayInstance(ILGenerator generator, int argsIndex, int arrayIndex)">
+        <template #name><h3>PushArrayInstance</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
+                <doc-parameter name="argsIndex" type="int"></doc-parameter>
+                <doc-parameter name="arrayIndex" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-pushinstance" name="PushInstance" returns="void" params="ILGenerator, Type" signature="public static void PushInstance(ILGenerator generator, Type type)">
+        <template #name><h3>PushInstance</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-return" name="Return" returns="void" params="ILGenerator" signature="public static void Return(ILGenerator generator)">
         <template #name><h3>Return</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-unboxifneeded" name="UnboxIfNeeded" returns="void" params="ILGenerator, Type" signature="public static void UnboxIfNeeded(ILGenerator generator, Type type)">
+        <template #name><h3>UnboxIfNeeded</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="generator" type="ILGenerator"></doc-parameter>
+                <doc-parameter name="type" type="Type"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

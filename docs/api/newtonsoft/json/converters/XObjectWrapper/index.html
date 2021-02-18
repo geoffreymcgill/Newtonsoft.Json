@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_xmlobject" name="_xmlObject" type="System.Nullable<XObject>" access="private" signature="private readonly Nullable<XObject> _xmlObject">
+    <doc-member id="field-_xmlobject" name="_xmlObject" type="XObject?" access="private" signature="private readonly XObject? _xmlObject">
         <template #name><h3>_xmlObject</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,35 +216,35 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-wrappednode" name="WrappedNode" type="System.Nullable<System.Object>" signature="public Nullable<Object> WrappedNode { get; }">
+    <doc-member id="property-wrappednode" name="WrappedNode" type="object?" signature="public object? WrappedNode { get; }">
         <template #name><h3>WrappedNode</h3></template>
     </doc-member>
 
-<doc-member id="property-nodetype" name="NodeType" type="XmlNodeType" signature="public virtual XmlNodeType NodeType { get; }">
+    <doc-member id="property-nodetype" name="NodeType" type="XmlNodeType" signature="public virtual XmlNodeType NodeType { get; }">
         <template #name><h3>NodeType</h3></template>
     </doc-member>
 
-<doc-member id="property-localname" name="LocalName" type="System.Nullable<System.String>" signature="public virtual Nullable<String> LocalName { get; }">
+    <doc-member id="property-localname" name="LocalName" type="string?" signature="public virtual string? LocalName { get; }">
         <template #name><h3>LocalName</h3></template>
     </doc-member>
 
-<doc-member id="property-childnodes" name="ChildNodes" type="List<Newtonsoft.Json.Converters.IXmlNode>" signature="public virtual List<IXmlNode> ChildNodes { get; }">
+    <doc-member id="property-childnodes" name="ChildNodes" type="List<IXmlNode>" signature="public virtual List<IXmlNode> ChildNodes { get; }">
         <template #name><h3>ChildNodes</h3></template>
     </doc-member>
 
-<doc-member id="property-attributes" name="Attributes" type="List<Newtonsoft.Json.Converters.IXmlNode>" signature="public virtual List<IXmlNode> Attributes { get; }">
+    <doc-member id="property-attributes" name="Attributes" type="List<IXmlNode>" signature="public virtual List<IXmlNode> Attributes { get; }">
         <template #name><h3>Attributes</h3></template>
     </doc-member>
 
-<doc-member id="property-parentnode" name="ParentNode" type="Newtonsoft.Json.Converters.IXmlNode" signature="public virtual IXmlNode ParentNode { get; }">
+    <doc-member id="property-parentnode" name="ParentNode" type="IXmlNode?" signature="public virtual IXmlNode? ParentNode { get; }">
         <template #name><h3>ParentNode</h3></template>
     </doc-member>
 
-<doc-member id="property-value" name="Value" type="System.Nullable<System.String>" signature="public virtual Nullable<String> Value { get; set; }">
+    <doc-member id="property-value" name="Value" type="string?" signature="public virtual string? Value { get; set; }">
         <template #name><h3>Value</h3></template>
     </doc-member>
 
-<doc-member id="property-namespaceuri" name="NamespaceUri" type="System.Nullable<System.String>" signature="public virtual Nullable<String> NamespaceUri { get; }">
+    <doc-member id="property-namespaceuri" name="NamespaceUri" type="string?" signature="public virtual string? NamespaceUri { get; }">
         <template #name><h3>NamespaceUri</h3></template>
     </doc-member>
 </doc-member-group>
@@ -252,17 +252,17 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Nullable<XObject>" signature="public XObjectWrapper(Nullable<XObject> xmlObject)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="XObject?" signature="public XObjectWrapper(XObject? xmlObject)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="xmlObject" type="System.Nullable<XObject>"></doc-parameter>
+                <doc-parameter name="xmlObject" type="XObject?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-appendchild" name="AppendChild" returns="Newtonsoft.Json.Converters.IXmlNode" params="IXmlNode" signature="public virtual IXmlNode AppendChild(IXmlNode newChild)">
+    <doc-member id="method-appendchild" name="AppendChild" returns="IXmlNode" params="IXmlNode" signature="public virtual IXmlNode AppendChild(IXmlNode newChild)">
         <template #name><h3>AppendChild</h3></template>
 
         <template #parameters>

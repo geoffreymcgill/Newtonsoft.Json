@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-instance" name="Instance" type="Newtonsoft.Json.Linq.JsonPath.RootFilter" signature="public readonly static RootFilter Instance">
+    <doc-member id="field-instance" name="Instance" type="RootFilter" signature="public readonly static RootFilter Instance">
         <template #name><h3>Instance</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,18 +216,18 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" access="private" signature="private RootFilter()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" access="private" signature="private RootFilter()">
         <template #name><h3>.ctor</h3></template>
     </doc-member>
 
-<doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<Newtonsoft.Json.Linq.JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings settings)">
+    <doc-member id="method-executefilter" name="ExecuteFilter" returns="IEnumerable<JToken>" params="JToken, IEnumerable<JToken>, JsonSelectSettings?" signature="public sealed IEnumerable<JToken> ExecuteFilter(JToken root, IEnumerable<JToken> current, JsonSelectSettings? settings)">
         <template #name><h3>ExecuteFilter</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="current" type="IEnumerable<Newtonsoft.Json.Linq.JToken>"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings"></doc-parameter>
+                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonSelectSettings?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

@@ -211,28 +211,28 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-componenttype" name="ComponentType" type="Type" signature="public sealed Type ComponentType { get; }">
+    <doc-member id="property-componenttype" name="ComponentType" type="Type" signature="public sealed Type ComponentType { get; }">
         <template #name><h3>ComponentType</h3></template>
 
 <p>When overridden in a derived class, gets the type of the component this property is bound to.</p>
 
     </doc-member>
 
-<doc-member id="property-isreadonly" name="IsReadOnly" type="System.Boolean" signature="public sealed Boolean IsReadOnly { get; }">
+    <doc-member id="property-isreadonly" name="IsReadOnly" type="bool" signature="public sealed bool IsReadOnly { get; }">
         <template #name><h3>IsReadOnly</h3></template>
 
 <p>When overridden in a derived class, gets a value indicating whether this property is read-only.</p>
 
     </doc-member>
 
-<doc-member id="property-propertytype" name="PropertyType" type="Type" signature="public sealed Type PropertyType { get; }">
+    <doc-member id="property-propertytype" name="PropertyType" type="Type" signature="public sealed Type PropertyType { get; }">
         <template #name><h3>PropertyType</h3></template>
 
 <p>When overridden in a derived class, gets the type of the property.</p>
 
     </doc-member>
 
-<doc-member id="property-namehashcode" name="NameHashCode" type="System.Int32" access="protected" signature="protected sealed Int32 NameHashCode { protected get; }">
+    <doc-member id="property-namehashcode" name="NameHashCode" type="int" access="protected" signature="protected sealed int NameHashCode { protected get; }">
         <template #name><h3>NameHashCode</h3></template>
 
 <p>Gets the hash code for the name of the member.</p>
@@ -243,12 +243,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="String" signature="public JPropertyDescriptor(String name)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="string" signature="public JPropertyDescriptor(string name)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -256,22 +256,12 @@
 
     </doc-member>
 
-<doc-member id="method-castinstance" name="CastInstance" returns="Newtonsoft.Json.Linq.JObject" params="Object" access="private" signature="private static JObject CastInstance(Object instance)">
-        <template #name><h3>CastInstance</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="instance" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-canresetvalue" name="CanResetValue" returns="System.Boolean" params="Object" signature="public sealed Boolean CanResetValue(Object component)">
+    <doc-member id="method-canresetvalue" name="CanResetValue" returns="bool" params="object" signature="public sealed bool CanResetValue(object component)">
         <template #name><h3>CanResetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="component" type="System.Object"></doc-parameter>
+                <doc-parameter name="component" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -279,12 +269,22 @@
 
     </doc-member>
 
-<doc-member id="method-getvalue" name="GetValue" returns="System.Nullable<System.Object>" params="Object" signature="public sealed Nullable<Object> GetValue(Object component)">
+    <doc-member id="method-castinstance" name="CastInstance" returns="JObject" params="object" access="private" signature="private static JObject CastInstance(object instance)">
+        <template #name><h3>CastInstance</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="instance" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getvalue" name="GetValue" returns="object?" params="object" signature="public sealed object? GetValue(object component)">
         <template #name><h3>GetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="component" type="System.Object"></doc-parameter>
+                <doc-parameter name="component" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -292,12 +292,12 @@
 
     </doc-member>
 
-<doc-member id="method-resetvalue" name="ResetValue" returns="System.Void" params="Object" signature="public sealed Void ResetValue(Object component)">
+    <doc-member id="method-resetvalue" name="ResetValue" returns="void" params="object" signature="public sealed void ResetValue(object component)">
         <template #name><h3>ResetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="component" type="System.Object"></doc-parameter>
+                <doc-parameter name="component" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -305,13 +305,13 @@
 
     </doc-member>
 
-<doc-member id="method-setvalue" name="SetValue" returns="System.Void" params="Object, Object" signature="public sealed Void SetValue(Object component, Object value)">
+    <doc-member id="method-setvalue" name="SetValue" returns="void" params="object, object" signature="public sealed void SetValue(object component, object value)">
         <template #name><h3>SetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="component" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="component" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -319,12 +319,12 @@
 
     </doc-member>
 
-<doc-member id="method-shouldserializevalue" name="ShouldSerializeValue" returns="System.Boolean" params="Object" signature="public sealed Boolean ShouldSerializeValue(Object component)">
+    <doc-member id="method-shouldserializevalue" name="ShouldSerializeValue" returns="bool" params="object" signature="public sealed bool ShouldSerializeValue(object component)">
         <template #name><h3>ShouldSerializeValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="component" type="System.Object"></doc-parameter>
+                <doc-parameter name="component" type="object"></doc-parameter>
             </doc-parameters>
         </template>
 

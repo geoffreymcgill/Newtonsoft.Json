@@ -211,11 +211,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-patternname" name="PatternName" type="System.String" access="private" signature="private const static String PatternName">
+    <doc-member id="field-patternname" name="PatternName" type="string" access="private" signature="private const static string PatternName">
         <template #name><h3>PatternName</h3></template>
     </doc-member>
 
-<doc-member id="field-optionsname" name="OptionsName" type="System.String" access="private" signature="private const static String OptionsName">
+    <doc-member id="field-optionsname" name="OptionsName" type="string" access="private" signature="private const static string OptionsName">
         <template #name><h3>OptionsName</h3></template>
     </doc-member>
 </doc-member-group>
@@ -223,93 +223,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonSerializer" signature="public sealed Void WriteJson(JsonWriter writer, Nullable<Object> value, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-hasflag" name="HasFlag" returns="System.Boolean" params="RegexOptions, RegexOptions" access="private" signature="private Boolean HasFlag(RegexOptions options, RegexOptions flag)">
-        <template #name><h3>HasFlag</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="options" type="RegexOptions"></doc-parameter>
-                <doc-parameter name="flag" type="RegexOptions"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writebson" name="WriteBson" returns="System.Void" params="BsonWriter, Regex" access="private" signature="private Void WriteBson(BsonWriter writer, Regex regex)">
-        <template #name><h3>WriteBson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.Bson.BsonWriter"></doc-parameter>
-                <doc-parameter name="regex" type="Regex"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Regex, JsonSerializer" access="private" signature="private Void WriteJson(JsonWriter writer, Regex regex, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="regex" type="Regex"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readjson" name="ReadJson" returns="System.Nullable<System.Object>" params="JsonReader, Type, Nullable<Object>, JsonSerializer" signature="public sealed Nullable<Object> ReadJson(JsonReader reader, Type objectType, Nullable<Object> existingValue, JsonSerializer serializer)">
-        <template #name><h3>ReadJson</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Reads the JSON representation of the object.</p>
-
-    </doc-member>
-
-<doc-member id="method-readregexstring" name="ReadRegexString" returns="System.Object" params="JsonReader" access="private" signature="private Object ReadRegexString(JsonReader reader)">
-        <template #name><h3>ReadRegexString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-readregexobject" name="ReadRegexObject" returns="Regex" params="JsonReader, JsonSerializer" access="private" signature="private Regex ReadRegexObject(JsonReader reader, JsonSerializer serializer)">
-        <template #name><h3>ReadRegexObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-canconvert" name="CanConvert" returns="System.Boolean" params="Type" signature="public sealed Boolean CanConvert(Type objectType)">
+    <doc-member id="method-canconvert" name="CanConvert" returns="bool" params="Type" signature="public sealed bool CanConvert(Type objectType)">
         <template #name><h3>CanConvert</h3></template>
 
         <template #parameters>
@@ -322,7 +236,18 @@
 
     </doc-member>
 
-<doc-member id="method-isregex" name="IsRegex" returns="System.Boolean" params="Type" access="private" signature="private Boolean IsRegex(Type objectType)">
+    <doc-member id="method-hasflag" name="HasFlag" returns="bool" params="RegexOptions, RegexOptions" access="private" signature="private bool HasFlag(RegexOptions options, RegexOptions flag)">
+        <template #name><h3>HasFlag</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="options" type="RegexOptions"></doc-parameter>
+                <doc-parameter name="flag" type="RegexOptions"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isregex" name="IsRegex" returns="bool" params="Type" access="private" signature="private bool IsRegex(Type objectType)">
         <template #name><h3>IsRegex</h3></template>
 
         <template #parameters>
@@ -331,6 +256,83 @@
             </doc-parameters>
         </template>
     </doc-member>
+
+    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+        <template #name><h3>ReadJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="objectType" type="Type"></doc-parameter>
+                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Reads the JSON representation of the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readregexobject" name="ReadRegexObject" returns="Regex" params="JsonReader, JsonSerializer" access="private" signature="private Regex ReadRegexObject(JsonReader reader, JsonSerializer serializer)">
+        <template #name><h3>ReadRegexObject</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-readregexstring" name="ReadRegexString" returns="object" params="JsonReader" access="private" signature="private object ReadRegexString(JsonReader reader)">
+        <template #name><h3>ReadRegexString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writebson" name="WriteBson" returns="void" params="BsonWriter, Regex" access="private" signature="private void WriteBson(BsonWriter writer, Regex regex)">
+        <template #name><h3>WriteBson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.Bson.BsonWriter"></doc-parameter>
+                <doc-parameter name="regex" type="Regex"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-overload-group overload-id="group-writejson">
+        <doc-member id="method-writejson" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+            <template #name><h3>WriteJson</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+                </doc-parameters>
+            </template>
+
+<p>Writes the JSON representation of the object.</p>
+
+        </doc-member>
+
+        <doc-member id="method-writejson-1" overload-id="group-writejson" name="WriteJson" returns="void" params="JsonWriter, Regex, JsonSerializer" access="private" signature="private void WriteJson(JsonWriter writer, Regex regex, JsonSerializer serializer)">
+            <template #name><h3>WriteJson</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                    <doc-parameter name="regex" type="Regex"></doc-parameter>
+                    <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

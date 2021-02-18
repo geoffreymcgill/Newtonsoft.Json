@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-typeattributecache" name="TypeAttributeCache" type="Newtonsoft.Json.Utilities.ThreadSafeStore<System.Object, T>" access="private" signature="private readonly static ThreadSafeStore<Object, T> TypeAttributeCache">
+    <doc-member id="field-typeattributecache" name="TypeAttributeCache" type="ThreadSafeStore<object, T?>" access="private" signature="private readonly static ThreadSafeStore<object, T?> TypeAttributeCache">
         <template #name><h3>TypeAttributeCache</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,12 +216,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getattribute" name="GetAttribute" returns="T" params="Object" signature="public static T GetAttribute(Object type)">
+    <doc-member id="method-getattribute" name="GetAttribute" returns="T?" params="object" signature="public static T? GetAttribute(object type)">
         <template #name><h3>GetAttribute</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="System.Object"></doc-parameter>
+                <doc-parameter name="type" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

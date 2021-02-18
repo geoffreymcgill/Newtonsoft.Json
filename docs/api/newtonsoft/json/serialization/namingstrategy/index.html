@@ -211,7 +211,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-processdictionarykeys" name="ProcessDictionaryKeys" type="System.Boolean" signature="public Boolean ProcessDictionaryKeys { get; set; }">
+    <doc-member id="property-processdictionarykeys" name="ProcessDictionaryKeys" type="bool" signature="public bool ProcessDictionaryKeys { get; set; }">
         <template #name><h3>ProcessDictionaryKeys</h3></template>
 
 <p>A flag indicating whether dictionary keys should be processed.
@@ -219,7 +219,7 @@ Defaults to <c>false</c>.</p>
 
     </doc-member>
 
-<doc-member id="property-processextensiondatanames" name="ProcessExtensionDataNames" type="System.Boolean" signature="public Boolean ProcessExtensionDataNames { get; set; }">
+    <doc-member id="property-processextensiondatanames" name="ProcessExtensionDataNames" type="bool" signature="public bool ProcessExtensionDataNames { get; set; }">
         <template #name><h3>ProcessExtensionDataNames</h3></template>
 
 <p>A flag indicating whether extension data names should be processed.
@@ -227,7 +227,7 @@ Defaults to <c>false</c>.</p>
 
     </doc-member>
 
-<doc-member id="property-overridespecifiednames" name="OverrideSpecifiedNames" type="System.Boolean" signature="public Boolean OverrideSpecifiedNames { get; set; }">
+    <doc-member id="property-overridespecifiednames" name="OverrideSpecifiedNames" type="bool" signature="public bool OverrideSpecifiedNames { get; set; }">
         <template #name><h3>OverrideSpecifiedNames</h3></template>
 
 <p>A flag indicating whether explicitly specified property names,
@@ -240,39 +240,40 @@ Defaults to <c>false</c>.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getpropertyname" name="GetPropertyName" returns="System.String" params="String, Boolean" signature="public virtual String GetPropertyName(String name, Boolean hasSpecifiedName)">
-        <template #name><h3>GetPropertyName</h3></template>
+    <doc-overload-group overload-id="group-equals">
+        <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
+            <template #name><h3>Equals</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-                <doc-parameter name="hasSpecifiedName" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="obj" type="object"></doc-parameter>
+                </doc-parameters>
+            </template>
 
-<p>Gets the serialized name for a given property name.</p>
+<p>Object equality implementation</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-getextensiondataname" name="GetExtensionDataName" returns="System.String" params="String" signature="public virtual String GetExtensionDataName(String name)">
-        <template #name><h3>GetExtensionDataName</h3></template>
+        <doc-member id="method-equals-1" overload-id="group-equals" name="Equals" returns="bool" params="NamingStrategy?" access="protected" signature="protected bool Equals(NamingStrategy? other)">
+            <template #name><h3>Equals</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="other" type="Newtonsoft.Json.Serialization.NamingStrategy?"></doc-parameter>
+                </doc-parameters>
+            </template>
 
-<p>Gets the serialized name for a given extension data name.</p>
+<p>Compare to another NamingStrategy</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-getdictionarykey" name="GetDictionaryKey" returns="System.String" params="String" signature="public virtual String GetDictionaryKey(String key)">
+    <doc-member id="method-getdictionarykey" name="GetDictionaryKey" returns="string" params="string" signature="public virtual string GetDictionaryKey(string key)">
         <template #name><h3>GetDictionaryKey</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
+                <doc-parameter name="key" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -280,49 +281,50 @@ Defaults to <c>false</c>.</p>
 
     </doc-member>
 
-<doc-member id="method-resolvepropertyname" name="ResolvePropertyName" returns="System.String" params="String" access="protected" signature="protected abstract String ResolvePropertyName(String name)">
-        <template #name><h3>ResolvePropertyName</h3></template>
+    <doc-member id="method-getextensiondataname" name="GetExtensionDataName" returns="string" params="string" signature="public virtual string GetExtensionDataName(string name)">
+        <template #name><h3>GetExtensionDataName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Resolves the specified property name.</p>
+<p>Gets the serialized name for a given extension data name.</p>
 
     </doc-member>
 
-<doc-member id="method-gethashcode" name="GetHashCode" returns="System.Int32" signature="public sealed Int32 GetHashCode()">
+    <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
         <template #name><h3>GetHashCode</h3></template>
 
 <p>Hash code calculation</p>
 
     </doc-member>
 
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="Object" signature="public sealed Boolean Equals(Object obj)">
-        <template #name><h3>Equals</h3></template>
+    <doc-member id="method-getpropertyname" name="GetPropertyName" returns="string" params="string, bool" signature="public virtual string GetPropertyName(string name, bool hasSpecifiedName)">
+        <template #name><h3>GetPropertyName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="obj" type="System.Object"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
+                <doc-parameter name="hasSpecifiedName" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Object equality implementation</p>
+<p>Gets the serialized name for a given property name.</p>
 
     </doc-member>
 
-<doc-member id="method-equals" name="Equals" returns="System.Boolean" params="NamingStrategy" access="protected" signature="protected Boolean Equals(NamingStrategy other)">
-        <template #name><h3>Equals</h3></template>
+    <doc-member id="method-resolvepropertyname" name="ResolvePropertyName" returns="string" params="string" access="protected" signature="protected abstract string ResolvePropertyName(string name)">
+        <template #name><h3>ResolvePropertyName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="other" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
-<p>Compare to another NamingStrategy</p>
+<p>Resolves the specified property name.</p>
 
     </doc-member>
 </doc-member-group>

@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-optout" name="OptOut" type="Newtonsoft.Json.MemberSerialization" signature="OptOut">
+    <doc-member id="field-optout" name="OptOut" type="MemberSerialization" signature="OptOut">
         <template #name><h3>OptOut</h3></template>
 
 <p>All public members are serialized by default. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.
@@ -219,7 +219,7 @@ This is the default member serialization mode.</p>
 
     </doc-member>
 
-<doc-member id="field-optin" name="OptIn" type="Newtonsoft.Json.MemberSerialization" signature="OptIn">
+    <doc-member id="field-optin" name="OptIn" type="MemberSerialization" signature="OptIn">
         <template #name><h3>OptIn</h3></template>
 
 <p>Only members marked with <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/> or <see cref="!:DataMemberAttribute"/> are serialized.
@@ -227,7 +227,7 @@ This member serialization mode can also be set by marking the class with <see cr
 
     </doc-member>
 
-<doc-member id="field-fields" name="Fields" type="Newtonsoft.Json.MemberSerialization" signature="Fields">
+    <doc-member id="field-fields" name="Fields" type="MemberSerialization" signature="Fields">
         <template #name><h3>Fields</h3></template>
 
 <p>All public and private fields are serialized. Members can be excluded using <see cref="T:Newtonsoft.Json.JsonIgnoreAttribute"/> or <see cref="!:NonSerializedAttribute"/>.

@@ -208,99 +208,99 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-assert" name="Assert" returns="System.Void" params="Boolean, Nullable<String>" signature="public static Void Assert(Boolean condition, Nullable<String> message = null)">
+    <doc-member id="method-assert" name="Assert" returns="void" params="bool, string?" signature="public static void Assert(bool condition, string? message = null)">
         <template #name><h3>Assert</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="condition" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="message" type="System.Nullable<System.String>"></doc-parameter>
+                <doc-parameter name="condition" type="bool"></doc-parameter>
+                <doc-parameter name="message" type="string?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-valueequals" name="ValueEquals" returns="System.Boolean" params="Nullable<Object>, Nullable<Object>" signature="public static Boolean ValueEquals(Nullable<Object> objA, Nullable<Object> objB)">
-        <template #name><h3>ValueEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objA" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="objB" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-createargumentoutofrangeexception" name="CreateArgumentOutOfRangeException" returns="ArgumentOutOfRangeException" params="String, Object, String" signature="public static ArgumentOutOfRangeException CreateArgumentOutOfRangeException(String paramName, Object actualValue, String message)">
-        <template #name><h3>CreateArgumentOutOfRangeException</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="paramName" type="System.String"></doc-parameter>
-                <doc-parameter name="actualValue" type="System.Object"></doc-parameter>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-tostring" name="ToString" returns="System.String" params="Nullable<Object>" signature="public static String ToString(Nullable<Object> value)">
-        <template #name><h3>ToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-bytearraycompare" name="ByteArrayCompare" returns="System.Int32" params="Byte[], Byte[]" signature="public static Int32 ByteArrayCompare(Byte[] a1, Byte[] a2)">
+    <doc-member id="method-bytearraycompare" name="ByteArrayCompare" returns="int" params="byte[], byte[]" signature="public static int ByteArrayCompare(byte[] a1, byte[] a2)">
         <template #name><h3>ByteArrayCompare</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="a1" type="System.Byte[]"></doc-parameter>
-                <doc-parameter name="a2" type="System.Byte[]"></doc-parameter>
+                <doc-parameter name="a1" type="byte[]"></doc-parameter>
+                <doc-parameter name="a2" type="byte[]"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getprefix" name="GetPrefix" returns="System.Nullable<System.String>" params="String" signature="public static Nullable<String> GetPrefix(String qualifiedName)">
-        <template #name><h3>GetPrefix</h3></template>
+    <doc-member id="method-createargumentoutofrangeexception" name="CreateArgumentOutOfRangeException" returns="ArgumentOutOfRangeException" params="string, object, string" signature="public static ArgumentOutOfRangeException CreateArgumentOutOfRangeException(string paramName, object actualValue, string message)">
+        <template #name><h3>CreateArgumentOutOfRangeException</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="qualifiedName" type="System.String"></doc-parameter>
+                <doc-parameter name="paramName" type="string"></doc-parameter>
+                <doc-parameter name="actualValue" type="object"></doc-parameter>
+                <doc-parameter name="message" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getlocalname" name="GetLocalName" returns="System.String" params="String" signature="public static String GetLocalName(String qualifiedName)">
+    <doc-member id="method-getlocalname" name="GetLocalName" returns="string" params="string" signature="public static string GetLocalName(string qualifiedName)">
         <template #name><h3>GetLocalName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="qualifiedName" type="System.String"></doc-parameter>
+                <doc-parameter name="qualifiedName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getqualifiednameparts" name="GetQualifiedNameParts" returns="System.Void" params="String, Nullable<String>, String" signature="public static Void GetQualifiedNameParts(String qualifiedName, Nullable<String> prefix, String localName)">
+    <doc-member id="method-getprefix" name="GetPrefix" returns="string?" params="string" signature="public static string? GetPrefix(string qualifiedName)">
+        <template #name><h3>GetPrefix</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="qualifiedName" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getqualifiednameparts" name="GetQualifiedNameParts" returns="void" params="string, string?, string" signature="public static void GetQualifiedNameParts(string qualifiedName, string? prefix, string localName)">
         <template #name><h3>GetQualifiedNameParts</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="qualifiedName" type="System.String"></doc-parameter>
-                <doc-parameter name="prefix" type="System.Nullable<System.String>"></doc-parameter>
-                <doc-parameter name="localName" type="System.String"></doc-parameter>
+                <doc-parameter name="qualifiedName" type="string"></doc-parameter>
+                <doc-parameter name="prefix" type="string?"></doc-parameter>
+                <doc-parameter name="localName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getregexoptions" name="GetRegexOptions" returns="RegexOptions" params="String" access="internal" signature="internal static RegexOptions GetRegexOptions(String optionsText)">
+    <doc-member id="method-getregexoptions" name="GetRegexOptions" returns="RegexOptions" params="string" access="internal" signature="internal static RegexOptions GetRegexOptions(string optionsText)">
         <template #name><h3>GetRegexOptions</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="optionsText" type="System.String"></doc-parameter>
+                <doc-parameter name="optionsText" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-tostring" name="ToString" returns="string" params="object?" signature="public static string ToString(object? value)">
+        <template #name><h3>ToString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-valueequals" name="ValueEquals" returns="bool" params="object?, object?" signature="public static bool ValueEquals(object? objA, object? objB)">
+        <template #name><h3>ValueEquals</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="objA" type="object?"></doc-parameter>
+                <doc-parameter name="objB" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

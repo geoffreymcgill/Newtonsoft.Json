@@ -211,14 +211,14 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-simple" name="Simple" type="Newtonsoft.Json.TypeNameAssemblyFormatHandling" signature="Simple">
+    <doc-member id="field-simple" name="Simple" type="TypeNameAssemblyFormatHandling" signature="Simple">
         <template #name><h3>Simple</h3></template>
 
 <p>In simple mode, the assembly used during deserialization need not match exactly the assembly used during serialization. Specifically, the version numbers need not match as the <c>LoadWithPartialName</c> method of the <see cref="!:System.Reflection.Assembly"/> class is used to load the assembly.</p>
 
     </doc-member>
 
-<doc-member id="field-full" name="Full" type="Newtonsoft.Json.TypeNameAssemblyFormatHandling" signature="Full">
+    <doc-member id="field-full" name="Full" type="TypeNameAssemblyFormatHandling" signature="Full">
         <template #name><h3>Full</h3></template>
 
 <p>In full mode, the assembly used during deserialization must match exactly the assembly used during serialization. The <c>Load</c> method of the <see cref="!:System.Reflection.Assembly"/> class is used to load the assembly.</p>

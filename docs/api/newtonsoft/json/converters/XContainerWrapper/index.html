@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_childnodes" name="_childNodes" type="System.Nullable<List<Newtonsoft.Json.Converters.IXmlNode>>" access="private" signature="private Nullable<List<IXmlNode>> _childNodes">
+    <doc-member id="field-_childnodes" name="_childNodes" type="List<IXmlNode>?" access="private" signature="private List<IXmlNode>? _childNodes">
         <template #name><h3>_childNodes</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,19 +216,19 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-container" name="Container" type="XContainer" access="private" signature="private XContainer Container { private get; }">
+    <doc-member id="property-container" name="Container" type="XContainer" access="private" signature="private XContainer Container { private get; }">
         <template #name><h3>Container</h3></template>
     </doc-member>
 
-<doc-member id="property-childnodes" name="ChildNodes" type="List<Newtonsoft.Json.Converters.IXmlNode>" signature="public sealed List<IXmlNode> ChildNodes { get; }">
+    <doc-member id="property-childnodes" name="ChildNodes" type="List<IXmlNode>" signature="public sealed List<IXmlNode> ChildNodes { get; }">
         <template #name><h3>ChildNodes</h3></template>
     </doc-member>
 
-<doc-member id="property-haschildnodes" name="HasChildNodes" type="System.Boolean" access="protected" signature="protected virtual Boolean HasChildNodes { protected get; }">
+    <doc-member id="property-haschildnodes" name="HasChildNodes" type="bool" access="protected" signature="protected virtual bool HasChildNodes { protected get; }">
         <template #name><h3>HasChildNodes</h3></template>
     </doc-member>
 
-<doc-member id="property-parentnode" name="ParentNode" type="Newtonsoft.Json.Converters.IXmlNode" signature="public sealed IXmlNode ParentNode { get; }">
+    <doc-member id="property-parentnode" name="ParentNode" type="IXmlNode?" signature="public sealed IXmlNode? ParentNode { get; }">
         <template #name><h3>ParentNode</h3></template>
     </doc-member>
 </doc-member-group>
@@ -236,7 +236,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="XContainer" signature="public XContainerWrapper(XContainer container)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="XContainer" signature="public XContainerWrapper(XContainer container)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -246,22 +246,22 @@
         </template>
     </doc-member>
 
-<doc-member id="method-wrapnode" name="WrapNode" returns="Newtonsoft.Json.Converters.IXmlNode" params="XObject" access="internal" signature="internal static IXmlNode WrapNode(XObject node)">
-        <template #name><h3>WrapNode</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="XObject"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-appendchild" name="AppendChild" returns="Newtonsoft.Json.Converters.IXmlNode" params="IXmlNode" signature="public sealed IXmlNode AppendChild(IXmlNode newChild)">
+    <doc-member id="method-appendchild" name="AppendChild" returns="IXmlNode" params="IXmlNode" signature="public sealed IXmlNode AppendChild(IXmlNode newChild)">
         <template #name><h3>AppendChild</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="newChild" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-wrapnode" name="WrapNode" returns="IXmlNode" params="XObject" access="internal" signature="internal static IXmlNode WrapNode(XObject node)">
+        <template #name><h3>WrapNode</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="node" type="XObject"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

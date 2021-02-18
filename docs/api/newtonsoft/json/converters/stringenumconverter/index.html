@@ -211,7 +211,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-camelcasetext" name="CamelCaseText" type="System.Boolean" signature="public Boolean CamelCaseText { get; set; }">
+    <doc-member id="property-camelcasetext" name="CamelCaseText" type="bool" signature="public bool CamelCaseText { get; set; }">
         <template #name><h3>CamelCaseText</h3></template>
 
 <p>Gets or sets a value indicating whether the written enum text should be camel case.
@@ -219,14 +219,14 @@ The default value is <c>false</c>.</p>
 
     </doc-member>
 
-<doc-member id="property-namingstrategy" name="NamingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy" signature="public NamingStrategy NamingStrategy { get; set; }">
+    <doc-member id="property-namingstrategy" name="NamingStrategy" type="NamingStrategy?" signature="public NamingStrategy? NamingStrategy { get; set; }">
         <template #name><h3>NamingStrategy</h3></template>
 
 <p>Gets or sets the naming strategy used to resolve how enum text is written.</p>
 
     </doc-member>
 
-<doc-member id="property-allowintegervalues" name="AllowIntegerValues" type="System.Boolean" signature="public Boolean AllowIntegerValues { get; set; }">
+    <doc-member id="property-allowintegervalues" name="AllowIntegerValues" type="bool" signature="public bool AllowIntegerValues { get; set; }">
         <template #name><h3>AllowIntegerValues</h3></template>
 
 <p>Gets or sets a value indicating whether integer values are allowed when serializing and deserializing.
@@ -238,114 +238,85 @@ The default value is <c>true</c>.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public StringEnumConverter()">
-        <template #name><h3>.ctor</h3></template>
+    <doc-overload-group overload-id="group-.ctor">
+        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" signature="public StringEnumConverter()">
+            <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Boolean" signature="public StringEnumConverter(Boolean camelCaseText)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="bool" signature="public StringEnumConverter(bool camelCaseText)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="camelCaseText" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="NamingStrategy, Boolean" signature="public StringEnumConverter(NamingStrategy namingStrategy, Boolean allowIntegerValues = true)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
-                <doc-parameter name="allowIntegerValues" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="camelCaseText" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type" signature="public StringEnumConverter(Type namingStrategyType)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-2" overload-id="group-.ctor" name=".ctor" returns="void" params="NamingStrategy, bool" signature="public StringEnumConverter(NamingStrategy namingStrategy, bool allowIntegerValues = true)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
-
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type, Object[]" signature="public StringEnumConverter(Type namingStrategyType, Object[] namingStrategyParameters)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
-                <doc-parameter name="namingStrategyParameters" type="System.Object[]"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
+                    <doc-parameter name="allowIntegerValues" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Type, Object[], Boolean" signature="public StringEnumConverter(Type namingStrategyType, Object[] namingStrategyParameters, Boolean allowIntegerValues)">
-        <template #name><h3>.ctor</h3></template>
+        <doc-member id="method-.ctor-3" overload-id="group-.ctor" name=".ctor" returns="void" params="Type" signature="public StringEnumConverter(Type namingStrategyType)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
-                <doc-parameter name="namingStrategyParameters" type="System.Object[]"></doc-parameter>
-                <doc-parameter name="allowIntegerValues" type="System.Boolean"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
+                </doc-parameters>
+            </template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-writejson" name="WriteJson" returns="System.Void" params="JsonWriter, Nullable<Object>, JsonSerializer" signature="public sealed Void WriteJson(JsonWriter writer, Nullable<Object> value, JsonSerializer serializer)">
-        <template #name><h3>WriteJson</h3></template>
+        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="Type, object[]" signature="public StringEnumConverter(Type namingStrategyType, object[] namingStrategyParameters)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
+                    <doc-parameter name="namingStrategyParameters" type="object[]"></doc-parameter>
+                </doc-parameters>
+            </template>
 
-<p>Writes the JSON representation of the object.</p>
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
 
-<doc-member id="method-readjson" name="ReadJson" returns="System.Nullable<System.Object>" params="JsonReader, Type, Nullable<Object>, JsonSerializer" signature="public sealed Nullable<Object> ReadJson(JsonReader reader, Type objectType, Nullable<Object> existingValue, JsonSerializer serializer)">
-        <template #name><h3>ReadJson</h3></template>
+        <doc-member id="method-.ctor-5" overload-id="group-.ctor" name=".ctor" returns="void" params="Type, object[], bool" signature="public StringEnumConverter(Type namingStrategyType, object[] namingStrategyParameters, bool allowIntegerValues)">
+            <template #name><h3>.ctor</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="System.Nullable<System.Object>"></doc-parameter>
-                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="namingStrategyType" type="Type"></doc-parameter>
+                    <doc-parameter name="namingStrategyParameters" type="object[]"></doc-parameter>
+                    <doc-parameter name="allowIntegerValues" type="bool"></doc-parameter>
+                </doc-parameters>
+            </template>
 
-<p>Reads the JSON representation of the object.</p>
+<p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Converters.StringEnumConverter"/> class.</p>
 
-    </doc-member>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-canconvert" name="CanConvert" returns="System.Boolean" params="Type" signature="public sealed Boolean CanConvert(Type objectType)">
+    <doc-member id="method-canconvert" name="CanConvert" returns="bool" params="Type" signature="public sealed bool CanConvert(Type objectType)">
         <template #name><h3>CanConvert</h3></template>
 
         <template #parameters>
@@ -355,6 +326,37 @@ The default value is <c>true</c>.</p>
         </template>
 
 <p>Determines whether this instance can convert the specified object type.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+        <template #name><h3>ReadJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+                <doc-parameter name="objectType" type="Type"></doc-parameter>
+                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Reads the JSON representation of the object.</p>
+
+    </doc-member>
+
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+        <template #name><h3>WriteJson</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the JSON representation of the object.</p>
 
     </doc-member>
 </doc-member-group>

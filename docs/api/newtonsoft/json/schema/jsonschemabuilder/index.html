@@ -208,23 +208,23 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_stack" name="_stack" type="IList<Newtonsoft.Json.Schema.JsonSchema>" access="private" signature="private readonly IList<JsonSchema> _stack">
+    <doc-member id="field-_stack" name="_stack" type="IList<JsonSchema>" access="private" signature="private readonly IList<JsonSchema> _stack">
         <template #name><h3>_stack</h3></template>
     </doc-member>
 
-<doc-member id="field-_resolver" name="_resolver" type="Newtonsoft.Json.Schema.JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
+    <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
         <template #name><h3>_resolver</h3></template>
     </doc-member>
 
-<doc-member id="field-_documentschemas" name="_documentSchemas" type="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchema>" access="private" signature="private readonly IDictionary<String, JsonSchema> _documentSchemas">
+    <doc-member id="field-_documentschemas" name="_documentSchemas" type="IDictionary<string, JsonSchema>" access="private" signature="private readonly IDictionary<string, JsonSchema> _documentSchemas">
         <template #name><h3>_documentSchemas</h3></template>
     </doc-member>
 
-<doc-member id="field-_currentschema" name="_currentSchema" type="Newtonsoft.Json.Schema.JsonSchema" access="private" signature="private JsonSchema _currentSchema">
+    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
         <template #name><h3>_currentSchema</h3></template>
     </doc-member>
 
-<doc-member id="field-_rootschema" name="_rootSchema" type="Newtonsoft.Json.Linq.JObject" access="private" signature="private JObject _rootSchema">
+    <doc-member id="field-_rootschema" name="_rootSchema" type="JObject" access="private" signature="private JObject _rootSchema">
         <template #name><h3>_rootSchema</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,7 +232,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-currentschema" name="CurrentSchema" type="Newtonsoft.Json.Schema.JsonSchema" access="private" signature="private JsonSchema CurrentSchema { private get; }">
+    <doc-member id="property-currentschema" name="CurrentSchema" type="JsonSchema" access="private" signature="private JsonSchema CurrentSchema { private get; }">
         <template #name><h3>CurrentSchema</h3></template>
     </doc-member>
 </doc-member-group>
@@ -240,7 +240,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonSchemaResolver" signature="public JsonSchemaBuilder(JsonSchemaResolver resolver)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonSchemaResolver" signature="public JsonSchemaBuilder(JsonSchemaResolver resolver)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -250,51 +250,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-push" name="Push" returns="System.Void" params="JsonSchema" access="private" signature="private Void Push(JsonSchema value)">
-        <template #name><h3>Push</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-pop" name="Pop" returns="Newtonsoft.Json.Schema.JsonSchema" access="private" signature="private JsonSchema Pop()">
-        <template #name><h3>Pop</h3></template>
-    </doc-member>
-
-<doc-member id="method-read" name="Read" returns="Newtonsoft.Json.Schema.JsonSchema" params="JsonReader" access="internal" signature="internal JsonSchema Read(JsonReader reader)">
-        <template #name><h3>Read</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-unescapereference" name="UnescapeReference" returns="System.String" params="String" access="private" signature="private String UnescapeReference(String reference)">
-        <template #name><h3>UnescapeReference</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolvereferences" name="ResolveReferences" returns="Newtonsoft.Json.Schema.JsonSchema" params="JsonSchema" access="private" signature="private JsonSchema ResolveReferences(JsonSchema schema)">
-        <template #name><h3>ResolveReferences</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-buildschema" name="BuildSchema" returns="Newtonsoft.Json.Schema.JsonSchema" params="JToken" access="private" signature="private JsonSchema BuildSchema(JToken token)">
+    <doc-member id="method-buildschema" name="BuildSchema" returns="JsonSchema" params="JToken" access="private" signature="private JsonSchema BuildSchema(JToken token)">
         <template #name><h3>BuildSchema</h3></template>
 
         <template #parameters>
@@ -304,47 +260,33 @@
         </template>
     </doc-member>
 
-<doc-member id="method-processschemaproperties" name="ProcessSchemaProperties" returns="System.Void" params="JObject" access="private" signature="private Void ProcessSchemaProperties(JObject schemaObject)">
-        <template #name><h3>ProcessSchemaProperties</h3></template>
+    <doc-overload-group overload-id="group-maptype">
+        <doc-member id="method-maptype" overload-id="group-maptype" name="MapType" returns="JsonSchemaType" params="string" access="internal" signature="internal static JsonSchemaType MapType(string type)">
+            <template #name><h3>MapType</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schemaObject" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
-            </doc-parameters>
-        </template>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="string"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-maptype-1" overload-id="group-maptype" name="MapType" returns="string" params="JsonSchemaType" access="internal" signature="internal static string MapType(JsonSchemaType type)">
+            <template #name><h3>MapType</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="type" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
+
+    <doc-member id="method-pop" name="Pop" returns="JsonSchema" access="private" signature="private JsonSchema Pop()">
+        <template #name><h3>Pop</h3></template>
     </doc-member>
 
-<doc-member id="method-processextends" name="ProcessExtends" returns="System.Void" params="JToken" access="private" signature="private Void ProcessExtends(JToken token)">
-        <template #name><h3>ProcessExtends</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-processenum" name="ProcessEnum" returns="System.Void" params="JToken" access="private" signature="private Void ProcessEnum(JToken token)">
-        <template #name><h3>ProcessEnum</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-processadditionalproperties" name="ProcessAdditionalProperties" returns="System.Void" params="JToken" access="private" signature="private Void ProcessAdditionalProperties(JToken token)">
-        <template #name><h3>ProcessAdditionalProperties</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-processadditionalitems" name="ProcessAdditionalItems" returns="System.Void" params="JToken" access="private" signature="private Void ProcessAdditionalItems(JToken token)">
+    <doc-member id="method-processadditionalitems" name="ProcessAdditionalItems" returns="void" params="JToken" access="private" signature="private void ProcessAdditionalItems(JToken token)">
         <template #name><h3>ProcessAdditionalItems</h3></template>
 
         <template #parameters>
@@ -354,8 +296,8 @@
         </template>
     </doc-member>
 
-<doc-member id="method-processproperties" name="ProcessProperties" returns="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchema>" params="JToken" access="private" signature="private IDictionary<String, JsonSchema> ProcessProperties(JToken token)">
-        <template #name><h3>ProcessProperties</h3></template>
+    <doc-member id="method-processadditionalproperties" name="ProcessAdditionalProperties" returns="void" params="JToken" access="private" signature="private void ProcessAdditionalProperties(JToken token)">
+        <template #name><h3>ProcessAdditionalProperties</h3></template>
 
         <template #parameters>
             <doc-parameters>
@@ -364,7 +306,27 @@
         </template>
     </doc-member>
 
-<doc-member id="method-processitems" name="ProcessItems" returns="System.Void" params="JToken" access="private" signature="private Void ProcessItems(JToken token)">
+    <doc-member id="method-processenum" name="ProcessEnum" returns="void" params="JToken" access="private" signature="private void ProcessEnum(JToken token)">
+        <template #name><h3>ProcessEnum</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-processextends" name="ProcessExtends" returns="void" params="JToken" access="private" signature="private void ProcessExtends(JToken token)">
+        <template #name><h3>ProcessExtends</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-processitems" name="ProcessItems" returns="void" params="JToken" access="private" signature="private void ProcessItems(JToken token)">
         <template #name><h3>ProcessItems</h3></template>
 
         <template #parameters>
@@ -374,7 +336,27 @@
         </template>
     </doc-member>
 
-<doc-member id="method-processtype" name="ProcessType" returns="System.Nullable<Newtonsoft.Json.Schema.JsonSchemaType>" params="JToken" access="private" signature="private Nullable<JsonSchemaType> ProcessType(JToken token)">
+    <doc-member id="method-processproperties" name="ProcessProperties" returns="IDictionary<string, JsonSchema>" params="JToken" access="private" signature="private IDictionary<string, JsonSchema> ProcessProperties(JToken token)">
+        <template #name><h3>ProcessProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-processschemaproperties" name="ProcessSchemaProperties" returns="void" params="JObject" access="private" signature="private void ProcessSchemaProperties(JObject schemaObject)">
+        <template #name><h3>ProcessSchemaProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schemaObject" type="Newtonsoft.Json.Linq.JObject"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-processtype" name="ProcessType" returns="JsonSchemaType?" params="JToken" access="private" signature="private JsonSchemaType? ProcessType(JToken token)">
         <template #name><h3>ProcessType</h3></template>
 
         <template #parameters>
@@ -384,22 +366,42 @@
         </template>
     </doc-member>
 
-<doc-member id="method-maptype" name="MapType" returns="Newtonsoft.Json.Schema.JsonSchemaType" params="String" access="internal" signature="internal static JsonSchemaType MapType(String type)">
-        <template #name><h3>MapType</h3></template>
+    <doc-member id="method-push" name="Push" returns="void" params="JsonSchema" access="private" signature="private void Push(JsonSchema value)">
+        <template #name><h3>Push</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="System.String"></doc-parameter>
+                <doc-parameter name="value" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-maptype" name="MapType" returns="System.String" params="JsonSchemaType" access="internal" signature="internal static String MapType(JsonSchemaType type)">
-        <template #name><h3>MapType</h3></template>
+    <doc-member id="method-read" name="Read" returns="JsonSchema" params="JsonReader" access="internal" signature="internal JsonSchema Read(JsonReader reader)">
+        <template #name><h3>Read</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
+                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-resolvereferences" name="ResolveReferences" returns="JsonSchema" params="JsonSchema" access="private" signature="private JsonSchema ResolveReferences(JsonSchema schema)">
+        <template #name><h3>ResolveReferences</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-unescapereference" name="UnescapeReference" returns="string" params="string" access="private" signature="private string UnescapeReference(string reference)">
+        <template #name><h3>UnescapeReference</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="reference" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

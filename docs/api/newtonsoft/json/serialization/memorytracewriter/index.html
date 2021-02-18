@@ -212,11 +212,11 @@ reached then old trace messages will be removed as new messages are added.</p>
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_tracemessages" name="_traceMessages" type="Queue<System.String>" access="private" signature="private readonly Queue<String> _traceMessages">
+    <doc-member id="field-_tracemessages" name="_traceMessages" type="Queue<string>" access="private" signature="private readonly Queue<string> _traceMessages">
         <template #name><h3>_traceMessages</h3></template>
     </doc-member>
 
-<doc-member id="field-_lock" name="_lock" type="System.Object" access="private" signature="private readonly Object _lock">
+    <doc-member id="field-_lock" name="_lock" type="object" access="private" signature="private readonly object _lock">
         <template #name><h3>_lock</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,7 +224,7 @@ reached then old trace messages will be removed as new messages are added.</p>
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-levelfilter" name="LevelFilter" type="TraceLevel" signature="public TraceLevel LevelFilter { get; set; }">
+    <doc-member id="property-levelfilter" name="LevelFilter" type="TraceLevel" signature="public TraceLevel LevelFilter { get; set; }">
         <template #name><h3>LevelFilter</h3></template>
 
 <p>Gets the <see cref="!:TraceLevel"/> that will be used to filter the trace messages passed to the writer.
@@ -237,39 +237,39 @@ For example a filter level of <see cref="!:TraceLevel.Info"/> will exclude <see 
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public MemoryTraceWriter()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public MemoryTraceWriter()">
         <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.MemoryTraceWriter"/> class.</p>
 
     </doc-member>
 
-<doc-member id="method-trace" name="Trace" returns="System.Void" params="TraceLevel, String, Nullable<Exception>" signature="public Void Trace(TraceLevel level, String message, Nullable<Exception> ex)">
-        <template #name><h3>Trace</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="level" type="TraceLevel"></doc-parameter>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
-                <doc-parameter name="ex" type="System.Nullable<Exception>"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Writes the specified trace level, message and optional exception.</p>
-
-    </doc-member>
-
-<doc-member id="method-gettracemessages" name="GetTraceMessages" returns="IEnumerable<System.String>" signature="public IEnumerable<String> GetTraceMessages()">
+    <doc-member id="method-gettracemessages" name="GetTraceMessages" returns="IEnumerable<string>" signature="public IEnumerable<string> GetTraceMessages()">
         <template #name><h3>GetTraceMessages</h3></template>
 
 <p>Returns an enumeration of the most recent trace messages.</p>
 
     </doc-member>
 
-<doc-member id="method-tostring" name="ToString" returns="System.String" signature="public sealed String ToString()">
+    <doc-member id="method-tostring" name="ToString" returns="string" signature="public sealed string ToString()">
         <template #name><h3>ToString</h3></template>
 
 <p>Returns a <see cref="!:String"/> of the most recent trace messages.</p>
+
+    </doc-member>
+
+    <doc-member id="method-trace" name="Trace" returns="void" params="TraceLevel, string, Exception?" signature="public void Trace(TraceLevel level, string message, Exception? ex)">
+        <template #name><h3>Trace</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="level" type="TraceLevel"></doc-parameter>
+                <doc-parameter name="message" type="string"></doc-parameter>
+                <doc-parameter name="ex" type="Exception?"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Writes the specified trace level, message and optional exception.</p>
 
     </doc-member>
 </doc-member-group>

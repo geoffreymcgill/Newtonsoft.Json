@@ -216,27 +216,27 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_reader" name="_reader" type="Newtonsoft.Json.JsonReader" access="private" signature="private readonly JsonReader _reader">
+    <doc-member id="field-_reader" name="_reader" type="JsonReader" access="private" signature="private readonly JsonReader _reader">
         <template #name><h3>_reader</h3></template>
     </doc-member>
 
-<doc-member id="field-_stack" name="_stack" type="Stack<Newtonsoft.Json.JsonValidatingReader.SchemaScope>" access="private" signature="private readonly Stack<SchemaScope> _stack">
+    <doc-member id="field-_stack" name="_stack" type="Stack<SchemaScope>" access="private" signature="private readonly Stack<SchemaScope> _stack">
         <template #name><h3>_stack</h3></template>
     </doc-member>
 
-<doc-member id="field-_schema" name="_schema" type="Newtonsoft.Json.Schema.JsonSchema" access="private" signature="private JsonSchema _schema">
+    <doc-member id="field-_schema" name="_schema" type="JsonSchema" access="private" signature="private JsonSchema _schema">
         <template #name><h3>_schema</h3></template>
     </doc-member>
 
-<doc-member id="field-_model" name="_model" type="Newtonsoft.Json.Schema.JsonSchemaModel" access="private" signature="private JsonSchemaModel _model">
+    <doc-member id="field-_model" name="_model" type="JsonSchemaModel" access="private" signature="private JsonSchemaModel _model">
         <template #name><h3>_model</h3></template>
     </doc-member>
 
-<doc-member id="field-_currentscope" name="_currentScope" type="Newtonsoft.Json.JsonValidatingReader.SchemaScope" access="private" signature="private SchemaScope _currentScope">
+    <doc-member id="field-_currentscope" name="_currentScope" type="SchemaScope" access="private" signature="private SchemaScope _currentScope">
         <template #name><h3>_currentScope</h3></template>
     </doc-member>
 
-<doc-member id="field-emptyschemalist" name="EmptySchemaList" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>" access="private" signature="private readonly static IList<JsonSchemaModel> EmptySchemaList">
+    <doc-member id="field-emptyschemalist" name="EmptySchemaList" type="IList<JsonSchemaModel>" access="private" signature="private readonly static IList<JsonSchemaModel> EmptySchemaList">
         <template #name><h3>EmptySchemaList</h3></template>
     </doc-member>
 </doc-member-group>
@@ -244,64 +244,64 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-value" name="Value" type="System.Object" signature="public sealed Object Value { get; }">
+    <doc-member id="property-value" name="Value" type="object" signature="public sealed object Value { get; }">
         <template #name><h3>Value</h3></template>
 
 <p>Gets the text value of the current JSON token.</p>
 
     </doc-member>
 
-<doc-member id="property-depth" name="Depth" type="System.Int32" signature="public sealed Int32 Depth { get; }">
+    <doc-member id="property-depth" name="Depth" type="int" signature="public sealed int Depth { get; }">
         <template #name><h3>Depth</h3></template>
 
 <p>Gets the depth of the current token in the JSON document.</p>
 
     </doc-member>
 
-<doc-member id="property-path" name="Path" type="System.String" signature="public sealed String Path { get; }">
+    <doc-member id="property-path" name="Path" type="string" signature="public sealed string Path { get; }">
         <template #name><h3>Path</h3></template>
 
 <p>Gets the path of the current JSON token.</p>
 
     </doc-member>
 
-<doc-member id="property-quotechar" name="QuoteChar" type="System.Char" signature="public sealed Char QuoteChar { get; internal,protected set; }">
+    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public sealed char QuoteChar { get; internal,protected set; }">
         <template #name><h3>QuoteChar</h3></template>
 
 <p>Gets the quotation mark character used to enclose the value of a string.</p>
 
     </doc-member>
 
-<doc-member id="property-tokentype" name="TokenType" type="Newtonsoft.Json.JsonToken" signature="public sealed JsonToken TokenType { get; }">
+    <doc-member id="property-tokentype" name="TokenType" type="JsonToken" signature="public sealed JsonToken TokenType { get; }">
         <template #name><h3>TokenType</h3></template>
 
 <p>Gets the type of the current JSON token.</p>
 
     </doc-member>
 
-<doc-member id="property-valuetype" name="ValueType" type="Type" signature="public sealed Type ValueType { get; }">
+    <doc-member id="property-valuetype" name="ValueType" type="Type" signature="public sealed Type ValueType { get; }">
         <template #name><h3>ValueType</h3></template>
 
 <p>Gets the .NET type for the current JSON token.</p>
 
     </doc-member>
 
-<doc-member id="property-currentschemas" name="CurrentSchemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentSchemas { private get; }">
+    <doc-member id="property-currentschemas" name="CurrentSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentSchemas { private get; }">
         <template #name><h3>CurrentSchemas</h3></template>
     </doc-member>
 
-<doc-member id="property-currentmemberschemas" name="CurrentMemberSchemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentMemberSchemas { private get; }">
+    <doc-member id="property-currentmemberschemas" name="CurrentMemberSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentMemberSchemas { private get; }">
         <template #name><h3>CurrentMemberSchemas</h3></template>
     </doc-member>
 
-<doc-member id="property-schema" name="Schema" type="Newtonsoft.Json.Schema.JsonSchema" signature="public JsonSchema Schema { get; set; }">
+    <doc-member id="property-schema" name="Schema" type="JsonSchema" signature="public JsonSchema Schema { get; set; }">
         <template #name><h3>Schema</h3></template>
 
 <p>Gets or sets the schema.</p>
 
     </doc-member>
 
-<doc-member id="property-reader" name="Reader" type="Newtonsoft.Json.JsonReader" signature="public JsonReader Reader { get; }">
+    <doc-member id="property-reader" name="Reader" type="JsonReader" signature="public JsonReader Reader { get; }">
         <template #name><h3>Reader</h3></template>
 
 <p>Gets the <see cref="T:Newtonsoft.Json.JsonReader"/> used to construct this <see cref="T:Newtonsoft.Json.JsonValidatingReader"/>.</p>
@@ -312,42 +312,7 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-push" name="Push" returns="System.Void" params="SchemaScope" access="private" signature="private Void Push(SchemaScope scope)">
-        <template #name><h3>Push</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="scope" type="Newtonsoft.Json.JsonValidatingReader.SchemaScope"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-pop" name="Pop" returns="Newtonsoft.Json.JsonValidatingReader.SchemaScope" access="private" signature="private SchemaScope Pop()">
-        <template #name><h3>Pop</h3></template>
-    </doc-member>
-
-<doc-member id="method-raiseerror" name="RaiseError" returns="System.Void" params="String, JsonSchemaModel" access="private" signature="private Void RaiseError(String message, JsonSchemaModel schema)">
-        <template #name><h3>RaiseError</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="message" type="System.String"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-onvalidationevent" name="OnValidationEvent" returns="System.Void" params="JsonSchemaException" access="private" signature="private Void OnValidationEvent(JsonSchemaException exception)">
-        <template #name><h3>OnValidationEvent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="exception" type="Newtonsoft.Json.Schema.JsonSchemaException"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JsonReader" signature="public JsonValidatingReader(JsonReader reader)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JsonReader" signature="public JsonValidatingReader(JsonReader reader)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -361,7 +326,7 @@ validates the content returned from the given <see cref="T:Newtonsoft.Json.JsonR
 
     </doc-member>
 
-<doc-member id="method-close" name="Close" returns="System.Void" signature="public sealed Void Close()">
+    <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
         <template #name><h3>Close</h3></template>
 
 <p>Changes the reader's state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
@@ -369,214 +334,156 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-<doc-member id="method-validatenotdisallowed" name="ValidateNotDisallowed" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateNotDisallowed(JsonSchemaModel schema)">
-        <template #name><h3>ValidateNotDisallowed</h3></template>
+    <doc-member id="method-floatingpointremainder" name="FloatingPointRemainder" returns="double" params="double, double" access="private" signature="private static double FloatingPointRemainder(double dividend, double divisor)">
+        <template #name><h3>FloatingPointRemainder</h3></template>
 
         <template #parameters>
             <doc-parameters>
+                <doc-parameter name="dividend" type="double"></doc-parameter>
+                <doc-parameter name="divisor" type="double"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getcurrentnodeschematype" name="GetCurrentNodeSchemaType" returns="JsonSchemaType?" access="private" signature="private JsonSchemaType? GetCurrentNodeSchemaType()">
+        <template #name><h3>GetCurrentNodeSchemaType</h3></template>
+    </doc-member>
+
+    <doc-member id="method-ispropertydefinied" name="IsPropertyDefinied" returns="bool" params="JsonSchemaModel, string" access="private" signature="private bool IsPropertyDefinied(JsonSchemaModel schema, string propertyName)">
+        <template #name><h3>IsPropertyDefinied</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-iszero" name="IsZero" returns="bool" params="double" access="private" signature="private static bool IsZero(double value)">
+        <template #name><h3>IsZero</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="double"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-onvalidationevent" name="OnValidationEvent" returns="void" params="JsonSchemaException" access="private" signature="private void OnValidationEvent(JsonSchemaException exception)">
+        <template #name><h3>OnValidationEvent</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="exception" type="Newtonsoft.Json.Schema.JsonSchemaException"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-pop" name="Pop" returns="SchemaScope" access="private" signature="private SchemaScope Pop()">
+        <template #name><h3>Pop</h3></template>
+    </doc-member>
+
+    <doc-member id="method-processvalue" name="ProcessValue" returns="void" access="private" signature="private void ProcessValue()">
+        <template #name><h3>ProcessValue</h3></template>
+    </doc-member>
+
+    <doc-member id="method-push" name="Push" returns="void" params="SchemaScope" access="private" signature="private void Push(SchemaScope scope)">
+        <template #name><h3>Push</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="scope" type="Newtonsoft.Json.JsonValidatingReader.SchemaScope"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-raiseerror" name="RaiseError" returns="void" params="string, JsonSchemaModel" access="private" signature="private void RaiseError(string message, JsonSchemaModel schema)">
+        <template #name><h3>RaiseError</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="message" type="string"></doc-parameter>
                 <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getcurrentnodeschematype" name="GetCurrentNodeSchemaType" returns="System.Nullable<Newtonsoft.Json.Schema.JsonSchemaType>" access="private" signature="private Nullable<JsonSchemaType> GetCurrentNodeSchemaType()">
-        <template #name><h3>GetCurrentNodeSchemaType</h3></template>
-    </doc-member>
-
-<doc-member id="method-readasint32" name="ReadAsInt32" returns="System.Nullable<System.Int32>" signature="public sealed Nullable<Int32> ReadAsInt32()">
-        <template #name><h3>ReadAsInt32</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int32"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasbytes" name="ReadAsBytes" returns="System.Byte[]" signature="public sealed Byte[] ReadAsBytes()">
-        <template #name><h3>ReadAsBytes</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Byte"/>[].</p>
-
-    </doc-member>
-
-<doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="System.Nullable<System.Decimal>" signature="public sealed Nullable<Decimal> ReadAsDecimal()">
-        <template #name><h3>ReadAsDecimal</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Decimal"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasdouble" name="ReadAsDouble" returns="System.Nullable<System.Double>" signature="public sealed Nullable<Double> ReadAsDouble()">
-        <template #name><h3>ReadAsDouble</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Double"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasboolean" name="ReadAsBoolean" returns="System.Nullable<System.Boolean>" signature="public sealed Nullable<Boolean> ReadAsBoolean()">
-        <template #name><h3>ReadAsBoolean</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Boolean"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasstring" name="ReadAsString" returns="System.String" signature="public sealed String ReadAsString()">
-        <template #name><h3>ReadAsString</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:String"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="System.Nullable<DateTime>" signature="public sealed Nullable<DateTime> ReadAsDateTime()">
-        <template #name><h3>ReadAsDateTime</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTime"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="System.Nullable<DateTimeOffset>" signature="public sealed Nullable<DateTimeOffset> ReadAsDateTimeOffset()">
-        <template #name><h3>ReadAsDateTimeOffset</h3></template>
-
-<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTimeOffset"/>.</p>
-
-    </doc-member>
-
-<doc-member id="method-read" name="Read" returns="System.Boolean" signature="public sealed Boolean Read()">
+    <doc-member id="method-read" name="Read" returns="bool" signature="public sealed bool Read()">
         <template #name><h3>Read</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/>.</p>
 
     </doc-member>
 
-<doc-member id="method-validatecurrenttoken" name="ValidateCurrentToken" returns="System.Void" access="private" signature="private Void ValidateCurrentToken()">
-        <template #name><h3>ValidateCurrentToken</h3></template>
+    <doc-member id="method-readasboolean" name="ReadAsBoolean" returns="bool?" signature="public sealed bool? ReadAsBoolean()">
+        <template #name><h3>ReadAsBoolean</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Boolean"/>.</p>
+
     </doc-member>
 
-<doc-member id="method-writetoken" name="WriteToken" returns="System.Void" params="IList<JsonSchemaModel>" access="private" signature="private Void WriteToken(IList<JsonSchemaModel> schemas)">
-        <template #name><h3>WriteToken</h3></template>
+    <doc-member id="method-readasbytes" name="ReadAsBytes" returns="byte[]" signature="public sealed byte[] ReadAsBytes()">
+        <template #name><h3>ReadAsBytes</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Byte"/>[].</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="DateTime?" signature="public sealed DateTime? ReadAsDateTime()">
+        <template #name><h3>ReadAsDateTime</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTime"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="DateTimeOffset?" signature="public sealed DateTimeOffset? ReadAsDateTimeOffset()">
+        <template #name><h3>ReadAsDateTimeOffset</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTimeOffset"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="decimal?" signature="public sealed decimal? ReadAsDecimal()">
+        <template #name><h3>ReadAsDecimal</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Decimal"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasdouble" name="ReadAsDouble" returns="double?" signature="public sealed double? ReadAsDouble()">
+        <template #name><h3>ReadAsDouble</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Double"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasint32" name="ReadAsInt32" returns="int?" signature="public sealed int? ReadAsInt32()">
+        <template #name><h3>ReadAsInt32</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int32"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-readasstring" name="ReadAsString" returns="string" signature="public sealed string ReadAsString()">
+        <template #name><h3>ReadAsString</h3></template>
+
+<p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.JsonReader"/> as a <see cref="!:String"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="method-testtype" name="TestType" returns="bool" params="JsonSchemaModel, JsonSchemaType" access="private" signature="private bool TestType(JsonSchemaModel currentSchema, JsonSchemaType currentType)">
+        <template #name><h3>TestType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="schemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>"></doc-parameter>
+                <doc-parameter name="currentSchema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+                <doc-parameter name="currentType" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-validateendobject" name="ValidateEndObject" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateEndObject(JsonSchemaModel schema)">
-        <template #name><h3>ValidateEndObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validateendarray" name="ValidateEndArray" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateEndArray(JsonSchemaModel schema)">
-        <template #name><h3>ValidateEndArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validatenull" name="ValidateNull" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateNull(JsonSchemaModel schema)">
-        <template #name><h3>ValidateNull</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validateboolean" name="ValidateBoolean" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateBoolean(JsonSchemaModel schema)">
-        <template #name><h3>ValidateBoolean</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validatestring" name="ValidateString" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateString(JsonSchemaModel schema)">
-        <template #name><h3>ValidateString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validateinteger" name="ValidateInteger" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateInteger(JsonSchemaModel schema)">
-        <template #name><h3>ValidateInteger</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-processvalue" name="ProcessValue" returns="System.Void" access="private" signature="private Void ProcessValue()">
-        <template #name><h3>ProcessValue</h3></template>
-    </doc-member>
-
-<doc-member id="method-validatefloat" name="ValidateFloat" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidateFloat(JsonSchemaModel schema)">
-        <template #name><h3>ValidateFloat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-floatingpointremainder" name="FloatingPointRemainder" returns="System.Double" params="Double, Double" access="private" signature="private static Double FloatingPointRemainder(Double dividend, Double divisor)">
-        <template #name><h3>FloatingPointRemainder</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="dividend" type="System.Double"></doc-parameter>
-                <doc-parameter name="divisor" type="System.Double"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-iszero" name="IsZero" returns="System.Boolean" params="Double" access="private" signature="private static Boolean IsZero(Double value)">
-        <template #name><h3>IsZero</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Double"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validatepropertyname" name="ValidatePropertyName" returns="System.Void" params="JsonSchemaModel" access="private" signature="private Void ValidatePropertyName(JsonSchemaModel schema)">
-        <template #name><h3>ValidatePropertyName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-ispropertydefinied" name="IsPropertyDefinied" returns="System.Boolean" params="JsonSchemaModel, String" access="private" signature="private Boolean IsPropertyDefinied(JsonSchemaModel schema, String propertyName)">
-        <template #name><h3>IsPropertyDefinied</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-validatearray" name="ValidateArray" returns="System.Boolean" params="JsonSchemaModel" access="private" signature="private Boolean ValidateArray(JsonSchemaModel schema)">
+    <doc-member id="method-validatearray" name="ValidateArray" returns="bool" params="JsonSchemaModel" access="private" signature="private bool ValidateArray(JsonSchemaModel schema)">
         <template #name><h3>ValidateArray</h3></template>
 
         <template #parameters>
@@ -586,7 +493,81 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-<doc-member id="method-validateobject" name="ValidateObject" returns="System.Boolean" params="JsonSchemaModel" access="private" signature="private Boolean ValidateObject(JsonSchemaModel schema)">
+    <doc-member id="method-validateboolean" name="ValidateBoolean" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateBoolean(JsonSchemaModel schema)">
+        <template #name><h3>ValidateBoolean</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validatecurrenttoken" name="ValidateCurrentToken" returns="void" access="private" signature="private void ValidateCurrentToken()">
+        <template #name><h3>ValidateCurrentToken</h3></template>
+    </doc-member>
+
+    <doc-member id="method-validateendarray" name="ValidateEndArray" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateEndArray(JsonSchemaModel schema)">
+        <template #name><h3>ValidateEndArray</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validateendobject" name="ValidateEndObject" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateEndObject(JsonSchemaModel schema)">
+        <template #name><h3>ValidateEndObject</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validatefloat" name="ValidateFloat" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateFloat(JsonSchemaModel schema)">
+        <template #name><h3>ValidateFloat</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validateinteger" name="ValidateInteger" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateInteger(JsonSchemaModel schema)">
+        <template #name><h3>ValidateInteger</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validatenotdisallowed" name="ValidateNotDisallowed" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateNotDisallowed(JsonSchemaModel schema)">
+        <template #name><h3>ValidateNotDisallowed</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validatenull" name="ValidateNull" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateNull(JsonSchemaModel schema)">
+        <template #name><h3>ValidateNull</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validateobject" name="ValidateObject" returns="bool" params="JsonSchemaModel" access="private" signature="private bool ValidateObject(JsonSchemaModel schema)">
         <template #name><h3>ValidateObject</h3></template>
 
         <template #parameters>
@@ -596,13 +577,32 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-<doc-member id="method-testtype" name="TestType" returns="System.Boolean" params="JsonSchemaModel, JsonSchemaType" access="private" signature="private Boolean TestType(JsonSchemaModel currentSchema, JsonSchemaType currentType)">
-        <template #name><h3>TestType</h3></template>
+    <doc-member id="method-validatepropertyname" name="ValidatePropertyName" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidatePropertyName(JsonSchemaModel schema)">
+        <template #name><h3>ValidatePropertyName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentSchema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
-                <doc-parameter name="currentType" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-validatestring" name="ValidateString" returns="void" params="JsonSchemaModel" access="private" signature="private void ValidateString(JsonSchemaModel schema)">
+        <template #name><h3>ValidateString</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchemaModel"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-writetoken" name="WriteToken" returns="void" params="IList<JsonSchemaModel>" access="private" signature="private void WriteToken(IList<JsonSchemaModel> schemas)">
+        <template #name><h3>WriteToken</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

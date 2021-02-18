@@ -208,11 +208,11 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-creator" name="Creator" type="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>" signature="public ObjectConstructor<Object> Creator { get; }">
+    <doc-member id="property-creator" name="Creator" type="ObjectConstructor<object>?" signature="public ObjectConstructor<object>? Creator { get; }">
         <template #name><h3>Creator</h3></template>
     </doc-member>
 
-<doc-member id="property-members" name="Members" type="IDictionary<System.String, Newtonsoft.Json.Utilities.ReflectionMember>" signature="public IDictionary<String, ReflectionMember> Members { get; }">
+    <doc-member id="property-members" name="Members" type="IDictionary<string, ReflectionMember>" signature="public IDictionary<string, ReflectionMember> Members { get; }">
         <template #name><h3>Members</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,68 +220,70 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="ObjectConstructor<Object>" access="private" signature="private ReflectionObject(ObjectConstructor<Object> creator)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="ObjectConstructor<object>?" access="private" signature="private ReflectionObject(ObjectConstructor<object>? creator)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="creator" type="Newtonsoft.Json.Serialization.ObjectConstructor<System.Object>"></doc-parameter>
+                <doc-parameter name="creator" type="Newtonsoft.Json.Serialization.ObjectConstructor<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getvalue" name="GetValue" returns="System.Nullable<System.Object>" params="Object, String" signature="public Nullable<Object> GetValue(Object target, String member)">
-        <template #name><h3>GetValue</h3></template>
+    <doc-overload-group overload-id="group-create">
+        <doc-member id="method-create" overload-id="group-create" name="Create" returns="ReflectionObject" params="Type, string[]" signature="public static ReflectionObject Create(Type t, string[] memberNames)">
+            <template #name><h3>Create</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-                <doc-parameter name="member" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                    <doc-parameter name="memberNames" type="string[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
 
-<doc-member id="method-setvalue" name="SetValue" returns="System.Void" params="Object, String, Nullable<Object>" signature="public Void SetValue(Object target, String member, Nullable<Object> value)">
-        <template #name><h3>SetValue</h3></template>
+        <doc-member id="method-create-1" overload-id="group-create" name="Create" returns="ReflectionObject" params="Type, MethodBase?, string[]" signature="public static ReflectionObject Create(Type t, MethodBase? creator, string[] memberNames)">
+            <template #name><h3>Create</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="System.Object"></doc-parameter>
-                <doc-parameter name="member" type="System.String"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<System.Object>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="t" type="Type"></doc-parameter>
+                    <doc-parameter name="creator" type="MethodBase?"></doc-parameter>
+                    <doc-parameter name="memberNames" type="string[]"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 
-<doc-member id="method-gettype" name="GetType" returns="Type" params="String" signature="public Type GetType(String member)">
+    <doc-member id="method-gettype" name="GetType" returns="Type" params="string" signature="public Type GetType(string member)">
         <template #name><h3>GetType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="member" type="System.String"></doc-parameter>
+                <doc-parameter name="member" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-create" name="Create" returns="Newtonsoft.Json.Utilities.ReflectionObject" params="Type, String[]" signature="public static ReflectionObject Create(Type t, String[] memberNames)">
-        <template #name><h3>Create</h3></template>
+    <doc-member id="method-getvalue" name="GetValue" returns="object?" params="object, string" signature="public object? GetValue(object target, string member)">
+        <template #name><h3>GetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="memberNames" type="System.String[]"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
+                <doc-parameter name="member" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-create" name="Create" returns="Newtonsoft.Json.Utilities.ReflectionObject" params="Type, Nullable<MethodBase>, String[]" signature="public static ReflectionObject Create(Type t, Nullable<MethodBase> creator, String[] memberNames)">
-        <template #name><h3>Create</h3></template>
+    <doc-member id="method-setvalue" name="SetValue" returns="void" params="object, string, object?" signature="public void SetValue(object target, string member, object? value)">
+        <template #name><h3>SetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-                <doc-parameter name="creator" type="System.Nullable<MethodBase>"></doc-parameter>
-                <doc-parameter name="memberNames" type="System.String[]"></doc-parameter>
+                <doc-parameter name="target" type="object"></doc-parameter>
+                <doc-parameter name="member" type="string"></doc-parameter>
+                <doc-parameter name="value" type="object?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

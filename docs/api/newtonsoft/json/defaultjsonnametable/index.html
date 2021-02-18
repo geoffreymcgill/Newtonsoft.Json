@@ -211,19 +211,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-hashcoderandomizer" name="HashCodeRandomizer" type="System.Int32" access="private" signature="private readonly static Int32 HashCodeRandomizer">
+    <doc-member id="field-hashcoderandomizer" name="HashCodeRandomizer" type="int" access="private" signature="private readonly static int HashCodeRandomizer">
         <template #name><h3>HashCodeRandomizer</h3></template>
     </doc-member>
 
-<doc-member id="field-_count" name="_count" type="System.Int32" access="private" signature="private Int32 _count">
+    <doc-member id="field-_count" name="_count" type="int" access="private" signature="private int _count">
         <template #name><h3>_count</h3></template>
     </doc-member>
 
-<doc-member id="field-_entries" name="_entries" type="Newtonsoft.Json.DefaultJsonNameTable.Entry[]" access="private" signature="private Entry[] _entries">
+    <doc-member id="field-_entries" name="_entries" type="Entry[]" access="private" signature="private Entry[] _entries">
         <template #name><h3>_entries</h3></template>
     </doc-member>
 
-<doc-member id="field-_mask" name="_mask" type="System.Int32" access="private" signature="private Int32 _mask">
+    <doc-member id="field-_mask" name="_mask" type="int" access="private" signature="private int _mask">
         <template #name><h3>_mask</h3></template>
     </doc-member>
 </doc-member-group>
@@ -231,38 +231,23 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.cctor" name=".cctor" returns="System.Void" access="private" signature="private static DefaultJsonNameTable()">
+    <doc-member id="method-.cctor" name=".cctor" returns="void" access="private" signature="private static DefaultJsonNameTable()">
         <template #name><h3>.cctor</h3></template>
     </doc-member>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" signature="public DefaultJsonNameTable()">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public DefaultJsonNameTable()">
         <template #name><h3>.ctor</h3></template>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.DefaultJsonNameTable"/> class.</p>
 
     </doc-member>
 
-<doc-member id="method-get" name="Get" returns="System.Nullable<System.String>" params="Char[], Int32, Int32" signature="public sealed Nullable<String> Get(Char[] key, Int32 start, Int32 length)">
-        <template #name><h3>Get</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="key" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="length" type="System.Int32"></doc-parameter>
-            </doc-parameters>
-        </template>
-
-<p>Gets a string containing the same characters as the specified range of characters in the given array.</p>
-
-    </doc-member>
-
-<doc-member id="method-add" name="Add" returns="System.String" params="String" signature="public String Add(String key)">
+    <doc-member id="method-add" name="Add" returns="string" params="string" signature="public string Add(string key)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="System.String"></doc-parameter>
+                <doc-parameter name="key" type="string"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -270,30 +255,45 @@
 
     </doc-member>
 
-<doc-member id="method-addentry" name="AddEntry" returns="System.String" params="String, Int32" access="private" signature="private String AddEntry(String str, Int32 hashCode)">
+    <doc-member id="method-addentry" name="AddEntry" returns="string" params="string, int" access="private" signature="private string AddEntry(string str, int hashCode)">
         <template #name><h3>AddEntry</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="str" type="System.String"></doc-parameter>
-                <doc-parameter name="hashCode" type="System.Int32"></doc-parameter>
+                <doc-parameter name="str" type="string"></doc-parameter>
+                <doc-parameter name="hashCode" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-grow" name="Grow" returns="System.Void" access="private" signature="private Void Grow()">
+    <doc-member id="method-get" name="Get" returns="string?" params="char[], int, int" signature="public sealed string? Get(char[] key, int start, int length)">
+        <template #name><h3>Get</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="char[]"></doc-parameter>
+                <doc-parameter name="start" type="int"></doc-parameter>
+                <doc-parameter name="length" type="int"></doc-parameter>
+            </doc-parameters>
+        </template>
+
+<p>Gets a string containing the same characters as the specified range of characters in the given array.</p>
+
+    </doc-member>
+
+    <doc-member id="method-grow" name="Grow" returns="void" access="private" signature="private void Grow()">
         <template #name><h3>Grow</h3></template>
     </doc-member>
 
-<doc-member id="method-textequals" name="TextEquals" returns="System.Boolean" params="String, Char[], Int32, Int32" access="private" signature="private static Boolean TextEquals(String str1, Char[] str2, Int32 str2Start, Int32 str2Length)">
+    <doc-member id="method-textequals" name="TextEquals" returns="bool" params="string, char[], int, int" access="private" signature="private static bool TextEquals(string str1, char[] str2, int str2Start, int str2Length)">
         <template #name><h3>TextEquals</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="str1" type="System.String"></doc-parameter>
-                <doc-parameter name="str2" type="System.Char[]"></doc-parameter>
-                <doc-parameter name="str2Start" type="System.Int32"></doc-parameter>
-                <doc-parameter name="str2Length" type="System.Int32"></doc-parameter>
+                <doc-parameter name="str1" type="string"></doc-parameter>
+                <doc-parameter name="str2" type="char[]"></doc-parameter>
+                <doc-parameter name="str2Start" type="int"></doc-parameter>
+                <doc-parameter name="str2Length" type="int"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>

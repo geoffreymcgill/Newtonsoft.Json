@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_nodes" name="_nodes" type="Newtonsoft.Json.Schema.JsonSchemaNodeCollection" access="private" signature="private JsonSchemaNodeCollection _nodes">
+    <doc-member id="field-_nodes" name="_nodes" type="JsonSchemaNodeCollection" access="private" signature="private JsonSchemaNodeCollection _nodes">
         <template #name><h3>_nodes</h3></template>
     </doc-member>
 
-<doc-member id="field-_nodemodels" name="_nodeModels" type="Dictionary<Newtonsoft.Json.Schema.JsonSchemaNode, Newtonsoft.Json.Schema.JsonSchemaModel>" access="private" signature="private Dictionary<JsonSchemaNode, JsonSchemaModel> _nodeModels">
+    <doc-member id="field-_nodemodels" name="_nodeModels" type="Dictionary<JsonSchemaNode, JsonSchemaModel>" access="private" signature="private Dictionary<JsonSchemaNode, JsonSchemaModel> _nodeModels">
         <template #name><h3>_nodeModels</h3></template>
     </doc-member>
 
-<doc-member id="field-_node" name="_node" type="Newtonsoft.Json.Schema.JsonSchemaNode" access="private" signature="private JsonSchemaNode _node">
+    <doc-member id="field-_node" name="_node" type="JsonSchemaNode" access="private" signature="private JsonSchemaNode _node">
         <template #name><h3>_node</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,74 +224,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-build" name="Build" returns="Newtonsoft.Json.Schema.JsonSchemaModel" params="JsonSchema" signature="public JsonSchemaModel Build(JsonSchema schema)">
-        <template #name><h3>Build</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addschema" name="AddSchema" returns="Newtonsoft.Json.Schema.JsonSchemaNode" params="JsonSchemaNode, JsonSchema" signature="public JsonSchemaNode AddSchema(JsonSchemaNode existingNode, JsonSchema schema)">
-        <template #name><h3>AddSchema</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="existingNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addproperties" name="AddProperties" returns="System.Void" params="IDictionary<String, JsonSchema>, IDictionary<String, JsonSchemaNode>" signature="public Void AddProperties(IDictionary<String, JsonSchema> source, IDictionary<String, JsonSchemaNode> target)">
-        <template #name><h3>AddProperties</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="source" type="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchema>"></doc-parameter>
-                <doc-parameter name="target" type="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchemaNode>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addproperty" name="AddProperty" returns="System.Void" params="IDictionary<String, JsonSchemaNode>, String, JsonSchema" signature="public Void AddProperty(IDictionary<String, JsonSchemaNode> target, String propertyName, JsonSchema schema)">
-        <template #name><h3>AddProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="IDictionary<System.String, Newtonsoft.Json.Schema.JsonSchemaNode>"></doc-parameter>
-                <doc-parameter name="propertyName" type="System.String"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-additem" name="AddItem" returns="System.Void" params="JsonSchemaNode, Int32, JsonSchema" signature="public Void AddItem(JsonSchemaNode parentNode, Int32 index, JsonSchema schema)">
-        <template #name><h3>AddItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="parentNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
-                <doc-parameter name="index" type="System.Int32"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addadditionalproperties" name="AddAdditionalProperties" returns="System.Void" params="JsonSchemaNode, JsonSchema" signature="public Void AddAdditionalProperties(JsonSchemaNode parentNode, JsonSchema schema)">
-        <template #name><h3>AddAdditionalProperties</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="parentNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
-                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addadditionalitems" name="AddAdditionalItems" returns="System.Void" params="JsonSchemaNode, JsonSchema" signature="public Void AddAdditionalItems(JsonSchemaNode parentNode, JsonSchema schema)">
+    <doc-member id="method-addadditionalitems" name="AddAdditionalItems" returns="void" params="JsonSchemaNode, JsonSchema" signature="public void AddAdditionalItems(JsonSchemaNode parentNode, JsonSchema schema)">
         <template #name><h3>AddAdditionalItems</h3></template>
 
         <template #parameters>
@@ -302,7 +235,74 @@
         </template>
     </doc-member>
 
-<doc-member id="method-buildnodemodel" name="BuildNodeModel" returns="Newtonsoft.Json.Schema.JsonSchemaModel" params="JsonSchemaNode" access="private" signature="private JsonSchemaModel BuildNodeModel(JsonSchemaNode node)">
+    <doc-member id="method-addadditionalproperties" name="AddAdditionalProperties" returns="void" params="JsonSchemaNode, JsonSchema" signature="public void AddAdditionalProperties(JsonSchemaNode parentNode, JsonSchema schema)">
+        <template #name><h3>AddAdditionalProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="parentNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-additem" name="AddItem" returns="void" params="JsonSchemaNode, int, JsonSchema" signature="public void AddItem(JsonSchemaNode parentNode, int index, JsonSchema schema)">
+        <template #name><h3>AddItem</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="parentNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
+                <doc-parameter name="index" type="int"></doc-parameter>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-addproperties" name="AddProperties" returns="void" params="IDictionary<string, JsonSchema>, IDictionary<string, JsonSchemaNode>" signature="public void AddProperties(IDictionary<string, JsonSchema> source, IDictionary<string, JsonSchemaNode> target)">
+        <template #name><h3>AddProperties</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="source" type="IDictionary<string, Newtonsoft.Json.Schema.JsonSchema>"></doc-parameter>
+                <doc-parameter name="target" type="IDictionary<string, Newtonsoft.Json.Schema.JsonSchemaNode>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-addproperty" name="AddProperty" returns="void" params="IDictionary<string, JsonSchemaNode>, string, JsonSchema" signature="public void AddProperty(IDictionary<string, JsonSchemaNode> target, string propertyName, JsonSchema schema)">
+        <template #name><h3>AddProperty</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="target" type="IDictionary<string, Newtonsoft.Json.Schema.JsonSchemaNode>"></doc-parameter>
+                <doc-parameter name="propertyName" type="string"></doc-parameter>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-addschema" name="AddSchema" returns="JsonSchemaNode" params="JsonSchemaNode, JsonSchema" signature="public JsonSchemaNode AddSchema(JsonSchemaNode existingNode, JsonSchema schema)">
+        <template #name><h3>AddSchema</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="existingNode" type="Newtonsoft.Json.Schema.JsonSchemaNode"></doc-parameter>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-build" name="Build" returns="JsonSchemaModel" params="JsonSchema" signature="public JsonSchemaModel Build(JsonSchema schema)">
+        <template #name><h3>Build</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="schema" type="Newtonsoft.Json.Schema.JsonSchema"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-buildnodemodel" name="BuildNodeModel" returns="JsonSchemaModel" params="JsonSchemaNode" access="private" signature="private JsonSchemaModel BuildNodeModel(JsonSchemaNode node)">
         <template #name><h3>BuildNodeModel</h3></template>
 
         <template #parameters>

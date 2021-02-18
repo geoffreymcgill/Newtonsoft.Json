@@ -208,23 +208,23 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-tag" name="Tag" type="System.Int32" signature="public readonly Int32 Tag">
+    <doc-member id="field-tag" name="Tag" type="int" signature="public readonly int Tag">
         <template #name><h3>Tag</h3></template>
     </doc-member>
 
-<doc-member id="field-name" name="Name" type="System.String" signature="public readonly String Name">
+    <doc-member id="field-name" name="Name" type="string" signature="public readonly string Name">
         <template #name><h3>Name</h3></template>
     </doc-member>
 
-<doc-member id="field-fields" name="Fields" type="PropertyInfo[]" signature="public readonly PropertyInfo[] Fields">
+    <doc-member id="field-fields" name="Fields" type="PropertyInfo[]" signature="public readonly PropertyInfo[] Fields">
         <template #name><h3>Fields</h3></template>
     </doc-member>
 
-<doc-member id="field-fieldreader" name="FieldReader" type="Newtonsoft.Json.Utilities.FSharpFunction" signature="public readonly FSharpFunction FieldReader">
+    <doc-member id="field-fieldreader" name="FieldReader" type="FSharpFunction" signature="public readonly FSharpFunction FieldReader">
         <template #name><h3>FieldReader</h3></template>
     </doc-member>
 
-<doc-member id="field-constructor" name="Constructor" type="Newtonsoft.Json.Utilities.FSharpFunction" signature="public readonly FSharpFunction Constructor">
+    <doc-member id="field-constructor" name="Constructor" type="FSharpFunction" signature="public readonly FSharpFunction Constructor">
         <template #name><h3>Constructor</h3></template>
     </doc-member>
 </doc-member-group>
@@ -232,13 +232,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="Int32, String, PropertyInfo[], FSharpFunction, FSharpFunction" signature="public UnionCase(Int32 tag, String name, PropertyInfo[] fields, FSharpFunction fieldReader, FSharpFunction constructor)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="int, string, PropertyInfo[], FSharpFunction, FSharpFunction" signature="public UnionCase(int tag, string name, PropertyInfo[] fields, FSharpFunction fieldReader, FSharpFunction constructor)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="tag" type="System.Int32"></doc-parameter>
-                <doc-parameter name="name" type="System.String"></doc-parameter>
+                <doc-parameter name="tag" type="int"></doc-parameter>
+                <doc-parameter name="name" type="string"></doc-parameter>
                 <doc-parameter name="fields" type="PropertyInfo[]"></doc-parameter>
                 <doc-parameter name="fieldReader" type="Newtonsoft.Json.Utilities.FSharpFunction"></doc-parameter>
                 <doc-parameter name="constructor" type="Newtonsoft.Json.Utilities.FSharpFunction"></doc-parameter>

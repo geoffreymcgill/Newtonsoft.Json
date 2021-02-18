@@ -208,15 +208,15 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_tokentype" name="_tokenType" type="Newtonsoft.Json.Linq.JTokenType" access="private" signature="private readonly JTokenType _tokenType">
+    <doc-member id="field-_tokentype" name="_tokenType" type="JTokenType" access="private" signature="private readonly JTokenType _tokenType">
         <template #name><h3>_tokenType</h3></template>
     </doc-member>
 
-<doc-member id="field-_schemas" name="_schemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>" access="private" signature="private readonly IList<JsonSchemaModel> _schemas">
+    <doc-member id="field-_schemas" name="_schemas" type="IList<JsonSchemaModel>" access="private" signature="private readonly IList<JsonSchemaModel> _schemas">
         <template #name><h3>_schemas</h3></template>
     </doc-member>
 
-<doc-member id="field-_requiredproperties" name="_requiredProperties" type="Dictionary<System.String, System.Boolean>" access="private" signature="private readonly Dictionary<String, Boolean> _requiredProperties">
+    <doc-member id="field-_requiredproperties" name="_requiredProperties" type="Dictionary<string, bool>" access="private" signature="private readonly Dictionary<string, bool> _requiredProperties">
         <template #name><h3>_requiredProperties</h3></template>
     </doc-member>
 </doc-member-group>
@@ -224,35 +224,35 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-<doc-member id="property-currentpropertyname" name="CurrentPropertyName" type="System.String" signature="public String CurrentPropertyName { get; set; }">
+    <doc-member id="property-currentpropertyname" name="CurrentPropertyName" type="string" signature="public string CurrentPropertyName { get; set; }">
         <template #name><h3>CurrentPropertyName</h3></template>
     </doc-member>
 
-<doc-member id="property-arrayitemcount" name="ArrayItemCount" type="System.Int32" signature="public Int32 ArrayItemCount { get; set; }">
+    <doc-member id="property-arrayitemcount" name="ArrayItemCount" type="int" signature="public int ArrayItemCount { get; set; }">
         <template #name><h3>ArrayItemCount</h3></template>
     </doc-member>
 
-<doc-member id="property-isuniquearray" name="IsUniqueArray" type="System.Boolean" signature="public Boolean IsUniqueArray { get; }">
+    <doc-member id="property-isuniquearray" name="IsUniqueArray" type="bool" signature="public bool IsUniqueArray { get; }">
         <template #name><h3>IsUniqueArray</h3></template>
     </doc-member>
 
-<doc-member id="property-uniquearrayitems" name="UniqueArrayItems" type="IList<Newtonsoft.Json.Linq.JToken>" signature="public IList<JToken> UniqueArrayItems { get; }">
+    <doc-member id="property-uniquearrayitems" name="UniqueArrayItems" type="IList<JToken>" signature="public IList<JToken> UniqueArrayItems { get; }">
         <template #name><h3>UniqueArrayItems</h3></template>
     </doc-member>
 
-<doc-member id="property-currentitemwriter" name="CurrentItemWriter" type="Newtonsoft.Json.Linq.JTokenWriter" signature="public JTokenWriter CurrentItemWriter { get; set; }">
+    <doc-member id="property-currentitemwriter" name="CurrentItemWriter" type="JTokenWriter" signature="public JTokenWriter CurrentItemWriter { get; set; }">
         <template #name><h3>CurrentItemWriter</h3></template>
     </doc-member>
 
-<doc-member id="property-schemas" name="Schemas" type="IList<Newtonsoft.Json.Schema.JsonSchemaModel>" signature="public IList<JsonSchemaModel> Schemas { get; }">
+    <doc-member id="property-schemas" name="Schemas" type="IList<JsonSchemaModel>" signature="public IList<JsonSchemaModel> Schemas { get; }">
         <template #name><h3>Schemas</h3></template>
     </doc-member>
 
-<doc-member id="property-requiredproperties" name="RequiredProperties" type="Dictionary<System.String, System.Boolean>" signature="public Dictionary<String, Boolean> RequiredProperties { get; }">
+    <doc-member id="property-requiredproperties" name="RequiredProperties" type="Dictionary<string, bool>" signature="public Dictionary<string, bool> RequiredProperties { get; }">
         <template #name><h3>RequiredProperties</h3></template>
     </doc-member>
 
-<doc-member id="property-tokentype" name="TokenType" type="Newtonsoft.Json.Linq.JTokenType" signature="public JTokenType TokenType { get; }">
+    <doc-member id="property-tokentype" name="TokenType" type="JTokenType" signature="public JTokenType TokenType { get; }">
         <template #name><h3>TokenType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -260,7 +260,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-.ctor" name=".ctor" returns="System.Void" params="JTokenType, IList<JsonSchemaModel>" signature="public SchemaScope(JTokenType tokenType, IList<JsonSchemaModel> schemas)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="JTokenType, IList<JsonSchemaModel>" signature="public SchemaScope(JTokenType tokenType, IList<JsonSchemaModel> schemas)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
@@ -271,7 +271,7 @@
         </template>
     </doc-member>
 
-<doc-member id="method-getrequiredproperties" name="GetRequiredProperties" returns="IEnumerable<System.String>" params="JsonSchemaModel" access="private" signature="private IEnumerable<String> GetRequiredProperties(JsonSchemaModel schema)">
+    <doc-member id="method-getrequiredproperties" name="GetRequiredProperties" returns="IEnumerable<string>" params="JsonSchemaModel" access="private" signature="private IEnumerable<string> GetRequiredProperties(JsonSchemaModel schema)">
         <template #name><h3>GetRequiredProperties</h3></template>
 
         <template #parameters>

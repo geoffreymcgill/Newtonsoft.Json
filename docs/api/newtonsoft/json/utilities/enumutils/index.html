@@ -208,19 +208,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-enumseparatorchar" name="EnumSeparatorChar" type="System.Char" access="private" signature="private const static Char EnumSeparatorChar">
+    <doc-member id="field-enumseparatorchar" name="EnumSeparatorChar" type="char" access="private" signature="private const static char EnumSeparatorChar">
         <template #name><h3>EnumSeparatorChar</h3></template>
     </doc-member>
 
-<doc-member id="field-enumseparatorstring" name="EnumSeparatorString" type="System.String" access="private" signature="private const static String EnumSeparatorString">
+    <doc-member id="field-enumseparatorstring" name="EnumSeparatorString" type="string" access="private" signature="private const static string EnumSeparatorString">
         <template #name><h3>EnumSeparatorString</h3></template>
     </doc-member>
 
-<doc-member id="field-valuesandnamesperenum" name="ValuesAndNamesPerEnum" type="Newtonsoft.Json.Utilities.ThreadSafeStore<Newtonsoft.Json.Utilities.StructMultiKey<Type, Newtonsoft.Json.Serialization.NamingStrategy>, Newtonsoft.Json.Utilities.EnumInfo>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, NamingStrategy>, EnumInfo> ValuesAndNamesPerEnum">
+    <doc-member id="field-valuesandnamesperenum" name="ValuesAndNamesPerEnum" type="ThreadSafeStore<StructMultiKey<Type, NamingStrategy?>, EnumInfo>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, NamingStrategy?>, EnumInfo> ValuesAndNamesPerEnum">
         <template #name><h3>ValuesAndNamesPerEnum</h3></template>
     </doc-member>
 
-<doc-member id="field-_camelcasenamingstrategy" name="_camelCaseNamingStrategy" type="Newtonsoft.Json.Serialization.CamelCaseNamingStrategy" access="private" signature="private static CamelCaseNamingStrategy _camelCaseNamingStrategy">
+    <doc-member id="field-_camelcasenamingstrategy" name="_camelCaseNamingStrategy" type="CamelCaseNamingStrategy" access="private" signature="private static CamelCaseNamingStrategy _camelCaseNamingStrategy">
         <template #name><h3>_camelCaseNamingStrategy</h3></template>
     </doc-member>
 </doc-member-group>
@@ -228,64 +228,21 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-initializevaluesandnames" name="InitializeValuesAndNames" returns="Newtonsoft.Json.Utilities.EnumInfo" params="StructMultiKey<Type, NamingStrategy>" access="private" signature="private static EnumInfo InitializeValuesAndNames(StructMultiKey<Type, NamingStrategy> key)">
-        <template #name><h3>InitializeValuesAndNames</h3></template>
+    <doc-member id="method-findindexbyname" name="FindIndexByName" returns="int?" params="string[], string, int, int, StringComparison" access="private" signature="private static int? FindIndexByName(string[] enumNames, string value, int valueIndex, int valueSubstringLength, StringComparison comparison)">
+        <template #name><h3>FindIndexByName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="key" type="Newtonsoft.Json.Utilities.StructMultiKey<Type, Newtonsoft.Json.Serialization.NamingStrategy>"></doc-parameter>
+                <doc-parameter name="enumNames" type="string[]"></doc-parameter>
+                <doc-parameter name="value" type="string"></doc-parameter>
+                <doc-parameter name="valueIndex" type="int"></doc-parameter>
+                <doc-parameter name="valueSubstringLength" type="int"></doc-parameter>
+                <doc-parameter name="comparison" type="StringComparison"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-getflagsvalues" name="GetFlagsValues" returns="IList<T>" params="T" signature="public static IList<T> GetFlagsValues(T value)">
-        <template #name><h3>GetFlagsValues</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="T"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-trytostring" name="TryToString" returns="System.Boolean" params="Type, Object, Boolean, Nullable<String>" signature="public static Boolean TryToString(Type enumType, Object value, Boolean camelCase, Nullable<String> name)">
-        <template #name><h3>TryToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="enumType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="camelCase" type="System.Boolean"></doc-parameter>
-                <doc-parameter name="name" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-trytostring" name="TryToString" returns="System.Boolean" params="Type, Object, NamingStrategy, Nullable<String>" signature="public static Boolean TryToString(Type enumType, Object value, NamingStrategy namingStrategy, Nullable<String> name)">
-        <template #name><h3>TryToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="enumType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-                <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
-                <doc-parameter name="name" type="System.Nullable<System.String>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-internalflagsformat" name="InternalFlagsFormat" returns="System.Nullable<System.String>" params="EnumInfo, UInt64" access="private" signature="private static Nullable<String> InternalFlagsFormat(EnumInfo entry, UInt64 result)">
-        <template #name><h3>InternalFlagsFormat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="entry" type="Newtonsoft.Json.Utilities.EnumInfo"></doc-parameter>
-                <doc-parameter name="result" type="System.UInt64"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getenumvaluesandnames" name="GetEnumValuesAndNames" returns="Newtonsoft.Json.Utilities.EnumInfo" params="Type" signature="public static EnumInfo GetEnumValuesAndNames(Type enumType)">
+    <doc-member id="method-getenumvaluesandnames" name="GetEnumValuesAndNames" returns="EnumInfo" params="Type" signature="public static EnumInfo GetEnumValuesAndNames(Type enumType)">
         <template #name><h3>GetEnumValuesAndNames</h3></template>
 
         <template #parameters>
@@ -295,57 +252,102 @@
         </template>
     </doc-member>
 
-<doc-member id="method-touint64" name="ToUInt64" returns="System.UInt64" params="Object" access="private" signature="private static UInt64 ToUInt64(Object value)">
-        <template #name><h3>ToUInt64</h3></template>
+    <doc-member id="method-getflagsvalues" name="GetFlagsValues" returns="IList<T>" params="T" signature="public static IList<T> GetFlagsValues(T value)">
+        <template #name><h3>GetFlagsValues</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="value" type="T"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-parseenum" name="ParseEnum" returns="System.Object" params="Type, NamingStrategy, String, Boolean" signature="public static Object ParseEnum(Type enumType, NamingStrategy namingStrategy, String value, Boolean disallowNumber)">
+    <doc-member id="method-initializevaluesandnames" name="InitializeValuesAndNames" returns="EnumInfo" params="StructMultiKey<Type, NamingStrategy?>" access="private" signature="private static EnumInfo InitializeValuesAndNames(StructMultiKey<Type, NamingStrategy?> key)">
+        <template #name><h3>InitializeValuesAndNames</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="key" type="Newtonsoft.Json.Utilities.StructMultiKey<Type, Newtonsoft.Json.Serialization.NamingStrategy?>"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-internalflagsformat" name="InternalFlagsFormat" returns="string?" params="EnumInfo, ulong" access="private" signature="private static string? InternalFlagsFormat(EnumInfo entry, ulong result)">
+        <template #name><h3>InternalFlagsFormat</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="entry" type="Newtonsoft.Json.Utilities.EnumInfo"></doc-parameter>
+                <doc-parameter name="result" type="ulong"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-matchname" name="MatchName" returns="int?" params="string, string[], string[], int, int, StringComparison" access="private" signature="private static int? MatchName(string value, string[] enumNames, string[] resolvedNames, int valueIndex, int valueSubstringLength, StringComparison comparison)">
+        <template #name><h3>MatchName</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="value" type="string"></doc-parameter>
+                <doc-parameter name="enumNames" type="string[]"></doc-parameter>
+                <doc-parameter name="resolvedNames" type="string[]"></doc-parameter>
+                <doc-parameter name="valueIndex" type="int"></doc-parameter>
+                <doc-parameter name="valueSubstringLength" type="int"></doc-parameter>
+                <doc-parameter name="comparison" type="StringComparison"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-parseenum" name="ParseEnum" returns="object" params="Type, NamingStrategy?, string, bool" signature="public static object ParseEnum(Type enumType, NamingStrategy? namingStrategy, string value, bool disallowNumber)">
         <template #name><h3>ParseEnum</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="enumType" type="Type"></doc-parameter>
-                <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy"></doc-parameter>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="disallowNumber" type="System.Boolean"></doc-parameter>
+                <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy?"></doc-parameter>
+                <doc-parameter name="value" type="string"></doc-parameter>
+                <doc-parameter name="disallowNumber" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-matchname" name="MatchName" returns="System.Nullable<System.Int32>" params="String, String[], String[], Int32, Int32, StringComparison" access="private" signature="private static Nullable<Int32> MatchName(String value, String[] enumNames, String[] resolvedNames, Int32 valueIndex, Int32 valueSubstringLength, StringComparison comparison)">
-        <template #name><h3>MatchName</h3></template>
+    <doc-member id="method-touint64" name="ToUInt64" returns="ulong" params="object" access="private" signature="private static ulong ToUInt64(object value)">
+        <template #name><h3>ToUInt64</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="enumNames" type="System.String[]"></doc-parameter>
-                <doc-parameter name="resolvedNames" type="System.String[]"></doc-parameter>
-                <doc-parameter name="valueIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="valueSubstringLength" type="System.Int32"></doc-parameter>
-                <doc-parameter name="comparison" type="StringComparison"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-findindexbyname" name="FindIndexByName" returns="System.Nullable<System.Int32>" params="String[], String, Int32, Int32, StringComparison" access="private" signature="private static Nullable<Int32> FindIndexByName(String[] enumNames, String value, Int32 valueIndex, Int32 valueSubstringLength, StringComparison comparison)">
-        <template #name><h3>FindIndexByName</h3></template>
+    <doc-overload-group overload-id="group-trytostring">
+        <doc-member id="method-trytostring" overload-id="group-trytostring" name="TryToString" returns="bool" params="Type, object, bool, string?" signature="public static bool TryToString(Type enumType, object value, bool camelCase, string? name)">
+            <template #name><h3>TryToString</h3></template>
 
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="enumNames" type="System.String[]"></doc-parameter>
-                <doc-parameter name="value" type="System.String"></doc-parameter>
-                <doc-parameter name="valueIndex" type="System.Int32"></doc-parameter>
-                <doc-parameter name="valueSubstringLength" type="System.Int32"></doc-parameter>
-                <doc-parameter name="comparison" type="StringComparison"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="enumType" type="Type"></doc-parameter>
+                    <doc-parameter name="value" type="object"></doc-parameter>
+                    <doc-parameter name="camelCase" type="bool"></doc-parameter>
+                    <doc-parameter name="name" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+
+        <doc-member id="method-trytostring-1" overload-id="group-trytostring" name="TryToString" returns="bool" params="Type, object, NamingStrategy?, string?" signature="public static bool TryToString(Type enumType, object value, NamingStrategy? namingStrategy, string? name)">
+            <template #name><h3>TryToString</h3></template>
+
+            <template #parameters>
+                <doc-parameters>
+                    <doc-parameter name="enumType" type="Type"></doc-parameter>
+                    <doc-parameter name="value" type="object"></doc-parameter>
+                    <doc-parameter name="namingStrategy" type="Newtonsoft.Json.Serialization.NamingStrategy?"></doc-parameter>
+                    <doc-parameter name="name" type="string?"></doc-parameter>
+                </doc-parameters>
+            </template>
+        </doc-member>
+    </doc-overload-group>
 </doc-member-group>
 
 

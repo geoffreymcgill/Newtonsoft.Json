@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-<doc-member id="field-_referencecount" name="_referenceCount" type="System.Int32" access="private" signature="private Int32 _referenceCount">
+    <doc-member id="field-_referencecount" name="_referenceCount" type="int" access="private" signature="private int _referenceCount">
         <template #name><h3>_referenceCount</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,57 +216,57 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-<doc-member id="method-getmappings" name="GetMappings" returns="Newtonsoft.Json.Utilities.BidirectionalDictionary<System.String, System.Object>" params="Object" access="private" signature="private BidirectionalDictionary<String, Object> GetMappings(Object context)">
-        <template #name><h3>GetMappings</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-resolvereference" name="ResolveReference" returns="System.Object" params="Object, String" signature="public Object ResolveReference(Object context, String reference)">
-        <template #name><h3>ResolveReference</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-getreference" name="GetReference" returns="System.String" params="Object, Object" signature="public String GetReference(Object context, Object value)">
-        <template #name><h3>GetReference</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-<doc-member id="method-addreference" name="AddReference" returns="System.Void" params="Object, String, Object" signature="public Void AddReference(Object context, String reference, Object value)">
+    <doc-member id="method-addreference" name="AddReference" returns="void" params="object, string, object" signature="public void AddReference(object context, string reference, object value)">
         <template #name><h3>AddReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="reference" type="System.String"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="reference" type="string"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-<doc-member id="method-isreferenced" name="IsReferenced" returns="System.Boolean" params="Object, Object" signature="public Boolean IsReferenced(Object context, Object value)">
+    <doc-member id="method-getmappings" name="GetMappings" returns="BidirectionalDictionary<string, object>" params="object" access="private" signature="private BidirectionalDictionary<string, object> GetMappings(object context)">
+        <template #name><h3>GetMappings</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="context" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-getreference" name="GetReference" returns="string" params="object, object" signature="public string GetReference(object context, object value)">
+        <template #name><h3>GetReference</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-isreferenced" name="IsReferenced" returns="bool" params="object, object" signature="public bool IsReferenced(object context, object value)">
         <template #name><h3>IsReferenced</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="context" type="System.Object"></doc-parameter>
-                <doc-parameter name="value" type="System.Object"></doc-parameter>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="value" type="object"></doc-parameter>
+            </doc-parameters>
+        </template>
+    </doc-member>
+
+    <doc-member id="method-resolvereference" name="ResolveReference" returns="object" params="object, string" signature="public object ResolveReference(object context, string reference)">
+        <template #name><h3>ResolveReference</h3></template>
+
+        <template #parameters>
+            <doc-parameters>
+                <doc-parameter name="context" type="object"></doc-parameter>
+                <doc-parameter name="reference" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
