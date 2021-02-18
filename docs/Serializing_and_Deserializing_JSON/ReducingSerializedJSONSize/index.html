@@ -193,7 +193,7 @@
         <span>JsonIgnoreAttribute and DataMemberAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>By default Json.NET will include all of a class's public properties and fields in the JSON it creates. Adding the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a> to a property tells the serializer to always skip writing it to the JSON result.</p>
+<p>By default Json.NET will include all of a class's public properties and fields in the JSON it creates. Adding the <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a> to a property tells the serializer to always skip writing it to the JSON result.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeOptOut</code></pre>
 <p>If a class has many properties and you only want to serialize a small subset of them, then adding JsonIgnore to all the others will be tedious and error prone. The way to tackle this scenario is to add the <a href="T:System.Runtime.Serialization.DataContractAttribute">DataContractAttribute</a> to the class and <a href="T:System.Runtime.Serialization.DataMemberAttribute">DataMemberAttribute</a> to the properties to serialize. This is opt-in serialization - only the properties you mark up will be serialized, unlike opt-out serialization using JsonIgnoreAttribute.</p>
@@ -205,40 +205,40 @@ region: ReducingSerializedJsonSizeOptIn</code></pre>
         <span>Formatting</span>
     </h2>
 </doc-anchor-target>
-<p>JSON written by the serializer with an option of <a href="/Newtonsoft.Json/api/newtonsoft/json/formatting/">Formatting</a> set to Indented produces nicely formatted, easy-to-read JSON that is great for readability when you are developing. <code v-pre>Formatting.None</code> on the other hand keeps the JSON result small, skipping all unnecessary spaces and line breaks to produce the most compact and efficient JSON possible.</p>
+<p>JSON written by the serializer with an option of <a href="/Newtonsoft.Json/API/newtonsoft/json/formatting/">Formatting</a> set to Indented produces nicely formatted, easy-to-read JSON that is great for readability when you are developing. <code v-pre>Formatting.None</code> on the other hand keeps the JSON result small, skipping all unnecessary spaces and line breaks to produce the most compact and efficient JSON possible.</p>
 <doc-anchor-target id="nullvaluehandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#nullvaluehandling">#</doc-anchor-trigger>
         <span>NullValueHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/nullvaluehandling/">NullValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a null value. By setting a value of NullValueHandling.Ignore the JsonSerializer skips writing any properties that have a value of null.</p>
+<p><a href="/Newtonsoft.Json/API/newtonsoft/json/nullvaluehandling/">NullValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a null value. By setting a value of NullValueHandling.Ignore the JsonSerializer skips writing any properties that have a value of null.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeNullValueHandlingObject</code></pre>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeNullValueHandlingExample</code></pre>
-<p>NullValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of NullValueHandling will override the setting on the JsonSerializer for that property.</p>
+<p>NullValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of NullValueHandling will override the setting on the JsonSerializer for that property.</p>
 <doc-anchor-target id="defaultvaluehandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#defaultvaluehandling">#</doc-anchor-trigger>
         <span>DefaultValueHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a default value. Setting a value of DefaultValueHandling.Ignore will make the JsonSerializer skip writing any properties that have a default value to the JSON result. For object references this will be null. For value types like int and DateTime the serializer will skip the default uninitialized value for that value type.</p>
+<p><a href="/Newtonsoft.Json/API/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a default value. Setting a value of DefaultValueHandling.Ignore will make the JsonSerializer skip writing any properties that have a default value to the JSON result. For object references this will be null. For value types like int and DateTime the serializer will skip the default uninitialized value for that value type.</p>
 <p>Json.NET also allows you to customize what the default value of an individual
 property is using the <a href="T:System.ComponentModel.DefaultValueAttribute">DefaultValueAttribute</a>. For example, if a string property called Department always returns an empty string in its default state and you don't want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeDefaultValueHandlingObject</code></pre>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeDefaultValueHandlingExample</code></pre>
-<p>DefaultValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of DefaultValueHandling will override the setting on the JsonSerializer for that property.</p>
+<p>DefaultValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of DefaultValueHandling will override the setting on the JsonSerializer for that property.</p>
 <doc-anchor-target id="icontractresolver">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#icontractresolver">#</doc-anchor-trigger>
         <span>IContractResolver</span>
     </h2>
 </doc-anchor-target>
-<p>For more flexibility, the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> provides an interface to customize almost every aspect of how a .NET object gets serialized to JSON, including changing serialization behavior at runtime.</p>
+<p>For more flexibility, the <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> provides an interface to customize almost every aspect of how a .NET object gets serialized to JSON, including changing serialization behavior at runtime.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ReducingSerializedJsonSizeContractResolverObject</code></pre>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -250,10 +250,10 @@ region: ReducingSerializedJsonSizeContractResolverExample</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/formatting/">Formatting</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/nullvaluehandling/">NullValueHandling</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/formatting/">Formatting</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/nullvaluehandling/">NullValueHandling</a></li>
 </ul>
 
     

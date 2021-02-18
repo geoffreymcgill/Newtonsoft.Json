@@ -1,6 +1,6 @@
 ﻿# Configure NamingStrategy dictionary serialization
 
-This sample configures a [CamelCaseNamingStrategy](/api/newtonsoft/json/serialization/camelcasenamingstrategy/) to not camel case dictionary keys.
+This sample configures a [CamelCaseNamingStrategy](/API/newtonsoft/json/serialization/camelcasenamingstrategy/) to not camel case dictionary keys.
 
 ## Sample
 

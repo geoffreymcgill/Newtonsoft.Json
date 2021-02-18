@@ -2,11 +2,11 @@
 
 Json.NET supports error handling during serialization and deserialization. Error handling lets you catch an error and choose whether to handle it and continue with serialization or let the error bubble up and be thrown in your application.
 
-Error handling is defined through two methods: the [JsonSerializer.Error](/api/newtonsoft/json/jsonserializer/#event-error) event on JsonSerializer and the [OnErrorAttribute](/api/newtonsoft/json/serialization/onerrorattribute/).
+Error handling is defined through two methods: the [JsonSerializer.Error](/API/newtonsoft/json/jsonserializer/#event-error) event on JsonSerializer and the [OnErrorAttribute](/API/newtonsoft/json/serialization/onerrorattribute/).
 
 ## Error Event
 
-The [JsonSerializer.Error](/api/newtonsoft/json/jsonserializer/#event-error) event is an event handler found on [JsonSerializer](/api/newtonsoft/json/jsonserializer/). The error event is raised whenever an exception is thrown while serializing or deserializing JSON. Like all settings found on JsonSerializer, it can also be set on [JsonSerializerSettings](/api/newtonsoft/json/jsonserializersettings/) and passed to the serialization methods on JsonConvert.
+The [JsonSerializer.Error](/API/newtonsoft/json/jsonserializer/#event-error) event is an event handler found on [JsonSerializer](/API/newtonsoft/json/jsonserializer/). The error event is raised whenever an exception is thrown while serializing or deserializing JSON. Like all settings found on JsonSerializer, it can also be set on [JsonSerializerSettings](/API/newtonsoft/json/jsonserializersettings/) and passed to the serialization methods on JsonConvert.
 
 ```csharp Serialization Error Handling
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -24,11 +24,11 @@ source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: SerializationErrorHandlingWithParent
 ``` 
 
-If you aren't immediately handling an error and only want to perform an action against it once, then you can check to see whether the [ErrorEventArgs](/api/newtonsoft/json/serialization/erroreventargs/)'s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.
+If you aren't immediately handling an error and only want to perform an action against it once, then you can check to see whether the [ErrorEventArgs](/API/newtonsoft/json/serialization/erroreventargs/)'s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.
 
 ## OnErrorAttribute
 
-The [OnErrorAttribute](/api/newtonsoft/json/serialization/onerrorattribute/) works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn't matter.
+The [OnErrorAttribute](/API/newtonsoft/json/serialization/onerrorattribute/) works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn't matter.
 
 ```csharp Serialization Error Handling Attribute
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -48,5 +48,5 @@ region: SerializationErrorHandlingAttributeExample
 ## See Also
 
 - [Serialization Attributes](SerializationAttributes.md)
-- [JsonSerializer.Error](/api/newtonsoft/json/jsonserializer/#event-error)
-- [OnErrorAttribute](/api/newtonsoft/json/serialization/onerrorattribute/)
+- [JsonSerializer.Error](/API/newtonsoft/json/jsonserializer/#event-error)
+- [OnErrorAttribute](/API/newtonsoft/json/serialization/onerrorattribute/)

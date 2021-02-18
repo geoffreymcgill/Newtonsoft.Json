@@ -1,6 +1,6 @@
 ﻿# DefaultValueHandling setting
 
-This sample uses the [DefaultValueHandling](/api/newtonsoft/json/defaultvaluehandling/) setting to not serialize properties with a default value.
+This sample uses the [DefaultValueHandling](/API/newtonsoft/json/defaultvaluehandling/) setting to not serialize properties with a default value.
 
 ## Sample
 

@@ -1,6 +1,6 @@
 ﻿# Camel case property names
 
-This sample uses a [CamelCaseNamingStrategy](/api/newtonsoft/json/serialization/camelcasenamingstrategy/) specified using a contract resolver to camel case serialized property names.
+This sample uses a [CamelCaseNamingStrategy](/API/newtonsoft/json/serialization/camelcasenamingstrategy/) specified using a contract resolver to camel case serialized property names.
 
 ## Sample
 

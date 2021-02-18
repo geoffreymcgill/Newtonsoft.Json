@@ -1,6 +1,6 @@
 ﻿# Debugging with Serialization Tracing
 
-The Json.NET serializer supports logging and debugging using the [ITraceWriter](/api/newtonsoft/json/serialization/itracewriter/) interface. By assigning a trace writer you can capture serialization messages and errors and debug what happens inside the Json.NET serializer when serializing and deserializing JSON.
+The Json.NET serializer supports logging and debugging using the [ITraceWriter](/API/newtonsoft/json/serialization/itracewriter/) interface. By assigning a trace writer you can capture serialization messages and errors and debug what happens inside the Json.NET serializer when serializing and deserializing JSON.
 
 ## ITraceWriter
 
@@ -11,7 +11,7 @@ source: ..\Src\Newtonsoft.Json.Tests\Documentation\TraceWriterTests.cs
 region: MemoryTraceWriterExample
 ```
 
-Json.NET has two implementations of ITraceWriter: [MemoryTraceWriter](/api/newtonsoft/json/serialization/memorytracewriter/), which keeps messages in memory for simple debugging, like the example above, and [DiagnosticsTraceWriter](/api/newtonsoft/json/serialization/diagnosticstracewriter/), which writes messages to any System.Diagnostics.TraceListeners your application is using.
+Json.NET has two implementations of ITraceWriter: [MemoryTraceWriter](/API/newtonsoft/json/serialization/memorytracewriter/), which keeps messages in memory for simple debugging, like the example above, and [DiagnosticsTraceWriter](/API/newtonsoft/json/serialization/diagnosticstracewriter/), which writes messages to any System.Diagnostics.TraceListeners your application is using.
 
 ## Custom ITraceWriter
 
@@ -24,7 +24,7 @@ region: CustomTraceWriterExample
 
 ## See Also
 
-- [JsonSerializer](/api/newtonsoft/json/jsonserializer/)
-- [ITraceWriter](/api/newtonsoft/json/serialization/itracewriter/)
-- [MemoryTraceWriter](/api/newtonsoft/json/serialization/memorytracewriter/)
-- [DiagnosticsTraceWriter](/api/newtonsoft/json/serialization/diagnosticstracewriter/)
+- [JsonSerializer](/API/newtonsoft/json/jsonserializer/)
+- [ITraceWriter](/API/newtonsoft/json/serialization/itracewriter/)
+- [MemoryTraceWriter](/API/newtonsoft/json/serialization/memorytracewriter/)
+- [DiagnosticsTraceWriter](/API/newtonsoft/json/serialization/diagnosticstracewriter/)

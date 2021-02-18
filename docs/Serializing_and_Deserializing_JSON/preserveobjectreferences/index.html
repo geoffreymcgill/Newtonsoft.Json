@@ -195,12 +195,12 @@ region: PreservingObjectReferencesOff</code></pre>
         <span>PreserveReferencesHandling</span>
     </h2>
 </doc-anchor-target>
-<p>Setting <a href="/Newtonsoft.Json/api/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a> will track object references when serializing and deserializing JSON.</p>
+<p>Setting <a href="/Newtonsoft.Json/API/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a> will track object references when serializing and deserializing JSON.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: PreservingObjectReferencesOn</code></pre>
 <p>The first Person in the list is serialized with the addition of an object ID. The second Person in JSON is now only a reference to the first.</p>
 <p>With PreserveReferencesHandling on, now only one Person object is created on deserialization and the list contains two references to it, mirroring what we started with.</p>
-<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
+<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/API/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
 <doc-alert type="primary"><p>References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. <a href="T:System.Runtime.Serialization.ISerializable">ISerializable</a> types are an example of a class whose values are populated with a non-default constructor and won't work with PreserveReferencesHandling.</p>
 </doc-alert>
 <doc-anchor-target id="isreference">
@@ -219,7 +219,7 @@ region: PreservingObjectReferencesAttribute</code></pre>
         <span>IReferenceResolver</span>
     </h2>
 </doc-anchor-target>
-<p>To customize how references are generated and resolved the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/ireferenceresolver/">IReferenceResolver</a> interface is available to inherit from and use with the JsonSerializer.</p>
+<p>To customize how references are generated and resolved the <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/ireferenceresolver/">IReferenceResolver</a> interface is available to inherit from and use with the JsonSerializer.</p>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
@@ -227,7 +227,7 @@ region: PreservingObjectReferencesAttribute</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a></li>
 </ul>
 
     

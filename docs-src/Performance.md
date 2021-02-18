@@ -4,7 +4,7 @@ Out of the box Json.NET is faster than DataContractJsonSerializer and JavaScript
 
 ## Reuse Contract Resolver
 
-The [IContractResolver](/api/newtonsoft/json/serialization/icontractresolver/) resolves .NET types to contracts that are used during serialization inside JsonSerializer. Creating a contract involves inspecting a type with slow reflection, so contracts are typically cached by implementations of IContractResolver like [DefaultContractResolver](/api/newtonsoft/json/serialization/defaultcontractresolver/).
+The [IContractResolver](/API/newtonsoft/json/serialization/icontractresolver/) resolves .NET types to contracts that are used during serialization inside JsonSerializer. Creating a contract involves inspecting a type with slow reflection, so contracts are typically cached by implementations of IContractResolver like [DefaultContractResolver](/API/newtonsoft/json/serialization/defaultcontractresolver/).
 
 To avoid the overhead of recreating contracts every time you use JsonSerializer you should create the contract resolver once and reuse it. Note that if you are not using a contract resolver then a shared internal instance is automatically used when serializing and deserializing.
 
@@ -31,16 +31,16 @@ region: DeserializeStream
 
 ## JsonConverters
 
-Passing a [JsonConverter](/api/newtonsoft/json/jsonconverter/) to SerializeObject or DeserializeObject provides a simple way to completely change how an object is serialized. There is, however, a small amount of overhead; the CanConvert method is called for every value to check whether serialization should be handled by that JsonConverter.
+Passing a [JsonConverter](/API/newtonsoft/json/jsonconverter/) to SerializeObject or DeserializeObject provides a simple way to completely change how an object is serialized. There is, however, a small amount of overhead; the CanConvert method is called for every value to check whether serialization should be handled by that JsonConverter.
 
-There are a couple of ways to continue to use JsonConverters without any overhead. The simplest way is to specify the JsonConverter using the [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/). This attribute tells the serializer to always use that converter when serializing and deserializing the type, without the check.
+There are a couple of ways to continue to use JsonConverters without any overhead. The simplest way is to specify the JsonConverter using the [JsonConverterAttribute](/API/newtonsoft/json/jsonconverterattribute/). This attribute tells the serializer to always use that converter when serializing and deserializing the type, without the check.
 
 ```csharp Use JsonConverter with JsonConverterAttribute
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
 region: JsonConverterAttribute
 ```
 
-If the class you want to convert isn't your own and you're unable to use an attribute, a JsonConverter can still be used by creating your own [IContractResolver](/api/newtonsoft/json/serialization/icontractresolver/).
+If the class you want to convert isn't your own and you're unable to use an attribute, a JsonConverter can still be used by creating your own [IContractResolver](/API/newtonsoft/json/serialization/icontractresolver/).
 
 ```csharp Use JsonConverter with IContractResolver
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
@@ -68,8 +68,8 @@ If performance is important and you don't mind writing more code to get it, then
 
 ## See Also
 
-- [JsonSerializer](/api/newtonsoft/json/jsonserializer/)
-- [JsonConverter](/api/newtonsoft/json/jsonconverter/)
-- [JsonConverterAttribute](/api/newtonsoft/json/jsonconverterattribute/)
-- [JsonTextWriter](/api/newtonsoft/json/jsontextwriter/)
-- [JsonTextReader](/api/newtonsoft/json/jsontextreader/)
+- [JsonSerializer](/API/newtonsoft/json/jsonserializer/)
+- [JsonConverter](/API/newtonsoft/json/jsonconverter/)
+- [JsonConverterAttribute](/API/newtonsoft/json/jsonconverterattribute/)
+- [JsonTextWriter](/API/newtonsoft/json/jsontextwriter/)
+- [JsonTextReader](/API/newtonsoft/json/jsontextreader/)

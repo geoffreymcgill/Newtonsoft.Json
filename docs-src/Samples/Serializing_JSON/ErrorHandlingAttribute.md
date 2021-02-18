@@ -1,6 +1,6 @@
 ﻿# ErrorHandlingAttribute
 
-This sample uses [OnErrorAttribute](/api/newtonsoft/json/serialization/onerrorattribute/) to ignore the exception thrown setting the Roles property. 
+This sample uses [OnErrorAttribute](/API/newtonsoft/json/serialization/onerrorattribute/) to ignore the exception thrown setting the Roles property. 
 
 ## Sample
 

@@ -192,7 +192,7 @@
         <span>Reuse Contract Resolver</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> resolves .NET types to contracts that are used during serialization inside JsonSerializer. Creating a contract involves inspecting a type with slow reflection, so contracts are typically cached by implementations of IContractResolver like <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a>.</p>
+<p>The <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> resolves .NET types to contracts that are used during serialization inside JsonSerializer. Creating a contract involves inspecting a type with slow reflection, so contracts are typically cached by implementations of IContractResolver like <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a>.</p>
 <p>To avoid the overhead of recreating contracts every time you use JsonSerializer you should create the contract resolver once and reuse it. Note that if you are not using a contract resolver then a shared internal instance is automatically used when serializing and deserializing.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
 region: ReuseContractResolver</code></pre>
@@ -214,11 +214,11 @@ region: DeserializeStream</code></pre>
         <span>JsonConverters</span>
     </h2>
 </doc-anchor-target>
-<p>Passing a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> to SerializeObject or DeserializeObject provides a simple way to completely change how an object is serialized. There is, however, a small amount of overhead; the CanConvert method is called for every value to check whether serialization should be handled by that JsonConverter.</p>
-<p>There are a couple of ways to continue to use JsonConverters without any overhead. The simplest way is to specify the JsonConverter using the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a>. This attribute tells the serializer to always use that converter when serializing and deserializing the type, without the check.</p>
+<p>Passing a <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconverter/">JsonConverter</a> to SerializeObject or DeserializeObject provides a simple way to completely change how an object is serialized. There is, however, a small amount of overhead; the CanConvert method is called for every value to check whether serialization should be handled by that JsonConverter.</p>
+<p>There are a couple of ways to continue to use JsonConverters without any overhead. The simplest way is to specify the JsonConverter using the <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a>. This attribute tells the serializer to always use that converter when serializing and deserializing the type, without the check.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
 region: JsonConverterAttribute</code></pre>
-<p>If the class you want to convert isn't your own and you're unable to use an attribute, a JsonConverter can still be used by creating your own <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a>.</p>
+<p>If the class you want to convert isn't your own and you're unable to use an attribute, a JsonConverter can still be used by creating your own <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a>.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
 region: JsonConverterContractResolver</code></pre>
 <p>The IContractResolver in the example above will set all DateTimes to use the JavaScriptDateConverter.</p>
@@ -249,11 +249,11 @@ region: ReaderWriter</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsonserializer/">JsonSerializer</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconverter/">JsonConverter</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsontextwriter/">JsonTextWriter</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/jsontextreader/">JsonTextReader</a></li>
 </ul>
 
     

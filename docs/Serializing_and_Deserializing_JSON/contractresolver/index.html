@@ -185,9 +185,9 @@
         <span>Serialization using ContractResolver</span>
     </h1>
 </doc-anchor-target>
-<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> interface provides a way to customize how the JsonSerializer serializes and deserializes .NET objects to JSON without placing attributes on your classes.</p>
+<p>The <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> interface provides a way to customize how the JsonSerializer serializes and deserializes .NET objects to JSON without placing attributes on your classes.</p>
 <p>Anything that can be set on an object, collection, property, etc, using attributes or methods to control serialization can also be set using an IContractResolver.</p>
-<doc-alert type="primary"><p>For performance you should create a contract resolver once and reuse instances when possible. Resolving contracts is slow and implementations of <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> typically cache contracts.</p>
+<doc-alert type="primary"><p>For performance you should create a contract resolver once and reuse instances when possible. Resolving contracts is slow and implementations of <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> typically cache contracts.</p>
 </doc-alert>
 <doc-anchor-target id="defaultcontractresolver">
     <h2>
@@ -195,14 +195,14 @@
         <span>DefaultContractResolver</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a> is the default resolver used by the serializer. It provides many avenues of extensibility in the form of virtual methods that can be overridden.</p>
+<p>The <a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a> is the default resolver used by the serializer. It provides many avenues of extensibility in the form of virtual methods that can be overridden.</p>
 <doc-anchor-target id="camelcasepropertynamescontractresolver">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#camelcasepropertynamescontractresolver">#</doc-anchor-trigger>
         <span>CamelCasePropertyNamesContractResolver</span>
     </h2>
 </doc-anchor-target>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a> inherits from DefaultContractResolver and simply overrides the JSON property name to be written in <a href="http://en.wikipedia.org/wiki/CamelCase">camelcase</a>.</p>
+<p><a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a> inherits from DefaultContractResolver and simply overrides the JSON property name to be written in <a href="http://en.wikipedia.org/wiki/CamelCase">camelcase</a>.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
 region: ContractResolver</code></pre>
 <doc-anchor-target id="custom-icontractresolver-examples">
@@ -213,7 +213,7 @@ region: ContractResolver</code></pre>
 </doc-anchor-target>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
 region: JsonConverterContractResolver</code></pre>
-<p>This example sets a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> for a type using an IContractResolver. Using a contract resolver here is useful because DateTime is not your own type and it is not possible to place a JsonConverterAttribute on it.</p>
+<p>This example sets a <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconverter/">JsonConverter</a> for a type using an IContractResolver. Using a contract resolver here is useful because DateTime is not your own type and it is not possible to place a JsonConverterAttribute on it.</p>
 <pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConditionalPropertiesTests.cs
 region: ShouldSerializeContractResolver</code></pre>
 <p>This example sets up [ConditionalProperties](conditional serialization for a property) using an IContractResolver. This is useful if you want to conditionally serialize a property but don't want to add additional methods to your type.</p>
@@ -224,9 +224,9 @@ region: ShouldSerializeContractResolver</code></pre>
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a></li>
-<li><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/defaultcontractresolver/">DefaultContractResolver</a></li>
+<li><a href="/Newtonsoft.Json/API/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a></li>
 </ul>
 
     
