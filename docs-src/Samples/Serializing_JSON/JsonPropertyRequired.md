@@ -1,6 +1,6 @@
 ﻿# JsonPropertyAttribute required
 
-This sample uses [JsonPropertyAttribute](/API/newtonsoft/json/jsonpropertyattribute/) to set [Required](/API/newtonsoft/json/required/) which is used during deserialization to validate the presence of required JSON properties.
+This sample uses [JsonPropertyAttribute](/api/newtonsoft/json/jsonpropertyattribute/) to set [Required](/api/newtonsoft/json/required/) which is used during deserialization to validate the presence of required JSON properties.
 
 ## Sample
 

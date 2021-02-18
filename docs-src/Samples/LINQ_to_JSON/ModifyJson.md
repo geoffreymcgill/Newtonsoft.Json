@@ -1,6 +1,6 @@
 ﻿# Modifying JSON
 
-This sample loads JSON, modifies [JObject](/API/newtonsoft/json/linq/jobject/) and [JArray](/API/newtonsoft/json/linq/jarray/) instances and then writes the JSON back out again.
+This sample loads JSON, modifies [JObject](/api/newtonsoft/json/linq/jobject/) and [JArray](/api/newtonsoft/json/linq/jarray/) instances and then writes the JSON back out again.
 
 ## Sample
 

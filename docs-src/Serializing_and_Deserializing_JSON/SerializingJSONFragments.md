@@ -16,9 +16,9 @@ region: SerializingPartialJsonFragmentsExample
 
 ## See Also
 
-- [JsonReader](/API/newtonsoft/json/jsonreader/)
-- [JsonWriter](/API/newtonsoft/json/jsonwriter/)
-- [JTokenReader](/API/newtonsoft/json/linq/jtokenreader/)
-- [JTokenWriter](/API/newtonsoft/json/linq/jtokenwriter/)
-- [BsonReader](/API/newtonsoft/json/bson/bsonreader/)
-- [BsonWriter](/API/newtonsoft/json/bson/bsonwriter/)
+- [JsonReader](/api/newtonsoft/json/jsonreader/)
+- [JsonWriter](/api/newtonsoft/json/jsonwriter/)
+- [JTokenReader](/api/newtonsoft/json/linq/jtokenreader/)
+- [JTokenWriter](/api/newtonsoft/json/linq/jtokenwriter/)
+- [BsonReader](/api/newtonsoft/json/bson/bsonreader/)
+- [BsonWriter](/api/newtonsoft/json/bson/bsonwriter/)

@@ -18,7 +18,7 @@ region: ShouldSerializeClassTest
 
 ## IContractResolver
 
-ShouldSerialize can also be set using an [IContractResolver](/API/newtonsoft/json/serialization/icontractresolver/). Conditionally serializing a property using an IContractResolver is useful if you don't want to place a ShouldSerialize method on a class or you didn't declare the class and are unable to.
+ShouldSerialize can also be set using an [IContractResolver](/api/newtonsoft/json/serialization/icontractresolver/). Conditionally serializing a property using an IContractResolver is useful if you don't want to place a ShouldSerialize method on a class or you didn't declare the class and are unable to.
 
 ```csharp Conditional properties with IContractResolver
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConditionalPropertiesTests.cs
@@ -27,6 +27,6 @@ region: ShouldSerializeContractResolver
 
 ## See Also
 
-- [JsonSerializer](/API/newtonsoft/json/jsonserializer/)
-- [IContractResolver](/API/newtonsoft/json/serialization/icontractresolver/)
-- [JsonProperty.ShouldSerialize](/API/newtonsoft/json/serialization/jsonproperty/#property-shouldserialize)
+- [JsonSerializer](/api/newtonsoft/json/jsonserializer/)
+- [IContractResolver](/api/newtonsoft/json/serialization/icontractresolver/)
+- [JsonProperty.ShouldSerialize](/api/newtonsoft/json/serialization/jsonproperty/#property-shouldserialize)

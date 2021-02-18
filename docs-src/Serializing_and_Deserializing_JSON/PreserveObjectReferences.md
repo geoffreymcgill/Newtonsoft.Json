@@ -11,7 +11,7 @@ In most cases this is the desired result, but in certain scenarios writing the s
 
 ## PreserveReferencesHandling
 
-Setting [PreserveReferencesHandling](/API/newtonsoft/json/preservereferenceshandling/) will track object references when serializing and deserializing JSON.
+Setting [PreserveReferencesHandling](/api/newtonsoft/json/preservereferenceshandling/) will track object references when serializing and deserializing JSON.
 
 ```csharp Preserve Object References On
 source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
@@ -22,7 +22,7 @@ The first Person in the list is serialized with the addition of an object ID. Th
 
 With PreserveReferencesHandling on, now only one Person object is created on deserialization and the list contains two references to it, mirroring what we started with.
 
-Metadata properties like `$id` must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then [MetadataPropertyHandling](/API/newtonsoft/json/metadatapropertyhandling/) can be used to remove this restriction.
+Metadata properties like `$id` must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then [MetadataPropertyHandling](/api/newtonsoft/json/metadatapropertyhandling/) can be used to remove this restriction.
 
 :::
 References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. [ISerializable](T:System.Runtime.Serialization.ISerializable) types are an example of a class whose values are populated with a non-default constructor and won't work with PreserveReferencesHandling.
@@ -41,8 +41,8 @@ region: PreservingObjectReferencesAttribute
 
 ## IReferenceResolver
 
-To customize how references are generated and resolved the [IReferenceResolver](/API/newtonsoft/json/serialization/ireferenceresolver/) interface is available to inherit from and use with the JsonSerializer.
+To customize how references are generated and resolved the [IReferenceResolver](/api/newtonsoft/json/serialization/ireferenceresolver/) interface is available to inherit from and use with the JsonSerializer.
 
 ## See Also
 
-- [PreserveReferencesHandling](/API/newtonsoft/json/preservereferenceshandling/)
+- [PreserveReferencesHandling](/api/newtonsoft/json/preservereferenceshandling/)

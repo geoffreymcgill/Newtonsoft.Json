@@ -1,6 +1,6 @@
 ﻿# TraceWriter setting
 
-This sample uses an [ITraceWriter](/API/newtonsoft/json/serialization/itracewriter/) to log debug information from serialization.
+This sample uses an [ITraceWriter](/api/newtonsoft/json/serialization/itracewriter/) to log debug information from serialization.
 
 ## Sample
 

@@ -1,6 +1,6 @@
 ﻿# JsonObjectAttribute NamingStrategy setting
 
-This sample uses [NamingStrategy](/API/newtonsoft/json/serialization/namingstrategy/) types specified on attributes to control serialized property names.
+This sample uses [NamingStrategy](/api/newtonsoft/json/serialization/namingstrategy/) types specified on attributes to control serialized property names.
 
 ## Sample
 
