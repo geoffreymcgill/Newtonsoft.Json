@@ -1,6 +1,6 @@
 ﻿# Using JValue.Value
 
-This sample gets [JValue](/api/newtonsoft/json/linq/jvalue/) internal values using [JValue.Value](/api/newtonsoft/json/linq/jvalue/#property-value).
+This sample gets [JValue](/API/newtonsoft/json/linq/jvalue/) internal values using [JValue.Value](/API/newtonsoft/json/linq/jvalue/#property-value).
 
 ## Sample
 

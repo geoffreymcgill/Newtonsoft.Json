@@ -23,7 +23,7 @@ Json.NET will throw an error if it encounters incorrect JSON when deserializing 
 `String` | String
 `Byte` `SByte` `UInt16` `Int16` `UInt32` `Int32` `UInt64` `Int64` | Integer
 `Float` `Double` `Decimal` | Float
-`Enum` | Integer (can be the enum value name with [StringEnumConverter](/api/newtonsoft/json/converters/stringenumconverter/)
+`Enum` | Integer (can be the enum value name with [StringEnumConverter](/API/newtonsoft/json/converters/stringenumconverter/)
 `DateTime` | String ([Serializing Dates in JSON](DatesInJSON.md))
 `Byte[]` | String (base 64 encoded)
 `Type` | String (type name)
@@ -98,7 +98,7 @@ LINQ to JSON types (e.g. JObject and JArray) are automatically serialized and de
 
 ## JsonConverter
 
-Serialization of values that are convertible by a [JsonConverter](/api/newtonsoft/json/jsonconverter/) (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.
+Serialization of values that are convertible by a [JsonConverter](/API/newtonsoft/json/jsonconverter/) (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.
 
 JsonConverters can be defined and specified in a number of places: in an attribute on a member, in an attribute on a class, and added to the JsonSerializer's converters collection. The priority of which JsonConverter is used is the JsonConverter defined by attribute on a member, then the JsonConverter defined by an attribute on a class, and finally any converters passed to the JsonSerializer.
 
@@ -111,5 +111,5 @@ Because a JsonConverter creates a new value, a converter will not work with read
 - [Serialization Settings](SerializationSettings.md)
 - [Serialization Attributes](SerializationAttributes.md)
 - [Serializing Dates in JSON](DatesInJSON.md)
-- [JsonSerializer](/api/newtonsoft/json/jsonserializer/)
-- [JsonSerializerSettings](/api/newtonsoft/json/jsonserializersettings/)
+- [JsonSerializer](/API/newtonsoft/json/jsonserializer/)
+- [JsonSerializerSettings](/API/newtonsoft/json/jsonserializersettings/)

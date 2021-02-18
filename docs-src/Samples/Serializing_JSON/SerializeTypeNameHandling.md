@@ -1,6 +1,6 @@
 ﻿# TypeNameHandling setting
 
-This sample uses the [TypeNameHandling](/api/newtonsoft/json/typenamehandling/) setting to include type information when serializing JSON and read type information so that the correct types are created when deserializing JSON.
+This sample uses the [TypeNameHandling](/API/newtonsoft/json/typenamehandling/) setting to include type information when serializing JSON and read type information so that the correct types are created when deserializing JSON.
 
 ## Sample
 

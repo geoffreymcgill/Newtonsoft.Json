@@ -1,6 +1,6 @@
 ﻿# Parse JSON Schema from JSON
 
-This sample parses a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) from JSON
+This sample parses a [JsonSchema](/API/newtonsoft/json/schema/jsonschema/) from JSON
 
 :::caution
 **Obsolete.** JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.

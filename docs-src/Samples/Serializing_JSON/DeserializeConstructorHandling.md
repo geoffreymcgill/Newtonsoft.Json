@@ -1,6 +1,6 @@
 ﻿# ConstructorHandling setting
 
-This sample uses the [ConstructorHandling](/api/newtonsoft/json/constructorhandling/) setting to successfully deserialize the class using its non-public constructor.
+This sample uses the [ConstructorHandling](/API/newtonsoft/json/constructorhandling/) setting to successfully deserialize the class using its non-public constructor.
 
 ## Sample
 

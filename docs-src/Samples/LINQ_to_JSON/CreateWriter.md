@@ -1,6 +1,6 @@
 ﻿# Using JToken.CreateWriter
 
-This sample creates a [JTokenWriter](/api/newtonsoft/json/linq/jtokenwriter/) from a [JToken](/api/newtonsoft/json/linq/jtoken/).
+This sample creates a [JTokenWriter](/API/newtonsoft/json/linq/jtokenwriter/) from a [JToken](/API/newtonsoft/json/linq/jtoken/).
 
 ## Sample
 

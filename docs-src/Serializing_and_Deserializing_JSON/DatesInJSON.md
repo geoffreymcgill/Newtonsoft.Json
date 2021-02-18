@@ -8,10 +8,10 @@ The problem comes from the [JSON spec](http://www.ietf.org/rfc/rfc4627.txt) itse
 
 The default format used by Json.NET is the [ISO 8601 standard](http://en.wikipedia.org/wiki/ISO_8601): `"2012-03-19T07:22Z"`.
 
-Prior to Json.NET 4.5 dates were written using the Microsoft format: `"\/Date(1198908717056)\/"`. If you want to use this format, or you want to maintain compatibility with Microsoft JSON serializers or older versions of Json.NET, then change the [DateFormatHandling](/api/newtonsoft/json/dateformathandling/)
+Prior to Json.NET 4.5 dates were written using the Microsoft format: `"\/Date(1198908717056)\/"`. If you want to use this format, or you want to maintain compatibility with Microsoft JSON serializers or older versions of Json.NET, then change the [DateFormatHandling](/API/newtonsoft/json/dateformathandling/)
 setting to MicrosoftDateFormat.
 
-The [DateTimeZoneHandling](/api/newtonsoft/json/datetimezonehandling/) setting can be used to convert a DateTime's [DateTimeKind](T:System.DateTimeKind) when serializing. For example set DateTimeZoneHandling to Utc to serialize all DateTimes as UTC dates. Note that this setting does not effect DateTimeOffsets.
+The [DateTimeZoneHandling](/API/newtonsoft/json/datetimezonehandling/) setting can be used to convert a DateTime's [DateTimeKind](T:System.DateTimeKind) when serializing. For example set DateTimeZoneHandling to Utc to serialize all DateTimes as UTC dates. Note that this setting does not effect DateTimeOffsets.
 
 If your dates don't follow the ISO 8601 standard, then the DateFormatString setting can be used to customize the format of date strings that are read and written using .NET's [custom date and time format syntax](https://msdn.microsoft.com/en-us/library/8kb3ddd4.aspx).
 
@@ -44,7 +44,7 @@ The IsoDateTimeConverter class has a property, DateTimeFormat, to further custom
 
 ## See Also
 
-- [DateFormatHandling](/api/newtonsoft/json/dateformathandling/)
-- [DateTimeZoneHandling](/api/newtonsoft/json/datetimezonehandling/)
-- [JavaScriptDateTimeConverter](/api/newtonsoft/json/converters/javascriptdatetimeconverter/)
-- [IsoDateTimeConverter](/api/newtonsoft/json/converters/isodatetimeconverter/)
+- [DateFormatHandling](/API/newtonsoft/json/dateformathandling/)
+- [DateTimeZoneHandling](/API/newtonsoft/json/datetimezonehandling/)
+- [JavaScriptDateTimeConverter](/API/newtonsoft/json/converters/javascriptdatetimeconverter/)
+- [IsoDateTimeConverter](/API/newtonsoft/json/converters/isodatetimeconverter/)

@@ -1,6 +1,6 @@
 ﻿# Create JSON with JTokenWriter
 
-This sample creates [JObject](/api/newtonsoft/json/linq/jobject/)and [JArray](/api/newtonsoft/json/linq/jarray/) instances using a [JTokenWriter](/api/newtonsoft/json/linq/jtokenwriter/).
+This sample creates [JObject](/API/newtonsoft/json/linq/jobject/)and [JArray](/API/newtonsoft/json/linq/jarray/) instances using a [JTokenWriter](/API/newtonsoft/json/linq/jtokenwriter/).
 
 ## Sample
 

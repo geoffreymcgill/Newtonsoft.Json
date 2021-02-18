@@ -1,6 +1,6 @@
 ﻿# Custom ITraceWriter
 
-This sample creates a custom [ITraceWriter](/api/newtonsoft/json/serialization/itracewriter/) that writes to [NLog](http://nlog-project.org/).
+This sample creates a custom [ITraceWriter](/API/newtonsoft/json/serialization/itracewriter/) that writes to [NLog](http://nlog-project.org/).
 
 ## Sample
 

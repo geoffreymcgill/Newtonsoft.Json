@@ -1,6 +1,6 @@
 ﻿# ObjectCreationHandling setting
 
-This sample deserializes JSON with [ObjectCreationHandling](/api/newtonsoft/json/objectcreationhandling/) set to Replace so that collection values aren't duplicated.
+This sample deserializes JSON with [ObjectCreationHandling](/API/newtonsoft/json/objectcreationhandling/) set to Replace so that collection values aren't duplicated.
 
 ## Sample
 

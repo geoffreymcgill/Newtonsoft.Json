@@ -1,6 +1,6 @@
 ﻿# Serialize with JsonConverters
 
-This sample uses a [JsonConverter](/api/newtonsoft/json/jsonconverter/)
+This sample uses a [JsonConverter](/API/newtonsoft/json/jsonconverter/)
 to customize how JSON is serialized.
 
 ## Sample
