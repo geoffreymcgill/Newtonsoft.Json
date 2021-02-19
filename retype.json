@@ -4,6 +4,10 @@
 
   "base": "/Newtonsoft.Json/",
 
+  "code": {
+    "input": "Src/Newtonsoft.Json"
+  },
+
   "identity": 
   {
     "title": "Json.NET",
