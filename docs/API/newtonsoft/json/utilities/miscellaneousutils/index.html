@@ -208,13 +208,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-assert" name="Assert" returns="void" params="bool, string?" signature="public static void Assert(bool condition, string? message = null)">
+    <doc-member id="method-assert" name="Assert" returns="void" params="bool, Nullable<string>?" signature="public static void Assert(bool condition, Nullable<string>? message = null)">
         <template #name><h3>Assert</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="condition" type="bool"></doc-parameter>
-                <doc-parameter name="message" type="string?"></doc-parameter>
+                <doc-parameter name="message" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -252,7 +252,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getprefix" name="GetPrefix" returns="string?" params="string" signature="public static string? GetPrefix(string qualifiedName)">
+    <doc-member id="method-getprefix" name="GetPrefix" returns="Nullable<string>?" params="string" signature="public static Nullable<string>? GetPrefix(string qualifiedName)">
         <template #name><h3>GetPrefix</h3></template>
 
         <template #parameters>
@@ -262,13 +262,13 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getqualifiednameparts" name="GetQualifiedNameParts" returns="void" params="string, string?, string" signature="public static void GetQualifiedNameParts(string qualifiedName, string? prefix, string localName)">
+    <doc-member id="method-getqualifiednameparts" name="GetQualifiedNameParts" returns="void" params="string, Nullable<string>?, string" signature="public static void GetQualifiedNameParts(string qualifiedName, Nullable<string>? prefix, string localName)">
         <template #name><h3>GetQualifiedNameParts</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="qualifiedName" type="string"></doc-parameter>
-                <doc-parameter name="prefix" type="string?"></doc-parameter>
+                <doc-parameter name="prefix" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="localName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
@@ -284,23 +284,23 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tostring" name="ToString" returns="string" params="object?" signature="public static string ToString(object? value)">
+    <doc-member id="method-tostring" name="ToString" returns="string" params="Nullable<object>?" signature="public static string ToString(Nullable<object>? value)">
         <template #name><h3>ToString</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-valueequals" name="ValueEquals" returns="bool" params="object?, object?" signature="public static bool ValueEquals(object? objA, object? objB)">
+    <doc-member id="method-valueequals" name="ValueEquals" returns="bool" params="Nullable<object>?, Nullable<object>?" signature="public static bool ValueEquals(Nullable<object>? objA, Nullable<object>? objB)">
         <template #name><h3>ValueEquals</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="objA" type="object?"></doc-parameter>
-                <doc-parameter name="objB" type="object?"></doc-parameter>
+                <doc-parameter name="objA" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="objB" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -356,6 +356,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "MiscellaneousUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "MiscellaneousUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"MiscellaneousUtils"}]}] }</script>
     </body>
 </html>

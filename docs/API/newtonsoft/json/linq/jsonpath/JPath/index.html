@@ -242,12 +242,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createpathfilter" name="CreatePathFilter" returns="PathFilter" params="string?, bool" access="private" signature="private static PathFilter CreatePathFilter(string? member, bool scan)">
+    <doc-member id="method-createpathfilter" name="CreatePathFilter" returns="PathFilter" params="Nullable<string>?, bool" access="private" signature="private static PathFilter CreatePathFilter(Nullable<string>? member, bool scan)">
         <template #name><h3>CreatePathFilter</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="member" type="string?"></doc-parameter>
+                <doc-parameter name="member" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="scan" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
@@ -387,22 +387,22 @@
         <template #name><h3>ReadRegexString</h3></template>
     </doc-member>
 
-    <doc-member id="method-tryparseexpression" name="TryParseExpression" returns="bool" params="List<PathFilter>?" access="private" signature="private bool TryParseExpression(List<PathFilter>? expressionPath)">
+    <doc-member id="method-tryparseexpression" name="TryParseExpression" returns="bool" params="Nullable<List<PathFilter>>?" access="private" signature="private bool TryParseExpression(Nullable<List<PathFilter>>? expressionPath)">
         <template #name><h3>TryParseExpression</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="expressionPath" type="List<Newtonsoft.Json.Linq.JsonPath.PathFilter>?"></doc-parameter>
+                <doc-parameter name="expressionPath" type="System.Nullable<List<Newtonsoft.Json.Linq.JsonPath.PathFilter>>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryparsevalue" name="TryParseValue" returns="bool" params="object?" access="private" signature="private bool TryParseValue(object? value)">
+    <doc-member id="method-tryparsevalue" name="TryParseValue" returns="bool" params="Nullable<object>?" access="private" signature="private bool TryParseValue(Nullable<object>? value)">
         <template #name><h3>TryParseValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -458,6 +458,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JPath", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JPath", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JPath"}]}] }</script>
     </body>
 </html>

@@ -247,7 +247,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-deserializerootelementname" name="DeserializeRootElementName" type="string?" signature="public string? DeserializeRootElementName { get; set; }">
+    <doc-member id="property-deserializerootelementname" name="DeserializeRootElementName" type="Nullable<string>?" signature="public Nullable<string>? DeserializeRootElementName { get; set; }">
         <template #name><h3>DeserializeRootElementName</h3></template>
 
 <p>Gets or sets the name of the root element to insert when deserializing to XML if the JSON structure has produced multiple root elements.</p>
@@ -283,7 +283,7 @@ as part of the XML element name.</p>
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-addattribute" name="AddAttribute" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, string, XmlNamespaceManager, string?" access="private" signature="private static void AddAttribute(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string propertyName, string attributeName, XmlNamespaceManager manager, string? attributePrefix)">
+    <doc-member id="method-addattribute" name="AddAttribute" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, string, XmlNamespaceManager, Nullable<string>?" access="private" signature="private static void AddAttribute(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string propertyName, string attributeName, XmlNamespaceManager manager, Nullable<string>? attributePrefix)">
         <template #name><h3>AddAttribute</h3></template>
 
         <template #parameters>
@@ -294,7 +294,7 @@ as part of the XML element name.</p>
                 <doc-parameter name="propertyName" type="string"></doc-parameter>
                 <doc-parameter name="attributeName" type="string"></doc-parameter>
                 <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                <doc-parameter name="attributePrefix" type="string?"></doc-parameter>
+                <doc-parameter name="attributePrefix" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -333,7 +333,7 @@ as part of the XML element name.</p>
 
     </doc-member>
 
-    <doc-member id="method-converttokentoxmlvalue" name="ConvertTokenToXmlValue" returns="string?" params="JsonReader" access="private" signature="private static string? ConvertTokenToXmlValue(JsonReader reader)">
+    <doc-member id="method-converttokentoxmlvalue" name="ConvertTokenToXmlValue" returns="Nullable<string>?" params="JsonReader" access="private" signature="private static Nullable<string>? ConvertTokenToXmlValue(JsonReader reader)">
         <template #name><h3>ConvertTokenToXmlValue</h3></template>
 
         <template #parameters>
@@ -356,20 +356,20 @@ as part of the XML element name.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-createelement">
-        <doc-member id="method-createelement" overload-id="group-createelement" name="CreateElement" returns="IXmlElement" params="string, IXmlDocument, string?, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(string elementName, IXmlDocument document, string? elementPrefix, XmlNamespaceManager manager)">
+        <doc-member id="method-createelement" overload-id="group-createelement" name="CreateElement" returns="IXmlElement" params="string, IXmlDocument, Nullable<string>?, XmlNamespaceManager" access="private" signature="private IXmlElement CreateElement(string elementName, IXmlDocument document, Nullable<string>? elementPrefix, XmlNamespaceManager manager)">
             <template #name><h3>CreateElement</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="elementName" type="string"></doc-parameter>
                     <doc-parameter name="document" type="Newtonsoft.Json.Converters.IXmlDocument"></doc-parameter>
-                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
+                    <doc-parameter name="elementPrefix" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-createelement-1" overload-id="group-createelement" name="CreateElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager, string?, Dictionary<string, string?>?" access="private" signature="private void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string elementName, XmlNamespaceManager manager, string? elementPrefix, Dictionary<string, string?>? attributeNameValues)">
+        <doc-member id="method-createelement-1" overload-id="group-createelement" name="CreateElement" returns="void" params="JsonReader, IXmlDocument, IXmlNode, string, XmlNamespaceManager, Nullable<string>?, Nullable<Dictionary<string, Nullable<string>?>>?" access="private" signature="private void CreateElement(JsonReader reader, IXmlDocument document, IXmlNode currentNode, string elementName, XmlNamespaceManager manager, Nullable<string>? elementPrefix, Nullable<Dictionary<string, Nullable<string>?>>? attributeNameValues)">
             <template #name><h3>CreateElement</h3></template>
 
             <template #parameters>
@@ -379,8 +379,8 @@ as part of the XML element name.</p>
                     <doc-parameter name="currentNode" type="Newtonsoft.Json.Converters.IXmlNode"></doc-parameter>
                     <doc-parameter name="elementName" type="string"></doc-parameter>
                     <doc-parameter name="manager" type="XmlNamespaceManager"></doc-parameter>
-                    <doc-parameter name="elementPrefix" type="string?"></doc-parameter>
-                    <doc-parameter name="attributeNameValues" type="Dictionary<string, string?>?"></doc-parameter>
+                    <doc-parameter name="elementPrefix" type="System.Nullable<string>?"></doc-parameter>
+                    <doc-parameter name="attributeNameValues" type="System.Nullable<Dictionary<string, System.Nullable<string>?>>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -447,13 +447,13 @@ as part of the XML element name.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-isnamespaceattribute" name="IsNamespaceAttribute" returns="bool" params="string, string?" access="private" signature="private bool IsNamespaceAttribute(string attributeName, string? prefix)">
+    <doc-member id="method-isnamespaceattribute" name="IsNamespaceAttribute" returns="bool" params="string, Nullable<string>?" access="private" signature="private bool IsNamespaceAttribute(string attributeName, Nullable<string>? prefix)">
         <template #name><h3>IsNamespaceAttribute</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="attributeName" type="string"></doc-parameter>
-                <doc-parameter name="prefix" type="string?"></doc-parameter>
+                <doc-parameter name="prefix" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -506,7 +506,7 @@ as part of the XML element name.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-readattributeelements" name="ReadAttributeElements" returns="Dictionary<string, string?>?" params="JsonReader, XmlNamespaceManager" access="private" signature="private Dictionary<string, string?>? ReadAttributeElements(JsonReader reader, XmlNamespaceManager manager)">
+    <doc-member id="method-readattributeelements" name="ReadAttributeElements" returns="Nullable<Dictionary<string, Nullable<string>?>>?" params="JsonReader, XmlNamespaceManager" access="private" signature="private Nullable<Dictionary<string, Nullable<string>?>>? ReadAttributeElements(JsonReader reader, XmlNamespaceManager manager)">
         <template #name><h3>ReadAttributeElements</h3></template>
 
         <template #parameters>
@@ -531,14 +531,14 @@ as part of the XML element name.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public sealed object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+    <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public sealed Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
         <template #name><h3>ReadJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
@@ -644,13 +644,13 @@ as part of the XML element name.</p>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, Nullable<object>?, JsonSerializer" signature="public sealed void WriteJson(JsonWriter writer, Nullable<object>? value, JsonSerializer serializer)">
         <template #name><h3>WriteJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
@@ -710,6 +710,6 @@ as part of the XML element name.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "XmlNodeConverter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "XmlNodeConverter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonconverter/","children":[{"label":"XmlNodeConverter"}]}]}] }</script>
     </body>
 </html>

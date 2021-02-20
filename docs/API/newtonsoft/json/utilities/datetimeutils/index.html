@@ -407,28 +407,28 @@
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-tryparsedatetime">
-        <doc-member id="method-tryparsedatetime" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="StringReference, DateTimeZoneHandling, string?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(StringReference s, DateTimeZoneHandling dateTimeZoneHandling, string? dateFormatString, CultureInfo culture, DateTime dt)">
+        <doc-member id="method-tryparsedatetime" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="StringReference, DateTimeZoneHandling, Nullable<string>?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(StringReference s, DateTimeZoneHandling dateTimeZoneHandling, Nullable<string>? dateFormatString, CultureInfo culture, DateTime dt)">
             <template #name><h3>TryParseDateTime</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
                     <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                     <doc-parameter name="dt" type="DateTime"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-tryparsedatetime-1" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="string, DateTimeZoneHandling, string?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(string s, DateTimeZoneHandling dateTimeZoneHandling, string? dateFormatString, CultureInfo culture, DateTime dt)">
+        <doc-member id="method-tryparsedatetime-1" overload-id="group-tryparsedatetime" name="TryParseDateTime" returns="bool" params="string, DateTimeZoneHandling, Nullable<string>?, CultureInfo, DateTime" access="internal" signature="internal static bool TryParseDateTime(string s, DateTimeZoneHandling dateTimeZoneHandling, Nullable<string>? dateFormatString, CultureInfo culture, DateTime dt)">
             <template #name><h3>TryParseDateTime</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="s" type="string"></doc-parameter>
                     <doc-parameter name="dateTimeZoneHandling" type="Newtonsoft.Json.DateTimeZoneHandling"></doc-parameter>
-                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                     <doc-parameter name="dt" type="DateTime"></doc-parameter>
                 </doc-parameters>
@@ -475,26 +475,26 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-tryparsedatetimeoffset">
-        <doc-member id="method-tryparsedatetimeoffset" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="StringReference, string?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(StringReference s, string? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
+        <doc-member id="method-tryparsedatetimeoffset" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="StringReference, Nullable<string>?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(StringReference s, Nullable<string>? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
             <template #name><h3>TryParseDateTimeOffset</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="s" type="Newtonsoft.Json.Utilities.StringReference"></doc-parameter>
-                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                     <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-tryparsedatetimeoffset-1" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="string, string?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(string s, string? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
+        <doc-member id="method-tryparsedatetimeoffset-1" overload-id="group-tryparsedatetimeoffset" name="TryParseDateTimeOffset" returns="bool" params="string, Nullable<string>?, CultureInfo, DateTimeOffset" access="internal" signature="internal static bool TryParseDateTimeOffset(string s, Nullable<string>? dateFormatString, CultureInfo culture, DateTimeOffset dt)">
             <template #name><h3>TryParseDateTimeOffset</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="s" type="string"></doc-parameter>
-                    <doc-parameter name="dateFormatString" type="string?"></doc-parameter>
+                    <doc-parameter name="dateFormatString" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                     <doc-parameter name="dt" type="DateTimeOffset"></doc-parameter>
                 </doc-parameters>
@@ -585,7 +585,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-writedatetimeoffsetstring" name="WriteDateTimeOffsetString" returns="void" params="TextWriter, DateTimeOffset, DateFormatHandling, string?, CultureInfo" access="internal" signature="internal static void WriteDateTimeOffsetString(TextWriter writer, DateTimeOffset value, DateFormatHandling format, string? formatString, CultureInfo culture)">
+    <doc-member id="method-writedatetimeoffsetstring" name="WriteDateTimeOffsetString" returns="void" params="TextWriter, DateTimeOffset, DateFormatHandling, Nullable<string>?, CultureInfo" access="internal" signature="internal static void WriteDateTimeOffsetString(TextWriter writer, DateTimeOffset value, DateFormatHandling format, Nullable<string>? formatString, CultureInfo culture)">
         <template #name><h3>WriteDateTimeOffsetString</h3></template>
 
         <template #parameters>
@@ -593,14 +593,14 @@
                 <doc-parameter name="writer" type="TextWriter"></doc-parameter>
                 <doc-parameter name="value" type="DateTimeOffset"></doc-parameter>
                 <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-                <doc-parameter name="formatString" type="string?"></doc-parameter>
+                <doc-parameter name="formatString" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-writedatetimestring">
-        <doc-member id="method-writedatetimestring" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="void" params="TextWriter, DateTime, DateFormatHandling, string?, CultureInfo" access="internal" signature="internal static void WriteDateTimeString(TextWriter writer, DateTime value, DateFormatHandling format, string? formatString, CultureInfo culture)">
+        <doc-member id="method-writedatetimestring" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="void" params="TextWriter, DateTime, DateFormatHandling, Nullable<string>?, CultureInfo" access="internal" signature="internal static void WriteDateTimeString(TextWriter writer, DateTime value, DateFormatHandling format, Nullable<string>? formatString, CultureInfo culture)">
             <template #name><h3>WriteDateTimeString</h3></template>
 
             <template #parameters>
@@ -608,13 +608,13 @@
                     <doc-parameter name="writer" type="TextWriter"></doc-parameter>
                     <doc-parameter name="value" type="DateTime"></doc-parameter>
                     <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
-                    <doc-parameter name="formatString" type="string?"></doc-parameter>
+                    <doc-parameter name="formatString" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-writedatetimestring-1" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="int" params="char[], int, DateTime, TimeSpan?, DateTimeKind, DateFormatHandling" access="internal" signature="internal static int WriteDateTimeString(char[] chars, int start, DateTime value, TimeSpan? offset, DateTimeKind kind, DateFormatHandling format)">
+        <doc-member id="method-writedatetimestring-1" overload-id="group-writedatetimestring" name="WriteDateTimeString" returns="int" params="char[], int, DateTime, Nullable<TimeSpan>?, DateTimeKind, DateFormatHandling" access="internal" signature="internal static int WriteDateTimeString(char[] chars, int start, DateTime value, Nullable<TimeSpan>? offset, DateTimeKind kind, DateFormatHandling format)">
             <template #name><h3>WriteDateTimeString</h3></template>
 
             <template #parameters>
@@ -622,7 +622,7 @@
                     <doc-parameter name="chars" type="char[]"></doc-parameter>
                     <doc-parameter name="start" type="int"></doc-parameter>
                     <doc-parameter name="value" type="DateTime"></doc-parameter>
-                    <doc-parameter name="offset" type="TimeSpan?"></doc-parameter>
+                    <doc-parameter name="offset" type="System.Nullable<TimeSpan>?"></doc-parameter>
                     <doc-parameter name="kind" type="DateTimeKind"></doc-parameter>
                     <doc-parameter name="format" type="Newtonsoft.Json.DateFormatHandling"></doc-parameter>
                 </doc-parameters>
@@ -693,6 +693,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "DateTimeUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "DateTimeUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"DateTimeUtils"}]}] }</script>
     </body>
 </html>

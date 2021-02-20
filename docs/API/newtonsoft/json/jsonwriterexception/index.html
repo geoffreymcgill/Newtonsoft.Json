@@ -211,7 +211,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-path" name="Path" type="string?" signature="public string? Path { get; }">
+    <doc-member id="property-path" name="Path" type="Nullable<string>?" signature="public Nullable<string>? Path { get; }">
         <template #name><h3>Path</h3></template>
 
 <p>Gets the path to the JSON where the error occurred.</p>
@@ -273,14 +273,14 @@ with a specified error message and a reference to the inner exception that is th
 
         </doc-member>
 
-        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="string, string, Exception?" signature="public JsonWriterException(string message, string path, Exception? innerException)">
+        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="string, string, Nullable<Exception>?" signature="public JsonWriterException(string message, string path, Nullable<Exception>? innerException)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="message" type="string"></doc-parameter>
                     <doc-parameter name="path" type="string"></doc-parameter>
-                    <doc-parameter name="innerException" type="Exception?"></doc-parameter>
+                    <doc-parameter name="innerException" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -291,26 +291,26 @@ with a specified error message, JSON path and a reference to the inner exception
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-create">
-        <doc-member id="method-create" overload-id="group-create" name="Create" returns="JsonWriterException" params="string, string, Exception?" access="internal" signature="internal static JsonWriterException Create(string path, string message, Exception? ex)">
+        <doc-member id="method-create" overload-id="group-create" name="Create" returns="JsonWriterException" params="string, string, Nullable<Exception>?" access="internal" signature="internal static JsonWriterException Create(string path, string message, Nullable<Exception>? ex)">
             <template #name><h3>Create</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="path" type="string"></doc-parameter>
                     <doc-parameter name="message" type="string"></doc-parameter>
-                    <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                    <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-create-1" overload-id="group-create" name="Create" returns="JsonWriterException" params="JsonWriter, string, Exception?" access="internal" signature="internal static JsonWriterException Create(JsonWriter writer, string message, Exception? ex)">
+        <doc-member id="method-create-1" overload-id="group-create" name="Create" returns="JsonWriterException" params="JsonWriter, string, Nullable<Exception>?" access="internal" signature="internal static JsonWriterException Create(JsonWriter writer, string message, Nullable<Exception>? ex)">
             <template #name><h3>Create</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
                     <doc-parameter name="message" type="string"></doc-parameter>
-                    <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                    <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -367,6 +367,6 @@ with a specified error message, JSON path and a reference to the inner exception
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonWriterException", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonWriterException", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonException","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonexception/","children":[{"label":"JsonWriterException"}]}]}] }</script>
     </body>
 </html>

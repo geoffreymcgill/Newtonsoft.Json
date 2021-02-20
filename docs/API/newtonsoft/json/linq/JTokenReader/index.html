@@ -215,7 +215,7 @@
         <template #name><h3>_root</h3></template>
     </doc-member>
 
-    <doc-member id="field-_initialpath" name="_initialPath" type="string?" access="private" signature="private string? _initialPath">
+    <doc-member id="field-_initialpath" name="_initialPath" type="Nullable<string>?" access="private" signature="private Nullable<string>? _initialPath">
         <template #name><h3>_initialPath</h3></template>
     </doc-member>
 
@@ -278,7 +278,7 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getendtoken" name="GetEndToken" returns="JsonToken?" params="JContainer" access="private" signature="private JsonToken? GetEndToken(JContainer c)">
+    <doc-member id="method-getendtoken" name="GetEndToken" returns="Nullable<JsonToken>?" params="JContainer" access="private" signature="private Nullable<JsonToken>? GetEndToken(JContainer c)">
         <template #name><h3>GetEndToken</h3></template>
 
         <template #parameters>
@@ -319,12 +319,12 @@
         <template #name><h3>ReadToEnd</h3></template>
     </doc-member>
 
-    <doc-member id="method-safetostring" name="SafeToString" returns="string?" params="object?" access="private" signature="private string? SafeToString(object? value)">
+    <doc-member id="method-safetostring" name="SafeToString" returns="Nullable<string>?" params="Nullable<object>?" access="private" signature="private Nullable<string>? SafeToString(Nullable<object>? value)">
         <template #name><h3>SafeToString</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -400,6 +400,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JTokenReader", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JTokenReader", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonReader","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonreader/","children":[{"label":"JTokenReader"}]}]}] }</script>
     </body>
 </html>

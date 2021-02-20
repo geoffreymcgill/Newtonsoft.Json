@@ -226,24 +226,24 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, string?, string?" signature="public void BindToName(Type serializedType, string? assemblyName, string? typeName)">
+    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, Nullable<string>?, Nullable<string>?" signature="public void BindToName(Type serializedType, Nullable<string>? assemblyName, Nullable<string>? typeName)">
         <template #name><h3>BindToName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="serializedType" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
-                <doc-parameter name="typeName" type="string?"></doc-parameter>
+                <doc-parameter name="assemblyName" type="System.Nullable<string>?"></doc-parameter>
+                <doc-parameter name="typeName" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="string?, string" signature="public Type BindToType(string? assemblyName, string typeName)">
+    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="Nullable<string>?, string" signature="public Type BindToType(Nullable<string>? assemblyName, string typeName)">
         <template #name><h3>BindToType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="assemblyName" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="typeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
@@ -300,6 +300,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "SerializationBinderAdapter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "SerializationBinderAdapter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"SerializationBinderAdapter"}]}] }</script>
     </body>
 </html>

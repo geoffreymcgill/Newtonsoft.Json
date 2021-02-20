@@ -254,27 +254,27 @@
         <template #name><h3>ClearErrorContext</h3></template>
     </doc-member>
 
-    <doc-member id="method-geterrorcontext" name="GetErrorContext" returns="ErrorContext" params="object?, object?, string, Exception" access="private" signature="private ErrorContext GetErrorContext(object? currentObject, object? member, string path, Exception error)">
+    <doc-member id="method-geterrorcontext" name="GetErrorContext" returns="ErrorContext" params="Nullable<object>?, Nullable<object>?, string, Exception" access="private" signature="private ErrorContext GetErrorContext(Nullable<object>? currentObject, Nullable<object>? member, string path, Exception error)">
         <template #name><h3>GetErrorContext</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentObject" type="object?"></doc-parameter>
-                <doc-parameter name="member" type="object?"></doc-parameter>
+                <doc-parameter name="currentObject" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="member" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="error" type="Exception"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-iserrorhandled" name="IsErrorHandled" returns="bool" params="object?, JsonContract?, object?, IJsonLineInfo?, string, Exception" access="protected" signature="protected bool IsErrorHandled(object? currentObject, JsonContract? contract, object? keyValue, IJsonLineInfo? lineInfo, string path, Exception ex)">
+    <doc-member id="method-iserrorhandled" name="IsErrorHandled" returns="bool" params="Nullable<object>?, JsonContract?, Nullable<object>?, IJsonLineInfo?, string, Exception" access="protected" signature="protected bool IsErrorHandled(Nullable<object>? currentObject, JsonContract? contract, Nullable<object>? keyValue, IJsonLineInfo? lineInfo, string path, Exception ex)">
         <template #name><h3>IsErrorHandled</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="currentObject" type="object?"></doc-parameter>
+                <doc-parameter name="currentObject" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
-                <doc-parameter name="keyValue" type="object?"></doc-parameter>
+                <doc-parameter name="keyValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
                 <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="ex" type="Exception"></doc-parameter>
@@ -344,6 +344,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonSerializerInternalBase", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonSerializerInternalBase", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonSerializerInternalBase","children":[{"label":"JsonSerializerInternalReader","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsonserializerinternalreader/"},{"label":"JsonSerializerInternalWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsonserializerinternalwriter/"}]}]}] }</script>
     </body>
 </html>

@@ -225,7 +225,7 @@
 
     </doc-member>
 
-    <doc-member id="property-path" name="Path" type="string?" signature="public string? Path { get; }">
+    <doc-member id="property-path" name="Path" type="Nullable<string>?" signature="public Nullable<string>? Path { get; }">
         <template #name><h3>Path</h3></template>
 
 <p>Gets the path to the JSON where the error occurred.</p>
@@ -287,7 +287,7 @@ with a specified error message and a reference to the inner exception that is th
 
         </doc-member>
 
-        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="string, string, int, int, Exception?" signature="public JsonReaderException(string message, string path, int lineNumber, int linePosition, Exception? innerException)">
+        <doc-member id="method-.ctor-4" overload-id="group-.ctor" name=".ctor" returns="void" params="string, string, int, int, Nullable<Exception>?" signature="public JsonReaderException(string message, string path, int lineNumber, int linePosition, Nullable<Exception>? innerException)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -296,7 +296,7 @@ with a specified error message and a reference to the inner exception that is th
                     <doc-parameter name="path" type="string"></doc-parameter>
                     <doc-parameter name="lineNumber" type="int"></doc-parameter>
                     <doc-parameter name="linePosition" type="int"></doc-parameter>
-                    <doc-parameter name="innerException" type="Exception?"></doc-parameter>
+                    <doc-parameter name="innerException" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -318,19 +318,19 @@ with a specified error message, JSON path, line number, line position, and a ref
             </template>
         </doc-member>
 
-        <doc-member id="method-create-1" overload-id="group-create" name="Create" returns="JsonReaderException" params="JsonReader, string, Exception?" access="internal" signature="internal static JsonReaderException Create(JsonReader reader, string message, Exception? ex)">
+        <doc-member id="method-create-1" overload-id="group-create" name="Create" returns="JsonReaderException" params="JsonReader, string, Nullable<Exception>?" access="internal" signature="internal static JsonReaderException Create(JsonReader reader, string message, Nullable<Exception>? ex)">
             <template #name><h3>Create</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                     <doc-parameter name="message" type="string"></doc-parameter>
-                    <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                    <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
 
-        <doc-member id="method-create-2" overload-id="group-create" name="Create" returns="JsonReaderException" params="IJsonLineInfo?, string, string, Exception?" access="internal" signature="internal static JsonReaderException Create(IJsonLineInfo? lineInfo, string path, string message, Exception? ex)">
+        <doc-member id="method-create-2" overload-id="group-create" name="Create" returns="JsonReaderException" params="IJsonLineInfo?, string, string, Nullable<Exception>?" access="internal" signature="internal static JsonReaderException Create(IJsonLineInfo? lineInfo, string path, string message, Nullable<Exception>? ex)">
             <template #name><h3>Create</h3></template>
 
             <template #parameters>
@@ -338,7 +338,7 @@ with a specified error message, JSON path, line number, line position, and a ref
                     <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
                     <doc-parameter name="path" type="string"></doc-parameter>
                     <doc-parameter name="message" type="string"></doc-parameter>
-                    <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                    <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -395,6 +395,6 @@ with a specified error message, JSON path, line number, line position, and a ref
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonReaderException", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonReaderException", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonException","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonexception/","children":[{"label":"JsonReaderException"}]}]}] }</script>
     </body>
 </html>

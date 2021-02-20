@@ -490,7 +490,7 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
-    <doc-member id="method-createshouldserializetest" name="CreateShouldSerializeTest" returns="Predicate<object>?" params="MemberInfo" access="private" signature="private Predicate<object>? CreateShouldSerializeTest(MemberInfo member)">
+    <doc-member id="method-createshouldserializetest" name="CreateShouldSerializeTest" returns="Nullable<Predicate<object>>?" params="MemberInfo" access="private" signature="private Nullable<Predicate<object>>? CreateShouldSerializeTest(MemberInfo member)">
         <template #name><h3>CreateShouldSerializeTest</h3></template>
 
         <template #parameters>
@@ -523,7 +523,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-getattributeconstructor" name="GetAttributeConstructor" returns="ConstructorInfo?" params="Type" access="private" signature="private ConstructorInfo? GetAttributeConstructor(Type objectType)">
+    <doc-member id="method-getattributeconstructor" name="GetAttributeConstructor" returns="Nullable<ConstructorInfo>?" params="Type" access="private" signature="private Nullable<ConstructorInfo>? GetAttributeConstructor(Type objectType)">
         <template #name><h3>GetAttributeConstructor</h3></template>
 
         <template #parameters>
@@ -533,17 +533,17 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-getcallbackmethodsfortype" name="GetCallbackMethodsForType" returns="void" params="Type, List<SerializationCallback>?, List<SerializationCallback>?, List<SerializationCallback>?, List<SerializationCallback>?, List<SerializationErrorCallback>?" access="private" signature="private void GetCallbackMethodsForType(Type type, List<SerializationCallback>? onSerializing, List<SerializationCallback>? onSerialized, List<SerializationCallback>? onDeserializing, List<SerializationCallback>? onDeserialized, List<SerializationErrorCallback>? onError)">
+    <doc-member id="method-getcallbackmethodsfortype" name="GetCallbackMethodsForType" returns="void" params="Type, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationErrorCallback>>?" access="private" signature="private void GetCallbackMethodsForType(Type type, Nullable<List<SerializationCallback>>? onSerializing, Nullable<List<SerializationCallback>>? onSerialized, Nullable<List<SerializationCallback>>? onDeserializing, Nullable<List<SerializationCallback>>? onDeserialized, Nullable<List<SerializationErrorCallback>>? onError)">
         <template #name><h3>GetCallbackMethodsForType</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="onSerializing" type="List<Newtonsoft.Json.Serialization.SerializationCallback>?"></doc-parameter>
-                <doc-parameter name="onSerialized" type="List<Newtonsoft.Json.Serialization.SerializationCallback>?"></doc-parameter>
-                <doc-parameter name="onDeserializing" type="List<Newtonsoft.Json.Serialization.SerializationCallback>?"></doc-parameter>
-                <doc-parameter name="onDeserialized" type="List<Newtonsoft.Json.Serialization.SerializationCallback>?"></doc-parameter>
-                <doc-parameter name="onError" type="List<Newtonsoft.Json.Serialization.SerializationErrorCallback>?"></doc-parameter>
+                <doc-parameter name="onSerializing" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
+                <doc-parameter name="onSerialized" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
+                <doc-parameter name="onDeserializing" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
+                <doc-parameter name="onDeserialized" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
+                <doc-parameter name="onError" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationErrorCallback>>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -588,7 +588,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-getimmutableconstructor" name="GetImmutableConstructor" returns="ConstructorInfo?" params="Type, JsonPropertyCollection" access="private" signature="private ConstructorInfo? GetImmutableConstructor(Type objectType, JsonPropertyCollection memberProperties)">
+    <doc-member id="method-getimmutableconstructor" name="GetImmutableConstructor" returns="Nullable<ConstructorInfo>?" params="Type, JsonPropertyCollection" access="private" signature="private Nullable<ConstructorInfo>? GetImmutableConstructor(Type objectType, JsonPropertyCollection memberProperties)">
         <template #name><h3>GetImmutableConstructor</h3></template>
 
         <template #parameters>
@@ -603,7 +603,7 @@ This value is determined by the runtime permissions available.</p>
         <template #name><h3>GetNameTable</h3></template>
     </doc-member>
 
-    <doc-member id="method-getparameterizedconstructor" name="GetParameterizedConstructor" returns="ConstructorInfo?" params="Type" access="private" signature="private ConstructorInfo? GetParameterizedConstructor(Type objectType)">
+    <doc-member id="method-getparameterizedconstructor" name="GetParameterizedConstructor" returns="Nullable<ConstructorInfo>?" params="Type" access="private" signature="private Nullable<ConstructorInfo>? GetParameterizedConstructor(Type objectType)">
         <template #name><h3>GetParameterizedConstructor</h3></template>
 
         <template #parameters>
@@ -679,7 +679,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-isvalidcallback" name="IsValidCallback" returns="bool" params="MethodInfo, ParameterInfo[], Type, MethodInfo?, Type?" access="private" signature="private static bool IsValidCallback(MethodInfo method, ParameterInfo[] parameters, Type attributeType, MethodInfo? currentCallback, Type? prevAttributeType)">
+    <doc-member id="method-isvalidcallback" name="IsValidCallback" returns="bool" params="MethodInfo, ParameterInfo[], Type, Nullable<MethodInfo>?, Nullable<Type>?" access="private" signature="private static bool IsValidCallback(MethodInfo method, ParameterInfo[] parameters, Type attributeType, Nullable<MethodInfo>? currentCallback, Nullable<Type>? prevAttributeType)">
         <template #name><h3>IsValidCallback</h3></template>
 
         <template #parameters>
@@ -687,8 +687,8 @@ This value is determined by the runtime permissions available.</p>
                 <doc-parameter name="method" type="MethodInfo"></doc-parameter>
                 <doc-parameter name="parameters" type="ParameterInfo[]"></doc-parameter>
                 <doc-parameter name="attributeType" type="Type"></doc-parameter>
-                <doc-parameter name="currentCallback" type="MethodInfo?"></doc-parameter>
-                <doc-parameter name="prevAttributeType" type="Type?"></doc-parameter>
+                <doc-parameter name="currentCallback" type="System.Nullable<MethodInfo>?"></doc-parameter>
+                <doc-parameter name="prevAttributeType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -911,6 +911,6 @@ This value is determined by the runtime permissions available.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "DefaultContractResolver", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "DefaultContractResolver", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"DefaultContractResolver","children":[{"label":"CamelCasePropertyNamesContractResolver","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/"}]}]}] }</script>
     </body>
 </html>

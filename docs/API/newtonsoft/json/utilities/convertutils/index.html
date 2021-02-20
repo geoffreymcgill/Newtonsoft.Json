@@ -216,7 +216,7 @@
         <template #name><h3>PrimitiveTypeCodes</h3></template>
     </doc-member>
 
-    <doc-member id="field-castconverters" name="CastConverters" type="ThreadSafeStore<StructMultiKey<Type, Type>, Func<object?, object?>?>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Func<object?, object?>?> CastConverters">
+    <doc-member id="field-castconverters" name="CastConverters" type="ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?> CastConverters">
         <template #name><h3>CastConverters</h3></template>
     </doc-member>
 </doc-member-group>
@@ -236,12 +236,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-convertorcast" name="ConvertOrCast" returns="object?" params="object?, CultureInfo, Type" signature="public static object? ConvertOrCast(object? initialValue, CultureInfo culture, Type targetType)">
+    <doc-member id="method-convertorcast" name="ConvertOrCast" returns="Nullable<object>?" params="Nullable<object>?, CultureInfo, Type" signature="public static Nullable<object>? ConvertOrCast(Nullable<object>? initialValue, CultureInfo culture, Type targetType)">
         <template #name><h3>ConvertOrCast</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialValue" type="object?"></doc-parameter>
+                <doc-parameter name="initialValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
@@ -252,7 +252,7 @@ value is checked whether it assignable to the specified type.</p>
 
     </doc-member>
 
-    <doc-member id="method-createcastconverter" name="CreateCastConverter" returns="Func<object?, object?>?" params="StructMultiKey<Type, Type>" access="private" signature="private static Func<object?, object?>? CreateCastConverter(StructMultiKey<Type, Type> t)">
+    <doc-member id="method-createcastconverter" name="CreateCastConverter" returns="Nullable<Func<Nullable<object>?, Nullable<object>?>>?" params="StructMultiKey<Type, Type>" access="private" signature="private static Nullable<Func<Nullable<object>?, Nullable<object>?>>? CreateCastConverter(StructMultiKey<Type, Type> t)">
         <template #name><h3>CreateCastConverter</h3></template>
 
         <template #parameters>
@@ -275,12 +275,12 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-ensuretypeassignable" name="EnsureTypeAssignable" returns="object?" params="object?, Type, Type" access="private" signature="private static object? EnsureTypeAssignable(object? value, Type initialType, Type targetType)">
+    <doc-member id="method-ensuretypeassignable" name="EnsureTypeAssignable" returns="Nullable<object>?" params="Nullable<object>?, Type, Type" access="private" signature="private static Nullable<object>? EnsureTypeAssignable(Nullable<object>? value, Type initialType, Type targetType)">
         <template #name><h3>EnsureTypeAssignable</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="initialType" type="Type"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
             </doc-parameters>
@@ -397,15 +397,15 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="object?, CultureInfo, Type, object?" access="private" signature="private static bool TryConvert(object? initialValue, CultureInfo culture, Type targetType, object? value)">
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static bool TryConvert(Nullable<object>? initialValue, CultureInfo culture, Type targetType, Nullable<object>? value)">
         <template #name><h3>TryConvert</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialValue" type="object?"></doc-parameter>
+                <doc-parameter name="initialValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -421,15 +421,15 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="ConvertResult" params="object?, CultureInfo, Type, object?" access="private" signature="private static ConvertResult TryConvertInternal(object? initialValue, CultureInfo culture, Type targetType, object? value)">
+    <doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="ConvertResult" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static ConvertResult TryConvertInternal(Nullable<object>? initialValue, CultureInfo culture, Type targetType, Nullable<object>? value)">
         <template #name><h3>TryConvertInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="initialValue" type="object?"></doc-parameter>
+                <doc-parameter name="initialValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="targetType" type="Type"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -447,13 +447,13 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-versiontryparse" name="VersionTryParse" returns="bool" params="string, Version?" signature="public static bool VersionTryParse(string input, Version? result)">
+    <doc-member id="method-versiontryparse" name="VersionTryParse" returns="bool" params="string, Nullable<Version>?" signature="public static bool VersionTryParse(string input, Nullable<Version>? result)">
         <template #name><h3>VersionTryParse</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="input" type="string"></doc-parameter>
-                <doc-parameter name="result" type="Version?"></doc-parameter>
+                <doc-parameter name="result" type="System.Nullable<Version>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -509,6 +509,6 @@ value is checked whether it assignable to the specified type.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ConvertUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ConvertUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ConvertUtils"}]}] }</script>
     </body>
 </html>

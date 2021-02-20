@@ -208,12 +208,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-argumentnotnull" name="ArgumentNotNull" returns="void" params="object?, string" signature="public static void ArgumentNotNull(object? value, string parameterName)">
+    <doc-member id="method-argumentnotnull" name="ArgumentNotNull" returns="void" params="Nullable<object>?, string" signature="public static void ArgumentNotNull(Nullable<object>? value, string parameterName)">
         <template #name><h3>ArgumentNotNull</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="parameterName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
@@ -270,6 +270,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ValidationUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ValidationUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ValidationUtils"}]}] }</script>
     </body>
 </html>

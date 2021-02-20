@@ -220,7 +220,7 @@
         <template #name><h3>Position</h3></template>
     </doc-member>
 
-    <doc-member id="field-propertyname" name="PropertyName" type="string?" access="internal" signature="internal string? PropertyName">
+    <doc-member id="field-propertyname" name="PropertyName" type="Nullable<string>?" access="internal" signature="internal Nullable<string>? PropertyName">
         <template #name><h3>PropertyName</h3></template>
     </doc-member>
 
@@ -242,13 +242,13 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-buildpath" name="BuildPath" returns="string" params="List<JsonPosition>, JsonPosition?" access="internal" signature="internal static string BuildPath(List<JsonPosition> positions, JsonPosition? currentPosition)">
+    <doc-member id="method-buildpath" name="BuildPath" returns="string" params="List<JsonPosition>, Nullable<JsonPosition>?" access="internal" signature="internal static string BuildPath(List<JsonPosition> positions, Nullable<JsonPosition>? currentPosition)">
         <template #name><h3>BuildPath</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="positions" type="List<Newtonsoft.Json.JsonPosition>"></doc-parameter>
-                <doc-parameter name="currentPosition" type="Newtonsoft.Json.JsonPosition?"></doc-parameter>
+                <doc-parameter name="currentPosition" type="System.Nullable<Newtonsoft.Json.JsonPosition>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -279,13 +279,13 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-writeto" name="WriteTo" returns="void" params="StringBuilder, StringWriter?, char[]" access="internal" signature="internal void WriteTo(StringBuilder sb, StringWriter? writer, char[] buffer)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="StringBuilder, Nullable<StringWriter>?, char[]" access="internal" signature="internal void WriteTo(StringBuilder sb, Nullable<StringWriter>? writer, char[] buffer)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="sb" type="StringBuilder"></doc-parameter>
-                <doc-parameter name="writer" type="StringWriter?"></doc-parameter>
+                <doc-parameter name="writer" type="System.Nullable<StringWriter>?"></doc-parameter>
                 <doc-parameter name="buffer" type="char[]"></doc-parameter>
             </doc-parameters>
         </template>
@@ -342,6 +342,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonPosition", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonPosition", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonPosition"}]}] }</script>
     </body>
 </html>

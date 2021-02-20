@@ -309,20 +309,20 @@ Note that this is used by all builds, even those that don't support immutable co
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-trybuildimmutableforarraycontract" name="TryBuildImmutableForArrayContract" returns="bool" params="Type, Type, Type?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForArrayContract(Type underlyingType, Type collectionItemType, Type? createdType, ObjectConstructor<object>? parameterizedCreator)">
+    <doc-member id="method-trybuildimmutableforarraycontract" name="TryBuildImmutableForArrayContract" returns="bool" params="Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForArrayContract(Type underlyingType, Type collectionItemType, Nullable<Type>? createdType, ObjectConstructor<object>? parameterizedCreator)">
         <template #name><h3>TryBuildImmutableForArrayContract</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="underlyingType" type="Type"></doc-parameter>
                 <doc-parameter name="collectionItemType" type="Type"></doc-parameter>
-                <doc-parameter name="createdType" type="Type?"></doc-parameter>
+                <doc-parameter name="createdType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="parameterizedCreator" type="Newtonsoft.Json.Serialization.ObjectConstructor<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-trybuildimmutablefordictionarycontract" name="TryBuildImmutableForDictionaryContract" returns="bool" params="Type, Type, Type, Type?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForDictionaryContract(Type underlyingType, Type keyItemType, Type valueItemType, Type? createdType, ObjectConstructor<object>? parameterizedCreator)">
+    <doc-member id="method-trybuildimmutablefordictionarycontract" name="TryBuildImmutableForDictionaryContract" returns="bool" params="Type, Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForDictionaryContract(Type underlyingType, Type keyItemType, Type valueItemType, Nullable<Type>? createdType, ObjectConstructor<object>? parameterizedCreator)">
         <template #name><h3>TryBuildImmutableForDictionaryContract</h3></template>
 
         <template #parameters>
@@ -330,7 +330,7 @@ Note that this is used by all builds, even those that don't support immutable co
                 <doc-parameter name="underlyingType" type="Type"></doc-parameter>
                 <doc-parameter name="keyItemType" type="Type"></doc-parameter>
                 <doc-parameter name="valueItemType" type="Type"></doc-parameter>
-                <doc-parameter name="createdType" type="Type?"></doc-parameter>
+                <doc-parameter name="createdType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="parameterizedCreator" type="Newtonsoft.Json.Serialization.ObjectConstructor<object>?"></doc-parameter>
             </doc-parameters>
         </template>
@@ -387,6 +387,6 @@ Note that this is used by all builds, even those that don't support immutable co
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ImmutableCollectionsUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ImmutableCollectionsUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ImmutableCollectionsUtils"}]}] }</script>
     </body>
 </html>

@@ -215,7 +215,7 @@
         <template #name><h3>Instance</h3></template>
     </doc-member>
 
-    <doc-member id="field-_typecache" name="_typeCache" type="ThreadSafeStore<StructMultiKey<string?, string>, Type>" access="private" signature="private readonly ThreadSafeStore<StructMultiKey<string?, string>, Type> _typeCache">
+    <doc-member id="field-_typecache" name="_typeCache" type="ThreadSafeStore<StructMultiKey<Nullable<string>?, string>, Type>" access="private" signature="private readonly ThreadSafeStore<StructMultiKey<Nullable<string>?, string>, Type> _typeCache">
         <template #name><h3>_typeCache</h3></template>
     </doc-member>
 </doc-member-group>
@@ -230,14 +230,14 @@
 
     </doc-member>
 
-    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, string?, string?" signature="public sealed void BindToName(Type serializedType, string? assemblyName, string? typeName)">
+    <doc-member id="method-bindtoname" name="BindToName" returns="void" params="Type, Nullable<string>?, Nullable<string>?" signature="public sealed void BindToName(Type serializedType, Nullable<string>? assemblyName, Nullable<string>? typeName)">
         <template #name><h3>BindToName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="serializedType" type="Type"></doc-parameter>
-                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
-                <doc-parameter name="typeName" type="string?"></doc-parameter>
+                <doc-parameter name="assemblyName" type="System.Nullable<string>?"></doc-parameter>
+                <doc-parameter name="typeName" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -245,12 +245,12 @@
 
     </doc-member>
 
-    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="string?, string" signature="public sealed Type BindToType(string? assemblyName, string typeName)">
+    <doc-member id="method-bindtotype" name="BindToType" returns="Type" params="Nullable<string>?, string" signature="public sealed Type BindToType(Nullable<string>? assemblyName, string typeName)">
         <template #name><h3>BindToType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="assemblyName" type="string?"></doc-parameter>
+                <doc-parameter name="assemblyName" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="typeName" type="string"></doc-parameter>
             </doc-parameters>
         </template>
@@ -259,7 +259,7 @@
 
     </doc-member>
 
-    <doc-member id="method-getgenerictypefromtypename" name="GetGenericTypeFromTypeName" returns="Type?" params="string, Assembly" access="private" signature="private Type? GetGenericTypeFromTypeName(string typeName, Assembly assembly)">
+    <doc-member id="method-getgenerictypefromtypename" name="GetGenericTypeFromTypeName" returns="Nullable<Type>?" params="string, Assembly" access="private" signature="private Nullable<Type>? GetGenericTypeFromTypeName(string typeName, Assembly assembly)">
         <template #name><h3>GetGenericTypeFromTypeName</h3></template>
 
         <template #parameters>
@@ -270,22 +270,22 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-gettypebyname" name="GetTypeByName" returns="Type" params="StructMultiKey<string?, string>" access="private" signature="private Type GetTypeByName(StructMultiKey<string?, string> typeNameKey)">
+    <doc-member id="method-gettypebyname" name="GetTypeByName" returns="Type" params="StructMultiKey<Nullable<string>?, string>" access="private" signature="private Type GetTypeByName(StructMultiKey<Nullable<string>?, string> typeNameKey)">
         <template #name><h3>GetTypeByName</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<string?, string>"></doc-parameter>
+                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<string>?, string>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-gettypefromtypenamekey" name="GetTypeFromTypeNameKey" returns="Type" params="StructMultiKey<string?, string>" access="private" signature="private Type GetTypeFromTypeNameKey(StructMultiKey<string?, string> typeNameKey)">
+    <doc-member id="method-gettypefromtypenamekey" name="GetTypeFromTypeNameKey" returns="Type" params="StructMultiKey<Nullable<string>?, string>" access="private" signature="private Type GetTypeFromTypeNameKey(StructMultiKey<Nullable<string>?, string> typeNameKey)">
         <template #name><h3>GetTypeFromTypeNameKey</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<string?, string>"></doc-parameter>
+                <doc-parameter name="typeNameKey" type="Newtonsoft.Json.Utilities.StructMultiKey<System.Nullable<string>?, string>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -341,6 +341,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "DefaultSerializationBinder", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "DefaultSerializationBinder", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"DefaultSerializationBinder"}]}] }</script>
     </body>
 </html>

@@ -219,7 +219,7 @@
         <template #name><h3>StateArrayTempate</h3></template>
     </doc-member>
 
-    <doc-member id="field-_stack" name="_stack" type="List<JsonPosition>?" access="private" signature="private List<JsonPosition>? _stack">
+    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
         <template #name><h3>_stack</h3></template>
     </doc-member>
 
@@ -251,11 +251,11 @@
         <template #name><h3>_floatFormatHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="string?" access="private" signature="private string? _dateFormatString">
+    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
         <template #name><h3>_dateFormatString</h3></template>
     </doc-member>
 
-    <doc-member id="field-_culture" name="_culture" type="CultureInfo?" access="private" signature="private CultureInfo? _culture">
+    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
         <template #name><h3>_culture</h3></template>
     </doc-member>
 </doc-member-group>
@@ -339,7 +339,7 @@ are written to JSON text.</p>
 
     </doc-member>
 
-    <doc-member id="property-dateformatstring" name="DateFormatString" type="string?" signature="public string? DateFormatString { get; set; }">
+    <doc-member id="property-dateformatstring" name="DateFormatString" type="Nullable<string>?" signature="public Nullable<string>? DateFormatString { get; set; }">
         <template #name><h3>DateFormatString</h3></template>
 
 <p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text.</p>
@@ -723,12 +723,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
         <template #name><h3>UpdateScopeWithFinishedValue</h3></template>
     </doc-member>
 
-    <doc-member id="method-writecomment" name="WriteComment" returns="void" params="string?" signature="public virtual void WriteComment(string? text)">
+    <doc-member id="method-writecomment" name="WriteComment" returns="void" params="Nullable<string>?" signature="public virtual void WriteComment(Nullable<string>? text)">
         <template #name><h3>WriteComment</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="string?"></doc-parameter>
+                <doc-parameter name="text" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -736,12 +736,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
     </doc-member>
 
-    <doc-member id="method-writecommentasync" name="WriteCommentAsync" returns="Task" params="string?, CancellationToken" signature="public virtual Task WriteCommentAsync(string? text, CancellationToken cancellationToken = null)">
+    <doc-member id="method-writecommentasync" name="WriteCommentAsync" returns="Task" params="Nullable<string>?, CancellationToken" signature="public virtual Task WriteCommentAsync(Nullable<string>? text, CancellationToken cancellationToken = null)">
         <template #name><h3>WriteCommentAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="string?"></doc-parameter>
+                <doc-parameter name="text" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
@@ -1022,12 +1022,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-writeraw" name="WriteRaw" returns="void" params="string?" signature="public virtual void WriteRaw(string? json)">
+    <doc-member id="method-writeraw" name="WriteRaw" returns="void" params="Nullable<string>?" signature="public virtual void WriteRaw(Nullable<string>? json)">
         <template #name><h3>WriteRaw</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="json" type="string?"></doc-parameter>
+                <doc-parameter name="json" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -1035,12 +1035,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
     </doc-member>
 
-    <doc-member id="method-writerawasync" name="WriteRawAsync" returns="Task" params="string?, CancellationToken" signature="public virtual Task WriteRawAsync(string? json, CancellationToken cancellationToken = null)">
+    <doc-member id="method-writerawasync" name="WriteRawAsync" returns="Task" params="Nullable<string>?, CancellationToken" signature="public virtual Task WriteRawAsync(Nullable<string>? json, CancellationToken cancellationToken = null)">
         <template #name><h3>WriteRawAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="json" type="string?"></doc-parameter>
+                <doc-parameter name="json" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
@@ -1049,12 +1049,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
     </doc-member>
 
-    <doc-member id="method-writerawvalue" name="WriteRawValue" returns="void" params="string?" signature="public virtual void WriteRawValue(string? json)">
+    <doc-member id="method-writerawvalue" name="WriteRawValue" returns="void" params="Nullable<string>?" signature="public virtual void WriteRawValue(Nullable<string>? json)">
         <template #name><h3>WriteRawValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="json" type="string?"></doc-parameter>
+                <doc-parameter name="json" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -1062,12 +1062,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
     </doc-member>
 
-    <doc-member id="method-writerawvalueasync" name="WriteRawValueAsync" returns="Task" params="string?, CancellationToken" signature="public virtual Task WriteRawValueAsync(string? json, CancellationToken cancellationToken = null)">
+    <doc-member id="method-writerawvalueasync" name="WriteRawValueAsync" returns="Task" params="Nullable<string>?, CancellationToken" signature="public virtual Task WriteRawValueAsync(Nullable<string>? json, CancellationToken cancellationToken = null)">
         <template #name><h3>WriteRawValueAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="json" type="string?"></doc-parameter>
+                <doc-parameter name="json" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
@@ -1184,13 +1184,13 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writetoken-3" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken, object?" signature="public void WriteToken(JsonToken token, object? value)">
+        <doc-member id="method-writetoken-3" overload-id="group-writetoken" name="WriteToken" returns="void" params="JsonToken, Nullable<object>?" signature="public void WriteToken(JsonToken token, Nullable<object>? value)">
             <template #name><h3>WriteToken</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1256,13 +1256,13 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writetokenasync-3" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, object?, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, object? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writetokenasync-3" overload-id="group-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonToken, Nullable<object>?, CancellationToken" signature="public Task WriteTokenAsync(JsonToken token, Nullable<object>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteTokenAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1318,12 +1318,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
     </doc-member>
 
     <doc-overload-group overload-id="group-writevalue">
-        <doc-member id="method-writevalue" overload-id="group-writevalue" name="WriteValue" returns="void" params="string?" signature="public virtual void WriteValue(string? value)">
+        <doc-member id="method-writevalue" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<string>?" signature="public virtual void WriteValue(Nullable<string>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1552,12 +1552,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-18" overload-id="group-writevalue" name="WriteValue" returns="void" params="int?" signature="public virtual void WriteValue(int? value)">
+        <doc-member id="method-writevalue-18" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<int>?" signature="public virtual void WriteValue(Nullable<int>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="int?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<int>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1565,12 +1565,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-19" overload-id="group-writevalue" name="WriteValue" returns="void" params="uint?" signature="public virtual void WriteValue(uint? value)">
+        <doc-member id="method-writevalue-19" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<uint>?" signature="public virtual void WriteValue(Nullable<uint>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="uint?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<uint>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1578,12 +1578,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-20" overload-id="group-writevalue" name="WriteValue" returns="void" params="long?" signature="public virtual void WriteValue(long? value)">
+        <doc-member id="method-writevalue-20" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<long>?" signature="public virtual void WriteValue(Nullable<long>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="long?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<long>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1591,12 +1591,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-21" overload-id="group-writevalue" name="WriteValue" returns="void" params="ulong?" signature="public virtual void WriteValue(ulong? value)">
+        <doc-member id="method-writevalue-21" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<ulong>?" signature="public virtual void WriteValue(Nullable<ulong>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="ulong?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<ulong>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1604,12 +1604,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-22" overload-id="group-writevalue" name="WriteValue" returns="void" params="float?" signature="public virtual void WriteValue(float? value)">
+        <doc-member id="method-writevalue-22" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<float>?" signature="public virtual void WriteValue(Nullable<float>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="float?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<float>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1617,12 +1617,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-23" overload-id="group-writevalue" name="WriteValue" returns="void" params="double?" signature="public virtual void WriteValue(double? value)">
+        <doc-member id="method-writevalue-23" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<double>?" signature="public virtual void WriteValue(Nullable<double>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="double?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<double>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1630,12 +1630,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-24" overload-id="group-writevalue" name="WriteValue" returns="void" params="bool?" signature="public virtual void WriteValue(bool? value)">
+        <doc-member id="method-writevalue-24" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<bool>?" signature="public virtual void WriteValue(Nullable<bool>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="bool?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<bool>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1643,12 +1643,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-25" overload-id="group-writevalue" name="WriteValue" returns="void" params="short?" signature="public virtual void WriteValue(short? value)">
+        <doc-member id="method-writevalue-25" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<short>?" signature="public virtual void WriteValue(Nullable<short>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="short?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<short>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1656,12 +1656,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-26" overload-id="group-writevalue" name="WriteValue" returns="void" params="ushort?" signature="public virtual void WriteValue(ushort? value)">
+        <doc-member id="method-writevalue-26" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<ushort>?" signature="public virtual void WriteValue(Nullable<ushort>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="ushort?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<ushort>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1669,12 +1669,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-27" overload-id="group-writevalue" name="WriteValue" returns="void" params="char?" signature="public virtual void WriteValue(char? value)">
+        <doc-member id="method-writevalue-27" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<char>?" signature="public virtual void WriteValue(Nullable<char>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="char?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<char>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1682,12 +1682,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-28" overload-id="group-writevalue" name="WriteValue" returns="void" params="byte?" signature="public virtual void WriteValue(byte? value)">
+        <doc-member id="method-writevalue-28" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<byte>?" signature="public virtual void WriteValue(Nullable<byte>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="byte?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<byte>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1695,12 +1695,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-29" overload-id="group-writevalue" name="WriteValue" returns="void" params="sbyte?" signature="public virtual void WriteValue(sbyte? value)">
+        <doc-member id="method-writevalue-29" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<sbyte>?" signature="public virtual void WriteValue(Nullable<sbyte>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="sbyte?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<sbyte>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1708,12 +1708,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-30" overload-id="group-writevalue" name="WriteValue" returns="void" params="decimal?" signature="public virtual void WriteValue(decimal? value)">
+        <doc-member id="method-writevalue-30" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<decimal>?" signature="public virtual void WriteValue(Nullable<decimal>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="decimal?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<decimal>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1721,12 +1721,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-31" overload-id="group-writevalue" name="WriteValue" returns="void" params="DateTime?" signature="public virtual void WriteValue(DateTime? value)">
+        <doc-member id="method-writevalue-31" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<DateTime>?" signature="public virtual void WriteValue(Nullable<DateTime>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="DateTime?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<DateTime>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1734,12 +1734,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-32" overload-id="group-writevalue" name="WriteValue" returns="void" params="DateTimeOffset?" signature="public virtual void WriteValue(DateTimeOffset? value)">
+        <doc-member id="method-writevalue-32" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<DateTimeOffset>?" signature="public virtual void WriteValue(Nullable<DateTimeOffset>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="DateTimeOffset?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<DateTimeOffset>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1747,12 +1747,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-33" overload-id="group-writevalue" name="WriteValue" returns="void" params="Guid?" signature="public virtual void WriteValue(Guid? value)">
+        <doc-member id="method-writevalue-33" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<Guid>?" signature="public virtual void WriteValue(Nullable<Guid>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Guid?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Guid>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1760,12 +1760,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-34" overload-id="group-writevalue" name="WriteValue" returns="void" params="TimeSpan?" signature="public virtual void WriteValue(TimeSpan? value)">
+        <doc-member id="method-writevalue-34" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<TimeSpan>?" signature="public virtual void WriteValue(Nullable<TimeSpan>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="TimeSpan?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<TimeSpan>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1786,12 +1786,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-36" overload-id="group-writevalue" name="WriteValue" returns="void" params="Uri?" signature="public virtual void WriteValue(Uri? value)">
+        <doc-member id="method-writevalue-36" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<Uri>?" signature="public virtual void WriteValue(Nullable<Uri>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Uri>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1799,12 +1799,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.CloseOutput"/> is set to <c>true</c>,
 
         </doc-member>
 
-        <doc-member id="method-writevalue-37" overload-id="group-writevalue" name="WriteValue" returns="void" params="object?" signature="public virtual void WriteValue(object? value)">
+        <doc-member id="method-writevalue-37" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<object>?" signature="public virtual void WriteValue(Nullable<object>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1841,12 +1841,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-1" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="bool?, CancellationToken" signature="public virtual Task WriteValueAsync(bool? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-1" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<bool>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<bool>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="bool?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<bool>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1869,12 +1869,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-3" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="byte?, CancellationToken" signature="public virtual Task WriteValueAsync(byte? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-3" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<byte>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<byte>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="byte?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<byte>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1911,12 +1911,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-6" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="char?, CancellationToken" signature="public virtual Task WriteValueAsync(char? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-6" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<char>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<char>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="char?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<char>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1939,12 +1939,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-8" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="DateTime?, CancellationToken" signature="public virtual Task WriteValueAsync(DateTime? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-8" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<DateTime>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<DateTime>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="DateTime?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<DateTime>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1967,12 +1967,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-10" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="DateTimeOffset?, CancellationToken" signature="public virtual Task WriteValueAsync(DateTimeOffset? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-10" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<DateTimeOffset>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<DateTimeOffset>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="DateTimeOffset?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<DateTimeOffset>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1995,12 +1995,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-12" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="decimal?, CancellationToken" signature="public virtual Task WriteValueAsync(decimal? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-12" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<decimal>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<decimal>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="decimal?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<decimal>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2023,12 +2023,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-14" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="double?, CancellationToken" signature="public virtual Task WriteValueAsync(double? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-14" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<double>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<double>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="double?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<double>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2051,12 +2051,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-16" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="float?, CancellationToken" signature="public virtual Task WriteValueAsync(float? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-16" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<float>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<float>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="float?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<float>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2079,12 +2079,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-18" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Guid?, CancellationToken" signature="public virtual Task WriteValueAsync(Guid? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-18" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Guid>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Guid>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Guid?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Guid>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2107,12 +2107,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-20" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="int?, CancellationToken" signature="public virtual Task WriteValueAsync(int? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-20" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<int>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<int>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="int?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<int>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2135,12 +2135,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-22" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="long?, CancellationToken" signature="public virtual Task WriteValueAsync(long? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-22" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<long>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<long>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="long?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<long>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2149,12 +2149,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-23" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="object?, CancellationToken" signature="public virtual Task WriteValueAsync(object? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-23" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<object>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<object>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2177,12 +2177,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-25" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="sbyte?, CancellationToken" signature="public virtual Task WriteValueAsync(sbyte? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-25" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<sbyte>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<sbyte>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="sbyte?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<sbyte>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2205,12 +2205,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-27" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="short?, CancellationToken" signature="public virtual Task WriteValueAsync(short? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-27" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<short>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<short>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="short?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<short>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2219,12 +2219,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-28" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="string?, CancellationToken" signature="public virtual Task WriteValueAsync(string? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-28" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<string>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<string>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2247,12 +2247,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-30" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="TimeSpan?, CancellationToken" signature="public virtual Task WriteValueAsync(TimeSpan? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-30" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<TimeSpan>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<TimeSpan>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="TimeSpan?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<TimeSpan>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2275,12 +2275,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-32" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="uint?, CancellationToken" signature="public virtual Task WriteValueAsync(uint? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-32" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<uint>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<uint>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="uint?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<uint>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2303,12 +2303,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-34" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ulong?, CancellationToken" signature="public virtual Task WriteValueAsync(ulong? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-34" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<ulong>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<ulong>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="ulong?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<ulong>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2317,12 +2317,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-35" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Uri?, CancellationToken" signature="public virtual Task WriteValueAsync(Uri? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-35" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<Uri>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<Uri>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Uri>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2345,12 +2345,12 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         </doc-member>
 
-        <doc-member id="method-writevalueasync-37" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="ushort?, CancellationToken" signature="public virtual Task WriteValueAsync(ushort? value, CancellationToken cancellationToken = null)">
+        <doc-member id="method-writevalueasync-37" overload-id="group-writevalueasync" name="WriteValueAsync" returns="Task" params="Nullable<ushort>?, CancellationToken" signature="public virtual Task WriteValueAsync(Nullable<ushort>? value, CancellationToken cancellationToken = null)">
             <template #name><h3>WriteValueAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="ushort?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<ushort>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -2471,6 +2471,6 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonWriter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonWriter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonWriter","children":[{"label":"BsonWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/bson/bsonwriter/"},{"label":"JsonTextWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/jsontextwriter/"},{"label":"JTokenWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JTokenWriter/"},{"label":"TraceJsonWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/tracejsonwriter/"}]}]}] }</script>
     </body>
 </html>

@@ -380,12 +380,12 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-getvalue">
-        <doc-member id="method-getvalue" overload-id="group-getvalue" name="GetValue" returns="JToken?" params="string?" signature="public JToken? GetValue(string? propertyName)">
+        <doc-member id="method-getvalue" overload-id="group-getvalue" name="GetValue" returns="JToken?" params="Nullable<string>?" signature="public JToken? GetValue(Nullable<string>? propertyName)">
             <template #name><h3>GetValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="propertyName" type="string?"></doc-parameter>
+                    <doc-parameter name="propertyName" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -393,12 +393,12 @@
 
         </doc-member>
 
-        <doc-member id="method-getvalue-1" overload-id="group-getvalue" name="GetValue" returns="JToken?" params="string?, StringComparison" signature="public JToken? GetValue(string? propertyName, StringComparison comparison)">
+        <doc-member id="method-getvalue-1" overload-id="group-getvalue" name="GetValue" returns="JToken?" params="Nullable<string>?, StringComparison" signature="public JToken? GetValue(Nullable<string>? propertyName, StringComparison comparison)">
             <template #name><h3>GetValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="propertyName" type="string?"></doc-parameter>
+                    <doc-parameter name="propertyName" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="comparison" type="StringComparison"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -723,14 +723,14 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
 <doc-member-group id="events">
     <template #title>Events</template>
 
-    <doc-member id="property-propertychanged" name="PropertyChanged" type="PropertyChangedEventHandler?" signature="public event PropertyChangedEventHandler? PropertyChanged">
+    <doc-member id="property-propertychanged" name="PropertyChanged" type="Nullable<PropertyChangedEventHandler>?" signature="public event Nullable<PropertyChangedEventHandler>? PropertyChanged">
         <template #name><h3>PropertyChanged</h3></template>
 
 <p>Occurs when a property value changes.</p>
 
     </doc-member>
 
-    <doc-member id="property-propertychanging" name="PropertyChanging" type="PropertyChangingEventHandler?" signature="public event PropertyChangingEventHandler? PropertyChanging">
+    <doc-member id="property-propertychanging" name="PropertyChanging" type="Nullable<PropertyChangingEventHandler>?" signature="public event Nullable<PropertyChangingEventHandler>? PropertyChanging">
         <template #name><h3>PropertyChanging</h3></template>
 
 <p>Occurs when a property value is changing.</p>
@@ -788,6 +788,6 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JObject", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JObject", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JToken","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JToken/","children":[{"label":"JContainer","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JContainer/","children":[{"label":"JObject"}]}]}]}] }</script>
     </body>
 </html>

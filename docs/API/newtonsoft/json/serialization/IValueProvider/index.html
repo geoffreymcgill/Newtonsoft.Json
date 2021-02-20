@@ -211,7 +211,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-getvalue" name="GetValue" returns="object?" params="object" signature="public abstract object? GetValue(object target)">
+    <doc-member id="method-getvalue" name="GetValue" returns="Nullable<object>?" params="object" signature="public abstract Nullable<object>? GetValue(object target)">
         <template #name><h3>GetValue</h3></template>
 
         <template #parameters>
@@ -224,13 +224,13 @@
 
     </doc-member>
 
-    <doc-member id="method-setvalue" name="SetValue" returns="void" params="object, object?" signature="public abstract void SetValue(object target, object? value)">
+    <doc-member id="method-setvalue" name="SetValue" returns="void" params="object, Nullable<object>?" signature="public abstract void SetValue(object target, Nullable<object>? value)">
         <template #name><h3>SetValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="target" type="object"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -289,6 +289,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "IValueProvider", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "IValueProvider", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"IValueProvider"}]}] }</script>
     </body>
 </html>

@@ -211,7 +211,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_required" name="_required" type="Required?" access="internal" signature="internal Required? _required">
+    <doc-member id="field-_required" name="_required" type="Nullable<Required>?" access="internal" signature="internal Nullable<Required>? _required">
         <template #name><h3>_required</h3></template>
     </doc-member>
 
@@ -219,7 +219,7 @@
         <template #name><h3>_hasExplicitDefaultValue</h3></template>
     </doc-member>
 
-    <doc-member id="field-_defaultvalue" name="_defaultValue" type="object?" access="private" signature="private object? _defaultValue">
+    <doc-member id="field-_defaultvalue" name="_defaultValue" type="Nullable<object>?" access="private" signature="private Nullable<object>? _defaultValue">
         <template #name><h3>_defaultValue</h3></template>
     </doc-member>
 
@@ -227,7 +227,7 @@
         <template #name><h3>_hasGeneratedDefaultValue</h3></template>
     </doc-member>
 
-    <doc-member id="field-_propertyname" name="_propertyName" type="string?" access="private" signature="private string? _propertyName">
+    <doc-member id="field-_propertyname" name="_propertyName" type="Nullable<string>?" access="private" signature="private Nullable<string>? _propertyName">
         <template #name><h3>_propertyName</h3></template>
     </doc-member>
 
@@ -235,7 +235,7 @@
         <template #name><h3>_skipPropertyNameEscape</h3></template>
     </doc-member>
 
-    <doc-member id="field-_propertytype" name="_propertyType" type="Type?" access="private" signature="private Type? _propertyType">
+    <doc-member id="field-_propertytype" name="_propertyType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _propertyType">
         <template #name><h3>_propertyType</h3></template>
     </doc-member>
 </doc-member-group>
@@ -247,28 +247,28 @@
         <template #name><h3>PropertyContract</h3></template>
     </doc-member>
 
-    <doc-member id="property-propertyname" name="PropertyName" type="string?" signature="public string? PropertyName { get; set; }">
+    <doc-member id="property-propertyname" name="PropertyName" type="Nullable<string>?" signature="public Nullable<string>? PropertyName { get; set; }">
         <template #name><h3>PropertyName</h3></template>
 
 <p>Gets or sets the name of the property.</p>
 
     </doc-member>
 
-    <doc-member id="property-declaringtype" name="DeclaringType" type="Type?" signature="public Type? DeclaringType { get; set; }">
+    <doc-member id="property-declaringtype" name="DeclaringType" type="Nullable<Type>?" signature="public Nullable<Type>? DeclaringType { get; set; }">
         <template #name><h3>DeclaringType</h3></template>
 
 <p>Gets or sets the type that declared this property.</p>
 
     </doc-member>
 
-    <doc-member id="property-order" name="Order" type="int?" signature="public int? Order { get; set; }">
+    <doc-member id="property-order" name="Order" type="Nullable<int>?" signature="public Nullable<int>? Order { get; set; }">
         <template #name><h3>Order</h3></template>
 
 <p>Gets or sets the order of serialization of a member.</p>
 
     </doc-member>
 
-    <doc-member id="property-underlyingname" name="UnderlyingName" type="string?" signature="public string? UnderlyingName { get; set; }">
+    <doc-member id="property-underlyingname" name="UnderlyingName" type="Nullable<string>?" signature="public Nullable<string>? UnderlyingName { get; set; }">
         <template #name><h3>UnderlyingName</h3></template>
 
 <p>Gets or sets the name of the underlying member or parameter.</p>
@@ -289,7 +289,7 @@
 
     </doc-member>
 
-    <doc-member id="property-propertytype" name="PropertyType" type="Type?" signature="public Type? PropertyType { get; set; }">
+    <doc-member id="property-propertytype" name="PropertyType" type="Nullable<Type>?" signature="public Nullable<Type>? PropertyType { get; set; }">
         <template #name><h3>PropertyType</h3></template>
 
 <p>Gets or sets the type of the property.</p>
@@ -339,7 +339,7 @@ If set this converter takes precedence over the contract converter for the prope
 
     </doc-member>
 
-    <doc-member id="property-defaultvalue" name="DefaultValue" type="object?" signature="public object? DefaultValue { get; set; }">
+    <doc-member id="property-defaultvalue" name="DefaultValue" type="Nullable<object>?" signature="public Nullable<object>? DefaultValue { get; set; }">
         <template #name><h3>DefaultValue</h3></template>
 
 <p>Gets the default value.</p>
@@ -360,70 +360,70 @@ If set this converter takes precedence over the contract converter for the prope
 
     </doc-member>
 
-    <doc-member id="property-isreference" name="IsReference" type="bool?" signature="public bool? IsReference { get; set; }">
+    <doc-member id="property-isreference" name="IsReference" type="Nullable<bool>?" signature="public Nullable<bool>? IsReference { get; set; }">
         <template #name><h3>IsReference</h3></template>
 
 <p>Gets or sets a value indicating whether this property preserves object references.</p>
 
     </doc-member>
 
-    <doc-member id="property-nullvaluehandling" name="NullValueHandling" type="NullValueHandling?" signature="public NullValueHandling? NullValueHandling { get; set; }">
+    <doc-member id="property-nullvaluehandling" name="NullValueHandling" type="Nullable<NullValueHandling>?" signature="public Nullable<NullValueHandling>? NullValueHandling { get; set; }">
         <template #name><h3>NullValueHandling</h3></template>
 
 <p>Gets or sets the property null value handling.</p>
 
     </doc-member>
 
-    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling?" signature="public DefaultValueHandling? DefaultValueHandling { get; set; }">
+    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="Nullable<DefaultValueHandling>?" signature="public Nullable<DefaultValueHandling>? DefaultValueHandling { get; set; }">
         <template #name><h3>DefaultValueHandling</h3></template>
 
 <p>Gets or sets the property default value handling.</p>
 
     </doc-member>
 
-    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling?" signature="public ReferenceLoopHandling? ReferenceLoopHandling { get; set; }">
+    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="Nullable<ReferenceLoopHandling>?" signature="public Nullable<ReferenceLoopHandling>? ReferenceLoopHandling { get; set; }">
         <template #name><h3>ReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the property reference loop handling.</p>
 
     </doc-member>
 
-    <doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="ObjectCreationHandling?" signature="public ObjectCreationHandling? ObjectCreationHandling { get; set; }">
+    <doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="Nullable<ObjectCreationHandling>?" signature="public Nullable<ObjectCreationHandling>? ObjectCreationHandling { get; set; }">
         <template #name><h3>ObjectCreationHandling</h3></template>
 
 <p>Gets or sets the property object creation handling.</p>
 
     </doc-member>
 
-    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling?" signature="public TypeNameHandling? TypeNameHandling { get; set; }">
+    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="Nullable<TypeNameHandling>?" signature="public Nullable<TypeNameHandling>? TypeNameHandling { get; set; }">
         <template #name><h3>TypeNameHandling</h3></template>
 
 <p>Gets or sets or sets the type name handling.</p>
 
     </doc-member>
 
-    <doc-member id="property-shouldserialize" name="ShouldSerialize" type="Predicate<object>?" signature="public Predicate<object>? ShouldSerialize { get; set; }">
+    <doc-member id="property-shouldserialize" name="ShouldSerialize" type="Nullable<Predicate<object>>?" signature="public Nullable<Predicate<object>>? ShouldSerialize { get; set; }">
         <template #name><h3>ShouldSerialize</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be serialized.</p>
 
     </doc-member>
 
-    <doc-member id="property-shoulddeserialize" name="ShouldDeserialize" type="Predicate<object>?" signature="public Predicate<object>? ShouldDeserialize { get; set; }">
+    <doc-member id="property-shoulddeserialize" name="ShouldDeserialize" type="Nullable<Predicate<object>>?" signature="public Nullable<Predicate<object>>? ShouldDeserialize { get; set; }">
         <template #name><h3>ShouldDeserialize</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be deserialized.</p>
 
     </doc-member>
 
-    <doc-member id="property-getisspecified" name="GetIsSpecified" type="Predicate<object>?" signature="public Predicate<object>? GetIsSpecified { get; set; }">
+    <doc-member id="property-getisspecified" name="GetIsSpecified" type="Nullable<Predicate<object>>?" signature="public Nullable<Predicate<object>>? GetIsSpecified { get; set; }">
         <template #name><h3>GetIsSpecified</h3></template>
 
 <p>Gets or sets a predicate used to determine whether the property should be serialized.</p>
 
     </doc-member>
 
-    <doc-member id="property-setisspecified" name="SetIsSpecified" type="Action<object, object?>?" signature="public Action<object, object?>? SetIsSpecified { get; set; }">
+    <doc-member id="property-setisspecified" name="SetIsSpecified" type="Nullable<Action<object, Nullable<object>?>>?" signature="public Nullable<Action<object, Nullable<object>?>>? SetIsSpecified { get; set; }">
         <template #name><h3>SetIsSpecified</h3></template>
 
 <p>Gets or sets an action used to set whether the property has been deserialized.</p>
@@ -437,21 +437,21 @@ If set this converter takes precedence over the contract converter for the prope
 
     </doc-member>
 
-    <doc-member id="property-itemisreference" name="ItemIsReference" type="bool?" signature="public bool? ItemIsReference { get; set; }">
+    <doc-member id="property-itemisreference" name="ItemIsReference" type="Nullable<bool>?" signature="public Nullable<bool>? ItemIsReference { get; set; }">
         <template #name><h3>ItemIsReference</h3></template>
 
 <p>Gets or sets whether this property's collection items are serialized as a reference.</p>
 
     </doc-member>
 
-    <doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="TypeNameHandling?" signature="public TypeNameHandling? ItemTypeNameHandling { get; set; }">
+    <doc-member id="property-itemtypenamehandling" name="ItemTypeNameHandling" type="Nullable<TypeNameHandling>?" signature="public Nullable<TypeNameHandling>? ItemTypeNameHandling { get; set; }">
         <template #name><h3>ItemTypeNameHandling</h3></template>
 
 <p>Gets or sets the type name handling used when serializing the property's collection items.</p>
 
     </doc-member>
 
-    <doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="ReferenceLoopHandling?" signature="public ReferenceLoopHandling? ItemReferenceLoopHandling { get; set; }">
+    <doc-member id="property-itemreferenceloophandling" name="ItemReferenceLoopHandling" type="Nullable<ReferenceLoopHandling>?" signature="public Nullable<ReferenceLoopHandling>? ItemReferenceLoopHandling { get; set; }">
         <template #name><h3>ItemReferenceLoopHandling</h3></template>
 
 <p>Gets or sets the reference loop handling used when serializing the property's collection items.</p>
@@ -462,7 +462,7 @@ If set this converter takes precedence over the contract converter for the prope
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-getresolveddefaultvalue" name="GetResolvedDefaultValue" returns="object?" access="internal" signature="internal object? GetResolvedDefaultValue()">
+    <doc-member id="method-getresolveddefaultvalue" name="GetResolvedDefaultValue" returns="Nullable<object>?" access="internal" signature="internal Nullable<object>? GetResolvedDefaultValue()">
         <template #name><h3>GetResolvedDefaultValue</h3></template>
     </doc-member>
 
@@ -534,6 +534,6 @@ If set this converter takes precedence over the contract converter for the prope
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonProperty", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonProperty", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonProperty"}]}] }</script>
     </body>
 </html>

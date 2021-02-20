@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-name" name="Name" type="string?" access="internal" signature="internal string? Name">
+    <doc-member id="field-name" name="Name" type="Nullable<string>?" access="internal" signature="internal Nullable<string>? Name">
         <template #name><h3>Name</h3></template>
     </doc-member>
 </doc-member-group>
@@ -216,12 +216,12 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-.ctor" name=".ctor" returns="void" params="string?" signature="public ScanFilter(string? name)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Nullable<string>?" signature="public ScanFilter(Nullable<string>? name)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="name" type="string?"></doc-parameter>
+                <doc-parameter name="name" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -289,6 +289,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ScanFilter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ScanFilter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"PathFilter","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/jsonpath/pathfilter/","children":[{"label":"ScanFilter"}]}]}] }</script>
     </body>
 </html>

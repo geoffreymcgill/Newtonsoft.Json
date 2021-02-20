@@ -231,7 +231,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-assignabletotypename-1" overload-id="group-assignabletotypename" name="AssignableToTypeName" returns="bool" params="Type, string, bool, Type?" signature="public static bool AssignableToTypeName(Type type, string fullTypeName, bool searchInterfaces, Type? match)">
+        <doc-member id="method-assignabletotypename-1" overload-id="group-assignabletotypename" name="AssignableToTypeName" returns="bool" params="Type, string, bool, Nullable<Type>?" signature="public static bool AssignableToTypeName(Type type, string fullTypeName, bool searchInterfaces, Nullable<Type>? match)">
             <template #name><h3>AssignableToTypeName</h3></template>
 
             <template #parameters>
@@ -239,7 +239,7 @@
                     <doc-parameter name="type" type="Type"></doc-parameter>
                     <doc-parameter name="fullTypeName" type="string"></doc-parameter>
                     <doc-parameter name="searchInterfaces" type="bool"></doc-parameter>
-                    <doc-parameter name="match" type="Type?"></doc-parameter>
+                    <doc-parameter name="match" type="System.Nullable<Type>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -447,6 +447,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "TypeExtensions", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "TypeExtensions", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"TypeExtensions"}]}] }</script>
     </body>
 </html>

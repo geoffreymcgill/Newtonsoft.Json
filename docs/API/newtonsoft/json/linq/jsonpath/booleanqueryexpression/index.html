@@ -212,7 +212,7 @@
         <template #name><h3>Left</h3></template>
     </doc-member>
 
-    <doc-member id="field-right" name="Right" type="object?" signature="public readonly object? Right">
+    <doc-member id="field-right" name="Right" type="Nullable<object>?" signature="public readonly Nullable<object>? Right">
         <template #name><h3>Right</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,14 +220,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-.ctor" name=".ctor" returns="void" params="QueryOperator, object, object?" signature="public BooleanQueryExpression(QueryOperator operator, object left, object? right)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="QueryOperator, object, Nullable<object>?" signature="public BooleanQueryExpression(QueryOperator operator, object left, Nullable<object>? right)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="operator" type="Newtonsoft.Json.Linq.JsonPath.QueryOperator"></doc-parameter>
                 <doc-parameter name="left" type="object"></doc-parameter>
-                <doc-parameter name="right" type="object?"></doc-parameter>
+                <doc-parameter name="right" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -254,14 +254,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getresult" name="GetResult" returns="IEnumerable<JToken>" params="JToken, JToken, object?" access="private" signature="private IEnumerable<JToken> GetResult(JToken root, JToken t, object? o)">
+    <doc-member id="method-getresult" name="GetResult" returns="IEnumerable<JToken>" params="JToken, JToken, Nullable<object>?" access="private" signature="private IEnumerable<JToken> GetResult(JToken root, JToken t, Nullable<object>? o)">
         <template #name><h3>GetResult</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="root" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
                 <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="o" type="object?"></doc-parameter>
+                <doc-parameter name="o" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -353,6 +353,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "BooleanQueryExpression", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "BooleanQueryExpression", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"QueryExpression","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/jsonpath/queryexpression/","children":[{"label":"BooleanQueryExpression"}]}]}] }</script>
     </body>
 </html>
