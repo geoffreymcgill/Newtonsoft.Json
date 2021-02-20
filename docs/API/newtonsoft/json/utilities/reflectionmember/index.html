@@ -208,15 +208,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-membertype" name="MemberType" type="Type?" signature="public Type? MemberType { get; set; }">
+    <doc-member id="property-membertype" name="MemberType" type="Nullable<Type>?" signature="public Nullable<Type>? MemberType { get; set; }">
         <template #name><h3>MemberType</h3></template>
     </doc-member>
 
-    <doc-member id="property-getter" name="Getter" type="Func<object, object?>?" signature="public Func<object, object?>? Getter { get; set; }">
+    <doc-member id="property-getter" name="Getter" type="Nullable<Func<object, Nullable<object>?>>?" signature="public Nullable<Func<object, Nullable<object>?>>? Getter { get; set; }">
         <template #name><h3>Getter</h3></template>
     </doc-member>
 
-    <doc-member id="property-setter" name="Setter" type="Action<object, object?>?" signature="public Action<object, object?>? Setter { get; set; }">
+    <doc-member id="property-setter" name="Setter" type="Nullable<Action<object, Nullable<object>?>>?" signature="public Nullable<Action<object, Nullable<object>?>>? Setter { get; set; }">
         <template #name><h3>Setter</h3></template>
     </doc-member>
 </doc-member-group>
@@ -271,6 +271,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ReflectionMember", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ReflectionMember", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ReflectionMember"}]}] }</script>
     </body>
 </html>

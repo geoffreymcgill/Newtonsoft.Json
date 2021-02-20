@@ -234,14 +234,14 @@ For example a filter level of <see cref="!:TraceLevel.Info"/> will exclude <see 
         </template>
     </doc-member>
 
-    <doc-member id="method-trace" name="Trace" returns="void" params="TraceLevel, string, Exception?" signature="public void Trace(TraceLevel level, string message, Exception? ex)">
+    <doc-member id="method-trace" name="Trace" returns="void" params="TraceLevel, string, Nullable<Exception>?" signature="public void Trace(TraceLevel level, string message, Nullable<Exception>? ex)">
         <template #name><h3>Trace</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="level" type="TraceLevel"></doc-parameter>
                 <doc-parameter name="message" type="string"></doc-parameter>
-                <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -300,6 +300,6 @@ For example a filter level of <see cref="!:TraceLevel.Info"/> will exclude <see 
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "DiagnosticsTraceWriter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "DiagnosticsTraceWriter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"DiagnosticsTraceWriter"}]}] }</script>
     </body>
 </html>

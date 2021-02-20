@@ -224,14 +224,14 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-buildmethodcall" name="BuildMethodCall" returns="Expression" params="MethodBase, Type, ParameterExpression?, ParameterExpression" access="private" signature="private Expression BuildMethodCall(MethodBase method, Type type, ParameterExpression? targetParameterExpression, ParameterExpression argsParameterExpression)">
+    <doc-member id="method-buildmethodcall" name="BuildMethodCall" returns="Expression" params="MethodBase, Type, Nullable<ParameterExpression>?, ParameterExpression" access="private" signature="private Expression BuildMethodCall(MethodBase method, Type type, Nullable<ParameterExpression>? targetParameterExpression, ParameterExpression argsParameterExpression)">
         <template #name><h3>BuildMethodCall</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="method" type="MethodBase"></doc-parameter>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="targetParameterExpression" type="ParameterExpression?"></doc-parameter>
+                <doc-parameter name="targetParameterExpression" type="System.Nullable<ParameterExpression>?"></doc-parameter>
                 <doc-parameter name="argsParameterExpression" type="ParameterExpression"></doc-parameter>
             </doc-parameters>
         </template>
@@ -248,7 +248,7 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-createget">
-        <doc-member id="method-createget" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="FieldInfo" signature="public sealed Func<T, object?> CreateGet<T>(FieldInfo fieldInfo)">
+        <doc-member id="method-createget" overload-id="group-createget" name="CreateGet" returns="Func<T, Nullable<object>?>" params="FieldInfo" signature="public sealed Func<T, Nullable<object>?> CreateGet<T>(FieldInfo fieldInfo)">
             <template #name><h3>CreateGet&lt;T&gt;</h3></template>
 
             <template #parameters>
@@ -258,7 +258,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-createget-1" overload-id="group-createget" name="CreateGet" returns="Func<T, object?>" params="PropertyInfo" signature="public sealed Func<T, object?> CreateGet<T>(PropertyInfo propertyInfo)">
+        <doc-member id="method-createget-1" overload-id="group-createget" name="CreateGet" returns="Func<T, Nullable<object>?>" params="PropertyInfo" signature="public sealed Func<T, Nullable<object>?> CreateGet<T>(PropertyInfo propertyInfo)">
             <template #name><h3>CreateGet&lt;T&gt;</h3></template>
 
             <template #parameters>
@@ -269,7 +269,7 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-createmethodcall" name="CreateMethodCall" returns="MethodCall<T, object?>" params="MethodBase" signature="public sealed MethodCall<T, object?> CreateMethodCall<T>(MethodBase method)">
+    <doc-member id="method-createmethodcall" name="CreateMethodCall" returns="MethodCall<T, Nullable<object>?>" params="MethodBase" signature="public sealed MethodCall<T, Nullable<object>?> CreateMethodCall<T>(MethodBase method)">
         <template #name><h3>CreateMethodCall&lt;T&gt;</h3></template>
 
         <template #parameters>
@@ -290,7 +290,7 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-createset">
-        <doc-member id="method-createset" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="FieldInfo" signature="public sealed Action<T, object?> CreateSet<T>(FieldInfo fieldInfo)">
+        <doc-member id="method-createset" overload-id="group-createset" name="CreateSet" returns="Action<T, Nullable<object>?>" params="FieldInfo" signature="public sealed Action<T, Nullable<object>?> CreateSet<T>(FieldInfo fieldInfo)">
             <template #name><h3>CreateSet&lt;T&gt;</h3></template>
 
             <template #parameters>
@@ -300,7 +300,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-createset-1" overload-id="group-createset" name="CreateSet" returns="Action<T, object?>" params="PropertyInfo" signature="public sealed Action<T, object?> CreateSet<T>(PropertyInfo propertyInfo)">
+        <doc-member id="method-createset-1" overload-id="group-createset" name="CreateSet" returns="Action<T, Nullable<object>?>" params="PropertyInfo" signature="public sealed Action<T, Nullable<object>?> CreateSet<T>(PropertyInfo propertyInfo)">
             <template #name><h3>CreateSet&lt;T&gt;</h3></template>
 
             <template #parameters>
@@ -374,6 +374,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ExpressionReflectionDelegateFactory", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ExpressionReflectionDelegateFactory", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ReflectionDelegateFactory","href":"/Newtonsoft.Json/API/newtonsoft/json/utilities/reflectiondelegatefactory/","children":[{"label":"ExpressionReflectionDelegateFactory"}]}]}] }</script>
     </body>
 </html>

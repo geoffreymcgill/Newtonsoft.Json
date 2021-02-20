@@ -269,7 +269,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getassemblydelimiterindex" name="GetAssemblyDelimiterIndex" returns="int?" params="string" access="private" signature="private static int? GetAssemblyDelimiterIndex(string fullyQualifiedTypeName)">
+    <doc-member id="method-getassemblydelimiterindex" name="GetAssemblyDelimiterIndex" returns="Nullable<int>?" params="string" access="private" signature="private static Nullable<int>? GetAssemblyDelimiterIndex(string fullyQualifiedTypeName)">
         <template #name><h3>GetAssemblyDelimiterIndex</h3></template>
 
         <template #parameters>
@@ -314,20 +314,20 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-getattributes-1" overload-id="group-getattributes" name="GetAttributes" returns="Attribute[]" params="object, Type?, bool" signature="public static Attribute[] GetAttributes(object attributeProvider, Type? attributeType, bool inherit)">
+        <doc-member id="method-getattributes-1" overload-id="group-getattributes" name="GetAttributes" returns="Attribute[]" params="object, Nullable<Type>?, bool" signature="public static Attribute[] GetAttributes(object attributeProvider, Nullable<Type>? attributeType, bool inherit)">
             <template #name><h3>GetAttributes</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="attributeProvider" type="object"></doc-parameter>
-                    <doc-parameter name="attributeType" type="Type?"></doc-parameter>
+                    <doc-parameter name="attributeType" type="System.Nullable<Type>?"></doc-parameter>
                     <doc-parameter name="inherit" type="bool"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getbasedefinition" name="GetBaseDefinition" returns="MethodInfo?" params="PropertyInfo" signature="public static MethodInfo? GetBaseDefinition(PropertyInfo propertyInfo)">
+    <doc-member id="method-getbasedefinition" name="GetBaseDefinition" returns="Nullable<MethodInfo>?" params="PropertyInfo" signature="public static Nullable<MethodInfo>? GetBaseDefinition(PropertyInfo propertyInfo)">
         <template #name><h3>GetBaseDefinition</h3></template>
 
         <template #parameters>
@@ -361,7 +361,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getcollectionitemtype" name="GetCollectionItemType" returns="Type?" params="Type" signature="public static Type? GetCollectionItemType(Type type)">
+    <doc-member id="method-getcollectionitemtype" name="GetCollectionItemType" returns="Nullable<Type>?" params="Type" signature="public static Nullable<Type>? GetCollectionItemType(Type type)">
         <template #name><h3>GetCollectionItemType</h3></template>
 
         <template #parameters>
@@ -397,7 +397,7 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getdefaultvalue" name="GetDefaultValue" returns="object?" params="Type" signature="public static object? GetDefaultValue(Type type)">
+    <doc-member id="method-getdefaultvalue" name="GetDefaultValue" returns="Nullable<object>?" params="Type" signature="public static Nullable<object>? GetDefaultValue(Type type)">
         <template #name><h3>GetDefaultValue</h3></template>
 
         <template #parameters>
@@ -407,14 +407,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="void" params="Type, Type?, Type?" signature="public static void GetDictionaryKeyValueTypes(Type dictionaryType, Type? keyType, Type? valueType)">
+    <doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="void" params="Type, Nullable<Type>?, Nullable<Type>?" signature="public static void GetDictionaryKeyValueTypes(Type dictionaryType, Nullable<Type>? keyType, Nullable<Type>? valueType)">
         <template #name><h3>GetDictionaryKeyValueTypes</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="dictionaryType" type="Type"></doc-parameter>
-                <doc-parameter name="keyType" type="Type?"></doc-parameter>
-                <doc-parameter name="valueType" type="Type?"></doc-parameter>
+                <doc-parameter name="keyType" type="System.Nullable<Type>?"></doc-parameter>
+                <doc-parameter name="valueType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -490,12 +490,12 @@
 
     </doc-member>
 
-    <doc-member id="method-getobjecttype" name="GetObjectType" returns="Type?" params="object?" signature="public static Type? GetObjectType(object? v)">
+    <doc-member id="method-getobjecttype" name="GetObjectType" returns="Nullable<Type>?" params="Nullable<object>?" signature="public static Nullable<Type>? GetObjectType(Nullable<object>? v)">
         <template #name><h3>GetObjectType</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="v" type="object?"></doc-parameter>
+                <doc-parameter name="v" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -546,14 +546,14 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-implementsgenericdefinition-1" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type, Type?" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, Type? implementingType)">
+        <doc-member id="method-implementsgenericdefinition-1" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, Nullable<Type>? implementingType)">
             <template #name><h3>ImplementsGenericDefinition</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="type" type="Type"></doc-parameter>
                     <doc-parameter name="genericInterfaceDefinition" type="Type"></doc-parameter>
-                    <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+                    <doc-parameter name="implementingType" type="System.Nullable<Type>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
@@ -571,27 +571,27 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-inheritsgenericdefinition-1" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type, Type?" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition, Type? implementingType)">
+        <doc-member id="method-inheritsgenericdefinition-1" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition, Nullable<Type>? implementingType)">
             <template #name><h3>InheritsGenericDefinition</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="type" type="Type"></doc-parameter>
                     <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
-                    <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+                    <doc-parameter name="implementingType" type="System.Nullable<Type>?"></doc-parameter>
                 </doc-parameters>
             </template>
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="bool" params="Type, Type, Type?" access="private" signature="private static bool InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, Type? implementingType)">
+    <doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="bool" params="Type, Type, Nullable<Type>?" access="private" signature="private static bool InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, Nullable<Type>? implementingType)">
         <template #name><h3>InheritsGenericDefinitionInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="currentType" type="Type"></doc-parameter>
                 <doc-parameter name="genericClassDefinition" type="Type"></doc-parameter>
-                <doc-parameter name="implementingType" type="Type?"></doc-parameter>
+                <doc-parameter name="implementingType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -714,14 +714,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-setmembervalue" name="SetMemberValue" returns="void" params="MemberInfo, object, object?" signature="public static void SetMemberValue(MemberInfo member, object target, object? value)">
+    <doc-member id="method-setmembervalue" name="SetMemberValue" returns="void" params="MemberInfo, object, Nullable<object>?" signature="public static void SetMemberValue(MemberInfo member, object target, Nullable<object>? value)">
         <template #name><h3>SetMemberValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="member" type="MemberInfo"></doc-parameter>
                 <doc-parameter name="target" type="object"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -729,7 +729,7 @@
 
     </doc-member>
 
-    <doc-member id="method-splitfullyqualifiedtypename" name="SplitFullyQualifiedTypeName" returns="StructMultiKey<string?, string>" params="string" signature="public static StructMultiKey<string?, string> SplitFullyQualifiedTypeName(string fullyQualifiedTypeName)">
+    <doc-member id="method-splitfullyqualifiedtypename" name="SplitFullyQualifiedTypeName" returns="StructMultiKey<Nullable<string>?, string>" params="string" signature="public static StructMultiKey<Nullable<string>?, string> SplitFullyQualifiedTypeName(string fullyQualifiedTypeName)">
         <template #name><h3>SplitFullyQualifiedTypeName</h3></template>
 
         <template #parameters>
@@ -790,6 +790,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ReflectionUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ReflectionUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ReflectionUtils"}]}] }</script>
     </body>
 </html>

@@ -242,14 +242,14 @@
 
     </doc-member>
 
-    <doc-member id="method-readjson" name="ReadJson" returns="object?" params="JsonReader, Type, object?, JsonSerializer" signature="public abstract object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)">
+    <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public abstract Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
         <template #name><h3>ReadJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
@@ -258,13 +258,13 @@
 
     </doc-member>
 
-    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, object?, JsonSerializer" signature="public abstract void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)">
+    <doc-member id="method-writejson" name="WriteJson" returns="void" params="JsonWriter, Nullable<object>?, JsonSerializer" signature="public abstract void WriteJson(JsonWriter writer, Nullable<object>? value, JsonSerializer serializer)">
         <template #name><h3>WriteJson</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="serializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
@@ -324,6 +324,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonConverter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonConverter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonConverter","children":[{"label":"BinaryConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/binaryconverter/"},{"label":"BsonObjectIdConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/bsonobjectidconverter/"},{"label":"CustomCreationConverter<T>","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/customcreationconverter-1/"},{"label":"DataSetConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/datasetconverter/"},{"label":"DataTableConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/datatableconverter/"},{"label":"DateTimeConverterBase","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/datetimeconverterbase/"},{"label":"DiscriminatedUnionConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/discriminatedunionconverter/"},{"label":"EntityKeyMemberConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/entitykeymemberconverter/"},{"label":"ExpandoObjectConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/expandoobjectconverter/"},{"label":"KeyValuePairConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/keyvaluepairconverter/"},{"label":"RegexConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/regexconverter/"},{"label":"StringEnumConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/stringenumconverter/"},{"label":"VersionConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/versionconverter/"},{"label":"XmlNodeConverter","href":"/Newtonsoft.Json/API/newtonsoft/json/converters/xmlnodeconverter/"},{"label":"JsonConverter<T>","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonconverter-1/"}]}]}] }</script>
     </body>
 </html>

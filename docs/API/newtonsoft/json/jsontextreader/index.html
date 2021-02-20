@@ -381,7 +381,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasbooleanasync" name="DoReadAsBooleanAsync" returns="Task<bool?>" params="CancellationToken" access="internal" signature="internal async Task<bool?> DoReadAsBooleanAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasbooleanasync" name="DoReadAsBooleanAsync" returns="Task<Nullable<bool>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<bool>?> DoReadAsBooleanAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsBooleanAsync</h3></template>
 
         <template #parameters>
@@ -401,7 +401,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasdatetimeasync" name="DoReadAsDateTimeAsync" returns="Task<DateTime?>" params="CancellationToken" access="internal" signature="internal async Task<DateTime?> DoReadAsDateTimeAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasdatetimeasync" name="DoReadAsDateTimeAsync" returns="Task<Nullable<DateTime>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<DateTime>?> DoReadAsDateTimeAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsDateTimeAsync</h3></template>
 
         <template #parameters>
@@ -411,7 +411,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasdatetimeoffsetasync" name="DoReadAsDateTimeOffsetAsync" returns="Task<DateTimeOffset?>" params="CancellationToken" access="internal" signature="internal async Task<DateTimeOffset?> DoReadAsDateTimeOffsetAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasdatetimeoffsetasync" name="DoReadAsDateTimeOffsetAsync" returns="Task<Nullable<DateTimeOffset>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<DateTimeOffset>?> DoReadAsDateTimeOffsetAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsDateTimeOffsetAsync</h3></template>
 
         <template #parameters>
@@ -421,7 +421,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasdecimalasync" name="DoReadAsDecimalAsync" returns="Task<decimal?>" params="CancellationToken" access="internal" signature="internal async Task<decimal?> DoReadAsDecimalAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasdecimalasync" name="DoReadAsDecimalAsync" returns="Task<Nullable<decimal>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<decimal>?> DoReadAsDecimalAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsDecimalAsync</h3></template>
 
         <template #parameters>
@@ -431,7 +431,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasdoubleasync" name="DoReadAsDoubleAsync" returns="Task<double?>" params="CancellationToken" access="internal" signature="internal async Task<double?> DoReadAsDoubleAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasdoubleasync" name="DoReadAsDoubleAsync" returns="Task<Nullable<double>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<double>?> DoReadAsDoubleAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsDoubleAsync</h3></template>
 
         <template #parameters>
@@ -441,7 +441,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasint32async" name="DoReadAsInt32Async" returns="Task<int?>" params="CancellationToken" access="internal" signature="internal async Task<int?> DoReadAsInt32Async(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasint32async" name="DoReadAsInt32Async" returns="Task<Nullable<int>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<int>?> DoReadAsInt32Async(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsInt32Async</h3></template>
 
         <template #parameters>
@@ -451,7 +451,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-doreadasstringasync" name="DoReadAsStringAsync" returns="Task<string?>" params="CancellationToken" access="internal" signature="internal async Task<string?> DoReadAsStringAsync(CancellationToken cancellationToken)">
+    <doc-member id="method-doreadasstringasync" name="DoReadAsStringAsync" returns="Task<Nullable<string>?>" params="CancellationToken" access="internal" signature="internal async Task<Nullable<string>?> DoReadAsStringAsync(CancellationToken cancellationToken)">
         <template #name><h3>DoReadAsStringAsync</h3></template>
 
         <template #parameters>
@@ -541,7 +541,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-finishreadquotednumber" name="FinishReadQuotedNumber" returns="object?" params="ReadType" access="private" signature="private object? FinishReadQuotedNumber(ReadType readType)">
+    <doc-member id="method-finishreadquotednumber" name="FinishReadQuotedNumber" returns="Nullable<object>?" params="ReadType" access="private" signature="private Nullable<object>? FinishReadQuotedNumber(ReadType readType)">
         <template #name><h3>FinishReadQuotedNumber</h3></template>
 
         <template #parameters>
@@ -551,7 +551,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-finishreadquotedstringvalue" name="FinishReadQuotedStringValue" returns="object?" params="ReadType" access="private" signature="private object? FinishReadQuotedStringValue(ReadType readType)">
+    <doc-member id="method-finishreadquotedstringvalue" name="FinishReadQuotedStringValue" returns="Nullable<object>?" params="ReadType" access="private" signature="private Nullable<object>? FinishReadQuotedStringValue(ReadType readType)">
         <template #name><h3>FinishReadQuotedStringValue</h3></template>
 
         <template #parameters>
@@ -604,14 +604,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-matchandsetasync" name="MatchAndSetAsync" returns="Task" params="string, JsonToken, object?, CancellationToken" access="private" signature="private async Task MatchAndSetAsync(string value, JsonToken newToken, object? tokenValue, CancellationToken cancellationToken)">
+    <doc-member id="method-matchandsetasync" name="MatchAndSetAsync" returns="Task" params="string, JsonToken, Nullable<object>?, CancellationToken" access="private" signature="private async Task MatchAndSetAsync(string value, JsonToken newToken, Nullable<object>? tokenValue, CancellationToken cancellationToken)">
         <template #name><h3>MatchAndSetAsync</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="value" type="string"></doc-parameter>
                 <doc-parameter name="newToken" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                <doc-parameter name="tokenValue" type="object?"></doc-parameter>
+                <doc-parameter name="tokenValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
             </doc-parameters>
         </template>
@@ -1092,14 +1092,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasboolean" name="ReadAsBoolean" returns="bool?" signature="public sealed bool? ReadAsBoolean()">
+    <doc-member id="method-readasboolean" name="ReadAsBoolean" returns="Nullable<bool>?" signature="public sealed Nullable<bool>? ReadAsBoolean()">
         <template #name><h3>ReadAsBoolean</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Boolean"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasbooleanasync" name="ReadAsBooleanAsync" returns="Task<bool?>" params="CancellationToken" signature="public sealed Task<bool?> ReadAsBooleanAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasbooleanasync" name="ReadAsBooleanAsync" returns="Task<Nullable<bool>?>" params="CancellationToken" signature="public sealed Task<Nullable<bool>?> ReadAsBooleanAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsBooleanAsync</h3></template>
 
         <template #parameters>
@@ -1132,14 +1132,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="DateTime?" signature="public sealed DateTime? ReadAsDateTime()">
+    <doc-member id="method-readasdatetime" name="ReadAsDateTime" returns="Nullable<DateTime>?" signature="public sealed Nullable<DateTime>? ReadAsDateTime()">
         <template #name><h3>ReadAsDateTime</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTime"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasdatetimeasync" name="ReadAsDateTimeAsync" returns="Task<DateTime?>" params="CancellationToken" signature="public sealed Task<DateTime?> ReadAsDateTimeAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasdatetimeasync" name="ReadAsDateTimeAsync" returns="Task<Nullable<DateTime>?>" params="CancellationToken" signature="public sealed Task<Nullable<DateTime>?> ReadAsDateTimeAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsDateTimeAsync</h3></template>
 
         <template #parameters>
@@ -1152,14 +1152,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="DateTimeOffset?" signature="public sealed DateTimeOffset? ReadAsDateTimeOffset()">
+    <doc-member id="method-readasdatetimeoffset" name="ReadAsDateTimeOffset" returns="Nullable<DateTimeOffset>?" signature="public sealed Nullable<DateTimeOffset>? ReadAsDateTimeOffset()">
         <template #name><h3>ReadAsDateTimeOffset</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:DateTimeOffset"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasdatetimeoffsetasync" name="ReadAsDateTimeOffsetAsync" returns="Task<DateTimeOffset?>" params="CancellationToken" signature="public sealed Task<DateTimeOffset?> ReadAsDateTimeOffsetAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasdatetimeoffsetasync" name="ReadAsDateTimeOffsetAsync" returns="Task<Nullable<DateTimeOffset>?>" params="CancellationToken" signature="public sealed Task<Nullable<DateTimeOffset>?> ReadAsDateTimeOffsetAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsDateTimeOffsetAsync</h3></template>
 
         <template #parameters>
@@ -1172,14 +1172,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="decimal?" signature="public sealed decimal? ReadAsDecimal()">
+    <doc-member id="method-readasdecimal" name="ReadAsDecimal" returns="Nullable<decimal>?" signature="public sealed Nullable<decimal>? ReadAsDecimal()">
         <template #name><h3>ReadAsDecimal</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Decimal"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasdecimalasync" name="ReadAsDecimalAsync" returns="Task<decimal?>" params="CancellationToken" signature="public sealed Task<decimal?> ReadAsDecimalAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasdecimalasync" name="ReadAsDecimalAsync" returns="Task<Nullable<decimal>?>" params="CancellationToken" signature="public sealed Task<Nullable<decimal>?> ReadAsDecimalAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsDecimalAsync</h3></template>
 
         <template #parameters>
@@ -1192,14 +1192,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasdouble" name="ReadAsDouble" returns="double?" signature="public sealed double? ReadAsDouble()">
+    <doc-member id="method-readasdouble" name="ReadAsDouble" returns="Nullable<double>?" signature="public sealed Nullable<double>? ReadAsDouble()">
         <template #name><h3>ReadAsDouble</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Double"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasdoubleasync" name="ReadAsDoubleAsync" returns="Task<double?>" params="CancellationToken" signature="public sealed Task<double?> ReadAsDoubleAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasdoubleasync" name="ReadAsDoubleAsync" returns="Task<Nullable<double>?>" params="CancellationToken" signature="public sealed Task<Nullable<double>?> ReadAsDoubleAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsDoubleAsync</h3></template>
 
         <template #parameters>
@@ -1212,14 +1212,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasint32" name="ReadAsInt32" returns="int?" signature="public sealed int? ReadAsInt32()">
+    <doc-member id="method-readasint32" name="ReadAsInt32" returns="Nullable<int>?" signature="public sealed Nullable<int>? ReadAsInt32()">
         <template #name><h3>ReadAsInt32</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:Nullable&lt;T&gt;"/> of <see cref="!:Int32"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasint32async" name="ReadAsInt32Async" returns="Task<int?>" params="CancellationToken" signature="public sealed Task<int?> ReadAsInt32Async(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasint32async" name="ReadAsInt32Async" returns="Task<Nullable<int>?>" params="CancellationToken" signature="public sealed Task<Nullable<int>?> ReadAsInt32Async(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsInt32Async</h3></template>
 
         <template #parameters>
@@ -1232,14 +1232,14 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readasstring" name="ReadAsString" returns="string?" signature="public sealed string? ReadAsString()">
+    <doc-member id="method-readasstring" name="ReadAsString" returns="Nullable<string>?" signature="public sealed Nullable<string>? ReadAsString()">
         <template #name><h3>ReadAsString</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="!:TextReader"/> as a <see cref="!:String"/>.</p>
 
     </doc-member>
 
-    <doc-member id="method-readasstringasync" name="ReadAsStringAsync" returns="Task<string?>" params="CancellationToken" signature="public sealed Task<string?> ReadAsStringAsync(CancellationToken cancellationToken = null)">
+    <doc-member id="method-readasstringasync" name="ReadAsStringAsync" returns="Task<Nullable<string>?>" params="CancellationToken" signature="public sealed Task<Nullable<string>?> ReadAsStringAsync(CancellationToken cancellationToken = null)">
         <template #name><h3>ReadAsStringAsync</h3></template>
 
         <template #parameters>
@@ -1409,7 +1409,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-readnumbervalue" name="ReadNumberValue" returns="object?" params="ReadType" access="private" signature="private object? ReadNumberValue(ReadType readType)">
+    <doc-member id="method-readnumbervalue" name="ReadNumberValue" returns="Nullable<object>?" params="ReadType" access="private" signature="private Nullable<object>? ReadNumberValue(ReadType readType)">
         <template #name><h3>ReadNumberValue</h3></template>
 
         <template #parameters>
@@ -1419,7 +1419,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-readnumbervalueasync" name="ReadNumberValueAsync" returns="Task<object?>" params="ReadType, CancellationToken" access="private" signature="private async Task<object?> ReadNumberValueAsync(ReadType readType, CancellationToken cancellationToken)">
+    <doc-member id="method-readnumbervalueasync" name="ReadNumberValueAsync" returns="Task<Nullable<object>?>" params="ReadType, CancellationToken" access="private" signature="private async Task<Nullable<object>?> ReadNumberValueAsync(ReadType readType, CancellationToken cancellationToken)">
         <template #name><h3>ReadNumberValueAsync</h3></template>
 
         <template #parameters>
@@ -1451,7 +1451,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-readstringvalue" name="ReadStringValue" returns="object?" params="ReadType" access="private" signature="private object? ReadStringValue(ReadType readType)">
+    <doc-member id="method-readstringvalue" name="ReadStringValue" returns="Nullable<object>?" params="ReadType" access="private" signature="private Nullable<object>? ReadStringValue(ReadType readType)">
         <template #name><h3>ReadStringValue</h3></template>
 
         <template #parameters>
@@ -1461,7 +1461,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         </template>
     </doc-member>
 
-    <doc-member id="method-readstringvalueasync" name="ReadStringValueAsync" returns="Task<object?>" params="ReadType, CancellationToken" access="private" signature="private async Task<object?> ReadStringValueAsync(ReadType readType, CancellationToken cancellationToken)">
+    <doc-member id="method-readstringvalueasync" name="ReadStringValueAsync" returns="Task<Nullable<object>?>" params="ReadType, CancellationToken" access="private" signature="private async Task<Nullable<object>?> ReadStringValueAsync(ReadType readType, CancellationToken cancellationToken)">
         <template #name><h3>ReadStringValueAsync</h3></template>
 
         <template #parameters>
@@ -1497,13 +1497,13 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
         <template #name><h3>ShiftBufferIfNeeded</h3></template>
     </doc-member>
 
-    <doc-member id="method-throwreadererror" name="ThrowReaderError" returns="JsonReaderException" params="string, Exception?" access="private" signature="private JsonReaderException ThrowReaderError(string message, Exception? ex = null)">
+    <doc-member id="method-throwreadererror" name="ThrowReaderError" returns="JsonReaderException" params="string, Nullable<Exception>?" access="private" signature="private JsonReaderException ThrowReaderError(string message, Nullable<Exception>? ex = null)">
         <template #name><h3>ThrowReaderError</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="message" type="string"></doc-parameter>
-                <doc-parameter name="ex" type="Exception?"></doc-parameter>
+                <doc-parameter name="ex" type="System.Nullable<Exception>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -1581,6 +1581,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonTextReader", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonTextReader", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonReader","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonreader/","children":[{"label":"JsonTextReader"}]}]}] }</script>
     </body>
 </html>

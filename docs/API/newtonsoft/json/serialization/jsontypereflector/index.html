@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_dynamiccodegeneration" name="_dynamicCodeGeneration" type="bool?" access="private" signature="private static bool? _dynamicCodeGeneration">
+    <doc-member id="field-_dynamiccodegeneration" name="_dynamicCodeGeneration" type="Nullable<bool>?" access="private" signature="private static Nullable<bool>? _dynamicCodeGeneration">
         <template #name><h3>_dynamicCodeGeneration</h3></template>
     </doc-member>
 
-    <doc-member id="field-_fullytrusted" name="_fullyTrusted" type="bool?" access="private" signature="private static bool? _fullyTrusted">
+    <doc-member id="field-_fullytrusted" name="_fullyTrusted" type="Nullable<bool>?" access="private" signature="private static Nullable<bool>? _fullyTrusted">
         <template #name><h3>_fullyTrusted</h3></template>
     </doc-member>
 
@@ -252,7 +252,7 @@
         <template #name><h3>CreatorCache</h3></template>
     </doc-member>
 
-    <doc-member id="field-associatedmetadatatypescache" name="AssociatedMetadataTypesCache" type="ThreadSafeStore<Type, Type?>" access="private" signature="private readonly static ThreadSafeStore<Type, Type?> AssociatedMetadataTypesCache">
+    <doc-member id="field-associatedmetadatatypescache" name="AssociatedMetadataTypesCache" type="ThreadSafeStore<Type, Nullable<Type>?>" access="private" signature="private readonly static ThreadSafeStore<Type, Nullable<Type>?> AssociatedMetadataTypesCache">
         <template #name><h3>AssociatedMetadataTypesCache</h3></template>
     </doc-member>
 
@@ -316,7 +316,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getassociatedmetadatatype" name="GetAssociatedMetadataType" returns="Type?" params="Type" access="private" signature="private static Type? GetAssociatedMetadataType(Type type)">
+    <doc-member id="method-getassociatedmetadatatype" name="GetAssociatedMetadataType" returns="Nullable<Type>?" params="Type" access="private" signature="private static Nullable<Type>? GetAssociatedMetadataType(Type type)">
         <template #name><h3>GetAssociatedMetadataType</h3></template>
 
         <template #parameters>
@@ -326,7 +326,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getassociatemetadatatypefromattribute" name="GetAssociateMetadataTypeFromAttribute" returns="Type?" params="Type" access="private" signature="private static Type? GetAssociateMetadataTypeFromAttribute(Type type)">
+    <doc-member id="method-getassociatemetadatatypefromattribute" name="GetAssociateMetadataTypeFromAttribute" returns="Nullable<Type>?" params="Type" access="private" signature="private static Nullable<Type>? GetAssociateMetadataTypeFromAttribute(Type type)">
         <template #name><h3>GetAssociateMetadataTypeFromAttribute</h3></template>
 
         <template #parameters>
@@ -398,7 +398,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getdatacontractattribute" name="GetDataContractAttribute" returns="DataContractAttribute?" params="Type" signature="public static DataContractAttribute? GetDataContractAttribute(Type type)">
+    <doc-member id="method-getdatacontractattribute" name="GetDataContractAttribute" returns="Nullable<DataContractAttribute>?" params="Type" signature="public static Nullable<DataContractAttribute>? GetDataContractAttribute(Type type)">
         <template #name><h3>GetDataContractAttribute</h3></template>
 
         <template #parameters>
@@ -408,7 +408,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getdatamemberattribute" name="GetDataMemberAttribute" returns="DataMemberAttribute?" params="MemberInfo" signature="public static DataMemberAttribute? GetDataMemberAttribute(MemberInfo memberInfo)">
+    <doc-member id="method-getdatamemberattribute" name="GetDataMemberAttribute" returns="Nullable<DataMemberAttribute>?" params="MemberInfo" signature="public static Nullable<DataMemberAttribute>? GetDataMemberAttribute(MemberInfo memberInfo)">
         <template #name><h3>GetDataMemberAttribute</h3></template>
 
         <template #parameters>
@@ -469,12 +469,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-setfullytrusted" name="SetFullyTrusted" returns="void" params="bool?" access="internal" signature="internal static void SetFullyTrusted(bool? fullyTrusted)">
+    <doc-member id="method-setfullytrusted" name="SetFullyTrusted" returns="void" params="Nullable<bool>?" access="internal" signature="internal static void SetFullyTrusted(Nullable<bool>? fullyTrusted)">
         <template #name><h3>SetFullyTrusted</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="fullyTrusted" type="bool?"></doc-parameter>
+                <doc-parameter name="fullyTrusted" type="System.Nullable<bool>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -530,6 +530,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonTypeReflector", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonTypeReflector", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonTypeReflector"}]}] }</script>
     </body>
 </html>

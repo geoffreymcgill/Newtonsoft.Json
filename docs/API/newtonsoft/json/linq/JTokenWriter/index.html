@@ -282,12 +282,12 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-addvalue">
-        <doc-member id="method-addvalue" overload-id="group-addvalue" name="AddValue" returns="void" params="object?, JsonToken" access="private" signature="private void AddValue(object? value, JsonToken token)">
+        <doc-member id="method-addvalue" overload-id="group-addvalue" name="AddValue" returns="void" params="Nullable<object>?, JsonToken" access="private" signature="private void AddValue(Nullable<object>? value, JsonToken token)">
             <template #name><h3>AddValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -324,12 +324,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
         <template #name><h3>RemoveParent</h3></template>
     </doc-member>
 
-    <doc-member id="method-writecomment" name="WriteComment" returns="void" params="string?" signature="public sealed void WriteComment(string? text)">
+    <doc-member id="method-writecomment" name="WriteComment" returns="void" params="Nullable<string>?" signature="public sealed void WriteComment(Nullable<string>? text)">
         <template #name><h3>WriteComment</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="text" type="string?"></doc-parameter>
+                <doc-parameter name="text" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -370,12 +370,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
 
     </doc-member>
 
-    <doc-member id="method-writeraw" name="WriteRaw" returns="void" params="string?" signature="public sealed void WriteRaw(string? json)">
+    <doc-member id="method-writeraw" name="WriteRaw" returns="void" params="Nullable<string>?" signature="public sealed void WriteRaw(Nullable<string>? json)">
         <template #name><h3>WriteRaw</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="json" type="string?"></doc-parameter>
+                <doc-parameter name="json" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -445,12 +445,12 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
     </doc-member>
 
     <doc-overload-group overload-id="group-writevalue">
-        <doc-member id="method-writevalue" overload-id="group-writevalue" name="WriteValue" returns="void" params="object?" signature="public sealed void WriteValue(object? value)">
+        <doc-member id="method-writevalue" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<object>?" signature="public sealed void WriteValue(Nullable<object>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -459,12 +459,12 @@ An error will be raised if the value cannot be written as a single JSON token.</
 
         </doc-member>
 
-        <doc-member id="method-writevalue-1" overload-id="group-writevalue" name="WriteValue" returns="void" params="string?" signature="public sealed void WriteValue(string? value)">
+        <doc-member id="method-writevalue-1" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<string>?" signature="public sealed void WriteValue(Nullable<string>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -706,12 +706,12 @@ An error will be raised if the value cannot be written as a single JSON token.</
 
         </doc-member>
 
-        <doc-member id="method-writevalue-20" overload-id="group-writevalue" name="WriteValue" returns="void" params="Uri?" signature="public sealed void WriteValue(Uri? value)">
+        <doc-member id="method-writevalue-20" overload-id="group-writevalue" name="WriteValue" returns="void" params="Nullable<Uri>?" signature="public sealed void WriteValue(Nullable<Uri>? value)">
             <template #name><h3>WriteValue</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Uri>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -771,6 +771,6 @@ An error will be raised if the value cannot be written as a single JSON token.</
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JTokenWriter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JTokenWriter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonWriter","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonwriter/","children":[{"label":"JTokenWriter"}]}]}] }</script>
     </body>
 </html>

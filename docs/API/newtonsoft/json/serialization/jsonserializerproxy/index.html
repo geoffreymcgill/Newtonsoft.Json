@@ -232,7 +232,7 @@
         <template #name><h3>TraceWriter</h3></template>
     </doc-member>
 
-    <doc-member id="property-equalitycomparer" name="EqualityComparer" type="IEqualityComparer?" signature="public sealed IEqualityComparer? EqualityComparer { get; set; }">
+    <doc-member id="property-equalitycomparer" name="EqualityComparer" type="Nullable<IEqualityComparer>?" signature="public sealed Nullable<IEqualityComparer>? EqualityComparer { get; set; }">
         <template #name><h3>EqualityComparer</h3></template>
     </doc-member>
 
@@ -336,7 +336,7 @@
         <template #name><h3>Culture</h3></template>
     </doc-member>
 
-    <doc-member id="property-maxdepth" name="MaxDepth" type="int?" signature="public sealed int? MaxDepth { get; set; }">
+    <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public sealed Nullable<int>? MaxDepth { get; set; }">
         <template #name><h3>MaxDepth</h3></template>
     </doc-member>
 
@@ -370,13 +370,13 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-deserializeinternal" name="DeserializeInternal" returns="object?" params="JsonReader, Type?" access="internal" signature="internal sealed object? DeserializeInternal(JsonReader reader, Type? objectType)">
+    <doc-member id="method-deserializeinternal" name="DeserializeInternal" returns="Nullable<object>?" params="JsonReader, Nullable<Type>?" access="internal" signature="internal sealed Nullable<object>? DeserializeInternal(JsonReader reader, Nullable<Type>? objectType)">
         <template #name><h3>DeserializeInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -396,14 +396,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-serializeinternal" name="SerializeInternal" returns="void" params="JsonWriter, object?, Type?" access="internal" signature="internal sealed void SerializeInternal(JsonWriter jsonWriter, object? value, Type? rootType)">
+    <doc-member id="method-serializeinternal" name="SerializeInternal" returns="void" params="JsonWriter, Nullable<object>?, Nullable<Type>?" access="internal" signature="internal sealed void SerializeInternal(JsonWriter jsonWriter, Nullable<object>? value, Nullable<Type>? rootType)">
         <template #name><h3>SerializeInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
-                <doc-parameter name="rootType" type="Type?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="rootType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -412,7 +412,7 @@
 <doc-member-group id="events">
     <template #title>Events</template>
 
-    <doc-member id="property-error" name="Error" type="EventHandler<ErrorEventArgs>?" signature="public sealed event EventHandler<ErrorEventArgs>? Error { add; remove; }">
+    <doc-member id="property-error" name="Error" type="Nullable<EventHandler<ErrorEventArgs>>?" signature="public sealed event Nullable<EventHandler<ErrorEventArgs>>? Error { add; remove; }">
         <template #name><h3>Error</h3></template>
     </doc-member>
 </doc-member-group>
@@ -467,6 +467,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonSerializerProxy", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonSerializerProxy", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonSerializer","href":"/Newtonsoft.Json/API/newtonsoft/json/jsonserializer/","children":[{"label":"JsonSerializerProxy"}]}]}] }</script>
     </body>
 </html>

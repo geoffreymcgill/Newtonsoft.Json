@@ -208,7 +208,7 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_roottype" name="_rootType" type="Type?" access="private" signature="private Type? _rootType">
+    <doc-member id="field-_roottype" name="_rootType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _rootType">
         <template #name><h3>_rootType</h3></template>
     </doc-member>
 
@@ -234,7 +234,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="bool" params="JsonWriter, object, JsonContainerContract, JsonProperty?, JsonProperty, JsonContract?, object?" access="private" signature="private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, JsonProperty? member, JsonProperty property, JsonContract? memberContract, object? memberValue)">
+    <doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="bool" params="JsonWriter, object, JsonContainerContract, JsonProperty?, JsonProperty, JsonContract?, Nullable<object>?" access="private" signature="private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, JsonProperty? member, JsonProperty property, JsonContract? memberContract, Nullable<object>? memberValue)">
         <template #name><h3>CalculatePropertyValues</h3></template>
 
         <template #parameters>
@@ -245,18 +245,18 @@
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
                 <doc-parameter name="memberContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
-                <doc-parameter name="memberValue" type="object?"></doc-parameter>
+                <doc-parameter name="memberValue" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-checkforcircularreference" name="CheckForCircularReference" returns="bool" params="JsonWriter, object?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool CheckForCircularReference(JsonWriter writer, object? value, JsonProperty? property, JsonContract? contract, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+    <doc-member id="method-checkforcircularreference" name="CheckForCircularReference" returns="bool" params="JsonWriter, Nullable<object>?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool CheckForCircularReference(JsonWriter writer, Nullable<object>? value, JsonProperty? property, JsonContract? contract, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
         <template #name><h3>CheckForCircularReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
@@ -275,12 +275,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getcontractsafe" name="GetContractSafe" returns="JsonContract?" params="object?" access="private" signature="private JsonContract? GetContractSafe(object? value)">
+    <doc-member id="method-getcontractsafe" name="GetContractSafe" returns="JsonContract?" params="Nullable<object>?" access="private" signature="private JsonContract? GetContractSafe(Nullable<object>? value)">
         <template #name><h3>GetContractSafe</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -406,7 +406,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-resolveisreference" name="ResolveIsReference" returns="bool?" params="JsonContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool? ResolveIsReference(JsonContract contract, JsonProperty? property, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+    <doc-member id="method-resolveisreference" name="ResolveIsReference" returns="Nullable<bool>?" params="JsonContract, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private Nullable<bool>? ResolveIsReference(JsonContract contract, JsonProperty? property, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
         <template #name><h3>ResolveIsReference</h3></template>
 
         <template #parameters>
@@ -419,14 +419,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-serialize" name="Serialize" returns="void" params="JsonWriter, object?, Type?" signature="public void Serialize(JsonWriter jsonWriter, object? value, Type? objectType)">
+    <doc-member id="method-serialize" name="Serialize" returns="void" params="JsonWriter, Nullable<object>?, Nullable<Type>?" signature="public void Serialize(JsonWriter jsonWriter, Nullable<object>? value, Nullable<Type>? objectType)">
         <template #name><h3>Serialize</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="jsonWriter" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -580,13 +580,13 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-serializevalue" name="SerializeValue" returns="void" params="JsonWriter, object?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeValue(JsonWriter writer, object? value, JsonContract? valueContract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
+    <doc-member id="method-serializevalue" name="SerializeValue" returns="void" params="JsonWriter, Nullable<object>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?" access="private" signature="private void SerializeValue(JsonWriter writer, Nullable<object>? value, JsonContract? valueContract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerProperty)">
         <template #name><h3>SerializeValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="writer" type="Newtonsoft.Json.JsonWriter"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
@@ -607,34 +607,34 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-shouldwritedynamicproperty" name="ShouldWriteDynamicProperty" returns="bool" params="object?" access="private" signature="private bool ShouldWriteDynamicProperty(object? memberValue)">
+    <doc-member id="method-shouldwritedynamicproperty" name="ShouldWriteDynamicProperty" returns="bool" params="Nullable<object>?" access="private" signature="private bool ShouldWriteDynamicProperty(Nullable<object>? memberValue)">
         <template #name><h3>ShouldWriteDynamicProperty</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="memberValue" type="object?"></doc-parameter>
+                <doc-parameter name="memberValue" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-shouldwriteproperty" name="ShouldWriteProperty" returns="bool" params="object?, JsonObjectContract?, JsonProperty" access="private" signature="private bool ShouldWriteProperty(object? memberValue, JsonObjectContract? containerContract, JsonProperty property)">
+    <doc-member id="method-shouldwriteproperty" name="ShouldWriteProperty" returns="bool" params="Nullable<object>?, JsonObjectContract?, JsonProperty" access="private" signature="private bool ShouldWriteProperty(Nullable<object>? memberValue, JsonObjectContract? containerContract, JsonProperty property)">
         <template #name><h3>ShouldWriteProperty</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="memberValue" type="object?"></doc-parameter>
+                <doc-parameter name="memberValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonObjectContract?"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-shouldwritereference" name="ShouldWriteReference" returns="bool" params="object?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool ShouldWriteReference(object? value, JsonProperty? property, JsonContract? valueContract, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
+    <doc-member id="method-shouldwritereference" name="ShouldWriteReference" returns="bool" params="Nullable<object>?, JsonProperty?, JsonContract?, JsonContainerContract?, JsonProperty?" access="private" signature="private bool ShouldWriteReference(Nullable<object>? value, JsonProperty? property, JsonContract? valueContract, JsonContainerContract? collectionContract, JsonProperty? containerProperty)">
         <template #name><h3>ShouldWriteReference</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="valueContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="collectionContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
@@ -657,14 +657,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconverttostring" name="TryConvertToString" returns="bool" params="object, Type, string?" access="internal" signature="internal static bool TryConvertToString(object value, Type type, string? s)">
+    <doc-member id="method-tryconverttostring" name="TryConvertToString" returns="bool" params="object, Type, Nullable<string>?" access="internal" signature="internal static bool TryConvertToString(object value, Type type, Nullable<string>? s)">
         <template #name><h3>TryConvertToString</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="value" type="object"></doc-parameter>
                 <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="s" type="string?"></doc-parameter>
+                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -784,6 +784,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonSerializerInternalWriter", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonSerializerInternalWriter", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonSerializerInternalBase","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsonserializerinternalbase/","children":[{"label":"JsonSerializerInternalWriter"}]}]}] }</script>
     </body>
 </html>

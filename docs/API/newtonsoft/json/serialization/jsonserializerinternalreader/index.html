@@ -230,7 +230,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-calculatepropertydetails" name="CalculatePropertyDetails" returns="bool" params="JsonProperty, JsonConverter?, JsonContainerContract?, JsonProperty?, JsonReader, object, bool, object?, JsonContract?, bool, bool" access="private" signature="private bool CalculatePropertyDetails(JsonProperty property, JsonConverter? propertyConverter, JsonContainerContract? containerContract, JsonProperty? containerProperty, JsonReader reader, object target, bool useExistingValue, object? currentValue, JsonContract? propertyContract, bool gottenCurrentValue, bool ignoredValue)">
+    <doc-member id="method-calculatepropertydetails" name="CalculatePropertyDetails" returns="bool" params="JsonProperty, JsonConverter?, JsonContainerContract?, JsonProperty?, JsonReader, object, bool, Nullable<object>?, JsonContract?, bool, bool" access="private" signature="private bool CalculatePropertyDetails(JsonProperty property, JsonConverter? propertyConverter, JsonContainerContract? containerContract, JsonProperty? containerProperty, JsonReader reader, object target, bool useExistingValue, Nullable<object>? currentValue, JsonContract? propertyContract, bool gottenCurrentValue, bool ignoredValue)">
         <template #name><h3>CalculatePropertyDetails</h3></template>
 
         <template #parameters>
@@ -242,7 +242,7 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="target" type="object"></doc-parameter>
                 <doc-parameter name="useExistingValue" type="bool"></doc-parameter>
-                <doc-parameter name="currentValue" type="object?"></doc-parameter>
+                <doc-parameter name="currentValue" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="propertyContract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="gottenCurrentValue" type="bool"></doc-parameter>
                 <doc-parameter name="ignoredValue" type="bool"></doc-parameter>
@@ -261,19 +261,19 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-coerceemptystringtonull" name="CoerceEmptyStringToNull" returns="bool" params="Type?, JsonContract?, string" access="private" signature="private static bool CoerceEmptyStringToNull(Type? objectType, JsonContract? contract, string s)">
+    <doc-member id="method-coerceemptystringtonull" name="CoerceEmptyStringToNull" returns="bool" params="Nullable<Type>?, JsonContract?, string" access="private" signature="private static bool CoerceEmptyStringToNull(Nullable<Type>? objectType, JsonContract? contract, string s)">
         <template #name><h3>CoerceEmptyStringToNull</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="s" type="string"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createdynamic" name="CreateDynamic" returns="object" params="JsonReader, JsonDynamicContract, JsonProperty?, string?" access="private" signature="private object CreateDynamic(JsonReader reader, JsonDynamicContract contract, JsonProperty? member, string? id)">
+    <doc-member id="method-createdynamic" name="CreateDynamic" returns="object" params="JsonReader, JsonDynamicContract, JsonProperty?, Nullable<string>?" access="private" signature="private object CreateDynamic(JsonReader reader, JsonDynamicContract contract, JsonProperty? member, Nullable<string>? id)">
         <template #name><h3>CreateDynamic</h3></template>
 
         <template #parameters>
@@ -281,12 +281,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonDynamicContract"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createiserializable" name="CreateISerializable" returns="object" params="JsonReader, JsonISerializableContract, JsonProperty?, string?" access="private" signature="private object CreateISerializable(JsonReader reader, JsonISerializableContract contract, JsonProperty? member, string? id)">
+    <doc-member id="method-createiserializable" name="CreateISerializable" returns="object" params="JsonReader, JsonISerializableContract, JsonProperty?, Nullable<string>?" access="private" signature="private object CreateISerializable(JsonReader reader, JsonISerializableContract contract, JsonProperty? member, Nullable<string>? id)">
         <template #name><h3>CreateISerializable</h3></template>
 
         <template #parameters>
@@ -294,12 +294,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonISerializableContract"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createiserializableitem" name="CreateISerializableItem" returns="object?" params="JToken, Type, JsonISerializableContract, JsonProperty?" access="internal" signature="internal object? CreateISerializableItem(JToken token, Type type, JsonISerializableContract contract, JsonProperty? member)">
+    <doc-member id="method-createiserializableitem" name="CreateISerializableItem" returns="Nullable<object>?" params="JToken, Type, JsonISerializableContract, JsonProperty?" access="internal" signature="internal Nullable<object>? CreateISerializableItem(JToken token, Type type, JsonISerializableContract contract, JsonProperty? member)">
         <template #name><h3>CreateISerializableItem</h3></template>
 
         <template #parameters>
@@ -333,17 +333,17 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createlist" name="CreateList" returns="object?" params="JsonReader, Type?, JsonContract?, JsonProperty?, object?, string?" access="private" signature="private object? CreateList(JsonReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, object? existingValue, string? id)">
+    <doc-member id="method-createlist" name="CreateList" returns="Nullable<object>?" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, Nullable<object>?, Nullable<string>?" access="private" signature="private Nullable<object>? CreateList(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, Nullable<object>? existingValue, Nullable<string>? id)">
         <template #name><h3>CreateList</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -372,7 +372,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createnewobject" name="CreateNewObject" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, JsonProperty?, string?, bool" signature="public object CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty? containerMember, JsonProperty? containerProperty, string? id, bool createdFromNonDefaultCreator)">
+    <doc-member id="method-createnewobject" name="CreateNewObject" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, JsonProperty?, Nullable<string>?, bool" signature="public object CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty? containerMember, JsonProperty? containerProperty, Nullable<string>? id, bool createdFromNonDefaultCreator)">
         <template #name><h3>CreateNewObject</h3></template>
 
         <template #parameters>
@@ -381,29 +381,29 @@
                 <doc-parameter name="objectContract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
                 <doc-parameter name="containerMember" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
                 <doc-parameter name="createdFromNonDefaultCreator" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createobject" name="CreateObject" returns="object?" params="JsonReader, Type?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, object?" access="private" signature="private object? CreateObject(JsonReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, object? existingValue)">
+    <doc-member id="method-createobject" name="CreateObject" returns="Nullable<object>?" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?" access="private" signature="private Nullable<object>? CreateObject(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue)">
         <template #name><h3>CreateObject</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
                 <doc-parameter name="containerMember" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createobjectusingcreatorwithparameters" name="CreateObjectUsingCreatorWithParameters" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, ObjectConstructor<object>, string?" access="private" signature="private object CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty? containerProperty, ObjectConstructor<object> creator, string? id)">
+    <doc-member id="method-createobjectusingcreatorwithparameters" name="CreateObjectUsingCreatorWithParameters" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, ObjectConstructor<object>, Nullable<string>?" access="private" signature="private object CreateObjectUsingCreatorWithParameters(JsonReader reader, JsonObjectContract contract, JsonProperty? containerProperty, ObjectConstructor<object> creator, Nullable<string>? id)">
         <template #name><h3>CreateObjectUsingCreatorWithParameters</h3></template>
 
         <template #parameters>
@@ -412,40 +412,40 @@
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
                 <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="creator" type="Newtonsoft.Json.Serialization.ObjectConstructor<object>"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-createvalueinternal" name="CreateValueInternal" returns="object?" params="JsonReader, Type?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, object?" access="private" signature="private object? CreateValueInternal(JsonReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, object? existingValue)">
+    <doc-member id="method-createvalueinternal" name="CreateValueInternal" returns="Nullable<object>?" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?" access="private" signature="private Nullable<object>? CreateValueInternal(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue)">
         <template #name><h3>CreateValueInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
                 <doc-parameter name="containerMember" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-deserialize" name="Deserialize" returns="object?" params="JsonReader, Type?, bool" signature="public object? Deserialize(JsonReader reader, Type? objectType, bool checkAdditionalContent)">
+    <doc-member id="method-deserialize" name="Deserialize" returns="Nullable<object>?" params="JsonReader, Nullable<Type>?, bool" signature="public Nullable<object>? Deserialize(JsonReader reader, Nullable<Type>? objectType, bool checkAdditionalContent)">
         <template #name><h3>Deserialize</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="checkAdditionalContent" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-deserializeconvertable" name="DeserializeConvertable" returns="object?" params="JsonConverter, JsonReader, Type, object?" access="private" signature="private object? DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, object? existingValue)">
+    <doc-member id="method-deserializeconvertable" name="DeserializeConvertable" returns="Nullable<object>?" params="JsonConverter, JsonReader, Type, Nullable<object>?" access="private" signature="private Nullable<object>? DeserializeConvertable(JsonConverter converter, JsonReader reader, Type objectType, Nullable<object>? existingValue)">
         <template #name><h3>DeserializeConvertable</h3></template>
 
         <template #parameters>
@@ -453,7 +453,7 @@
                 <doc-parameter name="converter" type="Newtonsoft.Json.JsonConverter"></doc-parameter>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -486,16 +486,16 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-ensuretype" name="EnsureType" returns="object?" params="JsonReader, object?, CultureInfo, JsonContract?, Type?" access="private" signature="private object? EnsureType(JsonReader reader, object? value, CultureInfo culture, JsonContract? contract, Type? targetType)">
+    <doc-member id="method-ensuretype" name="EnsureType" returns="Nullable<object>?" params="JsonReader, Nullable<object>?, CultureInfo, JsonContract?, Nullable<Type>?" access="private" signature="private Nullable<object>? EnsureType(JsonReader reader, Nullable<object>? value, CultureInfo culture, JsonContract? contract, Nullable<Type>? targetType)">
         <template #name><h3>EnsureType</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="culture" type="CultureInfo"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
-                <doc-parameter name="targetType" type="Type?"></doc-parameter>
+                <doc-parameter name="targetType" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -510,12 +510,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getcontractsafe" name="GetContractSafe" returns="JsonContract?" params="Type?" access="private" signature="private JsonContract? GetContractSafe(Type? type)">
+    <doc-member id="method-getcontractsafe" name="GetContractSafe" returns="JsonContract?" params="Nullable<Type>?" access="private" signature="private JsonContract? GetContractSafe(Nullable<Type>? type)">
         <template #name><h3>GetContractSafe</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="type" type="Type?"></doc-parameter>
+                <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -615,7 +615,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-populatedictionary" name="PopulateDictionary" returns="object" params="IDictionary, JsonReader, JsonDictionaryContract, JsonProperty?, string?" access="private" signature="private object PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty? containerProperty, string? id)">
+    <doc-member id="method-populatedictionary" name="PopulateDictionary" returns="object" params="IDictionary, JsonReader, JsonDictionaryContract, JsonProperty?, Nullable<string>?" access="private" signature="private object PopulateDictionary(IDictionary dictionary, JsonReader reader, JsonDictionaryContract contract, JsonProperty? containerProperty, Nullable<string>? id)">
         <template #name><h3>PopulateDictionary</h3></template>
 
         <template #parameters>
@@ -624,12 +624,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonDictionaryContract"></doc-parameter>
                 <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-populatelist" name="PopulateList" returns="object" params="IList, JsonReader, JsonArrayContract, JsonProperty?, string?" access="private" signature="private object PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty? containerProperty, string? id)">
+    <doc-member id="method-populatelist" name="PopulateList" returns="object" params="IList, JsonReader, JsonArrayContract, JsonProperty?, Nullable<string>?" access="private" signature="private object PopulateList(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty? containerProperty, Nullable<string>? id)">
         <template #name><h3>PopulateList</h3></template>
 
         <template #parameters>
@@ -638,12 +638,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
                 <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-populatemultidimensionalarray" name="PopulateMultidimensionalArray" returns="object" params="IList, JsonReader, JsonArrayContract, JsonProperty?, string?" access="private" signature="private object PopulateMultidimensionalArray(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty? containerProperty, string? id)">
+    <doc-member id="method-populatemultidimensionalarray" name="PopulateMultidimensionalArray" returns="object" params="IList, JsonReader, JsonArrayContract, JsonProperty?, Nullable<string>?" access="private" signature="private object PopulateMultidimensionalArray(IList list, JsonReader reader, JsonArrayContract contract, JsonProperty? containerProperty, Nullable<string>? id)">
         <template #name><h3>PopulateMultidimensionalArray</h3></template>
 
         <template #parameters>
@@ -652,12 +652,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonArrayContract"></doc-parameter>
                 <doc-parameter name="containerProperty" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-populateobject" name="PopulateObject" returns="object" params="object, JsonReader, JsonObjectContract, JsonProperty?, string?" access="private" signature="private object PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty? member, string? id)">
+    <doc-member id="method-populateobject" name="PopulateObject" returns="object" params="object, JsonReader, JsonObjectContract, JsonProperty?, Nullable<string>?" access="private" signature="private object PopulateObject(object newObject, JsonReader reader, JsonObjectContract contract, JsonProperty? member, Nullable<string>? id)">
         <template #name><h3>PopulateObject</h3></template>
 
         <template #parameters>
@@ -666,12 +666,12 @@
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-readextensiondatavalue" name="ReadExtensionDataValue" returns="object?" params="JsonObjectContract, JsonProperty?, JsonReader" access="private" signature="private object? ReadExtensionDataValue(JsonObjectContract contract, JsonProperty? member, JsonReader reader)">
+    <doc-member id="method-readextensiondatavalue" name="ReadExtensionDataValue" returns="Nullable<object>?" params="JsonObjectContract, JsonProperty?, JsonReader" access="private" signature="private Nullable<object>? ReadExtensionDataValue(JsonObjectContract contract, JsonProperty? member, JsonReader reader)">
         <template #name><h3>ReadExtensionDataValue</h3></template>
 
         <template #parameters>
@@ -683,38 +683,38 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-readmetadataproperties" name="ReadMetadataProperties" returns="bool" params="JsonReader, Type?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, object?, object?, string?" access="private" signature="private bool ReadMetadataProperties(JsonReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, object? existingValue, object? newValue, string? id)">
+    <doc-member id="method-readmetadataproperties" name="ReadMetadataProperties" returns="bool" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataProperties(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, Nullable<object>? newValue, Nullable<string>? id)">
         <template #name><h3>ReadMetadataProperties</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
                 <doc-parameter name="containerMember" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
-                <doc-parameter name="newValue" type="object?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="newValue" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-readmetadatapropertiestoken" name="ReadMetadataPropertiesToken" returns="bool" params="JTokenReader, Type?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, object?, object?, string?" access="private" signature="private bool ReadMetadataPropertiesToken(JTokenReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, object? existingValue, object? newValue, string? id)">
+    <doc-member id="method-readmetadatapropertiestoken" name="ReadMetadataPropertiesToken" returns="bool" params="JTokenReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataPropertiesToken(JTokenReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, Nullable<object>? newValue, Nullable<string>? id)">
         <template #name><h3>ReadMetadataPropertiesToken</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.Linq.JTokenReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
                 <doc-parameter name="containerMember" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
-                <doc-parameter name="existingValue" type="object?"></doc-parameter>
-                <doc-parameter name="newValue" type="object?"></doc-parameter>
-                <doc-parameter name="id" type="string?"></doc-parameter>
+                <doc-parameter name="existingValue" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="newValue" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="id" type="System.Nullable<string>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -732,13 +732,13 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-resolvetypename" name="ResolveTypeName" returns="void" params="JsonReader, Type?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, string" access="private" signature="private void ResolveTypeName(JsonReader reader, Type? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, string qualifiedTypeName)">
+    <doc-member id="method-resolvetypename" name="ResolveTypeName" returns="void" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, string" access="private" signature="private void ResolveTypeName(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, string qualifiedTypeName)">
         <template #name><h3>ResolveTypeName</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="objectType" type="Type?"></doc-parameter>
+                <doc-parameter name="objectType" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
                 <doc-parameter name="member" type="Newtonsoft.Json.Serialization.JsonProperty?"></doc-parameter>
                 <doc-parameter name="containerContract" type="Newtonsoft.Json.Serialization.JsonContainerContract?"></doc-parameter>
@@ -762,14 +762,14 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-setpropertypresence" name="SetPropertyPresence" returns="void" params="JsonReader, JsonProperty, Dictionary<JsonProperty, PropertyPresence>?" access="private" signature="private void SetPropertyPresence(JsonReader reader, JsonProperty property, Dictionary<JsonProperty, PropertyPresence>? requiredProperties)">
+    <doc-member id="method-setpropertypresence" name="SetPropertyPresence" returns="void" params="JsonReader, JsonProperty, Nullable<Dictionary<JsonProperty, PropertyPresence>>?" access="private" signature="private void SetPropertyPresence(JsonReader reader, JsonProperty property, Nullable<Dictionary<JsonProperty, PropertyPresence>>? requiredProperties)">
         <template #name><h3>SetPropertyPresence</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="requiredProperties" type="Dictionary<Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PropertyPresence>?"></doc-parameter>
+                <doc-parameter name="requiredProperties" type="System.Nullable<Dictionary<Newtonsoft.Json.Serialization.JsonProperty, Newtonsoft.Json.Serialization.JsonSerializerInternalReader.PropertyPresence>>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -801,26 +801,26 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-shouldsetpropertyvalue" name="ShouldSetPropertyValue" returns="bool" params="JsonProperty, JsonObjectContract?, object?" access="private" signature="private bool ShouldSetPropertyValue(JsonProperty property, JsonObjectContract? contract, object? value)">
+    <doc-member id="method-shouldsetpropertyvalue" name="ShouldSetPropertyValue" returns="bool" params="JsonProperty, JsonObjectContract?, Nullable<object>?" access="private" signature="private bool ShouldSetPropertyValue(JsonProperty property, JsonObjectContract? contract, Nullable<object>? value)">
         <template #name><h3>ShouldSetPropertyValue</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract?"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-throwunexpectedendexception" name="ThrowUnexpectedEndException" returns="void" params="JsonReader, JsonContract, object?, string" access="private" signature="private void ThrowUnexpectedEndException(JsonReader reader, JsonContract contract, object? currentObject, string message)">
+    <doc-member id="method-throwunexpectedendexception" name="ThrowUnexpectedEndException" returns="void" params="JsonReader, JsonContract, Nullable<object>?, string" access="private" signature="private void ThrowUnexpectedEndException(JsonReader reader, JsonContract contract, Nullable<object>? currentObject, string message)">
         <template #name><h3>ThrowUnexpectedEndException</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
                 <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="currentObject" type="object?"></doc-parameter>
+                <doc-parameter name="currentObject" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="message" type="string"></doc-parameter>
             </doc-parameters>
         </template>
@@ -877,6 +877,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonSerializerInternalReader", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonSerializerInternalReader", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonSerializerInternalBase","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsonserializerinternalbase/","children":[{"label":"JsonSerializerInternalReader"}]}]}] }</script>
     </body>
 </html>

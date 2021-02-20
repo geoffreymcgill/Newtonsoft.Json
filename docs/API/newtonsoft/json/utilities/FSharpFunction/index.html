@@ -208,11 +208,11 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_instance" name="_instance" type="object?" access="private" signature="private readonly object? _instance">
+    <doc-member id="field-_instance" name="_instance" type="Nullable<object>?" access="private" signature="private readonly Nullable<object>? _instance">
         <template #name><h3>_instance</h3></template>
     </doc-member>
 
-    <doc-member id="field-_invoker" name="_invoker" type="MethodCall<object?, object>" access="private" signature="private readonly MethodCall<object?, object> _invoker">
+    <doc-member id="field-_invoker" name="_invoker" type="MethodCall<Nullable<object>?, object>" access="private" signature="private readonly MethodCall<Nullable<object>?, object> _invoker">
         <template #name><h3>_invoker</h3></template>
     </doc-member>
 </doc-member-group>
@@ -220,13 +220,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object?, MethodCall<object?, object>" signature="public FSharpFunction(object? instance, MethodCall<object?, object> invoker)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Nullable<object>?, MethodCall<Nullable<object>?, object>" signature="public FSharpFunction(Nullable<object>? instance, MethodCall<Nullable<object>?, object> invoker)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="instance" type="object?"></doc-parameter>
-                <doc-parameter name="invoker" type="Newtonsoft.Json.Utilities.MethodCall<object?, object>"></doc-parameter>
+                <doc-parameter name="instance" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="invoker" type="Newtonsoft.Json.Utilities.MethodCall<System.Nullable<object>?, object>"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -292,6 +292,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "FSharpFunction", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "FSharpFunction", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"FSharpFunction"}]}] }</script>
     </body>
 </html>

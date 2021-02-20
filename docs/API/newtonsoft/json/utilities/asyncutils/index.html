@@ -225,7 +225,7 @@
     <template #title>Methods</template>
 
     <doc-overload-group overload-id="group-cancelifrequestedasync">
-        <doc-member id="method-cancelifrequestedasync" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Task?" params="CancellationToken" signature="public static Task? CancelIfRequestedAsync(CancellationToken cancellationToken)">
+        <doc-member id="method-cancelifrequestedasync" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Nullable<Task>?" params="CancellationToken" signature="public static Nullable<Task>? CancelIfRequestedAsync(CancellationToken cancellationToken)">
             <template #name><h3>CancelIfRequestedAsync</h3></template>
 
             <template #parameters>
@@ -235,7 +235,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-cancelifrequestedasync-1" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Task<T>?" params="CancellationToken" signature="public static Task<T>? CancelIfRequestedAsync<T>(CancellationToken cancellationToken)">
+        <doc-member id="method-cancelifrequestedasync-1" overload-id="group-cancelifrequestedasync" name="CancelIfRequestedAsync" returns="Nullable<Task<T>>?" params="CancellationToken" signature="public static Nullable<Task<T>>? CancelIfRequestedAsync<T>(CancellationToken cancellationToken)">
             <template #name><h3>CancelIfRequestedAsync&lt;T&gt;</h3></template>
 
             <template #parameters>
@@ -315,13 +315,13 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-writeasync-1" overload-id="group-writeasync" name="WriteAsync" returns="Task" params="TextWriter, string?, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, string? value, CancellationToken cancellationToken)">
+        <doc-member id="method-writeasync-1" overload-id="group-writeasync" name="WriteAsync" returns="Task" params="TextWriter, Nullable<string>?, CancellationToken" signature="public static Task WriteAsync(TextWriter writer, Nullable<string>? value, CancellationToken cancellationToken)">
             <template #name><h3>WriteAsync</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="writer" type="TextWriter"></doc-parameter>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -393,6 +393,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "AsyncUtils", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "AsyncUtils", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"AsyncUtils"}]}] }</script>
     </body>
 </html>

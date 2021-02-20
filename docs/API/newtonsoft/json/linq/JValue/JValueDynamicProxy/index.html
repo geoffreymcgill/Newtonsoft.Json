@@ -208,7 +208,7 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="JValue, BinaryOperationBinder, object, object?" signature="public sealed bool TryBinaryOperation(JValue instance, BinaryOperationBinder binder, object arg, object? result)">
+    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="JValue, BinaryOperationBinder, object, Nullable<object>?" signature="public sealed bool TryBinaryOperation(JValue instance, BinaryOperationBinder binder, object arg, Nullable<object>? result)">
         <template #name><h3>TryBinaryOperation</h3></template>
 
         <template #parameters>
@@ -216,19 +216,19 @@
                 <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
                 <doc-parameter name="binder" type="BinaryOperationBinder"></doc-parameter>
                 <doc-parameter name="arg" type="object"></doc-parameter>
-                <doc-parameter name="result" type="object?"></doc-parameter>
+                <doc-parameter name="result" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="JValue, ConvertBinder, object?" signature="public sealed bool TryConvert(JValue instance, ConvertBinder binder, object? result)">
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="JValue, ConvertBinder, Nullable<object>?" signature="public sealed bool TryConvert(JValue instance, ConvertBinder binder, Nullable<object>? result)">
         <template #name><h3>TryConvert</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="instance" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
                 <doc-parameter name="binder" type="ConvertBinder"></doc-parameter>
-                <doc-parameter name="result" type="object?"></doc-parameter>
+                <doc-parameter name="result" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -284,6 +284,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JValueDynamicProxy", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JValueDynamicProxy", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"DynamicProxy<T>","href":"/Newtonsoft.Json/API/newtonsoft/json/utilities/dynamicproxy-1/","children":[{"label":"JValueDynamicProxy"}]}]}] }</script>
     </body>
 </html>

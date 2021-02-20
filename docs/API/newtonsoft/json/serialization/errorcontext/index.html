@@ -222,14 +222,14 @@
 
     </doc-member>
 
-    <doc-member id="property-originalobject" name="OriginalObject" type="object?" signature="public object? OriginalObject { get; }">
+    <doc-member id="property-originalobject" name="OriginalObject" type="Nullable<object>?" signature="public Nullable<object>? OriginalObject { get; }">
         <template #name><h3>OriginalObject</h3></template>
 
 <p>Gets the original object that caused the error.</p>
 
     </doc-member>
 
-    <doc-member id="property-member" name="Member" type="object?" signature="public object? Member { get; }">
+    <doc-member id="property-member" name="Member" type="Nullable<object>?" signature="public Nullable<object>? Member { get; }">
         <template #name><h3>Member</h3></template>
 
 <p>Gets the member that caused the error.</p>
@@ -254,13 +254,13 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-.ctor" name=".ctor" returns="void" params="object?, object?, string, Exception" access="internal" signature="internal ErrorContext(object? originalObject, object? member, string path, Exception error)">
+    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Nullable<object>?, Nullable<object>?, string, Exception" access="internal" signature="internal ErrorContext(Nullable<object>? originalObject, Nullable<object>? member, string path, Exception error)">
         <template #name><h3>.ctor</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="originalObject" type="object?"></doc-parameter>
-                <doc-parameter name="member" type="object?"></doc-parameter>
+                <doc-parameter name="originalObject" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="member" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="path" type="string"></doc-parameter>
                 <doc-parameter name="error" type="Exception"></doc-parameter>
             </doc-parameters>
@@ -318,6 +318,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "ErrorContext", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "ErrorContext", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"ErrorContext"}]}] }</script>
     </body>
 </html>

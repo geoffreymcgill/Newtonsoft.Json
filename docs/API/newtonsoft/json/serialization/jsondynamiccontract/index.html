@@ -215,7 +215,7 @@
         <template #name><h3>_callSiteGetters</h3></template>
     </doc-member>
 
-    <doc-member id="field-_callsitesetters" name="_callSiteSetters" type="ThreadSafeStore<string, CallSite<Func<CallSite, object, object?, object>>>" access="private" signature="private readonly ThreadSafeStore<string, CallSite<Func<CallSite, object, object?, object>>> _callSiteSetters">
+    <doc-member id="field-_callsitesetters" name="_callSiteSetters" type="ThreadSafeStore<string, CallSite<Func<CallSite, object, Nullable<object>?, object>>>" access="private" signature="private readonly ThreadSafeStore<string, CallSite<Func<CallSite, object, Nullable<object>?, object>>> _callSiteSetters">
         <template #name><h3>_callSiteSetters</h3></template>
     </doc-member>
 </doc-member-group>
@@ -230,7 +230,7 @@
 
     </doc-member>
 
-    <doc-member id="property-propertynameresolver" name="PropertyNameResolver" type="Func<string, string>?" signature="public Func<string, string>? PropertyNameResolver { get; set; }">
+    <doc-member id="property-propertynameresolver" name="PropertyNameResolver" type="Nullable<Func<string, string>>?" signature="public Nullable<Func<string, string>>? PropertyNameResolver { get; set; }">
         <template #name><h3>PropertyNameResolver</h3></template>
 
 <p>Gets or sets the property name resolver.</p>
@@ -264,7 +264,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createcallsitesetter" name="CreateCallSiteSetter" returns="CallSite<Func<CallSite, object, object?, object>>" params="string" access="private" signature="private static CallSite<Func<CallSite, object, object?, object>> CreateCallSiteSetter(string name)">
+    <doc-member id="method-createcallsitesetter" name="CreateCallSiteSetter" returns="CallSite<Func<CallSite, object, Nullable<object>?, object>>" params="string" access="private" signature="private static CallSite<Func<CallSite, object, Nullable<object>?, object>> CreateCallSiteSetter(string name)">
         <template #name><h3>CreateCallSiteSetter</h3></template>
 
         <template #parameters>
@@ -274,26 +274,26 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="IDynamicMetaObjectProvider, string, object?" access="internal" signature="internal bool TryGetMember(IDynamicMetaObjectProvider dynamicProvider, string name, object? value)">
+    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="IDynamicMetaObjectProvider, string, Nullable<object>?" access="internal" signature="internal bool TryGetMember(IDynamicMetaObjectProvider dynamicProvider, string name, Nullable<object>? value)">
         <template #name><h3>TryGetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="dynamicProvider" type="IDynamicMetaObjectProvider"></doc-parameter>
                 <doc-parameter name="name" type="string"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
-    <doc-member id="method-trysetmember" name="TrySetMember" returns="bool" params="IDynamicMetaObjectProvider, string, object?" access="internal" signature="internal bool TrySetMember(IDynamicMetaObjectProvider dynamicProvider, string name, object? value)">
+    <doc-member id="method-trysetmember" name="TrySetMember" returns="bool" params="IDynamicMetaObjectProvider, string, Nullable<object>?" access="internal" signature="internal bool TrySetMember(IDynamicMetaObjectProvider dynamicProvider, string name, Nullable<object>? value)">
         <template #name><h3>TrySetMember</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="dynamicProvider" type="IDynamicMetaObjectProvider"></doc-parameter>
                 <doc-parameter name="name" type="string"></doc-parameter>
-                <doc-parameter name="value" type="object?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -349,6 +349,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonDynamicContract", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonDynamicContract", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonContract","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsoncontract/","children":[{"label":"JsonContainerContract","href":"/Newtonsoft.Json/API/newtonsoft/json/serialization/jsoncontainercontract/","children":[{"label":"JsonDynamicContract"}]}]}]}] }</script>
     </body>
 </html>

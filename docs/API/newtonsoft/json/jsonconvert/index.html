@@ -264,7 +264,7 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-defaultsettings" name="DefaultSettings" type="Func<JsonSerializerSettings>?" signature="public static Func<JsonSerializerSettings>? DefaultSettings { get; set; }">
+    <doc-member id="property-defaultsettings" name="DefaultSettings" type="Nullable<Func<JsonSerializerSettings>>?" signature="public static Nullable<Func<JsonSerializerSettings>>? DefaultSettings { get; set; }">
         <template #name><h3>DefaultSettings</h3></template>
 
 <p>Gets or sets a function that creates default <see cref="T:Newtonsoft.Json.JsonSerializerSettings"/>.
@@ -311,7 +311,7 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-deserializeobject">
-        <doc-member id="method-deserializeobject" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string" signature="public static object? DeserializeObject(string value)">
+        <doc-member id="method-deserializeobject" overload-id="group-deserializeobject" name="DeserializeObject" returns="Nullable<object>?" params="string" signature="public static Nullable<object>? DeserializeObject(string value)">
             <template #name><h3>DeserializeObject</h3></template>
 
             <template #parameters>
@@ -351,7 +351,7 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializeobject-3" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, JsonSerializerSettings" signature="public static object? DeserializeObject(string value, JsonSerializerSettings settings)">
+        <doc-member id="method-deserializeobject-3" overload-id="group-deserializeobject" name="DeserializeObject" returns="Nullable<object>?" params="string, JsonSerializerSettings" signature="public static Nullable<object>? DeserializeObject(string value, JsonSerializerSettings settings)">
             <template #name><h3>DeserializeObject</h3></template>
 
             <template #parameters>
@@ -379,7 +379,7 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializeobject-5" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type" signature="public static object? DeserializeObject(string value, Type type)">
+        <doc-member id="method-deserializeobject-5" overload-id="group-deserializeobject" name="DeserializeObject" returns="Nullable<object>?" params="string, Type" signature="public static Nullable<object>? DeserializeObject(string value, Type type)">
             <template #name><h3>DeserializeObject</h3></template>
 
             <template #parameters>
@@ -393,7 +393,7 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializeobject-6" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type, JsonConverter[]" signature="public static object? DeserializeObject(string value, Type type, JsonConverter[] converters)">
+        <doc-member id="method-deserializeobject-6" overload-id="group-deserializeobject" name="DeserializeObject" returns="Nullable<object>?" params="string, Type, JsonConverter[]" signature="public static Nullable<object>? DeserializeObject(string value, Type type, JsonConverter[] converters)">
             <template #name><h3>DeserializeObject</h3></template>
 
             <template #parameters>
@@ -408,13 +408,13 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializeobject-7" overload-id="group-deserializeobject" name="DeserializeObject" returns="object?" params="string, Type?, JsonSerializerSettings?" signature="public static object? DeserializeObject(string value, Type? type, JsonSerializerSettings? settings)">
+        <doc-member id="method-deserializeobject-7" overload-id="group-deserializeobject" name="DeserializeObject" returns="Nullable<object>?" params="string, Nullable<Type>?, JsonSerializerSettings?" signature="public static Nullable<object>? DeserializeObject(string value, Nullable<Type>? type, JsonSerializerSettings? settings)">
             <template #name><h3>DeserializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
                     <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -425,7 +425,7 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-deserializexmlnode">
-        <doc-member id="method-deserializexmlnode" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string" signature="public static XmlDocument? DeserializeXmlNode(string value)">
+        <doc-member id="method-deserializexmlnode" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="Nullable<XmlDocument>?" params="string" signature="public static Nullable<XmlDocument>? DeserializeXmlNode(string value)">
             <template #name><h3>DeserializeXmlNode</h3></template>
 
             <template #parameters>
@@ -438,13 +438,13 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializexmlnode-1" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName)">
+        <doc-member id="method-deserializexmlnode-1" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="Nullable<XmlDocument>?" params="string, Nullable<string>?" signature="public static Nullable<XmlDocument>? DeserializeXmlNode(string value, Nullable<string>? deserializeRootElementName)">
             <template #name><h3>DeserializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -452,13 +452,13 @@ To serialize without using any default settings create a <see cref="T:Newtonsoft
 
         </doc-member>
 
-        <doc-member id="method-deserializexmlnode-2" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?, bool" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName, bool writeArrayAttribute)">
+        <doc-member id="method-deserializexmlnode-2" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="Nullable<XmlDocument>?" params="string, Nullable<string>?, bool" signature="public static Nullable<XmlDocument>? DeserializeXmlNode(string value, Nullable<string>? deserializeRootElementName, bool writeArrayAttribute)">
             <template #name><h3>DeserializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -468,13 +468,13 @@ and writes a Json.NET array attribute for collections.</p>
 
         </doc-member>
 
-        <doc-member id="method-deserializexmlnode-3" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="XmlDocument?" params="string, string?, bool, bool" signature="public static XmlDocument? DeserializeXmlNode(string value, string? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
+        <doc-member id="method-deserializexmlnode-3" overload-id="group-deserializexmlnode" name="DeserializeXmlNode" returns="Nullable<XmlDocument>?" params="string, Nullable<string>?, bool, bool" signature="public static Nullable<XmlDocument>? DeserializeXmlNode(string value, Nullable<string>? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
             <template #name><h3>DeserializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
                     <doc-parameter name="encodeSpecialCharacters" type="bool"></doc-parameter>
                 </doc-parameters>
@@ -487,7 +487,7 @@ writes a Json.NET array attribute for collections, and encodes special character
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-deserializexnode">
-        <doc-member id="method-deserializexnode" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string" signature="public static XDocument? DeserializeXNode(string value)">
+        <doc-member id="method-deserializexnode" overload-id="group-deserializexnode" name="DeserializeXNode" returns="Nullable<XDocument>?" params="string" signature="public static Nullable<XDocument>? DeserializeXNode(string value)">
             <template #name><h3>DeserializeXNode</h3></template>
 
             <template #parameters>
@@ -500,13 +500,13 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-deserializexnode-1" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName)">
+        <doc-member id="method-deserializexnode-1" overload-id="group-deserializexnode" name="DeserializeXNode" returns="Nullable<XDocument>?" params="string, Nullable<string>?" signature="public static Nullable<XDocument>? DeserializeXNode(string value, Nullable<string>? deserializeRootElementName)">
             <template #name><h3>DeserializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -514,13 +514,13 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-deserializexnode-2" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?, bool" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName, bool writeArrayAttribute)">
+        <doc-member id="method-deserializexnode-2" overload-id="group-deserializexnode" name="DeserializeXNode" returns="Nullable<XDocument>?" params="string, Nullable<string>?, bool" signature="public static Nullable<XDocument>? DeserializeXNode(string value, Nullable<string>? deserializeRootElementName, bool writeArrayAttribute)">
             <template #name><h3>DeserializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -530,13 +530,13 @@ and writes a Json.NET array attribute for collections.</p>
 
         </doc-member>
 
-        <doc-member id="method-deserializexnode-3" overload-id="group-deserializexnode" name="DeserializeXNode" returns="XDocument?" params="string, string?, bool, bool" signature="public static XDocument? DeserializeXNode(string value, string? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
+        <doc-member id="method-deserializexnode-3" overload-id="group-deserializexnode" name="DeserializeXNode" returns="Nullable<XDocument>?" params="string, Nullable<string>?, bool, bool" signature="public static Nullable<XDocument>? DeserializeXNode(string value, Nullable<string>? deserializeRootElementName, bool writeArrayAttribute, bool encodeSpecialCharacters)">
             <template #name><h3>DeserializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
                     <doc-parameter name="value" type="string"></doc-parameter>
-                    <doc-parameter name="deserializeRootElementName" type="string?"></doc-parameter>
+                    <doc-parameter name="deserializeRootElementName" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="writeArrayAttribute" type="bool"></doc-parameter>
                     <doc-parameter name="encodeSpecialCharacters" type="bool"></doc-parameter>
                 </doc-parameters>
@@ -617,12 +617,12 @@ writes a Json.NET array attribute for collections, and encodes special character
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-serializeobject">
-        <doc-member id="method-serializeobject" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?" signature="public static string SerializeObject(object? value)">
+        <doc-member id="method-serializeobject" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?" signature="public static string SerializeObject(Nullable<object>? value)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -630,12 +630,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-1" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, JsonConverter[]" signature="public static string SerializeObject(object? value, JsonConverter[] converters)">
+        <doc-member id="method-serializeobject-1" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, JsonConverter[]" signature="public static string SerializeObject(Nullable<object>? value, JsonConverter[] converters)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -644,12 +644,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-2" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting" signature="public static string SerializeObject(object? value, Formatting formatting)">
+        <doc-member id="method-serializeobject-2" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, Formatting" signature="public static string SerializeObject(Nullable<object>? value, Formatting formatting)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -658,12 +658,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-3" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, JsonSerializerSettings? settings)">
+        <doc-member id="method-serializeobject-3" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, JsonSerializerSettings?" signature="public static string SerializeObject(Nullable<object>? value, JsonSerializerSettings? settings)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -672,12 +672,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-4" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting, JsonConverter[]" signature="public static string SerializeObject(object? value, Formatting formatting, JsonConverter[] converters)">
+        <doc-member id="method-serializeobject-4" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, Formatting, JsonConverter[]" signature="public static string SerializeObject(Nullable<object>? value, Formatting formatting, JsonConverter[] converters)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                     <doc-parameter name="converters" type="Newtonsoft.Json.JsonConverter[]"></doc-parameter>
                 </doc-parameters>
@@ -687,12 +687,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-5" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Formatting formatting, JsonSerializerSettings? settings)">
+        <doc-member id="method-serializeobject-5" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(Nullable<object>? value, Formatting formatting, JsonSerializerSettings? settings)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                     <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
                 </doc-parameters>
@@ -702,13 +702,13 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-6" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Type?, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Type? type, JsonSerializerSettings? settings)">
+        <doc-member id="method-serializeobject-6" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, Nullable<Type>?, JsonSerializerSettings?" signature="public static string SerializeObject(Nullable<object>? value, Nullable<Type>? type, JsonSerializerSettings? settings)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
-                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
+                    <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
                     <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -717,13 +717,13 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializeobject-7" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="object?, Type?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(object? value, Type? type, Formatting formatting, JsonSerializerSettings? settings)">
+        <doc-member id="method-serializeobject-7" overload-id="group-serializeobject" name="SerializeObject" returns="string" params="Nullable<object>?, Nullable<Type>?, Formatting, JsonSerializerSettings?" signature="public static string SerializeObject(Nullable<object>? value, Nullable<Type>? type, Formatting formatting, JsonSerializerSettings? settings)">
             <template #name><h3>SerializeObject</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
-                    <doc-parameter name="type" type="Type?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
+                    <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                     <doc-parameter name="settings" type="Newtonsoft.Json.JsonSerializerSettings?"></doc-parameter>
                 </doc-parameters>
@@ -734,25 +734,25 @@ writes a Json.NET array attribute for collections, and encodes special character
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-serializeobjectinternal" name="SerializeObjectInternal" returns="string" params="object?, Type?, JsonSerializer" access="private" signature="private static string SerializeObjectInternal(object? value, Type? type, JsonSerializer jsonSerializer)">
+    <doc-member id="method-serializeobjectinternal" name="SerializeObjectInternal" returns="string" params="Nullable<object>?, Nullable<Type>?, JsonSerializer" access="private" signature="private static string SerializeObjectInternal(Nullable<object>? value, Nullable<Type>? type, JsonSerializer jsonSerializer)">
         <template #name><h3>SerializeObjectInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="object?"></doc-parameter>
-                <doc-parameter name="type" type="Type?"></doc-parameter>
+                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
+                <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
                 <doc-parameter name="jsonSerializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-serializexmlnode">
-        <doc-member id="method-serializexmlnode" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?" signature="public static string SerializeXmlNode(XmlNode? node)">
+        <doc-member id="method-serializexmlnode" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="Nullable<XmlNode>?" signature="public static string SerializeXmlNode(Nullable<XmlNode>? node)">
             <template #name><h3>SerializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XmlNode>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -760,12 +760,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializexmlnode-1" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?, Formatting" signature="public static string SerializeXmlNode(XmlNode? node, Formatting formatting)">
+        <doc-member id="method-serializexmlnode-1" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="Nullable<XmlNode>?, Formatting" signature="public static string SerializeXmlNode(Nullable<XmlNode>? node, Formatting formatting)">
             <template #name><h3>SerializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XmlNode>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -774,12 +774,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializexmlnode-2" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="XmlNode?, Formatting, bool" signature="public static string SerializeXmlNode(XmlNode? node, Formatting formatting, bool omitRootObject)">
+        <doc-member id="method-serializexmlnode-2" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="Nullable<XmlNode>?, Formatting, bool" signature="public static string SerializeXmlNode(Nullable<XmlNode>? node, Formatting formatting, bool omitRootObject)">
             <template #name><h3>SerializeXmlNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XmlNode?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XmlNode>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                     <doc-parameter name="omitRootObject" type="bool"></doc-parameter>
                 </doc-parameters>
@@ -791,12 +791,12 @@ writes a Json.NET array attribute for collections, and encodes special character
     </doc-overload-group>
 
     <doc-overload-group overload-id="group-serializexnode">
-        <doc-member id="method-serializexnode" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?" signature="public static string SerializeXNode(XObject? node)">
+        <doc-member id="method-serializexnode" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="Nullable<XObject>?" signature="public static string SerializeXNode(Nullable<XObject>? node)">
             <template #name><h3>SerializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XObject>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -804,12 +804,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializexnode-1" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?, Formatting" signature="public static string SerializeXNode(XObject? node, Formatting formatting)">
+        <doc-member id="method-serializexnode-1" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="Nullable<XObject>?, Formatting" signature="public static string SerializeXNode(Nullable<XObject>? node, Formatting formatting)">
             <template #name><h3>SerializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XObject>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -818,12 +818,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-serializexnode-2" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="XObject?, Formatting, bool" signature="public static string SerializeXNode(XObject? node, Formatting formatting, bool omitRootObject)">
+        <doc-member id="method-serializexnode-2" overload-id="group-serializexnode" name="SerializeXNode" returns="string" params="Nullable<XObject>?, Formatting, bool" signature="public static string SerializeXNode(Nullable<XObject>? node, Formatting formatting, bool omitRootObject)">
             <template #name><h3>SerializeXNode</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="node" type="XObject?"></doc-parameter>
+                    <doc-parameter name="node" type="System.Nullable<XObject>?"></doc-parameter>
                     <doc-parameter name="formatting" type="Newtonsoft.Json.Formatting"></doc-parameter>
                     <doc-parameter name="omitRootObject" type="bool"></doc-parameter>
                 </doc-parameters>
@@ -1069,12 +1069,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-18" overload-id="group-tostring" name="ToString" returns="string" params="Uri?" signature="public static string ToString(Uri? value)">
+        <doc-member id="method-tostring-18" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<Uri>?" signature="public static string ToString(Nullable<Uri>? value)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="Uri?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<Uri>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1082,12 +1082,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-19" overload-id="group-tostring" name="ToString" returns="string" params="string?" signature="public static string ToString(string? value)">
+        <doc-member id="method-tostring-19" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<string>?" signature="public static string ToString(Nullable<string>? value)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1095,12 +1095,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-20" overload-id="group-tostring" name="ToString" returns="string" params="object?" signature="public static string ToString(object? value)">
+        <doc-member id="method-tostring-20" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<object>?" signature="public static string ToString(Nullable<object>? value)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="object?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
                 </doc-parameters>
             </template>
 
@@ -1108,12 +1108,12 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-21" overload-id="group-tostring" name="ToString" returns="string" params="string?, char" signature="public static string ToString(string? value, char delimiter)">
+        <doc-member id="method-tostring-21" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<string>?, char" signature="public static string ToString(Nullable<string>? value, char delimiter)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="delimiter" type="char"></doc-parameter>
                 </doc-parameters>
             </template>
@@ -1169,12 +1169,12 @@ writes a Json.NET array attribute for collections, and encodes special character
             </template>
         </doc-member>
 
-        <doc-member id="method-tostring-26" overload-id="group-tostring" name="ToString" returns="string" params="string?, char, StringEscapeHandling" signature="public static string ToString(string? value, char delimiter, StringEscapeHandling stringEscapeHandling)">
+        <doc-member id="method-tostring-26" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<string>?, char, StringEscapeHandling" signature="public static string ToString(Nullable<string>? value, char delimiter, StringEscapeHandling stringEscapeHandling)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
                 <doc-parameters>
-                    <doc-parameter name="value" type="string?"></doc-parameter>
+                    <doc-parameter name="value" type="System.Nullable<string>?"></doc-parameter>
                     <doc-parameter name="delimiter" type="char"></doc-parameter>
                     <doc-parameter name="stringEscapeHandling" type="Newtonsoft.Json.StringEscapeHandling"></doc-parameter>
                 </doc-parameters>
@@ -1287,6 +1287,6 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonConvert", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JsonConvert", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonConvert"}]}] }</script>
     </body>
 </html>

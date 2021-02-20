@@ -211,19 +211,19 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_listchanged" name="_listChanged" type="ListChangedEventHandler?" access="internal" signature="internal ListChangedEventHandler? _listChanged">
+    <doc-member id="field-_listchanged" name="_listChanged" type="Nullable<ListChangedEventHandler>?" access="internal" signature="internal Nullable<ListChangedEventHandler>? _listChanged">
         <template #name><h3>_listChanged</h3></template>
     </doc-member>
 
-    <doc-member id="field-_addingnew" name="_addingNew" type="AddingNewEventHandler?" access="internal" signature="internal AddingNewEventHandler? _addingNew">
+    <doc-member id="field-_addingnew" name="_addingNew" type="Nullable<AddingNewEventHandler>?" access="internal" signature="internal Nullable<AddingNewEventHandler>? _addingNew">
         <template #name><h3>_addingNew</h3></template>
     </doc-member>
 
-    <doc-member id="field-_collectionchanged" name="_collectionChanged" type="NotifyCollectionChangedEventHandler?" access="internal" signature="internal NotifyCollectionChangedEventHandler? _collectionChanged">
+    <doc-member id="field-_collectionchanged" name="_collectionChanged" type="Nullable<NotifyCollectionChangedEventHandler>?" access="internal" signature="internal Nullable<NotifyCollectionChangedEventHandler>? _collectionChanged">
         <template #name><h3>_collectionChanged</h3></template>
     </doc-member>
 
-    <doc-member id="field-_syncroot" name="_syncRoot" type="object?" access="private" signature="private object? _syncRoot">
+    <doc-member id="field-_syncroot" name="_syncRoot" type="Nullable<object>?" access="private" signature="private Nullable<object>? _syncRoot">
         <template #name><h3>_syncRoot</h3></template>
     </doc-member>
 
@@ -290,12 +290,12 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-add" name="Add" returns="void" params="object?" signature="public virtual void Add(object? content)">
+    <doc-member id="method-add" name="Add" returns="void" params="Nullable<object>?" signature="public virtual void Add(Nullable<object>? content)">
         <template #name><h3>Add</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="content" type="object?"></doc-parameter>
+                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -313,12 +313,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-addfirst" name="AddFirst" returns="void" params="object?" signature="public void AddFirst(object? content)">
+    <doc-member id="method-addfirst" name="AddFirst" returns="void" params="Nullable<object>?" signature="public void AddFirst(Nullable<object>? content)">
         <template #name><h3>AddFirst</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="content" type="object?"></doc-parameter>
+                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
 
@@ -326,13 +326,13 @@
 
     </doc-member>
 
-    <doc-member id="method-addinternal" name="AddInternal" returns="void" params="int, object?, bool" access="internal" signature="internal void AddInternal(int index, object? content, bool skipParentCheck)">
+    <doc-member id="method-addinternal" name="AddInternal" returns="void" params="int, Nullable<object>?, bool" access="internal" signature="internal void AddInternal(int index, Nullable<object>? content, bool skipParentCheck)">
         <template #name><h3>AddInternal</h3></template>
 
         <template #parameters>
             <doc-parameters>
                 <doc-parameter name="index" type="int"></doc-parameter>
-                <doc-parameter name="content" type="object?"></doc-parameter>
+                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
                 <doc-parameter name="skipParentCheck" type="bool"></doc-parameter>
             </doc-parameters>
         </template>
@@ -392,12 +392,12 @@
         <template #name><h3>CreateChildrenCollection</h3></template>
     </doc-member>
 
-    <doc-member id="method-createfromcontent" name="CreateFromContent" returns="JToken" params="object?" access="internal" signature="internal static JToken CreateFromContent(object? content)">
+    <doc-member id="method-createfromcontent" name="CreateFromContent" returns="JToken" params="Nullable<object>?" access="internal" signature="internal static JToken CreateFromContent(Nullable<object>? content)">
         <template #name><h3>CreateFromContent</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="content" type="object?"></doc-parameter>
+                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -486,12 +486,12 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-ismulticontent" name="IsMultiContent" returns="bool" params="object?" access="internal" signature="internal bool IsMultiContent(object? content)">
+    <doc-member id="method-ismulticontent" name="IsMultiContent" returns="bool" params="Nullable<object>?" access="internal" signature="internal bool IsMultiContent(Nullable<object>? content)">
         <template #name><h3>IsMultiContent</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="content" type="object?"></doc-parameter>
+                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
             </doc-parameters>
         </template>
     </doc-member>
@@ -813,6 +813,6 @@
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JContainer", icon: "file" }</script>
+        <script>window.__DOCS__ = { "title": "JContainer", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JToken","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JToken/","children":[{"label":"JContainer","children":[{"label":"JArray","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JArray/"},{"label":"JConstructor","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JConstructor/"},{"label":"JObject","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JObject/"},{"label":"JProperty","href":"/Newtonsoft.Json/API/newtonsoft/json/linq/JProperty/"}]}]}]}] }</script>
     </body>
 </html>
