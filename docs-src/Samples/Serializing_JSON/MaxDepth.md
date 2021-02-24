@@ -4,7 +4,4 @@ This sample uses the [JsonSerializerSettings.MaxDepth](/api/newtonsoft/json/json
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\MaxDepth.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/MaxDepth.cs" region="Usage" title="Usage" :::

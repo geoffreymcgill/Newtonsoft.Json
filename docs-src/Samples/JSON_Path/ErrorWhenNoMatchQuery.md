@@ -4,7 +4,4 @@ This sample loads JSON and then queries values from it using [SelectToken()](/AP
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\JsonPath\ErrorWhenNoMatchQuery.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/JsonPath/ErrorWhenNoMatchQuery.cs" region="Usage" title="Usage" :::

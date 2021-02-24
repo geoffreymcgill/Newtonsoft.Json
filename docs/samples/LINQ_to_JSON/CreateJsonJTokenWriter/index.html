@@ -192,8 +192,86 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateJsonJTokenWriter.cs
-region: Usage</code></pre>
+<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateJsonJTokenWriter.cs" region="Usage" title="Usage">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+
+#endif
+
+namespace Newtonsoft.Json.Tests.Documentation.Samples.Linq
+{
+    [TestFixture]
+    public class CreateJsonJTokenWriter : TestFixtureBase
+    {
+        [Test]
+        public void Example()
+        {
+            #region Usage
+            JTokenWriter writer = new JTokenWriter();
+            writer.WriteStartObject();
+            writer.WritePropertyName(&quot;name1&quot;);
+            writer.WriteValue(&quot;value1&quot;);
+            writer.WritePropertyName(&quot;name2&quot;);
+            writer.WriteStartArray();
+            writer.WriteValue(1);
+            writer.WriteValue(2);
+            writer.WriteEndArray();
+            writer.WriteEndObject();
+
+            JObject o = (JObject)writer.Token;
+
+            Console.WriteLine(o.ToString());
+            // {
+            //   &quot;name1&quot;: &quot;value1&quot;,
+            //   &quot;name2&quot;: [
+            //     1,
+            //     2
+            //   ]
+            // }
+            #endregion
+
+            StringAssert.AreEqual(@&quot;{
+  &quot;&quot;name1&quot;&quot;: &quot;&quot;value1&quot;&quot;,
+  &quot;&quot;name2&quot;&quot;: [
+    1,
+    2
+  ]
+}&quot;, o.ToString());
+        }
+    }
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

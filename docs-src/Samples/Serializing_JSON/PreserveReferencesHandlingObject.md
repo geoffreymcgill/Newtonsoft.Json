@@ -4,12 +4,6 @@ This sample shows how the [PreserveReferencesHandling](/api/newtonsoft/json/pres
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\PreserveReferencesHandlingObject.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/PreserveReferencesHandlingObject.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\PreserveReferencesHandlingObject.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/PreserveReferencesHandlingObject.cs" region="Usage" title="Usage" :::

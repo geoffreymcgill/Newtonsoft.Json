@@ -630,7 +630,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-operation" name="Operation" returns="bool" params="ExpressionType, Nullable<object>?, Nullable<object>?, Nullable<object>?" access="private" signature="private static bool Operation(ExpressionType operation, Nullable<object>? objA, Nullable<object>? objB, Nullable<object>? result)">
+    <doc-member id="method-operation" name="Operation" returns="bool" params="ExpressionType, Nullable<object>?, Nullable<object>?, Nullable<object>?" access="private" signature="private static bool Operation(ExpressionType operation, Nullable<object>? objA, Nullable<object>? objB, out Nullable<object>? result)">
         <template #name><h3>Operation</h3></template>
 
         <template #parameters>
@@ -703,7 +703,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, params JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -717,7 +717,7 @@
 
     </doc-member>
 
-    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, params JsonConverter[] converters)">
         <template #name><h3>WriteToAsync</h3></template>
 
         <template #parameters>

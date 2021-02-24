@@ -407,7 +407,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="void" params="Type, Nullable<Type>?, Nullable<Type>?" signature="public static void GetDictionaryKeyValueTypes(Type dictionaryType, Nullable<Type>? keyType, Nullable<Type>? valueType)">
+    <doc-member id="method-getdictionarykeyvaluetypes" name="GetDictionaryKeyValueTypes" returns="void" params="Type, Nullable<Type>?, Nullable<Type>?" signature="public static void GetDictionaryKeyValueTypes(Type dictionaryType, out Nullable<Type>? keyType, out Nullable<Type>? valueType)">
         <template #name><h3>GetDictionaryKeyValueTypes</h3></template>
 
         <template #parameters>
@@ -546,7 +546,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-implementsgenericdefinition-1" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, Nullable<Type>? implementingType)">
+        <doc-member id="method-implementsgenericdefinition-1" overload-id="group-implementsgenericdefinition" name="ImplementsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool ImplementsGenericDefinition(Type type, Type genericInterfaceDefinition, out Nullable<Type>? implementingType)">
             <template #name><h3>ImplementsGenericDefinition</h3></template>
 
             <template #parameters>
@@ -571,7 +571,7 @@
             </template>
         </doc-member>
 
-        <doc-member id="method-inheritsgenericdefinition-1" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition, Nullable<Type>? implementingType)">
+        <doc-member id="method-inheritsgenericdefinition-1" overload-id="group-inheritsgenericdefinition" name="InheritsGenericDefinition" returns="bool" params="Type, Type, Nullable<Type>?" signature="public static bool InheritsGenericDefinition(Type type, Type genericClassDefinition, out Nullable<Type>? implementingType)">
             <template #name><h3>InheritsGenericDefinition</h3></template>
 
             <template #parameters>
@@ -584,7 +584,7 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="bool" params="Type, Type, Nullable<Type>?" access="private" signature="private static bool InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, Nullable<Type>? implementingType)">
+    <doc-member id="method-inheritsgenericdefinitioninternal" name="InheritsGenericDefinitionInternal" returns="bool" params="Type, Type, Nullable<Type>?" access="private" signature="private static bool InheritsGenericDefinitionInternal(Type currentType, Type genericClassDefinition, out Nullable<Type>? implementingType)">
         <template #name><h3>InheritsGenericDefinitionInternal</h3></template>
 
         <template #parameters>

@@ -4,12 +4,6 @@ This sample serializes JSON to a file.
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeWithJsonSerializerToFile.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeWithJsonSerializerToFile.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeWithJsonSerializerToFile.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeWithJsonSerializerToFile.cs" region="Usage" title="Usage" :::

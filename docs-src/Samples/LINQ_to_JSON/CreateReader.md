@@ -4,7 +4,4 @@ This sample creates a [JTokenReader](/api/newtonsoft/json/linq/jtokenreader/) fr
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateReader.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateReader.cs" region="Usage" title="Usage" :::

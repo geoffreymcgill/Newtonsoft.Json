@@ -4,12 +4,6 @@ This sample shows how .NET Framework attributes such as [DataContractAttribute](
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DataContractAndDataMember.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DataContractAndDataMember.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DataContractAndDataMember.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DataContractAndDataMember.cs" region="Usage" title="Usage" :::

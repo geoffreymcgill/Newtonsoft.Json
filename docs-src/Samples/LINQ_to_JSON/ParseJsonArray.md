@@ -4,7 +4,4 @@ This sample parses a JSON array using [JArray.Parse(string)](/api/newtonsoft/jso
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ParseJsonArray.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ParseJsonArray.cs" region="Usage" title="Usage" :::

@@ -5,7 +5,4 @@ This sample converts LINQ to JSON objects to .NET types using [ToObject<T>()](/a
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ToObjectComplex.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ToObjectComplex.cs" region="Usage" title="Usage" :::

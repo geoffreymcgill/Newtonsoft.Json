@@ -4,12 +4,6 @@ This sample creates a custom converter from `JsonConverter<T>` that overrides se
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomJsonConverterGeneric.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverterGeneric.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomJsonConverterGeneric.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverterGeneric.cs" region="Usage" title="Usage" :::

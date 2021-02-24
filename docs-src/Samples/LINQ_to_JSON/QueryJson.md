@@ -4,7 +4,4 @@ This sample loads JSON and then queries values from it using [JToken.Item(object
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\QueryJson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/QueryJson.cs" region="Usage" title="Usage" :::

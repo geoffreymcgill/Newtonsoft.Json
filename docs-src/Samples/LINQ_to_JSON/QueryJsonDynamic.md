@@ -4,7 +4,4 @@ This sample loads JSON and then queries values from it using C# dynamic function
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\QueryJsonDynamic.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/QueryJsonDynamic.cs" region="Usage" title="Usage" :::

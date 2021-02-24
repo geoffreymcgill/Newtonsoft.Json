@@ -4,15 +4,9 @@ Often when working with large JSON documents you're only interested in a small f
 
 With Json.NET it is easy to get around this problem. Using LINQ to JSON you can extract the pieces of JSON you want to deserialize before passing them to the Json.NET serializer.
 
-```csharp Fragments Object
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializingPartialJsonFragmentsObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializingPartialJsonFragmentsObject" title="Fragments Object" :::
 
-```csharp Deserializing Partial JSON Fragment Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializingPartialJsonFragmentsExample
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializingPartialJsonFragmentsExample" title="Deserializing Partial JSON Fragment Example" :::
 
 ## See Also
 

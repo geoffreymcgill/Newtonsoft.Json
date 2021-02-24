@@ -4,12 +4,6 @@ This sample creates a custom [JsonConverter](/api/newtonsoft/json/jsonconverter/
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomJsonConverter.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverter.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomJsonConverter.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverter.cs" region="Usage" title="Usage" :::

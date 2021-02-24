@@ -4,7 +4,4 @@ This sample reads JSON from a file into a [JObject](/api/newtonsoft/json/linq/jo
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ReadJson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ReadJson.cs" region="Usage" title="Usage" :::

@@ -4,12 +4,6 @@ This sample uses the [DefaultValueAttribute](https://docs.microsoft.com/en-us/do
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DefaultValueAttributeIgnore.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DefaultValueAttributeIgnore.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DefaultValueAttributeIgnore.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DefaultValueAttributeIgnore.cs" region="Usage" title="Usage" :::

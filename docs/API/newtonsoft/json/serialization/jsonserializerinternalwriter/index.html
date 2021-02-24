@@ -234,7 +234,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="bool" params="JsonWriter, object, JsonContainerContract, JsonProperty?, JsonProperty, JsonContract?, Nullable<object>?" access="private" signature="private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, JsonProperty? member, JsonProperty property, JsonContract? memberContract, Nullable<object>? memberValue)">
+    <doc-member id="method-calculatepropertyvalues" name="CalculatePropertyValues" returns="bool" params="JsonWriter, object, JsonContainerContract, JsonProperty?, JsonProperty, JsonContract?, Nullable<object>?" access="private" signature="private bool CalculatePropertyValues(JsonWriter writer, object value, JsonContainerContract contract, JsonProperty? member, JsonProperty property, out JsonContract? memberContract, out Nullable<object>? memberValue)">
         <template #name><h3>CalculatePropertyValues</h3></template>
 
         <template #parameters>
@@ -289,7 +289,7 @@
         <template #name><h3>GetInternalSerializer</h3></template>
     </doc-member>
 
-    <doc-member id="method-getpropertyname" name="GetPropertyName" returns="string" params="JsonWriter, object, JsonContract, bool" access="private" signature="private string GetPropertyName(JsonWriter writer, object name, JsonContract contract, bool escape)">
+    <doc-member id="method-getpropertyname" name="GetPropertyName" returns="string" params="JsonWriter, object, JsonContract, bool" access="private" signature="private string GetPropertyName(JsonWriter writer, object name, JsonContract contract, out bool escape)">
         <template #name><h3>GetPropertyName</h3></template>
 
         <template #parameters>
@@ -657,7 +657,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconverttostring" name="TryConvertToString" returns="bool" params="object, Type, Nullable<string>?" access="internal" signature="internal static bool TryConvertToString(object value, Type type, Nullable<string>? s)">
+    <doc-member id="method-tryconverttostring" name="TryConvertToString" returns="bool" params="object, Type, Nullable<string>?" access="internal" signature="internal static bool TryConvertToString(object value, Type type, out Nullable<string>? s)">
         <template #name><h3>TryConvertToString</h3></template>
 
         <template #parameters>

@@ -8,7 +8,4 @@ This sample uses a [JsonSchemaResolver](/api/newtonsoft/json/schema/jsonschemare
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\RefJsonSchemaResolver.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/RefJsonSchemaResolver.cs" region="Usage" title="Usage" :::

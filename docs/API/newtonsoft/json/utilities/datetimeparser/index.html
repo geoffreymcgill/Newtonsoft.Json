@@ -336,7 +336,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-parse2digit" name="Parse2Digit" returns="bool" params="int, int" access="private" signature="private bool Parse2Digit(int start, int num)">
+    <doc-member id="method-parse2digit" name="Parse2Digit" returns="bool" params="int, int" access="private" signature="private bool Parse2Digit(int start, out int num)">
         <template #name><h3>Parse2Digit</h3></template>
 
         <template #parameters>
@@ -347,7 +347,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-parse4digit" name="Parse4Digit" returns="bool" params="int, int" access="private" signature="private bool Parse4Digit(int start, int num)">
+    <doc-member id="method-parse4digit" name="Parse4Digit" returns="bool" params="int, int" access="private" signature="private bool Parse4Digit(int start, out int num)">
         <template #name><h3>Parse4Digit</h3></template>
 
         <template #parameters>
@@ -379,7 +379,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-parsetime" name="ParseTime" returns="bool" params="int" access="private" signature="private bool ParseTime(int start)">
+    <doc-member id="method-parsetime" name="ParseTime" returns="bool" params="int" access="private" signature="private bool ParseTime(ref int start)">
         <template #name><h3>ParseTime</h3></template>
 
         <template #parameters>

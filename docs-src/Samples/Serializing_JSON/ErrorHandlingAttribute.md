@@ -4,12 +4,6 @@ This sample uses [OnErrorAttribute](/api/newtonsoft/json/serialization/onerrorat
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\ErrorHandlingAttribute.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/ErrorHandlingAttribute.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\ErrorHandlingAttribute.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/ErrorHandlingAttribute.cs" region="Usage" title="Usage" :::

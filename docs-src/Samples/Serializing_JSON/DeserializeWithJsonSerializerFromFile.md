@@ -4,12 +4,6 @@ This sample deserializes JSON retrieved from a file.
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeWithJsonSerializerFromFile.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeWithJsonSerializerFromFile.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeWithJsonSerializerFromFile.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeWithJsonSerializerFromFile.cs" region="Usage" title="Usage" :::

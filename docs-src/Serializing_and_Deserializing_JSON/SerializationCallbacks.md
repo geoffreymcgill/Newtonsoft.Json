@@ -13,17 +13,11 @@ To tell the serializer which methods should be called during the object's serial
 
 Example object with serialization callback methods:
 
-```csharp Serialization Callback Attributes
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializationCallbacksObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializationCallbacksObject" title="Serialization Callback Attributes" :::
 
 The example object being serialized and deserialized by Json.NET:
 
-```csharp Serialization Callback Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializationCallbacksExample
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializationCallbacksExample" title="Serialization Callback Example" :::
 
 ## See Also
 

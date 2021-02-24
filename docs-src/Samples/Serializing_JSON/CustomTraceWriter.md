@@ -4,12 +4,6 @@ This sample creates a custom [ITraceWriter](/api/newtonsoft/json/serialization/i
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomTraceWriter.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomTraceWriter.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\CustomTraceWriter.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomTraceWriter.cs" region="Usage" title="Usage" :::

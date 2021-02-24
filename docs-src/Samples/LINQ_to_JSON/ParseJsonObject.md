@@ -4,7 +4,4 @@ This sample parses a JSON object using [JObject.Parse(string)](/api/newtonsoft/j
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ParseJsonObject.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ParseJsonObject.cs" region="Usage" title="Usage" :::

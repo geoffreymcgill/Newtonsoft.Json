@@ -4,7 +4,4 @@ This sample uses the [DateFormatHandling](/api/newtonsoft/json/dateformathandlin
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeDateFormatString.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeDateFormatString.cs" region="Usage" title="Usage" :::

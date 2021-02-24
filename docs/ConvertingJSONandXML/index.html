@@ -214,12 +214,382 @@
 </doc-anchor-target>
 <p>The JsonConvert has two helper methods for converting between JSON and XML. The first is <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-serializexmlnode">SerializeXmlNode()</a>.</p>
 <p>This method takes an XmlNode and serializes it to JSON text.</p>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: SerializeXmlNode</code></pre>
+<pre v-highlight:csharp><code v-pre source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="SerializeXmlNode" title="Converting XML to JSON with SerializeXmlNode">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+#if !(NET35 || NET20 || PORTABLE || PORTABLE40 || DNXCORE50) || NETSTANDARD1_3 || NETSTANDARD2_0
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Xml;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+#endif
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Tests.TestObjects;
+using Newtonsoft.Json.Utilities;
+using System.Globalization;
+using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+
+namespace Newtonsoft.Json.Tests.Documentation
+{
+    [TestFixture]
+    public class ConvertingJsonAndXmlTests : TestFixtureBase
+    {
+        [Test]
+        public void SerializeXmlNode()
+        {
+            #region SerializeXmlNode
+            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+            &lt;root&gt;
+              &lt;person id='1'&gt;
+                &lt;name&gt;Alan&lt;/name&gt;
+                &lt;url&gt;http://www.google.com&lt;/url&gt;
+              &lt;/person&gt;
+              &lt;person id='2'&gt;
+                &lt;name&gt;Louis&lt;/name&gt;
+                &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+              &lt;/person&gt;
+            &lt;/root&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string jsonText = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;?xml&quot;: {
+            //    &quot;@version&quot;: &quot;1.0&quot;,
+            //    &quot;@standalone&quot;: &quot;no&quot;
+            //  },
+            //  &quot;root&quot;: {
+            //    &quot;person&quot;: [
+            //      {
+            //        &quot;@id&quot;: &quot;1&quot;,
+            //        &quot;name&quot;: &quot;Alan&quot;,
+            //        &quot;url&quot;: &quot;http://www.google.com&quot;
+            //      },
+            //      {
+            //        &quot;@id&quot;: &quot;2&quot;,
+            //        &quot;name&quot;: &quot;Louis&quot;,
+            //        &quot;url&quot;: &quot;http://www.yahoo.com&quot;
+            //      }
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+
+        [Test]
+        public void DeserializeXmlNode()
+        {
+            #region DeserializeXmlNode
+            string json = @&quot;{
+              '?xml': {
+                '@version': '1.0',
+                '@standalone': 'no'
+              },
+              'root': {
+                'person': [
+                  {
+                    '@id': '1',
+                    'name': 'Alan',
+                    'url': 'http://www.google.com'
+                  },
+                  {
+                    '@id': '2',
+                    'name': 'Louis',
+                    'url': 'http://www.yahoo.com'
+                  }
+                ]
+              }
+            }&quot;;
+
+            XmlDocument doc = (XmlDocument)JsonConvert.DeserializeXmlNode(json);
+            // &lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+            // &lt;root&gt;
+            //   &lt;person id=&quot;1&quot;&gt;
+            //     &lt;name&gt;Alan&lt;/name&gt;
+            //     &lt;url&gt;http://www.google.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            //   &lt;person id=&quot;2&quot;&gt;
+            //     &lt;name&gt;Louis&lt;/name&gt;
+            //     &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            // &lt;/root&gt;
+            #endregion
+        }
+
+        [Test]
+        public void ForceJsonArray()
+        {
+            #region ForceJsonArray
+            string xml = @&quot;&lt;person id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role&gt;Admin1&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: &quot;Admin1&quot;
+            //  }
+            //}
+
+            xml = @&quot;&lt;person xmlns:json='http://james.newtonking.com/projects/json' id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role json:Array='true'&gt;Admin&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: [
+            //      &quot;Admin&quot;
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+    }
+}
+
+#endif</code></pre>
 <p>Because multiple nodes with the same name at the same level are grouped together into an array, the conversion process can produce different JSON depending on the number of nodes. For example, if some XML for a user has a single <code v-pre>&lt;Role&gt;</code> node, then that role will be text against a JSON <code v-pre>&quot;Role&quot;</code> property, but if the user has multiple <code v-pre>&lt;Role&gt;</code> nodes, then the role values will be placed in a JSON array.</p>
 <p>To fix this situation a custom XML attribute can be added to force a JSON array to be created.</p>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: ForceJsonArray</code></pre>
+<pre v-highlight:csharp><code v-pre source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="ForceJsonArray" title="Attribute to Force a JSON Array">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+#if !(NET35 || NET20 || PORTABLE || PORTABLE40 || DNXCORE50) || NETSTANDARD1_3 || NETSTANDARD2_0
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Xml;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+#endif
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Tests.TestObjects;
+using Newtonsoft.Json.Utilities;
+using System.Globalization;
+using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+
+namespace Newtonsoft.Json.Tests.Documentation
+{
+    [TestFixture]
+    public class ConvertingJsonAndXmlTests : TestFixtureBase
+    {
+        [Test]
+        public void SerializeXmlNode()
+        {
+            #region SerializeXmlNode
+            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+            &lt;root&gt;
+              &lt;person id='1'&gt;
+                &lt;name&gt;Alan&lt;/name&gt;
+                &lt;url&gt;http://www.google.com&lt;/url&gt;
+              &lt;/person&gt;
+              &lt;person id='2'&gt;
+                &lt;name&gt;Louis&lt;/name&gt;
+                &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+              &lt;/person&gt;
+            &lt;/root&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string jsonText = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;?xml&quot;: {
+            //    &quot;@version&quot;: &quot;1.0&quot;,
+            //    &quot;@standalone&quot;: &quot;no&quot;
+            //  },
+            //  &quot;root&quot;: {
+            //    &quot;person&quot;: [
+            //      {
+            //        &quot;@id&quot;: &quot;1&quot;,
+            //        &quot;name&quot;: &quot;Alan&quot;,
+            //        &quot;url&quot;: &quot;http://www.google.com&quot;
+            //      },
+            //      {
+            //        &quot;@id&quot;: &quot;2&quot;,
+            //        &quot;name&quot;: &quot;Louis&quot;,
+            //        &quot;url&quot;: &quot;http://www.yahoo.com&quot;
+            //      }
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+
+        [Test]
+        public void DeserializeXmlNode()
+        {
+            #region DeserializeXmlNode
+            string json = @&quot;{
+              '?xml': {
+                '@version': '1.0',
+                '@standalone': 'no'
+              },
+              'root': {
+                'person': [
+                  {
+                    '@id': '1',
+                    'name': 'Alan',
+                    'url': 'http://www.google.com'
+                  },
+                  {
+                    '@id': '2',
+                    'name': 'Louis',
+                    'url': 'http://www.yahoo.com'
+                  }
+                ]
+              }
+            }&quot;;
+
+            XmlDocument doc = (XmlDocument)JsonConvert.DeserializeXmlNode(json);
+            // &lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+            // &lt;root&gt;
+            //   &lt;person id=&quot;1&quot;&gt;
+            //     &lt;name&gt;Alan&lt;/name&gt;
+            //     &lt;url&gt;http://www.google.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            //   &lt;person id=&quot;2&quot;&gt;
+            //     &lt;name&gt;Louis&lt;/name&gt;
+            //     &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            // &lt;/root&gt;
+            #endregion
+        }
+
+        [Test]
+        public void ForceJsonArray()
+        {
+            #region ForceJsonArray
+            string xml = @&quot;&lt;person id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role&gt;Admin1&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: &quot;Admin1&quot;
+            //  }
+            //}
+
+            xml = @&quot;&lt;person xmlns:json='http://james.newtonking.com/projects/json' id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role json:Array='true'&gt;Admin&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: [
+            //      &quot;Admin&quot;
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+    }
+}
+
+#endif</code></pre>
 <doc-anchor-target id="deserializexmlnode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#deserializexmlnode">#</doc-anchor-trigger>
@@ -228,8 +598,193 @@ region: ForceJsonArray</code></pre>
 </doc-anchor-target>
 <p>The second helper method on JsonConvert is <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-deserializexmlnode">DeserializeXmlNode()</a>. This method takes JSON text and deserializes it into an XmlNode.</p>
 <p>Because valid XML must have one root element, the JSON passed to DeserializeXmlNode should have one property in the root JSON object. If the root JSON object has multiple properties, then the overload that also takes an element name should be used. A root element with that name will be inserted into the deserialized XmlNode.</p>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: DeserializeXmlNode</code></pre>
+<pre v-highlight:csharp><code v-pre source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="DeserializeXmlNode" title="Converting JSON to XML with DeserializeXmlNode">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+#if !(NET35 || NET20 || PORTABLE || PORTABLE40 || DNXCORE50) || NETSTANDARD1_3 || NETSTANDARD2_0
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Dynamic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Xml;
+using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+#endif
+using Newtonsoft.Json.Serialization;
+using Newtonsoft.Json.Tests.TestObjects;
+using Newtonsoft.Json.Utilities;
+using System.Globalization;
+using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
+
+namespace Newtonsoft.Json.Tests.Documentation
+{
+    [TestFixture]
+    public class ConvertingJsonAndXmlTests : TestFixtureBase
+    {
+        [Test]
+        public void SerializeXmlNode()
+        {
+            #region SerializeXmlNode
+            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+            &lt;root&gt;
+              &lt;person id='1'&gt;
+                &lt;name&gt;Alan&lt;/name&gt;
+                &lt;url&gt;http://www.google.com&lt;/url&gt;
+              &lt;/person&gt;
+              &lt;person id='2'&gt;
+                &lt;name&gt;Louis&lt;/name&gt;
+                &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+              &lt;/person&gt;
+            &lt;/root&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string jsonText = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;?xml&quot;: {
+            //    &quot;@version&quot;: &quot;1.0&quot;,
+            //    &quot;@standalone&quot;: &quot;no&quot;
+            //  },
+            //  &quot;root&quot;: {
+            //    &quot;person&quot;: [
+            //      {
+            //        &quot;@id&quot;: &quot;1&quot;,
+            //        &quot;name&quot;: &quot;Alan&quot;,
+            //        &quot;url&quot;: &quot;http://www.google.com&quot;
+            //      },
+            //      {
+            //        &quot;@id&quot;: &quot;2&quot;,
+            //        &quot;name&quot;: &quot;Louis&quot;,
+            //        &quot;url&quot;: &quot;http://www.yahoo.com&quot;
+            //      }
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+
+        [Test]
+        public void DeserializeXmlNode()
+        {
+            #region DeserializeXmlNode
+            string json = @&quot;{
+              '?xml': {
+                '@version': '1.0',
+                '@standalone': 'no'
+              },
+              'root': {
+                'person': [
+                  {
+                    '@id': '1',
+                    'name': 'Alan',
+                    'url': 'http://www.google.com'
+                  },
+                  {
+                    '@id': '2',
+                    'name': 'Louis',
+                    'url': 'http://www.yahoo.com'
+                  }
+                ]
+              }
+            }&quot;;
+
+            XmlDocument doc = (XmlDocument)JsonConvert.DeserializeXmlNode(json);
+            // &lt;?xml version=&quot;1.0&quot; standalone=&quot;no&quot;?&gt;
+            // &lt;root&gt;
+            //   &lt;person id=&quot;1&quot;&gt;
+            //     &lt;name&gt;Alan&lt;/name&gt;
+            //     &lt;url&gt;http://www.google.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            //   &lt;person id=&quot;2&quot;&gt;
+            //     &lt;name&gt;Louis&lt;/name&gt;
+            //     &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+            //   &lt;/person&gt;
+            // &lt;/root&gt;
+            #endregion
+        }
+
+        [Test]
+        public void ForceJsonArray()
+        {
+            #region ForceJsonArray
+            string xml = @&quot;&lt;person id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role&gt;Admin1&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            string json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: &quot;Admin1&quot;
+            //  }
+            //}
+
+            xml = @&quot;&lt;person xmlns:json='http://james.newtonking.com/projects/json' id='1'&gt;
+			  &lt;name&gt;Alan&lt;/name&gt;
+			  &lt;url&gt;http://www.google.com&lt;/url&gt;
+			  &lt;role json:Array='true'&gt;Admin&lt;/role&gt;
+			&lt;/person&gt;&quot;;
+
+            doc = new XmlDocument();
+            doc.LoadXml(xml);
+
+            json = JsonConvert.SerializeXmlNode(doc);
+            //{
+            //  &quot;person&quot;: {
+            //    &quot;@id&quot;: &quot;1&quot;,
+            //    &quot;name&quot;: &quot;Alan&quot;,
+            //    &quot;url&quot;: &quot;http://www.google.com&quot;,
+            //    &quot;role&quot;: [
+            //      &quot;Admin&quot;
+            //    ]
+            //  }
+            //}
+            #endregion
+        }
+    }
+}
+
+#endif</code></pre>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

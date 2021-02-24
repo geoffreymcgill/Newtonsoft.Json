@@ -4,7 +4,4 @@ This sample compares [JToken](/api/newtonsoft/json/linq/jtoken/) instances using
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\DeepEquals.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/DeepEquals.cs" region="Usage" title="Usage" :::

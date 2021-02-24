@@ -16,24 +16,15 @@ The [DefaultContractResolver](/api/newtonsoft/json/serialization/defaultcontract
 
 [CamelCasePropertyNamesContractResolver](/api/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/) inherits from DefaultContractResolver and simply overrides the JSON property name to be written in [camelcase](http://en.wikipedia.org/wiki/CamelCase).
 
-```csharp ContractResolver
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: ContractResolver
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="ContractResolver" title="ContractResolver" :::
 
 ## Custom IContractResolver Examples
 
-```csharp Use JsonConverter with IContractResolver
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\PerformanceTests.cs
-region: JsonConverterContractResolver
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/PerformanceTests.cs" region="JsonConverterContractResolver" title="Use JsonConverter with IContractResolver" :::
 
 This example sets a [JsonConverter](/api/newtonsoft/json/jsonconverter/) for a type using an IContractResolver. Using a contract resolver here is useful because DateTime is not your own type and it is not possible to place a JsonConverterAttribute on it.
 
-```csharp Conditional properties with IContractResolver
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConditionalPropertiesTests.cs
-region: ShouldSerializeContractResolver
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/ConditionalPropertiesTests.cs" region="ShouldSerializeContractResolver" title="Conditional properties with IContractResolver" :::
 
 This example sets up [ConditionalProperties](conditional serialization for a property) using an IContractResolver. This is useful if you want to conditionally serialize a property but don't want to add additional methods to your type.
 

@@ -4,12 +4,6 @@ This sample uses the [JsonIgnoreAttribute](/api/newtonsoft/json/jsonignoreattrib
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\PropertyJsonIgnore.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/PropertyJsonIgnore.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\PropertyJsonIgnore.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/PropertyJsonIgnore.cs" region="Usage" title="Usage" :::

@@ -4,12 +4,6 @@ This sample creates [JObject](/api/newtonsoft/json/linq/jobject/) and [JArray](/
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateJsonDeclaratively.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateJsonDeclaratively.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateJsonDeclaratively.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateJsonDeclaratively.cs" region="Usage" title="Usage" :::

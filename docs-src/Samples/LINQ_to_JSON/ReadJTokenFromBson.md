@@ -4,7 +4,4 @@ This sample reads a [JObject](/api/newtonsoft/json/linq/jobject/) from BSON usin
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ReadJTokenFromBson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ReadJTokenFromBson.cs" region="Usage" title="Usage" :::

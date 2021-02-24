@@ -4,12 +4,6 @@ This sample uses serialization callback attributes  ([OnSerializingAttribute](ht
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializationCallbackAttributes.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializationCallbackAttributes.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializationCallbackAttributes.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializationCallbackAttributes.cs" region="Usage" title="Usage" :::

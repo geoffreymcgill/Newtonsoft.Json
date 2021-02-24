@@ -4,7 +4,4 @@ This sample reads JSON using the [JsonTextReader](/api/newtonsoft/json/jsontextr
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\ReadJsonWithJsonTextReader.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/ReadJsonWithJsonTextReader.cs" region="Usage" title="Usage" :::

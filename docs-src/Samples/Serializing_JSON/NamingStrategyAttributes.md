@@ -4,12 +4,6 @@ This sample uses [NamingStrategy](/api/newtonsoft/json/serialization/namingstrat
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategyAttributes.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategyAttributes.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategyAttributes.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategyAttributes.cs" region="Usage" title="Usage" :::

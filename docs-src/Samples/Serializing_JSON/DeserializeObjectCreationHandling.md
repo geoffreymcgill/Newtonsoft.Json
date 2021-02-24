@@ -4,12 +4,6 @@ This sample deserializes JSON with [ObjectCreationHandling](/api/newtonsoft/json
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeObjectCreationHandling.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeObjectCreationHandling.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeObjectCreationHandling.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeObjectCreationHandling.cs" region="Usage" title="Usage" :::

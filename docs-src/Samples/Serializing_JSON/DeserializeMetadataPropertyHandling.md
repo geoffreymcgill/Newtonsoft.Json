@@ -4,7 +4,4 @@ This sample deserializes JSON with [MetadataPropertyHandling](/api/newtonsoft/js
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeMetadataPropertyHandling.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeMetadataPropertyHandling.cs" region="Usage" title="Usage" :::

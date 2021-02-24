@@ -6,23 +6,15 @@ LINQ to JSON has methods available for parsing JSON from a string or loading JSO
 
 JSON values can be read from a string using [Parse(string)](/api/newtonsoft/json/linq/jtoken/#method-parse).
 
-```csharp
-lang="cs" source="..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs" region="LinqToJsonCreateParse" title="Parsing a JSON Object from text
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonCreateParse" title="Parsing a JSON Object from text" :::
 
-```csharp Parsing a JSON Array from text
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonCreateParseArray
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonCreateParseArray" title="Parsing a JSON Array from text" :::
 
 ## Loading JSON from a file
 
 JSON can also be loaded directly from a file using [ReadFrom(JsonReader)](/api/newtonsoft/json/linq/jtoken/#method-readfrom).
 
-```csharp Reading JSON from a file
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonReadObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonReadObject" title="Reading JSON from a file" :::
 
 ## See Also
 

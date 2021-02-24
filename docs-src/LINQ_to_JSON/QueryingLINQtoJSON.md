@@ -6,10 +6,7 @@ LINQ to JSON provides a number of methods for getting data from its objects. The
 
 The simplest way to get a value from LINQ to JSON is to use the [JToken.Item(object)](/api/newtonsoft/json/linq/jtoken/#property-item) index on JObject/JArray and then cast the returned [JValue](/api/newtonsoft/json/linq/jvalue/) to the type you want.
 
-```csharp Getting JSON Values
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonSimpleQuerying
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonSimpleQuerying" title="Getting JSON Values" :::
 
 ## Querying with LINQ
 
@@ -19,24 +16,15 @@ JObject/JArray can also be queried using LINQ. [JToken.Children](/api/newtonsoft
 [JToken.Children](/api/newtonsoft/json/linq/jtoken/#method-children) returns all the children of a token. If it is a JObject it will return a collection of properties to work with, and if it is a JArray you will get a collection of the array's values.
 :::
 
-```csharp Querying JSON
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonQuerying
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonQuerying" title="Querying JSON" :::
 
 LINQ to JSON can also be used to manually convert JSON to a .NET object.
 
-```csharp Deserializing Using LINQ Objects
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonDeserializeObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonDeserializeObject" title="Deserializing Using LINQ Objects" :::
 
 Manually serializing and deserializing between .NET objects is useful when you are working with JSON that doesn't closely match your .NET objects.
 
-```csharp Deserializing Using LINQ Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonDeserializeExample
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonDeserializeExample" title="Deserializing Using LINQ Example" :::
 
 ## See Also
 

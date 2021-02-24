@@ -4,7 +4,4 @@ This sample gets [JValue](/api/newtonsoft/json/linq/jvalue/) internal values usi
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\JValueValue.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/JValueValue.cs" region="Usage" title="Usage" :::

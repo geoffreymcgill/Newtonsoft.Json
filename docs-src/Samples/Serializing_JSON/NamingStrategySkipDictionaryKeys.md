@@ -4,12 +4,6 @@ This sample configures a [CamelCaseNamingStrategy](/api/newtonsoft/json/serializ
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategySkipDictionaryKeys.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategySkipDictionaryKeys.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategySkipDictionaryKeys.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategySkipDictionaryKeys.cs" region="Usage" title="Usage" :::

@@ -12,40 +12,25 @@ JSON Schema is used to validate the structure and data types of a piece of JSON,
 
 The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the [IsValid(JToken,JsonSchema)](/api/newtonsoft/json/schema/extensions/#method-isvalid) method with the JSON Schema.
 
-```csharp Validate JSON with IsValid
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
-region: IsValidBasic
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/JsonSchemaTests.cs" region="IsValidBasic" title="Validate JSON with IsValid" :::
 
 To get validation error messages, use the [IsValid(JToken,JsonSchema,IList{String}@)](/api/newtonsoft/json/schema/extensions/#method-isvalid) or [Validate(JToken,JsonSchema,ValidationEventHandler)](/api/newtonsoft/json/schema/extensions/#method-validate) overloads.
 
-```csharp Validate JSON with IsValid
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
-region: IsValidMessages
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/JsonSchemaTests.cs" region="IsValidMessages" title="Validate JSON with IsValid" :::
 
 Internally IsValid uses [JsonValidatingReader](/api/newtonsoft/json/jsonvalidatingreader/) to perform the JSON Schema validation. To skip the overhead of loading JSON into a JObject/JArray, validating the JSON, and then deserializing the JSON into a class, JsonValidatingReader can be used with JsonSerializer to validate JSON while the object is being deserialized.
 
-```csharp Validate JSON with JsonValidatingReader
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
-region: JsonValidatingReader
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/JsonSchemaTests.cs" region="JsonValidatingReader" title="Validate JSON with JsonValidatingReader" :::
 
 ## Creating JSON Schemas
 
 The simplest way to get a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) object is to load it from a string or a file.
 
-```csharp Creating JSON Schemas from strings or files
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
-region: LoadJsonSchema
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/JsonSchemaTests.cs" region="LoadJsonSchema" title="Creating JSON Schemas from strings or files" :::
 
 It is also possible to create JsonSchema objects in code.
 
-```csharp Create new JSON Schemas in code
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\JsonSchemaTests.cs
-region: ManuallyCreateJsonSchema
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/JsonSchemaTests.cs" region="ManuallyCreateJsonSchema" title="Create new JSON Schemas in code" :::
 
 ## See Also
 

@@ -4,12 +4,6 @@ This sample serializes an object to JSON with [NullValueHandling](/api/newtonsof
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NullValueHandlingIgnore.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NullValueHandlingIgnore.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NullValueHandlingIgnore.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NullValueHandlingIgnore.cs" region="Usage" title="Usage" :::

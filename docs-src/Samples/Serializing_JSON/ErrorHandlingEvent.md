@@ -4,7 +4,4 @@ This sample uses the [JsonSerializerSettings.Error](/api/newtonsoft/json/jsonser
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\ErrorHandlingEvent.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/ErrorHandlingEvent.cs" region="Usage" title="Usage" :::

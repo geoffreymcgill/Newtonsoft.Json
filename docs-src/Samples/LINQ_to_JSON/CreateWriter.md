@@ -4,7 +4,4 @@ This sample creates a [JTokenWriter](/api/newtonsoft/json/linq/jtokenwriter/) fr
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateWriter.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateWriter.cs" region="Usage" title="Usage" :::

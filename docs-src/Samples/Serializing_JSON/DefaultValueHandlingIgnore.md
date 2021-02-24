@@ -4,12 +4,6 @@ This sample uses the [DefaultValueHandling](/api/newtonsoft/json/defaultvaluehan
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DefaultValueHandlingIgnore.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DefaultValueHandlingIgnore.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DefaultValueHandlingIgnore.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DefaultValueHandlingIgnore.cs" region="Usage" title="Usage" :::

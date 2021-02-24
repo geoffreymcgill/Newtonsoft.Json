@@ -4,17 +4,11 @@ The [CustomCreationConverter<T>](/api/newtonsoft/json/converters/customcreationc
 
 ## Example
 
-```csharp CustomCreationConverter
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: CustomCreationConverterObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="CustomCreationConverterObject" title="CustomCreationConverter" :::
 
 This is an extremely simple example. A more complicated scenario could involve an object factory or service locator that resolves the object at runtime.
 
-```csharp CustomCreationConverter Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: CustomCreationConverterExample
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="CustomCreationConverterExample" title="CustomCreationConverter Example" :::
 
 ## See Also
 

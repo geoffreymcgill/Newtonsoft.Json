@@ -8,12 +8,6 @@ This sample validates JSON while deserializing an object using [JsonValidatingRe
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\JsonValidatingReaderAndSerializer.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/JsonValidatingReaderAndSerializer.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\JsonValidatingReaderAndSerializer.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/JsonValidatingReaderAndSerializer.cs" region="Usage" title="Usage" :::

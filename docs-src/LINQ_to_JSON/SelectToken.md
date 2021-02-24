@@ -8,28 +8,19 @@ SelectToken is a method on JToken and takes a string path to a child token. Sele
 
 The path is made up of property names and array indexes separated by periods, e.g. `Manufacturers[0].Name`.
 
-```csharp SelectToken Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: SelectTokenComplex
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="SelectTokenComplex" title="SelectToken Example" :::
 
 ## SelectToken with JSONPath
 
 SelectToken supports JSONPath queries. Find out more about JSONPath [here](https://goessner.net/articles/JsonPath/).
 
-```csharp SelectToken With JSONPath
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\JsonPath\QueryJsonSelectTokenJsonPath.cs
-region: Usage
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/JsonPath/QueryJsonSelectTokenJsonPath.cs" region="Usage" title="SelectToken With JSONPath" :::
 
 ## SelectToken with LINQ
 
 SelectToken can be used in combination with standard LINQ methods.
 
-```csharp SelectToken With LINQ Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: SelectTokenLinq
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="SelectTokenLinq" title="SelectToken With LINQ Example" :::
 
 ## See Also
 

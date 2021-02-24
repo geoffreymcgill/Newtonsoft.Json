@@ -8,7 +8,4 @@ This sample validates a [JObject](/api/newtonsoft/json/linq/jobject/) using the 
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\JTokenIsValidWithMessages.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/JTokenIsValidWithMessages.cs" region="Usage" title="Usage" :::

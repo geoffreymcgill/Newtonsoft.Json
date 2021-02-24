@@ -4,7 +4,4 @@ This sample creates [JObject](/api/newtonsoft/json/linq/jobject/) and [JArray](/
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\CreateJsonDynamic.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/CreateJsonDynamic.cs" region="Usage" title="Usage" :::

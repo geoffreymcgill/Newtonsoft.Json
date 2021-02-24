@@ -4,7 +4,4 @@ This sample gets an object's [JProperty](/api/newtonsoft/json/linq/jproperty/) c
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\JObjectProperties.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/JObjectProperties.cs" region="Usage" title="Usage" :::

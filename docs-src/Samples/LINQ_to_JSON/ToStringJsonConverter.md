@@ -4,7 +4,4 @@ This sample uses a [JsonConverter](/api/newtonsoft/json/jsonconverter/) to custo
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ToStringJsonConverter.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ToStringJsonConverter.cs" region="Usage" title="Usage" :::

@@ -283,7 +283,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetdateconstructorvalue" name="TryGetDateConstructorValue" returns="bool" params="JsonReader, Nullable<long>?, Nullable<string>?" access="private" signature="private static bool TryGetDateConstructorValue(JsonReader reader, Nullable<long>? integer, Nullable<string>? errorMessage)">
+    <doc-member id="method-trygetdateconstructorvalue" name="TryGetDateConstructorValue" returns="bool" params="JsonReader, Nullable<long>?, Nullable<string>?" access="private" signature="private static bool TryGetDateConstructorValue(JsonReader reader, out Nullable<long>? integer, out Nullable<string>? errorMessage)">
         <template #name><h3>TryGetDateConstructorValue</h3></template>
 
         <template #parameters>
@@ -295,7 +295,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetdatefromconstructorjson" name="TryGetDateFromConstructorJson" returns="bool" params="JsonReader, DateTime, Nullable<string>?" signature="public static bool TryGetDateFromConstructorJson(JsonReader reader, DateTime dateTime, Nullable<string>? errorMessage)">
+    <doc-member id="method-trygetdatefromconstructorjson" name="TryGetDateFromConstructorJson" returns="bool" params="JsonReader, DateTime, Nullable<string>?" signature="public static bool TryGetDateFromConstructorJson(JsonReader reader, out DateTime dateTime, out Nullable<string>? errorMessage)">
         <template #name><h3>TryGetDateFromConstructorJson</h3></template>
 
         <template #parameters>
@@ -337,7 +337,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-writeescapedjavascriptstring" name="WriteEscapedJavaScriptString" returns="void" params="TextWriter, Nullable<string>?, char, bool, bool[], StringEscapeHandling, IArrayPool<char>?, char[]" signature="public static void WriteEscapedJavaScriptString(TextWriter writer, Nullable<string>? s, char delimiter, bool appendDelimiters, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, IArrayPool<char>? bufferPool, char[] writeBuffer)">
+    <doc-member id="method-writeescapedjavascriptstring" name="WriteEscapedJavaScriptString" returns="void" params="TextWriter, Nullable<string>?, char, bool, bool[], StringEscapeHandling, IArrayPool<char>?, char[]" signature="public static void WriteEscapedJavaScriptString(TextWriter writer, Nullable<string>? s, char delimiter, bool appendDelimiters, bool[] charEscapeFlags, StringEscapeHandling stringEscapeHandling, IArrayPool<char>? bufferPool, ref char[] writeBuffer)">
         <template #name><h3>WriteEscapedJavaScriptString</h3></template>
 
         <template #parameters>

@@ -269,7 +269,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetbyfirst" name="TryGetByFirst" returns="bool" params="TFirst, TSecond" signature="public bool TryGetByFirst(TFirst first, TSecond second)">
+    <doc-member id="method-trygetbyfirst" name="TryGetByFirst" returns="bool" params="TFirst, TSecond" signature="public bool TryGetByFirst(TFirst first, out TSecond second)">
         <template #name><h3>TryGetByFirst</h3></template>
 
         <template #parameters>
@@ -280,7 +280,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetbysecond" name="TryGetBySecond" returns="bool" params="TSecond, TFirst" signature="public bool TryGetBySecond(TSecond second, TFirst first)">
+    <doc-member id="method-trygetbysecond" name="TryGetBySecond" returns="bool" params="TSecond, TFirst" signature="public bool TryGetBySecond(TSecond second, out TFirst first)">
         <template #name><h3>TryGetBySecond</h3></template>
 
         <template #parameters>

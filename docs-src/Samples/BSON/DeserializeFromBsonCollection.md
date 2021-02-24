@@ -4,12 +4,6 @@ This sample sets [BsonReader.ReadRootValueAsArray](/api/newtonsoft/json/bson/bso
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Bson\DeserializeFromBsonCollection.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Bson/DeserializeFromBsonCollection.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Bson\DeserializeFromBsonCollection.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Bson/DeserializeFromBsonCollection.cs" region="Usage" title="Usage" :::

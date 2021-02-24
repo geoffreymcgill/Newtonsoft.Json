@@ -285,7 +285,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-fulfillfromleftover" name="FulfillFromLeftover" returns="bool" params="byte[], int, int" access="private" signature="private bool FulfillFromLeftover(byte[] buffer, int index, int count)">
+    <doc-member id="method-fulfillfromleftover" name="FulfillFromLeftover" returns="bool" params="byte[], int, int" access="private" signature="private bool FulfillFromLeftover(byte[] buffer, int index, ref int count)">
         <template #name><h3>FulfillFromLeftover</h3></template>
 
         <template #parameters>
@@ -297,7 +297,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-storeleftoverbytes" name="StoreLeftOverBytes" returns="void" params="byte[], int, int" access="private" signature="private void StoreLeftOverBytes(byte[] buffer, int index, int count)">
+    <doc-member id="method-storeleftoverbytes" name="StoreLeftOverBytes" returns="void" params="byte[], int, int" access="private" signature="private void StoreLeftOverBytes(byte[] buffer, int index, ref int count)">
         <template #name><h3>StoreLeftOverBytes</h3></template>
 
         <template #parameters>
