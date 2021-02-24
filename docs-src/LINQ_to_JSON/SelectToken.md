@@ -1,6 +1,6 @@
 ﻿# Querying JSON with SelectToken
 
-[SelectToken()](/API/newtonsoft/json/linq/JToken/#method-selecttoken) provides a method to query LINQ to JSON using a single string path to a desired [JToken](/api/newtonsoft/json/linq/jtoken/). SelectToken makes dynamic queries easy because the entire query is defined in a string.
+[SelectToken()](/api/newtonsoft/json/linq/jtoken/#method-selecttoken) provides a method to query LINQ to JSON using a single string path to a desired [JToken](/api/newtonsoft/json/linq/jtoken/). SelectToken makes dynamic queries easy because the entire query is defined in a string.
 
 ## SelectToken
 
@@ -25,4 +25,4 @@ SelectToken can be used in combination with standard LINQ methods.
 ## See Also
 
 - [LINQ to JSON](README.md)
-- [SelectToken()](/API/newtonsoft/json/linq/JToken/#method-selecttoken)
+- [SelectToken()](/api/newtonsoft/json/linq/jtoken/#method-selecttoken)

@@ -212,7 +212,7 @@
         <span>SerializeXmlNode</span>
     </h2>
 </doc-anchor-target>
-<p>The JsonConvert has two helper methods for converting between JSON and XML. The first is <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-serializexmlnode">SerializeXmlNode()</a>.</p>
+<p>The JsonConvert has two helper methods for converting between JSON and XML. The first is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-serializexmlnode">SerializeXmlNode()</a>.</p>
 <p>This method takes an XmlNode and serializes it to JSON text.</p>
 <pre v-highlight:csharp><code v-pre source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="SerializeXmlNode" title="Converting XML to JSON with SerializeXmlNode">#region License
 // Copyright (c) 2007 James Newton-King
@@ -596,7 +596,7 @@ namespace Newtonsoft.Json.Tests.Documentation
         <span>DeserializeXmlNode</span>
     </h2>
 </doc-anchor-target>
-<p>The second helper method on JsonConvert is <a href="/Newtonsoft.Json/API/newtonsoft/json/jsonconvert/#method-deserializexmlnode">DeserializeXmlNode()</a>. This method takes JSON text and deserializes it into an XmlNode.</p>
+<p>The second helper method on JsonConvert is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-deserializexmlnode">DeserializeXmlNode()</a>. This method takes JSON text and deserializes it into an XmlNode.</p>
 <p>Because valid XML must have one root element, the JSON passed to DeserializeXmlNode should have one property in the root JSON object. If the root JSON object has multiple properties, then the overload that also takes an element name should be used. A root element with that name will be inserted into the deserialized XmlNode.</p>
 <pre v-highlight:csharp><code v-pre source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="DeserializeXmlNode" title="Converting JSON to XML with DeserializeXmlNode">#region License
 // Copyright (c) 2007 James Newton-King
