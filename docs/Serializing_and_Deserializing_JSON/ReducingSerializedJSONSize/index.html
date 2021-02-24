@@ -193,7 +193,7 @@
         <span>JsonIgnoreAttribute and DataMemberAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>By default Json.NET will include all of a class's public properties and fields in the JSON it creates. Adding the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a> to a property tells the serializer to always skip writing it to the JSON result.</p>
+<p>By default Json.NET will include all of a class&#39;s public properties and fields in the JSON it creates. Adding the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a> to a property tells the serializer to always skip writing it to the JSON result.</p>
 <pre v-highlight:csharp><code v-pre title="Opt-out Serialization Example">public class Car
 {
     // included in JSON
@@ -279,7 +279,7 @@ string ignored = JsonConvert.SerializeObject(movie,
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a default value. Setting a value of DefaultValueHandling.Ignore will make the JsonSerializer skip writing any properties that have a default value to the JSON result. For object references this will be null. For value types like int and DateTime the serializer will skip the default uninitialized value for that value type.</p>
 <p>Json.NET also allows you to customize what the default value of an individual
-property is using the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a>. For example, if a string property called Department always returns an empty string in its default state and you don't want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.</p>
+property is using the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a>. For example, if a string property called Department always returns an empty string in its default state and you don&#39;t want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.</p>
 <pre v-highlight:csharp><code v-pre title="DefaultValueHandling Class">public class Invoice
 {
     public string Company { get; set; }
@@ -422,7 +422,7 @@ string startingWithB = JsonConvert.SerializeObject(book, Formatting.Indented,
             </li>
         </ul>
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
 </div>
 </footer>
 

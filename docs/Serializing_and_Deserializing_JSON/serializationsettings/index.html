@@ -217,7 +217,7 @@
         <span>MissingMemberHandling</span>
     </h2>
 </doc-anchor-target>
-<p><a href="/Newtonsoft.Json/api/newtonsoft/json/missingmemberhandling/">MissingMemberHandling</a> controls how missing members, e.g. JSON contains a property that isn't a member on the object, are handled during deserialization.</p>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/missingmemberhandling/">MissingMemberHandling</a> controls how missing members, e.g. JSON contains a property that isn&#39;t a member on the object, are handled during deserialization.</p>
 <table>
 <thead>
 <tr>
@@ -269,7 +269,7 @@ are equal for value types. Classes and structs can override this method.</p>
 </tr>
 </tbody>
 </table>
-<p>ReferenceLoopHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonContainerAttribute.ItemReferenceLoopHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/referenceloophandling/#property-referenceloophandling">JsonPropertyAttribute.ReferenceLoopHandling</a> or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonPropertyAttribute.ItemReferenceLoopHandling</a>.</p>
+<p>ReferenceLoopHandling can be used as an argument when calling the serializer, it can be set on an object&#39;s properties or a collection&#39;s items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonContainerAttribute.ItemReferenceLoopHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/referenceloophandling/#property-referenceloophandling">JsonPropertyAttribute.ReferenceLoopHandling</a> or a property&#39;s object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemreferenceloophandling/#property-itemreferenceloophandling">JsonPropertyAttribute.ItemReferenceLoopHandling</a>.</p>
 <doc-anchor-target id="nullvaluehandling">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#nullvaluehandling">#</doc-anchor-trigger>
@@ -305,9 +305,9 @@ are equal for value types. Classes and structs can override this method.</p>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> controls how Json.NET uses default values set using the .NET <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a> when serializing and deserializing.</p>
 <p>Member | Description
 --- | ---
-<code v-pre>Include</code> | By default Json.NET will write a field/property value to JSON when serializing if the value is the same as the field/property's default value.
+<code v-pre>Include</code> | By default Json.NET will write a field/property value to JSON when serializing if the value is the same as the field/property&#39;s default value.
 The Json.NET deserializer will continue setting a field/property if the JSON value is the same as the default value.
-<code v-pre>Ignore</code> | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property's default value, or the custom value specified in <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a> if the attribute is present. The Json.NET deserializer will skip setting a .NET object's field/property if the JSON value is the same as the default value.</p>
+<code v-pre>Ignore</code> | Json.NET will skip writing a field/property value to JSON if the value is the same as the field/property&#39;s default value, or the custom value specified in <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a> if the attribute is present. The Json.NET deserializer will skip setting a .NET object&#39;s field/property if the JSON value is the same as the default value.</p>
 <p>DefaultValueHandling can also be customized on individual properties with JsonPropertyAttribute.</p>
 <doc-anchor-target id="objectcreationhandling">
     <h2>
@@ -352,7 +352,7 @@ The Json.NET deserializer will continue setting a field/property if the JSON val
 </doc-alert>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> controls whether Json.NET includes .NET type names during serialization with a <code v-pre>$type</code> property and reads .NET type names from that property to determine what type to create during
 deserialization.</p>
-<p>Metadata properties like <code v-pre>$type</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
+<p>Metadata properties like <code v-pre>$type</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can&#39;t control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
 <p>The value of the <code v-pre>$type</code> property can be customized and validated by creating your own <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a>.</p>
 <table>
 <thead>
@@ -376,7 +376,7 @@ deserialization.</p>
 </tr>
 <tr>
 <td><code v-pre>Auto</code></td>
-<td>Json.NET will check whether an object/collection matches its declared property and writes the type name if they do not match, e.g. a property with a type of Mammal has a derived instance of Dog assigned. Auto will ensure that type information isn't lost when serializing/deserializing automatically without having to write type names for every object.</td>
+<td>Json.NET will check whether an object/collection matches its declared property and writes the type name if they do not match, e.g. a property with a type of Mammal has a derived instance of Dog assigned. Auto will ensure that type information isn&#39;t lost when serializing/deserializing automatically without having to write type names for every object.</td>
 </tr>
 <tr>
 <td><code v-pre>All</code></td>
@@ -384,7 +384,7 @@ deserialization.</p>
 </tr>
 </tbody>
 </table>
-<p>TypeNameHandling can be used as an argument when calling the serializer, it can be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonContainerAttribute.ItemTypeNameHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/typenamehandling/#property-typenamehandling">JsonPropertyAttribute.TypeNameHandling</a> or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonPropertyAttribute.ItemTypeNameHandling</a>.</p>
+<p>TypeNameHandling can be used as an argument when calling the serializer, it can be set on an object&#39;s properties or a collection&#39;s items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonContainerAttribute.ItemTypeNameHandling</a>, customized on a property with <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/typenamehandling/#property-typenamehandling">JsonPropertyAttribute.TypeNameHandling</a> or a property&#39;s object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemtypenamehandling/#property-itemtypenamehandling">JsonPropertyAttribute.ItemTypeNameHandling</a>.</p>
 <doc-anchor-target id="typenameassemblyformat">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#typenameassemblyformat">#</doc-anchor-trigger>
@@ -466,7 +466,7 @@ deserialization.</p>
 <tbody>
 <tr>
 <td><code v-pre>Default</code></td>
-<td>By default Json.NET will first look for a constructor marked with the JsonConstructorAttribute, then look for a public default constructor (a constructor that doesn't take any arguments), then check if the class has a single public constructor with arguments and finally check for a non-public default constructor. If the class has multiple public constructors with arguments an error will be thrown. This can be fixed by marking one of the constructors with the JsonConstructorAttribute.</td>
+<td>By default Json.NET will first look for a constructor marked with the JsonConstructorAttribute, then look for a public default constructor (a constructor that doesn&#39;t take any arguments), then check if the class has a single public constructor with arguments and finally check for a non-public default constructor. If the class has multiple public constructors with arguments an error will be thrown. This can be fixed by marking one of the constructors with the JsonConstructorAttribute.</td>
 </tr>
 <tr>
 <td><code v-pre>AllowNonPublicDefaultConstructor</code></td>
@@ -483,7 +483,7 @@ deserialization.</p>
 <p>This is the collection of JsonConverters that will be used during serialization and deserialization.</p>
 <p>A <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> allows JSON to be manually written during serialization and read during deserialization. This is useful for particularly complex JSON structures or for when you want to change how a type is serialized.</p>
 <p>When a JsonConverter has been added to a JsonSerializer it will be checked for every value that is being serialized/deserialized using its CanConvert to see if it should be used. If CanConvert returns true then the JsonConverter will be used to read or write the JSON for that value. Note that while a JsonConverter gives you complete control over that values JSON, many Json.NET serialization features are no longer available like type name and reference handling.</p>
-<p>JsonConverters can be used as an argument when calling the serializer, it can be set on an object or property using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a>, it be set on an object's properties or a collection's items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemconvertertype/#property-itemconvertertype">JsonContainerAttribute.ItemConverterType</a>, or a property's object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemconvertertype/#property-itemconvertertype">JsonPropertyAttribute.ItemConverterType</a>.</p>
+<p>JsonConverters can be used as an argument when calling the serializer, it can be set on an object or property using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a>, it be set on an object&#39;s properties or a collection&#39;s items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsoncontainerattribute/itemconvertertype/#property-itemconvertertype">JsonContainerAttribute.ItemConverterType</a>, or a property&#39;s object properties or collection items using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/itemconvertertype/#property-itemconvertertype">JsonPropertyAttribute.ItemConverterType</a>.</p>
 <p>To create your own custom converter inherit from the JsonConverter class. Read more about the built-in JsonConverters below:</p>
 <ul>
 <li><a href="../DatesInJSON">Serializing Dates in JSON</a></li>
@@ -559,7 +559,7 @@ deserialization.</p>
             </li>
         </ul>
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
 </div>
 </footer>
 
