@@ -192,28 +192,28 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = new JObject
-            {
-                { &quot;Cpu&quot;, &quot;Intel&quot; },
-                { &quot;Memory&quot;, 32 },
-                {
-                    &quot;Drives&quot;, new JArray
-                    {
-                        &quot;DVD&quot;,
-                        &quot;SSD&quot;
-                    }
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = new JObject
+{
+    { &quot;Cpu&quot;, &quot;Intel&quot; },
+    { &quot;Memory&quot;, 32 },
+    {
+        &quot;Drives&quot;, new JArray
+        {
+            &quot;DVD&quot;,
+            &quot;SSD&quot;
+        }
+    }
+};
 
-            Console.WriteLine(o.ToString());
-            // {
-            //   &quot;Cpu&quot;: &quot;Intel&quot;,
-            //   &quot;Memory&quot;: 32,
-            //   &quot;Drives&quot;: [
-            //     &quot;DVD&quot;,
-            //     &quot;SSD&quot;
-            //   ]
-            // }</code></pre>
+Console.WriteLine(o.ToString());
+// {
+//   &quot;Cpu&quot;: &quot;Intel&quot;,
+//   &quot;Memory&quot;: 32,
+//   &quot;Drives&quot;: [
+//     &quot;DVD&quot;,
+//     &quot;SSD&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

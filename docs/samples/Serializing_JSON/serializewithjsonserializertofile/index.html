@@ -197,21 +197,21 @@
     public string Name { get; set; }
     public int Year { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Movie movie = new Movie
-            {
-                Name = &quot;Bad Boys&quot;,
-                Year = 1995
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Movie movie = new Movie
+{
+    Name = &quot;Bad Boys&quot;,
+    Year = 1995
+};
 
-            // serialize JSON to a string and then write string to a file
-            File.WriteAllText(@&quot;c:\movie.json&quot;, JsonConvert.SerializeObject(movie));
+// serialize JSON to a string and then write string to a file
+File.WriteAllText(@&quot;c:\movie.json&quot;, JsonConvert.SerializeObject(movie));
 
-            // serialize JSON directly to a file
-            using (StreamWriter file = File.CreateText(@&quot;c:\movie.json&quot;))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, movie);
-            }</code></pre>
+// serialize JSON directly to a file
+using (StreamWriter file = File.CreateText(@&quot;c:\movie.json&quot;))
+{
+    JsonSerializer serializer = new JsonSerializer();
+    serializer.Serialize(file, movie);
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

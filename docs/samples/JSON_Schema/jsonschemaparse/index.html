@@ -194,29 +194,29 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string schemaJson = @&quot;{
-              'description': 'A person',
-              'type': 'object',
-              'properties': {
-                'name': {'type':'string'},
-                'hobbies': {
-                  'type': 'array',
-                  'items': {'type':'string'}
-                }
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string schemaJson = @&quot;{
+  'description': 'A person',
+  'type': 'object',
+  'properties': {
+    'name': {'type':'string'},
+    'hobbies': {
+      'type': 'array',
+      'items': {'type':'string'}
+    }
+  }
+}&quot;;
 
-            JsonSchema schema = JsonSchema.Parse(schemaJson);
+JsonSchema schema = JsonSchema.Parse(schemaJson);
 
-            Console.WriteLine(schema.Type);
-            // Object
+Console.WriteLine(schema.Type);
+// Object
 
-            foreach (var property in schema.Properties)
-            {
-                Console.WriteLine(property.Key + &quot; - &quot; + property.Value.Type);
-            }
-            // name - String
-            // hobbies - Array</code></pre>
+foreach (var property in schema.Properties)
+{
+    Console.WriteLine(property.Key + &quot; - &quot; + property.Value.Type);
+}
+// name - String
+// hobbies - Array</code></pre>
 
     
                 <!-- Required only on API pages -->

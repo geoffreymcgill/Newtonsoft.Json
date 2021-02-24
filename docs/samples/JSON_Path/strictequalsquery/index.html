@@ -192,25 +192,25 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JArray items = JArray.Parse(@&quot;[
-              {
-                'Name': 'Valid JSON',
-                'Valid': true
-              },
-              {
-                'Name': 'Invalid JSON',
-                'Valid': 'true'
-              }
-            ]&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JArray items = JArray.Parse(@&quot;[
+  {
+    'Name': 'Valid JSON',
+    'Valid': true
+  },
+  {
+    'Name': 'Invalid JSON',
+    'Valid': 'true'
+  }
+]&quot;);
 
-            // Use === operator. Compared types must be the same to be valid
-            List&lt;JToken&gt; strictResults = items.SelectTokens(@&quot;$.[?(@.Valid === true)]&quot;).ToList();
+// Use === operator. Compared types must be the same to be valid
+List&lt;JToken&gt; strictResults = items.SelectTokens(@&quot;$.[?(@.Valid === true)]&quot;).ToList();
 
-            foreach (JToken item in strictResults)
-            {
-                Console.WriteLine((string)item[&quot;Name&quot;]);
-            }
-            // Valid JSON</code></pre>
+foreach (JToken item in strictResults)
+{
+    Console.WriteLine((string)item[&quot;Name&quot;]);
+}
+// Valid JSON</code></pre>
 
     
                 <!-- Required only on API pages -->

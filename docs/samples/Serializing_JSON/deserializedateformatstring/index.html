@@ -192,24 +192,24 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;[
-              '7 December, 2009',
-              '1 January, 2010',
-              '10 February, 2010'
-            ]&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;[
+  '7 December, 2009',
+  '1 January, 2010',
+  '10 February, 2010'
+]&quot;;
 
-            IList&lt;DateTime&gt; dateList = JsonConvert.DeserializeObject&lt;IList&lt;DateTime&gt;&gt;(json, new JsonSerializerSettings
-            {
-                DateFormatString = &quot;d MMMM, yyyy&quot;
-            });
+IList&lt;DateTime&gt; dateList = JsonConvert.DeserializeObject&lt;IList&lt;DateTime&gt;&gt;(json, new JsonSerializerSettings
+{
+    DateFormatString = &quot;d MMMM, yyyy&quot;
+});
 
-            foreach (DateTime dateTime in dateList)
-            {
-                Console.WriteLine(dateTime.ToLongDateString());
-            }
-            // Monday, 07 December 2009
-            // Friday, 01 January 2010
-            // Wednesday, 10 February 2010</code></pre>
+foreach (DateTime dateTime in dateList)
+{
+    Console.WriteLine(dateTime.ToLongDateString());
+}
+// Monday, 07 December 2009
+// Friday, 01 January 2010
+// Wednesday, 10 February 2010</code></pre>
 
     
                 <!-- Required only on API pages -->

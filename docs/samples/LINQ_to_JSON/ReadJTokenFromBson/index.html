@@ -192,19 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            byte[] data = Convert.FromBase64String(&quot;KQAAAAJuYW1lMQAHAAAAdmFsdWUxAAJuYW1lMgAHAAAAdmFsdWUyAAA=&quot;);
-            MemoryStream ms = new MemoryStream(data);
+<pre v-highlight:csharp><code v-pre title="Usage">byte[] data = Convert.FromBase64String(&quot;KQAAAAJuYW1lMQAHAAAAdmFsdWUxAAJuYW1lMgAHAAAAdmFsdWUyAAA=&quot;);
+MemoryStream ms = new MemoryStream(data);
 
-            JObject o;
-            using (BsonReader reader = new BsonReader(ms))
-            {
-                o = (JObject)JToken.ReadFrom(reader);
-            }
+JObject o;
+using (BsonReader reader = new BsonReader(ms))
+{
+    o = (JObject)JToken.ReadFrom(reader);
+}
 
-            string value = (string)o[&quot;name1&quot;];
+string value = (string)o[&quot;name1&quot;];
 
-            Console.WriteLine(value);
-            // value1</code></pre>
+Console.WriteLine(value);
+// value1</code></pre>
 
     
                 <!-- Required only on API pages -->

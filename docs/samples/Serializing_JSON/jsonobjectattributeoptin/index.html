@@ -192,33 +192,33 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        [JsonObject(MemberSerialization.OptIn)]
-        public class File
-        {
-            // excluded from serialization
-            // does not have JsonPropertyAttribute
-            public Guid Id { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">[JsonObject(MemberSerialization.OptIn)]
+public class File
+{
+    // excluded from serialization
+    // does not have JsonPropertyAttribute
+    public Guid Id { get; set; }
 
-            [JsonProperty]
-            public string Name { get; set; }
+    [JsonProperty]
+    public string Name { get; set; }
 
-            [JsonProperty]
-            public int Size { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            File file = new File
-            {
-                Id = Guid.NewGuid(),
-                Name = &quot;ImportantLegalDocuments.docx&quot;,
-                Size = 50 * 1024
-            };
+    [JsonProperty]
+    public int Size { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">File file = new File
+{
+    Id = Guid.NewGuid(),
+    Name = &quot;ImportantLegalDocuments.docx&quot;,
+    Size = 50 * 1024
+};
 
-            string json = JsonConvert.SerializeObject(file, Formatting.Indented);
+string json = JsonConvert.SerializeObject(file, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Name&quot;: &quot;ImportantLegalDocuments.docx&quot;,
-            //   &quot;Size&quot;: 51200
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;Name&quot;: &quot;ImportantLegalDocuments.docx&quot;,
+//   &quot;Size&quot;: 51200
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

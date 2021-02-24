@@ -199,25 +199,25 @@
     public Person Partner { get; set; }
     public decimal? Salary { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Person person = new Person();
+<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person();
 
-            string jsonIncludeDefaultValues = JsonConvert.SerializeObject(person, Formatting.Indented);
+string jsonIncludeDefaultValues = JsonConvert.SerializeObject(person, Formatting.Indented);
 
-            Console.WriteLine(jsonIncludeDefaultValues);
-            // {
-            //   &quot;Name&quot;: null,
-            //   &quot;Age&quot;: 0,
-            //   &quot;Partner&quot;: null,
-            //   &quot;Salary&quot;: null
-            // }
+Console.WriteLine(jsonIncludeDefaultValues);
+// {
+//   &quot;Name&quot;: null,
+//   &quot;Age&quot;: 0,
+//   &quot;Partner&quot;: null,
+//   &quot;Salary&quot;: null
+// }
 
-            string jsonIgnoreDefaultValues = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
-            {
-                DefaultValueHandling = DefaultValueHandling.Ignore
-            });
+string jsonIgnoreDefaultValues = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
+{
+    DefaultValueHandling = DefaultValueHandling.Ignore
+});
 
-            Console.WriteLine(jsonIgnoreDefaultValues);
-            // {}</code></pre>
+Console.WriteLine(jsonIgnoreDefaultValues);
+// {}</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -186,30 +186,30 @@
     </h1>
 </doc-anchor-target>
 <p>By default Json.NET will serialize all objects it encounters by value. If a list contains two Person references and both references point to the same object, then the JsonSerializer will write out all the names and values for each reference.</p>
-<pre v-highlight:csharp><code v-pre title="Preserve Object References Off">            Person p = new Person
-            {
-                BirthDate = new DateTime(1980, 12, 23, 0, 0, 0, DateTimeKind.Utc),
-                LastModified = new DateTime(2009, 2, 20, 12, 59, 21, DateTimeKind.Utc),
-                Name = &quot;James&quot;
-            };
+<pre v-highlight:csharp><code v-pre title="Preserve Object References Off">Person p = new Person
+{
+    BirthDate = new DateTime(1980, 12, 23, 0, 0, 0, DateTimeKind.Utc),
+    LastModified = new DateTime(2009, 2, 20, 12, 59, 21, DateTimeKind.Utc),
+    Name = &quot;James&quot;
+};
 
-            List&lt;Person&gt; people = new List&lt;Person&gt;();
-            people.Add(p);
-            people.Add(p);
+List&lt;Person&gt; people = new List&lt;Person&gt;();
+people.Add(p);
+people.Add(p);
 
-            string json = JsonConvert.SerializeObject(people, Formatting.Indented);
-            //[
-            //  {
-            //    &quot;Name&quot;: &quot;James&quot;,
-            //    &quot;BirthDate&quot;: &quot;1980-12-23T00:00:00Z&quot;,
-            //    &quot;LastModified&quot;: &quot;2009-02-20T12:59:21Z&quot;
-            //  },
-            //  {
-            //    &quot;Name&quot;: &quot;James&quot;,
-            //    &quot;BirthDate&quot;: &quot;1980-12-23T00:00:00Z&quot;,
-            //    &quot;LastModified&quot;: &quot;2009-02-20T12:59:21Z&quot;
-            //  }
-            //]</code></pre>
+string json = JsonConvert.SerializeObject(people, Formatting.Indented);
+//[
+//  {
+//    &quot;Name&quot;: &quot;James&quot;,
+//    &quot;BirthDate&quot;: &quot;1980-12-23T00:00:00Z&quot;,
+//    &quot;LastModified&quot;: &quot;2009-02-20T12:59:21Z&quot;
+//  },
+//  {
+//    &quot;Name&quot;: &quot;James&quot;,
+//    &quot;BirthDate&quot;: &quot;1980-12-23T00:00:00Z&quot;,
+//    &quot;LastModified&quot;: &quot;2009-02-20T12:59:21Z&quot;
+//  }
+//]</code></pre>
 <p>In most cases this is the desired result, but in certain scenarios writing the second item in the list as a reference to the first is a better solution. If the above JSON was deserialized now, then the returned list would contain two completely separate Person objects with the same values. Writing references by value will also cause problems on objects where a circular reference occurs.</p>
 <doc-anchor-target id="preservereferenceshandling">
     <h2>
@@ -218,37 +218,37 @@
     </h2>
 </doc-anchor-target>
 <p>Setting <a href="/Newtonsoft.Json/api/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a> will track object references when serializing and deserializing JSON.</p>
-<pre v-highlight:csharp><code v-pre title="Preserve Object References On">            string json = JsonConvert.SerializeObject(people, Formatting.Indented,
-                new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+<pre v-highlight:csharp><code v-pre title="Preserve Object References On">string json = JsonConvert.SerializeObject(people, Formatting.Indented,
+    new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
 
-            //[
-            //  {
-            //    &quot;$id&quot;: &quot;1&quot;,
-            //    &quot;Name&quot;: &quot;James&quot;,
-            //    &quot;BirthDate&quot;: &quot;1983-03-08T00:00Z&quot;,
-            //    &quot;LastModified&quot;: &quot;2012-03-21T05:40Z&quot;
-            //  },
-            //  {
-            //    &quot;$ref&quot;: &quot;1&quot;
-            //  }
-            //]
+//[
+//  {
+//    &quot;$id&quot;: &quot;1&quot;,
+//    &quot;Name&quot;: &quot;James&quot;,
+//    &quot;BirthDate&quot;: &quot;1983-03-08T00:00Z&quot;,
+//    &quot;LastModified&quot;: &quot;2012-03-21T05:40Z&quot;
+//  },
+//  {
+//    &quot;$ref&quot;: &quot;1&quot;
+//  }
+//]
 
-            List&lt;Person&gt; deserializedPeople = JsonConvert.DeserializeObject&lt;List&lt;Person&gt;&gt;(json,
-                new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+List&lt;Person&gt; deserializedPeople = JsonConvert.DeserializeObject&lt;List&lt;Person&gt;&gt;(json,
+    new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
 
-            Console.WriteLine(deserializedPeople.Count);
-            // 2
+Console.WriteLine(deserializedPeople.Count);
+// 2
 
-            Person p1 = deserializedPeople[0];
-            Person p2 = deserializedPeople[1];
+Person p1 = deserializedPeople[0];
+Person p2 = deserializedPeople[1];
 
-            Console.WriteLine(p1.Name);
-            // James
-            Console.WriteLine(p2.Name);
-            // James
+Console.WriteLine(p1.Name);
+// James
+Console.WriteLine(p2.Name);
+// James
 
-            bool equal = Object.ReferenceEquals(p1, p2);
-            // true</code></pre>
+bool equal = Object.ReferenceEquals(p1, p2);
+// true</code></pre>
 <p>The first Person in the list is serialized with the addition of an object ID. The second Person in JSON is now only a reference to the first.</p>
 <p>With PreserveReferencesHandling on, now only one Person object is created on deserialization and the list contains two references to it, mirroring what we started with.</p>
 <p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>

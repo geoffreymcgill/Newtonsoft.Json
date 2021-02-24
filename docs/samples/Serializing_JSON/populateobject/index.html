@@ -199,35 +199,35 @@
     public DateTime CreatedDate { get; set; }
     public List&lt;string&gt; Roles { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Account account = new Account
-            {
-                Email = &quot;james@example.com&quot;,
-                Active = true,
-                CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
-                Roles = new List&lt;string&gt;
-                {
-                    &quot;User&quot;,
-                    &quot;Admin&quot;
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+{
+    Email = &quot;james@example.com&quot;,
+    Active = true,
+    CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
+    Roles = new List&lt;string&gt;
+    {
+        &quot;User&quot;,
+        &quot;Admin&quot;
+    }
+};
 
-            string json = @&quot;{
-              'Active': false,
-              'Roles': [
-                'Expired'
-              ]
-            }&quot;;
+string json = @&quot;{
+  'Active': false,
+  'Roles': [
+    'Expired'
+  ]
+}&quot;;
 
-            JsonConvert.PopulateObject(json, account);
+JsonConvert.PopulateObject(json, account);
 
-            Console.WriteLine(account.Email);
-            // james@example.com
+Console.WriteLine(account.Email);
+// james@example.com
 
-            Console.WriteLine(account.Active);
-            // false
+Console.WriteLine(account.Active);
+// false
 
-            Console.WriteLine(string.Join(&quot;, &quot;, account.Roles.ToArray()));
-            // User, Admin, Expired</code></pre>
+Console.WriteLine(string.Join(&quot;, &quot;, account.Roles.ToArray()));
+// User, Admin, Expired</code></pre>
 
     
                 <!-- Required only on API pages -->

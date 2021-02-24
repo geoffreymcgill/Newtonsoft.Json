@@ -197,24 +197,24 @@
     public string FullName { get; set; }
     public bool Deleted { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'FullName': 'Dan Deleted',
-              'Deleted': true,
-              'DeletedDate': '2013-01-20T00:00:00'
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'FullName': 'Dan Deleted',
+  'Deleted': true,
+  'DeletedDate': '2013-01-20T00:00:00'
+}&quot;;
 
-            try
-            {
-                JsonConvert.DeserializeObject&lt;Account&gt;(json, new JsonSerializerSettings
-                {
-                    MissingMemberHandling = MissingMemberHandling.Error
-                });
-            }
-            catch (JsonSerializationException ex)
-            {
-                Console.WriteLine(ex.Message);
-                // Could not find member 'DeletedDate' on object of type 'Account'. Path 'DeletedDate', line 4, position 23.
-            }</code></pre>
+try
+{
+    JsonConvert.DeserializeObject&lt;Account&gt;(json, new JsonSerializerSettings
+    {
+        MissingMemberHandling = MissingMemberHandling.Error
+    });
+}
+catch (JsonSerializationException ex)
+{
+    Console.WriteLine(ex.Message);
+    // Could not find member 'DeletedDate' on object of type 'Account'. Path 'DeletedDate', line 4, position 23.
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

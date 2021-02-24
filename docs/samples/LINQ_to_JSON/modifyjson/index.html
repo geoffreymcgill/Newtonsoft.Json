@@ -192,44 +192,44 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'channel': {
-                'title': 'Star Wars',
-                'link': 'http://www.starwars.com',
-                'description': 'Star Wars blog.',
-                'obsolete': 'Obsolete value',
-                'item': []
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'channel': {
+    'title': 'Star Wars',
+    'link': 'http://www.starwars.com',
+    'description': 'Star Wars blog.',
+    'obsolete': 'Obsolete value',
+    'item': []
+  }
+}&quot;;
 
-            JObject rss = JObject.Parse(json);
+JObject rss = JObject.Parse(json);
 
-            JObject channel = (JObject)rss[&quot;channel&quot;];
+JObject channel = (JObject)rss[&quot;channel&quot;];
 
-            channel[&quot;title&quot;] = ((string)channel[&quot;title&quot;]).ToUpper();
-            channel[&quot;description&quot;] = ((string)channel[&quot;description&quot;]).ToUpper();
+channel[&quot;title&quot;] = ((string)channel[&quot;title&quot;]).ToUpper();
+channel[&quot;description&quot;] = ((string)channel[&quot;description&quot;]).ToUpper();
 
-            channel.Property(&quot;obsolete&quot;).Remove();
+channel.Property(&quot;obsolete&quot;).Remove();
 
-            channel.Property(&quot;description&quot;).AddAfterSelf(new JProperty(&quot;new&quot;, &quot;New value&quot;));
+channel.Property(&quot;description&quot;).AddAfterSelf(new JProperty(&quot;new&quot;, &quot;New value&quot;));
 
-            JArray item = (JArray)channel[&quot;item&quot;];
-            item.Add(&quot;Item 1&quot;);
-            item.Add(&quot;Item 2&quot;);
+JArray item = (JArray)channel[&quot;item&quot;];
+item.Add(&quot;Item 1&quot;);
+item.Add(&quot;Item 2&quot;);
 
-            Console.WriteLine(rss.ToString());
-            // {
-            //   &quot;channel&quot;: {
-            //     &quot;title&quot;: &quot;STAR WARS&quot;,
-            //     &quot;link&quot;: &quot;http://www.starwars.com&quot;,
-            //     &quot;description&quot;: &quot;STAR WARS BLOG.&quot;,
-            //     &quot;new&quot;: &quot;New value&quot;,
-            //     &quot;item&quot;: [
-            //       &quot;Item 1&quot;,
-            //       &quot;Item 2&quot;
-            //     ]
-            //   }
-            // }</code></pre>
+Console.WriteLine(rss.ToString());
+// {
+//   &quot;channel&quot;: {
+//     &quot;title&quot;: &quot;STAR WARS&quot;,
+//     &quot;link&quot;: &quot;http://www.starwars.com&quot;,
+//     &quot;description&quot;: &quot;STAR WARS BLOG.&quot;,
+//     &quot;new&quot;: &quot;New value&quot;,
+//     &quot;item&quot;: [
+//       &quot;Item 1&quot;,
+//       &quot;Item 2&quot;
+//     ]
+//   }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

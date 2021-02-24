@@ -196,33 +196,33 @@
 {
     public string Name { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{ 'name': 'Admin' }{ 'name': 'Publisher' }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{ 'name': 'Admin' }{ 'name': 'Publisher' }&quot;;
 
-            IList&lt;Role&gt; roles = new List&lt;Role&gt;();
+IList&lt;Role&gt; roles = new List&lt;Role&gt;();
 
-            JsonTextReader reader = new JsonTextReader(new StringReader(json));
-            reader.SupportMultipleContent = true;
+JsonTextReader reader = new JsonTextReader(new StringReader(json));
+reader.SupportMultipleContent = true;
 
-            while (true)
-            {
-                if (!reader.Read())
-                {
-                    break;
-                }
+while (true)
+{
+    if (!reader.Read())
+    {
+        break;
+    }
 
-                JsonSerializer serializer = new JsonSerializer();
-                Role role = serializer.Deserialize&lt;Role&gt;(reader);
+    JsonSerializer serializer = new JsonSerializer();
+    Role role = serializer.Deserialize&lt;Role&gt;(reader);
 
-                roles.Add(role);
-            }
+    roles.Add(role);
+}
 
-            foreach (Role role in roles)
-            {
-                Console.WriteLine(role.Name);
-            }
+foreach (Role role in roles)
+{
+    Console.WriteLine(role.Name);
+}
 
-            // Admin
-            // Publisher</code></pre>
+// Admin
+// Publisher</code></pre>
 
     
                 <!-- Required only on API pages -->

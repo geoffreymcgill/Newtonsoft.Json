@@ -192,27 +192,27 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JTokenWriter writer = new JTokenWriter();
-            writer.WriteStartObject();
-            writer.WritePropertyName(&quot;name1&quot;);
-            writer.WriteValue(&quot;value1&quot;);
-            writer.WritePropertyName(&quot;name2&quot;);
-            writer.WriteStartArray();
-            writer.WriteValue(1);
-            writer.WriteValue(2);
-            writer.WriteEndArray();
-            writer.WriteEndObject();
+<pre v-highlight:csharp><code v-pre title="Usage">JTokenWriter writer = new JTokenWriter();
+writer.WriteStartObject();
+writer.WritePropertyName(&quot;name1&quot;);
+writer.WriteValue(&quot;value1&quot;);
+writer.WritePropertyName(&quot;name2&quot;);
+writer.WriteStartArray();
+writer.WriteValue(1);
+writer.WriteValue(2);
+writer.WriteEndArray();
+writer.WriteEndObject();
 
-            JObject o = (JObject)writer.Token;
+JObject o = (JObject)writer.Token;
 
-            Console.WriteLine(o.ToString());
-            // {
-            //   &quot;name1&quot;: &quot;value1&quot;,
-            //   &quot;name2&quot;: [
-            //     1,
-            //     2
-            //   ]
-            // }</code></pre>
+Console.WriteLine(o.ToString());
+// {
+//   &quot;name1&quot;: &quot;value1&quot;,
+//   &quot;name2&quot;: [
+//     1,
+//     2
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

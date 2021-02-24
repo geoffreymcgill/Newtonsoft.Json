@@ -197,28 +197,28 @@
     public string UserName { get; set; }
     public bool Enabled { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            User user1 = new User
-            {
-                UserName = &quot;jamesn&quot;,
-                Enabled = true
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">User user1 = new User
+{
+    UserName = &quot;jamesn&quot;,
+    Enabled = true
+};
 
-            DefaultContractResolver contractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy()
-            };
+DefaultContractResolver contractResolver = new DefaultContractResolver
+{
+    NamingStrategy = new CamelCaseNamingStrategy()
+};
 
-            string json = JsonConvert.SerializeObject(user1, new JsonSerializerSettings
-            {
-                ContractResolver = contractResolver,
-                Formatting = Formatting.Indented
-            });
+string json = JsonConvert.SerializeObject(user1, new JsonSerializerSettings
+{
+    ContractResolver = contractResolver,
+    Formatting = Formatting.Indented
+});
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;userName&quot;: &quot;jamesn&quot;,
-            //   &quot;enabled&quot;: true
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;userName&quot;: &quot;jamesn&quot;,
+//   &quot;enabled&quot;: true
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

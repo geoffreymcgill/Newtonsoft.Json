@@ -194,27 +194,27 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JsonSchema schema = JsonSchema.Parse(@&quot;{
-              'type': 'object',
-              'properties': {
-                'name': {'type':'string'},
-                'hobbies': {
-                  'type': 'array',
-                  'items': {'type':'string'}
-                }
-              }
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JsonSchema schema = JsonSchema.Parse(@&quot;{
+  'type': 'object',
+  'properties': {
+    'name': {'type':'string'},
+    'hobbies': {
+      'type': 'array',
+      'items': {'type':'string'}
+    }
+  }
+}&quot;);
 
-            JObject person = JObject.Parse(@&quot;{
-              'name': 'James',
-              'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
-            }&quot;);
+JObject person = JObject.Parse(@&quot;{
+  'name': 'James',
+  'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+}&quot;);
 
-            IList&lt;string&gt; errorMessages;
-            bool valid = person.IsValid(schema, out errorMessages);
+IList&lt;string&gt; errorMessages;
+bool valid = person.IsValid(schema, out errorMessages);
 
-            Console.WriteLine(valid);
-            // true</code></pre>
+Console.WriteLine(valid);
+// true</code></pre>
 
     
                 <!-- Required only on API pages -->

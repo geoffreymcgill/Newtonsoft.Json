@@ -192,25 +192,25 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Account
-        {
-            public string FullName { get; set; }
-            public string EmailAddress { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Account
+{
+    public string FullName { get; set; }
+    public string EmailAddress { get; set; }
 
-            [JsonIgnore]
-            public string PasswordHash { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Account account = new Account
-            {
-                FullName = &quot;Joe User&quot;,
-                EmailAddress = &quot;joe@example.com&quot;,
-                PasswordHash = &quot;VHdlZXQgJ1F1aWNrc2lsdmVyJyB0byBASmFtZXNOSw==&quot;
-            };
+    [JsonIgnore]
+    public string PasswordHash { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+{
+    FullName = &quot;Joe User&quot;,
+    EmailAddress = &quot;joe@example.com&quot;,
+    PasswordHash = &quot;VHdlZXQgJ1F1aWNrc2lsdmVyJyB0byBASmFtZXNOSw==&quot;
+};
 
-            string json = JsonConvert.SerializeObject(account);
+string json = JsonConvert.SerializeObject(account);
 
-            Console.WriteLine(json);
-            // {&quot;FullName&quot;:&quot;Joe User&quot;,&quot;EmailAddress&quot;:&quot;joe@example.com&quot;}</code></pre>
+Console.WriteLine(json);
+// {&quot;FullName&quot;:&quot;Joe User&quot;,&quot;EmailAddress&quot;:&quot;joe@example.com&quot;}</code></pre>
 
     
                 <!-- Required only on API pages -->

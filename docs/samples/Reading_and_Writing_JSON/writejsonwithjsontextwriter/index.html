@@ -192,39 +192,39 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            StringBuilder sb = new StringBuilder();
-            StringWriter sw = new StringWriter(sb);
+<pre v-highlight:csharp><code v-pre title="Usage">StringBuilder sb = new StringBuilder();
+StringWriter sw = new StringWriter(sb);
 
-            using (JsonWriter writer = new JsonTextWriter(sw))
-            {
-                writer.Formatting = Formatting.Indented;
+using (JsonWriter writer = new JsonTextWriter(sw))
+{
+    writer.Formatting = Formatting.Indented;
 
-                writer.WriteStartObject();
-                writer.WritePropertyName(&quot;CPU&quot;);
-                writer.WriteValue(&quot;Intel&quot;);
-                writer.WritePropertyName(&quot;PSU&quot;);
-                writer.WriteValue(&quot;500W&quot;);
-                writer.WritePropertyName(&quot;Drives&quot;);
-                writer.WriteStartArray();
-                writer.WriteValue(&quot;DVD read/writer&quot;);
-                writer.WriteComment(&quot;(broken)&quot;);
-                writer.WriteValue(&quot;500 gigabyte hard drive&quot;);
-                writer.WriteValue(&quot;200 gigabyte hard drive&quot;);
-                writer.WriteEnd();
-                writer.WriteEndObject();
-            }
+    writer.WriteStartObject();
+    writer.WritePropertyName(&quot;CPU&quot;);
+    writer.WriteValue(&quot;Intel&quot;);
+    writer.WritePropertyName(&quot;PSU&quot;);
+    writer.WriteValue(&quot;500W&quot;);
+    writer.WritePropertyName(&quot;Drives&quot;);
+    writer.WriteStartArray();
+    writer.WriteValue(&quot;DVD read/writer&quot;);
+    writer.WriteComment(&quot;(broken)&quot;);
+    writer.WriteValue(&quot;500 gigabyte hard drive&quot;);
+    writer.WriteValue(&quot;200 gigabyte hard drive&quot;);
+    writer.WriteEnd();
+    writer.WriteEndObject();
+}
 
-            Console.WriteLine(sb.ToString());
-            // {
-            //   &quot;CPU&quot;: &quot;Intel&quot;,
-            //   &quot;PSU&quot;: &quot;500W&quot;,
-            //   &quot;Drives&quot;: [
-            //     &quot;DVD read/writer&quot;
-            //     /*(broken)*/,
-            //     &quot;500 gigabyte hard drive&quot;,
-            //     &quot;200 gigabyte hard drive&quot;
-            //   ]
-            // }</code></pre>
+Console.WriteLine(sb.ToString());
+// {
+//   &quot;CPU&quot;: &quot;Intel&quot;,
+//   &quot;PSU&quot;: &quot;500W&quot;,
+//   &quot;Drives&quot;: [
+//     &quot;DVD read/writer&quot;
+//     /*(broken)*/,
+//     &quot;500 gigabyte hard drive&quot;,
+//     &quot;200 gigabyte hard drive&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

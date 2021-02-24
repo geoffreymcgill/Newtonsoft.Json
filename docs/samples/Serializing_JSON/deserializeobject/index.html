@@ -199,20 +199,20 @@
     public DateTime CreatedDate { get; set; }
     public IList&lt;string&gt; Roles { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'Email': 'james@example.com',
-              'Active': true,
-              'CreatedDate': '2013-01-20T00:00:00Z',
-              'Roles': [
-                'User',
-                'Admin'
-              ]
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Email': 'james@example.com',
+  'Active': true,
+  'CreatedDate': '2013-01-20T00:00:00Z',
+  'Roles': [
+    'User',
+    'Admin'
+  ]
+}&quot;;
 
-            Account account = JsonConvert.DeserializeObject&lt;Account&gt;(json);
+Account account = JsonConvert.DeserializeObject&lt;Account&gt;(json);
 
-            Console.WriteLine(account.Email);
-            // james@example.com</code></pre>
+Console.WriteLine(account.Email);
+// james@example.com</code></pre>
 
     
                 <!-- Required only on API pages -->

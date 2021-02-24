@@ -192,49 +192,49 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string xml = @&quot;&lt;person id='1'&gt;
-              &lt;name&gt;Alan&lt;/name&gt;
-              &lt;url&gt;http://www.google.com&lt;/url&gt;
-              &lt;role&gt;Admin1&lt;/role&gt;
-            &lt;/person&gt;&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string xml = @&quot;&lt;person id='1'&gt;
+  &lt;name&gt;Alan&lt;/name&gt;
+  &lt;url&gt;http://www.google.com&lt;/url&gt;
+  &lt;role&gt;Admin1&lt;/role&gt;
+&lt;/person&gt;&quot;;
 
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
+XmlDocument doc = new XmlDocument();
+doc.LoadXml(xml);
 
-            string json = JsonConvert.SerializeXmlNode(doc);
+string json = JsonConvert.SerializeXmlNode(doc);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;person&quot;: {
-            //     &quot;@id&quot;: &quot;1&quot;,
-            //     &quot;name&quot;: &quot;Alan&quot;,
-            //     &quot;url&quot;: &quot;http://www.google.com&quot;,
-            //     &quot;role&quot;: &quot;Admin1&quot;
-            //   }
-            // }
+Console.WriteLine(json);
+// {
+//   &quot;person&quot;: {
+//     &quot;@id&quot;: &quot;1&quot;,
+//     &quot;name&quot;: &quot;Alan&quot;,
+//     &quot;url&quot;: &quot;http://www.google.com&quot;,
+//     &quot;role&quot;: &quot;Admin1&quot;
+//   }
+// }
 
-            xml = @&quot;&lt;person xmlns:json='http://james.newtonking.com/projects/json' id='1'&gt;
-              &lt;name&gt;Alan&lt;/name&gt;
-              &lt;url&gt;http://www.google.com&lt;/url&gt;
-              &lt;role json:Array='true'&gt;Admin&lt;/role&gt;
-            &lt;/person&gt;&quot;;
+xml = @&quot;&lt;person xmlns:json='http://james.newtonking.com/projects/json' id='1'&gt;
+  &lt;name&gt;Alan&lt;/name&gt;
+  &lt;url&gt;http://www.google.com&lt;/url&gt;
+  &lt;role json:Array='true'&gt;Admin&lt;/role&gt;
+&lt;/person&gt;&quot;;
 
-            doc = new XmlDocument();
-            doc.LoadXml(xml);
+doc = new XmlDocument();
+doc.LoadXml(xml);
 
-            json = JsonConvert.SerializeXmlNode(doc);
+json = JsonConvert.SerializeXmlNode(doc);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;person&quot;: {
-            //     &quot;@id&quot;: &quot;1&quot;,
-            //     &quot;name&quot;: &quot;Alan&quot;,
-            //     &quot;url&quot;: &quot;http://www.google.com&quot;,
-            //     &quot;role&quot;: [
-            //       &quot;Admin&quot;
-            //     ]
-            //   }
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;person&quot;: {
+//     &quot;@id&quot;: &quot;1&quot;,
+//     &quot;name&quot;: &quot;Alan&quot;,
+//     &quot;url&quot;: &quot;http://www.google.com&quot;,
+//     &quot;role&quot;: [
+//       &quot;Admin&quot;
+//     ]
+//   }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

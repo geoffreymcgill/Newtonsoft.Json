@@ -192,21 +192,21 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            Dictionary&lt;string, int&gt; points = new Dictionary&lt;string, int&gt;
-            {
-                { &quot;James&quot;, 9001 },
-                { &quot;Jo&quot;, 3474 },
-                { &quot;Jess&quot;, 11926 }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Dictionary&lt;string, int&gt; points = new Dictionary&lt;string, int&gt;
+{
+    { &quot;James&quot;, 9001 },
+    { &quot;Jo&quot;, 3474 },
+    { &quot;Jess&quot;, 11926 }
+};
 
-            string json = JsonConvert.SerializeObject(points, Formatting.Indented);
+string json = JsonConvert.SerializeObject(points, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;James&quot;: 9001,
-            //   &quot;Jo&quot;: 3474,
-            //   &quot;Jess&quot;: 11926
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;James&quot;: 9001,
+//   &quot;Jo&quot;: 3474,
+//   &quot;Jess&quot;: 11926
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

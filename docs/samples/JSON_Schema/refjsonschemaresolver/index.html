@@ -194,45 +194,45 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string schemaJson;
-            JsonSchemaResolver resolver = new JsonSchemaResolver();
+<pre v-highlight:csharp><code v-pre title="Usage">string schemaJson;
+JsonSchemaResolver resolver = new JsonSchemaResolver();
 
-            schemaJson = @&quot;{
-              'id': 'person',
-              'type': 'object',
-              'properties': {
-                'name': {'type':'string'},
-                'age': {'type':'integer'}
-              }
-            }&quot;;
+schemaJson = @&quot;{
+  'id': 'person',
+  'type': 'object',
+  'properties': {
+    'name': {'type':'string'},
+    'age': {'type':'integer'}
+  }
+}&quot;;
 
-            JsonSchema personSchema = JsonSchema.Parse(schemaJson, resolver);
+JsonSchema personSchema = JsonSchema.Parse(schemaJson, resolver);
 
-            schemaJson = @&quot;{
-              'id': 'employee',
-              'type': 'object',
-              'extends': {'$ref':'person'},
-              'properties': {
-                'salary': {'type':'number'},
-                'jobTitle': {'type':'string'}
-              }
-            }&quot;;
+schemaJson = @&quot;{
+  'id': 'employee',
+  'type': 'object',
+  'extends': {'$ref':'person'},
+  'properties': {
+    'salary': {'type':'number'},
+    'jobTitle': {'type':'string'}
+  }
+}&quot;;
 
-            JsonSchema employeeSchema = JsonSchema.Parse(schemaJson, resolver);
+JsonSchema employeeSchema = JsonSchema.Parse(schemaJson, resolver);
 
-            string json = @&quot;{
-              'name': 'James',
-              'age': 29,
-              'salary': 9000.01,
-              'jobTitle': 'Junior Vice President'
-            }&quot;;
+string json = @&quot;{
+  'name': 'James',
+  'age': 29,
+  'salary': 9000.01,
+  'jobTitle': 'Junior Vice President'
+}&quot;;
 
-            JObject employee = JObject.Parse(json);
+JObject employee = JObject.Parse(json);
 
-            bool valid = employee.IsValid(employeeSchema);
+bool valid = employee.IsValid(employeeSchema);
 
-            Console.WriteLine(valid);
-            // true</code></pre>
+Console.WriteLine(valid);
+// true</code></pre>
 
     
                 <!-- Required only on API pages -->

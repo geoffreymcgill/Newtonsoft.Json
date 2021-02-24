@@ -186,23 +186,23 @@
     </h1>
 </doc-anchor-target>
 <p>LINQ to JSON is an API for working with JSON objects. It has been designed with LINQ in mind to enable quick querying and creation of JSON objects. LINQ to JSON sits under the <a href="N:Newtonsoft.Json.Linq">Newtonsoft.Json.Linq</a> namespace.</p>
-<pre v-highlight:csharp><code v-pre title="Using LINQ for JSON">            JObject o = JObject.Parse(@&quot;{
-              'CPU': 'Intel',
-              'Drives': [
-                'DVD read/writer',
-                '500 gigabyte hard drive'
-              ]
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Using LINQ for JSON">JObject o = JObject.Parse(@&quot;{
+  'CPU': 'Intel',
+  'Drives': [
+    'DVD read/writer',
+    '500 gigabyte hard drive'
+  ]
+}&quot;);
 
-            string cpu = (string)o[&quot;CPU&quot;];
-            // Intel
+string cpu = (string)o[&quot;CPU&quot;];
+// Intel
 
-            string firstDrive = (string)o[&quot;Drives&quot;][0];
-            // DVD read/writer
+string firstDrive = (string)o[&quot;Drives&quot;][0];
+// DVD read/writer
 
-            IList&lt;string&gt; allDrives = o[&quot;Drives&quot;].Select(t =&gt; (string)t).ToList();
-            // DVD read/writer
-            // 500 gigabyte hard drive</code></pre>
+IList&lt;string&gt; allDrives = o[&quot;Drives&quot;].Select(t =&gt; (string)t).ToList();
+// DVD read/writer
+// 500 gigabyte hard drive</code></pre>
 <doc-anchor-target id="topics">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#topics">#</doc-anchor-trigger>

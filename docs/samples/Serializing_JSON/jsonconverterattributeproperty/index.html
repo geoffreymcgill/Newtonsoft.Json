@@ -192,33 +192,33 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public enum UserStatus
-        {
-            NotConfirmed,
-            Active,
-            Deleted
-        }
+<pre v-highlight:csharp><code v-pre title="Types">public enum UserStatus
+{
+    NotConfirmed,
+    Active,
+    Deleted
+}
 
-        public class User
-        {
-            public string UserName { get; set; }
+public class User
+{
+    public string UserName { get; set; }
 
-            [JsonConverter(typeof(StringEnumConverter))]
-            public UserStatus Status { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            User user = new User
-            {
-                UserName = @&quot;domain\username&quot;,
-                Status = UserStatus.Deleted
-            };
+    [JsonConverter(typeof(StringEnumConverter))]
+    public UserStatus Status { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+{
+    UserName = @&quot;domain\username&quot;,
+    Status = UserStatus.Deleted
+};
 
-            string json = JsonConvert.SerializeObject(user, Formatting.Indented);
+string json = JsonConvert.SerializeObject(user, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;UserName&quot;: &quot;domain\\username&quot;,
-            //   &quot;Status&quot;: &quot;Deleted&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;UserName&quot;: &quot;domain\\username&quot;,
+//   &quot;Status&quot;: &quot;Deleted&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

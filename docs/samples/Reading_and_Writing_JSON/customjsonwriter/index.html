@@ -192,314 +192,314 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">    public class XmlJsonWriter : JsonWriter
+<pre v-highlight:csharp><code v-pre title="Types">public class XmlJsonWriter : JsonWriter
+{
+    private readonly XmlWriter _writer;
+    private string _propertyName;
+
+    public XmlJsonWriter(XmlWriter writer)
     {
-        private readonly XmlWriter _writer;
-        private string _propertyName;
+        _writer = writer;
+    }
 
-        public XmlJsonWriter(XmlWriter writer)
+    public override void WriteComment(string text)
+    {
+        base.WriteComment(text);
+        _writer.WriteComment(text);
+    }
+
+    public override void WritePropertyName(string name)
+    {
+        base.WritePropertyName(name);
+        _propertyName = name;
+    }
+
+    public override void WriteNull()
+    {
+        base.WriteNull();
+
+        WriteValueElement(JTokenType.Null);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(DateTime value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Date);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(DateTimeOffset value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Date);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(Guid value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Guid);
+        _writer.WriteValue(value.ToString());
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(TimeSpan value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.TimeSpan);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(Uri value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Uri);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(string value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.String);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(int value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Integer);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(long value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Integer);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(short value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Integer);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(byte value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Integer);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(bool value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Boolean);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(char value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.String);
+        _writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(decimal value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Float);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(double value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Float);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteValue(float value)
+    {
+        base.WriteValue(value);
+
+        WriteValueElement(JTokenType.Float);
+        _writer.WriteValue(value);
+        _writer.WriteEndElement();
+    }
+
+    private void WriteValueElement(JTokenType type)
+    {
+        if (_propertyName != null)
         {
-            _writer = writer;
+            WriteValueElement(_propertyName, type);
+            _propertyName = null;
+        }
+        else
+        {
+            WriteValueElement(&quot;Item&quot;, type);
+        }
+    }
+
+    private void WriteValueElement(string elementName, JTokenType type)
+    {
+        _writer.WriteStartElement(elementName);
+        _writer.WriteAttributeString(&quot;type&quot;, type.ToString());
+    }
+
+    public override void WriteStartArray()
+    {
+        bool isStart = (WriteState == WriteState.Start);
+
+        base.WriteStartArray();
+
+        if (isStart)
+        {
+            WriteValueElement(&quot;Root&quot;, JTokenType.Array);
+        }
+        else
+        {
+            WriteValueElement(JTokenType.Array);
+        }
+    }
+
+    public override void WriteStartObject()
+    {
+        bool isStart = (WriteState == WriteState.Start);
+
+        base.WriteStartObject();
+
+        if (isStart)
+        {
+            WriteValueElement(&quot;Root&quot;, JTokenType.Object);
+        }
+        else
+        {
+            WriteValueElement(JTokenType.Object);
+        }
+    }
+
+    public override void WriteStartConstructor(string name)
+    {
+        bool isStart = (WriteState == WriteState.Start);
+
+        base.WriteStartConstructor(name);
+
+        if (isStart)
+        {
+            WriteValueElement(&quot;Root&quot;, JTokenType.Constructor);
+        }
+        else
+        {
+            WriteValueElement(JTokenType.Constructor);
         }
 
-        public override void WriteComment(string text)
+        _writer.WriteAttributeString(&quot;name&quot;, name);
+    }
+
+    public override void WriteEndArray()
+    {
+        base.WriteEndArray();
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteEndObject()
+    {
+        base.WriteEndObject();
+        _writer.WriteEndElement();
+    }
+
+    public override void WriteEndConstructor()
+    {
+        base.WriteEndConstructor();
+        _writer.WriteEndElement();
+    }
+
+    public override void Flush()
+    {
+        _writer.Flush();
+    }
+
+    protected override void WriteIndent()
+    {
+        _writer.WriteWhitespace(Environment.NewLine);
+
+        // levels of indentation multiplied by the indent count
+        int currentIndentCount = Top * 2;
+
+        while (currentIndentCount &gt; 0)
         {
-            base.WriteComment(text);
-            _writer.WriteComment(text);
+            // write up to a max of 10 characters at once to avoid creating too many new strings
+            int writeCount = Math.Min(currentIndentCount, 10);
+
+            _writer.WriteWhitespace(new string(' ', writeCount));
+
+            currentIndentCount -= writeCount;
         }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">var user = new
+{
+    Name = &quot;James&quot;,
+    Age = 30,
+    Enabled = true,
+    Roles = new[]
+    {
+        &quot;Publisher&quot;,
+        &quot;Administrator&quot;
+    }
+};
 
-        public override void WritePropertyName(string name)
-        {
-            base.WritePropertyName(name);
-            _propertyName = name;
-        }
+StringWriter sw = new StringWriter();
 
-        public override void WriteNull()
-        {
-            base.WriteNull();
+using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
+using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
+{
+    writer.Formatting = Formatting.Indented;
 
-            WriteValueElement(JTokenType.Null);
-            _writer.WriteEndElement();
-        }
+    JsonSerializer serializer = new JsonSerializer();
+    serializer.Serialize(writer, user);
+}
 
-        public override void WriteValue(DateTime value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Date);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(DateTimeOffset value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Date);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(Guid value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Guid);
-            _writer.WriteValue(value.ToString());
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(TimeSpan value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.TimeSpan);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(Uri value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Uri);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(string value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.String);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(int value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Integer);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(long value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Integer);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(short value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Integer);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(byte value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Integer);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(bool value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Boolean);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(char value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.String);
-            _writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(decimal value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Float);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(double value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Float);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteValue(float value)
-        {
-            base.WriteValue(value);
-
-            WriteValueElement(JTokenType.Float);
-            _writer.WriteValue(value);
-            _writer.WriteEndElement();
-        }
-
-        private void WriteValueElement(JTokenType type)
-        {
-            if (_propertyName != null)
-            {
-                WriteValueElement(_propertyName, type);
-                _propertyName = null;
-            }
-            else
-            {
-                WriteValueElement(&quot;Item&quot;, type);
-            }
-        }
-
-        private void WriteValueElement(string elementName, JTokenType type)
-        {
-            _writer.WriteStartElement(elementName);
-            _writer.WriteAttributeString(&quot;type&quot;, type.ToString());
-        }
-
-        public override void WriteStartArray()
-        {
-            bool isStart = (WriteState == WriteState.Start);
-
-            base.WriteStartArray();
-
-            if (isStart)
-            {
-                WriteValueElement(&quot;Root&quot;, JTokenType.Array);
-            }
-            else
-            {
-                WriteValueElement(JTokenType.Array);
-            }
-        }
-
-        public override void WriteStartObject()
-        {
-            bool isStart = (WriteState == WriteState.Start);
-
-            base.WriteStartObject();
-
-            if (isStart)
-            {
-                WriteValueElement(&quot;Root&quot;, JTokenType.Object);
-            }
-            else
-            {
-                WriteValueElement(JTokenType.Object);
-            }
-        }
-
-        public override void WriteStartConstructor(string name)
-        {
-            bool isStart = (WriteState == WriteState.Start);
-
-            base.WriteStartConstructor(name);
-
-            if (isStart)
-            {
-                WriteValueElement(&quot;Root&quot;, JTokenType.Constructor);
-            }
-            else
-            {
-                WriteValueElement(JTokenType.Constructor);
-            }
-
-            _writer.WriteAttributeString(&quot;name&quot;, name);
-        }
-
-        public override void WriteEndArray()
-        {
-            base.WriteEndArray();
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteEndObject()
-        {
-            base.WriteEndObject();
-            _writer.WriteEndElement();
-        }
-
-        public override void WriteEndConstructor()
-        {
-            base.WriteEndConstructor();
-            _writer.WriteEndElement();
-        }
-
-        public override void Flush()
-        {
-            _writer.Flush();
-        }
-
-        protected override void WriteIndent()
-        {
-            _writer.WriteWhitespace(Environment.NewLine);
-
-            // levels of indentation multiplied by the indent count
-            int currentIndentCount = Top * 2;
-
-            while (currentIndentCount &gt; 0)
-            {
-                // write up to a max of 10 characters at once to avoid creating too many new strings
-                int writeCount = Math.Min(currentIndentCount, 10);
-
-                _writer.WriteWhitespace(new string(' ', writeCount));
-
-                currentIndentCount -= writeCount;
-            }
-        }
-    }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            var user = new
-            {
-                Name = &quot;James&quot;,
-                Age = 30,
-                Enabled = true,
-                Roles = new[]
-                {
-                    &quot;Publisher&quot;,
-                    &quot;Administrator&quot;
-                }
-            };
-
-            StringWriter sw = new StringWriter();
-
-            using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
-            using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
-            {
-                writer.Formatting = Formatting.Indented;
-
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(writer, user);
-            }
-
-            Console.WriteLine(sw.ToString());
-            //&lt;Root type=&quot;Object&quot;&gt;
-            //  &lt;Name type=&quot;String&quot;&gt;James&lt;/Name&gt;
-            //  &lt;Age type=&quot;Integer&quot;&gt;30&lt;/Age&gt;
-            //  &lt;Enabled type=&quot;Boolean&quot;&gt;true&lt;/Enabled&gt;
-            //  &lt;Roles type=&quot;Array&quot;&gt;
-            //    &lt;Item type=&quot;String&quot;&gt;Publisher&lt;/Item&gt;
-            //    &lt;Item type=&quot;String&quot;&gt;Administrator&lt;/Item&gt;
-            //  &lt;/Roles&gt;
-            //&lt;/Root&gt;</code></pre>
+Console.WriteLine(sw.ToString());
+//&lt;Root type=&quot;Object&quot;&gt;
+//  &lt;Name type=&quot;String&quot;&gt;James&lt;/Name&gt;
+//  &lt;Age type=&quot;Integer&quot;&gt;30&lt;/Age&gt;
+//  &lt;Enabled type=&quot;Boolean&quot;&gt;true&lt;/Enabled&gt;
+//  &lt;Roles type=&quot;Array&quot;&gt;
+//    &lt;Item type=&quot;String&quot;&gt;Publisher&lt;/Item&gt;
+//    &lt;Item type=&quot;String&quot;&gt;Administrator&lt;/Item&gt;
+//  &lt;/Roles&gt;
+//&lt;/Root&gt;</code></pre>
 
     
                 <!-- Required only on API pages -->

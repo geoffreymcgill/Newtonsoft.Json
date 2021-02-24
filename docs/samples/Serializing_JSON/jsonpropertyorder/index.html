@@ -192,45 +192,45 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Account
-        {
-            public string EmailAddress { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Account
+{
+    public string EmailAddress { get; set; }
 
-            // appear last
-            [JsonProperty(Order = 1)]
-            public bool Deleted { get; set; }
+    // appear last
+    [JsonProperty(Order = 1)]
+    public bool Deleted { get; set; }
 
-            [JsonProperty(Order = 2)]
-            public DateTime DeletedDate { get; set; }
+    [JsonProperty(Order = 2)]
+    public DateTime DeletedDate { get; set; }
 
-            public DateTime CreatedDate { get; set; }
-            public DateTime UpdatedDate { get; set; }
+    public DateTime CreatedDate { get; set; }
+    public DateTime UpdatedDate { get; set; }
 
-            // appear first
-            [JsonProperty(Order = -2)]
-            public string FullName { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Account account = new Account
-            {
-                FullName = &quot;Aaron Account&quot;,
-                EmailAddress = &quot;aaron@example.com&quot;,
-                Deleted = true,
-                DeletedDate = new DateTime(2013, 1, 25),
-                UpdatedDate = new DateTime(2013, 1, 25),
-                CreatedDate = new DateTime(2010, 10, 1)
-            };
+    // appear first
+    [JsonProperty(Order = -2)]
+    public string FullName { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+{
+    FullName = &quot;Aaron Account&quot;,
+    EmailAddress = &quot;aaron@example.com&quot;,
+    Deleted = true,
+    DeletedDate = new DateTime(2013, 1, 25),
+    UpdatedDate = new DateTime(2013, 1, 25),
+    CreatedDate = new DateTime(2010, 10, 1)
+};
 
-            string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+string json = JsonConvert.SerializeObject(account, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;FullName&quot;: &quot;Aaron Account&quot;,
-            //   &quot;EmailAddress&quot;: &quot;aaron@example.com&quot;,
-            //   &quot;CreatedDate&quot;: &quot;2010-10-01T00:00:00&quot;,
-            //   &quot;UpdatedDate&quot;: &quot;2013-01-25T00:00:00&quot;,
-            //   &quot;Deleted&quot;: true,
-            //   &quot;DeletedDate&quot;: &quot;2013-01-25T00:00:00&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;FullName&quot;: &quot;Aaron Account&quot;,
+//   &quot;EmailAddress&quot;: &quot;aaron@example.com&quot;,
+//   &quot;CreatedDate&quot;: &quot;2010-10-01T00:00:00&quot;,
+//   &quot;UpdatedDate&quot;: &quot;2013-01-25T00:00:00&quot;,
+//   &quot;Deleted&quot;: true,
+//   &quot;DeletedDate&quot;: &quot;2013-01-25T00:00:00&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

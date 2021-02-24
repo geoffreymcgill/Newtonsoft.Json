@@ -193,18 +193,18 @@
     </h2>
 </doc-anchor-target>
 <p>Setting values and creating objects and arrays one at a time gives you total control, but it is more verbose than other options.</p>
-<pre v-highlight:csharp><code v-pre title="Creating JSON">            JArray array = new JArray();
-            JValue text = new JValue(&quot;Manual text&quot;);
-            JValue date = new JValue(new DateTime(2000, 5, 23));
+<pre v-highlight:csharp><code v-pre title="Creating JSON">JArray array = new JArray();
+JValue text = new JValue(&quot;Manual text&quot;);
+JValue date = new JValue(new DateTime(2000, 5, 23));
 
-            array.Add(text);
-            array.Add(date);
+array.Add(text);
+array.Add(date);
 
-            string json = array.ToString();
-            // [
-            //   &quot;Manual text&quot;,
-            //   &quot;2000-05-23T00:00:00&quot;
-            // ]</code></pre>
+string json = array.ToString();
+// [
+//   &quot;Manual text&quot;,
+//   &quot;2000-05-23T00:00:00&quot;
+// ]</code></pre>
 <doc-anchor-target id="creating-json-with-linq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-json-with-linq">#</doc-anchor-trigger>
@@ -212,57 +212,57 @@
     </h2>
 </doc-anchor-target>
 <p>Declaratively creating JSON objects using LINQ is a fast way to create JSON from collections of values.</p>
-<pre v-highlight:csharp><code v-pre title="Creating JSON Declaratively">            List&lt;Post&gt; posts = GetPosts();
+<pre v-highlight:csharp><code v-pre title="Creating JSON Declaratively">List&lt;Post&gt; posts = GetPosts();
 
-            JObject rss =
-                new JObject(
-                    new JProperty(&quot;channel&quot;,
-                        new JObject(
-                            new JProperty(&quot;title&quot;, &quot;James Newton-King&quot;),
-                            new JProperty(&quot;link&quot;, &quot;http://james.newtonking.com&quot;),
-                            new JProperty(&quot;description&quot;, &quot;James Newton-King's blog.&quot;),
-                            new JProperty(&quot;item&quot;,
+JObject rss =
+    new JObject(
+        new JProperty(&quot;channel&quot;,
+            new JObject(
+                new JProperty(&quot;title&quot;, &quot;James Newton-King&quot;),
+                new JProperty(&quot;link&quot;, &quot;http://james.newtonking.com&quot;),
+                new JProperty(&quot;description&quot;, &quot;James Newton-King's blog.&quot;),
+                new JProperty(&quot;item&quot;,
+                    new JArray(
+                        from p in posts
+                        orderby p.Title
+                        select new JObject(
+                            new JProperty(&quot;title&quot;, p.Title),
+                            new JProperty(&quot;description&quot;, p.Description),
+                            new JProperty(&quot;link&quot;, p.Link),
+                            new JProperty(&quot;category&quot;,
                                 new JArray(
-                                    from p in posts
-                                    orderby p.Title
-                                    select new JObject(
-                                        new JProperty(&quot;title&quot;, p.Title),
-                                        new JProperty(&quot;description&quot;, p.Description),
-                                        new JProperty(&quot;link&quot;, p.Link),
-                                        new JProperty(&quot;category&quot;,
-                                            new JArray(
-                                                from c in p.Categories
-                                                select new JValue(c)))))))));
+                                    from c in p.Categories
+                                    select new JValue(c)))))))));
 
-            Console.WriteLine(rss.ToString());
+Console.WriteLine(rss.ToString());
 
-            //{
-            //  &quot;channel&quot;: {
-            //    &quot;title&quot;: &quot;James Newton-King&quot;,
-            //    &quot;link&quot;: &quot;http://james.newtonking.com&quot;,
-            //    &quot;description&quot;: &quot;James Newton-King\'s blog.&quot;,
-            //    &quot;item&quot;: [
-            //      {
-            //        &quot;title&quot;: &quot;Json.NET 1.3 + New license + Now on CodePlex&quot;,
-            //        &quot;description&quot;: &quot;Announcing the release of Json.NET 1.3, the MIT license and being available on CodePlex&quot;,
-            //        &quot;link&quot;: &quot;http://james.newtonking.com/projects/json-net.aspx&quot;,
-            //        &quot;category&quot;: [
-            //          &quot;Json.NET&quot;,
-            //          &quot;CodePlex&quot;
-            //        ]
-            //      },
-            //      {
-            //        &quot;title&quot;: &quot;LINQ to JSON beta&quot;,
-            //        &quot;description&quot;: &quot;Announcing LINQ to JSON&quot;,
-            //        &quot;link&quot;: &quot;http://james.newtonking.com/projects/json-net.aspx&quot;,
-            //        &quot;category&quot;: [
-            //          &quot;Json.NET&quot;,
-            //          &quot;LINQ&quot;
-            //        ]
-            //      }
-            //    ]
-            //  }
-            //}</code></pre>
+//{
+//  &quot;channel&quot;: {
+//    &quot;title&quot;: &quot;James Newton-King&quot;,
+//    &quot;link&quot;: &quot;http://james.newtonking.com&quot;,
+//    &quot;description&quot;: &quot;James Newton-King\'s blog.&quot;,
+//    &quot;item&quot;: [
+//      {
+//        &quot;title&quot;: &quot;Json.NET 1.3 + New license + Now on CodePlex&quot;,
+//        &quot;description&quot;: &quot;Announcing the release of Json.NET 1.3, the MIT license and being available on CodePlex&quot;,
+//        &quot;link&quot;: &quot;http://james.newtonking.com/projects/json-net.aspx&quot;,
+//        &quot;category&quot;: [
+//          &quot;Json.NET&quot;,
+//          &quot;CodePlex&quot;
+//        ]
+//      },
+//      {
+//        &quot;title&quot;: &quot;LINQ to JSON beta&quot;,
+//        &quot;description&quot;: &quot;Announcing LINQ to JSON&quot;,
+//        &quot;link&quot;: &quot;http://james.newtonking.com/projects/json-net.aspx&quot;,
+//        &quot;category&quot;: [
+//          &quot;Json.NET&quot;,
+//          &quot;LINQ&quot;
+//        ]
+//      }
+//    ]
+//  }
+//}</code></pre>
 <doc-anchor-target id="creating-json-from-an-object">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-json-from-an-object">#</doc-anchor-trigger>

@@ -193,48 +193,48 @@
     </h2>
 </doc-anchor-target>
 <p>The simplest way to get a value from LINQ to JSON is to use the <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#property-item">JToken.Item(object)</a> index on JObject/JArray and then cast the returned <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jvalue/">JValue</a> to the type you want.</p>
-<pre v-highlight:csharp><code v-pre title="Getting JSON Values">            string json = @&quot;{
-              'channel': {
-                'title': 'James Newton-King',
-                'link': 'http://james.newtonking.com',
-                'description': 'James Newton-King\'s blog.',
-                'item': [
-                  {
-                    'title': 'Json.NET 1.3 + New license + Now on CodePlex',
-                    'description': 'Announcing the release of Json.NET 1.3, the MIT license and the source on CodePlex',
-                    'link': 'http://james.newtonking.com/projects/json-net.aspx',
-                    'categories': [
-                      'Json.NET',
-                      'CodePlex'
-                    ]
-                  },
-                  {
-                    'title': 'LINQ to JSON beta',
-                    'description': 'Announcing LINQ to JSON',
-                    'link': 'http://james.newtonking.com/projects/json-net.aspx',
-                    'categories': [
-                      'Json.NET',
-                      'LINQ'
-                    ]
-                  }
-                ]
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Getting JSON Values">string json = @&quot;{
+  'channel': {
+    'title': 'James Newton-King',
+    'link': 'http://james.newtonking.com',
+    'description': 'James Newton-King\'s blog.',
+    'item': [
+      {
+        'title': 'Json.NET 1.3 + New license + Now on CodePlex',
+        'description': 'Announcing the release of Json.NET 1.3, the MIT license and the source on CodePlex',
+        'link': 'http://james.newtonking.com/projects/json-net.aspx',
+        'categories': [
+          'Json.NET',
+          'CodePlex'
+        ]
+      },
+      {
+        'title': 'LINQ to JSON beta',
+        'description': 'Announcing LINQ to JSON',
+        'link': 'http://james.newtonking.com/projects/json-net.aspx',
+        'categories': [
+          'Json.NET',
+          'LINQ'
+        ]
+      }
+    ]
+  }
+}&quot;;
 
-            JObject rss = JObject.Parse(json);
+JObject rss = JObject.Parse(json);
 
-            string rssTitle = (string)rss[&quot;channel&quot;][&quot;title&quot;];
-            // James Newton-King
+string rssTitle = (string)rss[&quot;channel&quot;][&quot;title&quot;];
+// James Newton-King
 
-            string itemTitle = (string)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;title&quot;];
-            // Json.NET 1.3 + New license + Now on CodePlex
+string itemTitle = (string)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;title&quot;];
+// Json.NET 1.3 + New license + Now on CodePlex
 
-            JArray categories = (JArray)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;categories&quot;];
-            // [&quot;Json.NET&quot;, &quot;CodePlex&quot;]
+JArray categories = (JArray)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;categories&quot;];
+// [&quot;Json.NET&quot;, &quot;CodePlex&quot;]
 
-            IList&lt;string&gt; categoriesText = categories.Select(c =&gt; (string)c).ToList();
-            // Json.NET
-            // CodePlex</code></pre>
+IList&lt;string&gt; categoriesText = categories.Select(c =&gt; (string)c).ToList();
+// Json.NET
+// CodePlex</code></pre>
 <doc-anchor-target id="querying-with-linq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#querying-with-linq">#</doc-anchor-trigger>
@@ -244,77 +244,77 @@
 <p>JObject/JArray can also be queried using LINQ. <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns the children values of a JObject/JArray as an <code v-pre>IEnumerable&lt;JToken&gt;</code> that can then be queried with the standard Where/OrderBy/Select LINQ operators.</p>
 <doc-alert type="primary"><p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns all the children of a token. If it is a JObject it will return a collection of properties to work with, and if it is a JArray you will get a collection of the array's values.</p>
 </doc-alert>
-<pre v-highlight:csharp><code v-pre title="Querying JSON">            var postTitles =
-                from p in rss[&quot;channel&quot;][&quot;item&quot;]
-                select (string)p[&quot;title&quot;];
+<pre v-highlight:csharp><code v-pre title="Querying JSON">var postTitles =
+    from p in rss[&quot;channel&quot;][&quot;item&quot;]
+    select (string)p[&quot;title&quot;];
 
-            foreach (var item in postTitles)
-            {
-                Console.WriteLine(item);
-            }
+foreach (var item in postTitles)
+{
+    Console.WriteLine(item);
+}
 
-            //LINQ to JSON beta
-            //Json.NET 1.3 + New license + Now on CodePlex
+//LINQ to JSON beta
+//Json.NET 1.3 + New license + Now on CodePlex
 
-            var categories =
-                from c in rss[&quot;channel&quot;][&quot;item&quot;].SelectMany(i =&gt; i[&quot;categories&quot;]).Values&lt;string&gt;()
-                group c by c
-                into g
-                orderby g.Count() descending
-                select new { Category = g.Key, Count = g.Count() };
+var categories =
+    from c in rss[&quot;channel&quot;][&quot;item&quot;].SelectMany(i =&gt; i[&quot;categories&quot;]).Values&lt;string&gt;()
+    group c by c
+    into g
+    orderby g.Count() descending
+    select new { Category = g.Key, Count = g.Count() };
 
-            foreach (var c in categories)
-            {
-                Console.WriteLine(c.Category + &quot; - Count: &quot; + c.Count);
-            }
+foreach (var c in categories)
+{
+    Console.WriteLine(c.Category + &quot; - Count: &quot; + c.Count);
+}
 
-            //Json.NET - Count: 2
-            //LINQ - Count: 1
-            //CodePlex - Count: 1</code></pre>
+//Json.NET - Count: 2
+//LINQ - Count: 1
+//CodePlex - Count: 1</code></pre>
 <p>LINQ to JSON can also be used to manually convert JSON to a .NET object.</p>
-<pre v-highlight:csharp><code v-pre title="Deserializing Using LINQ Objects">        public class Shortie
-        {
-            public string Original { get; set; }
-            public string Shortened { get; set; }
-            public string Short { get; set; }
-            public ShortieException Error { get; set; }
-        }
+<pre v-highlight:csharp><code v-pre title="Deserializing Using LINQ Objects">public class Shortie
+{
+    public string Original { get; set; }
+    public string Shortened { get; set; }
+    public string Short { get; set; }
+    public ShortieException Error { get; set; }
+}
 
-        public class ShortieException
-        {
-            public int Code { get; set; }
-            public string ErrorMessage { get; set; }
-        }</code></pre>
+public class ShortieException
+{
+    public int Code { get; set; }
+    public string ErrorMessage { get; set; }
+}</code></pre>
 <p>Manually serializing and deserializing between .NET objects is useful when you are working with JSON that doesn't closely match your .NET objects.</p>
-<pre v-highlight:csharp><code v-pre title="Deserializing Using LINQ Example">            string jsonText = @&quot;{
-              'short': {
-                'original': 'http://www.foo.com/',
-                'short': 'krehqk',
-                'error': {
-                  'code': 0,
-                  'msg': 'No action taken'
-                }
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Deserializing Using LINQ Example">string jsonText = @&quot;{
+  'short': {
+    'original': 'http://www.foo.com/',
+    'short': 'krehqk',
+    'error': {
+      'code': 0,
+      'msg': 'No action taken'
+    }
+  }
+}&quot;;
 
-            JObject json = JObject.Parse(jsonText);
+JObject json = JObject.Parse(jsonText);
 
-            Shortie shortie = new Shortie
-            {
-                Original = (string)json[&quot;short&quot;][&quot;original&quot;],
-                Short = (string)json[&quot;short&quot;][&quot;short&quot;],
-                Error = new ShortieException
-                {
-                    Code = (int)json[&quot;short&quot;][&quot;error&quot;][&quot;code&quot;],
-                    ErrorMessage = (string)json[&quot;short&quot;][&quot;error&quot;][&quot;msg&quot;]
-                }
-            };
+Shortie shortie = new Shortie
+{
+    Original = (string)json[&quot;short&quot;][&quot;original&quot;],
+    Short = (string)json[&quot;short&quot;][&quot;short&quot;],
+    Error = new ShortieException
+    {
+        Code = (int)json[&quot;short&quot;][&quot;error&quot;][&quot;code&quot;],
+        ErrorMessage = (string)json[&quot;short&quot;][&quot;error&quot;][&quot;msg&quot;]
+    }
+};
 
-            Console.WriteLine(shortie.Original);
-            // http://www.foo.com/
+Console.WriteLine(shortie.Original);
+// http://www.foo.com/
 
-            Console.WriteLine(shortie.Error.ErrorMessage);
-            // No action taken</code></pre>
+Console.WriteLine(shortie.Error.ErrorMessage);
+// No action taken</code></pre>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

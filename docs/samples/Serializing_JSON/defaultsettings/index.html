@@ -192,30 +192,30 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">                // settings will automatically be used by JsonConvert.SerializeObject/DeserializeObject
-                JsonConvert.DefaultSettings = () =&gt; new JsonSerializerSettings
-                {
-                    Formatting = Formatting.Indented,
-                    ContractResolver = new CamelCasePropertyNamesContractResolver()
-                };
+<pre v-highlight:csharp><code v-pre title="Usage">// settings will automatically be used by JsonConvert.SerializeObject/DeserializeObject
+JsonConvert.DefaultSettings = () =&gt; new JsonSerializerSettings
+{
+    Formatting = Formatting.Indented,
+    ContractResolver = new CamelCasePropertyNamesContractResolver()
+};
 
-                Staff s = new Staff
-                {
-                    FirstName = &quot;Eric&quot;,
-                    LastName = &quot;Example&quot;,
-                    BirthDate = new DateTime(1980, 4, 20, 0, 0, 0, DateTimeKind.Utc),
-                    Department = &quot;IT&quot;,
-                    JobTitle = &quot;Web Dude&quot;
-                };
+Staff s = new Staff
+{
+    FirstName = &quot;Eric&quot;,
+    LastName = &quot;Example&quot;,
+    BirthDate = new DateTime(1980, 4, 20, 0, 0, 0, DateTimeKind.Utc),
+    Department = &quot;IT&quot;,
+    JobTitle = &quot;Web Dude&quot;
+};
 
-                json = JsonConvert.SerializeObject(s);
-                // {
-                //   &quot;firstName&quot;: &quot;Eric&quot;,
-                //   &quot;lastName&quot;: &quot;Example&quot;,
-                //   &quot;birthDate&quot;: &quot;1980-04-20T00:00:00Z&quot;,
-                //   &quot;department&quot;: &quot;IT&quot;,
-                //   &quot;jobTitle&quot;: &quot;Web Dude&quot;
-                // }</code></pre>
+json = JsonConvert.SerializeObject(s);
+// {
+//   &quot;firstName&quot;: &quot;Eric&quot;,
+//   &quot;lastName&quot;: &quot;Example&quot;,
+//   &quot;birthDate&quot;: &quot;1980-04-20T00:00:00Z&quot;,
+//   &quot;department&quot;: &quot;IT&quot;,
+//   &quot;jobTitle&quot;: &quot;Web Dude&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

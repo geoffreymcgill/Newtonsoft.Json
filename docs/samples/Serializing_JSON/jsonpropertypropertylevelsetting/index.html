@@ -192,27 +192,27 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Vessel
-        {
-            public string Name { get; set; }
-            public string Class { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Vessel
+{
+    public string Name { get; set; }
+    public string Class { get; set; }
 
-            [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
-            public DateTime? LaunchDate { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Vessel vessel = new Vessel
-            {
-                Name = &quot;Red October&quot;,
-                Class = &quot;Typhoon&quot;
-            };
+    [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+    public DateTime? LaunchDate { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Vessel vessel = new Vessel
+{
+    Name = &quot;Red October&quot;,
+    Class = &quot;Typhoon&quot;
+};
 
-            string json = JsonConvert.SerializeObject(vessel, Formatting.Indented);
+string json = JsonConvert.SerializeObject(vessel, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Name&quot;: &quot;Red October&quot;,
-            //   &quot;Class&quot;: &quot;Typhoon&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;Name&quot;: &quot;Red October&quot;,
+//   &quot;Class&quot;: &quot;Typhoon&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

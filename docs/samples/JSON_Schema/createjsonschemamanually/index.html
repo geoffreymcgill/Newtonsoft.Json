@@ -194,47 +194,47 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JsonSchema schema = new JsonSchema();
-            schema.Type = JsonSchemaType.Object;
-            schema.Properties = new Dictionary&lt;string, JsonSchema&gt;
-            {
-                { &quot;name&quot;, new JsonSchema { Type = JsonSchemaType.String } },
-                {
-                    &quot;hobbies&quot;, new JsonSchema
-                    {
-                        Type = JsonSchemaType.Array,
-                        Items = new List&lt;JsonSchema&gt; { new JsonSchema { Type = JsonSchemaType.String } }
-                    }
-                },
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JsonSchema schema = new JsonSchema();
+schema.Type = JsonSchemaType.Object;
+schema.Properties = new Dictionary&lt;string, JsonSchema&gt;
+{
+    { &quot;name&quot;, new JsonSchema { Type = JsonSchemaType.String } },
+    {
+        &quot;hobbies&quot;, new JsonSchema
+        {
+            Type = JsonSchemaType.Array,
+            Items = new List&lt;JsonSchema&gt; { new JsonSchema { Type = JsonSchemaType.String } }
+        }
+    },
+};
 
-            string schemaJson = schema.ToString();
+string schemaJson = schema.ToString();
 
-            Console.WriteLine(schemaJson);
-            // {
-            //   &quot;type&quot;: &quot;object&quot;,
-            //   &quot;properties&quot;: {
-            //     &quot;name&quot;: {
-            //       &quot;type&quot;: &quot;string&quot;
-            //     },
-            //     &quot;hobbies&quot;: {
-            //       &quot;type&quot;: &quot;array&quot;,
-            //       &quot;items&quot;: {
-            //         &quot;type&quot;: &quot;string&quot;
-            //       }
-            //     }
-            //   }
-            // }
+Console.WriteLine(schemaJson);
+// {
+//   &quot;type&quot;: &quot;object&quot;,
+//   &quot;properties&quot;: {
+//     &quot;name&quot;: {
+//       &quot;type&quot;: &quot;string&quot;
+//     },
+//     &quot;hobbies&quot;: {
+//       &quot;type&quot;: &quot;array&quot;,
+//       &quot;items&quot;: {
+//         &quot;type&quot;: &quot;string&quot;
+//       }
+//     }
+//   }
+// }
 
-            JObject person = JObject.Parse(@&quot;{
-              'name': 'James',
-              'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
-            }&quot;);
+JObject person = JObject.Parse(@&quot;{
+  'name': 'James',
+  'hobbies': ['.NET', 'Blogging', 'Reading', 'Xbox', 'LOLCATS']
+}&quot;);
 
-            bool valid = person.IsValid(schema);
+bool valid = person.IsValid(schema);
 
-            Console.WriteLine(valid);
-            // true</code></pre>
+Console.WriteLine(valid);
+// true</code></pre>
 
     
                 <!-- Required only on API pages -->

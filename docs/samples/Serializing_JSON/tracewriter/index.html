@@ -197,29 +197,29 @@
     public string FullName { get; set; }
     public bool Deleted { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'FullName': 'Dan Deleted',
-              'Deleted': true,
-              'DeletedDate': '2013-01-20T00:00:00'
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'FullName': 'Dan Deleted',
+  'Deleted': true,
+  'DeletedDate': '2013-01-20T00:00:00'
+}&quot;;
 
-            MemoryTraceWriter traceWriter = new MemoryTraceWriter();
+MemoryTraceWriter traceWriter = new MemoryTraceWriter();
 
-            Account account = JsonConvert.DeserializeObject&lt;Account&gt;(json, new JsonSerializerSettings
-            {
-                TraceWriter = traceWriter
-            });
+Account account = JsonConvert.DeserializeObject&lt;Account&gt;(json, new JsonSerializerSettings
+{
+    TraceWriter = traceWriter
+});
 
-            Console.WriteLine(traceWriter.ToString());
-            // 2013-01-21T01:36:24.422 Info Started deserializing Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path 'FullName', line 2, position 20.
-            // 2013-01-21T01:36:24.442 Verbose Could not find member 'DeletedDate' on Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path 'DeletedDate', line 4, position 23.
-            // 2013-01-21T01:36:24.447 Info Finished deserializing Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path '', line 5, position 8.
-            // 2013-01-21T01:36:24.450 Verbose Deserialized JSON:
-            // {
-            //   &quot;FullName&quot;: &quot;Dan Deleted&quot;,
-            //   &quot;Deleted&quot;: true,
-            //   &quot;DeletedDate&quot;: &quot;2013-01-20T00:00:00&quot;
-            // }</code></pre>
+Console.WriteLine(traceWriter.ToString());
+// 2013-01-21T01:36:24.422 Info Started deserializing Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path 'FullName', line 2, position 20.
+// 2013-01-21T01:36:24.442 Verbose Could not find member 'DeletedDate' on Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path 'DeletedDate', line 4, position 23.
+// 2013-01-21T01:36:24.447 Info Finished deserializing Newtonsoft.Json.Tests.Documentation.Examples.TraceWriter+Account. Path '', line 5, position 8.
+// 2013-01-21T01:36:24.450 Verbose Deserialized JSON:
+// {
+//   &quot;FullName&quot;: &quot;Dan Deleted&quot;,
+//   &quot;Deleted&quot;: true,
+//   &quot;DeletedDate&quot;: &quot;2013-01-20T00:00:00&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

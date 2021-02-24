@@ -194,20 +194,20 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JsonSchema schema = new JsonSchema
-            {
-                Type = JsonSchemaType.Object
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JsonSchema schema = new JsonSchema
+{
+    Type = JsonSchemaType.Object
+};
 
-            // serialize JsonSchema to a string and then write string to a file
-            File.WriteAllText(@&quot;c:\schema.json&quot;, schema.ToString());
+// serialize JsonSchema to a string and then write string to a file
+File.WriteAllText(@&quot;c:\schema.json&quot;, schema.ToString());
 
-            // serialize JsonSchema directly to a file
-            using (StreamWriter file = File.CreateText(@&quot;c:\schema.json&quot;))
-            using (JsonTextWriter writer = new JsonTextWriter(file))
-            {
-                schema.WriteTo(writer);
-            }</code></pre>
+// serialize JsonSchema directly to a file
+using (StreamWriter file = File.CreateText(@&quot;c:\schema.json&quot;))
+using (JsonTextWriter writer = new JsonTextWriter(file))
+{
+    schema.WriteTo(writer);
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

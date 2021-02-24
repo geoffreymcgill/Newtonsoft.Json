@@ -199,60 +199,60 @@
     public string Link { get; set; }
     public IList&lt;string&gt; Categories { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            List&lt;Post&gt; posts = new List&lt;Post&gt;
-            {
-                new Post
-                {
-                    Title = &quot;Episode VII&quot;,
-                    Description = &quot;Episode VII production&quot;,
-                    Categories = new List&lt;string&gt;
-                    {
-                        &quot;episode-vii&quot;,
-                        &quot;movie&quot;
-                    },
-                    Link = &quot;episode-vii-production.aspx&quot;
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">List&lt;Post&gt; posts = new List&lt;Post&gt;
+{
+    new Post
+    {
+        Title = &quot;Episode VII&quot;,
+        Description = &quot;Episode VII production&quot;,
+        Categories = new List&lt;string&gt;
+        {
+            &quot;episode-vii&quot;,
+            &quot;movie&quot;
+        },
+        Link = &quot;episode-vii-production.aspx&quot;
+    }
+};
 
-            JObject o = JObject.FromObject(new
+JObject o = JObject.FromObject(new
+{
+    channel = new
+    {
+        title = &quot;Star Wars&quot;,
+        link = &quot;http://www.starwars.com&quot;,
+        description = &quot;Star Wars blog.&quot;,
+        item =
+            from p in posts
+            orderby p.Title
+            select new
             {
-                channel = new
-                {
-                    title = &quot;Star Wars&quot;,
-                    link = &quot;http://www.starwars.com&quot;,
-                    description = &quot;Star Wars blog.&quot;,
-                    item =
-                        from p in posts
-                        orderby p.Title
-                        select new
-                        {
-                            title = p.Title,
-                            description = p.Description,
-                            link = p.Link,
-                            category = p.Categories
-                        }
-                }
-            });
+                title = p.Title,
+                description = p.Description,
+                link = p.Link,
+                category = p.Categories
+            }
+    }
+});
 
-            Console.WriteLine(o.ToString());
-            // {
-            //   &quot;channel&quot;: {
-            //     &quot;title&quot;: &quot;Star Wars&quot;,
-            //     &quot;link&quot;: &quot;http://www.starwars.com&quot;,
-            //     &quot;description&quot;: &quot;Star Wars blog.&quot;,
-            //     &quot;item&quot;: [
-            //       {
-            //         &quot;title&quot;: &quot;Episode VII&quot;,
-            //         &quot;description&quot;: &quot;Episode VII production&quot;,
-            //         &quot;link&quot;: &quot;episode-vii-production.aspx&quot;,
-            //         &quot;category&quot;: [
-            //           &quot;episode-vii&quot;,
-            //           &quot;movie&quot;
-            //         ]
-            //       }
-            //     ]
-            //   }
-            // }</code></pre>
+Console.WriteLine(o.ToString());
+// {
+//   &quot;channel&quot;: {
+//     &quot;title&quot;: &quot;Star Wars&quot;,
+//     &quot;link&quot;: &quot;http://www.starwars.com&quot;,
+//     &quot;description&quot;: &quot;Star Wars blog.&quot;,
+//     &quot;item&quot;: [
+//       {
+//         &quot;title&quot;: &quot;Episode VII&quot;,
+//         &quot;description&quot;: &quot;Episode VII production&quot;,
+//         &quot;link&quot;: &quot;episode-vii-production.aspx&quot;,
+//         &quot;category&quot;: [
+//           &quot;episode-vii&quot;,
+//           &quot;movie&quot;
+//         ]
+//       }
+//     ]
+//   }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

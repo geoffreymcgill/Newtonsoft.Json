@@ -192,59 +192,59 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class KnownTypesBinder : ISerializationBinder
-        {
-            public IList&lt;Type&gt; KnownTypes { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class KnownTypesBinder : ISerializationBinder
+{
+    public IList&lt;Type&gt; KnownTypes { get; set; }
 
-            public Type BindToType(string assemblyName, string typeName)
-            {
-                return KnownTypes.SingleOrDefault(t =&gt; t.Name == typeName);
-            }
+    public Type BindToType(string assemblyName, string typeName)
+    {
+        return KnownTypes.SingleOrDefault(t =&gt; t.Name == typeName);
+    }
 
-            public void BindToName(Type serializedType, out string assemblyName, out string typeName)
-            {
-                assemblyName = null;
-                typeName = serializedType.Name;
-            }
-        }
+    public void BindToName(Type serializedType, out string assemblyName, out string typeName)
+    {
+        assemblyName = null;
+        typeName = serializedType.Name;
+    }
+}
 
-        public class Car
-        {
-            public string Maker { get; set; }
-            public string Model { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            KnownTypesBinder knownTypesBinder = new KnownTypesBinder
-            {
-                KnownTypes = new List&lt;Type&gt; { typeof(Car) }
-            };
+public class Car
+{
+    public string Maker { get; set; }
+    public string Model { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">KnownTypesBinder knownTypesBinder = new KnownTypesBinder
+{
+    KnownTypes = new List&lt;Type&gt; { typeof(Car) }
+};
 
-            Car car = new Car
-            {
-                Maker = &quot;Ford&quot;,
-                Model = &quot;Explorer&quot;
-            };
+Car car = new Car
+{
+    Maker = &quot;Ford&quot;,
+    Model = &quot;Explorer&quot;
+};
 
-            string json = JsonConvert.SerializeObject(car, Formatting.Indented, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects,
-                SerializationBinder = knownTypesBinder
-            });
+string json = JsonConvert.SerializeObject(car, Formatting.Indented, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.Objects,
+    SerializationBinder = knownTypesBinder
+});
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;$type&quot;: &quot;Car&quot;,
-            //   &quot;Maker&quot;: &quot;Ford&quot;,
-            //   &quot;Model&quot;: &quot;Explorer&quot;
-            // }
+Console.WriteLine(json);
+// {
+//   &quot;$type&quot;: &quot;Car&quot;,
+//   &quot;Maker&quot;: &quot;Ford&quot;,
+//   &quot;Model&quot;: &quot;Explorer&quot;
+// }
 
-            object newValue = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects,
-                SerializationBinder = knownTypesBinder
-            });
+object newValue = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.Objects,
+    SerializationBinder = knownTypesBinder
+});
 
-            Console.WriteLine(newValue.GetType().Name);
-            // Car</code></pre>
+Console.WriteLine(newValue.GetType().Name);
+// Car</code></pre>
 
     
                 <!-- Required only on API pages -->

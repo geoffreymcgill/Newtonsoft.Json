@@ -198,42 +198,42 @@
     public string Game { get; set; }
     public Dictionary&lt;string, int&gt; UserPoints { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            DailyHighScores dailyHighScores = new DailyHighScores
-            {
-                Date = new DateTime(2016, 6, 27, 0, 0, 0, DateTimeKind.Utc),
-                Game = &quot;Donkey Kong&quot;,
-                UserPoints = new Dictionary&lt;string, int&gt;
-                {
-                    [&quot;JamesNK&quot;] = 9001,
-                    [&quot;JoC&quot;] = 1337,
-                    [&quot;JessicaN&quot;] = 1000
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">DailyHighScores dailyHighScores = new DailyHighScores
+{
+    Date = new DateTime(2016, 6, 27, 0, 0, 0, DateTimeKind.Utc),
+    Game = &quot;Donkey Kong&quot;,
+    UserPoints = new Dictionary&lt;string, int&gt;
+    {
+        [&quot;JamesNK&quot;] = 9001,
+        [&quot;JoC&quot;] = 1337,
+        [&quot;JessicaN&quot;] = 1000
+    }
+};
 
-            DefaultContractResolver contractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    ProcessDictionaryKeys = false
-                }
-            };
+DefaultContractResolver contractResolver = new DefaultContractResolver
+{
+    NamingStrategy = new CamelCaseNamingStrategy
+    {
+        ProcessDictionaryKeys = false
+    }
+};
 
-            string json = JsonConvert.SerializeObject(dailyHighScores, new JsonSerializerSettings
-            {
-                ContractResolver = contractResolver,
-                Formatting = Formatting.Indented
-            });
+string json = JsonConvert.SerializeObject(dailyHighScores, new JsonSerializerSettings
+{
+    ContractResolver = contractResolver,
+    Formatting = Formatting.Indented
+});
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;date&quot;: &quot;2016-06-27T00:00:00Z&quot;,
-            //   &quot;game&quot;: &quot;Donkey Kong&quot;,
-            //   &quot;userPoints&quot;: {
-            //     &quot;JamesNK&quot;: 9001,
-            //     &quot;JoC&quot;: 1337,
-            //     &quot;JessicaN&quot;: 1000
-            //   }
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;date&quot;: &quot;2016-06-27T00:00:00Z&quot;,
+//   &quot;game&quot;: &quot;Donkey Kong&quot;,
+//   &quot;userPoints&quot;: {
+//     &quot;JamesNK&quot;: 9001,
+//     &quot;JoC&quot;: 1337,
+//     &quot;JessicaN&quot;: 1000
+//   }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,33 +192,33 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o1 = JObject.Parse(@&quot;{
-              'FirstName': 'John',
-              'LastName': 'Smith',
-              'Enabled': false,
-              'Roles': [ 'User' ]
-            }&quot;);
-            JObject o2 = JObject.Parse(@&quot;{
-              'Enabled': true,
-              'Roles': [ 'User', 'Admin' ]
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o1 = JObject.Parse(@&quot;{
+  'FirstName': 'John',
+  'LastName': 'Smith',
+  'Enabled': false,
+  'Roles': [ 'User' ]
+}&quot;);
+JObject o2 = JObject.Parse(@&quot;{
+  'Enabled': true,
+  'Roles': [ 'User', 'Admin' ]
+}&quot;);
 
-            o1.Merge(o2, new JsonMergeSettings
-            {
-                // union array values together to avoid duplicates
-                MergeArrayHandling = MergeArrayHandling.Union
-            });
+o1.Merge(o2, new JsonMergeSettings
+{
+    // union array values together to avoid duplicates
+    MergeArrayHandling = MergeArrayHandling.Union
+});
 
-            string json = o1.ToString();
-            // {
-            //   &quot;FirstName&quot;: &quot;John&quot;,
-            //   &quot;LastName&quot;: &quot;Smith&quot;,
-            //   &quot;Enabled&quot;: true,
-            //   &quot;Roles&quot;: [
-            //     &quot;User&quot;,
-            //     &quot;Admin&quot;
-            //   ]
-            // }</code></pre>
+string json = o1.ToString();
+// {
+//   &quot;FirstName&quot;: &quot;John&quot;,
+//   &quot;LastName&quot;: &quot;Smith&quot;,
+//   &quot;Enabled&quot;: true,
+//   &quot;Roles&quot;: [
+//     &quot;User&quot;,
+//     &quot;Admin&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

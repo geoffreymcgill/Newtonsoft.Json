@@ -192,28 +192,28 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'd': [
-                {
-                  'Name': 'John Smith'
-                },
-                {
-                  'Name': 'Mike Smith'
-                }
-              ]
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'd': [
+    {
+      'Name': 'John Smith'
+    },
+    {
+      'Name': 'Mike Smith'
+    }
+  ]
+}&quot;;
 
-            JObject o = JObject.Parse(json);
+JObject o = JObject.Parse(json);
 
-            JArray a = (JArray)o[&quot;d&quot;];
+JArray a = (JArray)o[&quot;d&quot;];
 
-            IList&lt;Person&gt; person = a.ToObject&lt;IList&lt;Person&gt;&gt;();
+IList&lt;Person&gt; person = a.ToObject&lt;IList&lt;Person&gt;&gt;();
 
-            Console.WriteLine(person[0].Name);
-            // John Smith
+Console.WriteLine(person[0].Name);
+// John Smith
 
-            Console.WriteLine(person[1].Name);
-            // Mike Smith</code></pre>
+Console.WriteLine(person[1].Name);
+// Mike Smith</code></pre>
 
     
                 <!-- Required only on API pages -->

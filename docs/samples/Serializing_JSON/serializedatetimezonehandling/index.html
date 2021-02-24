@@ -200,70 +200,70 @@
     public DateTime DepartureDateLocal { get; set; }
     public TimeSpan Duration { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Flight flight = new Flight
-            {
-                Destination = &quot;Dubai&quot;,
-                DepartureDate = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
-                DepartureDateUtc = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Utc),
-                DepartureDateLocal = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Local),
-                Duration = TimeSpan.FromHours(5.5)
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Flight flight = new Flight
+{
+    Destination = &quot;Dubai&quot;,
+    DepartureDate = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
+    DepartureDateUtc = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Utc),
+    DepartureDateLocal = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Local),
+    Duration = TimeSpan.FromHours(5.5)
+};
 
-            string jsonWithRoundtripTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
-            {
-                DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind
-            });
+string jsonWithRoundtripTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
+{
+    DateTimeZoneHandling = DateTimeZoneHandling.RoundtripKind
+});
 
-            Console.WriteLine(jsonWithRoundtripTimeZone);
-            // {
-            //   &quot;Destination&quot;: &quot;Dubai&quot;,
-            //   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00&quot;,
-            //   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00Z&quot;,
-            //   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
-            //   &quot;Duration&quot;: &quot;05:30:00&quot;
-            // }
+Console.WriteLine(jsonWithRoundtripTimeZone);
+// {
+//   &quot;Destination&quot;: &quot;Dubai&quot;,
+//   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00&quot;,
+//   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00Z&quot;,
+//   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
+//   &quot;Duration&quot;: &quot;05:30:00&quot;
+// }
 
-            string jsonWithLocalTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
-            {
-                DateTimeZoneHandling = DateTimeZoneHandling.Local
-            });
+string jsonWithLocalTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
+{
+    DateTimeZoneHandling = DateTimeZoneHandling.Local
+});
 
-            Console.WriteLine(jsonWithLocalTimeZone);
-            // {
-            //   &quot;Destination&quot;: &quot;Dubai&quot;,
-            //   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
-            //   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T01:00:00+01:00&quot;,
-            //   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
-            //   &quot;Duration&quot;: &quot;05:30:00&quot;
-            // }
+Console.WriteLine(jsonWithLocalTimeZone);
+// {
+//   &quot;Destination&quot;: &quot;Dubai&quot;,
+//   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
+//   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T01:00:00+01:00&quot;,
+//   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00+01:00&quot;,
+//   &quot;Duration&quot;: &quot;05:30:00&quot;
+// }
 
-            string jsonWithUtcTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
-            {
-                DateTimeZoneHandling = DateTimeZoneHandling.Utc
-            });
+string jsonWithUtcTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
+{
+    DateTimeZoneHandling = DateTimeZoneHandling.Utc
+});
 
-            Console.WriteLine(jsonWithUtcTimeZone);
-            // {
-            //   &quot;Destination&quot;: &quot;Dubai&quot;,
-            //   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00Z&quot;,
-            //   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00Z&quot;,
-            //   &quot;DepartureDateLocal&quot;: &quot;2013-01-20T23:00:00Z&quot;,
-            //   &quot;Duration&quot;: &quot;05:30:00&quot;
-            // }
+Console.WriteLine(jsonWithUtcTimeZone);
+// {
+//   &quot;Destination&quot;: &quot;Dubai&quot;,
+//   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00Z&quot;,
+//   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00Z&quot;,
+//   &quot;DepartureDateLocal&quot;: &quot;2013-01-20T23:00:00Z&quot;,
+//   &quot;Duration&quot;: &quot;05:30:00&quot;
+// }
 
-            string jsonWithUnspecifiedTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
-            {
-                DateTimeZoneHandling = DateTimeZoneHandling.Unspecified
-            });
+string jsonWithUnspecifiedTimeZone = JsonConvert.SerializeObject(flight, Formatting.Indented, new JsonSerializerSettings
+{
+    DateTimeZoneHandling = DateTimeZoneHandling.Unspecified
+});
 
-            Console.WriteLine(jsonWithUnspecifiedTimeZone);
-            // {
-            //   &quot;Destination&quot;: &quot;Dubai&quot;,
-            //   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00&quot;,
-            //   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00&quot;,
-            //   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00&quot;,
-            //   &quot;Duration&quot;: &quot;05:30:00&quot;
-            // }</code></pre>
+Console.WriteLine(jsonWithUnspecifiedTimeZone);
+// {
+//   &quot;Destination&quot;: &quot;Dubai&quot;,
+//   &quot;DepartureDate&quot;: &quot;2013-01-21T00:00:00&quot;,
+//   &quot;DepartureDateUtc&quot;: &quot;2013-01-21T00:00:00&quot;,
+//   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00&quot;,
+//   &quot;Duration&quot;: &quot;05:30:00&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

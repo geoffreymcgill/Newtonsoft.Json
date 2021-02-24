@@ -192,24 +192,24 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              CPU: 'Intel',
-              Drives: [
-                'DVD read/writer',
-                '500 gigabyte hard drive'
-              ]
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  CPU: 'Intel',
+  Drives: [
+    'DVD read/writer',
+    '500 gigabyte hard drive'
+  ]
+}&quot;;
 
-            JObject o = JObject.Parse(json);
+JObject o = JObject.Parse(json);
 
-            Console.WriteLine(o.ToString());
-            // {
-            //   &quot;CPU&quot;: &quot;Intel&quot;,
-            //   &quot;Drives&quot;: [
-            //     &quot;DVD read/writer&quot;,
-            //     &quot;500 gigabyte hard drive&quot;
-            //   ]
-            // }</code></pre>
+Console.WriteLine(o.ToString());
+// {
+//   &quot;CPU&quot;: &quot;Intel&quot;,
+//   &quot;Drives&quot;: [
+//     &quot;DVD read/writer&quot;,
+//     &quot;500 gigabyte hard drive&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

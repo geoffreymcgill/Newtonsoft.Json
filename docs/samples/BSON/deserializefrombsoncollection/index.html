@@ -197,24 +197,24 @@
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string s = &quot;MQAAAAMwACkAAAACTmFtZQAHAAAARWFzdGVyAAlTdGFydERhdGUAgDf0uj0BAAAAAA==&quot;;
-            byte[] data = Convert.FromBase64String(s);
+<pre v-highlight:csharp><code v-pre title="Usage">string s = &quot;MQAAAAMwACkAAAACTmFtZQAHAAAARWFzdGVyAAlTdGFydERhdGUAgDf0uj0BAAAAAA==&quot;;
+byte[] data = Convert.FromBase64String(s);
 
-            MemoryStream ms = new MemoryStream(data);
-            using (BsonReader reader = new BsonReader(ms))
-            {
-                reader.ReadRootValueAsArray = true;
+MemoryStream ms = new MemoryStream(data);
+using (BsonReader reader = new BsonReader(ms))
+{
+    reader.ReadRootValueAsArray = true;
 
-                JsonSerializer serializer = new JsonSerializer();
+    JsonSerializer serializer = new JsonSerializer();
 
-                IList&lt;Event&gt; events = serializer.Deserialize&lt;IList&lt;Event&gt;&gt;(reader);
+    IList&lt;Event&gt; events = serializer.Deserialize&lt;IList&lt;Event&gt;&gt;(reader);
 
-                Console.WriteLine(events.Count);
-                // 1
+    Console.WriteLine(events.Count);
+    // 1
 
-                Console.WriteLine(events[0].Name);
-                // Easter
-            }</code></pre>
+    Console.WriteLine(events[0].Name);
+    // Easter
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

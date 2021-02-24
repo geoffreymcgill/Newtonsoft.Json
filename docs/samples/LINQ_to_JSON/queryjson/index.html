@@ -192,58 +192,58 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'channel': {
-                'title': 'James Newton-King',
-                'link': 'http://james.newtonking.com',
-                'description': 'James Newton-King\'s blog.',
-                'item': [
-                  {
-                    'title': 'Json.NET 1.3 + New license + Now on CodePlex',
-                    'description': 'Announcing the release of Json.NET 1.3, the MIT license and the source on CodePlex',
-                    'link': 'http://james.newtonking.com/projects/json-net.aspx',
-                    'category': [
-                      'Json.NET',
-                      'CodePlex'
-                    ]
-                  },
-                  {
-                    'title': 'LINQ to JSON beta',
-                    'description': 'Announcing LINQ to JSON',
-                    'link': 'http://james.newtonking.com/projects/json-net.aspx',
-                    'category': [
-                      'Json.NET',
-                      'LINQ'
-                    ]
-                  }
-                ]
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'channel': {
+    'title': 'James Newton-King',
+    'link': 'http://james.newtonking.com',
+    'description': 'James Newton-King\'s blog.',
+    'item': [
+      {
+        'title': 'Json.NET 1.3 + New license + Now on CodePlex',
+        'description': 'Announcing the release of Json.NET 1.3, the MIT license and the source on CodePlex',
+        'link': 'http://james.newtonking.com/projects/json-net.aspx',
+        'category': [
+          'Json.NET',
+          'CodePlex'
+        ]
+      },
+      {
+        'title': 'LINQ to JSON beta',
+        'description': 'Announcing LINQ to JSON',
+        'link': 'http://james.newtonking.com/projects/json-net.aspx',
+        'category': [
+          'Json.NET',
+          'LINQ'
+        ]
+      }
+    ]
+  }
+}&quot;;
 
-            JObject rss = JObject.Parse(json);
+JObject rss = JObject.Parse(json);
 
-            string rssTitle = (string)rss[&quot;channel&quot;][&quot;title&quot;];
+string rssTitle = (string)rss[&quot;channel&quot;][&quot;title&quot;];
 
-            Console.WriteLine(rssTitle);
-            // James Newton-King
+Console.WriteLine(rssTitle);
+// James Newton-King
 
-            string itemTitle = (string)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;title&quot;];
+string itemTitle = (string)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;title&quot;];
 
-            Console.WriteLine(itemTitle);
-            // Json.NET 1.3 + New license + Now on CodePlex
+Console.WriteLine(itemTitle);
+// Json.NET 1.3 + New license + Now on CodePlex
 
-            JArray categories = (JArray)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;category&quot;];
+JArray categories = (JArray)rss[&quot;channel&quot;][&quot;item&quot;][0][&quot;category&quot;];
 
-            Console.WriteLine(categories);
-            // [
-            //   &quot;Json.NET&quot;,
-            //   &quot;CodePlex&quot;
-            // ]
+Console.WriteLine(categories);
+// [
+//   &quot;Json.NET&quot;,
+//   &quot;CodePlex&quot;
+// ]
 
-            string[] categoriesText = categories.Select(c =&gt; (string)c).ToArray();
+string[] categoriesText = categories.Select(c =&gt; (string)c).ToArray();
 
-            Console.WriteLine(string.Join(&quot;, &quot;, categoriesText));
-            // Json.NET, CodePlex</code></pre>
+Console.WriteLine(string.Join(&quot;, &quot;, categoriesText));
+// Json.NET, CodePlex</code></pre>
 
     
                 <!-- Required only on API pages -->

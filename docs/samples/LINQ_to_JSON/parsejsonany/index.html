@@ -192,25 +192,25 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JToken t1 = JToken.Parse(&quot;{}&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JToken t1 = JToken.Parse(&quot;{}&quot;);
 
-            Console.WriteLine(t1.Type);
-            // Object
+Console.WriteLine(t1.Type);
+// Object
 
-            JToken t2 = JToken.Parse(&quot;[]&quot;);
+JToken t2 = JToken.Parse(&quot;[]&quot;);
 
-            Console.WriteLine(t2.Type);
-            // Array
+Console.WriteLine(t2.Type);
+// Array
 
-            JToken t3 = JToken.Parse(&quot;null&quot;);
+JToken t3 = JToken.Parse(&quot;null&quot;);
 
-            Console.WriteLine(t3.Type);
-            // Null
+Console.WriteLine(t3.Type);
+// Null
 
-            JToken t4 = JToken.Parse(@&quot;'A string!'&quot;);
+JToken t4 = JToken.Parse(@&quot;'A string!'&quot;);
 
-            Console.WriteLine(t4.Type);
-            // String</code></pre>
+Console.WriteLine(t4.Type);
+// String</code></pre>
 
     
                 <!-- Required only on API pages -->
