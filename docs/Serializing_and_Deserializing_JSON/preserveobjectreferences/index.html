@@ -251,8 +251,8 @@ bool equal = Object.ReferenceEquals(p1, p2);
 // true</code></pre>
 <p>The first Person in the list is serialized with the addition of an object ID. The second Person in JSON is now only a reference to the first.</p>
 <p>With PreserveReferencesHandling on, now only one Person object is created on deserialization and the list contains two references to it, mirroring what we started with.</p>
-<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can't control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
-<doc-alert type="primary"><p>References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a> types are an example of a class whose values are populated with a non-default constructor and won't work with PreserveReferencesHandling.</p>
+<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can&#39;t control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
+<doc-alert type="primary"><p>References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a> types are an example of a class whose values are populated with a non-default constructor and won&#39;t work with PreserveReferencesHandling.</p>
 </doc-alert>
 <doc-anchor-target id="isreference">
     <h2>
@@ -304,7 +304,7 @@ public class EmployeeReference
             </li>
         </ul>
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
 </div>
 </footer>
 

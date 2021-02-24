@@ -262,7 +262,7 @@ public class Person
     public string Name { get; set; }
     public IList&lt;string&gt; Likes { get; private set; }
 }</code></pre>
-<p>If the class you want to convert isn't your own and you're unable to use an attribute, a JsonConverter can still be used by creating your own <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a>.</p>
+<p>If the class you want to convert isn&#39;t your own and you&#39;re unable to use an attribute, a JsonConverter can still be used by creating your own <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a>.</p>
 <pre v-highlight:csharp><code v-pre title="Use JsonConverter with IContractResolver">public class ConverterContractResolver : DefaultContractResolver
 {
     public new static readonly ConverterContractResolver Instance = new ConverterContractResolver();
@@ -314,7 +314,7 @@ public class Person
 
     return sw.ToString();
 }</code></pre>
-<p>If performance is important and you don't mind writing more code to get it, then this is your best choice. You can read more about using JsonReader/JsonWriter here:</p>
+<p>If performance is important and you don&#39;t mind writing more code to get it, then this is your best choice. You can read more about using JsonReader/JsonWriter here:</p>
 <ul>
 <li><a href="../ReadingWritingJSON">ReadingWritingJSON</a></li>
 </ul>
@@ -358,7 +358,7 @@ public class Person
             </li>
         </ul>
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
 </div>
 </footer>
 
