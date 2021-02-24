@@ -7,10 +7,10 @@ Elements, attributes, text, comments, character data, processing instructions, n
 ## Conversion Rules
 
 - Elements remain unchanged.
-- Attributes are prefixed with an @ and should be at the start of the object.
-- Single child text nodes are a value directly against an element, otherwise they are accessed via #text.
-- The XML declaration and processing instructions are prefixed with ?.
-- Character data, comments, whitespace and significant whitespace nodes are accessed via #cdata-section, #comment, #whitespace and #significant-whitespace respectively.
+- Attributes are prefixed with an `@` and should be at the start of the object.
+- Single child text nodes are a value directly against an element, otherwise they are accessed via `#text`.
+- The XML declaration and processing instructions are prefixed with `?`.
+- Character data, comments, whitespace and significant whitespace nodes are accessed via `#cdata-section`, `#comment`, `#whitespace` and `#significant-whitespace` respectively.
 - Multiple nodes with the same name at the same level are grouped together into an array.
 - Empty elements are null.
 
