@@ -4,12 +4,6 @@ This sample creates a custom [JsonWriter](/api/newtonsoft/json/jsonwriter/).
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonWriter.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonWriter.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonWriter.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonWriter.cs" region="Usage" title="Usage" :::

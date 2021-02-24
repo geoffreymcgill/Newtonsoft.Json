@@ -4,7 +4,4 @@ This sample converts XML to JSON.
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Xml\ConvertXmlToJson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Xml/ConvertXmlToJson.cs" region="Usage" title="Usage" :::

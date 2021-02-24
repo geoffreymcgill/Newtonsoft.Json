@@ -245,7 +245,7 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JObject(object[] content)">
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JObject(params object[] content)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -647,7 +647,7 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
     </doc-member>
 
     <doc-overload-group overload-id="group-trygetvalue">
-        <doc-member id="method-trygetvalue" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, JToken?" signature="public bool TryGetValue(string propertyName, JToken? value)">
+        <doc-member id="method-trygetvalue" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, JToken?" signature="public bool TryGetValue(string propertyName, out JToken? value)">
             <template #name><h3>TryGetValue</h3></template>
 
             <template #parameters>
@@ -661,7 +661,7 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
 
         </doc-member>
 
-        <doc-member id="method-trygetvalue-1" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, StringComparison, JToken?" signature="public bool TryGetValue(string propertyName, StringComparison comparison, JToken? value)">
+        <doc-member id="method-trygetvalue-1" overload-id="group-trygetvalue" name="TryGetValue" returns="bool" params="string, StringComparison, JToken?" signature="public bool TryGetValue(string propertyName, StringComparison comparison, out JToken? value)">
             <template #name><h3>TryGetValue</h3></template>
 
             <template #parameters>
@@ -690,7 +690,7 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, params JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -704,7 +704,7 @@ the <see cref="!:StringComparison"/> will be used to match a property.</p>
 
     </doc-member>
 
-    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, params JsonConverter[] converters)">
         <template #name><h3>WriteToAsync</h3></template>
 
         <template #parameters>

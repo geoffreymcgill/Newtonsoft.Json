@@ -4,12 +4,6 @@ This sample uses [JsonObjectAttribute](/api/newtonsoft/json/jsonobjectattribute/
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonObjectAttributeOptIn.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonObjectAttributeOptIn.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonObjectAttributeOptIn.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonObjectAttributeOptIn.cs" region="Usage" title="Usage" :::

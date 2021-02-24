@@ -28,19 +28,13 @@ The JsonConvert has two helper methods for converting between JSON and XML. The 
 
 This method takes an XmlNode and serializes it to JSON text.
 
-```csharp Converting XML to JSON with SerializeXmlNode
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: SerializeXmlNode
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="SerializeXmlNode" title="Converting XML to JSON with SerializeXmlNode" :::
 
 Because multiple nodes with the same name at the same level are grouped together into an array, the conversion process can produce different JSON depending on the number of nodes. For example, if some XML for a user has a single `<Role>` node, then that role will be text against a JSON `"Role"` property, but if the user has multiple `<Role>` nodes, then the role values will be placed in a JSON array.
 
 To fix this situation a custom XML attribute can be added to force a JSON array to be created.
 
-```csharp Attribute to Force a JSON Array
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: ForceJsonArray
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="ForceJsonArray" title="Attribute to Force a JSON Array" :::
 
 ## DeserializeXmlNode
 
@@ -48,10 +42,7 @@ The second helper method on JsonConvert is [DeserializeXmlNode()](/API/newtonsof
 
 Because valid XML must have one root element, the JSON passed to DeserializeXmlNode should have one property in the root JSON object. If the root JSON object has multiple properties, then the overload that also takes an element name should be used. A root element with that name will be inserted into the deserialized XmlNode.
 
-```csharp Converting JSON to XML with DeserializeXmlNode
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ConvertingJsonAndXmlTests.cs
-region: DeserializeXmlNode
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ConvertingJsonAndXmlTests.cs" region="DeserializeXmlNode" title="Converting JSON to XML with DeserializeXmlNode" :::
 
 ## See Also
 

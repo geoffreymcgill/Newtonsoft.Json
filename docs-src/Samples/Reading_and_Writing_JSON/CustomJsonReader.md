@@ -4,12 +4,6 @@ This sample creates a custom [JsonReader](/api/newtonsoft/json/jsonreader/).
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonReader.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonReader.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonReader.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonReader.cs" region="Usage" title="Usage" :::

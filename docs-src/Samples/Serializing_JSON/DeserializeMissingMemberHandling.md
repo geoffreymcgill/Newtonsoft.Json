@@ -4,12 +4,6 @@ This sample attempts to deserialize JSON with [MissingMemberHandling](/api/newto
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeMissingMemberHandling.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeMissingMemberHandling.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeMissingMemberHandling.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeMissingMemberHandling.cs" region="Usage" title="Usage" :::

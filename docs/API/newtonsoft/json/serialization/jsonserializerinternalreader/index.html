@@ -230,7 +230,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-calculatepropertydetails" name="CalculatePropertyDetails" returns="bool" params="JsonProperty, JsonConverter?, JsonContainerContract?, JsonProperty?, JsonReader, object, bool, Nullable<object>?, JsonContract?, bool, bool" access="private" signature="private bool CalculatePropertyDetails(JsonProperty property, JsonConverter? propertyConverter, JsonContainerContract? containerContract, JsonProperty? containerProperty, JsonReader reader, object target, bool useExistingValue, Nullable<object>? currentValue, JsonContract? propertyContract, bool gottenCurrentValue, bool ignoredValue)">
+    <doc-member id="method-calculatepropertydetails" name="CalculatePropertyDetails" returns="bool" params="JsonProperty, JsonConverter?, JsonContainerContract?, JsonProperty?, JsonReader, object, bool, Nullable<object>?, JsonContract?, bool, bool" access="private" signature="private bool CalculatePropertyDetails(JsonProperty property, ref JsonConverter? propertyConverter, JsonContainerContract? containerContract, JsonProperty? containerProperty, JsonReader reader, object target, out bool useExistingValue, out Nullable<object>? currentValue, out JsonContract? propertyContract, out bool gottenCurrentValue, out bool ignoredValue)">
         <template #name><h3>CalculatePropertyDetails</h3></template>
 
         <template #parameters>
@@ -348,7 +348,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createnewdictionary" name="CreateNewDictionary" returns="IDictionary" params="JsonReader, JsonDictionaryContract, bool" access="private" signature="private IDictionary CreateNewDictionary(JsonReader reader, JsonDictionaryContract contract, bool createdFromNonDefaultCreator)">
+    <doc-member id="method-createnewdictionary" name="CreateNewDictionary" returns="IDictionary" params="JsonReader, JsonDictionaryContract, bool" access="private" signature="private IDictionary CreateNewDictionary(JsonReader reader, JsonDictionaryContract contract, out bool createdFromNonDefaultCreator)">
         <template #name><h3>CreateNewDictionary</h3></template>
 
         <template #parameters>
@@ -360,7 +360,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createnewlist" name="CreateNewList" returns="IList" params="JsonReader, JsonArrayContract, bool" access="private" signature="private IList CreateNewList(JsonReader reader, JsonArrayContract contract, bool createdFromNonDefaultCreator)">
+    <doc-member id="method-createnewlist" name="CreateNewList" returns="IList" params="JsonReader, JsonArrayContract, bool" access="private" signature="private IList CreateNewList(JsonReader reader, JsonArrayContract contract, out bool createdFromNonDefaultCreator)">
         <template #name><h3>CreateNewList</h3></template>
 
         <template #parameters>
@@ -372,7 +372,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-createnewobject" name="CreateNewObject" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, JsonProperty?, Nullable<string>?, bool" signature="public object CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty? containerMember, JsonProperty? containerProperty, Nullable<string>? id, bool createdFromNonDefaultCreator)">
+    <doc-member id="method-createnewobject" name="CreateNewObject" returns="object" params="JsonReader, JsonObjectContract, JsonProperty?, JsonProperty?, Nullable<string>?, bool" signature="public object CreateNewObject(JsonReader reader, JsonObjectContract objectContract, JsonProperty? containerMember, JsonProperty? containerProperty, Nullable<string>? id, out bool createdFromNonDefaultCreator)">
         <template #name><h3>CreateNewObject</h3></template>
 
         <template #parameters>
@@ -683,7 +683,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-readmetadataproperties" name="ReadMetadataProperties" returns="bool" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataProperties(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, Nullable<object>? newValue, Nullable<string>? id)">
+    <doc-member id="method-readmetadataproperties" name="ReadMetadataProperties" returns="bool" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataProperties(JsonReader reader, ref Nullable<Type>? objectType, ref JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, out Nullable<object>? newValue, out Nullable<string>? id)">
         <template #name><h3>ReadMetadataProperties</h3></template>
 
         <template #parameters>
@@ -701,7 +701,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-readmetadatapropertiestoken" name="ReadMetadataPropertiesToken" returns="bool" params="JTokenReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataPropertiesToken(JTokenReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, Nullable<object>? newValue, Nullable<string>? id)">
+    <doc-member id="method-readmetadatapropertiestoken" name="ReadMetadataPropertiesToken" returns="bool" params="JTokenReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, Nullable<object>?, Nullable<object>?, Nullable<string>?" access="private" signature="private bool ReadMetadataPropertiesToken(JTokenReader reader, ref Nullable<Type>? objectType, ref JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, Nullable<object>? existingValue, out Nullable<object>? newValue, out Nullable<string>? id)">
         <template #name><h3>ReadMetadataPropertiesToken</h3></template>
 
         <template #parameters>
@@ -732,7 +732,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-resolvetypename" name="ResolveTypeName" returns="void" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, string" access="private" signature="private void ResolveTypeName(JsonReader reader, Nullable<Type>? objectType, JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, string qualifiedTypeName)">
+    <doc-member id="method-resolvetypename" name="ResolveTypeName" returns="void" params="JsonReader, Nullable<Type>?, JsonContract?, JsonProperty?, JsonContainerContract?, JsonProperty?, string" access="private" signature="private void ResolveTypeName(JsonReader reader, ref Nullable<Type>? objectType, ref JsonContract? contract, JsonProperty? member, JsonContainerContract? containerContract, JsonProperty? containerMember, string qualifiedTypeName)">
         <template #name><h3>ResolveTypeName</h3></template>
 
         <template #parameters>

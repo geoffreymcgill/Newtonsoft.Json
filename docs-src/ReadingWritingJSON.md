@@ -10,26 +10,17 @@ JsonReader and JsonWriter are low-level classes and are primarily for internal u
 
 [JsonTextReader](/api/newtonsoft/json/jsontextreader/) and [JsonTextWriter](/api/newtonsoft/json/jsontextwriter/) are used to read and write JSON text. The JsonTextWriter has a number of settings on it to control how JSON is formatted when it is written. These options include formatting, indentation character, indent count, and quote character.
 
-```csharp Writing JSON with JsonTextWriter
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ReadingAndWritingJsonTests.cs
-region: ReadingAndWritingJsonText
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ReadingAndWritingJsonTests.cs" region="ReadingAndWritingJsonText" title="Writing JSON with JsonTextWriter" :::
 
 JsonTextReader has settings on it for reading different date formats, time zones, and the cultures when reading text values.
 
-```csharp Reading JSON with JsonTextReader
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ReadingAndWritingJsonTests.cs
-region: ReadingJsonText
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ReadingAndWritingJsonTests.cs" region="ReadingJsonText" title="Reading JSON with JsonTextReader" :::
 
 ## JTokenReader and JTokenWriter
 
 [JTokenReader](/api/newtonsoft/json/linq/jtokenreader/) and [JTokenWriter](/api/newtonsoft/json/linq/jtokenwriter/) read and write LINQ to JSON objects. They are located in the [Newtonsoft.Json.Linq](N:Newtonsoft.Json.Linq) namespace. These objects allow you to use LINQ to JSON objects with objects that read and write JSON, such as the JsonSerializer. For example you can deserialize from a LINQ to JSON object into a regular .NET object and vice versa.
 
-```csharp Deserializing with JTokenReader
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\ReadingAndWritingJsonTests.cs
-region: ReadingAndWritingJsonLinq
-```
+:::code source="../Src/Newtonsoft.Json.Tests/Documentation/ReadingAndWritingJsonTests.cs" region="ReadingAndWritingJsonLinq" title="Deserializing with JTokenReader" :::
 
 ## See Also
 

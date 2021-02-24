@@ -4,7 +4,4 @@ This sample loads JSON, modifies [JObject](/api/newtonsoft/json/linq/jobject/) a
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ModifyJson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ModifyJson.cs" region="Usage" title="Usage" :::

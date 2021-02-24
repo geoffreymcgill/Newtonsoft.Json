@@ -4,12 +4,6 @@ This sample uses a [CamelCaseNamingStrategy](/api/newtonsoft/json/serialization/
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategyCamelCase.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategyCamelCase.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\NamingStrategyCamelCase.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/NamingStrategyCamelCase.cs" region="Usage" title="Usage" :::

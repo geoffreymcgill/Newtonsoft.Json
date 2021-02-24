@@ -4,7 +4,4 @@ This sample deserializes JSON to a [DataSet](https://docs.microsoft.com/en-us/do
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeDataSet.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeDataSet.cs" region="Usage" title="Usage" :::

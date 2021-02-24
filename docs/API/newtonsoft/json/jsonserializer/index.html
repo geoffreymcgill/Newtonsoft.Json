@@ -901,7 +901,7 @@ using the specified <see cref="!:TextWriter"/>.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-setupreader" name="SetupReader" returns="void" params="JsonReader, Nullable<CultureInfo>?, Nullable<DateTimeZoneHandling>?, Nullable<DateParseHandling>?, Nullable<FloatParseHandling>?, Nullable<int>?, Nullable<string>?" access="private" signature="private void SetupReader(JsonReader reader, Nullable<CultureInfo>? previousCulture, Nullable<DateTimeZoneHandling>? previousDateTimeZoneHandling, Nullable<DateParseHandling>? previousDateParseHandling, Nullable<FloatParseHandling>? previousFloatParseHandling, Nullable<int>? previousMaxDepth, Nullable<string>? previousDateFormatString)">
+    <doc-member id="method-setupreader" name="SetupReader" returns="void" params="JsonReader, Nullable<CultureInfo>?, Nullable<DateTimeZoneHandling>?, Nullable<DateParseHandling>?, Nullable<FloatParseHandling>?, Nullable<int>?, Nullable<string>?" access="private" signature="private void SetupReader(JsonReader reader, out Nullable<CultureInfo>? previousCulture, out Nullable<DateTimeZoneHandling>? previousDateTimeZoneHandling, out Nullable<DateParseHandling>? previousDateParseHandling, out Nullable<FloatParseHandling>? previousFloatParseHandling, out Nullable<int>? previousMaxDepth, out Nullable<string>? previousDateFormatString)">
         <template #name><h3>SetupReader</h3></template>
 
         <template #parameters>

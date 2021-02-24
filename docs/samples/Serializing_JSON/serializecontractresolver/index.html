@@ -192,10 +192,180 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeContractResolver.cs
-region: Types</code></pre>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeContractResolver.cs
-region: Usage</code></pre>
+<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeContractResolver.cs" region="Types" title="Types">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Newtonsoft.Json.Serialization;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+
+#endif
+
+namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+{
+    [TestFixture]
+    public class SerializeContractResolver : TestFixtureBase
+    {
+        #region Types
+        public class Person
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+
+            public string FullName
+            {
+                get { return FirstName + &quot; &quot; + LastName; }
+            }
+        }
+        #endregion
+
+        [Test]
+        public void Example()
+        {
+            #region Usage
+            Person person = new Person
+            {
+                FirstName = &quot;Sarah&quot;,
+                LastName = &quot;Security&quot;
+            };
+
+            string json = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
+
+            Console.WriteLine(json);
+            // {
+            //   &quot;firstName&quot;: &quot;Sarah&quot;,
+            //   &quot;lastName&quot;: &quot;Security&quot;,
+            //   &quot;fullName&quot;: &quot;Sarah Security&quot;
+            // }
+            #endregion
+
+            StringAssert.AreEqual(@&quot;{
+  &quot;&quot;firstName&quot;&quot;: &quot;&quot;Sarah&quot;&quot;,
+  &quot;&quot;lastName&quot;&quot;: &quot;&quot;Security&quot;&quot;,
+  &quot;&quot;fullName&quot;&quot;: &quot;&quot;Sarah Security&quot;&quot;
+}&quot;, json);
+        }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeContractResolver.cs" region="Usage" title="Usage">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using Newtonsoft.Json.Serialization;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+
+#endif
+
+namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
+{
+    [TestFixture]
+    public class SerializeContractResolver : TestFixtureBase
+    {
+        #region Types
+        public class Person
+        {
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+
+            public string FullName
+            {
+                get { return FirstName + &quot; &quot; + LastName; }
+            }
+        }
+        #endregion
+
+        [Test]
+        public void Example()
+        {
+            #region Usage
+            Person person = new Person
+            {
+                FirstName = &quot;Sarah&quot;,
+                LastName = &quot;Security&quot;
+            };
+
+            string json = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            });
+
+            Console.WriteLine(json);
+            // {
+            //   &quot;firstName&quot;: &quot;Sarah&quot;,
+            //   &quot;lastName&quot;: &quot;Security&quot;,
+            //   &quot;fullName&quot;: &quot;Sarah Security&quot;
+            // }
+            #endregion
+
+            StringAssert.AreEqual(@&quot;{
+  &quot;&quot;firstName&quot;&quot;: &quot;&quot;Sarah&quot;&quot;,
+  &quot;&quot;lastName&quot;&quot;: &quot;&quot;Security&quot;&quot;,
+  &quot;&quot;fullName&quot;&quot;: &quot;&quot;Sarah Security&quot;&quot;
+}&quot;, json);
+        }
+    }
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -4,9 +4,9 @@
 
   "base": "/Newtonsoft.Json/",
 
-  "code": {
+  "code": [{
     "input": "Src/Newtonsoft.Json"
-  },
+  }],
 
   "identity": 
   {

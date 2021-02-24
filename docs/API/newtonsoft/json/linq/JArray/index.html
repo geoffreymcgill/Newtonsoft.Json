@@ -252,7 +252,7 @@
 
         </doc-member>
 
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JArray(object[] content)">
+        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="object[]" signature="public JArray(params object[] content)">
             <template #name><h3>.ctor</h3></template>
 
             <template #parameters>
@@ -556,7 +556,7 @@
 
     </doc-member>
 
-    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, params JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -570,7 +570,7 @@
 
     </doc-member>
 
-    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public async sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+    <doc-member id="method-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public async sealed Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, params JsonConverter[] converters)">
         <template #name><h3>WriteToAsync</h3></template>
 
         <template #parameters>

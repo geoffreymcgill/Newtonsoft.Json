@@ -4,12 +4,6 @@ This sample uses LINQ to JSON to manually convert a .NET type to JSON.
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\SerializeWithLinq.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/SerializeWithLinq.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\SerializeWithLinq.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/SerializeWithLinq.cs" region="Usage" title="Usage" :::

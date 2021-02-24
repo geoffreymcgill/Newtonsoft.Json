@@ -8,7 +8,4 @@ This sample saves a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) to a f
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\SaveJsonSchemaToFile.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/SaveJsonSchemaToFile.cs" region="Usage" title="Usage" :::

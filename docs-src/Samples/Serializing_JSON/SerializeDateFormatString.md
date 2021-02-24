@@ -4,7 +4,4 @@ This sample uses the DateFormatString setting to control how [DateTime](https://
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeDateFormatString.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeDateFormatString.cs" region="Usage" title="Usage" :::

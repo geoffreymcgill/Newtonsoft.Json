@@ -4,12 +4,6 @@ This sample uses [JRaw](/api/newtonsoft/json/linq/jraw/) properties to serialize
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeRawJson.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeRawJson.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\SerializeRawJson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeRawJson.cs" region="Usage" title="Usage" :::

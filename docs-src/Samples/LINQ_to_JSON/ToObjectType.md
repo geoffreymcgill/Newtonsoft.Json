@@ -4,7 +4,4 @@ This sample converts LINQ to JSON objects to .NET types using [JToken.ToObject(T
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ToObjectType.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ToObjectType.cs" region="Usage" title="Usage" :::

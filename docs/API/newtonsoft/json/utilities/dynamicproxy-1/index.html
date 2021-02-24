@@ -218,7 +218,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="T, BinaryOperationBinder, object, Nullable<object>?" signature="public virtual bool TryBinaryOperation(T instance, BinaryOperationBinder binder, object arg, Nullable<object>? result)">
+    <doc-member id="method-trybinaryoperation" name="TryBinaryOperation" returns="bool" params="T, BinaryOperationBinder, object, Nullable<object>?" signature="public virtual bool TryBinaryOperation(T instance, BinaryOperationBinder binder, object arg, out Nullable<object>? result)">
         <template #name><h3>TryBinaryOperation</h3></template>
 
         <template #parameters>
@@ -231,7 +231,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="T, ConvertBinder, Nullable<object>?" signature="public virtual bool TryConvert(T instance, ConvertBinder binder, Nullable<object>? result)">
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="T, ConvertBinder, Nullable<object>?" signature="public virtual bool TryConvert(T instance, ConvertBinder binder, out Nullable<object>? result)">
         <template #name><h3>TryConvert</h3></template>
 
         <template #parameters>
@@ -243,7 +243,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trycreateinstance" name="TryCreateInstance" returns="bool" params="T, CreateInstanceBinder, object[], Nullable<object>?" signature="public virtual bool TryCreateInstance(T instance, CreateInstanceBinder binder, object[] args, Nullable<object>? result)">
+    <doc-member id="method-trycreateinstance" name="TryCreateInstance" returns="bool" params="T, CreateInstanceBinder, object[], Nullable<object>?" signature="public virtual bool TryCreateInstance(T instance, CreateInstanceBinder binder, object[] args, out Nullable<object>? result)">
         <template #name><h3>TryCreateInstance</h3></template>
 
         <template #parameters>
@@ -279,7 +279,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetindex" name="TryGetIndex" returns="bool" params="T, GetIndexBinder, object[], Nullable<object>?" signature="public virtual bool TryGetIndex(T instance, GetIndexBinder binder, object[] indexes, Nullable<object>? result)">
+    <doc-member id="method-trygetindex" name="TryGetIndex" returns="bool" params="T, GetIndexBinder, object[], Nullable<object>?" signature="public virtual bool TryGetIndex(T instance, GetIndexBinder binder, object[] indexes, out Nullable<object>? result)">
         <template #name><h3>TryGetIndex</h3></template>
 
         <template #parameters>
@@ -292,7 +292,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="T, GetMemberBinder, Nullable<object>?" signature="public virtual bool TryGetMember(T instance, GetMemberBinder binder, Nullable<object>? result)">
+    <doc-member id="method-trygetmember" name="TryGetMember" returns="bool" params="T, GetMemberBinder, Nullable<object>?" signature="public virtual bool TryGetMember(T instance, GetMemberBinder binder, out Nullable<object>? result)">
         <template #name><h3>TryGetMember</h3></template>
 
         <template #parameters>
@@ -304,7 +304,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryinvoke" name="TryInvoke" returns="bool" params="T, InvokeBinder, object[], Nullable<object>?" signature="public virtual bool TryInvoke(T instance, InvokeBinder binder, object[] args, Nullable<object>? result)">
+    <doc-member id="method-tryinvoke" name="TryInvoke" returns="bool" params="T, InvokeBinder, object[], Nullable<object>?" signature="public virtual bool TryInvoke(T instance, InvokeBinder binder, object[] args, out Nullable<object>? result)">
         <template #name><h3>TryInvoke</h3></template>
 
         <template #parameters>
@@ -317,7 +317,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryinvokemember" name="TryInvokeMember" returns="bool" params="T, InvokeMemberBinder, object[], Nullable<object>?" signature="public virtual bool TryInvokeMember(T instance, InvokeMemberBinder binder, object[] args, Nullable<object>? result)">
+    <doc-member id="method-tryinvokemember" name="TryInvokeMember" returns="bool" params="T, InvokeMemberBinder, object[], Nullable<object>?" signature="public virtual bool TryInvokeMember(T instance, InvokeMemberBinder binder, object[] args, out Nullable<object>? result)">
         <template #name><h3>TryInvokeMember</h3></template>
 
         <template #parameters>
@@ -355,7 +355,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryunaryoperation" name="TryUnaryOperation" returns="bool" params="T, UnaryOperationBinder, Nullable<object>?" signature="public virtual bool TryUnaryOperation(T instance, UnaryOperationBinder binder, Nullable<object>? result)">
+    <doc-member id="method-tryunaryoperation" name="TryUnaryOperation" returns="bool" params="T, UnaryOperationBinder, Nullable<object>?" signature="public virtual bool TryUnaryOperation(T instance, UnaryOperationBinder binder, out Nullable<object>? result)">
         <template #name><h3>TryUnaryOperation</h3></template>
 
         <template #parameters>

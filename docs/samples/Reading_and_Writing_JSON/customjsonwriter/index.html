@@ -192,10 +192,944 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonWriter.cs
-region: Types</code></pre>
-<pre v-highlight:csharp><code v-pre>source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Json\CustomJsonWriter.cs
-region: Usage</code></pre>
+<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonWriter.cs" region="Types" title="Types">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+
+#endif
+
+#if !(DNXCORE50 || NET20) || NETSTANDARD2_0
+
+namespace Newtonsoft.Json.Tests.Documentation.Samples.Json
+{
+
+    #region Types
+    public class XmlJsonWriter : JsonWriter
+    {
+        private readonly XmlWriter _writer;
+        private string _propertyName;
+
+        public XmlJsonWriter(XmlWriter writer)
+        {
+            _writer = writer;
+        }
+
+        public override void WriteComment(string text)
+        {
+            base.WriteComment(text);
+            _writer.WriteComment(text);
+        }
+
+        public override void WritePropertyName(string name)
+        {
+            base.WritePropertyName(name);
+            _propertyName = name;
+        }
+
+        public override void WriteNull()
+        {
+            base.WriteNull();
+
+            WriteValueElement(JTokenType.Null);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(DateTime value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Date);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(DateTimeOffset value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Date);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(Guid value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Guid);
+            _writer.WriteValue(value.ToString());
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(TimeSpan value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.TimeSpan);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(Uri value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Uri);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(string value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.String);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(int value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(long value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(short value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(byte value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(bool value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Boolean);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(char value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.String);
+            _writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(decimal value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(double value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(float value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        private void WriteValueElement(JTokenType type)
+        {
+            if (_propertyName != null)
+            {
+                WriteValueElement(_propertyName, type);
+                _propertyName = null;
+            }
+            else
+            {
+                WriteValueElement(&quot;Item&quot;, type);
+            }
+        }
+
+        private void WriteValueElement(string elementName, JTokenType type)
+        {
+            _writer.WriteStartElement(elementName);
+            _writer.WriteAttributeString(&quot;type&quot;, type.ToString());
+        }
+
+        public override void WriteStartArray()
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartArray();
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Array);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Array);
+            }
+        }
+
+        public override void WriteStartObject()
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartObject();
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Object);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Object);
+            }
+        }
+
+        public override void WriteStartConstructor(string name)
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartConstructor(name);
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Constructor);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Constructor);
+            }
+
+            _writer.WriteAttributeString(&quot;name&quot;, name);
+        }
+
+        public override void WriteEndArray()
+        {
+            base.WriteEndArray();
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteEndObject()
+        {
+            base.WriteEndObject();
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteEndConstructor()
+        {
+            base.WriteEndConstructor();
+            _writer.WriteEndElement();
+        }
+
+        public override void Flush()
+        {
+            _writer.Flush();
+        }
+
+        protected override void WriteIndent()
+        {
+            _writer.WriteWhitespace(Environment.NewLine);
+
+            // levels of indentation multiplied by the indent count
+            int currentIndentCount = Top * 2;
+
+            while (currentIndentCount &gt; 0)
+            {
+                // write up to a max of 10 characters at once to avoid creating too many new strings
+                int writeCount = Math.Min(currentIndentCount, 10);
+
+                _writer.WriteWhitespace(new string(' ', writeCount));
+
+                currentIndentCount -= writeCount;
+            }
+        }
+    }
+    #endregion
+
+    [TestFixture]
+    public class CustomJsonWriter : TestFixtureBase
+    {
+        [Test]
+        public void Example()
+        {
+            #region Usage
+            var user = new
+            {
+                Name = &quot;James&quot;,
+                Age = 30,
+                Enabled = true,
+                Roles = new[]
+                {
+                    &quot;Publisher&quot;,
+                    &quot;Administrator&quot;
+                }
+            };
+
+            StringWriter sw = new StringWriter();
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
+            using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
+            {
+                writer.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(writer, user);
+            }
+
+            Console.WriteLine(sw.ToString());
+            //&lt;Root type=&quot;Object&quot;&gt;
+            //  &lt;Name type=&quot;String&quot;&gt;James&lt;/Name&gt;
+            //  &lt;Age type=&quot;Integer&quot;&gt;30&lt;/Age&gt;
+            //  &lt;Enabled type=&quot;Boolean&quot;&gt;true&lt;/Enabled&gt;
+            //  &lt;Roles type=&quot;Array&quot;&gt;
+            //    &lt;Item type=&quot;String&quot;&gt;Publisher&lt;/Item&gt;
+            //    &lt;Item type=&quot;String&quot;&gt;Administrator&lt;/Item&gt;
+            //  &lt;/Roles&gt;
+            //&lt;/Root&gt;
+            #endregion
+
+            sw = new StringWriter();
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
+            using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
+            {
+                writer.Formatting = Formatting.Indented;
+
+                writer.WriteStartObject();
+
+                writer.WritePropertyName(&quot;Null&quot;);
+                writer.WriteNull();
+
+                writer.WritePropertyName(&quot;String&quot;);
+                writer.WriteValue(&quot;This is a string!&quot;);
+
+                writer.WritePropertyName(&quot;Char&quot;);
+                writer.WriteValue('!');
+
+                writer.WritePropertyName(&quot;Integer&quot;);
+                writer.WriteValue(123);
+
+                writer.WritePropertyName(&quot;DateTime&quot;);
+                writer.WriteValue(new DateTime(2001, 2, 22, 20, 59, 59, DateTimeKind.Utc));
+
+                writer.WritePropertyName(&quot;DateTimeOffset&quot;);
+                writer.WriteValue(new DateTimeOffset(2001, 2, 22, 20, 59, 59, TimeSpan.FromHours(12)));
+
+                writer.WritePropertyName(&quot;Float&quot;);
+                writer.WriteValue(1.1f);
+
+                writer.WritePropertyName(&quot;Double&quot;);
+                writer.WriteValue(3.14d);
+
+                writer.WritePropertyName(&quot;Decimal&quot;);
+                writer.WriteValue(19.95m);
+
+                writer.WritePropertyName(&quot;Guid&quot;);
+                writer.WriteValue(Guid.NewGuid());
+
+                writer.WritePropertyName(&quot;Uri&quot;);
+                writer.WriteValue(new Uri(&quot;http://james.newtonking.com&quot;));
+
+                writer.WritePropertyName(&quot;Array&quot;);
+                writer.WriteStartArray();
+                writer.WriteValue(1);
+                writer.WriteValue(2);
+                writer.WriteValue(3);
+                writer.WriteEndArray();
+
+                writer.WritePropertyName(&quot;Object&quot;);
+                writer.WriteStartObject();
+                writer.WritePropertyName(&quot;String&quot;);
+                writer.WriteValue(&quot;This is a string!&quot;);
+                writer.WritePropertyName(&quot;Null&quot;);
+                writer.WriteNull();
+                writer.WriteEndObject();
+
+                writer.WritePropertyName(&quot;Constructor&quot;);
+                writer.WriteStartConstructor(&quot;Date&quot;);
+                writer.WriteValue(2000);
+                writer.WriteValue(12);
+                writer.WriteValue(30);
+                writer.WriteEndConstructor();
+
+                writer.WriteEndObject();
+
+                writer.Flush();
+            }
+
+            Console.WriteLine(sw.ToString());
+
+            //&lt;Root type=&quot;Object&quot;&gt;
+            //  &lt;Null type=&quot;Null&quot; /&gt;
+            //  &lt;String type=&quot;String&quot;&gt;This is a string!&lt;/String&gt;
+            //  &lt;Char type=&quot;String&quot;&gt;!&lt;/Char&gt;
+            //  &lt;Integer type=&quot;Integer&quot;&gt;123&lt;/Integer&gt;
+            //  &lt;DateTime type=&quot;Date&quot;&gt;2001-02-22T20:59:59Z&lt;/DateTime&gt;
+            //  &lt;DateTimeOffset type=&quot;Date&quot;&gt;2001-02-22T20:59:59+12:00&lt;/DateTimeOffset&gt;
+            //  &lt;Float type=&quot;Float&quot;&gt;1.1&lt;/Float&gt;
+            //  &lt;Double type=&quot;Float&quot;&gt;3.14&lt;/Double&gt;
+            //  &lt;Decimal type=&quot;Float&quot;&gt;19.95&lt;/Decimal&gt;
+            //  &lt;Guid type=&quot;Guid&quot;&gt;d66eab59-3715-4b35-9e06-fa61c1216eaa&lt;/Guid&gt;
+            //  &lt;Uri type=&quot;Uri&quot;&gt;http://james.newtonking.com&lt;/Uri&gt;
+            //  &lt;Array type=&quot;Array&quot;&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;1&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;2&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;3&lt;/Item&gt;
+            //  &lt;/Array&gt;
+            //  &lt;Object type=&quot;Object&quot;&gt;
+            //    &lt;String type=&quot;String&quot;&gt;This is a string!&lt;/String&gt;
+            //    &lt;Null type=&quot;Null&quot; /&gt;
+            //  &lt;/Object&gt;
+            //  &lt;Constructor type=&quot;Constructor&quot; name=&quot;Date&quot;&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;2000&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;12&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;30&lt;/Item&gt;
+            //  &lt;/Constructor&gt;
+            //&lt;/Root&gt;
+        }
+    }
+}
+
+#endif</code></pre>
+<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Json/CustomJsonWriter.cs" region="Usage" title="Usage">#region License
+// Copyright (c) 2007 James Newton-King
+//
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the &quot;Software&quot;), to deal in the Software without
+// restriction, including without limitation the rights to use,
+// copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following
+// conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+#endregion
+
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml;
+using Newtonsoft.Json.Linq;
+#if DNXCORE50
+using Xunit;
+using Test = Xunit.FactAttribute;
+using Assert = Newtonsoft.Json.Tests.XUnitAssert;
+#else
+using NUnit.Framework;
+
+#endif
+
+#if !(DNXCORE50 || NET20) || NETSTANDARD2_0
+
+namespace Newtonsoft.Json.Tests.Documentation.Samples.Json
+{
+
+    #region Types
+    public class XmlJsonWriter : JsonWriter
+    {
+        private readonly XmlWriter _writer;
+        private string _propertyName;
+
+        public XmlJsonWriter(XmlWriter writer)
+        {
+            _writer = writer;
+        }
+
+        public override void WriteComment(string text)
+        {
+            base.WriteComment(text);
+            _writer.WriteComment(text);
+        }
+
+        public override void WritePropertyName(string name)
+        {
+            base.WritePropertyName(name);
+            _propertyName = name;
+        }
+
+        public override void WriteNull()
+        {
+            base.WriteNull();
+
+            WriteValueElement(JTokenType.Null);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(DateTime value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Date);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(DateTimeOffset value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Date);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(Guid value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Guid);
+            _writer.WriteValue(value.ToString());
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(TimeSpan value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.TimeSpan);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(Uri value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Uri);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(string value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.String);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(int value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(long value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(short value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(byte value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Integer);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(bool value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Boolean);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(char value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.String);
+            _writer.WriteValue(value.ToString(CultureInfo.InvariantCulture));
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(decimal value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(double value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteValue(float value)
+        {
+            base.WriteValue(value);
+
+            WriteValueElement(JTokenType.Float);
+            _writer.WriteValue(value);
+            _writer.WriteEndElement();
+        }
+
+        private void WriteValueElement(JTokenType type)
+        {
+            if (_propertyName != null)
+            {
+                WriteValueElement(_propertyName, type);
+                _propertyName = null;
+            }
+            else
+            {
+                WriteValueElement(&quot;Item&quot;, type);
+            }
+        }
+
+        private void WriteValueElement(string elementName, JTokenType type)
+        {
+            _writer.WriteStartElement(elementName);
+            _writer.WriteAttributeString(&quot;type&quot;, type.ToString());
+        }
+
+        public override void WriteStartArray()
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartArray();
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Array);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Array);
+            }
+        }
+
+        public override void WriteStartObject()
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartObject();
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Object);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Object);
+            }
+        }
+
+        public override void WriteStartConstructor(string name)
+        {
+            bool isStart = (WriteState == WriteState.Start);
+
+            base.WriteStartConstructor(name);
+
+            if (isStart)
+            {
+                WriteValueElement(&quot;Root&quot;, JTokenType.Constructor);
+            }
+            else
+            {
+                WriteValueElement(JTokenType.Constructor);
+            }
+
+            _writer.WriteAttributeString(&quot;name&quot;, name);
+        }
+
+        public override void WriteEndArray()
+        {
+            base.WriteEndArray();
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteEndObject()
+        {
+            base.WriteEndObject();
+            _writer.WriteEndElement();
+        }
+
+        public override void WriteEndConstructor()
+        {
+            base.WriteEndConstructor();
+            _writer.WriteEndElement();
+        }
+
+        public override void Flush()
+        {
+            _writer.Flush();
+        }
+
+        protected override void WriteIndent()
+        {
+            _writer.WriteWhitespace(Environment.NewLine);
+
+            // levels of indentation multiplied by the indent count
+            int currentIndentCount = Top * 2;
+
+            while (currentIndentCount &gt; 0)
+            {
+                // write up to a max of 10 characters at once to avoid creating too many new strings
+                int writeCount = Math.Min(currentIndentCount, 10);
+
+                _writer.WriteWhitespace(new string(' ', writeCount));
+
+                currentIndentCount -= writeCount;
+            }
+        }
+    }
+    #endregion
+
+    [TestFixture]
+    public class CustomJsonWriter : TestFixtureBase
+    {
+        [Test]
+        public void Example()
+        {
+            #region Usage
+            var user = new
+            {
+                Name = &quot;James&quot;,
+                Age = 30,
+                Enabled = true,
+                Roles = new[]
+                {
+                    &quot;Publisher&quot;,
+                    &quot;Administrator&quot;
+                }
+            };
+
+            StringWriter sw = new StringWriter();
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
+            using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
+            {
+                writer.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(writer, user);
+            }
+
+            Console.WriteLine(sw.ToString());
+            //&lt;Root type=&quot;Object&quot;&gt;
+            //  &lt;Name type=&quot;String&quot;&gt;James&lt;/Name&gt;
+            //  &lt;Age type=&quot;Integer&quot;&gt;30&lt;/Age&gt;
+            //  &lt;Enabled type=&quot;Boolean&quot;&gt;true&lt;/Enabled&gt;
+            //  &lt;Roles type=&quot;Array&quot;&gt;
+            //    &lt;Item type=&quot;String&quot;&gt;Publisher&lt;/Item&gt;
+            //    &lt;Item type=&quot;String&quot;&gt;Administrator&lt;/Item&gt;
+            //  &lt;/Roles&gt;
+            //&lt;/Root&gt;
+            #endregion
+
+            sw = new StringWriter();
+
+            using (XmlWriter xmlWriter = XmlWriter.Create(sw, new XmlWriterSettings { OmitXmlDeclaration = true }))
+            using (XmlJsonWriter writer = new XmlJsonWriter(xmlWriter))
+            {
+                writer.Formatting = Formatting.Indented;
+
+                writer.WriteStartObject();
+
+                writer.WritePropertyName(&quot;Null&quot;);
+                writer.WriteNull();
+
+                writer.WritePropertyName(&quot;String&quot;);
+                writer.WriteValue(&quot;This is a string!&quot;);
+
+                writer.WritePropertyName(&quot;Char&quot;);
+                writer.WriteValue('!');
+
+                writer.WritePropertyName(&quot;Integer&quot;);
+                writer.WriteValue(123);
+
+                writer.WritePropertyName(&quot;DateTime&quot;);
+                writer.WriteValue(new DateTime(2001, 2, 22, 20, 59, 59, DateTimeKind.Utc));
+
+                writer.WritePropertyName(&quot;DateTimeOffset&quot;);
+                writer.WriteValue(new DateTimeOffset(2001, 2, 22, 20, 59, 59, TimeSpan.FromHours(12)));
+
+                writer.WritePropertyName(&quot;Float&quot;);
+                writer.WriteValue(1.1f);
+
+                writer.WritePropertyName(&quot;Double&quot;);
+                writer.WriteValue(3.14d);
+
+                writer.WritePropertyName(&quot;Decimal&quot;);
+                writer.WriteValue(19.95m);
+
+                writer.WritePropertyName(&quot;Guid&quot;);
+                writer.WriteValue(Guid.NewGuid());
+
+                writer.WritePropertyName(&quot;Uri&quot;);
+                writer.WriteValue(new Uri(&quot;http://james.newtonking.com&quot;));
+
+                writer.WritePropertyName(&quot;Array&quot;);
+                writer.WriteStartArray();
+                writer.WriteValue(1);
+                writer.WriteValue(2);
+                writer.WriteValue(3);
+                writer.WriteEndArray();
+
+                writer.WritePropertyName(&quot;Object&quot;);
+                writer.WriteStartObject();
+                writer.WritePropertyName(&quot;String&quot;);
+                writer.WriteValue(&quot;This is a string!&quot;);
+                writer.WritePropertyName(&quot;Null&quot;);
+                writer.WriteNull();
+                writer.WriteEndObject();
+
+                writer.WritePropertyName(&quot;Constructor&quot;);
+                writer.WriteStartConstructor(&quot;Date&quot;);
+                writer.WriteValue(2000);
+                writer.WriteValue(12);
+                writer.WriteValue(30);
+                writer.WriteEndConstructor();
+
+                writer.WriteEndObject();
+
+                writer.Flush();
+            }
+
+            Console.WriteLine(sw.ToString());
+
+            //&lt;Root type=&quot;Object&quot;&gt;
+            //  &lt;Null type=&quot;Null&quot; /&gt;
+            //  &lt;String type=&quot;String&quot;&gt;This is a string!&lt;/String&gt;
+            //  &lt;Char type=&quot;String&quot;&gt;!&lt;/Char&gt;
+            //  &lt;Integer type=&quot;Integer&quot;&gt;123&lt;/Integer&gt;
+            //  &lt;DateTime type=&quot;Date&quot;&gt;2001-02-22T20:59:59Z&lt;/DateTime&gt;
+            //  &lt;DateTimeOffset type=&quot;Date&quot;&gt;2001-02-22T20:59:59+12:00&lt;/DateTimeOffset&gt;
+            //  &lt;Float type=&quot;Float&quot;&gt;1.1&lt;/Float&gt;
+            //  &lt;Double type=&quot;Float&quot;&gt;3.14&lt;/Double&gt;
+            //  &lt;Decimal type=&quot;Float&quot;&gt;19.95&lt;/Decimal&gt;
+            //  &lt;Guid type=&quot;Guid&quot;&gt;d66eab59-3715-4b35-9e06-fa61c1216eaa&lt;/Guid&gt;
+            //  &lt;Uri type=&quot;Uri&quot;&gt;http://james.newtonking.com&lt;/Uri&gt;
+            //  &lt;Array type=&quot;Array&quot;&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;1&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;2&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;3&lt;/Item&gt;
+            //  &lt;/Array&gt;
+            //  &lt;Object type=&quot;Object&quot;&gt;
+            //    &lt;String type=&quot;String&quot;&gt;This is a string!&lt;/String&gt;
+            //    &lt;Null type=&quot;Null&quot; /&gt;
+            //  &lt;/Object&gt;
+            //  &lt;Constructor type=&quot;Constructor&quot; name=&quot;Date&quot;&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;2000&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;12&lt;/Item&gt;
+            //    &lt;Item type=&quot;Integer&quot;&gt;30&lt;/Item&gt;
+            //  &lt;/Constructor&gt;
+            //&lt;/Root&gt;
+        }
+    }
+}
+
+#endif</code></pre>
 
     
                 <!-- Required only on API pages -->

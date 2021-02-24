@@ -262,7 +262,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-decimaltryparse" name="DecimalTryParse" returns="ParseResult" params="char[], int, int, decimal" signature="public static ParseResult DecimalTryParse(char[] chars, int start, int length, decimal value)">
+    <doc-member id="method-decimaltryparse" name="DecimalTryParse" returns="ParseResult" params="char[], int, int, decimal" signature="public static ParseResult DecimalTryParse(char[] chars, int start, int length, out decimal value)">
         <template #name><h3>DecimalTryParse</h3></template>
 
         <template #parameters>
@@ -309,7 +309,7 @@ value is checked whether it assignable to the specified type.</p>
             </template>
         </doc-member>
 
-        <doc-member id="method-gettypecode-1" overload-id="group-gettypecode" name="GetTypeCode" returns="PrimitiveTypeCode" params="Type, bool" signature="public static PrimitiveTypeCode GetTypeCode(Type t, bool isEnum)">
+        <doc-member id="method-gettypecode-1" overload-id="group-gettypecode" name="GetTypeCode" returns="PrimitiveTypeCode" params="Type, bool" signature="public static PrimitiveTypeCode GetTypeCode(Type t, out bool isEnum)">
             <template #name><h3>GetTypeCode</h3></template>
 
             <template #parameters>
@@ -331,7 +331,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-int32tryparse" name="Int32TryParse" returns="ParseResult" params="char[], int, int, int" signature="public static ParseResult Int32TryParse(char[] chars, int start, int length, int value)">
+    <doc-member id="method-int32tryparse" name="Int32TryParse" returns="ParseResult" params="char[], int, int, int" signature="public static ParseResult Int32TryParse(char[] chars, int start, int length, out int value)">
         <template #name><h3>Int32TryParse</h3></template>
 
         <template #parameters>
@@ -344,7 +344,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-int64tryparse" name="Int64TryParse" returns="ParseResult" params="char[], int, int, long" signature="public static ParseResult Int64TryParse(char[] chars, int start, int length, long value)">
+    <doc-member id="method-int64tryparse" name="Int64TryParse" returns="ParseResult" params="char[], int, int, long" signature="public static ParseResult Int64TryParse(char[] chars, int start, int length, out long value)">
         <template #name><h3>Int64TryParse</h3></template>
 
         <template #parameters>
@@ -397,7 +397,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static bool TryConvert(Nullable<object>? initialValue, CultureInfo culture, Type targetType, Nullable<object>? value)">
+    <doc-member id="method-tryconvert" name="TryConvert" returns="bool" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static bool TryConvert(Nullable<object>? initialValue, CultureInfo culture, Type targetType, out Nullable<object>? value)">
         <template #name><h3>TryConvert</h3></template>
 
         <template #parameters>
@@ -410,7 +410,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvertguid" name="TryConvertGuid" returns="bool" params="string, Guid" signature="public static bool TryConvertGuid(string s, Guid g)">
+    <doc-member id="method-tryconvertguid" name="TryConvertGuid" returns="bool" params="string, Guid" signature="public static bool TryConvertGuid(string s, out Guid g)">
         <template #name><h3>TryConvertGuid</h3></template>
 
         <template #parameters>
@@ -421,7 +421,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="ConvertResult" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static ConvertResult TryConvertInternal(Nullable<object>? initialValue, CultureInfo culture, Type targetType, Nullable<object>? value)">
+    <doc-member id="method-tryconvertinternal" name="TryConvertInternal" returns="ConvertResult" params="Nullable<object>?, CultureInfo, Type, Nullable<object>?" access="private" signature="private static ConvertResult TryConvertInternal(Nullable<object>? initialValue, CultureInfo culture, Type targetType, out Nullable<object>? value)">
         <template #name><h3>TryConvertInternal</h3></template>
 
         <template #parameters>
@@ -434,7 +434,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-tryhextexttoint" name="TryHexTextToInt" returns="bool" params="char[], int, int, int" signature="public static bool TryHexTextToInt(char[] text, int start, int end, int value)">
+    <doc-member id="method-tryhextexttoint" name="TryHexTextToInt" returns="bool" params="char[], int, int, int" signature="public static bool TryHexTextToInt(char[] text, int start, int end, out int value)">
         <template #name><h3>TryHexTextToInt</h3></template>
 
         <template #parameters>
@@ -447,7 +447,7 @@ value is checked whether it assignable to the specified type.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-versiontryparse" name="VersionTryParse" returns="bool" params="string, Nullable<Version>?" signature="public static bool VersionTryParse(string input, Nullable<Version>? result)">
+    <doc-member id="method-versiontryparse" name="VersionTryParse" returns="bool" params="string, Nullable<Version>?" signature="public static bool VersionTryParse(string input, out Nullable<Version>? result)">
         <template #name><h3>VersionTryParse</h3></template>
 
         <template #parameters>

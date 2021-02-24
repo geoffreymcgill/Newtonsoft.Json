@@ -8,7 +8,4 @@ This sample parses a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) from 
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\JsonSchemaParse.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/JsonSchemaParse.cs" region="Usage" title="Usage" :::

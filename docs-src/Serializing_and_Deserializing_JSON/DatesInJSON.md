@@ -19,10 +19,7 @@ If your dates don't follow the ISO 8601 standard, then the DateFormatString sett
 
 With no standard for dates in JSON, the number of possible different formats when interoping with other systems is endless. Fortunately Json.NET has a solution to deal with reading and writing custom dates: JsonConverters. A JsonConverter is used to override how a type is serialized.
 
-```csharp DateTime JsonConverters Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializingDatesInJson
-``` 
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializingDatesInJson" title="DateTime JsonConverters Example" ::: 
 
 Simply pass the JsonConverter you wish to use to the Json.NET serializer.
 

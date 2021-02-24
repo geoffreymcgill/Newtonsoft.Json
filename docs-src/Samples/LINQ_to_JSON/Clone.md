@@ -4,7 +4,4 @@ This sample recursively clones a [JToken](/api/newtonsoft/json/linq/jtoken/) and
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\Clone.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/Clone.cs" region="Usage" title="Usage" :::

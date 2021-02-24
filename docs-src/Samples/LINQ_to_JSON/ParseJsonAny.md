@@ -4,7 +4,4 @@ This sample parses JSON using [JToken.Parse(string)](/api/newtonsoft/json/linq/j
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ParseJsonAny.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ParseJsonAny.cs" region="Usage" title="Usage" :::

@@ -309,7 +309,7 @@ Note that this is used by all builds, even those that don't support immutable co
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-member id="method-trybuildimmutableforarraycontract" name="TryBuildImmutableForArrayContract" returns="bool" params="Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForArrayContract(Type underlyingType, Type collectionItemType, Nullable<Type>? createdType, ObjectConstructor<object>? parameterizedCreator)">
+    <doc-member id="method-trybuildimmutableforarraycontract" name="TryBuildImmutableForArrayContract" returns="bool" params="Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForArrayContract(Type underlyingType, Type collectionItemType, out Nullable<Type>? createdType, out ObjectConstructor<object>? parameterizedCreator)">
         <template #name><h3>TryBuildImmutableForArrayContract</h3></template>
 
         <template #parameters>
@@ -322,7 +322,7 @@ Note that this is used by all builds, even those that don't support immutable co
         </template>
     </doc-member>
 
-    <doc-member id="method-trybuildimmutablefordictionarycontract" name="TryBuildImmutableForDictionaryContract" returns="bool" params="Type, Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForDictionaryContract(Type underlyingType, Type keyItemType, Type valueItemType, Nullable<Type>? createdType, ObjectConstructor<object>? parameterizedCreator)">
+    <doc-member id="method-trybuildimmutablefordictionarycontract" name="TryBuildImmutableForDictionaryContract" returns="bool" params="Type, Type, Type, Nullable<Type>?, ObjectConstructor<object>?" access="internal" signature="internal static bool TryBuildImmutableForDictionaryContract(Type underlyingType, Type keyItemType, Type valueItemType, out Nullable<Type>? createdType, out ObjectConstructor<object>? parameterizedCreator)">
         <template #name><h3>TryBuildImmutableForDictionaryContract</h3></template>
 
         <template #parameters>

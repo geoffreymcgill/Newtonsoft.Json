@@ -2,10 +2,7 @@
 
 By default Json.NET will serialize all objects it encounters by value. If a list contains two Person references and both references point to the same object, then the JsonSerializer will write out all the names and values for each reference.
 
-```csharp Preserve Object References Off
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: PreservingObjectReferencesOff
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="PreservingObjectReferencesOff" title="Preserve Object References Off" :::
 
 In most cases this is the desired result, but in certain scenarios writing the second item in the list as a reference to the first is a better solution. If the above JSON was deserialized now, then the returned list would contain two completely separate Person objects with the same values. Writing references by value will also cause problems on objects where a circular reference occurs.
 
@@ -13,10 +10,7 @@ In most cases this is the desired result, but in certain scenarios writing the s
 
 Setting [PreserveReferencesHandling](/api/newtonsoft/json/preservereferenceshandling/) will track object references when serializing and deserializing JSON.
 
-```csharp Preserve Object References On
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: PreservingObjectReferencesOn
-``` 
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="PreservingObjectReferencesOn" title="Preserve Object References On" ::: 
 
 The first Person in the list is serialized with the addition of an object ID. The second Person in JSON is now only a reference to the first.
 
@@ -34,10 +28,7 @@ The PreserveReferencesHandling setting on the JsonSerializer will change how all
 
 Setting IsReference on JsonObjectAttribute or JsonArrayAttribute to true will mean the JsonSerializer will always serialize the type the attribute is against as a reference. Setting IsReference on the JsonPropertyAttribute to true will serialize only that property as a reference.
 
-```csharp IsReference
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: PreservingObjectReferencesAttribute
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="PreservingObjectReferencesAttribute" title="IsReference" :::
 
 ## IReferenceResolver
 

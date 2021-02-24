@@ -533,7 +533,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-getcallbackmethodsfortype" name="GetCallbackMethodsForType" returns="void" params="Type, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationErrorCallback>>?" access="private" signature="private void GetCallbackMethodsForType(Type type, Nullable<List<SerializationCallback>>? onSerializing, Nullable<List<SerializationCallback>>? onSerialized, Nullable<List<SerializationCallback>>? onDeserializing, Nullable<List<SerializationCallback>>? onDeserialized, Nullable<List<SerializationErrorCallback>>? onError)">
+    <doc-member id="method-getcallbackmethodsfortype" name="GetCallbackMethodsForType" returns="void" params="Type, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationErrorCallback>>?" access="private" signature="private void GetCallbackMethodsForType(Type type, out Nullable<List<SerializationCallback>>? onSerializing, out Nullable<List<SerializationCallback>>? onSerialized, out Nullable<List<SerializationCallback>>? onDeserializing, out Nullable<List<SerializationCallback>>? onDeserialized, out Nullable<List<SerializationErrorCallback>>? onError)">
         <template #name><h3>GetCallbackMethodsForType</h3></template>
 
         <template #parameters>
@@ -679,7 +679,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-isvalidcallback" name="IsValidCallback" returns="bool" params="MethodInfo, ParameterInfo[], Type, Nullable<MethodInfo>?, Nullable<Type>?" access="private" signature="private static bool IsValidCallback(MethodInfo method, ParameterInfo[] parameters, Type attributeType, Nullable<MethodInfo>? currentCallback, Nullable<Type>? prevAttributeType)">
+    <doc-member id="method-isvalidcallback" name="IsValidCallback" returns="bool" params="MethodInfo, ParameterInfo[], Type, Nullable<MethodInfo>?, Nullable<Type>?" access="private" signature="private static bool IsValidCallback(MethodInfo method, ParameterInfo[] parameters, Type attributeType, Nullable<MethodInfo>? currentCallback, ref Nullable<Type>? prevAttributeType)">
         <template #name><h3>IsValidCallback</h3></template>
 
         <template #parameters>
@@ -804,7 +804,7 @@ This value is determined by the runtime permissions available.</p>
         </template>
     </doc-member>
 
-    <doc-member id="method-setpropertysettingsfromattributes" name="SetPropertySettingsFromAttributes" returns="void" params="JsonProperty, object, string, Type, MemberSerialization, bool" access="private" signature="private void SetPropertySettingsFromAttributes(JsonProperty property, object attributeProvider, string name, Type declaringType, MemberSerialization memberSerialization, bool allowNonPublicAccess)">
+    <doc-member id="method-setpropertysettingsfromattributes" name="SetPropertySettingsFromAttributes" returns="void" params="JsonProperty, object, string, Type, MemberSerialization, bool" access="private" signature="private void SetPropertySettingsFromAttributes(JsonProperty property, object attributeProvider, string name, Type declaringType, MemberSerialization memberSerialization, out bool allowNonPublicAccess)">
         <template #name><h3>SetPropertySettingsFromAttributes</h3></template>
 
         <template #parameters>

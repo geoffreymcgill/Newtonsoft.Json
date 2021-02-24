@@ -18,10 +18,7 @@ As well as using the built-in Json.NET attributes, Json.NET also looks for the [
 Json.NET attributes take precedence over standard .NET serialization attributes (e.g. if both JsonPropertyAttribute and DataMemberAttribute are present on a property and both customize the name, the name from JsonPropertyAttribute will be used).
 :::
 
-```csharp Serialization Attributes Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\SerializationTests.cs
-region: SerializationAttributes
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/SerializationTests.cs" region="SerializationAttributes" title="Serialization Attributes Example" :::
 
 ## Json.NET Serialization Attributes
 
@@ -29,7 +26,7 @@ region: SerializationAttributes
 
 The MemberSerialization flag on this attribute specifies whether member serialization is opt-in (a member must have the JsonProperty or DataMember attribute to be serialized), opt-out (everything is serialized by default but can be ignored with the JsonIgnoreAttribute, Json.NET's default behavior) or fields (all public and private fields are serialized and properties are ignored).
 
-Placing the the [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute) on a type is another way to default member serialization to opt-in.
+Placing the [DataContractAttribute](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute) on a type is another way to default member serialization to opt-in.
 
 The NamingStrategy setting on this attributes can be set to a [NamingStrategy](/api/newtonsoft/json/serialization/namingstrategy/) type that specifies how property names are serialized.
 
@@ -68,10 +65,7 @@ The attribute can be placed on a class or a member. When placed on a class, the 
 
 The priority of which JsonConverter is used is member attribute, then class attribute, and finally any converters passed to the JsonSerializer.
 
-```csharp JsonConverterAttribute Property Example
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonConverterAttributeProperty.cs
-region: Types
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonConverterAttributeProperty.cs" region="Types" title="JsonConverterAttribute Property Example" :::
 
 This example shows the JsonConverterAttribute being applied to a property.
 
@@ -87,29 +81,17 @@ All extension data values will be written during serialization, even if a proper
 
 This example shows the JsonExtensionDataAttribute being applied to a field, unmatched JSON properties being added to the field's collection during deserialization.
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeExtensionData.cs
-region: Types
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeExtensionData.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DeserializeExtensionData.cs
-region: Usage
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeExtensionData.cs" region="Usage" title="Usage" :::
 
 ## JsonConstructorAttribute
 
 The [JsonConstructorAttribute](/api/newtonsoft/json/jsonconstructorattribute/) instructs the [JsonSerializer](/api/newtonsoft/json/jsonserializer/) to use a specific constructor when deserializing a class. It can be used to create a class using a parameterized constructor instead of the default constructor, or to pick which specific parameterized constructor to use if there are multiple.
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonConstructorAttribute.cs
-region: Types
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonConstructorAttribute.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\JsonConstructorAttribute.cs
-region: Usage
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonConstructorAttribute.cs" region="Usage" title="Usage" :::
 
 ## See Also
 

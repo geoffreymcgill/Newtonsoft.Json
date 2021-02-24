@@ -387,7 +387,7 @@
         <template #name><h3>ReadRegexString</h3></template>
     </doc-member>
 
-    <doc-member id="method-tryparseexpression" name="TryParseExpression" returns="bool" params="Nullable<List<PathFilter>>?" access="private" signature="private bool TryParseExpression(Nullable<List<PathFilter>>? expressionPath)">
+    <doc-member id="method-tryparseexpression" name="TryParseExpression" returns="bool" params="Nullable<List<PathFilter>>?" access="private" signature="private bool TryParseExpression(out Nullable<List<PathFilter>>? expressionPath)">
         <template #name><h3>TryParseExpression</h3></template>
 
         <template #parameters>
@@ -397,7 +397,7 @@
         </template>
     </doc-member>
 
-    <doc-member id="method-tryparsevalue" name="TryParseValue" returns="bool" params="Nullable<object>?" access="private" signature="private bool TryParseValue(Nullable<object>? value)">
+    <doc-member id="method-tryparsevalue" name="TryParseValue" returns="bool" params="Nullable<object>?" access="private" signature="private bool TryParseValue(out Nullable<object>? value)">
         <template #name><h3>TryParseValue</h3></template>
 
         <template #parameters>

@@ -6,19 +6,13 @@ As well as parsing JSON from existing JSON strings, LINQ to JSON objects can be 
 
 Setting values and creating objects and arrays one at a time gives you total control, but it is more verbose than other options.
 
-```csharp Creating JSON
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonCreateNormal
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonCreateNormal" title="Creating JSON" :::
 
 ## Creating JSON with LINQ
 
 Declaratively creating JSON objects using LINQ is a fast way to create JSON from collections of values.
 
-```csharp Creating JSON Declaratively
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonCreateDeclaratively
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonCreateDeclaratively" title="Creating JSON Declaratively" :::
 
 ## Creating JSON from an object
 
@@ -26,10 +20,7 @@ The last option is to create a JSON object from a non-JSON type using the [FromO
 
 The example below shows creating a JSON object from an anonymous object, but any .NET type can be used with FromObject to create JSON.
 
-```csharp Creating JSON from an Object
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\LinqToJsonTests.cs
-region: LinqToJsonCreateFromObject
-```
+:::code source="../../Src/Newtonsoft.Json.Tests/Documentation/LinqToJsonTests.cs" region="LinqToJsonCreateFromObject" title="Creating JSON from an Object" :::
 
 ## See Also
 

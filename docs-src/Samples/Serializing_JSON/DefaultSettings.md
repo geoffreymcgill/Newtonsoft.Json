@@ -4,7 +4,4 @@ This sample serializes and deserializes JSON using [JsonConvert.DefaultSettings]
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Serializer\DefaultSettings.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DefaultSettings.cs" region="Usage" title="Usage" :::

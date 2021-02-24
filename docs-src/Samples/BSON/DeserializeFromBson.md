@@ -4,12 +4,6 @@ This sample deserializes BSON to an object.
 
 ## Sample
 
-```csharp Types
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Bson\DeserializeFromBson.cs
-region: Types
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Bson/DeserializeFromBson.cs" region="Types" title="Types" :::
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Bson\DeserializeFromBson.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Bson/DeserializeFromBson.cs" region="Usage" title="Usage" :::

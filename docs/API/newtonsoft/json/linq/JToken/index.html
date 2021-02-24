@@ -1000,7 +1000,7 @@
 
         </doc-member>
 
-        <doc-member id="method-tostring-1" overload-id="group-tostring" name="ToString" returns="string" params="Formatting, JsonConverter[]" signature="public string ToString(Formatting formatting, JsonConverter[] converters)">
+        <doc-member id="method-tostring-1" overload-id="group-tostring" name="ToString" returns="string" params="Formatting, JsonConverter[]" signature="public string ToString(Formatting formatting, params JsonConverter[] converters)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
@@ -1047,7 +1047,7 @@
 
     </doc-member>
 
-    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public abstract void WriteTo(JsonWriter writer, JsonConverter[] converters)">
+    <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public abstract void WriteTo(JsonWriter writer, params JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
 
         <template #parameters>
@@ -1062,7 +1062,7 @@
     </doc-member>
 
     <doc-overload-group overload-id="group-writetoasync">
-        <doc-member id="method-writetoasync" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, JsonConverter[]" signature="public Task WriteToAsync(JsonWriter writer, JsonConverter[] converters)">
+        <doc-member id="method-writetoasync" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, JsonConverter[]" signature="public Task WriteToAsync(JsonWriter writer, params JsonConverter[] converters)">
             <template #name><h3>WriteToAsync</h3></template>
 
             <template #parameters>
@@ -1076,7 +1076,7 @@
 
         </doc-member>
 
-        <doc-member id="method-writetoasync-1" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public virtual Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, JsonConverter[] converters)">
+        <doc-member id="method-writetoasync-1" overload-id="group-writetoasync" name="WriteToAsync" returns="Task" params="JsonWriter, CancellationToken, JsonConverter[]" signature="public virtual Task WriteToAsync(JsonWriter writer, CancellationToken cancellationToken, params JsonConverter[] converters)">
             <template #name><h3>WriteToAsync</h3></template>
 
             <template #parameters>

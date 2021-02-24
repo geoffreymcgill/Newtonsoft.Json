@@ -8,7 +8,4 @@ This sample loads a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) from a
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Schema\LoadJsonSchemaFromFile.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Schema/LoadJsonSchemaFromFile.cs" region="Usage" title="Usage" :::

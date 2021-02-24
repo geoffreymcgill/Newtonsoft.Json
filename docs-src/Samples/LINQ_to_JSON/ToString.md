@@ -4,7 +4,4 @@ This sample converts LINQ to JSON objects to JSON.
 
 ## Sample
 
-```csharp Usage
-source: ..\Src\Newtonsoft.Json.Tests\Documentation\Samples\Linq\ToString.cs
-region: Usage
-```
+:::code source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Linq/ToString.cs" region="Usage" title="Usage" :::
