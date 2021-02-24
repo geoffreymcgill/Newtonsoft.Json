@@ -192,51 +192,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonConverterAttributeProperty.cs" region="Types" title="Types">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json.Converters;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class JsonConverterAttributeProperty : TestFixtureBase
-    {
-        #region Types
-        public enum UserStatus
+<pre v-highlight:csharp><code v-pre title="Types">        public enum UserStatus
         {
             NotConfirmed,
             Active,
@@ -249,14 +205,8 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
 
             [JsonConverter(typeof(StringEnumConverter))]
             public UserStatus Status { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            User user = new User
+        }</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">            User user = new User
             {
                 UserName = @&quot;domain\username&quot;,
                 Status = UserStatus.Deleted
@@ -268,102 +218,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             // {
             //   &quot;UserName&quot;: &quot;domain\\username&quot;,
             //   &quot;Status&quot;: &quot;Deleted&quot;
-            // }
-            #endregion
-
-            StringAssert.AreEqual(@&quot;{
-  &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,
-  &quot;&quot;Status&quot;&quot;: &quot;&quot;Deleted&quot;&quot;
-}&quot;, json);
-        }
-    }
-}</code></pre>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/JsonConverterAttributeProperty.cs" region="Usage" title="Usage">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json.Converters;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class JsonConverterAttributeProperty : TestFixtureBase
-    {
-        #region Types
-        public enum UserStatus
-        {
-            NotConfirmed,
-            Active,
-            Deleted
-        }
-
-        public class User
-        {
-            public string UserName { get; set; }
-
-            [JsonConverter(typeof(StringEnumConverter))]
-            public UserStatus Status { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            User user = new User
-            {
-                UserName = @&quot;domain\username&quot;,
-                Status = UserStatus.Deleted
-            };
-
-            string json = JsonConvert.SerializeObject(user, Formatting.Indented);
-
-            Console.WriteLine(json);
-            // {
-            //   &quot;UserName&quot;: &quot;domain\\username&quot;,
-            //   &quot;Status&quot;: &quot;Deleted&quot;
-            // }
-            #endregion
-
-            StringAssert.AreEqual(@&quot;{
-  &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,
-  &quot;&quot;Status&quot;&quot;: &quot;&quot;Deleted&quot;&quot;
-}&quot;, json);
-        }
-    }
-}</code></pre>
+            // }</code></pre>
 
     
                 <!-- Required only on API pages -->

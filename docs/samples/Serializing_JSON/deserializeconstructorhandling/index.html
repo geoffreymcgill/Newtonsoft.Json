@@ -192,51 +192,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeConstructorHandling.cs" region="Types" title="Types">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class DeserializeConstructorHandling : TestFixtureBase
-    {
-        #region Types
-        public class Website
+<pre v-highlight:csharp><code v-pre title="Types">        public class Website
         {
             public string Url { get; set; }
 
@@ -253,14 +209,8 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
 
                 Url = website.Url;
             }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            string json = @&quot;{'Url':'http://www.google.com'}&quot;;
+        }</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{'Url':'http://www.google.com'}&quot;;
 
             try
             {
@@ -279,107 +229,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             });
 
             Console.WriteLine(website.Url);
-            // http://www.google.com
-            #endregion
-
-            Assert.AreEqual(&quot;http://www.google.com&quot;, website.Url);
-        }
-    }
-}</code></pre>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/DeserializeConstructorHandling.cs" region="Usage" title="Usage">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class DeserializeConstructorHandling : TestFixtureBase
-    {
-        #region Types
-        public class Website
-        {
-            public string Url { get; set; }
-
-            private Website()
-            {
-            }
-
-            public Website(Website website)
-            {
-                if (website == null)
-                {
-                    throw new ArgumentNullException(nameof(website));
-                }
-
-                Url = website.Url;
-            }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            string json = @&quot;{'Url':'http://www.google.com'}&quot;;
-
-            try
-            {
-                JsonConvert.DeserializeObject&lt;Website&gt;(json);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                // Value cannot be null.
-                // Parameter name: website
-            }
-
-            Website website = JsonConvert.DeserializeObject&lt;Website&gt;(json, new JsonSerializerSettings
-            {
-                ConstructorHandling = ConstructorHandling.AllowNonPublicDefaultConstructor
-            });
-
-            Console.WriteLine(website.Url);
-            // http://www.google.com
-            #endregion
-
-            Assert.AreEqual(&quot;http://www.google.com&quot;, website.Url);
-        }
-    }
-}</code></pre>
+            // http://www.google.com</code></pre>
 
     
                 <!-- Required only on API pages -->
