@@ -200,21 +200,21 @@ public class User
     [JsonProperty(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public int SnakeRating { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            User user = new User
-            {
-                FirstName = &quot;Tom&quot;,
-                LastName = &quot;Riddle&quot;,
-                SnakeRating = 10
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+{
+    FirstName = &quot;Tom&quot;,
+    LastName = &quot;Riddle&quot;,
+    SnakeRating = 10
+};
 
-            string json = JsonConvert.SerializeObject(user, Formatting.Indented);
+string json = JsonConvert.SerializeObject(user, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;firstName&quot;: &quot;Tom&quot;,
-            //   &quot;lastName&quot;: &quot;Riddle&quot;,
-            //   &quot;snake_rating&quot;: 10
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;firstName&quot;: &quot;Tom&quot;,
+//   &quot;lastName&quot;: &quot;Riddle&quot;,
+//   &quot;snake_rating&quot;: 10
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

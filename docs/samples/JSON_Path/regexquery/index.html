@@ -192,27 +192,27 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JArray packages = JArray.Parse(@&quot;[
-              {
-                'PackageId': 'Newtonsoft.Json',
-                'Version': '11.0.1',
-                'ReleaseDate': '2018-02-17T00:00:00'
-              },
-              {
-                'PackageId': 'NUnit',
-                'Version': '3.9.0',
-                'ReleaseDate': '2017-11-10T00:00:00'
-              }
-            ]&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JArray packages = JArray.Parse(@&quot;[
+  {
+    'PackageId': 'Newtonsoft.Json',
+    'Version': '11.0.1',
+    'ReleaseDate': '2018-02-17T00:00:00'
+  },
+  {
+    'PackageId': 'NUnit',
+    'Version': '3.9.0',
+    'ReleaseDate': '2017-11-10T00:00:00'
+  }
+]&quot;);
 
-            // Find Newtonsoft packages
-            List&lt;JToken&gt; newtonsoftPackages = packages.SelectTokens(@&quot;$.[?(@.PackageId =~ /^Newtonsoft\.(.*)$/)]&quot;).ToList();
+// Find Newtonsoft packages
+List&lt;JToken&gt; newtonsoftPackages = packages.SelectTokens(@&quot;$.[?(@.PackageId =~ /^Newtonsoft\.(.*)$/)]&quot;).ToList();
 
-            foreach (JToken item in newtonsoftPackages)
-            {
-                Console.WriteLine((string) item[&quot;PackageId&quot;]);
-            }
-            // Newtonsoft.Json</code></pre>
+foreach (JToken item in newtonsoftPackages)
+{
+    Console.WriteLine((string) item[&quot;PackageId&quot;]);
+}
+// Newtonsoft.Json</code></pre>
 
     
                 <!-- Required only on API pages -->

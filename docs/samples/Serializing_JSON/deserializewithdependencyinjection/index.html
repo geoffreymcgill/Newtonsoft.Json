@@ -192,91 +192,91 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class AutofacContractResolver : DefaultContractResolver
+<pre v-highlight:csharp><code v-pre title="Types">public class AutofacContractResolver : DefaultContractResolver
+{
+    private readonly IContainer _container;
+
+    public AutofacContractResolver(IContainer container)
+    {
+        _container = container;
+    }
+
+    protected override JsonObjectContract CreateObjectContract(Type objectType)
+    {
+        // use Autofac to create types that have been registered with it
+        if (_container.IsRegistered(objectType))
         {
-            private readonly IContainer _container;
+            JsonObjectContract contract = ResolveContact(objectType);
+            contract.DefaultCreator = () =&gt; _container.Resolve(objectType);
 
-            public AutofacContractResolver(IContainer container)
+            return contract;
+        }
+
+        return base.CreateObjectContract(objectType);
+    }
+
+    private JsonObjectContract ResolveContact(Type objectType)
+    {
+        // attempt to create the contact from the resolved type
+        IComponentRegistration registration;
+        if (_container.ComponentRegistry.TryGetRegistration(new TypedService(objectType), out registration))
+        {
+            Type viewType = (registration.Activator as ReflectionActivator)?.LimitType;
+            if (viewType != null)
             {
-                _container = container;
-            }
-
-            protected override JsonObjectContract CreateObjectContract(Type objectType)
-            {
-                // use Autofac to create types that have been registered with it
-                if (_container.IsRegistered(objectType))
-                {
-                    JsonObjectContract contract = ResolveContact(objectType);
-                    contract.DefaultCreator = () =&gt; _container.Resolve(objectType);
-
-                    return contract;
-                }
-
-                return base.CreateObjectContract(objectType);
-            }
-
-            private JsonObjectContract ResolveContact(Type objectType)
-            {
-                // attempt to create the contact from the resolved type
-                IComponentRegistration registration;
-                if (_container.ComponentRegistry.TryGetRegistration(new TypedService(objectType), out registration))
-                {
-                    Type viewType = (registration.Activator as ReflectionActivator)?.LimitType;
-                    if (viewType != null)
-                    {
-                        return base.CreateObjectContract(viewType);
-                    }
-                }
-
-                // fall back to using the registered type
-                return base.CreateObjectContract(objectType);
+                return base.CreateObjectContract(viewType);
             }
         }
 
-        public class TaskController
-        {
-            private readonly ITaskRepository _repository;
-            private readonly ILogger _logger;
+        // fall back to using the registered type
+        return base.CreateObjectContract(objectType);
+    }
+}
 
-            public TaskController(ITaskRepository repository, ILogger logger)
-            {
-                _repository = repository;
-                _logger = logger;
-            }
+public class TaskController
+{
+    private readonly ITaskRepository _repository;
+    private readonly ILogger _logger;
 
-            public ITaskRepository Repository
-            {
-                get { return _repository; }
-            }
+    public TaskController(ITaskRepository repository, ILogger logger)
+    {
+        _repository = repository;
+        _logger = logger;
+    }
 
-            public ILogger Logger
-            {
-                get { return _logger; }
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            ContainerBuilder builder = new ContainerBuilder();
-            builder.RegisterType&lt;TaskRepository&gt;().As&lt;ITaskRepository&gt;();
-            builder.RegisterType&lt;TaskController&gt;();
-            builder.Register(c =&gt; new LogService(new DateTime(2000, 12, 12))).As&lt;ILogger&gt;();
+    public ITaskRepository Repository
+    {
+        get { return _repository; }
+    }
 
-            IContainer container = builder.Build();
+    public ILogger Logger
+    {
+        get { return _logger; }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">ContainerBuilder builder = new ContainerBuilder();
+builder.RegisterType&lt;TaskRepository&gt;().As&lt;ITaskRepository&gt;();
+builder.RegisterType&lt;TaskController&gt;();
+builder.Register(c =&gt; new LogService(new DateTime(2000, 12, 12))).As&lt;ILogger&gt;();
 
-            AutofacContractResolver contractResolver = new AutofacContractResolver(container);
+IContainer container = builder.Build();
 
-            string json = @&quot;{
-              'Logger': {
-                'Level':'Debug'
-              }
-            }&quot;;
+AutofacContractResolver contractResolver = new AutofacContractResolver(container);
 
-            // ITaskRespository and ILogger constructor parameters are injected by Autofac
-            TaskController controller = JsonConvert.DeserializeObject&lt;TaskController&gt;(json, new JsonSerializerSettings
-            {
-                ContractResolver = contractResolver
-            });
+string json = @&quot;{
+  'Logger': {
+    'Level':'Debug'
+  }
+}&quot;;
 
-            Console.WriteLine(controller.Repository.GetType().Name);
-            // TaskRepository</code></pre>
+// ITaskRespository and ILogger constructor parameters are injected by Autofac
+TaskController controller = JsonConvert.DeserializeObject&lt;TaskController&gt;(json, new JsonSerializerSettings
+{
+    ContractResolver = contractResolver
+});
+
+Console.WriteLine(controller.Repository.GetType().Name);
+// TaskRepository</code></pre>
 
     
                 <!-- Required only on API pages -->

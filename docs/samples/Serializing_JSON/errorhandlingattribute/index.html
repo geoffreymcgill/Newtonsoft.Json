@@ -192,51 +192,51 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Employee
+<pre v-highlight:csharp><code v-pre title="Types">public class Employee
+{
+    private List&lt;string&gt; _roles;
+
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public List&lt;string&gt; Roles
+    {
+        get
         {
-            private List&lt;string&gt; _roles;
-
-            public string Name { get; set; }
-            public int Age { get; set; }
-
-            public List&lt;string&gt; Roles
+            if (_roles == null)
             {
-                get
-                {
-                    if (_roles == null)
-                    {
-                        throw new Exception(&quot;Roles not loaded!&quot;);
-                    }
-
-                    return _roles;
-                }
-                set { _roles = value; }
+                throw new Exception(&quot;Roles not loaded!&quot;);
             }
 
-            public string Title { get; set; }
+            return _roles;
+        }
+        set { _roles = value; }
+    }
 
-            [OnError]
-            internal void OnError(StreamingContext context, ErrorContext errorContext)
-            {
-                errorContext.Handled = true;
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Employee person = new Employee
-            {
-                Name = &quot;George Michael Bluth&quot;,
-                Age = 16,
-                Roles = null,
-                Title = &quot;Mister Manager&quot;
-            };
+    public string Title { get; set; }
 
-            string json = JsonConvert.SerializeObject(person, Formatting.Indented);
+    [OnError]
+    internal void OnError(StreamingContext context, ErrorContext errorContext)
+    {
+        errorContext.Handled = true;
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Employee person = new Employee
+{
+    Name = &quot;George Michael Bluth&quot;,
+    Age = 16,
+    Roles = null,
+    Title = &quot;Mister Manager&quot;
+};
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Name&quot;: &quot;George Michael Bluth&quot;,
-            //   &quot;Age&quot;: 16,
-            //   &quot;Title&quot;: &quot;Mister Manager&quot;
-            // }</code></pre>
+string json = JsonConvert.SerializeObject(person, Formatting.Indented);
+
+Console.WriteLine(json);
+// {
+//   &quot;Name&quot;: &quot;George Michael Bluth&quot;,
+//   &quot;Age&quot;: 16,
+//   &quot;Title&quot;: &quot;Mister Manager&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

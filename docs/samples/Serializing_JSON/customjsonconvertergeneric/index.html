@@ -192,44 +192,44 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class VersionConverter : JsonConverter&lt;Version&gt;
-        {
-            public override void WriteJson(JsonWriter writer, Version value, JsonSerializer serializer)
-            {
-                writer.WriteValue(value.ToString());
-            }
+<pre v-highlight:csharp><code v-pre title="Types">public class VersionConverter : JsonConverter&lt;Version&gt;
+{
+    public override void WriteJson(JsonWriter writer, Version value, JsonSerializer serializer)
+    {
+        writer.WriteValue(value.ToString());
+    }
 
-            public override Version ReadJson(JsonReader reader, Type objectType, Version existingValue, bool hasExistingValue, JsonSerializer serializer)
-            {
-                string s = (string)reader.Value;
+    public override Version ReadJson(JsonReader reader, Type objectType, Version existingValue, bool hasExistingValue, JsonSerializer serializer)
+    {
+        string s = (string)reader.Value;
 
-                return new Version(s);
-            }
-        }
+        return new Version(s);
+    }
+}
 
-        public class NuGetPackage
-        {
-            public string PackageId { get; set; }
-            public Version Version { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            NuGetPackage p1 = new NuGetPackage
-            {
-                PackageId = &quot;Newtonsoft.Json&quot;,
-                Version = new Version(10, 0, 4)
-            };
+public class NuGetPackage
+{
+    public string PackageId { get; set; }
+    public Version Version { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">NuGetPackage p1 = new NuGetPackage
+{
+    PackageId = &quot;Newtonsoft.Json&quot;,
+    Version = new Version(10, 0, 4)
+};
 
-            string json = JsonConvert.SerializeObject(p1, Formatting.Indented, new VersionConverter());
+string json = JsonConvert.SerializeObject(p1, Formatting.Indented, new VersionConverter());
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;PackageId&quot;: &quot;Newtonsoft.Json&quot;,
-            //   &quot;Version&quot;: &quot;10.0.4&quot;
-            // }
+Console.WriteLine(json);
+// {
+//   &quot;PackageId&quot;: &quot;Newtonsoft.Json&quot;,
+//   &quot;Version&quot;: &quot;10.0.4&quot;
+// }
 
-            NuGetPackage p2 = JsonConvert.DeserializeObject&lt;NuGetPackage&gt;(json, new VersionConverter());
+NuGetPackage p2 = JsonConvert.DeserializeObject&lt;NuGetPackage&gt;(json, new VersionConverter());
 
-            Console.WriteLine(p2.Version.ToString());
-            // 10.0.4</code></pre>
+Console.WriteLine(p2.Version.ToString());
+// 10.0.4</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,25 +192,25 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            IList&lt;DateTime&gt; dateList = new List&lt;DateTime&gt;
-            {
-                new DateTime(2009, 12, 7, 23, 10, 0, DateTimeKind.Utc),
-                new DateTime(2010, 1, 1, 9, 0, 0, DateTimeKind.Utc),
-                new DateTime(2010, 2, 10, 10, 0, 0, DateTimeKind.Utc)
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">IList&lt;DateTime&gt; dateList = new List&lt;DateTime&gt;
+{
+    new DateTime(2009, 12, 7, 23, 10, 0, DateTimeKind.Utc),
+    new DateTime(2010, 1, 1, 9, 0, 0, DateTimeKind.Utc),
+    new DateTime(2010, 2, 10, 10, 0, 0, DateTimeKind.Utc)
+};
 
-            string json = JsonConvert.SerializeObject(dateList, new JsonSerializerSettings
-            {
-                DateFormatString = &quot;d MMMM, yyyy&quot;,
-                Formatting = Formatting.Indented
-            });
+string json = JsonConvert.SerializeObject(dateList, new JsonSerializerSettings
+{
+    DateFormatString = &quot;d MMMM, yyyy&quot;,
+    Formatting = Formatting.Indented
+});
 
-            Console.WriteLine(json);
-            // [
-            //   &quot;7 December, 2009&quot;,
-            //   &quot;1 January, 2010&quot;,
-            //   &quot;10 February, 2010&quot;
-            // ]</code></pre>
+Console.WriteLine(json);
+// [
+//   &quot;7 December, 2009&quot;,
+//   &quot;1 January, 2010&quot;,
+//   &quot;10 February, 2010&quot;
+// ]</code></pre>
 
     
                 <!-- Required only on API pages -->

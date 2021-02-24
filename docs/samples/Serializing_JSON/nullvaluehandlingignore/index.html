@@ -199,32 +199,32 @@
     public Person Partner { get; set; }
     public decimal? Salary { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Person person = new Person
-            {
-                Name = &quot;Nigal Newborn&quot;,
-                Age = 1
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person
+{
+    Name = &quot;Nigal Newborn&quot;,
+    Age = 1
+};
 
-            string jsonIncludeNullValues = JsonConvert.SerializeObject(person, Formatting.Indented);
+string jsonIncludeNullValues = JsonConvert.SerializeObject(person, Formatting.Indented);
 
-            Console.WriteLine(jsonIncludeNullValues);
-            // {
-            //   &quot;Name&quot;: &quot;Nigal Newborn&quot;,
-            //   &quot;Age&quot;: 1,
-            //   &quot;Partner&quot;: null,
-            //   &quot;Salary&quot;: null
-            // }
+Console.WriteLine(jsonIncludeNullValues);
+// {
+//   &quot;Name&quot;: &quot;Nigal Newborn&quot;,
+//   &quot;Age&quot;: 1,
+//   &quot;Partner&quot;: null,
+//   &quot;Salary&quot;: null
+// }
 
-            string jsonIgnoreNullValues = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
-            {
-                NullValueHandling = NullValueHandling.Ignore
-            });
+string jsonIgnoreNullValues = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
+{
+    NullValueHandling = NullValueHandling.Ignore
+});
 
-            Console.WriteLine(jsonIgnoreNullValues);
-            // {
-            //   &quot;Name&quot;: &quot;Nigal Newborn&quot;,
-            //   &quot;Age&quot;: 1
-            // }</code></pre>
+Console.WriteLine(jsonIgnoreNullValues);
+// {
+//   &quot;Name&quot;: &quot;Nigal Newborn&quot;,
+//   &quot;Age&quot;: 1
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

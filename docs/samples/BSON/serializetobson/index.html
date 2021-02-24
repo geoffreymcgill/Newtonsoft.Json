@@ -197,23 +197,23 @@
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Event e = new Event
-            {
-                Name = &quot;Movie Premiere&quot;,
-                StartDate = new DateTime(2013, 1, 22, 20, 30, 0, DateTimeKind.Utc)
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Event e = new Event
+{
+    Name = &quot;Movie Premiere&quot;,
+    StartDate = new DateTime(2013, 1, 22, 20, 30, 0, DateTimeKind.Utc)
+};
 
-            MemoryStream ms = new MemoryStream();
-            using (BsonWriter writer = new BsonWriter(ms))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(writer, e);
-            }
+MemoryStream ms = new MemoryStream();
+using (BsonWriter writer = new BsonWriter(ms))
+{
+    JsonSerializer serializer = new JsonSerializer();
+    serializer.Serialize(writer, e);
+}
 
-            string data = Convert.ToBase64String(ms.ToArray());
+string data = Convert.ToBase64String(ms.ToArray());
 
-            Console.WriteLine(data);
-            // MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAED982M8AQAAAA==</code></pre>
+Console.WriteLine(data);
+// MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAED982M8AQAAAA==</code></pre>
 
     
                 <!-- Required only on API pages -->

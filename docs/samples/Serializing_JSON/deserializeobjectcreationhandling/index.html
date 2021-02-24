@@ -192,55 +192,55 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class UserViewModel
+<pre v-highlight:csharp><code v-pre title="Types">public class UserViewModel
+{
+    public string Name { get; set; }
+    public IList&lt;string&gt; Offices { get; private set; }
+
+    public UserViewModel()
+    {
+        Offices = new List&lt;string&gt;
         {
-            public string Name { get; set; }
-            public IList&lt;string&gt; Offices { get; private set; }
+            &quot;Auckland&quot;,
+            &quot;Wellington&quot;,
+            &quot;Christchurch&quot;
+        };
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Name': 'James',
+  'Offices': [
+    'Auckland',
+    'Wellington',
+    'Christchurch'
+  ]
+}&quot;;
 
-            public UserViewModel()
-            {
-                Offices = new List&lt;string&gt;
-                {
-                    &quot;Auckland&quot;,
-                    &quot;Wellington&quot;,
-                    &quot;Christchurch&quot;
-                };
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'Name': 'James',
-              'Offices': [
-                'Auckland',
-                'Wellington',
-                'Christchurch'
-              ]
-            }&quot;;
+UserViewModel model1 = JsonConvert.DeserializeObject&lt;UserViewModel&gt;(json);
 
-            UserViewModel model1 = JsonConvert.DeserializeObject&lt;UserViewModel&gt;(json);
+foreach (string office in model1.Offices)
+{
+    Console.WriteLine(office);
+}
+// Auckland
+// Wellington
+// Christchurch
+// Auckland
+// Wellington
+// Christchurch
 
-            foreach (string office in model1.Offices)
-            {
-                Console.WriteLine(office);
-            }
-            // Auckland
-            // Wellington
-            // Christchurch
-            // Auckland
-            // Wellington
-            // Christchurch
+UserViewModel model2 = JsonConvert.DeserializeObject&lt;UserViewModel&gt;(json, new JsonSerializerSettings
+{
+    ObjectCreationHandling = ObjectCreationHandling.Replace
+});
 
-            UserViewModel model2 = JsonConvert.DeserializeObject&lt;UserViewModel&gt;(json, new JsonSerializerSettings
-            {
-                ObjectCreationHandling = ObjectCreationHandling.Replace
-            });
-
-            foreach (string office in model2.Offices)
-            {
-                Console.WriteLine(office);
-            }
-            // Auckland
-            // Wellington
-            // Christchurch</code></pre>
+foreach (string office in model2.Offices)
+{
+    Console.WriteLine(office);
+}
+// Auckland
+// Wellington
+// Christchurch</code></pre>
 
     
                 <!-- Required only on API pages -->

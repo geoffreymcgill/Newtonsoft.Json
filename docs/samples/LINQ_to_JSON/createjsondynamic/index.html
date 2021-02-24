@@ -192,26 +192,26 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            dynamic product = new JObject();
-            product.ProductName = &quot;Elbow Grease&quot;;
-            product.Enabled = true;
-            product.Price = 4.90m;
-            product.StockCount = 9000;
-            product.StockValue = 44100;
-            product.Tags = new JArray(&quot;Real&quot;, &quot;OnSale&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">dynamic product = new JObject();
+product.ProductName = &quot;Elbow Grease&quot;;
+product.Enabled = true;
+product.Price = 4.90m;
+product.StockCount = 9000;
+product.StockValue = 44100;
+product.Tags = new JArray(&quot;Real&quot;, &quot;OnSale&quot;);
 
-            Console.WriteLine(product.ToString());
-            // {
-            //   &quot;ProductName&quot;: &quot;Elbow Grease&quot;,
-            //   &quot;Enabled&quot;: true,
-            //   &quot;Price&quot;: 4.90,
-            //   &quot;StockCount&quot;: 9000,
-            //   &quot;StockValue&quot;: 44100,
-            //   &quot;Tags&quot;: [
-            //     &quot;Real&quot;,
-            //     &quot;OnSale&quot;
-            //   ]
-            // }</code></pre>
+Console.WriteLine(product.ToString());
+// {
+//   &quot;ProductName&quot;: &quot;Elbow Grease&quot;,
+//   &quot;Enabled&quot;: true,
+//   &quot;Price&quot;: 4.90,
+//   &quot;StockCount&quot;: 9000,
+//   &quot;StockValue&quot;: 44100,
+//   &quot;Tags&quot;: [
+//     &quot;Real&quot;,
+//     &quot;OnSale&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

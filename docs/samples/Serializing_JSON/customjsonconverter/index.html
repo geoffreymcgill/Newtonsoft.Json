@@ -192,86 +192,86 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class KeysJsonConverter : JsonConverter
+<pre v-highlight:csharp><code v-pre title="Types">public class KeysJsonConverter : JsonConverter
+{
+    private readonly Type[] _types;
+
+    public KeysJsonConverter(params Type[] types)
+    {
+        _types = types;
+    }
+
+    public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+    {
+        JToken t = JToken.FromObject(value);
+
+        if (t.Type != JTokenType.Object)
         {
-            private readonly Type[] _types;
-
-            public KeysJsonConverter(params Type[] types)
-            {
-                _types = types;
-            }
-
-            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-            {
-                JToken t = JToken.FromObject(value);
-
-                if (t.Type != JTokenType.Object)
-                {
-                    t.WriteTo(writer);
-                }
-                else
-                {
-                    JObject o = (JObject)t;
-                    IList&lt;string&gt; propertyNames = o.Properties().Select(p =&gt; p.Name).ToList();
-
-                    o.AddFirst(new JProperty(&quot;Keys&quot;, new JArray(propertyNames)));
-
-                    o.WriteTo(writer);
-                }
-            }
-
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-            {
-                throw new NotImplementedException(&quot;Unnecessary because CanRead is false. The type will skip the converter.&quot;);
-            }
-
-            public override bool CanRead
-            {
-                get { return false; }
-            }
-
-            public override bool CanConvert(Type objectType)
-            {
-                return _types.Any(t =&gt; t == objectType);
-            }
+            t.WriteTo(writer);
         }
-
-        public class Employee
+        else
         {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public IList&lt;string&gt; Roles { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Employee employee = new Employee
-            {
-                FirstName = &quot;James&quot;,
-                LastName = &quot;Newton-King&quot;,
-                Roles = new List&lt;string&gt;
-                {
-                    &quot;Admin&quot;
-                }
-            };
+            JObject o = (JObject)t;
+            IList&lt;string&gt; propertyNames = o.Properties().Select(p =&gt; p.Name).ToList();
 
-            string json = JsonConvert.SerializeObject(employee, Formatting.Indented, new KeysJsonConverter(typeof(Employee)));
+            o.AddFirst(new JProperty(&quot;Keys&quot;, new JArray(propertyNames)));
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Keys&quot;: [
-            //     &quot;FirstName&quot;,
-            //     &quot;LastName&quot;,
-            //     &quot;Roles&quot;
-            //   ],
-            //   &quot;FirstName&quot;: &quot;James&quot;,
-            //   &quot;LastName&quot;: &quot;Newton-King&quot;,
-            //   &quot;Roles&quot;: [
-            //     &quot;Admin&quot;
-            //   ]
-            // }
+            o.WriteTo(writer);
+        }
+    }
 
-            Employee newEmployee = JsonConvert.DeserializeObject&lt;Employee&gt;(json, new KeysJsonConverter(typeof(Employee)));
+    public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+    {
+        throw new NotImplementedException(&quot;Unnecessary because CanRead is false. The type will skip the converter.&quot;);
+    }
 
-            Console.WriteLine(newEmployee.FirstName);
-            // James</code></pre>
+    public override bool CanRead
+    {
+        get { return false; }
+    }
+
+    public override bool CanConvert(Type objectType)
+    {
+        return _types.Any(t =&gt; t == objectType);
+    }
+}
+
+public class Employee
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public IList&lt;string&gt; Roles { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Employee employee = new Employee
+{
+    FirstName = &quot;James&quot;,
+    LastName = &quot;Newton-King&quot;,
+    Roles = new List&lt;string&gt;
+    {
+        &quot;Admin&quot;
+    }
+};
+
+string json = JsonConvert.SerializeObject(employee, Formatting.Indented, new KeysJsonConverter(typeof(Employee)));
+
+Console.WriteLine(json);
+// {
+//   &quot;Keys&quot;: [
+//     &quot;FirstName&quot;,
+//     &quot;LastName&quot;,
+//     &quot;Roles&quot;
+//   ],
+//   &quot;FirstName&quot;: &quot;James&quot;,
+//   &quot;LastName&quot;: &quot;Newton-King&quot;,
+//   &quot;Roles&quot;: [
+//     &quot;Admin&quot;
+//   ]
+// }
+
+Employee newEmployee = JsonConvert.DeserializeObject&lt;Employee&gt;(json, new KeysJsonConverter(typeof(Employee)));
+
+Console.WriteLine(newEmployee.FirstName);
+// James</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,42 +192,42 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = new JObject
-            {
-                { &quot;Cpu&quot;, &quot;Intel&quot; },
-                { &quot;Memory&quot;, 32 },
-                {
-                    &quot;Drives&quot;, new JArray
-                    {
-                        &quot;DVD&quot;,
-                        &quot;SSD&quot;
-                    }
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = new JObject
+{
+    { &quot;Cpu&quot;, &quot;Intel&quot; },
+    { &quot;Memory&quot;, 32 },
+    {
+        &quot;Drives&quot;, new JArray
+        {
+            &quot;DVD&quot;,
+            &quot;SSD&quot;
+        }
+    }
+};
 
-            JsonReader reader = o.CreateReader();
-            while (reader.Read())
-            {
-                Console.Write(reader.TokenType);
-                if (reader.Value != null)
-                {
-                    Console.Write(&quot; - &quot; + reader.Value);
-                }
+JsonReader reader = o.CreateReader();
+while (reader.Read())
+{
+    Console.Write(reader.TokenType);
+    if (reader.Value != null)
+    {
+        Console.Write(&quot; - &quot; + reader.Value);
+    }
 
-                Console.WriteLine();
-            }
+    Console.WriteLine();
+}
 
-            // StartObject
-            // PropertyName - Cpu
-            // String - Intel
-            // PropertyName - Memory
-            // Integer - 32
-            // PropertyName - Drives
-            // StartArray
-            // String - DVD
-            // String - SSD
-            // EndArray
-            // EndObject</code></pre>
+// StartObject
+// PropertyName - Cpu
+// String - Intel
+// PropertyName - Memory
+// Integer - 32
+// PropertyName - Drives
+// StartArray
+// String - DVD
+// String - SSD
+// EndArray
+// EndObject</code></pre>
 
     
                 <!-- Required only on API pages -->

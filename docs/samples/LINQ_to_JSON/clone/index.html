@@ -192,37 +192,37 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o1 = new JObject
-            {
-                { &quot;String&quot;, &quot;A string!&quot; },
-                { &quot;Items&quot;, new JArray(1, 2) }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o1 = new JObject
+{
+    { &quot;String&quot;, &quot;A string!&quot; },
+    { &quot;Items&quot;, new JArray(1, 2) }
+};
 
-            Console.WriteLine(o1.ToString());
-            // {
-            //   &quot;String&quot;: &quot;A string!&quot;,
-            //   &quot;Items&quot;: [
-            //     1,
-            //     2
-            //   ]
-            // }
+Console.WriteLine(o1.ToString());
+// {
+//   &quot;String&quot;: &quot;A string!&quot;,
+//   &quot;Items&quot;: [
+//     1,
+//     2
+//   ]
+// }
 
-            JObject o2 = (JObject)o1.DeepClone();
+JObject o2 = (JObject)o1.DeepClone();
 
-            Console.WriteLine(o2.ToString());
-            // {
-            //   &quot;String&quot;: &quot;A string!&quot;,
-            //   &quot;Items&quot;: [
-            //     1,
-            //     2
-            //   ]
-            // }
+Console.WriteLine(o2.ToString());
+// {
+//   &quot;String&quot;: &quot;A string!&quot;,
+//   &quot;Items&quot;: [
+//     1,
+//     2
+//   ]
+// }
 
-            Console.WriteLine(JToken.DeepEquals(o1, o2));
-            // true
+Console.WriteLine(JToken.DeepEquals(o1, o2));
+// true
 
-            Console.WriteLine(Object.ReferenceEquals(o1, o2));
-            // false</code></pre>
+Console.WriteLine(Object.ReferenceEquals(o1, o2));
+// false</code></pre>
 
     
                 <!-- Required only on API pages -->

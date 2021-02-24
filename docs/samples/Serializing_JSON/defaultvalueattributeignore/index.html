@@ -192,35 +192,35 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Customer
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Customer
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
-            [DefaultValue(&quot; &quot;)]
-            public string FullName
-            {
-                get { return FirstName + &quot; &quot; + LastName; }
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Customer customer = new Customer();
+    [DefaultValue(&quot; &quot;)]
+    public string FullName
+    {
+        get { return FirstName + &quot; &quot; + LastName; }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Customer customer = new Customer();
 
-            string jsonIncludeDefaultValues = JsonConvert.SerializeObject(customer, Formatting.Indented);
+string jsonIncludeDefaultValues = JsonConvert.SerializeObject(customer, Formatting.Indented);
 
-            Console.WriteLine(jsonIncludeDefaultValues);
-            // {
-            //   &quot;FirstName&quot;: null,
-            //   &quot;LastName&quot;: null,
-            //   &quot;FullName&quot;: &quot; &quot;
-            // }
+Console.WriteLine(jsonIncludeDefaultValues);
+// {
+//   &quot;FirstName&quot;: null,
+//   &quot;LastName&quot;: null,
+//   &quot;FullName&quot;: &quot; &quot;
+// }
 
-            string jsonIgnoreDefaultValues = JsonConvert.SerializeObject(customer, Formatting.Indented, new JsonSerializerSettings
-            {
-                DefaultValueHandling = DefaultValueHandling.Ignore
-            });
+string jsonIgnoreDefaultValues = JsonConvert.SerializeObject(customer, Formatting.Indented, new JsonSerializerSettings
+{
+    DefaultValueHandling = DefaultValueHandling.Ignore
+});
 
-            Console.WriteLine(jsonIgnoreDefaultValues);
-            // {}</code></pre>
+Console.WriteLine(jsonIgnoreDefaultValues);
+// {}</code></pre>
 
     
                 <!-- Required only on API pages -->

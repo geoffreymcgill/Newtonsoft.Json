@@ -192,62 +192,62 @@
         <span>Example</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="CustomCreationConverter">        public interface IPerson
-        {
-            string FirstName { get; set; }
-            string LastName { get; set; }
-            DateTime BirthDate { get; set; }
-        }
+<pre v-highlight:csharp><code v-pre title="CustomCreationConverter">public interface IPerson
+{
+    string FirstName { get; set; }
+    string LastName { get; set; }
+    DateTime BirthDate { get; set; }
+}
 
-        public class Employee : IPerson
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public DateTime BirthDate { get; set; }
+public class Employee : IPerson
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public DateTime BirthDate { get; set; }
 
-            public string Department { get; set; }
-            public string JobTitle { get; set; }
-        }
+    public string Department { get; set; }
+    public string JobTitle { get; set; }
+}
 
-        public class PersonConverter : CustomCreationConverter&lt;IPerson&gt;
-        {
-            public override IPerson Create(Type objectType)
-            {
-                return new Employee();
-            }
-        }</code></pre>
+public class PersonConverter : CustomCreationConverter&lt;IPerson&gt;
+{
+    public override IPerson Create(Type objectType)
+    {
+        return new Employee();
+    }
+}</code></pre>
 <p>This is an extremely simple example. A more complicated scenario could involve an object factory or service locator that resolves the object at runtime.</p>
-<pre v-highlight:csharp><code v-pre title="CustomCreationConverter Example">            //[
-            //  {
-            //    &quot;FirstName&quot;: &quot;Maurice&quot;,
-            //    &quot;LastName&quot;: &quot;Moss&quot;,
-            //    &quot;BirthDate&quot;: &quot;1981-03-08T00:00Z&quot;,
-            //    &quot;Department&quot;: &quot;IT&quot;,
-            //    &quot;JobTitle&quot;: &quot;Support&quot;
-            //  },
-            //  {
-            //    &quot;FirstName&quot;: &quot;Jen&quot;,
-            //    &quot;LastName&quot;: &quot;Barber&quot;,
-            //    &quot;BirthDate&quot;: &quot;1985-12-10T00:00Z&quot;,
-            //    &quot;Department&quot;: &quot;IT&quot;,
-            //    &quot;JobTitle&quot;: &quot;Manager&quot;
-            //  }
-            //]
+<pre v-highlight:csharp><code v-pre title="CustomCreationConverter Example">//[
+//  {
+//    &quot;FirstName&quot;: &quot;Maurice&quot;,
+//    &quot;LastName&quot;: &quot;Moss&quot;,
+//    &quot;BirthDate&quot;: &quot;1981-03-08T00:00Z&quot;,
+//    &quot;Department&quot;: &quot;IT&quot;,
+//    &quot;JobTitle&quot;: &quot;Support&quot;
+//  },
+//  {
+//    &quot;FirstName&quot;: &quot;Jen&quot;,
+//    &quot;LastName&quot;: &quot;Barber&quot;,
+//    &quot;BirthDate&quot;: &quot;1985-12-10T00:00Z&quot;,
+//    &quot;Department&quot;: &quot;IT&quot;,
+//    &quot;JobTitle&quot;: &quot;Manager&quot;
+//  }
+//]
 
-            List&lt;IPerson&gt; people = JsonConvert.DeserializeObject&lt;List&lt;IPerson&gt;&gt;(json, new PersonConverter());
+List&lt;IPerson&gt; people = JsonConvert.DeserializeObject&lt;List&lt;IPerson&gt;&gt;(json, new PersonConverter());
 
-            IPerson person = people[0];
+IPerson person = people[0];
 
-            Console.WriteLine(person.GetType());
-            // Newtonsoft.Json.Tests.Employee
+Console.WriteLine(person.GetType());
+// Newtonsoft.Json.Tests.Employee
 
-            Console.WriteLine(person.FirstName);
-            // Maurice
+Console.WriteLine(person.FirstName);
+// Maurice
 
-            Employee employee = (Employee)person;
+Employee employee = (Employee)person;
 
-            Console.WriteLine(employee.JobTitle);
-            // Support</code></pre>
+Console.WriteLine(employee.JobTitle);
+// Support</code></pre>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

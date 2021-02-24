@@ -192,27 +192,27 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Videogame
-        {
-            [JsonProperty(&quot;name&quot;)]
-            public string Name { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Videogame
+{
+    [JsonProperty(&quot;name&quot;)]
+    public string Name { get; set; }
 
-            [JsonProperty(&quot;release_date&quot;)]
-            public DateTime ReleaseDate { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Videogame starcraft = new Videogame
-            {
-                Name = &quot;Starcraft&quot;,
-                ReleaseDate = new DateTime(1998, 1, 1)
-            };
+    [JsonProperty(&quot;release_date&quot;)]
+    public DateTime ReleaseDate { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Videogame starcraft = new Videogame
+{
+    Name = &quot;Starcraft&quot;,
+    ReleaseDate = new DateTime(1998, 1, 1)
+};
 
-            string json = JsonConvert.SerializeObject(starcraft, Formatting.Indented);
+string json = JsonConvert.SerializeObject(starcraft, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;name&quot;: &quot;Starcraft&quot;,
-            //   &quot;release_date&quot;: &quot;1998-01-01T00:00:00&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;name&quot;: &quot;Starcraft&quot;,
+//   &quot;release_date&quot;: &quot;1998-01-01T00:00:00&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

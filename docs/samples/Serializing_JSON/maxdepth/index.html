@@ -192,28 +192,28 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;[
-              [
-                [
-                  '1',
-                  'Two',
-                  'III'
-                ]
-              ]
-            ]&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;[
+  [
+    [
+      '1',
+      'Two',
+      'III'
+    ]
+  ]
+]&quot;;
 
-            try
-            {
-                JsonConvert.DeserializeObject&lt;List&lt;IList&lt;IList&lt;string&gt;&gt;&gt;&gt;(json, new JsonSerializerSettings
-                {
-                    MaxDepth = 2
-                });
-            }
-            catch (JsonReaderException ex)
-            {
-                Console.WriteLine(ex.Message);
-                // The reader's MaxDepth of 2 has been exceeded. Path '[0][0]', line 3, position 12.
-            }</code></pre>
+try
+{
+    JsonConvert.DeserializeObject&lt;List&lt;IList&lt;IList&lt;string&gt;&gt;&gt;&gt;(json, new JsonSerializerSettings
+    {
+        MaxDepth = 2
+    });
+}
+catch (JsonReaderException ex)
+{
+    Console.WriteLine(ex.Message);
+    // The reader's MaxDepth of 2 has been exceeded. Path '[0][0]', line 3, position 12.
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

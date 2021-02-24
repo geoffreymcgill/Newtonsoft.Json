@@ -192,33 +192,33 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Person
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
-            public string FullName
-            {
-                get { return FirstName + &quot; &quot; + LastName; }
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Person person = new Person
-            {
-                FirstName = &quot;Sarah&quot;,
-                LastName = &quot;Security&quot;
-            };
+    public string FullName
+    {
+        get { return FirstName + &quot; &quot; + LastName; }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person
+{
+    FirstName = &quot;Sarah&quot;,
+    LastName = &quot;Security&quot;
+};
 
-            string json = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            });
+string json = JsonConvert.SerializeObject(person, Formatting.Indented, new JsonSerializerSettings
+{
+    ContractResolver = new CamelCasePropertyNamesContractResolver()
+});
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;firstName&quot;: &quot;Sarah&quot;,
-            //   &quot;lastName&quot;: &quot;Security&quot;,
-            //   &quot;fullName&quot;: &quot;Sarah Security&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;firstName&quot;: &quot;Sarah&quot;,
+//   &quot;lastName&quot;: &quot;Security&quot;,
+//   &quot;fullName&quot;: &quot;Sarah Security&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

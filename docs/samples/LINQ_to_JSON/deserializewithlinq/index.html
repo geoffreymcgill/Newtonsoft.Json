@@ -200,33 +200,33 @@
     public string Body { get; set; }
     public DateTime PostedDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;[
-              {
-                'Title': 'Json.NET is awesome!',
-                'Author': {
-                  'Name': 'James Newton-King',
-                  'Twitter': '@JamesNK',
-                  'Picture': '/jamesnk.png'
-                },
-                'Date': '2013-01-23T19:30:00',
-                'BodyHtml': '&amp;lt;h3&amp;gt;Title!&amp;lt;/h3&amp;gt;\r\n&amp;lt;p&amp;gt;Content!&amp;lt;/p&amp;gt;'
-              }
-            ]&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;[
+  {
+    'Title': 'Json.NET is awesome!',
+    'Author': {
+      'Name': 'James Newton-King',
+      'Twitter': '@JamesNK',
+      'Picture': '/jamesnk.png'
+    },
+    'Date': '2013-01-23T19:30:00',
+    'BodyHtml': '&amp;lt;h3&amp;gt;Title!&amp;lt;/h3&amp;gt;\r\n&amp;lt;p&amp;gt;Content!&amp;lt;/p&amp;gt;'
+  }
+]&quot;;
 
-            JArray blogPostArray = JArray.Parse(json);
+JArray blogPostArray = JArray.Parse(json);
 
-            IList&lt;BlogPost&gt; blogPosts = blogPostArray.Select(p =&gt; new BlogPost
-            {
-                Title = (string)p[&quot;Title&quot;],
-                AuthorName = (string)p[&quot;Author&quot;][&quot;Name&quot;],
-                AuthorTwitter = (string)p[&quot;Author&quot;][&quot;Twitter&quot;],
-                PostedDate = (DateTime)p[&quot;Date&quot;],
-                Body = HttpUtility.HtmlDecode((string)p[&quot;BodyHtml&quot;])
-            }).ToList();
+IList&lt;BlogPost&gt; blogPosts = blogPostArray.Select(p =&gt; new BlogPost
+{
+    Title = (string)p[&quot;Title&quot;],
+    AuthorName = (string)p[&quot;Author&quot;][&quot;Name&quot;],
+    AuthorTwitter = (string)p[&quot;Author&quot;][&quot;Twitter&quot;],
+    PostedDate = (DateTime)p[&quot;Date&quot;],
+    Body = HttpUtility.HtmlDecode((string)p[&quot;BodyHtml&quot;])
+}).ToList();
 
-            Console.WriteLine(blogPosts[0].Body);
-            // &lt;h3&gt;Title!&lt;/h3&gt;
-            // &lt;p&gt;Content!&lt;/p&gt;</code></pre>
+Console.WriteLine(blogPosts[0].Body);
+// &lt;h3&gt;Title!&lt;/h3&gt;
+// &lt;p&gt;Content!&lt;/p&gt;</code></pre>
 
     
                 <!-- Required only on API pages -->

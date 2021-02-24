@@ -192,19 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject videogameRatings = new JObject(
-                new JProperty(&quot;Halo&quot;, 9),
-                new JProperty(&quot;Starcraft&quot;, 9),
-                new JProperty(&quot;Call of Duty&quot;, 7.5));
+<pre v-highlight:csharp><code v-pre title="Usage">JObject videogameRatings = new JObject(
+    new JProperty(&quot;Halo&quot;, 9),
+    new JProperty(&quot;Starcraft&quot;, 9),
+    new JProperty(&quot;Call of Duty&quot;, 7.5));
 
-            File.WriteAllText(@&quot;c:\videogames.json&quot;, videogameRatings.ToString());
+File.WriteAllText(@&quot;c:\videogames.json&quot;, videogameRatings.ToString());
 
-            // write JSON directly to a file
-            using (StreamWriter file = File.CreateText(@&quot;c:\videogames.json&quot;))
-            using (JsonTextWriter writer = new JsonTextWriter(file))
-            {
-                videogameRatings.WriteTo(writer);
-            }</code></pre>
+// write JSON directly to a file
+using (StreamWriter file = File.CreateText(@&quot;c:\videogames.json&quot;))
+using (JsonTextWriter writer = new JsonTextWriter(file))
+{
+    videogameRatings.WriteTo(writer);
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

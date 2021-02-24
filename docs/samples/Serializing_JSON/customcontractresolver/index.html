@@ -192,59 +192,59 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class DynamicContractResolver : DefaultContractResolver
-        {
-            private readonly char _startingWithChar;
+<pre v-highlight:csharp><code v-pre title="Types">public class DynamicContractResolver : DefaultContractResolver
+{
+    private readonly char _startingWithChar;
 
-            public DynamicContractResolver(char startingWithChar)
-            {
-                _startingWithChar = startingWithChar;
-            }
+    public DynamicContractResolver(char startingWithChar)
+    {
+        _startingWithChar = startingWithChar;
+    }
 
-            protected override IList&lt;JsonProperty&gt; CreateProperties(Type type, MemberSerialization memberSerialization)
-            {
-                IList&lt;JsonProperty&gt; properties = base.CreateProperties(type, memberSerialization);
+    protected override IList&lt;JsonProperty&gt; CreateProperties(Type type, MemberSerialization memberSerialization)
+    {
+        IList&lt;JsonProperty&gt; properties = base.CreateProperties(type, memberSerialization);
 
-                // only serializer properties that start with the specified character
-                properties =
-                    properties.Where(p =&gt; p.PropertyName.StartsWith(_startingWithChar.ToString())).ToList();
+        // only serializer properties that start with the specified character
+        properties =
+            properties.Where(p =&gt; p.PropertyName.StartsWith(_startingWithChar.ToString())).ToList();
 
-                return properties;
-            }
-        }
+        return properties;
+    }
+}
 
-        public class Person
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
+public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
 
-            public string FullName
-            {
-                get { return FirstName + &quot; &quot; + LastName; }
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Person person = new Person
-            {
-                FirstName = &quot;Dennis&quot;,
-                LastName = &quot;Deepwater-Diver&quot;
-            };
+    public string FullName
+    {
+        get { return FirstName + &quot; &quot; + LastName; }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person
+{
+    FirstName = &quot;Dennis&quot;,
+    LastName = &quot;Deepwater-Diver&quot;
+};
 
-            string startingWithF = JsonConvert.SerializeObject(person, Formatting.Indented,
-                new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('F') });
+string startingWithF = JsonConvert.SerializeObject(person, Formatting.Indented,
+    new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('F') });
 
-            Console.WriteLine(startingWithF);
-            // {
-            //   &quot;FirstName&quot;: &quot;Dennis&quot;,
-            //   &quot;FullName&quot;: &quot;Dennis Deepwater-Diver&quot;
-            // }
+Console.WriteLine(startingWithF);
+// {
+//   &quot;FirstName&quot;: &quot;Dennis&quot;,
+//   &quot;FullName&quot;: &quot;Dennis Deepwater-Diver&quot;
+// }
 
-            string startingWithL = JsonConvert.SerializeObject(person, Formatting.Indented,
-                new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('L') });
+string startingWithL = JsonConvert.SerializeObject(person, Formatting.Indented,
+    new JsonSerializerSettings { ContractResolver = new DynamicContractResolver('L') });
 
-            Console.WriteLine(startingWithL);
-            // {
-            //   &quot;LastName&quot;: &quot;Deepwater-Diver&quot;
-            // }</code></pre>
+Console.WriteLine(startingWithL);
+// {
+//   &quot;LastName&quot;: &quot;Deepwater-Diver&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

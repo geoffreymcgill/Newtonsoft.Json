@@ -192,46 +192,46 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JValue v1 = new JValue(&quot;1&quot;);
-            int i = (int)v1;
+<pre v-highlight:csharp><code v-pre title="Usage">JValue v1 = new JValue(&quot;1&quot;);
+int i = (int)v1;
 
-            Console.WriteLine(i);
-            // 1
+Console.WriteLine(i);
+// 1
 
-            JValue v2 = new JValue(true);
-            bool b = (bool)v2;
+JValue v2 = new JValue(true);
+bool b = (bool)v2;
 
-            Console.WriteLine(b);
-            // true
+Console.WriteLine(b);
+// true
 
-            JValue v3 = new JValue(&quot;19.95&quot;);
-            decimal d = (decimal)v3;
+JValue v3 = new JValue(&quot;19.95&quot;);
+decimal d = (decimal)v3;
 
-            Console.WriteLine(d);
-            // 19.95
+Console.WriteLine(d);
+// 19.95
 
-            JValue v4 = new JValue(new DateTime(2013, 1, 21));
-            string s = (string)v4;
+JValue v4 = new JValue(new DateTime(2013, 1, 21));
+string s = (string)v4;
 
-            Console.WriteLine(s);
-            // 01/21/2013 00:00:00
+Console.WriteLine(s);
+// 01/21/2013 00:00:00
 
-            JValue v5 = new JValue(&quot;http://www.bing.com&quot;);
-            Uri u = (Uri)v5;
+JValue v5 = new JValue(&quot;http://www.bing.com&quot;);
+Uri u = (Uri)v5;
 
-            Console.WriteLine(u);
-            // http://www.bing.com/
+Console.WriteLine(u);
+// http://www.bing.com/
 
-            JValue v6 = JValue.CreateNull();
-            u = (Uri)v6;
+JValue v6 = JValue.CreateNull();
+u = (Uri)v6;
 
-            Console.WriteLine((u != null) ? u.ToString() : &quot;{null}&quot;);
-            // {null}
+Console.WriteLine((u != null) ? u.ToString() : &quot;{null}&quot;);
+// {null}
 
-            DateTime? dt = (DateTime?)v6;
+DateTime? dt = (DateTime?)v6;
 
-            Console.WriteLine((dt != null) ? dt.ToString() : &quot;{null}&quot;);
-            // {null}</code></pre>
+Console.WriteLine((dt != null) ? dt.ToString() : &quot;{null}&quot;);
+// {null}</code></pre>
 
     
                 <!-- Required only on API pages -->

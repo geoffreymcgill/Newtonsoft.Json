@@ -192,89 +192,89 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Directory
-        {
-            public string Name { get; set; }
-            public Directory Parent { get; set; }
-            public IList&lt;File&gt; Files { get; set; }
-        }
+<pre v-highlight:csharp><code v-pre title="Types">public class Directory
+{
+    public string Name { get; set; }
+    public Directory Parent { get; set; }
+    public IList&lt;File&gt; Files { get; set; }
+}
 
-        public class File
-        {
-            public string Name { get; set; }
-            public Directory Parent { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Directory root = new Directory { Name = &quot;Root&quot; };
-            Directory documents = new Directory { Name = &quot;My Documents&quot;, Parent = root };
+public class File
+{
+    public string Name { get; set; }
+    public Directory Parent { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Directory root = new Directory { Name = &quot;Root&quot; };
+Directory documents = new Directory { Name = &quot;My Documents&quot;, Parent = root };
 
-            File file = new File { Name = &quot;ImportantLegalDocument.docx&quot;, Parent = documents };
+File file = new File { Name = &quot;ImportantLegalDocument.docx&quot;, Parent = documents };
 
-            documents.Files = new List&lt;File&gt; { file };
+documents.Files = new List&lt;File&gt; { file };
 
-            try
-            {
-                JsonConvert.SerializeObject(documents, Formatting.Indented);
-            }
-            catch (JsonSerializationException)
-            {
-                // Self referencing loop detected for property 'Parent' with type
-                // 'Newtonsoft.Json.Tests.Documentation.Examples.ReferenceLoopHandlingObject+Directory'. Path 'Files[0]'.
-            }
+try
+{
+    JsonConvert.SerializeObject(documents, Formatting.Indented);
+}
+catch (JsonSerializationException)
+{
+    // Self referencing loop detected for property 'Parent' with type
+    // 'Newtonsoft.Json.Tests.Documentation.Examples.ReferenceLoopHandlingObject+Directory'. Path 'Files[0]'.
+}
 
-            string preserveReferenacesAll = JsonConvert.SerializeObject(documents, Formatting.Indented, new JsonSerializerSettings
-            {
-                PreserveReferencesHandling = PreserveReferencesHandling.All
-            });
+string preserveReferenacesAll = JsonConvert.SerializeObject(documents, Formatting.Indented, new JsonSerializerSettings
+{
+    PreserveReferencesHandling = PreserveReferencesHandling.All
+});
 
-            Console.WriteLine(preserveReferenacesAll);
-            // {
-            //   &quot;$id&quot;: &quot;1&quot;,
-            //   &quot;Name&quot;: &quot;My Documents&quot;,
-            //   &quot;Parent&quot;: {
-            //     &quot;$id&quot;: &quot;2&quot;,
-            //     &quot;Name&quot;: &quot;Root&quot;,
-            //     &quot;Parent&quot;: null,
-            //     &quot;Files&quot;: null
-            //   },
-            //   &quot;Files&quot;: {
-            //     &quot;$id&quot;: &quot;3&quot;,
-            //     &quot;$values&quot;: [
-            //       {
-            //         &quot;$id&quot;: &quot;4&quot;,
-            //         &quot;Name&quot;: &quot;ImportantLegalDocument.docx&quot;,
-            //         &quot;Parent&quot;: {
-            //           &quot;$ref&quot;: &quot;1&quot;
-            //         }
-            //       }
-            //     ]
-            //   }
-            // }
+Console.WriteLine(preserveReferenacesAll);
+// {
+//   &quot;$id&quot;: &quot;1&quot;,
+//   &quot;Name&quot;: &quot;My Documents&quot;,
+//   &quot;Parent&quot;: {
+//     &quot;$id&quot;: &quot;2&quot;,
+//     &quot;Name&quot;: &quot;Root&quot;,
+//     &quot;Parent&quot;: null,
+//     &quot;Files&quot;: null
+//   },
+//   &quot;Files&quot;: {
+//     &quot;$id&quot;: &quot;3&quot;,
+//     &quot;$values&quot;: [
+//       {
+//         &quot;$id&quot;: &quot;4&quot;,
+//         &quot;Name&quot;: &quot;ImportantLegalDocument.docx&quot;,
+//         &quot;Parent&quot;: {
+//           &quot;$ref&quot;: &quot;1&quot;
+//         }
+//       }
+//     ]
+//   }
+// }
 
-            string preserveReferenacesObjects = JsonConvert.SerializeObject(documents, Formatting.Indented, new JsonSerializerSettings
-            {
-                PreserveReferencesHandling = PreserveReferencesHandling.Objects
-            });
+string preserveReferenacesObjects = JsonConvert.SerializeObject(documents, Formatting.Indented, new JsonSerializerSettings
+{
+    PreserveReferencesHandling = PreserveReferencesHandling.Objects
+});
 
-            Console.WriteLine(preserveReferenacesObjects);
-            // {
-            //   &quot;$id&quot;: &quot;1&quot;,
-            //   &quot;Name&quot;: &quot;My Documents&quot;,
-            //   &quot;Parent&quot;: {
-            //     &quot;$id&quot;: &quot;2&quot;,
-            //     &quot;Name&quot;: &quot;Root&quot;,
-            //     &quot;Parent&quot;: null,
-            //     &quot;Files&quot;: null
-            //   },
-            //   &quot;Files&quot;: [
-            //     {
-            //       &quot;$id&quot;: &quot;3&quot;,
-            //       &quot;Name&quot;: &quot;ImportantLegalDocument.docx&quot;,
-            //       &quot;Parent&quot;: {
-            //         &quot;$ref&quot;: &quot;1&quot;
-            //       }
-            //     }
-            //   ]
-            // }</code></pre>
+Console.WriteLine(preserveReferenacesObjects);
+// {
+//   &quot;$id&quot;: &quot;1&quot;,
+//   &quot;Name&quot;: &quot;My Documents&quot;,
+//   &quot;Parent&quot;: {
+//     &quot;$id&quot;: &quot;2&quot;,
+//     &quot;Name&quot;: &quot;Root&quot;,
+//     &quot;Parent&quot;: null,
+//     &quot;Files&quot;: null
+//   },
+//   &quot;Files&quot;: [
+//     {
+//       &quot;$id&quot;: &quot;3&quot;,
+//       &quot;Name&quot;: &quot;ImportantLegalDocument.docx&quot;,
+//       &quot;Parent&quot;: {
+//         &quot;$ref&quot;: &quot;1&quot;
+//       }
+//     }
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

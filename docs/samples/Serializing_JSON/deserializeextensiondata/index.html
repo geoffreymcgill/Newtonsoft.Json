@@ -192,49 +192,49 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class DirectoryAccount
-        {
-            // normal deserialization
-            public string DisplayName { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class DirectoryAccount
+{
+    // normal deserialization
+    public string DisplayName { get; set; }
 
-            // these properties are set in OnDeserialized
-            public string UserName { get; set; }
-            public string Domain { get; set; }
+    // these properties are set in OnDeserialized
+    public string UserName { get; set; }
+    public string Domain { get; set; }
 
-            [JsonExtensionData]
-            private IDictionary&lt;string, JToken&gt; _additionalData;
+    [JsonExtensionData]
+    private IDictionary&lt;string, JToken&gt; _additionalData;
 
-            [OnDeserialized]
-            private void OnDeserialized(StreamingContext context)
-            {
-                // SAMAccountName is not deserialized to any property
-                // and so it is added to the extension data dictionary
-                string samAccountName = (string)_additionalData[&quot;SAMAccountName&quot;];
+    [OnDeserialized]
+    private void OnDeserialized(StreamingContext context)
+    {
+        // SAMAccountName is not deserialized to any property
+        // and so it is added to the extension data dictionary
+        string samAccountName = (string)_additionalData[&quot;SAMAccountName&quot;];
 
-                Domain = samAccountName.Split('\\')[0];
-                UserName = samAccountName.Split('\\')[1];
-            }
+        Domain = samAccountName.Split('\\')[0];
+        UserName = samAccountName.Split('\\')[1];
+    }
 
-            public DirectoryAccount()
-            {
-                _additionalData = new Dictionary&lt;string, JToken&gt;();
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'DisplayName': 'John Smith',
-              'SAMAccountName': 'contoso\\johns'
-            }&quot;;
+    public DirectoryAccount()
+    {
+        _additionalData = new Dictionary&lt;string, JToken&gt;();
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'DisplayName': 'John Smith',
+  'SAMAccountName': 'contoso\\johns'
+}&quot;;
 
-            DirectoryAccount account = JsonConvert.DeserializeObject&lt;DirectoryAccount&gt;(json);
+DirectoryAccount account = JsonConvert.DeserializeObject&lt;DirectoryAccount&gt;(json);
 
-            Console.WriteLine(account.DisplayName);
-            // John Smith
+Console.WriteLine(account.DisplayName);
+// John Smith
 
-            Console.WriteLine(account.Domain);
-            // contoso
+Console.WriteLine(account.Domain);
+// contoso
 
-            Console.WriteLine(account.UserName);
-            // johns</code></pre>
+Console.WriteLine(account.UserName);
+// johns</code></pre>
 
     
                 <!-- Required only on API pages -->

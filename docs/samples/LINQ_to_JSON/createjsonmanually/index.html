@@ -192,20 +192,20 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JArray array = new JArray();
-            array.Add(&quot;Manual text&quot;);
-            array.Add(new DateTime(2000, 5, 23));
+<pre v-highlight:csharp><code v-pre title="Usage">JArray array = new JArray();
+array.Add(&quot;Manual text&quot;);
+array.Add(new DateTime(2000, 5, 23));
 
-            JObject o = new JObject();
-            o[&quot;MyArray&quot;] = array;
+JObject o = new JObject();
+o[&quot;MyArray&quot;] = array;
 
-            string json = o.ToString();
-            // {
-            //   &quot;MyArray&quot;: [
-            //     &quot;Manual text&quot;,
-            //     &quot;2000-05-23T00:00:00&quot;
-            //   ]
-            // }</code></pre>
+string json = o.ToString();
+// {
+//   &quot;MyArray&quot;: [
+//     &quot;Manual text&quot;,
+//     &quot;2000-05-23T00:00:00&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,61 +192,61 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Business
-        {
-            public string Name { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Business
+{
+    public string Name { get; set; }
 
-            [JsonProperty(ItemIsReference = true)]
-            public IList&lt;Employee&gt; Employees { get; set; }
-        }
+    [JsonProperty(ItemIsReference = true)]
+    public IList&lt;Employee&gt; Employees { get; set; }
+}
 
-        public class Employee
-        {
-            public string Name { get; set; }
+public class Employee
+{
+    public string Name { get; set; }
 
-            [JsonProperty(IsReference = true)]
-            public Employee Manager { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Employee manager = new Employee
-            {
-                Name = &quot;George-Michael&quot;
-            };
-            Employee worker = new Employee
-            {
-                Name = &quot;Maeby&quot;,
-                Manager = manager
-            };
+    [JsonProperty(IsReference = true)]
+    public Employee Manager { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Employee manager = new Employee
+{
+    Name = &quot;George-Michael&quot;
+};
+Employee worker = new Employee
+{
+    Name = &quot;Maeby&quot;,
+    Manager = manager
+};
 
-            Business business = new Business
-            {
-                Name = &quot;Acme Ltd.&quot;,
-                Employees = new List&lt;Employee&gt;
-                {
-                    manager,
-                    worker
-                }
-            };
+Business business = new Business
+{
+    Name = &quot;Acme Ltd.&quot;,
+    Employees = new List&lt;Employee&gt;
+    {
+        manager,
+        worker
+    }
+};
 
-            string json = JsonConvert.SerializeObject(business, Formatting.Indented);
+string json = JsonConvert.SerializeObject(business, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Name&quot;: &quot;Acme Ltd.&quot;,
-            //   &quot;Employees&quot;: [
-            //     {
-            //       &quot;$id&quot;: &quot;1&quot;,
-            //       &quot;Name&quot;: &quot;George-Michael&quot;,
-            //       &quot;Manager&quot;: null
-            //     },
-            //     {
-            //       &quot;$id&quot;: &quot;2&quot;,
-            //       &quot;Name&quot;: &quot;Maeby&quot;,
-            //       &quot;Manager&quot;: {
-            //         &quot;$ref&quot;: &quot;1&quot;
-            //       }
-            //     }
-            //   ]
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;Name&quot;: &quot;Acme Ltd.&quot;,
+//   &quot;Employees&quot;: [
+//     {
+//       &quot;$id&quot;: &quot;1&quot;,
+//       &quot;Name&quot;: &quot;George-Michael&quot;,
+//       &quot;Manager&quot;: null
+//     },
+//     {
+//       &quot;$id&quot;: &quot;2&quot;,
+//       &quot;Name&quot;: &quot;Maeby&quot;,
+//       &quot;Manager&quot;: {
+//         &quot;$ref&quot;: &quot;1&quot;
+//       }
+//     }
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,19 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JValue s = new JValue(&quot;A string value&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JValue s = new JValue(&quot;A string value&quot;);
 
-            Console.WriteLine(s.Value.GetType().Name);
-            // String
-            Console.WriteLine(s.Value);
-            // A string value
+Console.WriteLine(s.Value.GetType().Name);
+// String
+Console.WriteLine(s.Value);
+// A string value
 
-            JValue u = new JValue(new Uri(&quot;http://www.google.com/&quot;));
+JValue u = new JValue(new Uri(&quot;http://www.google.com/&quot;));
 
-            Console.WriteLine(u.Value.GetType().Name);
-            // Uri
-            Console.WriteLine(u.Value);
-            // http://www.google.com/</code></pre>
+Console.WriteLine(u.Value.GetType().Name);
+// Uri
+Console.WriteLine(u.Value);
+// http://www.google.com/</code></pre>
 
     
                 <!-- Required only on API pages -->

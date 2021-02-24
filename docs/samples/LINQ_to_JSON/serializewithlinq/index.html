@@ -200,46 +200,46 @@
     public string Body { get; set; }
     public DateTime PostedDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            IList&lt;BlogPost&gt; blogPosts = new List&lt;BlogPost&gt;
+<pre v-highlight:csharp><code v-pre title="Usage">IList&lt;BlogPost&gt; blogPosts = new List&lt;BlogPost&gt;
+{
+    new BlogPost
+    {
+        Title = &quot;Json.NET is awesome!&quot;,
+        AuthorName = &quot;James Newton-King&quot;,
+        AuthorTwitter = &quot;JamesNK&quot;,
+        PostedDate = new DateTime(2013, 1, 23, 19, 30, 0),
+        Body = @&quot;&lt;h3&gt;Title!&lt;/h3&gt;&lt;p&gt;Content!&lt;/p&gt;&quot;
+    }
+};
+
+JArray blogPostsArray = new JArray(
+    blogPosts.Select(p =&gt; new JObject
+    {
+        { &quot;Title&quot;, p.Title },
+        {
+            &quot;Author&quot;, new JObject
             {
-                new BlogPost
-                {
-                    Title = &quot;Json.NET is awesome!&quot;,
-                    AuthorName = &quot;James Newton-King&quot;,
-                    AuthorTwitter = &quot;JamesNK&quot;,
-                    PostedDate = new DateTime(2013, 1, 23, 19, 30, 0),
-                    Body = @&quot;&lt;h3&gt;Title!&lt;/h3&gt;&lt;p&gt;Content!&lt;/p&gt;&quot;
-                }
-            };
+                { &quot;Name&quot;, p.AuthorName },
+                { &quot;Twitter&quot;, p.AuthorTwitter }
+            }
+        },
+        { &quot;Date&quot;, p.PostedDate },
+        { &quot;BodyHtml&quot;, HttpUtility.HtmlEncode(p.Body) },
+    })
+    );
 
-            JArray blogPostsArray = new JArray(
-                blogPosts.Select(p =&gt; new JObject
-                {
-                    { &quot;Title&quot;, p.Title },
-                    {
-                        &quot;Author&quot;, new JObject
-                        {
-                            { &quot;Name&quot;, p.AuthorName },
-                            { &quot;Twitter&quot;, p.AuthorTwitter }
-                        }
-                    },
-                    { &quot;Date&quot;, p.PostedDate },
-                    { &quot;BodyHtml&quot;, HttpUtility.HtmlEncode(p.Body) },
-                })
-                );
-
-            Console.WriteLine(blogPostsArray.ToString());
-            // [
-            //   {
-            //     &quot;Title&quot;: &quot;Json.NET is awesome!&quot;,
-            //     &quot;Author&quot;: {
-            //       &quot;Name&quot;: &quot;James Newton-King&quot;,
-            //       &quot;Twitter&quot;: &quot;JamesNK&quot;
-            //     },
-            //     &quot;Date&quot;: &quot;2013-01-23T19:30:00&quot;,
-            //     &quot;BodyHtml&quot;: &quot;&amp;lt;h3&amp;gt;Title!&amp;lt;/h3&amp;gt;&amp;lt;p&amp;gt;Content!&amp;lt;/p&amp;gt;&quot;
-            //   }
-            // ]</code></pre>
+Console.WriteLine(blogPostsArray.ToString());
+// [
+//   {
+//     &quot;Title&quot;: &quot;Json.NET is awesome!&quot;,
+//     &quot;Author&quot;: {
+//       &quot;Name&quot;: &quot;James Newton-King&quot;,
+//       &quot;Twitter&quot;: &quot;JamesNK&quot;
+//     },
+//     &quot;Date&quot;: &quot;2013-01-23T19:30:00&quot;,
+//     &quot;BodyHtml&quot;: &quot;&amp;lt;h3&amp;gt;Title!&amp;lt;/h3&amp;gt;&amp;lt;p&amp;gt;Content!&amp;lt;/p&amp;gt;&quot;
+//   }
+// ]</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -198,50 +198,50 @@
     public int Memory { get; set; }
     public IList&lt;string&gt; Drives { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            JValue i = (JValue)JToken.FromObject(12345);
+<pre v-highlight:csharp><code v-pre title="Usage">JValue i = (JValue)JToken.FromObject(12345);
 
-            Console.WriteLine(i.Type);
-            // Integer
-            Console.WriteLine(i.ToString());
-            // 12345
+Console.WriteLine(i.Type);
+// Integer
+Console.WriteLine(i.ToString());
+// 12345
 
-            JValue s = (JValue)JToken.FromObject(&quot;A string&quot;);
+JValue s = (JValue)JToken.FromObject(&quot;A string&quot;);
 
-            Console.WriteLine(s.Type);
-            // String
-            Console.WriteLine(s.ToString());
-            // A string
+Console.WriteLine(s.Type);
+// String
+Console.WriteLine(s.ToString());
+// A string
 
-            Computer computer = new Computer
-            {
-                Cpu = &quot;Intel&quot;,
-                Memory = 32,
-                Drives = new List&lt;string&gt;
-                {
-                    &quot;DVD&quot;,
-                    &quot;SSD&quot;
-                }
-            };
+Computer computer = new Computer
+{
+    Cpu = &quot;Intel&quot;,
+    Memory = 32,
+    Drives = new List&lt;string&gt;
+    {
+        &quot;DVD&quot;,
+        &quot;SSD&quot;
+    }
+};
 
-            JObject o = (JObject)JToken.FromObject(computer);
+JObject o = (JObject)JToken.FromObject(computer);
 
-            Console.WriteLine(o.ToString());
-            // {
-            //   &quot;Cpu&quot;: &quot;Intel&quot;,
-            //   &quot;Memory&quot;: 32,
-            //   &quot;Drives&quot;: [
-            //     &quot;DVD&quot;,
-            //     &quot;SSD&quot;
-            //   ]
-            // }
+Console.WriteLine(o.ToString());
+// {
+//   &quot;Cpu&quot;: &quot;Intel&quot;,
+//   &quot;Memory&quot;: 32,
+//   &quot;Drives&quot;: [
+//     &quot;DVD&quot;,
+//     &quot;SSD&quot;
+//   ]
+// }
 
-            JArray a = (JArray)JToken.FromObject(computer.Drives);
+JArray a = (JArray)JToken.FromObject(computer.Drives);
 
-            Console.WriteLine(a.ToString());
-            // [
-            //   &quot;DVD&quot;,
-            //   &quot;SSD&quot;
-            // ]</code></pre>
+Console.WriteLine(a.ToString());
+// [
+//   &quot;DVD&quot;,
+//   &quot;SSD&quot;
+// ]</code></pre>
 
     
                 <!-- Required only on API pages -->

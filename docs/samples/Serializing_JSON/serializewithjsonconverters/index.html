@@ -193,28 +193,28 @@ to customize how JSON is serialized.</p>
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            List&lt;StringComparison&gt; stringComparisons = new List&lt;StringComparison&gt;
-            {
-                StringComparison.CurrentCulture,
-                StringComparison.Ordinal
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">List&lt;StringComparison&gt; stringComparisons = new List&lt;StringComparison&gt;
+{
+    StringComparison.CurrentCulture,
+    StringComparison.Ordinal
+};
 
-            string jsonWithoutConverter = JsonConvert.SerializeObject(stringComparisons);
+string jsonWithoutConverter = JsonConvert.SerializeObject(stringComparisons);
 
-            Console.WriteLine(jsonWithoutConverter);
-            // [0,4]
+Console.WriteLine(jsonWithoutConverter);
+// [0,4]
 
-            string jsonWithConverter = JsonConvert.SerializeObject(stringComparisons, new StringEnumConverter());
+string jsonWithConverter = JsonConvert.SerializeObject(stringComparisons, new StringEnumConverter());
 
-            Console.WriteLine(jsonWithConverter);
-            // [&quot;CurrentCulture&quot;,&quot;Ordinal&quot;]
+Console.WriteLine(jsonWithConverter);
+// [&quot;CurrentCulture&quot;,&quot;Ordinal&quot;]
 
-            List&lt;StringComparison&gt; newStringComparsions = JsonConvert.DeserializeObject&lt;List&lt;StringComparison&gt;&gt;(
-                jsonWithConverter,
-                new StringEnumConverter());
+List&lt;StringComparison&gt; newStringComparsions = JsonConvert.DeserializeObject&lt;List&lt;StringComparison&gt;&gt;(
+    jsonWithConverter,
+    new StringEnumConverter());
 
-            Console.WriteLine(string.Join(&quot;, &quot;, newStringComparsions.Select(c =&gt; c.ToString()).ToArray()));
-            // CurrentCulture, Ordinal</code></pre>
+Console.WriteLine(string.Join(&quot;, &quot;, newStringComparsions.Select(c =&gt; c.ToString()).ToArray()));
+// CurrentCulture, Ordinal</code></pre>
 
     
                 <!-- Required only on API pages -->

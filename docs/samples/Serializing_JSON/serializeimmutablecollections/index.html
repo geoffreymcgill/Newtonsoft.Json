@@ -192,19 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            ImmutableList&lt;string&gt; l = ImmutableList.CreateRange(new List&lt;string&gt;
-            {
-                &quot;One&quot;,
-                &quot;II&quot;,
-                &quot;3&quot;
-            });
+<pre v-highlight:csharp><code v-pre title="Usage">ImmutableList&lt;string&gt; l = ImmutableList.CreateRange(new List&lt;string&gt;
+{
+    &quot;One&quot;,
+    &quot;II&quot;,
+    &quot;3&quot;
+});
 
-            string json = JsonConvert.SerializeObject(l, Formatting.Indented);
-            // [
-            //   &quot;One&quot;,
-            //   &quot;II&quot;,
-            //   &quot;3&quot;
-            // ]</code></pre>
+string json = JsonConvert.SerializeObject(l, Formatting.Indented);
+// [
+//   &quot;One&quot;,
+//   &quot;II&quot;,
+//   &quot;3&quot;
+// ]</code></pre>
 
     
                 <!-- Required only on API pages -->

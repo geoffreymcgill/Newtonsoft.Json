@@ -197,18 +197,18 @@
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            byte[] data = Convert.FromBase64String(&quot;MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAMDgKWE8AQAAAA==&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">byte[] data = Convert.FromBase64String(&quot;MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAMDgKWE8AQAAAA==&quot;);
 
-            MemoryStream ms = new MemoryStream(data);
-            using (BsonReader reader = new BsonReader(ms))
-            {
-                JsonSerializer serializer = new JsonSerializer();
+MemoryStream ms = new MemoryStream(data);
+using (BsonReader reader = new BsonReader(ms))
+{
+    JsonSerializer serializer = new JsonSerializer();
 
-                Event e = serializer.Deserialize&lt;Event&gt;(reader);
+    Event e = serializer.Deserialize&lt;Event&gt;(reader);
 
-                Console.WriteLine(e.Name);
-                // Movie Premiere
-            }</code></pre>
+    Console.WriteLine(e.Name);
+    // Movie Premiere
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

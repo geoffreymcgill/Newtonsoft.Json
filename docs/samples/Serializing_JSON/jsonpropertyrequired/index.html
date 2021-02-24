@@ -192,26 +192,26 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Videogame
-        {
-            [JsonProperty(Required = Required.Always)]
-            public string Name { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class Videogame
+{
+    [JsonProperty(Required = Required.Always)]
+    public string Name { get; set; }
 
-            [JsonProperty(Required = Required.AllowNull)]
-            public DateTime? ReleaseDate { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'Name': 'Starcraft III',
-              'ReleaseDate': null
-            }&quot;;
+    [JsonProperty(Required = Required.AllowNull)]
+    public DateTime? ReleaseDate { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Name': 'Starcraft III',
+  'ReleaseDate': null
+}&quot;;
 
-            Videogame starcraft = JsonConvert.DeserializeObject&lt;Videogame&gt;(json);
+Videogame starcraft = JsonConvert.DeserializeObject&lt;Videogame&gt;(json);
 
-            Console.WriteLine(starcraft.Name);
-            // Starcraft III
+Console.WriteLine(starcraft.Name);
+// Starcraft III
 
-            Console.WriteLine(starcraft.ReleaseDate);
-            // null</code></pre>
+Console.WriteLine(starcraft.ReleaseDate);
+// null</code></pre>
 
     
                 <!-- Required only on API pages -->

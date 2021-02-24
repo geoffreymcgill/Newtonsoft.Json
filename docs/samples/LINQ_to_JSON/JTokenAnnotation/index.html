@@ -192,22 +192,22 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = JObject.Parse(@&quot;{
-              'name': 'Bill G',
-              'age': 58,
-              'country': 'United States',
-              'employer': 'Microsoft'
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+  'name': 'Bill G',
+  'age': 58,
+  'country': 'United States',
+  'employer': 'Microsoft'
+}&quot;);
 
-            o.AddAnnotation(new HashSet&lt;string&gt;());
-            o.PropertyChanged += (sender, args) =&gt; o.Annotation&lt;HashSet&lt;string&gt;&gt;().Add(args.PropertyName);
+o.AddAnnotation(new HashSet&lt;string&gt;());
+o.PropertyChanged += (sender, args) =&gt; o.Annotation&lt;HashSet&lt;string&gt;&gt;().Add(args.PropertyName);
 
-            o[&quot;age&quot;] = 59;
-            o[&quot;employer&quot;] = &quot;Bill &amp; Melinda Gates Foundation&quot;;
+o[&quot;age&quot;] = 59;
+o[&quot;employer&quot;] = &quot;Bill &amp; Melinda Gates Foundation&quot;;
 
-            HashSet&lt;string&gt; changedProperties = o.Annotation&lt;HashSet&lt;string&gt;&gt;();
-            // age
-            // employer</code></pre>
+HashSet&lt;string&gt; changedProperties = o.Annotation&lt;HashSet&lt;string&gt;&gt;();
+// age
+// employer</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,47 +192,47 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        [JsonObject]
-        public class Directory : IEnumerable&lt;string&gt;
-        {
-            public string Name { get; set; }
-            public IList&lt;string&gt; Files { get; set; }
+<pre v-highlight:csharp><code v-pre title="Types">[JsonObject]
+public class Directory : IEnumerable&lt;string&gt;
+{
+    public string Name { get; set; }
+    public IList&lt;string&gt; Files { get; set; }
 
-            public Directory()
-            {
-                Files = new List&lt;string&gt;();
-            }
+    public Directory()
+    {
+        Files = new List&lt;string&gt;();
+    }
 
-            public IEnumerator&lt;string&gt; GetEnumerator()
-            {
-                return Files.GetEnumerator();
-            }
+    public IEnumerator&lt;string&gt; GetEnumerator()
+    {
+        return Files.GetEnumerator();
+    }
 
-            IEnumerator IEnumerable.GetEnumerator()
-            {
-                return GetEnumerator();
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Directory directory = new Directory
-            {
-                Name = &quot;My Documents&quot;,
-                Files =
-                {
-                    &quot;ImportantLegalDocuments.docx&quot;,
-                    &quot;WiseFinancalAdvice.xlsx&quot;
-                }
-            };
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Directory directory = new Directory
+{
+    Name = &quot;My Documents&quot;,
+    Files =
+    {
+        &quot;ImportantLegalDocuments.docx&quot;,
+        &quot;WiseFinancalAdvice.xlsx&quot;
+    }
+};
 
-            string json = JsonConvert.SerializeObject(directory, Formatting.Indented);
+string json = JsonConvert.SerializeObject(directory, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;Name&quot;: &quot;My Documents&quot;,
-            //   &quot;Files&quot;: [
-            //     &quot;ImportantLegalDocuments.docx&quot;,
-            //     &quot;WiseFinancalAdvice.xlsx&quot;
-            //   ]
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;Name&quot;: &quot;My Documents&quot;,
+//   &quot;Files&quot;: [
+//     &quot;ImportantLegalDocuments.docx&quot;,
+//     &quot;WiseFinancalAdvice.xlsx&quot;
+//   ]
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

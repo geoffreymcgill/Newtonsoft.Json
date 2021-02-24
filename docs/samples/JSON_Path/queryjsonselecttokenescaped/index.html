@@ -192,24 +192,24 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = JObject.Parse(@&quot;{
-              'Space Invaders': 'Taito',
-              'Doom ]|[': 'id',
-              &quot;&quot;Yar's Revenge&quot;&quot;: 'Atari',
-              'Government &quot;&quot;Intelligence&quot;&quot;': 'Make-Believe'
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+  'Space Invaders': 'Taito',
+  'Doom ]|[': 'id',
+  &quot;&quot;Yar's Revenge&quot;&quot;: 'Atari',
+  'Government &quot;&quot;Intelligence&quot;&quot;': 'Make-Believe'
+}&quot;);
 
-            string spaceInvaders = (string)o.SelectToken(&quot;['Space Invaders']&quot;);
-            // Taito
+string spaceInvaders = (string)o.SelectToken(&quot;['Space Invaders']&quot;);
+// Taito
 
-            string doom3 = (string)o.SelectToken(&quot;['Doom ]|[']&quot;);
-            // id
+string doom3 = (string)o.SelectToken(&quot;['Doom ]|[']&quot;);
+// id
 
-            string yarsRevenge = (string)o.SelectToken(&quot;['Yar\\'s Revenge']&quot;);
-            // Atari
+string yarsRevenge = (string)o.SelectToken(&quot;['Yar\\'s Revenge']&quot;);
+// Atari
 
-            string governmentIntelligence = (string)o.SelectToken(&quot;['Government \&quot;Intelligence\&quot;']&quot;);
-            // Make-Believe</code></pre>
+string governmentIntelligence = (string)o.SelectToken(&quot;['Government \&quot;Intelligence\&quot;']&quot;);
+// Make-Believe</code></pre>
 
     
                 <!-- Required only on API pages -->

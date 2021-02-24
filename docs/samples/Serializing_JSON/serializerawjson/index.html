@@ -197,19 +197,19 @@
     public JRaw OnLoadFunction { get; set; }
     public JRaw OnUnloadFunction { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            JavaScriptSettings settings = new JavaScriptSettings
-            {
-                OnLoadFunction = new JRaw(&quot;OnLoad&quot;),
-                OnUnloadFunction = new JRaw(&quot;function(e) { alert(e); }&quot;)
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JavaScriptSettings settings = new JavaScriptSettings
+{
+    OnLoadFunction = new JRaw(&quot;OnLoad&quot;),
+    OnUnloadFunction = new JRaw(&quot;function(e) { alert(e); }&quot;)
+};
 
-            string json = JsonConvert.SerializeObject(settings, Formatting.Indented);
+string json = JsonConvert.SerializeObject(settings, Formatting.Indented);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;OnLoadFunction&quot;: OnLoad,
-            //   &quot;OnUnloadFunction&quot;: function(e) { alert(e); }
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;OnLoadFunction&quot;: OnLoad,
+//   &quot;OnUnloadFunction&quot;: function(e) { alert(e); }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

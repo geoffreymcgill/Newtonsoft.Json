@@ -192,21 +192,21 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;[
-              'One',
-              'II',
-              '3'
-            ]&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;[
+  'One',
+  'II',
+  '3'
+]&quot;;
 
-            ImmutableList&lt;string&gt; l = JsonConvert.DeserializeObject&lt;ImmutableList&lt;string&gt;&gt;(json);
+ImmutableList&lt;string&gt; l = JsonConvert.DeserializeObject&lt;ImmutableList&lt;string&gt;&gt;(json);
 
-            foreach (string s in l)
-            {
-                Console.WriteLine(s);
-            }
-            // One
-            // II
-            // 3</code></pre>
+foreach (string s in l)
+{
+    Console.WriteLine(s);
+}
+// One
+// II
+// 3</code></pre>
 
     
                 <!-- Required only on API pages -->

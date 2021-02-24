@@ -192,36 +192,36 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              '@Id': 1,
-              'Email': 'james@example.com',
-              'Active': true,
-              'CreatedDate': '2013-01-20T00:00:00Z',
-              'Roles': [
-                'User',
-                'Admin'
-              ],
-              'Team': {
-                '@Id': 2,
-                'Name': 'Software Developers',
-                'Description': 'Creators of fine software products and services.'
-              }
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  '@Id': 1,
+  'Email': 'james@example.com',
+  'Active': true,
+  'CreatedDate': '2013-01-20T00:00:00Z',
+  'Roles': [
+    'User',
+    'Admin'
+  ],
+  'Team': {
+    '@Id': 2,
+    'Name': 'Software Developers',
+    'Description': 'Creators of fine software products and services.'
+  }
+}&quot;;
 
-            XNode node = JsonConvert.DeserializeXNode(json, &quot;Root&quot;);
+XNode node = JsonConvert.DeserializeXNode(json, &quot;Root&quot;);
 
-            Console.WriteLine(node.ToString());
-            // &lt;Root Id=&quot;1&quot;&gt;
-            //   &lt;Email&gt;james@example.com&lt;/Email&gt;
-            //   &lt;Active&gt;true&lt;/Active&gt;
-            //   &lt;CreatedDate&gt;2013-01-20T00:00:00Z&lt;/CreatedDate&gt;
-            //   &lt;Roles&gt;User&lt;/Roles&gt;
-            //   &lt;Roles&gt;Admin&lt;/Roles&gt;
-            //   &lt;Team Id=&quot;2&quot;&gt;
-            //     &lt;Name&gt;Software Developers&lt;/Name&gt;
-            //     &lt;Description&gt;Creators of fine software products and services.&lt;/Description&gt;
-            //   &lt;/Team&gt;
-            // &lt;/Root&gt;</code></pre>
+Console.WriteLine(node.ToString());
+// &lt;Root Id=&quot;1&quot;&gt;
+//   &lt;Email&gt;james@example.com&lt;/Email&gt;
+//   &lt;Active&gt;true&lt;/Active&gt;
+//   &lt;CreatedDate&gt;2013-01-20T00:00:00Z&lt;/CreatedDate&gt;
+//   &lt;Roles&gt;User&lt;/Roles&gt;
+//   &lt;Roles&gt;Admin&lt;/Roles&gt;
+//   &lt;Team Id=&quot;2&quot;&gt;
+//     &lt;Name&gt;Software Developers&lt;/Name&gt;
+//     &lt;Description&gt;Creators of fine software products and services.&lt;/Description&gt;
+//   &lt;/Team&gt;
+// &lt;/Root&gt;</code></pre>
 
     
                 <!-- Required only on API pages -->

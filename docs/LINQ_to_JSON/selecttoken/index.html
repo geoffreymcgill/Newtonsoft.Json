@@ -194,45 +194,45 @@
 </doc-anchor-target>
 <p>SelectToken is a method on JToken and takes a string path to a child token. SelectToken returns the child token or a null reference if a token couldn't be found at the path's location.</p>
 <p>The path is made up of property names and array indexes separated by periods, e.g. <code v-pre>Manufacturers[0].Name</code>.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken Example">            JObject o = JObject.Parse(@&quot;{
-              'Stores': [
-                'Lambton Quay',
-                'Willis Street'
-              ],
-              'Manufacturers': [
-                {
-                  'Name': 'Acme Co',
-                  'Products': [
-                    {
-                      'Name': 'Anvil',
-                      'Price': 50
-                    }
-                  ]
-                },
-                {
-                  'Name': 'Contoso',
-                  'Products': [
-                    {
-                      'Name': 'Elbow Grease',
-                      'Price': 99.95
-                    },
-                    {
-                      'Name': 'Headlight Fluid',
-                      'Price': 4
-                    }
-                  ]
-                }
-              ]
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="SelectToken Example">JObject o = JObject.Parse(@&quot;{
+  'Stores': [
+    'Lambton Quay',
+    'Willis Street'
+  ],
+  'Manufacturers': [
+    {
+      'Name': 'Acme Co',
+      'Products': [
+        {
+          'Name': 'Anvil',
+          'Price': 50
+        }
+      ]
+    },
+    {
+      'Name': 'Contoso',
+      'Products': [
+        {
+          'Name': 'Elbow Grease',
+          'Price': 99.95
+        },
+        {
+          'Name': 'Headlight Fluid',
+          'Price': 4
+        }
+      ]
+    }
+  ]
+}&quot;);
 
-            string name = (string)o.SelectToken(&quot;Manufacturers[0].Name&quot;);
-            // Acme Co
+string name = (string)o.SelectToken(&quot;Manufacturers[0].Name&quot;);
+// Acme Co
 
-            decimal productPrice = (decimal)o.SelectToken(&quot;Manufacturers[0].Products[0].Price&quot;);
-            // 50
+decimal productPrice = (decimal)o.SelectToken(&quot;Manufacturers[0].Products[0].Price&quot;);
+// 50
 
-            string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Name&quot;);
-            // Elbow Grease</code></pre>
+string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Name&quot;);
+// Elbow Grease</code></pre>
 <doc-anchor-target id="selecttoken-with-jsonpath">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selecttoken-with-jsonpath">#</doc-anchor-trigger>
@@ -240,52 +240,52 @@
     </h2>
 </doc-anchor-target>
 <p>SelectToken supports JSONPath queries. Find out more about JSONPath <a href="https://goessner.net/articles/JsonPath/">here</a>.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken With JSONPath">            JObject o = JObject.Parse(@&quot;{
-              'Stores': [
-                'Lambton Quay',
-                'Willis Street'
-              ],
-              'Manufacturers': [
-                {
-                  'Name': 'Acme Co',
-                  'Products': [
-                    {
-                      'Name': 'Anvil',
-                      'Price': 50
-                    }
-                  ]
-                },
-                {
-                  'Name': 'Contoso',
-                  'Products': [
-                    {
-                      'Name': 'Elbow Grease',
-                      'Price': 99.95
-                    },
-                    {
-                      'Name': 'Headlight Fluid',
-                      'Price': 4
-                    }
-                  ]
-                }
-              ]
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="SelectToken With JSONPath">JObject o = JObject.Parse(@&quot;{
+  'Stores': [
+    'Lambton Quay',
+    'Willis Street'
+  ],
+  'Manufacturers': [
+    {
+      'Name': 'Acme Co',
+      'Products': [
+        {
+          'Name': 'Anvil',
+          'Price': 50
+        }
+      ]
+    },
+    {
+      'Name': 'Contoso',
+      'Products': [
+        {
+          'Name': 'Elbow Grease',
+          'Price': 99.95
+        },
+        {
+          'Name': 'Headlight Fluid',
+          'Price': 4
+        }
+      ]
+    }
+  ]
+}&quot;);
 
-            // manufacturer with the name 'Acme Co'
-            JToken acme = o.SelectToken(&quot;$.Manufacturers[?(@.Name == 'Acme Co')]&quot;);
+// manufacturer with the name 'Acme Co'
+JToken acme = o.SelectToken(&quot;$.Manufacturers[?(@.Name == 'Acme Co')]&quot;);
 
-            Console.WriteLine(acme);
-            // { &quot;Name&quot;: &quot;Acme Co&quot;, Products: [{ &quot;Name&quot;: &quot;Anvil&quot;, &quot;Price&quot;: 50 }] }
+Console.WriteLine(acme);
+// { &quot;Name&quot;: &quot;Acme Co&quot;, Products: [{ &quot;Name&quot;: &quot;Anvil&quot;, &quot;Price&quot;: 50 }] }
 
-            // name of all products priced 50 and above
-            IEnumerable&lt;JToken&gt; pricyProducts = o.SelectTokens(&quot;$..Products[?(@.Price &gt;= 50)].Name&quot;);
+// name of all products priced 50 and above
+IEnumerable&lt;JToken&gt; pricyProducts = o.SelectTokens(&quot;$..Products[?(@.Price &gt;= 50)].Name&quot;);
 
-            foreach (JToken item in pricyProducts)
-            {
-                Console.WriteLine(item);
-            }
-            // Anvil
-            // Elbow Grease</code></pre>
+foreach (JToken item in pricyProducts)
+{
+    Console.WriteLine(item);
+}
+// Anvil
+// Elbow Grease</code></pre>
 <doc-anchor-target id="selecttoken-with-linq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selecttoken-with-linq">#</doc-anchor-trigger>
@@ -293,16 +293,16 @@
     </h2>
 </doc-anchor-target>
 <p>SelectToken can be used in combination with standard LINQ methods.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken With LINQ Example">            IList&lt;string&gt; storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToList();
-            // Lambton Quay
-            // Willis Street
+<pre v-highlight:csharp><code v-pre title="SelectToken With LINQ Example">IList&lt;string&gt; storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToList();
+// Lambton Quay
+// Willis Street
 
-            IList&lt;string&gt; firstProductNames = o[&quot;Manufacturers&quot;].Select(m =&gt; (string)m.SelectToken(&quot;Products[1].Name&quot;)).ToList();
-            // null
-            // Headlight Fluid
+IList&lt;string&gt; firstProductNames = o[&quot;Manufacturers&quot;].Select(m =&gt; (string)m.SelectToken(&quot;Products[1].Name&quot;)).ToList();
+// null
+// Headlight Fluid
 
-            decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectToken(&quot;Products[0].Price&quot;));
-            // 149.95</code></pre>
+decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectToken(&quot;Products[0].Price&quot;));
+// 149.95</code></pre>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

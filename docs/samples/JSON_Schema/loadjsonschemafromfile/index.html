@@ -194,15 +194,15 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            // read file into a string and parse JsonSchema from the string
-            JsonSchema schema1 = JsonSchema.Parse(File.ReadAllText(@&quot;c:\schema.json&quot;));
+<pre v-highlight:csharp><code v-pre title="Usage">// read file into a string and parse JsonSchema from the string
+JsonSchema schema1 = JsonSchema.Parse(File.ReadAllText(@&quot;c:\schema.json&quot;));
 
-            // read JsonSchema directly from a file
-            using (StreamReader file = File.OpenText(@&quot;c:\schema.json&quot;))
-            using (JsonTextReader reader = new JsonTextReader(file))
-            {
-                JsonSchema schema2 = JsonSchema.Read(reader);
-            }</code></pre>
+// read JsonSchema directly from a file
+using (StreamReader file = File.OpenText(@&quot;c:\schema.json&quot;))
+using (JsonTextReader reader = new JsonTextReader(file))
+{
+    JsonSchema schema2 = JsonSchema.Read(reader);
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

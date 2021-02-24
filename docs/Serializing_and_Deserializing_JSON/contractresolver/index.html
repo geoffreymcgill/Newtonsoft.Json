@@ -203,76 +203,76 @@
     </h2>
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a> inherits from DefaultContractResolver and simply overrides the JSON property name to be written in <a href="http://en.wikipedia.org/wiki/CamelCase">camelcase</a>.</p>
-<pre v-highlight:csharp><code v-pre title="ContractResolver">            Product product = new Product
-            {
-                ExpiryDate = new DateTime(2010, 12, 20, 18, 1, 0, DateTimeKind.Utc),
-                Name = &quot;Widget&quot;,
-                Price = 9.99m,
-                Sizes = new[] { &quot;Small&quot;, &quot;Medium&quot;, &quot;Large&quot; }
-            };
+<pre v-highlight:csharp><code v-pre title="ContractResolver">Product product = new Product
+{
+    ExpiryDate = new DateTime(2010, 12, 20, 18, 1, 0, DateTimeKind.Utc),
+    Name = &quot;Widget&quot;,
+    Price = 9.99m,
+    Sizes = new[] { &quot;Small&quot;, &quot;Medium&quot;, &quot;Large&quot; }
+};
 
-            string json =
-                JsonConvert.SerializeObject(
-                    product,
-                    Formatting.Indented,
-                    new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }
-                    );
+string json =
+    JsonConvert.SerializeObject(
+        product,
+        Formatting.Indented,
+        new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() }
+        );
 
-            //{
-            //  &quot;name&quot;: &quot;Widget&quot;,
-            //  &quot;expiryDate&quot;: &quot;2010-12-20T18:01:00Z&quot;,
-            //  &quot;price&quot;: 9.99,
-            //  &quot;sizes&quot;: [
-            //    &quot;Small&quot;,
-            //    &quot;Medium&quot;,
-            //    &quot;Large&quot;
-            //  ]
-            //}</code></pre>
+//{
+//  &quot;name&quot;: &quot;Widget&quot;,
+//  &quot;expiryDate&quot;: &quot;2010-12-20T18:01:00Z&quot;,
+//  &quot;price&quot;: 9.99,
+//  &quot;sizes&quot;: [
+//    &quot;Small&quot;,
+//    &quot;Medium&quot;,
+//    &quot;Large&quot;
+//  ]
+//}</code></pre>
 <doc-anchor-target id="custom-icontractresolver-examples">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#custom-icontractresolver-examples">#</doc-anchor-trigger>
         <span>Custom IContractResolver Examples</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Use JsonConverter with IContractResolver">    public class ConverterContractResolver : DefaultContractResolver
+<pre v-highlight:csharp><code v-pre title="Use JsonConverter with IContractResolver">public class ConverterContractResolver : DefaultContractResolver
+{
+    public new static readonly ConverterContractResolver Instance = new ConverterContractResolver();
+
+    protected override JsonContract CreateContract(Type objectType)
     {
-        public new static readonly ConverterContractResolver Instance = new ConverterContractResolver();
+        JsonContract contract = base.CreateContract(objectType);
 
-        protected override JsonContract CreateContract(Type objectType)
+        // this will only be called once and then cached
+        if (objectType == typeof(DateTime) || objectType == typeof(DateTimeOffset))
         {
-            JsonContract contract = base.CreateContract(objectType);
-
-            // this will only be called once and then cached
-            if (objectType == typeof(DateTime) || objectType == typeof(DateTimeOffset))
-            {
-                contract.Converter = new JavaScriptDateTimeConverter();
-            }
-
-            return contract;
+            contract.Converter = new JavaScriptDateTimeConverter();
         }
-    }</code></pre>
+
+        return contract;
+    }
+}</code></pre>
 <p>This example sets a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> for a type using an IContractResolver. Using a contract resolver here is useful because DateTime is not your own type and it is not possible to place a JsonConverterAttribute on it.</p>
-<pre v-highlight:csharp><code v-pre title="Conditional properties with IContractResolver">    public class ShouldSerializeContractResolver : DefaultContractResolver
+<pre v-highlight:csharp><code v-pre title="Conditional properties with IContractResolver">public class ShouldSerializeContractResolver : DefaultContractResolver
+{
+    public new static readonly ShouldSerializeContractResolver Instance = new ShouldSerializeContractResolver();
+
+    protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
     {
-        public new static readonly ShouldSerializeContractResolver Instance = new ShouldSerializeContractResolver();
+        JsonProperty property = base.CreateProperty(member, memberSerialization);
 
-        protected override JsonProperty CreateProperty(MemberInfo member, MemberSerialization memberSerialization)
+        if (property.DeclaringType == typeof(Employee) &amp;&amp; property.PropertyName == &quot;Manager&quot;)
         {
-            JsonProperty property = base.CreateProperty(member, memberSerialization);
-
-            if (property.DeclaringType == typeof(Employee) &amp;&amp; property.PropertyName == &quot;Manager&quot;)
-            {
-                property.ShouldSerialize =
-                    instance =&gt;
-                    {
-                        Employee e = (Employee)instance;
-                        return e.Manager != e;
-                    };
-            }
-
-            return property;
+            property.ShouldSerialize =
+                instance =&gt;
+                {
+                    Employee e = (Employee)instance;
+                    return e.Manager != e;
+                };
         }
-    }</code></pre>
+
+        return property;
+    }
+}</code></pre>
 <p>This example sets up [ConditionalProperties](conditional serialization for a property) using an IContractResolver. This is useful if you want to conditionally serialize a property but don't want to add additional methods to your type.</p>
 <doc-anchor-target id="see-also">
     <h2>

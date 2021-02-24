@@ -192,44 +192,44 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
-            &lt;root&gt;
-              &lt;person id='1'&gt;
-              &lt;name&gt;Alan&lt;/name&gt;
-              &lt;url&gt;http://www.google.com&lt;/url&gt;
-              &lt;/person&gt;
-              &lt;person id='2'&gt;
-              &lt;name&gt;Louis&lt;/name&gt;
-              &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
-              &lt;/person&gt;
-            &lt;/root&gt;&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+&lt;root&gt;
+  &lt;person id='1'&gt;
+  &lt;name&gt;Alan&lt;/name&gt;
+  &lt;url&gt;http://www.google.com&lt;/url&gt;
+  &lt;/person&gt;
+  &lt;person id='2'&gt;
+  &lt;name&gt;Louis&lt;/name&gt;
+  &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
+  &lt;/person&gt;
+&lt;/root&gt;&quot;;
 
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(xml);
+XmlDocument doc = new XmlDocument();
+doc.LoadXml(xml);
 
-            string json = JsonConvert.SerializeXmlNode(doc);
+string json = JsonConvert.SerializeXmlNode(doc);
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;?xml&quot;: {
-            //     &quot;@version&quot;: &quot;1.0&quot;,
-            //     &quot;@standalone&quot;: &quot;no&quot;
-            //   },
-            //   &quot;root&quot;: {
-            //     &quot;person&quot;: [
-            //       {
-            //         &quot;@id&quot;: &quot;1&quot;,
-            //         &quot;name&quot;: &quot;Alan&quot;,
-            //         &quot;url&quot;: &quot;http://www.google.com&quot;
-            //       },
-            //       {
-            //         &quot;@id&quot;: &quot;2&quot;,
-            //         &quot;name&quot;: &quot;Louis&quot;,
-            //         &quot;url&quot;: &quot;http://www.yahoo.com&quot;
-            //       }
-            //     ]
-            //   }
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;?xml&quot;: {
+//     &quot;@version&quot;: &quot;1.0&quot;,
+//     &quot;@standalone&quot;: &quot;no&quot;
+//   },
+//   &quot;root&quot;: {
+//     &quot;person&quot;: [
+//       {
+//         &quot;@id&quot;: &quot;1&quot;,
+//         &quot;name&quot;: &quot;Alan&quot;,
+//         &quot;url&quot;: &quot;http://www.google.com&quot;
+//       },
+//       {
+//         &quot;@id&quot;: &quot;2&quot;,
+//         &quot;name&quot;: &quot;Louis&quot;,
+//         &quot;url&quot;: &quot;http://www.yahoo.com&quot;
+//       }
+//     ]
+//   }
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

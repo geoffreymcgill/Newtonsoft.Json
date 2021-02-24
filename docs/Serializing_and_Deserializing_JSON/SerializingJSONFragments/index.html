@@ -193,79 +193,79 @@
     public string Content { get; set; }
     public string Url { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Deserializing Partial JSON Fragment Example">            string googleSearchText = @&quot;{
-              'responseData': {
-                'results': [
-                  {
-                    'GsearchResultClass': 'GwebSearch',
-                    'unescapedUrl': 'http://en.wikipedia.org/wiki/Paris_Hilton',
-                    'url': 'http://en.wikipedia.org/wiki/Paris_Hilton',
-                    'visibleUrl': 'en.wikipedia.org',
-                    'cacheUrl': 'http://www.google.com/search?q=cache:TwrPfhd22hYJ:en.wikipedia.org',
-                    'title': '&lt;b&gt;Paris Hilton&lt;/b&gt; - Wikipedia, the free encyclopedia',
-                    'titleNoFormatting': 'Paris Hilton - Wikipedia, the free encyclopedia',
-                    'content': '[1] In 2006, she released her debut album...'
-                  },
-                  {
-                    'GsearchResultClass': 'GwebSearch',
-                    'unescapedUrl': 'http://www.imdb.com/name/nm0385296/',
-                    'url': 'http://www.imdb.com/name/nm0385296/',
-                    'visibleUrl': 'www.imdb.com',
-                    'cacheUrl': 'http://www.google.com/search?q=cache:1i34KkqnsooJ:www.imdb.com',
-                    'title': '&lt;b&gt;Paris Hilton&lt;/b&gt;',
-                    'titleNoFormatting': 'Paris Hilton',
-                    'content': 'Self: Zoolander. Socialite &lt;b&gt;Paris Hilton&lt;/b&gt;...'
-                  }
-                ],
-                'cursor': {
-                  'pages': [
-                    {
-                      'start': '0',
-                      'label': 1
-                    },
-                    {
-                      'start': '4',
-                      'label': 2
-                    },
-                    {
-                      'start': '8',
-                      'label': 3
-                    },
-                    {
-                      'start': '12',
-                      'label': 4
-                    }
-                  ],
-                  'estimatedResultCount': '59600000',
-                  'currentPageIndex': 0,
-                  'moreResultsUrl': 'http://www.google.com/search?oe=utf8&amp;ie=utf8...'
-                }
-              },
-              'responseDetails': null,
-              'responseStatus': 200
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Deserializing Partial JSON Fragment Example">string googleSearchText = @&quot;{
+  'responseData': {
+    'results': [
+      {
+        'GsearchResultClass': 'GwebSearch',
+        'unescapedUrl': 'http://en.wikipedia.org/wiki/Paris_Hilton',
+        'url': 'http://en.wikipedia.org/wiki/Paris_Hilton',
+        'visibleUrl': 'en.wikipedia.org',
+        'cacheUrl': 'http://www.google.com/search?q=cache:TwrPfhd22hYJ:en.wikipedia.org',
+        'title': '&lt;b&gt;Paris Hilton&lt;/b&gt; - Wikipedia, the free encyclopedia',
+        'titleNoFormatting': 'Paris Hilton - Wikipedia, the free encyclopedia',
+        'content': '[1] In 2006, she released her debut album...'
+      },
+      {
+        'GsearchResultClass': 'GwebSearch',
+        'unescapedUrl': 'http://www.imdb.com/name/nm0385296/',
+        'url': 'http://www.imdb.com/name/nm0385296/',
+        'visibleUrl': 'www.imdb.com',
+        'cacheUrl': 'http://www.google.com/search?q=cache:1i34KkqnsooJ:www.imdb.com',
+        'title': '&lt;b&gt;Paris Hilton&lt;/b&gt;',
+        'titleNoFormatting': 'Paris Hilton',
+        'content': 'Self: Zoolander. Socialite &lt;b&gt;Paris Hilton&lt;/b&gt;...'
+      }
+    ],
+    'cursor': {
+      'pages': [
+        {
+          'start': '0',
+          'label': 1
+        },
+        {
+          'start': '4',
+          'label': 2
+        },
+        {
+          'start': '8',
+          'label': 3
+        },
+        {
+          'start': '12',
+          'label': 4
+        }
+      ],
+      'estimatedResultCount': '59600000',
+      'currentPageIndex': 0,
+      'moreResultsUrl': 'http://www.google.com/search?oe=utf8&amp;ie=utf8...'
+    }
+  },
+  'responseDetails': null,
+  'responseStatus': 200
+}&quot;;
 
-            JObject googleSearch = JObject.Parse(googleSearchText);
+JObject googleSearch = JObject.Parse(googleSearchText);
 
-            // get JSON result objects into a list
-            IList&lt;JToken&gt; results = googleSearch[&quot;responseData&quot;][&quot;results&quot;].Children().ToList();
+// get JSON result objects into a list
+IList&lt;JToken&gt; results = googleSearch[&quot;responseData&quot;][&quot;results&quot;].Children().ToList();
 
-            // serialize JSON results into .NET objects
-            IList&lt;SearchResult&gt; searchResults = new List&lt;SearchResult&gt;();
-            foreach (JToken result in results)
-            {
-                // JToken.ToObject is a helper method that uses JsonSerializer internally
-                SearchResult searchResult = result.ToObject&lt;SearchResult&gt;();
-                searchResults.Add(searchResult);
-            }
+// serialize JSON results into .NET objects
+IList&lt;SearchResult&gt; searchResults = new List&lt;SearchResult&gt;();
+foreach (JToken result in results)
+{
+    // JToken.ToObject is a helper method that uses JsonSerializer internally
+    SearchResult searchResult = result.ToObject&lt;SearchResult&gt;();
+    searchResults.Add(searchResult);
+}
 
-            // Title = &lt;b&gt;Paris Hilton&lt;/b&gt; - Wikipedia, the free encyclopedia
-            // Content = [1] In 2006, she released her debut album...
-            // Url = http://en.wikipedia.org/wiki/Paris_Hilton
+// Title = &lt;b&gt;Paris Hilton&lt;/b&gt; - Wikipedia, the free encyclopedia
+// Content = [1] In 2006, she released her debut album...
+// Url = http://en.wikipedia.org/wiki/Paris_Hilton
 
-            // Title = &lt;b&gt;Paris Hilton&lt;/b&gt;
-            // Content = Self: Zoolander. Socialite &lt;b&gt;Paris Hilton&lt;/b&gt;...
-            // Url = http://www.imdb.com/name/nm0385296/</code></pre>
+// Title = &lt;b&gt;Paris Hilton&lt;/b&gt;
+// Content = Self: Zoolander. Socialite &lt;b&gt;Paris Hilton&lt;/b&gt;...
+// Url = http://www.imdb.com/name/nm0385296/</code></pre>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

@@ -192,31 +192,31 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class User
-        {
-            public string UserName { get; private set; }
-            public bool Enabled { get; private set; }
+<pre v-highlight:csharp><code v-pre title="Types">public class User
+{
+    public string UserName { get; private set; }
+    public bool Enabled { get; private set; }
 
-            public User()
-            {
-            }
+    public User()
+    {
+    }
 
-            [JsonConstructor]
-            public User(string userName, bool enabled)
-            {
-                UserName = userName;
-                Enabled = enabled;
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,
-              &quot;&quot;Enabled&quot;&quot;: true
-            }&quot;;
+    [JsonConstructor]
+    public User(string userName, bool enabled)
+    {
+        UserName = userName;
+        Enabled = enabled;
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,
+  &quot;&quot;Enabled&quot;&quot;: true
+}&quot;;
 
-            User user = JsonConvert.DeserializeObject&lt;User&gt;(json);
+User user = JsonConvert.DeserializeObject&lt;User&gt;(json);
 
-            Console.WriteLine(user.UserName);
-            // domain\username</code></pre>
+Console.WriteLine(user.UserName);
+// domain\username</code></pre>
 
     
                 <!-- Required only on API pages -->

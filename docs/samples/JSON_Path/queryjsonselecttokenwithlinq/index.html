@@ -192,52 +192,52 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = JObject.Parse(@&quot;{
-              'Stores': [
-                'Lambton Quay',
-                'Willis Street'
-              ],
-              'Manufacturers': [
-                {
-                  'Name': 'Acme Co',
-                  'Products': [
-                    {
-                      'Name': 'Anvil',
-                      'Price': 50
-                    }
-                  ]
-                },
-                {
-                  'Name': 'Contoso',
-                  'Products': [
-                    {
-                      'Name': 'Elbow Grease',
-                      'Price': 99.95
-                    },
-                    {
-                      'Name': 'Headlight Fluid',
-                      'Price': 4
-                    }
-                  ]
-                }
-              ]
-            }&quot;);
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+  'Stores': [
+    'Lambton Quay',
+    'Willis Street'
+  ],
+  'Manufacturers': [
+    {
+      'Name': 'Acme Co',
+      'Products': [
+        {
+          'Name': 'Anvil',
+          'Price': 50
+        }
+      ]
+    },
+    {
+      'Name': 'Contoso',
+      'Products': [
+        {
+          'Name': 'Elbow Grease',
+          'Price': 99.95
+        },
+        {
+          'Name': 'Headlight Fluid',
+          'Price': 4
+        }
+      ]
+    }
+  ]
+}&quot;);
 
-            string[] storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToArray();
+string[] storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToArray();
 
-            Console.WriteLine(string.Join(&quot;, &quot;, storeNames));
-            // Lambton Quay, Willis Street
+Console.WriteLine(string.Join(&quot;, &quot;, storeNames));
+// Lambton Quay, Willis Street
 
-            string[] firstProductNames = o[&quot;Manufacturers&quot;].Select(m =&gt; (string)m.SelectToken(&quot;Products[1].Name&quot;))
-                .Where(n =&gt; n != null).ToArray();
+string[] firstProductNames = o[&quot;Manufacturers&quot;].Select(m =&gt; (string)m.SelectToken(&quot;Products[1].Name&quot;))
+    .Where(n =&gt; n != null).ToArray();
 
-            Console.WriteLine(string.Join(&quot;, &quot;, firstProductNames));
-            // Headlight Fluid
+Console.WriteLine(string.Join(&quot;, &quot;, firstProductNames));
+// Headlight Fluid
 
-            decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectToken(&quot;Products[0].Price&quot;));
+decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectToken(&quot;Products[0].Price&quot;));
 
-            Console.WriteLine(totalPrice);
-            // 149.95</code></pre>
+Console.WriteLine(totalPrice);
+// 149.95</code></pre>
 
     
                 <!-- Required only on API pages -->

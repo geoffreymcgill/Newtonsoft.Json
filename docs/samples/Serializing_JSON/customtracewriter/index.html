@@ -192,66 +192,66 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class NLogTraceWriter : ITraceWriter
+<pre v-highlight:csharp><code v-pre title="Types">public class NLogTraceWriter : ITraceWriter
+{
+    private static readonly Logger Logger = LogManager.GetLogger(&quot;NLogTraceWriter&quot;);
+
+    public TraceLevel LevelFilter
+    {
+        // trace all messages. nlog can handle filtering
+        get { return TraceLevel.Verbose; }
+    }
+
+    public void Trace(TraceLevel level, string message, Exception ex)
+    {
+        LogEventInfo logEvent = new LogEventInfo
         {
-            private static readonly Logger Logger = LogManager.GetLogger(&quot;NLogTraceWriter&quot;);
+            Message = message,
+            Level = GetLogLevel(level),
+            Exception = ex
+        };
 
-            public TraceLevel LevelFilter
-            {
-                // trace all messages. nlog can handle filtering
-                get { return TraceLevel.Verbose; }
-            }
+        // log Json.NET message to NLog
+        Logger.Log(logEvent);
+    }
 
-            public void Trace(TraceLevel level, string message, Exception ex)
-            {
-                LogEventInfo logEvent = new LogEventInfo
-                {
-                    Message = message,
-                    Level = GetLogLevel(level),
-                    Exception = ex
-                };
+    private LogLevel GetLogLevel(TraceLevel level)
+    {
+        switch (level)
+        {
+            case TraceLevel.Error:
+                return LogLevel.Error;
+            case TraceLevel.Warning:
+                return LogLevel.Warn;
+            case TraceLevel.Info:
+                return LogLevel.Info;
+            case TraceLevel.Off:
+                return LogLevel.Off;
+            default:
+                return LogLevel.Trace;
+        }
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">IList&lt;string&gt; countries = new List&lt;string&gt;
+{
+    &quot;New Zealand&quot;,
+    &quot;Australia&quot;,
+    &quot;Denmark&quot;,
+    &quot;China&quot;
+};
 
-                // log Json.NET message to NLog
-                Logger.Log(logEvent);
-            }
+string json = JsonConvert.SerializeObject(countries, Formatting.Indented, new JsonSerializerSettings
+{
+    TraceWriter = new NLogTraceWriter()
+});
 
-            private LogLevel GetLogLevel(TraceLevel level)
-            {
-                switch (level)
-                {
-                    case TraceLevel.Error:
-                        return LogLevel.Error;
-                    case TraceLevel.Warning:
-                        return LogLevel.Warn;
-                    case TraceLevel.Info:
-                        return LogLevel.Info;
-                    case TraceLevel.Off:
-                        return LogLevel.Off;
-                    default:
-                        return LogLevel.Trace;
-                }
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            IList&lt;string&gt; countries = new List&lt;string&gt;
-            {
-                &quot;New Zealand&quot;,
-                &quot;Australia&quot;,
-                &quot;Denmark&quot;,
-                &quot;China&quot;
-            };
-
-            string json = JsonConvert.SerializeObject(countries, Formatting.Indented, new JsonSerializerSettings
-            {
-                TraceWriter = new NLogTraceWriter()
-            });
-
-            Console.WriteLine(json);
-            // [
-            //   &quot;New Zealand&quot;,
-            //   &quot;Australia&quot;,
-            //   &quot;Denmark&quot;,
-            //   &quot;China&quot;
-            // ]</code></pre>
+Console.WriteLine(json);
+// [
+//   &quot;New Zealand&quot;,
+//   &quot;Australia&quot;,
+//   &quot;Denmark&quot;,
+//   &quot;China&quot;
+// ]</code></pre>
 
     
                 <!-- Required only on API pages -->

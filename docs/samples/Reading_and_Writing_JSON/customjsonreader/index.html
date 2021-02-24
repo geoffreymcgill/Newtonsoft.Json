@@ -192,290 +192,290 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">    public class XmlJsonReader : JsonReader
+<pre v-highlight:csharp><code v-pre title="Types">public class XmlJsonReader : JsonReader
+{
+    private readonly Stack&lt;JTokenType&gt; _stateStack;
+    private readonly XmlReader _reader;
+
+    private JTokenType? _valueType;
+
+    public XmlJsonReader(XmlReader reader)
     {
-        private readonly Stack&lt;JTokenType&gt; _stateStack;
-        private readonly XmlReader _reader;
+        _reader = reader;
+        _stateStack = new Stack&lt;JTokenType&gt;();
+    }
 
-        private JTokenType? _valueType;
+    private JTokenType PeekState()
+    {
+        JTokenType current = (_stateStack.Count &gt; 0) ? _stateStack.Peek() : JTokenType.None;
+        return current;
+    }
 
-        public XmlJsonReader(XmlReader reader)
+    public override bool Read()
+    {
+        if (HandleValueType())
         {
-            _reader = reader;
-            _stateStack = new Stack&lt;JTokenType&gt;();
+            return true;
         }
 
-        private JTokenType PeekState()
+        while (_reader.Read())
         {
-            JTokenType current = (_stateStack.Count &gt; 0) ? _stateStack.Peek() : JTokenType.None;
-            return current;
-        }
-
-        public override bool Read()
-        {
-            if (HandleValueType())
+            switch (_reader.NodeType)
             {
-                return true;
-            }
+                case XmlNodeType.Element:
+                    string typeName = _reader.GetAttribute(&quot;type&quot;);
+                    if (typeName == null)
+                    {
+                        throw new Exception(&quot;No type specified.&quot;);
+                    }
 
-            while (_reader.Read())
-            {
-                switch (_reader.NodeType)
-                {
-                    case XmlNodeType.Element:
-                        string typeName = _reader.GetAttribute(&quot;type&quot;);
-                        if (typeName == null)
-                        {
-                            throw new Exception(&quot;No type specified.&quot;);
-                        }
+                    _valueType = (JTokenType)Enum.Parse(typeof(JTokenType), typeName, true);
 
-                        _valueType = (JTokenType)Enum.Parse(typeof(JTokenType), typeName, true);
-
-                        switch (PeekState())
-                        {
-                            case JTokenType.None:
-                                HandleValueType();
-                                return true;
-                            case JTokenType.Object:
-                                SetToken(JsonToken.PropertyName, _reader.LocalName);
-                                _stateStack.Push(JTokenType.Property);
-                                return true;
-                            case JTokenType.Array:
-                            case JTokenType.Constructor:
-                                continue;
-                            default:
-                                throw new ArgumentOutOfRangeException();
-                        }
-                    case XmlNodeType.EndElement:
-                        switch (_stateStack.Peek())
-                        {
-                            case JTokenType.Object:
-                                SetToken(JsonToken.EndObject);
-                                _stateStack.Pop();
-                                if (PeekState() == JTokenType.Property)
-                                {
-                                    _stateStack.Pop();
-                                }
-                                return true;
-                            case JTokenType.Array:
-                                SetToken(JsonToken.EndArray);
-                                _stateStack.Pop();
-                                if (PeekState() == JTokenType.Property)
-                                {
-                                    _stateStack.Pop();
-                                }
-                                return true;
-                            case JTokenType.Constructor:
-                                SetToken(JsonToken.EndConstructor);
-                                _stateStack.Pop();
-                                if (PeekState() == JTokenType.Property)
-                                {
-                                    _stateStack.Pop();
-                                }
-                                return true;
-                        }
-
-                        _stateStack.Pop();
-                        if (PeekState() == JTokenType.Property)
-                        {
+                    switch (PeekState())
+                    {
+                        case JTokenType.None:
+                            HandleValueType();
+                            return true;
+                        case JTokenType.Object:
+                            SetToken(JsonToken.PropertyName, _reader.LocalName);
+                            _stateStack.Push(JTokenType.Property);
+                            return true;
+                        case JTokenType.Array:
+                        case JTokenType.Constructor:
+                            continue;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                case XmlNodeType.EndElement:
+                    switch (_stateStack.Peek())
+                    {
+                        case JTokenType.Object:
+                            SetToken(JsonToken.EndObject);
                             _stateStack.Pop();
-                        }
+                            if (PeekState() == JTokenType.Property)
+                            {
+                                _stateStack.Pop();
+                            }
+                            return true;
+                        case JTokenType.Array:
+                            SetToken(JsonToken.EndArray);
+                            _stateStack.Pop();
+                            if (PeekState() == JTokenType.Property)
+                            {
+                                _stateStack.Pop();
+                            }
+                            return true;
+                        case JTokenType.Constructor:
+                            SetToken(JsonToken.EndConstructor);
+                            _stateStack.Pop();
+                            if (PeekState() == JTokenType.Property)
+                            {
+                                _stateStack.Pop();
+                            }
+                            return true;
+                    }
 
-                        break;
-                    case XmlNodeType.Text:
-                    case XmlNodeType.CDATA:
-                        switch (_valueType)
-                        {
-                            case JTokenType.Integer:
-                                SetToken(JsonToken.Integer, Convert.ToInt64(_reader.Value, CultureInfo.InvariantCulture));
-                                break;
-                            case JTokenType.Float:
-                                SetToken(JsonToken.Float, Convert.ToDouble(_reader.Value, CultureInfo.InvariantCulture));
-                                break;
-                            case JTokenType.String:
-                            case JTokenType.Uri:
-                            case JTokenType.TimeSpan:
-                            case JTokenType.Guid:
-                                SetToken(JsonToken.String, _reader.Value);
-                                break;
-                            case JTokenType.Boolean:
-                                SetToken(JsonToken.Boolean, Convert.ToBoolean(_reader.Value, CultureInfo.InvariantCulture));
-                                break;
-                            case JTokenType.Date:
-                                SetToken(JsonToken.Date, Convert.ToDateTime(_reader.Value, CultureInfo.InvariantCulture));
-                                break;
-                            case JTokenType.Bytes:
-                                SetToken(JsonToken.Bytes, Convert.FromBase64String(_reader.Value));
-                                break;
-                            default:
-                                throw new ArgumentOutOfRangeException();
-                        }
-                        _stateStack.Push(_valueType.Value);
-                        return true;
-                    default:
-                        throw new ArgumentOutOfRangeException();
-                }
-            }
-
-            return false;
-        }
-
-        private bool HandleValueType()
-        {
-            switch (_valueType)
-            {
-                case JTokenType.Null:
-                    SetToken(JsonToken.Null);
-                    _valueType = null;
-
+                    _stateStack.Pop();
                     if (PeekState() == JTokenType.Property)
                     {
                         _stateStack.Pop();
                     }
-                    return true;
-                case JTokenType.Object:
-                    SetToken(JsonToken.StartObject);
-                    _stateStack.Push(JTokenType.Object);
-                    _valueType = null;
-                    return true;
-                case JTokenType.Array:
-                    SetToken(JsonToken.StartArray);
-                    _stateStack.Push(JTokenType.Array);
-                    _valueType = null;
-                    return true;
-                case JTokenType.Constructor:
-                    string constructorName = _reader.GetAttribute(&quot;name&quot;);
-                    if (constructorName == null)
+
+                    break;
+                case XmlNodeType.Text:
+                case XmlNodeType.CDATA:
+                    switch (_valueType)
                     {
-                        throw new Exception(&quot;No constructor name specified.&quot;);
+                        case JTokenType.Integer:
+                            SetToken(JsonToken.Integer, Convert.ToInt64(_reader.Value, CultureInfo.InvariantCulture));
+                            break;
+                        case JTokenType.Float:
+                            SetToken(JsonToken.Float, Convert.ToDouble(_reader.Value, CultureInfo.InvariantCulture));
+                            break;
+                        case JTokenType.String:
+                        case JTokenType.Uri:
+                        case JTokenType.TimeSpan:
+                        case JTokenType.Guid:
+                            SetToken(JsonToken.String, _reader.Value);
+                            break;
+                        case JTokenType.Boolean:
+                            SetToken(JsonToken.Boolean, Convert.ToBoolean(_reader.Value, CultureInfo.InvariantCulture));
+                            break;
+                        case JTokenType.Date:
+                            SetToken(JsonToken.Date, Convert.ToDateTime(_reader.Value, CultureInfo.InvariantCulture));
+                            break;
+                        case JTokenType.Bytes:
+                            SetToken(JsonToken.Bytes, Convert.FromBase64String(_reader.Value));
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
                     }
-
-                    SetToken(JsonToken.StartConstructor, constructorName);
-                    _stateStack.Push(JTokenType.Constructor);
-                    _valueType = null;
+                    _stateStack.Push(_valueType.Value);
                     return true;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-            return false;
         }
 
-        public override int? ReadAsInt32()
+        return false;
+    }
+
+    private bool HandleValueType()
+    {
+        switch (_valueType)
         {
-            if (!Read())
-            {
-                return null;
-            }
+            case JTokenType.Null:
+                SetToken(JsonToken.Null);
+                _valueType = null;
 
-            return (Value != null) ? (int?)Convert.ToInt32(Value) : null;
+                if (PeekState() == JTokenType.Property)
+                {
+                    _stateStack.Pop();
+                }
+                return true;
+            case JTokenType.Object:
+                SetToken(JsonToken.StartObject);
+                _stateStack.Push(JTokenType.Object);
+                _valueType = null;
+                return true;
+            case JTokenType.Array:
+                SetToken(JsonToken.StartArray);
+                _stateStack.Push(JTokenType.Array);
+                _valueType = null;
+                return true;
+            case JTokenType.Constructor:
+                string constructorName = _reader.GetAttribute(&quot;name&quot;);
+                if (constructorName == null)
+                {
+                    throw new Exception(&quot;No constructor name specified.&quot;);
+                }
+
+                SetToken(JsonToken.StartConstructor, constructorName);
+                _stateStack.Push(JTokenType.Constructor);
+                _valueType = null;
+                return true;
         }
+        return false;
+    }
 
-        public override string ReadAsString()
+    public override int? ReadAsInt32()
+    {
+        if (!Read())
         {
-            if (!Read())
-            {
-                return null;
-            }
-
-            return (string)Value;
+            return null;
         }
 
-        public override byte[] ReadAsBytes()
+        return (Value != null) ? (int?)Convert.ToInt32(Value) : null;
+    }
+
+    public override string ReadAsString()
+    {
+        if (!Read())
         {
-            if (!Read())
-            {
-                return null;
-            }
-
-            return (byte[])Value;
+            return null;
         }
 
-        public override decimal? ReadAsDecimal()
+        return (string)Value;
+    }
+
+    public override byte[] ReadAsBytes()
+    {
+        if (!Read())
         {
-            if (!Read())
-            {
-                return null;
-            }
-
-            return (Value != null) ? (decimal?)Convert.ToDecimal(Value) : null;
+            return null;
         }
 
-        public override DateTime? ReadAsDateTime()
+        return (byte[])Value;
+    }
+
+    public override decimal? ReadAsDecimal()
+    {
+        if (!Read())
         {
-            if (!Read())
-            {
-                return null;
-            }
-
-            return (Value != null) ? (DateTime?)Convert.ToDateTime(Value) : null;
+            return null;
         }
 
-        public override DateTimeOffset? ReadAsDateTimeOffset()
+        return (Value != null) ? (decimal?)Convert.ToDecimal(Value) : null;
+    }
+
+    public override DateTime? ReadAsDateTime()
+    {
+        if (!Read())
         {
-            if (!Read())
-            {
-                return null;
-            }
-
-            return (Value != null) ? (DateTimeOffset?)Convert.ToDateTime(Value) : null;
+            return null;
         }
-    }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string xml = @&quot;&lt;Root type=&quot;&quot;Object&quot;&quot;&gt;
-              &lt;Null type=&quot;&quot;Null&quot;&quot; /&gt;
-              &lt;String type=&quot;&quot;String&quot;&quot;&gt;This is a string!&lt;/String&gt;
-              &lt;Char type=&quot;&quot;String&quot;&quot;&gt;!&lt;/Char&gt;
-              &lt;Integer type=&quot;&quot;Integer&quot;&quot;&gt;123&lt;/Integer&gt;
-              &lt;DateTime type=&quot;&quot;Date&quot;&quot;&gt;2001-02-22T20:59:59Z&lt;/DateTime&gt;
-              &lt;DateTimeOffset type=&quot;&quot;Date&quot;&quot;&gt;2001-02-22T20:59:59+12:00&lt;/DateTimeOffset&gt;
-              &lt;Float type=&quot;&quot;Float&quot;&quot;&gt;1.1&lt;/Float&gt;
-              &lt;Double type=&quot;&quot;Float&quot;&quot;&gt;3.14&lt;/Double&gt;
-              &lt;Decimal type=&quot;&quot;Float&quot;&quot;&gt;19.95&lt;/Decimal&gt;
-              &lt;Guid type=&quot;&quot;Guid&quot;&quot;&gt;d66eab59-3715-4b35-9e06-fa61c1216eaa&lt;/Guid&gt;
-              &lt;Uri type=&quot;&quot;Uri&quot;&quot;&gt;http://james.newtonking.com&lt;/Uri&gt;
-              &lt;Array type=&quot;&quot;Array&quot;&quot;&gt;
-                &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;1&lt;/Item&gt;
-                &lt;Item type=&quot;&quot;Bytes&quot;&quot;&gt;SGVsbG8gd29ybGQh&lt;/Item&gt;
-                &lt;Item type=&quot;&quot;Boolean&quot;&quot;&gt;True&lt;/Item&gt;
-              &lt;/Array&gt;
-              &lt;Object type=&quot;&quot;Object&quot;&quot;&gt;
-                &lt;String type=&quot;&quot;String&quot;&quot;&gt;This is a string!&lt;/String&gt;
-                &lt;Null type=&quot;&quot;Null&quot;&quot; /&gt;
-              &lt;/Object&gt;
-              &lt;Constructor type=&quot;&quot;Constructor&quot;&quot; name=&quot;&quot;Date&quot;&quot;&gt;
-                &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;2000&lt;/Item&gt;
-                &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;12&lt;/Item&gt;
-                &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;30&lt;/Item&gt;
-              &lt;/Constructor&gt;
-            &lt;/Root&gt;&quot;;
 
-            StringReader sr = new StringReader(xml);
+        return (Value != null) ? (DateTime?)Convert.ToDateTime(Value) : null;
+    }
 
-            using (XmlReader xmlReader = XmlReader.Create(sr, new XmlReaderSettings { IgnoreWhitespace = true }))
-            using (XmlJsonReader reader = new XmlJsonReader(xmlReader))
-            {
-                JObject o = JObject.Load(reader);
-                //{
-                //  &quot;Null&quot;: null,
-                //  &quot;String&quot;: &quot;This is a string!&quot;,
-                //  &quot;Char&quot;: &quot;!&quot;,
-                //  &quot;Integer&quot;: 123,
-                //  &quot;DateTime&quot;: &quot;2001-02-23T09:59:59+13:00&quot;,
-                //  &quot;DateTimeOffset&quot;: &quot;2001-02-22T21:59:59+13:00&quot;,
-                //  &quot;Float&quot;: 1.1,
-                //  &quot;Double&quot;: 3.14,
-                //  &quot;Decimal&quot;: 19.95,
-                //  &quot;Guid&quot;: &quot;d66eab59-3715-4b35-9e06-fa61c1216eaa&quot;,
-                //  &quot;Uri&quot;: &quot;http://james.newtonking.com&quot;,
-                //  &quot;Array&quot;: [
-                //    1,
-                //    &quot;SGVsbG8gd29ybGQh&quot;,
-                //    true
-                //  ],
-                //  &quot;Object&quot;: {
-                //    &quot;String&quot;: &quot;This is a string!&quot;,
-                //    &quot;Null&quot;: null
-                //  },
-                //  &quot;Constructor&quot;: new Date(2000, 12, 30)
-                //}
-            }</code></pre>
+    public override DateTimeOffset? ReadAsDateTimeOffset()
+    {
+        if (!Read())
+        {
+            return null;
+        }
+
+        return (Value != null) ? (DateTimeOffset?)Convert.ToDateTime(Value) : null;
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string xml = @&quot;&lt;Root type=&quot;&quot;Object&quot;&quot;&gt;
+  &lt;Null type=&quot;&quot;Null&quot;&quot; /&gt;
+  &lt;String type=&quot;&quot;String&quot;&quot;&gt;This is a string!&lt;/String&gt;
+  &lt;Char type=&quot;&quot;String&quot;&quot;&gt;!&lt;/Char&gt;
+  &lt;Integer type=&quot;&quot;Integer&quot;&quot;&gt;123&lt;/Integer&gt;
+  &lt;DateTime type=&quot;&quot;Date&quot;&quot;&gt;2001-02-22T20:59:59Z&lt;/DateTime&gt;
+  &lt;DateTimeOffset type=&quot;&quot;Date&quot;&quot;&gt;2001-02-22T20:59:59+12:00&lt;/DateTimeOffset&gt;
+  &lt;Float type=&quot;&quot;Float&quot;&quot;&gt;1.1&lt;/Float&gt;
+  &lt;Double type=&quot;&quot;Float&quot;&quot;&gt;3.14&lt;/Double&gt;
+  &lt;Decimal type=&quot;&quot;Float&quot;&quot;&gt;19.95&lt;/Decimal&gt;
+  &lt;Guid type=&quot;&quot;Guid&quot;&quot;&gt;d66eab59-3715-4b35-9e06-fa61c1216eaa&lt;/Guid&gt;
+  &lt;Uri type=&quot;&quot;Uri&quot;&quot;&gt;http://james.newtonking.com&lt;/Uri&gt;
+  &lt;Array type=&quot;&quot;Array&quot;&quot;&gt;
+    &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;1&lt;/Item&gt;
+    &lt;Item type=&quot;&quot;Bytes&quot;&quot;&gt;SGVsbG8gd29ybGQh&lt;/Item&gt;
+    &lt;Item type=&quot;&quot;Boolean&quot;&quot;&gt;True&lt;/Item&gt;
+  &lt;/Array&gt;
+  &lt;Object type=&quot;&quot;Object&quot;&quot;&gt;
+    &lt;String type=&quot;&quot;String&quot;&quot;&gt;This is a string!&lt;/String&gt;
+    &lt;Null type=&quot;&quot;Null&quot;&quot; /&gt;
+  &lt;/Object&gt;
+  &lt;Constructor type=&quot;&quot;Constructor&quot;&quot; name=&quot;&quot;Date&quot;&quot;&gt;
+    &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;2000&lt;/Item&gt;
+    &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;12&lt;/Item&gt;
+    &lt;Item type=&quot;&quot;Integer&quot;&quot;&gt;30&lt;/Item&gt;
+  &lt;/Constructor&gt;
+&lt;/Root&gt;&quot;;
+
+StringReader sr = new StringReader(xml);
+
+using (XmlReader xmlReader = XmlReader.Create(sr, new XmlReaderSettings { IgnoreWhitespace = true }))
+using (XmlJsonReader reader = new XmlJsonReader(xmlReader))
+{
+    JObject o = JObject.Load(reader);
+    //{
+    //  &quot;Null&quot;: null,
+    //  &quot;String&quot;: &quot;This is a string!&quot;,
+    //  &quot;Char&quot;: &quot;!&quot;,
+    //  &quot;Integer&quot;: 123,
+    //  &quot;DateTime&quot;: &quot;2001-02-23T09:59:59+13:00&quot;,
+    //  &quot;DateTimeOffset&quot;: &quot;2001-02-22T21:59:59+13:00&quot;,
+    //  &quot;Float&quot;: 1.1,
+    //  &quot;Double&quot;: 3.14,
+    //  &quot;Decimal&quot;: 19.95,
+    //  &quot;Guid&quot;: &quot;d66eab59-3715-4b35-9e06-fa61c1216eaa&quot;,
+    //  &quot;Uri&quot;: &quot;http://james.newtonking.com&quot;,
+    //  &quot;Array&quot;: [
+    //    1,
+    //    &quot;SGVsbG8gd29ybGQh&quot;,
+    //    true
+    //  ],
+    //  &quot;Object&quot;: {
+    //    &quot;String&quot;: &quot;This is a string!&quot;,
+    //    &quot;Null&quot;: null
+    //  },
+    //  &quot;Constructor&quot;: new Date(2000, 12, 30)
+    //}
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

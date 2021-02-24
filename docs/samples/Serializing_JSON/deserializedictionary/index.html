@@ -192,18 +192,18 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'href': '/account/login.aspx',
-              'target': '_blank'
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'href': '/account/login.aspx',
+  'target': '_blank'
+}&quot;;
 
-            Dictionary&lt;string, string&gt; htmlAttributes = JsonConvert.DeserializeObject&lt;Dictionary&lt;string, string&gt;&gt;(json);
+Dictionary&lt;string, string&gt; htmlAttributes = JsonConvert.DeserializeObject&lt;Dictionary&lt;string, string&gt;&gt;(json);
 
-            Console.WriteLine(htmlAttributes[&quot;href&quot;]);
-            // /account/login.aspx
+Console.WriteLine(htmlAttributes[&quot;href&quot;]);
+// /account/login.aspx
 
-            Console.WriteLine(htmlAttributes[&quot;target&quot;]);
-            // _blank</code></pre>
+Console.WriteLine(htmlAttributes[&quot;target&quot;]);
+// _blank</code></pre>
 
     
                 <!-- Required only on API pages -->

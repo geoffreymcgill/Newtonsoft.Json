@@ -192,23 +192,23 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">                string json = @&quot;{
-                  'Name': 'James',
-                  'Password': 'Password1',
-                  '$type': 'MyNamespace.User, MyAssembly'
-                }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Name': 'James',
+  'Password': 'Password1',
+  '$type': 'MyNamespace.User, MyAssembly'
+}&quot;;
 
-                object o = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
-                {
-                    TypeNameHandling = TypeNameHandling.All,
-                    // $type no longer needs to be first
-                    MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead
-                });
+object o = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.All,
+    // $type no longer needs to be first
+    MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead
+});
 
-                User u = (User)o;
+User u = (User)o;
 
-                Console.WriteLine(u.Name);
-                // James</code></pre>
+Console.WriteLine(u.Name);
+// James</code></pre>
 
     
                 <!-- Required only on API pages -->

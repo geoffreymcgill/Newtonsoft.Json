@@ -199,30 +199,30 @@
     public DateTime CreatedDate { get; set; }
     public IList&lt;string&gt; Roles { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Account account = new Account
-            {
-                Email = &quot;james@example.com&quot;,
-                Active = true,
-                CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
-                Roles = new List&lt;string&gt;
-                {
-                    &quot;User&quot;,
-                    &quot;Admin&quot;
-                }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+{
+    Email = &quot;james@example.com&quot;,
+    Active = true,
+    CreatedDate = new DateTime(2013, 1, 20, 0, 0, 0, DateTimeKind.Utc),
+    Roles = new List&lt;string&gt;
+    {
+        &quot;User&quot;,
+        &quot;Admin&quot;
+    }
+};
 
-            string json = JsonConvert.SerializeObject(account, Formatting.Indented);
-            // {
-            //   &quot;Email&quot;: &quot;james@example.com&quot;,
-            //   &quot;Active&quot;: true,
-            //   &quot;CreatedDate&quot;: &quot;2013-01-20T00:00:00Z&quot;,
-            //   &quot;Roles&quot;: [
-            //     &quot;User&quot;,
-            //     &quot;Admin&quot;
-            //   ]
-            // }
+string json = JsonConvert.SerializeObject(account, Formatting.Indented);
+// {
+//   &quot;Email&quot;: &quot;james@example.com&quot;,
+//   &quot;Active&quot;: true,
+//   &quot;CreatedDate&quot;: &quot;2013-01-20T00:00:00Z&quot;,
+//   &quot;Roles&quot;: [
+//     &quot;User&quot;,
+//     &quot;Admin&quot;
+//   ]
+// }
 
-            Console.WriteLine(json);</code></pre>
+Console.WriteLine(json);</code></pre>
 
     
                 <!-- Required only on API pages -->

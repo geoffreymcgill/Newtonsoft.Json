@@ -192,23 +192,23 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'HourlyRate': 150,
-              'Hours': 40,
-              'TaxRate': 0.125
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'HourlyRate': 150,
+  'Hours': 40,
+  'TaxRate': 0.125
+}&quot;;
 
-            CustomerInvoice invoice = JsonConvert.DeserializeObject&lt;CustomerInvoice&gt;(json);
+CustomerInvoice invoice = JsonConvert.DeserializeObject&lt;CustomerInvoice&gt;(json);
 
-            // increase tax to 15%
-            invoice.TaxRate = 0.15m;
+// increase tax to 15%
+invoice.TaxRate = 0.15m;
 
-            string result = JsonConvert.SerializeObject(invoice);
-            // {
-            //   &quot;TaxRate&quot;: 0.15,
-            //   &quot;HourlyRate&quot;: 150,
-            //   &quot;Hours&quot;: 40
-            // }</code></pre>
+string result = JsonConvert.SerializeObject(invoice);
+// {
+//   &quot;TaxRate&quot;: 0.15,
+//   &quot;HourlyRate&quot;: 150,
+//   &quot;Hours&quot;: 40
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

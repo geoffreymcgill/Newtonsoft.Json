@@ -197,15 +197,15 @@
     public string Name { get; set; }
     public int Year { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            // read file into a string and deserialize JSON to a type
-            Movie movie1 = JsonConvert.DeserializeObject&lt;Movie&gt;(File.ReadAllText(@&quot;c:\movie.json&quot;));
+<pre v-highlight:csharp><code v-pre title="Usage">// read file into a string and deserialize JSON to a type
+Movie movie1 = JsonConvert.DeserializeObject&lt;Movie&gt;(File.ReadAllText(@&quot;c:\movie.json&quot;));
 
-            // deserialize JSON directly from a file
-            using (StreamReader file = File.OpenText(@&quot;c:\movie.json&quot;))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                Movie movie2 = (Movie)serializer.Deserialize(file, typeof(Movie));
-            }</code></pre>
+// deserialize JSON directly from a file
+using (StreamReader file = File.OpenText(@&quot;c:\movie.json&quot;))
+{
+    JsonSerializer serializer = new JsonSerializer();
+    Movie movie2 = (Movie)serializer.Deserialize(file, typeof(Movie));
+}</code></pre>
 
     
                 <!-- Required only on API pages -->

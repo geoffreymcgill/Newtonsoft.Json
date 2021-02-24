@@ -199,33 +199,33 @@
     [JsonProperty(PropertyName = &quot;UPN&quot;)]
     public string Upn { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            User user = new User
-            {
-                FirstName = &quot;John&quot;,
-                LastName = &quot;Smith&quot;,
-                Upn = &quot;john.smith@acme.com&quot;
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+{
+    FirstName = &quot;John&quot;,
+    LastName = &quot;Smith&quot;,
+    Upn = &quot;john.smith@acme.com&quot;
+};
 
-            DefaultContractResolver contractResolver = new DefaultContractResolver
-            {
-                NamingStrategy = new CamelCaseNamingStrategy
-                {
-                    OverrideSpecifiedNames = false
-                }
-            };
+DefaultContractResolver contractResolver = new DefaultContractResolver
+{
+    NamingStrategy = new CamelCaseNamingStrategy
+    {
+        OverrideSpecifiedNames = false
+    }
+};
 
-            string json = JsonConvert.SerializeObject(user, new JsonSerializerSettings
-            {
-                ContractResolver = contractResolver,
-                Formatting = Formatting.Indented
-            });
+string json = JsonConvert.SerializeObject(user, new JsonSerializerSettings
+{
+    ContractResolver = contractResolver,
+    Formatting = Formatting.Indented
+});
 
-            Console.WriteLine(json);
-            // {
-            //   &quot;firstName&quot;: &quot;John&quot;,
-            //   &quot;lastName&quot;: &quot;Smith&quot;,
-            //   &quot;UPN&quot;: &quot;john.smith@acme.com&quot;
-            // }</code></pre>
+Console.WriteLine(json);
+// {
+//   &quot;firstName&quot;: &quot;John&quot;,
+//   &quot;lastName&quot;: &quot;Smith&quot;,
+//   &quot;UPN&quot;: &quot;john.smith@acme.com&quot;
+// }</code></pre>
 
     
                 <!-- Required only on API pages -->

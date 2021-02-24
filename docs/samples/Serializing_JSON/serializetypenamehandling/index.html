@@ -192,80 +192,80 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public abstract class Business
+<pre v-highlight:csharp><code v-pre title="Types">public abstract class Business
+{
+    public string Name { get; set; }
+}
+
+public class Hotel : Business
+{
+    public int Stars { get; set; }
+}
+
+public class Stockholder
+{
+    public string FullName { get; set; }
+    public IList&lt;Business&gt; Businesses { get; set; }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">Stockholder stockholder = new Stockholder
+{
+    FullName = &quot;Steve Stockholder&quot;,
+    Businesses = new List&lt;Business&gt;
+    {
+        new Hotel
         {
-            public string Name { get; set; }
+            Name = &quot;Hudson Hotel&quot;,
+            Stars = 4
         }
+    }
+};
 
-        public class Hotel : Business
-        {
-            public int Stars { get; set; }
-        }
+string jsonTypeNameAll = JsonConvert.SerializeObject(stockholder, Formatting.Indented, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.All
+});
 
-        public class Stockholder
-        {
-            public string FullName { get; set; }
-            public IList&lt;Business&gt; Businesses { get; set; }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            Stockholder stockholder = new Stockholder
-            {
-                FullName = &quot;Steve Stockholder&quot;,
-                Businesses = new List&lt;Business&gt;
-                {
-                    new Hotel
-                    {
-                        Name = &quot;Hudson Hotel&quot;,
-                        Stars = 4
-                    }
-                }
-            };
+Console.WriteLine(jsonTypeNameAll);
+// {
+//   &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Stockholder, Newtonsoft.Json.Tests&quot;,
+//   &quot;FullName&quot;: &quot;Steve Stockholder&quot;,
+//   &quot;Businesses&quot;: {
+//     &quot;$type&quot;: &quot;System.Collections.Generic.List`1[[Newtonsoft.Json.Samples.Business, Newtonsoft.Json.Tests]], mscorlib&quot;,
+//     &quot;$values&quot;: [
+//       {
+//         &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests&quot;,
+//         &quot;Stars&quot;: 4,
+//         &quot;Name&quot;: &quot;Hudson Hotel&quot;
+//       }
+//     ]
+//   }
+// }
 
-            string jsonTypeNameAll = JsonConvert.SerializeObject(stockholder, Formatting.Indented, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.All
-            });
+string jsonTypeNameAuto = JsonConvert.SerializeObject(stockholder, Formatting.Indented, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.Auto
+});
 
-            Console.WriteLine(jsonTypeNameAll);
-            // {
-            //   &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Stockholder, Newtonsoft.Json.Tests&quot;,
-            //   &quot;FullName&quot;: &quot;Steve Stockholder&quot;,
-            //   &quot;Businesses&quot;: {
-            //     &quot;$type&quot;: &quot;System.Collections.Generic.List`1[[Newtonsoft.Json.Samples.Business, Newtonsoft.Json.Tests]], mscorlib&quot;,
-            //     &quot;$values&quot;: [
-            //       {
-            //         &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests&quot;,
-            //         &quot;Stars&quot;: 4,
-            //         &quot;Name&quot;: &quot;Hudson Hotel&quot;
-            //       }
-            //     ]
-            //   }
-            // }
+Console.WriteLine(jsonTypeNameAuto);
+// {
+//   &quot;FullName&quot;: &quot;Steve Stockholder&quot;,
+//   &quot;Businesses&quot;: [
+//     {
+//       &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests&quot;,
+//       &quot;Stars&quot;: 4,
+//       &quot;Name&quot;: &quot;Hudson Hotel&quot;
+//     }
+//   ]
+// }
 
-            string jsonTypeNameAuto = JsonConvert.SerializeObject(stockholder, Formatting.Indented, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Auto
-            });
+// for security TypeNameHandling is required when deserializing
+Stockholder newStockholder = JsonConvert.DeserializeObject&lt;Stockholder&gt;(jsonTypeNameAuto, new JsonSerializerSettings
+{
+    TypeNameHandling = TypeNameHandling.Auto
+});
 
-            Console.WriteLine(jsonTypeNameAuto);
-            // {
-            //   &quot;FullName&quot;: &quot;Steve Stockholder&quot;,
-            //   &quot;Businesses&quot;: [
-            //     {
-            //       &quot;$type&quot;: &quot;Newtonsoft.Json.Samples.Hotel, Newtonsoft.Json.Tests&quot;,
-            //       &quot;Stars&quot;: 4,
-            //       &quot;Name&quot;: &quot;Hudson Hotel&quot;
-            //     }
-            //   ]
-            // }
-
-            // for security TypeNameHandling is required when deserializing
-            Stockholder newStockholder = JsonConvert.DeserializeObject&lt;Stockholder&gt;(jsonTypeNameAuto, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Auto
-            });
-
-            Console.WriteLine(newStockholder.Businesses[0].GetType().Name);
-            // Hotel</code></pre>
+Console.WriteLine(newStockholder.Businesses[0].GetType().Name);
+// Hotel</code></pre>
 
     
                 <!-- Required only on API pages -->

@@ -192,32 +192,32 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'Table1': [
-                {
-                  'id': 0,
-                  'item': 'item 0'
-                },
-                {
-                  'id': 1,
-                  'item': 'item 1'
-                }
-              ]
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Table1': [
+    {
+      'id': 0,
+      'item': 'item 0'
+    },
+    {
+      'id': 1,
+      'item': 'item 1'
+    }
+  ]
+}&quot;;
 
-            DataSet dataSet = JsonConvert.DeserializeObject&lt;DataSet&gt;(json);
+DataSet dataSet = JsonConvert.DeserializeObject&lt;DataSet&gt;(json);
 
-            DataTable dataTable = dataSet.Tables[&quot;Table1&quot;];
+DataTable dataTable = dataSet.Tables[&quot;Table1&quot;];
 
-            Console.WriteLine(dataTable.Rows.Count);
-            // 2
+Console.WriteLine(dataTable.Rows.Count);
+// 2
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                Console.WriteLine(row[&quot;id&quot;] + &quot; - &quot; + row[&quot;item&quot;]);
-            }
-            // 0 - item 0
-            // 1 - item 1</code></pre>
+foreach (DataRow row in dataTable.Rows)
+{
+    Console.WriteLine(row[&quot;id&quot;] + &quot; - &quot; + row[&quot;item&quot;]);
+}
+// 0 - item 0
+// 1 - item 1</code></pre>
 
     
                 <!-- Required only on API pages -->

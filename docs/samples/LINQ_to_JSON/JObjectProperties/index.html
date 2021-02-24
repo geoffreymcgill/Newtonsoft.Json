@@ -192,25 +192,25 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">            JObject o = new JObject
-            {
-                { &quot;name1&quot;, &quot;value1&quot; },
-                { &quot;name2&quot;, &quot;value2&quot; }
-            };
+<pre v-highlight:csharp><code v-pre title="Usage">JObject o = new JObject
+{
+    { &quot;name1&quot;, &quot;value1&quot; },
+    { &quot;name2&quot;, &quot;value2&quot; }
+};
 
-            foreach (JProperty property in o.Properties())
-            {
-                Console.WriteLine(property.Name + &quot; - &quot; + property.Value);
-            }
-            // name1 - value1
-            // name2 - value2
+foreach (JProperty property in o.Properties())
+{
+    Console.WriteLine(property.Name + &quot; - &quot; + property.Value);
+}
+// name1 - value1
+// name2 - value2
 
-            foreach (KeyValuePair&lt;string, JToken&gt; property in o)
-            {
-                Console.WriteLine(property.Key + &quot; - &quot; + property.Value);
-            }
-            // name1 - value1
-            // name2 - value2</code></pre>
+foreach (KeyValuePair&lt;string, JToken&gt; property in o)
+{
+    Console.WriteLine(property.Key + &quot; - &quot; + property.Value);
+}
+// name1 - value1
+// name2 - value2</code></pre>
 
     
                 <!-- Required only on API pages -->

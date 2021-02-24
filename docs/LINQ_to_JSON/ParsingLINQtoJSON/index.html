@@ -193,22 +193,22 @@
     </h2>
 </doc-anchor-target>
 <p>JSON values can be read from a string using <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-parse">Parse(string)</a>.</p>
-<pre v-highlight:csharp><code v-pre title="Parsing a JSON Object from text">            string json = @&quot;{
-              CPU: 'Intel',
-              Drives: [
-                'DVD read/writer',
-                '500 gigabyte hard drive'
-              ]
-            }&quot;;
+<pre v-highlight:csharp><code v-pre title="Parsing a JSON Object from text">string json = @&quot;{
+  CPU: 'Intel',
+  Drives: [
+    'DVD read/writer',
+    '500 gigabyte hard drive'
+  ]
+}&quot;;
 
-            JObject o = JObject.Parse(json);</code></pre>
-<pre v-highlight:csharp><code v-pre title="Parsing a JSON Array from text">            string json = @&quot;[
-              'Small',
-              'Medium',
-              'Large'
-            ]&quot;;
+JObject o = JObject.Parse(json);</code></pre>
+<pre v-highlight:csharp><code v-pre title="Parsing a JSON Array from text">string json = @&quot;[
+  'Small',
+  'Medium',
+  'Large'
+]&quot;;
 
-            JArray a = JArray.Parse(json);</code></pre>
+JArray a = JArray.Parse(json);</code></pre>
 <doc-anchor-target id="loading-json-from-a-file">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#loading-json-from-a-file">#</doc-anchor-trigger>

@@ -192,43 +192,43 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">        public class Person
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public DateTime BirthDate { get; set; }
-        }
+<pre v-highlight:csharp><code v-pre title="Types">public class Person
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public DateTime BirthDate { get; set; }
+}
 
-        public class Employee : Person
-        {
-            public string Department { get; set; }
-            public string JobTitle { get; set; }
-        }
+public class Employee : Person
+{
+    public string Department { get; set; }
+    public string JobTitle { get; set; }
+}
 
-        public class PersonConverter : CustomCreationConverter&lt;Person&gt;
-        {
-            public override Person Create(Type objectType)
-            {
-                return new Employee();
-            }
-        }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">            string json = @&quot;{
-              'Department': 'Furniture',
-              'JobTitle': 'Carpenter',
-              'FirstName': 'John',
-              'LastName': 'Joinery',
-              'BirthDate': '1983-02-02T00:00:00'
-            }&quot;;
+public class PersonConverter : CustomCreationConverter&lt;Person&gt;
+{
+    public override Person Create(Type objectType)
+    {
+        return new Employee();
+    }
+}</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+  'Department': 'Furniture',
+  'JobTitle': 'Carpenter',
+  'FirstName': 'John',
+  'LastName': 'Joinery',
+  'BirthDate': '1983-02-02T00:00:00'
+}&quot;;
 
-            Person person = JsonConvert.DeserializeObject&lt;Person&gt;(json, new PersonConverter());
+Person person = JsonConvert.DeserializeObject&lt;Person&gt;(json, new PersonConverter());
 
-            Console.WriteLine(person.GetType().Name);
-            // Employee
+Console.WriteLine(person.GetType().Name);
+// Employee
 
-            Employee employee = (Employee)person;
+Employee employee = (Employee)person;
 
-            Console.WriteLine(employee.JobTitle);
-            // Carpenter</code></pre>
+Console.WriteLine(employee.JobTitle);
+// Carpenter</code></pre>
 
     
                 <!-- Required only on API pages -->
