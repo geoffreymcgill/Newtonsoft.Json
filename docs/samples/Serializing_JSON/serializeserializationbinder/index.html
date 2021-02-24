@@ -192,57 +192,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeSerializationBinder.cs" region="Types" title="Types">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using System.Runtime.Serialization;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-#endif
-#if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
-#else
-using System.Linq;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class SerializeSerializationBinder : TestFixtureBase
-    {
-        #region Types
-        public class KnownTypesBinder : ISerializationBinder
+<pre v-highlight:csharp><code v-pre title="Types">        public class KnownTypesBinder : ISerializationBinder
         {
             public IList&lt;Type&gt; KnownTypes { get; set; }
 
@@ -262,14 +212,8 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
         {
             public string Maker { get; set; }
             public string Model { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            KnownTypesBinder knownTypesBinder = new KnownTypesBinder
+        }</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">            KnownTypesBinder knownTypesBinder = new KnownTypesBinder
             {
                 KnownTypes = new List&lt;Type&gt; { typeof(Car) }
             };
@@ -300,128 +244,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             });
 
             Console.WriteLine(newValue.GetType().Name);
-            // Car
-            #endregion
-
-            Assert.AreEqual(&quot;Car&quot;, newValue.GetType().Name);
-        }
-    }
-}</code></pre>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/SerializeSerializationBinder.cs" region="Usage" title="Usage">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using Newtonsoft.Json.Serialization;
-using System.Runtime.Serialization;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-#endif
-#if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
-#else
-using System.Linq;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class SerializeSerializationBinder : TestFixtureBase
-    {
-        #region Types
-        public class KnownTypesBinder : ISerializationBinder
-        {
-            public IList&lt;Type&gt; KnownTypes { get; set; }
-
-            public Type BindToType(string assemblyName, string typeName)
-            {
-                return KnownTypes.SingleOrDefault(t =&gt; t.Name == typeName);
-            }
-
-            public void BindToName(Type serializedType, out string assemblyName, out string typeName)
-            {
-                assemblyName = null;
-                typeName = serializedType.Name;
-            }
-        }
-
-        public class Car
-        {
-            public string Maker { get; set; }
-            public string Model { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            KnownTypesBinder knownTypesBinder = new KnownTypesBinder
-            {
-                KnownTypes = new List&lt;Type&gt; { typeof(Car) }
-            };
-
-            Car car = new Car
-            {
-                Maker = &quot;Ford&quot;,
-                Model = &quot;Explorer&quot;
-            };
-
-            string json = JsonConvert.SerializeObject(car, Formatting.Indented, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects,
-                SerializationBinder = knownTypesBinder
-            });
-
-            Console.WriteLine(json);
-            // {
-            //   &quot;$type&quot;: &quot;Car&quot;,
-            //   &quot;Maker&quot;: &quot;Ford&quot;,
-            //   &quot;Model&quot;: &quot;Explorer&quot;
-            // }
-
-            object newValue = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
-            {
-                TypeNameHandling = TypeNameHandling.Objects,
-                SerializationBinder = knownTypesBinder
-            });
-
-            Console.WriteLine(newValue.GetType().Name);
-            // Car
-            #endregion
-
-            Assert.AreEqual(&quot;Car&quot;, newValue.GetType().Name);
-        }
-    }
-}</code></pre>
+            // Car</code></pre>
 
     
                 <!-- Required only on API pages -->

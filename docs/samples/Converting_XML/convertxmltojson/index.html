@@ -192,56 +192,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Xml/ConvertXmlToJson.cs" region="Usage" title="Usage">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Xml;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-
-#endif
-
-#if !(DNXCORE50 || NET20 || PORTABLE || PORTABLE40) || NETSTANDARD2_0
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Xml
-{
-    [TestFixture]
-    public class ConvertXmlToJson : TestFixtureBase
-    {
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+<pre v-highlight:csharp><code v-pre title="Usage">            string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
             &lt;root&gt;
               &lt;person id='1'&gt;
               &lt;name&gt;Alan&lt;/name&gt;
@@ -278,15 +229,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Xml
             //       }
             //     ]
             //   }
-            // }
-            #endregion
-
-            Assert.AreEqual(@&quot;{&quot;&quot;?xml&quot;&quot;:{&quot;&quot;@version&quot;&quot;:&quot;&quot;1.0&quot;&quot;,&quot;&quot;@standalone&quot;&quot;:&quot;&quot;no&quot;&quot;},&quot;&quot;root&quot;&quot;:{&quot;&quot;person&quot;&quot;:[{&quot;&quot;@id&quot;&quot;:&quot;&quot;1&quot;&quot;,&quot;&quot;name&quot;&quot;:&quot;&quot;Alan&quot;&quot;,&quot;&quot;url&quot;&quot;:&quot;&quot;http://www.google.com&quot;&quot;},{&quot;&quot;@id&quot;&quot;:&quot;&quot;2&quot;&quot;,&quot;&quot;name&quot;&quot;:&quot;&quot;Louis&quot;&quot;,&quot;&quot;url&quot;&quot;:&quot;&quot;http://www.yahoo.com&quot;&quot;}]}}&quot;, json);
-        }
-    }
-}
-
-#endif</code></pre>
+            // }</code></pre>
 
     
                 <!-- Required only on API pages -->

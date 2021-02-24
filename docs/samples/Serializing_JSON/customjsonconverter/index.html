@@ -192,56 +192,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverter.cs" region="Types" title="Types">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-#endif
-#if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
-#else
-using System.Linq;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class CustomJsonConverter : TestFixtureBase
-    {
-        #region Types
-        public class KeysJsonConverter : JsonConverter
+<pre v-highlight:csharp><code v-pre title="Types">        public class KeysJsonConverter : JsonConverter
         {
             private readonly Type[] _types;
 
@@ -290,14 +241,8 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             public string FirstName { get; set; }
             public string LastName { get; set; }
             public IList&lt;string&gt; Roles { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            Employee employee = new Employee
+        }</code></pre>
+<pre v-highlight:csharp><code v-pre title="Usage">            Employee employee = new Employee
             {
                 FirstName = &quot;James&quot;,
                 LastName = &quot;Newton-King&quot;,
@@ -326,154 +271,7 @@ namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
             Employee newEmployee = JsonConvert.DeserializeObject&lt;Employee&gt;(json, new KeysJsonConverter(typeof(Employee)));
 
             Console.WriteLine(newEmployee.FirstName);
-            // James
-            #endregion
-
-            Assert.AreEqual(&quot;James&quot;, newEmployee.FirstName);
-        }
-    }
-}</code></pre>
-<pre v-highlight:csharp><code v-pre source="../../../Src/Newtonsoft.Json.Tests/Documentation/Samples/Serializer/CustomJsonConverter.cs" region="Usage" title="Usage">#region License
-// Copyright (c) 2007 James Newton-King
-//
-// Permission is hereby granted, free of charge, to any person
-// obtaining a copy of this software and associated documentation
-// files (the &quot;Software&quot;), to deal in the Software without
-// restriction, including without limitation the rights to use,
-// copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the
-// Software is furnished to do so, subject to the following
-// conditions:
-//
-// The above copyright notice and this permission notice shall be
-// included in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
-// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-// OTHER DEALINGS IN THE SOFTWARE.
-#endregion
-
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Text;
-#if DNXCORE50
-using Xunit;
-using Test = Xunit.FactAttribute;
-using Assert = Newtonsoft.Json.Tests.XUnitAssert;
-#else
-using NUnit.Framework;
-#endif
-#if NET20
-using Newtonsoft.Json.Utilities.LinqBridge;
-#else
-using System.Linq;
-
-#endif
-
-namespace Newtonsoft.Json.Tests.Documentation.Samples.Serializer
-{
-    [TestFixture]
-    public class CustomJsonConverter : TestFixtureBase
-    {
-        #region Types
-        public class KeysJsonConverter : JsonConverter
-        {
-            private readonly Type[] _types;
-
-            public KeysJsonConverter(params Type[] types)
-            {
-                _types = types;
-            }
-
-            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
-            {
-                JToken t = JToken.FromObject(value);
-
-                if (t.Type != JTokenType.Object)
-                {
-                    t.WriteTo(writer);
-                }
-                else
-                {
-                    JObject o = (JObject)t;
-                    IList&lt;string&gt; propertyNames = o.Properties().Select(p =&gt; p.Name).ToList();
-
-                    o.AddFirst(new JProperty(&quot;Keys&quot;, new JArray(propertyNames)));
-
-                    o.WriteTo(writer);
-                }
-            }
-
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-            {
-                throw new NotImplementedException(&quot;Unnecessary because CanRead is false. The type will skip the converter.&quot;);
-            }
-
-            public override bool CanRead
-            {
-                get { return false; }
-            }
-
-            public override bool CanConvert(Type objectType)
-            {
-                return _types.Any(t =&gt; t == objectType);
-            }
-        }
-
-        public class Employee
-        {
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public IList&lt;string&gt; Roles { get; set; }
-        }
-        #endregion
-
-        [Test]
-        public void Example()
-        {
-            #region Usage
-            Employee employee = new Employee
-            {
-                FirstName = &quot;James&quot;,
-                LastName = &quot;Newton-King&quot;,
-                Roles = new List&lt;string&gt;
-                {
-                    &quot;Admin&quot;
-                }
-            };
-
-            string json = JsonConvert.SerializeObject(employee, Formatting.Indented, new KeysJsonConverter(typeof(Employee)));
-
-            Console.WriteLine(json);
-            // {
-            //   &quot;Keys&quot;: [
-            //     &quot;FirstName&quot;,
-            //     &quot;LastName&quot;,
-            //     &quot;Roles&quot;
-            //   ],
-            //   &quot;FirstName&quot;: &quot;James&quot;,
-            //   &quot;LastName&quot;: &quot;Newton-King&quot;,
-            //   &quot;Roles&quot;: [
-            //     &quot;Admin&quot;
-            //   ]
-            // }
-
-            Employee newEmployee = JsonConvert.DeserializeObject&lt;Employee&gt;(json, new KeysJsonConverter(typeof(Employee)));
-
-            Console.WriteLine(newEmployee.FirstName);
-            // James
-            #endregion
-
-            Assert.AreEqual(&quot;James&quot;, newEmployee.FirstName);
-        }
-    }
-}</code></pre>
+            // James</code></pre>
 
     
                 <!-- Required only on API pages -->
