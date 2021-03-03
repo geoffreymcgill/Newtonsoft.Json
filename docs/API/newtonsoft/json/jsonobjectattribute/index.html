@@ -211,6 +211,14 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-_itemnullvaluehandling" name="_itemNullValueHandling" type="Nullable<NullValueHandling>?" access="internal" signature="internal Nullable<NullValueHandling>? _itemNullValueHandling">
+        <template #name><h3>_itemNullValueHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_itemrequired" name="_itemRequired" type="Nullable<Required>?" access="internal" signature="internal Nullable<Required>? _itemRequired">
+        <template #name><h3>_itemRequired</h3></template>
+    </doc-member>
+
     <doc-member id="field-_memberserialization" name="_memberSerialization" type="MemberSerialization" access="private" signature="private MemberSerialization _memberSerialization">
         <template #name><h3>_memberSerialization</h3></template>
     </doc-member>
@@ -218,32 +226,10 @@
     <doc-member id="field-_missingmemberhandling" name="_missingMemberHandling" type="Nullable<MissingMemberHandling>?" access="internal" signature="internal Nullable<MissingMemberHandling>? _missingMemberHandling">
         <template #name><h3>_missingMemberHandling</h3></template>
     </doc-member>
-
-    <doc-member id="field-_itemrequired" name="_itemRequired" type="Nullable<Required>?" access="internal" signature="internal Nullable<Required>? _itemRequired">
-        <template #name><h3>_itemRequired</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_itemnullvaluehandling" name="_itemNullValueHandling" type="Nullable<NullValueHandling>?" access="internal" signature="internal Nullable<NullValueHandling>? _itemNullValueHandling">
-        <template #name><h3>_itemNullValueHandling</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
-
-    <doc-member id="property-memberserialization" name="MemberSerialization" type="MemberSerialization" signature="public MemberSerialization MemberSerialization { get; set; }">
-        <template #name><h3>MemberSerialization</h3></template>
-
-<p>Gets or sets the member serialization.</p>
-
-    </doc-member>
-
-    <doc-member id="property-missingmemberhandling" name="MissingMemberHandling" type="MissingMemberHandling" signature="public MissingMemberHandling MissingMemberHandling { get; set; }">
-        <template #name><h3>MissingMemberHandling</h3></template>
-
-<p>Gets or sets the missing member handling used when deserializing this object.</p>
-
-    </doc-member>
 
     <doc-member id="property-itemnullvaluehandling" name="ItemNullValueHandling" type="NullValueHandling" signature="public NullValueHandling ItemNullValueHandling { get; set; }">
         <template #name><h3>ItemNullValueHandling</h3></template>
@@ -256,6 +242,20 @@
         <template #name><h3>ItemRequired</h3></template>
 
 <p>Gets or sets a value that indicates whether the object&#39;s properties are required.</p>
+
+    </doc-member>
+
+    <doc-member id="property-memberserialization" name="MemberSerialization" type="MemberSerialization" signature="public MemberSerialization MemberSerialization { get; set; }">
+        <template #name><h3>MemberSerialization</h3></template>
+
+<p>Gets or sets the member serialization.</p>
+
+    </doc-member>
+
+    <doc-member id="property-missingmemberhandling" name="MissingMemberHandling" type="MissingMemberHandling" signature="public MissingMemberHandling MissingMemberHandling { get; set; }">
+        <template #name><h3>MissingMemberHandling</h3></template>
+
+<p>Gets or sets the missing member handling used when deserializing this object.</p>
 
     </doc-member>
 </doc-member-group>

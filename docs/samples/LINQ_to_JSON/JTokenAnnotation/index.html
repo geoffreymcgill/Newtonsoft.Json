@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'name': 'Bill G',
   'age': 58,
   'country': 'United States',
@@ -208,6 +210,7 @@ o[&quot;employer&quot;] = &quot;Bill &amp; Melinda Gates Foundation&quot;;
 HashSet&lt;string&gt; changedProperties = o.Annotation&lt;HashSet&lt;string&gt;&gt;();
 // age
 // employer</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

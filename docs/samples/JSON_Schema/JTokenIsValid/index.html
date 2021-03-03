@@ -186,7 +186,7 @@
     </h1>
 </doc-anchor-target>
 <p>This sample validates a <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jobject/">JObject</a> using the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema)</a> extension method.</p>
-<doc-alert type="warning"><p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
+<doc-alert type="warning" title="CAUTION"><p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
 </doc-alert>
 <doc-anchor-target id="sample">
     <h2>
@@ -194,7 +194,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JsonSchema schema = JsonSchema.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JsonSchema schema = JsonSchema.Parse(@&quot;{
   'type': 'object',
   'properties': {
     'name': {'type':'string'},
@@ -215,6 +217,7 @@ bool valid = person.IsValid(schema, out errorMessages);
 
 Console.WriteLine(valid);
 // true</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Business
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Business
 {
     public string Name { get; set; }
 
@@ -207,7 +209,10 @@ public class Employee
     [JsonProperty(IsReference = true)]
     public Employee Manager { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Employee manager = new Employee
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Employee manager = new Employee
 {
     Name = &quot;George-Michael&quot;
 };
@@ -247,6 +252,7 @@ Console.WriteLine(json);
 //     }
 //   ]
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

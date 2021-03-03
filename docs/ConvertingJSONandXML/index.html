@@ -204,8 +204,8 @@
 </ul>
 <p>If the XML created from JSON doesn&#39;t match what you want, then you will need to convert it manually.</p>
 <p>The best approach to do this is to load your JSON into a LINQ to JSON object like JObject or JArray and then use LINQ to create an XDocument. The opposite process, using LINQ with an XDocument to create a JObject or JArray, also works. You can find out more about using LINQ to JSON with LINQ <a href="here">QueryingLINQtoJSON</a>.</p>
-<doc-alert type="primary"><p>The version of Json.NET being used in your application will change what XML conversion methods are available. SerializeXmlNode/DeserializeXmlNode are available when the framework supports XmlDocument; SerializeXNode/DeserializeXNode are available when the framework supports XDocument.</p>
-</doc-alert>
+<div><p>The version of Json.NET being used in your application will change what XML conversion methods are available. SerializeXmlNode/DeserializeXmlNode are available when the framework supports XmlDocument; SerializeXNode/DeserializeXNode are available when the framework supports XDocument.</p>
+</div>
 <doc-anchor-target id="serializexmlnode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#serializexmlnode">#</doc-anchor-trigger>
@@ -214,7 +214,9 @@
 </doc-anchor-target>
 <p>The JsonConvert has two helper methods for converting between JSON and XML. The first is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-serializexmlnode">SerializeXmlNode()</a>.</p>
 <p>This method takes an XmlNode and serializes it to JSON text.</p>
-<pre v-highlight:csharp><code v-pre title="Converting XML to JSON with SerializeXmlNode">string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Converting XML to JSON with SerializeXmlNode</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
 &lt;root&gt;
   &lt;person id='1'&gt;
     &lt;name&gt;Alan&lt;/name&gt;
@@ -250,9 +252,12 @@ string jsonText = JsonConvert.SerializeXmlNode(doc);
 //    ]
 //  }
 //}</code></pre>
+</doc-codeblock></div>
 <p>Because multiple nodes with the same name at the same level are grouped together into an array, the conversion process can produce different JSON depending on the number of nodes. For example, if some XML for a user has a single <code v-pre>&lt;Role&gt;</code> node, then that role will be text against a JSON <code v-pre>&quot;Role&quot;</code> property, but if the user has multiple <code v-pre>&lt;Role&gt;</code> nodes, then the role values will be placed in a JSON array.</p>
 <p>To fix this situation a custom XML attribute can be added to force a JSON array to be created.</p>
-<pre v-highlight:csharp><code v-pre title="Attribute to Force a JSON Array">         string xml = @&quot;&lt;person id='1'&gt;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Attribute to Force a JSON Array</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">         string xml = @&quot;&lt;person id='1'&gt;
   &lt;name&gt;Alan&lt;/name&gt;
   &lt;url&gt;http://www.google.com&lt;/url&gt;
   &lt;role&gt;Admin1&lt;/role&gt;
@@ -291,6 +296,7 @@ string jsonText = JsonConvert.SerializeXmlNode(doc);
          //    ]
          //  }
          //}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="deserializexmlnode">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#deserializexmlnode">#</doc-anchor-trigger>
@@ -299,7 +305,9 @@ string jsonText = JsonConvert.SerializeXmlNode(doc);
 </doc-anchor-target>
 <p>The second helper method on JsonConvert is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-deserializexmlnode">DeserializeXmlNode()</a>. This method takes JSON text and deserializes it into an XmlNode.</p>
 <p>Because valid XML must have one root element, the JSON passed to DeserializeXmlNode should have one property in the root JSON object. If the root JSON object has multiple properties, then the overload that also takes an element name should be used. A root element with that name will be inserted into the deserialized XmlNode.</p>
-<pre v-highlight:csharp><code v-pre title="Converting JSON to XML with DeserializeXmlNode">string json = @&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Converting JSON to XML with DeserializeXmlNode</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   '?xml': {
     '@version': '1.0',
     '@standalone': 'no'
@@ -332,6 +340,7 @@ XmlDocument doc = (XmlDocument)JsonConvert.DeserializeXmlNode(json);
 //     &lt;url&gt;http://www.yahoo.com&lt;/url&gt;
 //   &lt;/person&gt;
 // &lt;/root&gt;</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

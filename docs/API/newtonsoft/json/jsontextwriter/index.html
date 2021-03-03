@@ -211,28 +211,32 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_safeasync" name="_safeAsync" type="bool" access="private" signature="private readonly bool _safeAsync">
-        <template #name><h3>_safeAsync</h3></template>
-    </doc-member>
-
     <doc-member id="field-indentcharbuffersize" name="IndentCharBufferSize" type="int" access="private" signature="private const static int IndentCharBufferSize">
         <template #name><h3>IndentCharBufferSize</h3></template>
     </doc-member>
 
-    <doc-member id="field-_writer" name="_writer" type="TextWriter" access="private" signature="private readonly TextWriter _writer">
-        <template #name><h3>_writer</h3></template>
+    <doc-member id="field-_arraypool" name="_arrayPool" type="IArrayPool<char>?" access="private" signature="private IArrayPool<char>? _arrayPool">
+        <template #name><h3>_arrayPool</h3></template>
     </doc-member>
 
     <doc-member id="field-_base64encoder" name="_base64Encoder" type="Base64Encoder?" access="private" signature="private Base64Encoder? _base64Encoder">
         <template #name><h3>_base64Encoder</h3></template>
     </doc-member>
 
-    <doc-member id="field-_indentchar" name="_indentChar" type="char" access="private" signature="private char _indentChar">
-        <template #name><h3>_indentChar</h3></template>
+    <doc-member id="field-_charescapeflags" name="_charEscapeFlags" type="bool[]" access="private" signature="private bool[] _charEscapeFlags">
+        <template #name><h3>_charEscapeFlags</h3></template>
     </doc-member>
 
     <doc-member id="field-_indentation" name="_indentation" type="int" access="private" signature="private int _indentation">
         <template #name><h3>_indentation</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_indentchar" name="_indentChar" type="char" access="private" signature="private char _indentChar">
+        <template #name><h3>_indentChar</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_indentchars" name="_indentChars" type="char[]" access="private" signature="private char[] _indentChars">
+        <template #name><h3>_indentChars</h3></template>
     </doc-member>
 
     <doc-member id="field-_quotechar" name="_quoteChar" type="char" access="private" signature="private char _quoteChar">
@@ -243,35 +247,31 @@
         <template #name><h3>_quoteName</h3></template>
     </doc-member>
 
-    <doc-member id="field-_charescapeflags" name="_charEscapeFlags" type="bool[]" access="private" signature="private bool[] _charEscapeFlags">
-        <template #name><h3>_charEscapeFlags</h3></template>
+    <doc-member id="field-_safeasync" name="_safeAsync" type="bool" access="private" signature="private readonly bool _safeAsync">
+        <template #name><h3>_safeAsync</h3></template>
     </doc-member>
 
     <doc-member id="field-_writebuffer" name="_writeBuffer" type="char[]" access="private" signature="private char[] _writeBuffer">
         <template #name><h3>_writeBuffer</h3></template>
     </doc-member>
 
-    <doc-member id="field-_arraypool" name="_arrayPool" type="IArrayPool<char>?" access="private" signature="private IArrayPool<char>? _arrayPool">
-        <template #name><h3>_arrayPool</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_indentchars" name="_indentChars" type="char[]" access="private" signature="private char[] _indentChars">
-        <template #name><h3>_indentChars</h3></template>
+    <doc-member id="field-_writer" name="_writer" type="TextWriter" access="private" signature="private readonly TextWriter _writer">
+        <template #name><h3>_writer</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-base64encoder" name="Base64Encoder" type="Base64Encoder" access="private" signature="private Base64Encoder Base64Encoder { private get; }">
-        <template #name><h3>Base64Encoder</h3></template>
-    </doc-member>
-
     <doc-member id="property-arraypool" name="ArrayPool" type="IArrayPool<char>?" signature="public IArrayPool<char>? ArrayPool { get; set; }">
         <template #name><h3>ArrayPool</h3></template>
 
 <p>Gets or sets the writer&#39;s character array pool.</p>
 
+    </doc-member>
+
+    <doc-member id="property-base64encoder" name="Base64Encoder" type="Base64Encoder" access="private" signature="private Base64Encoder Base64Encoder { private get; }">
+        <template #name><h3>Base64Encoder</h3></template>
     </doc-member>
 
     <doc-member id="property-indentation" name="Indentation" type="int" signature="public int Indentation { get; set; }">
@@ -281,17 +281,17 @@
 
     </doc-member>
 
-    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public char QuoteChar { get; set; }">
-        <template #name><h3>QuoteChar</h3></template>
-
-<p>Gets or sets which character to use to quote attribute values.</p>
-
-    </doc-member>
-
     <doc-member id="property-indentchar" name="IndentChar" type="char" signature="public char IndentChar { get; set; }">
         <template #name><h3>IndentChar</h3></template>
 
 <p>Gets or sets which character to use for indenting when <see cref="P:Newtonsoft.Json.JsonWriter.Formatting"/> is set to <see cref="F:Newtonsoft.Json.Formatting.Indented"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public char QuoteChar { get; set; }">
+        <template #name><h3>QuoteChar</h3></template>
+
+<p>Gets or sets which character to use to quote attribute values.</p>
 
     </doc-member>
 

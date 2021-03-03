@@ -208,6 +208,10 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-_serializer" name="_serializer" type="JsonSerializer" access="private" signature="private readonly JsonSerializer _serializer">
+        <template #name><h3>_serializer</h3></template>
+    </doc-member>
+
     <doc-member id="field-_serializerreader" name="_serializerReader" type="JsonSerializerInternalReader?" access="private" signature="private readonly JsonSerializerInternalReader? _serializerReader">
         <template #name><h3>_serializerReader</h3></template>
     </doc-member>
@@ -215,37 +219,81 @@
     <doc-member id="field-_serializerwriter" name="_serializerWriter" type="JsonSerializerInternalWriter?" access="private" signature="private readonly JsonSerializerInternalWriter? _serializerWriter">
         <template #name><h3>_serializerWriter</h3></template>
     </doc-member>
-
-    <doc-member id="field-_serializer" name="_serializer" type="JsonSerializer" access="private" signature="private readonly JsonSerializer _serializer">
-        <template #name><h3>_serializer</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-referenceresolver" name="ReferenceResolver" type="IReferenceResolver?" signature="public sealed IReferenceResolver? ReferenceResolver { get; set; }">
-        <template #name><h3>ReferenceResolver</h3></template>
+    <doc-member id="property-binder" name="Binder" type="SerializationBinder" signature="public sealed SerializationBinder Binder { get; set; }">
+        <template #name><h3>Binder</h3></template>
     </doc-member>
 
-    <doc-member id="property-tracewriter" name="TraceWriter" type="ITraceWriter?" signature="public sealed ITraceWriter? TraceWriter { get; set; }">
-        <template #name><h3>TraceWriter</h3></template>
+    <doc-member id="property-checkadditionalcontent" name="CheckAdditionalContent" type="bool" signature="public sealed bool CheckAdditionalContent { get; set; }">
+        <template #name><h3>CheckAdditionalContent</h3></template>
     </doc-member>
 
-    <doc-member id="property-equalitycomparer" name="EqualityComparer" type="Nullable<IEqualityComparer>?" signature="public sealed Nullable<IEqualityComparer>? EqualityComparer { get; set; }">
-        <template #name><h3>EqualityComparer</h3></template>
+    <doc-member id="property-constructorhandling" name="ConstructorHandling" type="ConstructorHandling" signature="public sealed ConstructorHandling ConstructorHandling { get; set; }">
+        <template #name><h3>ConstructorHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-context" name="Context" type="StreamingContext" signature="public sealed StreamingContext Context { get; set; }">
+        <template #name><h3>Context</h3></template>
+    </doc-member>
+
+    <doc-member id="property-contractresolver" name="ContractResolver" type="IContractResolver" signature="public sealed IContractResolver ContractResolver { get; set; }">
+        <template #name><h3>ContractResolver</h3></template>
     </doc-member>
 
     <doc-member id="property-converters" name="Converters" type="JsonConverterCollection" signature="public sealed JsonConverterCollection Converters { get; }">
         <template #name><h3>Converters</h3></template>
     </doc-member>
 
+    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public sealed CultureInfo Culture { get; set; }">
+        <template #name><h3>Culture</h3></template>
+    </doc-member>
+
+    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public sealed DateFormatHandling DateFormatHandling { get; set; }">
+        <template #name><h3>DateFormatHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-dateformatstring" name="DateFormatString" type="string" signature="public sealed string DateFormatString { get; set; }">
+        <template #name><h3>DateFormatString</h3></template>
+    </doc-member>
+
+    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public sealed DateParseHandling DateParseHandling { get; set; }">
+        <template #name><h3>DateParseHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public sealed DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
+        <template #name><h3>DateTimeZoneHandling</h3></template>
+    </doc-member>
+
     <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling" signature="public sealed DefaultValueHandling DefaultValueHandling { get; set; }">
         <template #name><h3>DefaultValueHandling</h3></template>
     </doc-member>
 
-    <doc-member id="property-contractresolver" name="ContractResolver" type="IContractResolver" signature="public sealed IContractResolver ContractResolver { get; set; }">
-        <template #name><h3>ContractResolver</h3></template>
+    <doc-member id="property-equalitycomparer" name="EqualityComparer" type="Nullable<IEqualityComparer>?" signature="public sealed Nullable<IEqualityComparer>? EqualityComparer { get; set; }">
+        <template #name><h3>EqualityComparer</h3></template>
+    </doc-member>
+
+    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public sealed FloatFormatHandling FloatFormatHandling { get; set; }">
+        <template #name><h3>FloatFormatHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public sealed FloatParseHandling FloatParseHandling { get; set; }">
+        <template #name><h3>FloatParseHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public sealed Formatting Formatting { get; set; }">
+        <template #name><h3>Formatting</h3></template>
+    </doc-member>
+
+    <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public sealed Nullable<int>? MaxDepth { get; set; }">
+        <template #name><h3>MaxDepth</h3></template>
+    </doc-member>
+
+    <doc-member id="property-metadatapropertyhandling" name="MetadataPropertyHandling" type="MetadataPropertyHandling" signature="public sealed MetadataPropertyHandling MetadataPropertyHandling { get; set; }">
+        <template #name><h3>MetadataPropertyHandling</h3></template>
     </doc-member>
 
     <doc-member id="property-missingmemberhandling" name="MissingMemberHandling" type="MissingMemberHandling" signature="public sealed MissingMemberHandling MissingMemberHandling { get; set; }">
@@ -260,20 +308,28 @@
         <template #name><h3>ObjectCreationHandling</h3></template>
     </doc-member>
 
-    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling" signature="public sealed ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
-        <template #name><h3>ReferenceLoopHandling</h3></template>
-    </doc-member>
-
     <doc-member id="property-preservereferenceshandling" name="PreserveReferencesHandling" type="PreserveReferencesHandling" signature="public sealed PreserveReferencesHandling PreserveReferencesHandling { get; set; }">
         <template #name><h3>PreserveReferencesHandling</h3></template>
     </doc-member>
 
-    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling" signature="public sealed TypeNameHandling TypeNameHandling { get; set; }">
-        <template #name><h3>TypeNameHandling</h3></template>
+    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling" signature="public sealed ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
+        <template #name><h3>ReferenceLoopHandling</h3></template>
     </doc-member>
 
-    <doc-member id="property-metadatapropertyhandling" name="MetadataPropertyHandling" type="MetadataPropertyHandling" signature="public sealed MetadataPropertyHandling MetadataPropertyHandling { get; set; }">
-        <template #name><h3>MetadataPropertyHandling</h3></template>
+    <doc-member id="property-referenceresolver" name="ReferenceResolver" type="IReferenceResolver?" signature="public sealed IReferenceResolver? ReferenceResolver { get; set; }">
+        <template #name><h3>ReferenceResolver</h3></template>
+    </doc-member>
+
+    <doc-member id="property-serializationbinder" name="SerializationBinder" type="ISerializationBinder" signature="public sealed ISerializationBinder SerializationBinder { get; set; }">
+        <template #name><h3>SerializationBinder</h3></template>
+    </doc-member>
+
+    <doc-member id="property-stringescapehandling" name="StringEscapeHandling" type="StringEscapeHandling" signature="public sealed StringEscapeHandling StringEscapeHandling { get; set; }">
+        <template #name><h3>StringEscapeHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="property-tracewriter" name="TraceWriter" type="ITraceWriter?" signature="public sealed ITraceWriter? TraceWriter { get; set; }">
+        <template #name><h3>TraceWriter</h3></template>
     </doc-member>
 
     <doc-member id="property-typenameassemblyformat" name="TypeNameAssemblyFormat" type="FormatterAssemblyStyle" signature="public sealed FormatterAssemblyStyle TypeNameAssemblyFormat { get; set; }">
@@ -284,64 +340,8 @@
         <template #name><h3>TypeNameAssemblyFormatHandling</h3></template>
     </doc-member>
 
-    <doc-member id="property-constructorhandling" name="ConstructorHandling" type="ConstructorHandling" signature="public sealed ConstructorHandling ConstructorHandling { get; set; }">
-        <template #name><h3>ConstructorHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-binder" name="Binder" type="SerializationBinder" signature="public sealed SerializationBinder Binder { get; set; }">
-        <template #name><h3>Binder</h3></template>
-    </doc-member>
-
-    <doc-member id="property-serializationbinder" name="SerializationBinder" type="ISerializationBinder" signature="public sealed ISerializationBinder SerializationBinder { get; set; }">
-        <template #name><h3>SerializationBinder</h3></template>
-    </doc-member>
-
-    <doc-member id="property-context" name="Context" type="StreamingContext" signature="public sealed StreamingContext Context { get; set; }">
-        <template #name><h3>Context</h3></template>
-    </doc-member>
-
-    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public sealed Formatting Formatting { get; set; }">
-        <template #name><h3>Formatting</h3></template>
-    </doc-member>
-
-    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public sealed DateFormatHandling DateFormatHandling { get; set; }">
-        <template #name><h3>DateFormatHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public sealed DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
-        <template #name><h3>DateTimeZoneHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public sealed DateParseHandling DateParseHandling { get; set; }">
-        <template #name><h3>DateParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public sealed FloatFormatHandling FloatFormatHandling { get; set; }">
-        <template #name><h3>FloatFormatHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public sealed FloatParseHandling FloatParseHandling { get; set; }">
-        <template #name><h3>FloatParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-stringescapehandling" name="StringEscapeHandling" type="StringEscapeHandling" signature="public sealed StringEscapeHandling StringEscapeHandling { get; set; }">
-        <template #name><h3>StringEscapeHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="property-dateformatstring" name="DateFormatString" type="string" signature="public sealed string DateFormatString { get; set; }">
-        <template #name><h3>DateFormatString</h3></template>
-    </doc-member>
-
-    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public sealed CultureInfo Culture { get; set; }">
-        <template #name><h3>Culture</h3></template>
-    </doc-member>
-
-    <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public sealed Nullable<int>? MaxDepth { get; set; }">
-        <template #name><h3>MaxDepth</h3></template>
-    </doc-member>
-
-    <doc-member id="property-checkadditionalcontent" name="CheckAdditionalContent" type="bool" signature="public sealed bool CheckAdditionalContent { get; set; }">
-        <template #name><h3>CheckAdditionalContent</h3></template>
+    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling" signature="public sealed TypeNameHandling TypeNameHandling { get; set; }">
+        <template #name><h3>TypeNameHandling</h3></template>
     </doc-member>
 </doc-member-group>
 

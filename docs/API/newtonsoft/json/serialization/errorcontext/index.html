@@ -211,10 +211,6 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-traced" name="Traced" type="bool" access="internal" signature="internal bool Traced { internal get; internal set; }">
-        <template #name><h3>Traced</h3></template>
-    </doc-member>
-
     <doc-member id="property-error" name="Error" type="Exception" signature="public Exception Error { get; }">
         <template #name><h3>Error</h3></template>
 
@@ -222,10 +218,10 @@
 
     </doc-member>
 
-    <doc-member id="property-originalobject" name="OriginalObject" type="Nullable<object>?" signature="public Nullable<object>? OriginalObject { get; }">
-        <template #name><h3>OriginalObject</h3></template>
+    <doc-member id="property-handled" name="Handled" type="bool" signature="public bool Handled { get; set; }">
+        <template #name><h3>Handled</h3></template>
 
-<p>Gets the original object that caused the error.</p>
+<p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.ErrorContext"/> is handled.</p>
 
     </doc-member>
 
@@ -236,6 +232,13 @@
 
     </doc-member>
 
+    <doc-member id="property-originalobject" name="OriginalObject" type="Nullable<object>?" signature="public Nullable<object>? OriginalObject { get; }">
+        <template #name><h3>OriginalObject</h3></template>
+
+<p>Gets the original object that caused the error.</p>
+
+    </doc-member>
+
     <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
         <template #name><h3>Path</h3></template>
 
@@ -243,11 +246,8 @@
 
     </doc-member>
 
-    <doc-member id="property-handled" name="Handled" type="bool" signature="public bool Handled { get; set; }">
-        <template #name><h3>Handled</h3></template>
-
-<p>Gets or sets a value indicating whether this <see cref="T:Newtonsoft.Json.Serialization.ErrorContext"/> is handled.</p>
-
+    <doc-member id="property-traced" name="Traced" type="bool" access="internal" signature="internal bool Traced { internal get; internal set; }">
+        <template #name><h3>Traced</h3></template>
     </doc-member>
 </doc-member-group>
 

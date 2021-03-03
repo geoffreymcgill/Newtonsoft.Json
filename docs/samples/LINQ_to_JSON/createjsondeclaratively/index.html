@@ -192,14 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Post
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Post
 {
     public string Title { get; set; }
     public string Description { get; set; }
     public string Link { get; set; }
     public IList&lt;string&gt; Categories { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">List&lt;Post&gt; posts = GetPosts();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">List&lt;Post&gt; posts = GetPosts();
 
 JObject rss =
     new JObject(
@@ -250,6 +255,7 @@ Console.WriteLine(rss.ToString());
 //     ]
 //   }
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

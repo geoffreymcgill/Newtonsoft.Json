@@ -215,6 +215,14 @@
         <template #name><h3>ExtensionDataIsJToken</h3></template>
     </doc-member>
 
+    <doc-member id="field-_creatorparameters" name="_creatorParameters" type="JsonPropertyCollection?" access="private" signature="private JsonPropertyCollection? _creatorParameters">
+        <template #name><h3>_creatorParameters</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_extensiondatavaluetype" name="_extensionDataValueType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _extensionDataValueType">
+        <template #name><h3>_extensionDataValueType</h3></template>
+    </doc-member>
+
     <doc-member id="field-_hasrequiredordefaultvalueproperties" name="_hasRequiredOrDefaultValueProperties" type="Nullable<bool>?" access="private" signature="private Nullable<bool>? _hasRequiredOrDefaultValueProperties">
         <template #name><h3>_hasRequiredOrDefaultValueProperties</h3></template>
     </doc-member>
@@ -226,18 +234,63 @@
     <doc-member id="field-_parameterizedcreator" name="_parameterizedCreator" type="ObjectConstructor<object>?" access="private" signature="private ObjectConstructor<object>? _parameterizedCreator">
         <template #name><h3>_parameterizedCreator</h3></template>
     </doc-member>
-
-    <doc-member id="field-_creatorparameters" name="_creatorParameters" type="JsonPropertyCollection?" access="private" signature="private JsonPropertyCollection? _creatorParameters">
-        <template #name><h3>_creatorParameters</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_extensiondatavaluetype" name="_extensionDataValueType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _extensionDataValueType">
-        <template #name><h3>_extensionDataValueType</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
+
+    <doc-member id="property-creatorparameters" name="CreatorParameters" type="JsonPropertyCollection" signature="public JsonPropertyCollection CreatorParameters { get; }">
+        <template #name><h3>CreatorParameters</h3></template>
+
+<p>Gets a collection of <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> instances that define the parameters used with <see cref="P:Newtonsoft.Json.Serialization.JsonObjectContract.OverrideCreator"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-extensiondatagetter" name="ExtensionDataGetter" type="ExtensionDataGetter?" signature="public ExtensionDataGetter? ExtensionDataGetter { get; set; }">
+        <template #name><h3>ExtensionDataGetter</h3></template>
+
+<p>Gets or sets the extension data getter.</p>
+
+    </doc-member>
+
+    <doc-member id="property-extensiondatanameresolver" name="ExtensionDataNameResolver" type="Nullable<Func<string, string>>?" signature="public Nullable<Func<string, string>>? ExtensionDataNameResolver { get; set; }">
+        <template #name><h3>ExtensionDataNameResolver</h3></template>
+
+<p>Gets or sets the extension data name resolver.</p>
+
+    </doc-member>
+
+    <doc-member id="property-extensiondatasetter" name="ExtensionDataSetter" type="ExtensionDataSetter?" signature="public ExtensionDataSetter? ExtensionDataSetter { get; set; }">
+        <template #name><h3>ExtensionDataSetter</h3></template>
+
+<p>Gets or sets the extension data setter.</p>
+
+    </doc-member>
+
+    <doc-member id="property-extensiondatavaluetype" name="ExtensionDataValueType" type="Nullable<Type>?" signature="public Nullable<Type>? ExtensionDataValueType { get; set; }">
+        <template #name><h3>ExtensionDataValueType</h3></template>
+
+<p>Gets or sets the extension data value type.</p>
+
+    </doc-member>
+
+    <doc-member id="property-hasrequiredordefaultvalueproperties" name="HasRequiredOrDefaultValueProperties" type="bool" access="internal" signature="internal bool HasRequiredOrDefaultValueProperties { internal get; }">
+        <template #name><h3>HasRequiredOrDefaultValueProperties</h3></template>
+    </doc-member>
+
+    <doc-member id="property-itemnullvaluehandling" name="ItemNullValueHandling" type="Nullable<NullValueHandling>?" signature="public Nullable<NullValueHandling>? ItemNullValueHandling { get; set; }">
+        <template #name><h3>ItemNullValueHandling</h3></template>
+
+<p>Gets or sets how the object&#39;s properties with null values are handled during serialization and deserialization.</p>
+
+    </doc-member>
+
+    <doc-member id="property-itemrequired" name="ItemRequired" type="Nullable<Required>?" signature="public Nullable<Required>? ItemRequired { get; set; }">
+        <template #name><h3>ItemRequired</h3></template>
+
+<p>Gets or sets a value that indicates whether the object&#39;s properties are required.</p>
+
+    </doc-member>
 
     <doc-member id="property-memberserialization" name="MemberSerialization" type="MemberSerialization" signature="public MemberSerialization MemberSerialization { get; set; }">
         <template #name><h3>MemberSerialization</h3></template>
@@ -253,34 +306,6 @@
 
     </doc-member>
 
-    <doc-member id="property-itemrequired" name="ItemRequired" type="Nullable<Required>?" signature="public Nullable<Required>? ItemRequired { get; set; }">
-        <template #name><h3>ItemRequired</h3></template>
-
-<p>Gets or sets a value that indicates whether the object&#39;s properties are required.</p>
-
-    </doc-member>
-
-    <doc-member id="property-itemnullvaluehandling" name="ItemNullValueHandling" type="Nullable<NullValueHandling>?" signature="public Nullable<NullValueHandling>? ItemNullValueHandling { get; set; }">
-        <template #name><h3>ItemNullValueHandling</h3></template>
-
-<p>Gets or sets how the object&#39;s properties with null values are handled during serialization and deserialization.</p>
-
-    </doc-member>
-
-    <doc-member id="property-properties" name="Properties" type="JsonPropertyCollection" signature="public JsonPropertyCollection Properties { get; }">
-        <template #name><h3>Properties</h3></template>
-
-<p>Gets the object&#39;s properties.</p>
-
-    </doc-member>
-
-    <doc-member id="property-creatorparameters" name="CreatorParameters" type="JsonPropertyCollection" signature="public JsonPropertyCollection CreatorParameters { get; }">
-        <template #name><h3>CreatorParameters</h3></template>
-
-<p>Gets a collection of <see cref="T:Newtonsoft.Json.Serialization.JsonProperty"/> instances that define the parameters used with <see cref="P:Newtonsoft.Json.Serialization.JsonObjectContract.OverrideCreator"/>.</p>
-
-    </doc-member>
-
     <doc-member id="property-overridecreator" name="OverrideCreator" type="ObjectConstructor<object>?" signature="public ObjectConstructor<object>? OverrideCreator { get; set; }">
         <template #name><h3>OverrideCreator</h3></template>
 
@@ -293,36 +318,11 @@ This function is called with a collection of arguments which are defined by the 
         <template #name><h3>ParameterizedCreator</h3></template>
     </doc-member>
 
-    <doc-member id="property-extensiondatasetter" name="ExtensionDataSetter" type="ExtensionDataSetter?" signature="public ExtensionDataSetter? ExtensionDataSetter { get; set; }">
-        <template #name><h3>ExtensionDataSetter</h3></template>
+    <doc-member id="property-properties" name="Properties" type="JsonPropertyCollection" signature="public JsonPropertyCollection Properties { get; }">
+        <template #name><h3>Properties</h3></template>
 
-<p>Gets or sets the extension data setter.</p>
+<p>Gets the object&#39;s properties.</p>
 
-    </doc-member>
-
-    <doc-member id="property-extensiondatagetter" name="ExtensionDataGetter" type="ExtensionDataGetter?" signature="public ExtensionDataGetter? ExtensionDataGetter { get; set; }">
-        <template #name><h3>ExtensionDataGetter</h3></template>
-
-<p>Gets or sets the extension data getter.</p>
-
-    </doc-member>
-
-    <doc-member id="property-extensiondatavaluetype" name="ExtensionDataValueType" type="Nullable<Type>?" signature="public Nullable<Type>? ExtensionDataValueType { get; set; }">
-        <template #name><h3>ExtensionDataValueType</h3></template>
-
-<p>Gets or sets the extension data value type.</p>
-
-    </doc-member>
-
-    <doc-member id="property-extensiondatanameresolver" name="ExtensionDataNameResolver" type="Nullable<Func<string, string>>?" signature="public Nullable<Func<string, string>>? ExtensionDataNameResolver { get; set; }">
-        <template #name><h3>ExtensionDataNameResolver</h3></template>
-
-<p>Gets or sets the extension data name resolver.</p>
-
-    </doc-member>
-
-    <doc-member id="property-hasrequiredordefaultvalueproperties" name="HasRequiredOrDefaultValueProperties" type="bool" access="internal" signature="internal bool HasRequiredOrDefaultValueProperties { internal get; }">
-        <template #name><h3>HasRequiredOrDefaultValueProperties</h3></template>
     </doc-member>
 </doc-member-group>
 

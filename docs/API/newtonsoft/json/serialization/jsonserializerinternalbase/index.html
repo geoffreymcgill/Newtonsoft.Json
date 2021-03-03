@@ -208,12 +208,8 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_currenterrorcontext" name="_currentErrorContext" type="ErrorContext?" access="private" signature="private ErrorContext? _currentErrorContext">
-        <template #name><h3>_currentErrorContext</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_mappings" name="_mappings" type="BidirectionalDictionary<string, object>?" access="private" signature="private BidirectionalDictionary<string, object>? _mappings">
-        <template #name><h3>_mappings</h3></template>
+    <doc-member id="field-internalserializer" name="InternalSerializer" type="JsonSerializerProxy?" access="protected" signature="protected JsonSerializerProxy? InternalSerializer">
+        <template #name><h3>InternalSerializer</h3></template>
     </doc-member>
 
     <doc-member id="field-serializer" name="Serializer" type="JsonSerializer" access="internal" signature="internal readonly JsonSerializer Serializer">
@@ -224,8 +220,12 @@
         <template #name><h3>TraceWriter</h3></template>
     </doc-member>
 
-    <doc-member id="field-internalserializer" name="InternalSerializer" type="JsonSerializerProxy?" access="protected" signature="protected JsonSerializerProxy? InternalSerializer">
-        <template #name><h3>InternalSerializer</h3></template>
+    <doc-member id="field-_currenterrorcontext" name="_currentErrorContext" type="ErrorContext?" access="private" signature="private ErrorContext? _currentErrorContext">
+        <template #name><h3>_currentErrorContext</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_mappings" name="_mappings" type="BidirectionalDictionary<string, object>?" access="private" signature="private BidirectionalDictionary<string, object>? _mappings">
+        <template #name><h3>_mappings</h3></template>
     </doc-member>
 </doc-member-group>
 

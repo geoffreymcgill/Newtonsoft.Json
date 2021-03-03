@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public abstract class Business
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public abstract class Business
 {
     public string Name { get; set; }
 }
@@ -207,7 +209,10 @@ public class Stockholder
     public string FullName { get; set; }
     public IList&lt;Business&gt; Businesses { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Stockholder stockholder = new Stockholder
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Stockholder stockholder = new Stockholder
 {
     FullName = &quot;Steve Stockholder&quot;,
     Businesses = new List&lt;Business&gt;
@@ -266,6 +271,7 @@ Stockholder newStockholder = JsonConvert.DeserializeObject&lt;Stockholder&gt;(js
 
 Console.WriteLine(newStockholder.Businesses[0].GetType().Name);
 // Hotel</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

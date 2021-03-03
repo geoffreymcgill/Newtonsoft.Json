@@ -193,7 +193,9 @@
     </h2>
 </doc-anchor-target>
 <p>For simple scenarios where you want to convert to and from a JSON string, the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-serializeobject">SerializeObject()</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-deserializeobject">DeserializeObject()</a> methods on JsonConvert provide an easy-to-use wrapper over JsonSerializer.</p>
-<pre v-highlight:csharp><code v-pre title="Serializing and Deserializing JSON with JsonConvert">Product product = new Product();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Serializing and Deserializing JSON with JsonConvert</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Product product = new Product();
 
 product.Name = &quot;Apple&quot;;
 product.ExpiryDate = new DateTime(2008, 12, 28);
@@ -213,6 +215,7 @@ string output = JsonConvert.SerializeObject(product);
 //}
 
 Product deserializedProduct = JsonConvert.DeserializeObject&lt;Product&gt;(output);</code></pre>
+</doc-codeblock></div>
 <p>SerializeObject and DeserializeObject both have overloads that take a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a> object. JsonSerializerSettings lets you use many of the JsonSerializer settings listed below while still using the simple serialization methods.</p>
 <doc-anchor-target id="jsonserializer">
     <h2>
@@ -221,7 +224,9 @@ Product deserializedProduct = JsonConvert.DeserializeObject&lt;Product&gt;(outpu
     </h2>
 </doc-anchor-target>
 <p>For more control over how an object is serialized, the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> can be used directly. The JsonSerializer is able to read and write JSON text directly to a stream via <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a>. Other kinds of JsonWriters can also be used, such as <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a>/<a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenwriter/">JTokenWriter</a>, to convert your object to and from LINQ to JSON objects, or <a href="/Newtonsoft.Json/api/newtonsoft/json/bson/bsonreader/">BsonReader</a>/<a href="/Newtonsoft.Json/api/newtonsoft/json/bson/bsonwriter/">BsonWriter</a>, to convert to and from BSON.</p>
-<pre v-highlight:csharp><code v-pre title="Serializing JSON to a Stream with JsonSerializer">Product product = new Product();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Serializing JSON to a Stream with JsonSerializer</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Product product = new Product();
 product.ExpiryDate = new DateTime(2008, 12, 28);
 
 JsonSerializer serializer = new JsonSerializer();
@@ -234,6 +239,7 @@ using (JsonWriter writer = new JsonTextWriter(sw))
     serializer.Serialize(writer, product);
     // {&quot;ExpiryDate&quot;:new Date(1230375600000),&quot;Price&quot;:0}
 }</code></pre>
+</doc-codeblock></div>
 <p>JsonSerializer has a number of properties on it to customize how it serializes JSON. These can also be used with the methods on JsonConvert via the JsonSerializerSettings overloads.</p>
 <p>You can read more about the available JsonSerializer settings here:</p>
 <ul>

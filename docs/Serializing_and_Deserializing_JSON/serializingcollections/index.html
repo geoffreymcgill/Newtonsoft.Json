@@ -193,7 +193,9 @@
     </h2>
 </doc-anchor-target>
 <p>To serialize a collection - a generic list, array, dictionary, or your own custom collection - simply call the serializer with the object you want to get JSON for. Json.NET will serialize the collection and all of the values it contains.</p>
-<pre v-highlight:csharp><code v-pre title="Serializing Collections">Product p1 = new Product
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Serializing Collections</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Product p1 = new Product
 {
     Name = &quot;Product 1&quot;,
     Price = 99.95m,
@@ -225,6 +227,7 @@ string json = JsonConvert.SerializeObject(products, Formatting.Indented);
 //    &quot;Sizes&quot;: null
 //  }
 //]</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="deserializing-collections">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#deserializing-collections">#</doc-anchor-trigger>
@@ -232,7 +235,9 @@ string json = JsonConvert.SerializeObject(products, Formatting.Indented);
     </h2>
 </doc-anchor-target>
 <p>To deserialize JSON into a .NET collection, just specify the collection type you want to deserialize to. Json.NET supports a wide range of collection types.</p>
-<pre v-highlight:csharp><code v-pre title="Deserializing Collections">string json = @&quot;[
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Deserializing Collections</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;[
   {
     'Name': 'Product 1',
     'ExpiryDate': '2000-12-29T00:00Z',
@@ -256,6 +261,7 @@ Product p1 = products[0];
 
 Console.WriteLine(p1.Name);
 // Product 1</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="deserializing-dictionaries">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#deserializing-dictionaries">#</doc-anchor-trigger>
@@ -263,7 +269,9 @@ Console.WriteLine(p1.Name);
     </h2>
 </doc-anchor-target>
 <p>Using Json.NET you can also deserialize a JSON object into a .NET generic dictionary. The JSON object&#39;s property names and values will be added to the dictionary.</p>
-<pre v-highlight:csharp><code v-pre title="Deserializing Dictionaries">string json = @&quot;{&quot;&quot;key1&quot;&quot;:&quot;&quot;value1&quot;&quot;,&quot;&quot;key2&quot;&quot;:&quot;&quot;value2&quot;&quot;}&quot;;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Deserializing Dictionaries</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{&quot;&quot;key1&quot;&quot;:&quot;&quot;value1&quot;&quot;,&quot;&quot;key2&quot;&quot;:&quot;&quot;value2&quot;&quot;}&quot;;
 
 Dictionary&lt;string, string&gt; values = JsonConvert.DeserializeObject&lt;Dictionary&lt;string, string&gt;&gt;(json);
 
@@ -272,6 +280,7 @@ Console.WriteLine(values.Count);
 
 Console.WriteLine(values[&quot;key1&quot;]);
 // value1</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

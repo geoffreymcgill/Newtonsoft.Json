@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject videogameRatings = new JObject(
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject videogameRatings = new JObject(
     new JProperty(&quot;Halo&quot;, 9),
     new JProperty(&quot;Starcraft&quot;, 9),
     new JProperty(&quot;Call of Duty&quot;, 7.5));
@@ -205,6 +207,7 @@ using (JsonTextWriter writer = new JsonTextWriter(file))
 {
     videogameRatings.WriteTo(writer);
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

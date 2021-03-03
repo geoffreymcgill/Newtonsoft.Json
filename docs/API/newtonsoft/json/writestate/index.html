@@ -211,12 +211,10 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-error" name="Error" type="WriteState" signature="Error">
-        <template #name><h3>Error</h3></template>
+    <doc-member id="field-array" name="Array" type="WriteState" signature="Array">
+        <template #name><h3>Array</h3></template>
 
-<p>An exception has been thrown, which has left the <see cref="T:Newtonsoft.Json.JsonWriter"/> in an invalid state.
-You may call the <see cref="M:Newtonsoft.Json.JsonWriter.Close"/> method to put the <see cref="T:Newtonsoft.Json.JsonWriter"/> in the <c>Closed</c> state.
-Any other <see cref="T:Newtonsoft.Json.JsonWriter"/> method calls result in an <see cref="!:InvalidOperationException"/> being thrown.</p>
+<p>An array is being written.</p>
 
     </doc-member>
 
@@ -227,24 +225,26 @@ Any other <see cref="T:Newtonsoft.Json.JsonWriter"/> method calls result in an <
 
     </doc-member>
 
-    <doc-member id="field-object" name="Object" type="WriteState" signature="Object">
-        <template #name><h3>Object</h3></template>
-
-<p>An object is being written.</p>
-
-    </doc-member>
-
-    <doc-member id="field-array" name="Array" type="WriteState" signature="Array">
-        <template #name><h3>Array</h3></template>
-
-<p>An array is being written.</p>
-
-    </doc-member>
-
     <doc-member id="field-constructor" name="Constructor" type="WriteState" signature="Constructor">
         <template #name><h3>Constructor</h3></template>
 
 <p>A constructor is being written.</p>
+
+    </doc-member>
+
+    <doc-member id="field-error" name="Error" type="WriteState" signature="Error">
+        <template #name><h3>Error</h3></template>
+
+<p>An exception has been thrown, which has left the <see cref="T:Newtonsoft.Json.JsonWriter"/> in an invalid state.
+You may call the <see cref="M:Newtonsoft.Json.JsonWriter.Close"/> method to put the <see cref="T:Newtonsoft.Json.JsonWriter"/> in the <c>Closed</c> state.
+Any other <see cref="T:Newtonsoft.Json.JsonWriter"/> method calls result in an <see cref="!:InvalidOperationException"/> being thrown.</p>
+
+    </doc-member>
+
+    <doc-member id="field-object" name="Object" type="WriteState" signature="Object">
+        <template #name><h3>Object</h3></template>
+
+<p>An object is being written.</p>
 
     </doc-member>
 

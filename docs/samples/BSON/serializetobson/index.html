@@ -192,12 +192,17 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Event
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Event
 {
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Event e = new Event
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Event e = new Event
 {
     Name = &quot;Movie Premiere&quot;,
     StartDate = new DateTime(2013, 1, 22, 20, 30, 0, DateTimeKind.Utc)
@@ -214,6 +219,7 @@ string data = Convert.ToBase64String(ms.ToArray());
 
 Console.WriteLine(data);
 // MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAED982M8AQAAAA==</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

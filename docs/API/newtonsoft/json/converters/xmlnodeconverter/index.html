@@ -211,36 +211,36 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-emptychildnodes" name="EmptyChildNodes" type="List<IXmlNode>" access="internal" signature="internal readonly static List<IXmlNode> EmptyChildNodes">
-        <template #name><h3>EmptyChildNodes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-textname" name="TextName" type="string" access="private" signature="private const static string TextName">
-        <template #name><h3>TextName</h3></template>
+    <doc-member id="field-cdataname" name="CDataName" type="string" access="private" signature="private const static string CDataName">
+        <template #name><h3>CDataName</h3></template>
     </doc-member>
 
     <doc-member id="field-commentname" name="CommentName" type="string" access="private" signature="private const static string CommentName">
         <template #name><h3>CommentName</h3></template>
     </doc-member>
 
-    <doc-member id="field-cdataname" name="CDataName" type="string" access="private" signature="private const static string CDataName">
-        <template #name><h3>CDataName</h3></template>
+    <doc-member id="field-declarationname" name="DeclarationName" type="string" access="private" signature="private const static string DeclarationName">
+        <template #name><h3>DeclarationName</h3></template>
     </doc-member>
 
-    <doc-member id="field-whitespacename" name="WhitespaceName" type="string" access="private" signature="private const static string WhitespaceName">
-        <template #name><h3>WhitespaceName</h3></template>
+    <doc-member id="field-emptychildnodes" name="EmptyChildNodes" type="List<IXmlNode>" access="internal" signature="internal readonly static List<IXmlNode> EmptyChildNodes">
+        <template #name><h3>EmptyChildNodes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-jsonnamespaceuri" name="JsonNamespaceUri" type="string" access="private" signature="private const static string JsonNamespaceUri">
+        <template #name><h3>JsonNamespaceUri</h3></template>
     </doc-member>
 
     <doc-member id="field-significantwhitespacename" name="SignificantWhitespaceName" type="string" access="private" signature="private const static string SignificantWhitespaceName">
         <template #name><h3>SignificantWhitespaceName</h3></template>
     </doc-member>
 
-    <doc-member id="field-declarationname" name="DeclarationName" type="string" access="private" signature="private const static string DeclarationName">
-        <template #name><h3>DeclarationName</h3></template>
+    <doc-member id="field-textname" name="TextName" type="string" access="private" signature="private const static string TextName">
+        <template #name><h3>TextName</h3></template>
     </doc-member>
 
-    <doc-member id="field-jsonnamespaceuri" name="JsonNamespaceUri" type="string" access="private" signature="private const static string JsonNamespaceUri">
-        <template #name><h3>JsonNamespaceUri</h3></template>
+    <doc-member id="field-whitespacename" name="WhitespaceName" type="string" access="private" signature="private const static string WhitespaceName">
+        <template #name><h3>WhitespaceName</h3></template>
     </doc-member>
 </doc-member-group>
 
@@ -254,11 +254,13 @@
 
     </doc-member>
 
-    <doc-member id="property-writearrayattribute" name="WriteArrayAttribute" type="bool" signature="public bool WriteArrayAttribute { get; set; }">
-        <template #name><h3>WriteArrayAttribute</h3></template>
+    <doc-member id="property-encodespecialcharacters" name="EncodeSpecialCharacters" type="bool" signature="public bool EncodeSpecialCharacters { get; set; }">
+        <template #name><h3>EncodeSpecialCharacters</h3></template>
 
-<p>Gets or sets a value to indicate whether to write the Json.NET array attribute.
-This attribute helps preserve arrays when converting the written XML back to JSON.</p>
+<p>Gets or sets a value indicating whether to encode special characters when converting JSON to XML.
+If <c>true</c>, special characters like &#39;:&#39;, &#39;@&#39;, &#39;?&#39;, &#39;#&#39; and &#39;$&#39; in JSON property names aren&#39;t used to specify
+XML namespaces, attributes or processing directives. Instead special characters are encoded and written
+as part of the XML element name.</p>
 
     </doc-member>
 
@@ -269,13 +271,11 @@ This attribute helps preserve arrays when converting the written XML back to JSO
 
     </doc-member>
 
-    <doc-member id="property-encodespecialcharacters" name="EncodeSpecialCharacters" type="bool" signature="public bool EncodeSpecialCharacters { get; set; }">
-        <template #name><h3>EncodeSpecialCharacters</h3></template>
+    <doc-member id="property-writearrayattribute" name="WriteArrayAttribute" type="bool" signature="public bool WriteArrayAttribute { get; set; }">
+        <template #name><h3>WriteArrayAttribute</h3></template>
 
-<p>Gets or sets a value indicating whether to encode special characters when converting JSON to XML.
-If <c>true</c>, special characters like &#39;:&#39;, &#39;@&#39;, &#39;?&#39;, &#39;#&#39; and &#39;$&#39; in JSON property names aren&#39;t used to specify
-XML namespaces, attributes or processing directives. Instead special characters are encoded and written
-as part of the XML element name.</p>
+<p>Gets or sets a value to indicate whether to write the Json.NET array attribute.
+This attribute helps preserve arrays when converting the written XML back to JSON.</p>
 
     </doc-member>
 </doc-member-group>

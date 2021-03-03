@@ -211,6 +211,15 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
+    <doc-member id="property-overridespecifiednames" name="OverrideSpecifiedNames" type="bool" signature="public bool OverrideSpecifiedNames { get; set; }">
+        <template #name><h3>OverrideSpecifiedNames</h3></template>
+
+<p>A flag indicating whether explicitly specified property names,
+e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>, should be processed.
+Defaults to <c>false</c>.</p>
+
+    </doc-member>
+
     <doc-member id="property-processdictionarykeys" name="ProcessDictionaryKeys" type="bool" signature="public bool ProcessDictionaryKeys { get; set; }">
         <template #name><h3>ProcessDictionaryKeys</h3></template>
 
@@ -223,15 +232,6 @@ Defaults to <c>false</c>.</p>
         <template #name><h3>ProcessExtensionDataNames</h3></template>
 
 <p>A flag indicating whether extension data names should be processed.
-Defaults to <c>false</c>.</p>
-
-    </doc-member>
-
-    <doc-member id="property-overridespecifiednames" name="OverrideSpecifiedNames" type="bool" signature="public bool OverrideSpecifiedNames { get; set; }">
-        <template #name><h3>OverrideSpecifiedNames</h3></template>
-
-<p>A flag indicating whether explicitly specified property names,
-e.g. a property name customized with a <see cref="T:Newtonsoft.Json.JsonPropertyAttribute"/>, should be processed.
 Defaults to <c>false</c>.</p>
 
     </doc-member>

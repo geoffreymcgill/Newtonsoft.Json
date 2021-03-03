@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class BlogPost
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class BlogPost
 {
     public string Title { get; set; }
     public string AuthorName { get; set; }
@@ -200,7 +202,10 @@
     public string Body { get; set; }
     public DateTime PostedDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">IList&lt;BlogPost&gt; blogPosts = new List&lt;BlogPost&gt;
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">IList&lt;BlogPost&gt; blogPosts = new List&lt;BlogPost&gt;
 {
     new BlogPost
     {
@@ -240,6 +245,7 @@ Console.WriteLine(blogPostsArray.ToString());
 //     &quot;BodyHtml&quot;: &quot;&amp;lt;h3&amp;gt;Title!&amp;lt;/h3&amp;gt;&amp;lt;p&amp;gt;Content!&amp;lt;/p&amp;gt;&quot;
 //   }
 // ]</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

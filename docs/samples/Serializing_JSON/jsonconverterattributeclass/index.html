@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class UserConverter : JsonConverter
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class UserConverter : JsonConverter
 {
     public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
     {
@@ -220,7 +222,10 @@ public class User
 {
     public string UserName { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">User user = new User
 {
     UserName = @&quot;domain\username&quot;
 };
@@ -229,6 +234,7 @@ string json = JsonConvert.SerializeObject(user, Formatting.Indented);
 
 Console.WriteLine(json);
 // &quot;domain\\username&quot;</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">[JsonObject]
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">[JsonObject]
 public class Directory : IEnumerable&lt;string&gt;
 {
     public string Name { get; set; }
@@ -213,7 +215,10 @@ public class Directory : IEnumerable&lt;string&gt;
         return GetEnumerator();
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Directory directory = new Directory
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Directory directory = new Directory
 {
     Name = &quot;My Documents&quot;,
     Files =
@@ -233,6 +238,7 @@ Console.WriteLine(json);
 //     &quot;WiseFinancalAdvice.xlsx&quot;
 //   ]
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

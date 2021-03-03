@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Videogame
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Videogame
 {
     [JsonProperty(Required = Required.Always)]
     public string Name { get; set; }
@@ -200,7 +202,10 @@
     [JsonProperty(Required = Required.AllowNull)]
     public DateTime? ReleaseDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'Name': 'Starcraft III',
   'ReleaseDate': null
 }&quot;;
@@ -212,6 +217,7 @@ Console.WriteLine(starcraft.Name);
 
 Console.WriteLine(starcraft.ReleaseDate);
 // null</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

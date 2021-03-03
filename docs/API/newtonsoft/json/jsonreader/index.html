@@ -211,6 +211,50 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
+        <template #name><h3>_culture</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_currentposition" name="_currentPosition" type="JsonPosition" access="private" signature="private JsonPosition _currentPosition">
+        <template #name><h3>_currentPosition</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_currentstate" name="_currentState" type="State" access="internal" signature="internal State _currentState">
+        <template #name><h3>_currentState</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
+        <template #name><h3>_dateFormatString</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_dateparsehandling" name="_dateParseHandling" type="DateParseHandling" access="internal" signature="internal DateParseHandling _dateParseHandling">
+        <template #name><h3>_dateParseHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
+        <template #name><h3>_dateTimeZoneHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_floatparsehandling" name="_floatParseHandling" type="FloatParseHandling" access="internal" signature="internal FloatParseHandling _floatParseHandling">
+        <template #name><h3>_floatParseHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_hasexceededmaxdepth" name="_hasExceededMaxDepth" type="bool" access="private" signature="private bool _hasExceededMaxDepth">
+        <template #name><h3>_hasExceededMaxDepth</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_maxdepth" name="_maxDepth" type="Nullable<int>?" access="private" signature="private Nullable<int>? _maxDepth">
+        <template #name><h3>_maxDepth</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_quotechar" name="_quoteChar" type="char" access="internal" signature="internal char _quoteChar">
+        <template #name><h3>_quoteChar</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
+        <template #name><h3>_stack</h3></template>
+    </doc-member>
+
     <doc-member id="field-_tokentype" name="_tokenType" type="JsonToken" access="private" signature="private JsonToken _tokenType">
         <template #name><h3>_tokenType</h3></template>
     </doc-member>
@@ -218,61 +262,10 @@
     <doc-member id="field-_value" name="_value" type="Nullable<object>?" access="private" signature="private Nullable<object>? _value">
         <template #name><h3>_value</h3></template>
     </doc-member>
-
-    <doc-member id="field-_quotechar" name="_quoteChar" type="char" access="internal" signature="internal char _quoteChar">
-        <template #name><h3>_quoteChar</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentstate" name="_currentState" type="State" access="internal" signature="internal State _currentState">
-        <template #name><h3>_currentState</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentposition" name="_currentPosition" type="JsonPosition" access="private" signature="private JsonPosition _currentPosition">
-        <template #name><h3>_currentPosition</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
-        <template #name><h3>_culture</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
-        <template #name><h3>_dateTimeZoneHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_maxdepth" name="_maxDepth" type="Nullable<int>?" access="private" signature="private Nullable<int>? _maxDepth">
-        <template #name><h3>_maxDepth</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_hasexceededmaxdepth" name="_hasExceededMaxDepth" type="bool" access="private" signature="private bool _hasExceededMaxDepth">
-        <template #name><h3>_hasExceededMaxDepth</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_dateparsehandling" name="_dateParseHandling" type="DateParseHandling" access="internal" signature="internal DateParseHandling _dateParseHandling">
-        <template #name><h3>_dateParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_floatparsehandling" name="_floatParseHandling" type="FloatParseHandling" access="internal" signature="internal FloatParseHandling _floatParseHandling">
-        <template #name><h3>_floatParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
-        <template #name><h3>_dateFormatString</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
-
-    <doc-member id="property-currentstate" name="CurrentState" type="State" access="protected" signature="protected State CurrentState { protected get; }">
-        <template #name><h3>CurrentState</h3></template>
-
-<p>Gets the current reader state.</p>
-
-    </doc-member>
 
     <doc-member id="property-closeinput" name="CloseInput" type="bool" signature="public bool CloseInput { get; set; }">
         <template #name><h3>CloseInput</h3></template>
@@ -281,39 +274,17 @@
 
     </doc-member>
 
-    <doc-member id="property-supportmultiplecontent" name="SupportMultipleContent" type="bool" signature="public bool SupportMultipleContent { get; set; }">
-        <template #name><h3>SupportMultipleContent</h3></template>
+    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
+        <template #name><h3>Culture</h3></template>
 
-<p>Gets or sets a value indicating whether multiple pieces of JSON content can
-be read from a continuous stream without erroring.</p>
-
-    </doc-member>
-
-    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public virtual char QuoteChar { get; internal,protected set; }">
-        <template #name><h3>QuoteChar</h3></template>
-
-<p>Gets the quotation mark character used to enclose the value of a string.</p>
+<p>Gets or sets the culture used when reading JSON. Defaults to <see cref="!:CultureInfo.InvariantCulture"/>.</p>
 
     </doc-member>
 
-    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
-        <template #name><h3>DateTimeZoneHandling</h3></template>
+    <doc-member id="property-currentstate" name="CurrentState" type="State" access="protected" signature="protected State CurrentState { protected get; }">
+        <template #name><h3>CurrentState</h3></template>
 
-<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled when reading JSON.</p>
-
-    </doc-member>
-
-    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public DateParseHandling DateParseHandling { get; set; }">
-        <template #name><h3>DateParseHandling</h3></template>
-
-<p>Gets or sets how date formatted strings, e.g. &quot;/Date(1198908717056)/&quot; and &quot;2012-03-21T05:40Z&quot;, are parsed when reading JSON.</p>
-
-    </doc-member>
-
-    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public FloatParseHandling FloatParseHandling { get; set; }">
-        <template #name><h3>FloatParseHandling</h3></template>
-
-<p>Gets or sets how floating point numbers, e.g. 1.0 and 9.9, are parsed when reading JSON text.</p>
+<p>Gets the current reader state.</p>
 
     </doc-member>
 
@@ -324,12 +295,62 @@ be read from a continuous stream without erroring.</p>
 
     </doc-member>
 
+    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public DateParseHandling DateParseHandling { get; set; }">
+        <template #name><h3>DateParseHandling</h3></template>
+
+<p>Gets or sets how date formatted strings, e.g. &quot;/Date(1198908717056)/&quot; and &quot;2012-03-21T05:40Z&quot;, are parsed when reading JSON.</p>
+
+    </doc-member>
+
+    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
+        <template #name><h3>DateTimeZoneHandling</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled when reading JSON.</p>
+
+    </doc-member>
+
+    <doc-member id="property-depth" name="Depth" type="int" signature="public virtual int Depth { get; }">
+        <template #name><h3>Depth</h3></template>
+
+<p>Gets the depth of the current token in the JSON document.</p>
+
+    </doc-member>
+
+    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public FloatParseHandling FloatParseHandling { get; set; }">
+        <template #name><h3>FloatParseHandling</h3></template>
+
+<p>Gets or sets how floating point numbers, e.g. 1.0 and 9.9, are parsed when reading JSON text.</p>
+
+    </doc-member>
+
     <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public Nullable<int>? MaxDepth { get; set; }">
         <template #name><h3>MaxDepth</h3></template>
 
 <p>Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
 A null value means there is no maximum.
 The default value is <c>128</c>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-path" name="Path" type="string" signature="public virtual string Path { get; }">
+        <template #name><h3>Path</h3></template>
+
+<p>Gets the path of the current JSON token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-quotechar" name="QuoteChar" type="char" signature="public virtual char QuoteChar { get; internal,protected set; }">
+        <template #name><h3>QuoteChar</h3></template>
+
+<p>Gets the quotation mark character used to enclose the value of a string.</p>
+
+    </doc-member>
+
+    <doc-member id="property-supportmultiplecontent" name="SupportMultipleContent" type="bool" signature="public bool SupportMultipleContent { get; set; }">
+        <template #name><h3>SupportMultipleContent</h3></template>
+
+<p>Gets or sets a value indicating whether multiple pieces of JSON content can
+be read from a continuous stream without erroring.</p>
 
     </doc-member>
 
@@ -351,27 +372,6 @@ The default value is <c>128</c>.</p>
         <template #name><h3>ValueType</h3></template>
 
 <p>Gets the .NET type for the current JSON token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-depth" name="Depth" type="int" signature="public virtual int Depth { get; }">
-        <template #name><h3>Depth</h3></template>
-
-<p>Gets the depth of the current token in the JSON document.</p>
-
-    </doc-member>
-
-    <doc-member id="property-path" name="Path" type="string" signature="public virtual string Path { get; }">
-        <template #name><h3>Path</h3></template>
-
-<p>Gets the path of the current JSON token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
-        <template #name><h3>Culture</h3></template>
-
-<p>Gets or sets the culture used when reading JSON. Defaults to <see cref="!:CultureInfo.InvariantCulture"/>.</p>
 
     </doc-member>
 </doc-member-group>

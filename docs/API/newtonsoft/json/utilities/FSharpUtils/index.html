@@ -208,6 +208,18 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-fsharplisttypename" name="FSharpListTypeName" type="string" signature="public const static string FSharpListTypeName">
+        <template #name><h3>FSharpListTypeName</h3></template>
+    </doc-member>
+
+    <doc-member id="field-fsharpmaptypename" name="FSharpMapTypeName" type="string" signature="public const static string FSharpMapTypeName">
+        <template #name><h3>FSharpMapTypeName</h3></template>
+    </doc-member>
+
+    <doc-member id="field-fsharpsettypename" name="FSharpSetTypeName" type="string" signature="public const static string FSharpSetTypeName">
+        <template #name><h3>FSharpSetTypeName</h3></template>
+    </doc-member>
+
     <doc-member id="field-lock" name="Lock" type="object" access="private" signature="private readonly static object Lock">
         <template #name><h3>Lock</h3></template>
     </doc-member>
@@ -216,60 +228,28 @@
         <template #name><h3>_instance</h3></template>
     </doc-member>
 
-    <doc-member id="field-_ofseq" name="_ofSeq" type="MethodInfo" access="private" signature="private MethodInfo _ofSeq">
-        <template #name><h3>_ofSeq</h3></template>
-    </doc-member>
-
     <doc-member id="field-_maptype" name="_mapType" type="Type" access="private" signature="private Type _mapType">
         <template #name><h3>_mapType</h3></template>
     </doc-member>
 
-    <doc-member id="field-fsharpsettypename" name="FSharpSetTypeName" type="string" signature="public const static string FSharpSetTypeName">
-        <template #name><h3>FSharpSetTypeName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-fsharplisttypename" name="FSharpListTypeName" type="string" signature="public const static string FSharpListTypeName">
-        <template #name><h3>FSharpListTypeName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-fsharpmaptypename" name="FSharpMapTypeName" type="string" signature="public const static string FSharpMapTypeName">
-        <template #name><h3>FSharpMapTypeName</h3></template>
+    <doc-member id="field-_ofseq" name="_ofSeq" type="MethodInfo" access="private" signature="private MethodInfo _ofSeq">
+        <template #name><h3>_ofSeq</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-instance" name="Instance" type="FSharpUtils" signature="public static FSharpUtils Instance { get; }">
-        <template #name><h3>Instance</h3></template>
-    </doc-member>
-
     <doc-member id="property-fsharpcoreassembly" name="FSharpCoreAssembly" type="Assembly" signature="public Assembly FSharpCoreAssembly { get; private set; }">
         <template #name><h3>FSharpCoreAssembly</h3></template>
     </doc-member>
 
-    <doc-member id="property-isunion" name="IsUnion" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> IsUnion { get; private set; }">
-        <template #name><h3>IsUnion</h3></template>
-    </doc-member>
-
-    <doc-member id="property-getunioncases" name="GetUnionCases" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> GetUnionCases { get; private set; }">
-        <template #name><h3>GetUnionCases</h3></template>
-    </doc-member>
-
-    <doc-member id="property-precomputeuniontagreader" name="PreComputeUnionTagReader" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionTagReader { get; private set; }">
-        <template #name><h3>PreComputeUnionTagReader</h3></template>
-    </doc-member>
-
-    <doc-member id="property-precomputeunionreader" name="PreComputeUnionReader" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionReader { get; private set; }">
-        <template #name><h3>PreComputeUnionReader</h3></template>
-    </doc-member>
-
-    <doc-member id="property-precomputeunionconstructor" name="PreComputeUnionConstructor" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionConstructor { get; private set; }">
-        <template #name><h3>PreComputeUnionConstructor</h3></template>
-    </doc-member>
-
     <doc-member id="property-getunioncaseinfodeclaringtype" name="GetUnionCaseInfoDeclaringType" type="Func<object, object>" signature="public Func<object, object> GetUnionCaseInfoDeclaringType { get; private set; }">
         <template #name><h3>GetUnionCaseInfoDeclaringType</h3></template>
+    </doc-member>
+
+    <doc-member id="property-getunioncaseinfofields" name="GetUnionCaseInfoFields" type="MethodCall<object, Nullable<object>?>" signature="public MethodCall<object, Nullable<object>?> GetUnionCaseInfoFields { get; private set; }">
+        <template #name><h3>GetUnionCaseInfoFields</h3></template>
     </doc-member>
 
     <doc-member id="property-getunioncaseinfoname" name="GetUnionCaseInfoName" type="Func<object, object>" signature="public Func<object, object> GetUnionCaseInfoName { get; private set; }">
@@ -280,8 +260,28 @@
         <template #name><h3>GetUnionCaseInfoTag</h3></template>
     </doc-member>
 
-    <doc-member id="property-getunioncaseinfofields" name="GetUnionCaseInfoFields" type="MethodCall<object, Nullable<object>?>" signature="public MethodCall<object, Nullable<object>?> GetUnionCaseInfoFields { get; private set; }">
-        <template #name><h3>GetUnionCaseInfoFields</h3></template>
+    <doc-member id="property-getunioncases" name="GetUnionCases" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> GetUnionCases { get; private set; }">
+        <template #name><h3>GetUnionCases</h3></template>
+    </doc-member>
+
+    <doc-member id="property-instance" name="Instance" type="FSharpUtils" signature="public static FSharpUtils Instance { get; }">
+        <template #name><h3>Instance</h3></template>
+    </doc-member>
+
+    <doc-member id="property-isunion" name="IsUnion" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> IsUnion { get; private set; }">
+        <template #name><h3>IsUnion</h3></template>
+    </doc-member>
+
+    <doc-member id="property-precomputeunionconstructor" name="PreComputeUnionConstructor" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionConstructor { get; private set; }">
+        <template #name><h3>PreComputeUnionConstructor</h3></template>
+    </doc-member>
+
+    <doc-member id="property-precomputeunionreader" name="PreComputeUnionReader" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionReader { get; private set; }">
+        <template #name><h3>PreComputeUnionReader</h3></template>
+    </doc-member>
+
+    <doc-member id="property-precomputeuniontagreader" name="PreComputeUnionTagReader" type="MethodCall<Nullable<object>?, object>" signature="public MethodCall<Nullable<object>?, object> PreComputeUnionTagReader { get; private set; }">
+        <template #name><h3>PreComputeUnionTagReader</h3></template>
     </doc-member>
 </doc-member-group>
 

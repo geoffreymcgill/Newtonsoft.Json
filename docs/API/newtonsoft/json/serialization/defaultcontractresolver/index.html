@@ -211,10 +211,6 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_instance" name="_instance" type="IContractResolver" access="private" signature="private readonly static IContractResolver _instance">
-        <template #name><h3>_instance</h3></template>
-    </doc-member>
-
     <doc-member id="field-blacklistedtypenames" name="BlacklistedTypeNames" type="string[]" access="private" signature="private readonly static string[] BlacklistedTypeNames">
         <template #name><h3>BlacklistedTypeNames</h3></template>
     </doc-member>
@@ -223,20 +219,27 @@
         <template #name><h3>BuiltInConverters</h3></template>
     </doc-member>
 
-    <doc-member id="field-_nametable" name="_nameTable" type="DefaultJsonNameTable" access="private" signature="private readonly DefaultJsonNameTable _nameTable">
-        <template #name><h3>_nameTable</h3></template>
-    </doc-member>
-
     <doc-member id="field-_contractcache" name="_contractCache" type="ThreadSafeStore<Type, JsonContract>" access="private" signature="private readonly ThreadSafeStore<Type, JsonContract> _contractCache">
         <template #name><h3>_contractCache</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_instance" name="_instance" type="IContractResolver" access="private" signature="private readonly static IContractResolver _instance">
+        <template #name><h3>_instance</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_nametable" name="_nameTable" type="DefaultJsonNameTable" access="private" signature="private readonly DefaultJsonNameTable _nameTable">
+        <template #name><h3>_nameTable</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-instance" name="Instance" type="IContractResolver" access="internal" signature="internal static IContractResolver Instance { internal get; }">
-        <template #name><h3>Instance</h3></template>
+    <doc-member id="property-defaultmemberssearchflags" name="DefaultMembersSearchFlags" type="BindingFlags" signature="public BindingFlags DefaultMembersSearchFlags { get; set; }">
+        <template #name><h3>DefaultMembersSearchFlags</h3></template>
+
+<p>Gets or sets the default members search flags.</p>
+
     </doc-member>
 
     <doc-member id="property-dynamiccodegeneration" name="DynamicCodeGeneration" type="bool" signature="public bool DynamicCodeGeneration { get; }">
@@ -247,24 +250,10 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
-    <doc-member id="property-defaultmemberssearchflags" name="DefaultMembersSearchFlags" type="BindingFlags" signature="public BindingFlags DefaultMembersSearchFlags { get; set; }">
-        <template #name><h3>DefaultMembersSearchFlags</h3></template>
+    <doc-member id="property-ignoreisspecifiedmembers" name="IgnoreIsSpecifiedMembers" type="bool" signature="public bool IgnoreIsSpecifiedMembers { get; set; }">
+        <template #name><h3>IgnoreIsSpecifiedMembers</h3></template>
 
-<p>Gets or sets the default members search flags.</p>
-
-    </doc-member>
-
-    <doc-member id="property-serializecompilergeneratedmembers" name="SerializeCompilerGeneratedMembers" type="bool" signature="public bool SerializeCompilerGeneratedMembers { get; set; }">
-        <template #name><h3>SerializeCompilerGeneratedMembers</h3></template>
-
-<p>Gets or sets a value indicating whether compiler generated members should be serialized.</p>
-
-    </doc-member>
-
-    <doc-member id="property-ignoreserializableinterface" name="IgnoreSerializableInterface" type="bool" signature="public bool IgnoreSerializableInterface { get; set; }">
-        <template #name><h3>IgnoreSerializableInterface</h3></template>
-
-<p>Gets or sets a value indicating whether to ignore the <see cref="!:ISerializable"/> interface when serializing and deserializing types.</p>
+<p>Gets or sets a value indicating whether to ignore IsSpecified members when serializing and deserializing types.</p>
 
     </doc-member>
 
@@ -275,10 +264,10 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
-    <doc-member id="property-ignoreisspecifiedmembers" name="IgnoreIsSpecifiedMembers" type="bool" signature="public bool IgnoreIsSpecifiedMembers { get; set; }">
-        <template #name><h3>IgnoreIsSpecifiedMembers</h3></template>
+    <doc-member id="property-ignoreserializableinterface" name="IgnoreSerializableInterface" type="bool" signature="public bool IgnoreSerializableInterface { get; set; }">
+        <template #name><h3>IgnoreSerializableInterface</h3></template>
 
-<p>Gets or sets a value indicating whether to ignore IsSpecified members when serializing and deserializing types.</p>
+<p>Gets or sets a value indicating whether to ignore the <see cref="!:ISerializable"/> interface when serializing and deserializing types.</p>
 
     </doc-member>
 
@@ -289,10 +278,21 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
+    <doc-member id="property-instance" name="Instance" type="IContractResolver" access="internal" signature="internal static IContractResolver Instance { internal get; }">
+        <template #name><h3>Instance</h3></template>
+    </doc-member>
+
     <doc-member id="property-namingstrategy" name="NamingStrategy" type="NamingStrategy?" signature="public NamingStrategy? NamingStrategy { get; set; }">
         <template #name><h3>NamingStrategy</h3></template>
 
 <p>Gets or sets the naming strategy used to resolve how property names and dictionary keys are serialized.</p>
+
+    </doc-member>
+
+    <doc-member id="property-serializecompilergeneratedmembers" name="SerializeCompilerGeneratedMembers" type="bool" signature="public bool SerializeCompilerGeneratedMembers { get; set; }">
+        <template #name><h3>SerializeCompilerGeneratedMembers</h3></template>
+
+<p>Gets or sets a value indicating whether compiler generated members should be serialized.</p>
 
     </doc-member>
 </doc-member-group>

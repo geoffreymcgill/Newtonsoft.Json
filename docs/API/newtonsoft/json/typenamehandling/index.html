@@ -211,6 +211,30 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-all" name="All" type="TypeNameHandling" signature="All">
+        <template #name><h3>All</h3></template>
+
+<p>Always include the .NET type name when serializing.</p>
+
+    </doc-member>
+
+    <doc-member id="field-arrays" name="Arrays" type="TypeNameHandling" signature="Arrays">
+        <template #name><h3>Arrays</h3></template>
+
+<p>Include the .NET type name when serializing into a JSON array structure.</p>
+
+    </doc-member>
+
+    <doc-member id="field-auto" name="Auto" type="TypeNameHandling" signature="Auto">
+        <template #name><h3>Auto</h3></template>
+
+<p>Include the .NET type name when the type of the object being serialized is not the same as its declared type.
+Note that this doesn&#39;t include the root serialized object by default. To include the root object&#39;s type name in JSON
+you must specify a root type object with <see cref="!:JsonConvert.SerializeObject(object, Type, JsonSerializerSettings)"/>
+or <see cref="!:JsonSerializer.Serialize(JsonWriter, object, Type)"/>.</p>
+
+    </doc-member>
+
     <doc-member id="field-none" name="None" type="TypeNameHandling" signature="None">
         <template #name><h3>None</h3></template>
 
@@ -222,30 +246,6 @@
         <template #name><h3>Objects</h3></template>
 
 <p>Include the .NET type name when serializing into a JSON object structure.</p>
-
-    </doc-member>
-
-    <doc-member id="field-arrays" name="Arrays" type="TypeNameHandling" signature="Arrays">
-        <template #name><h3>Arrays</h3></template>
-
-<p>Include the .NET type name when serializing into a JSON array structure.</p>
-
-    </doc-member>
-
-    <doc-member id="field-all" name="All" type="TypeNameHandling" signature="All">
-        <template #name><h3>All</h3></template>
-
-<p>Always include the .NET type name when serializing.</p>
-
-    </doc-member>
-
-    <doc-member id="field-auto" name="Auto" type="TypeNameHandling" signature="Auto">
-        <template #name><h3>Auto</h3></template>
-
-<p>Include the .NET type name when the type of the object being serialized is not the same as its declared type.
-Note that this doesn&#39;t include the root serialized object by default. To include the root object&#39;s type name in JSON
-you must specify a root type object with <see cref="!:JsonConvert.SerializeObject(object, Type, JsonSerializerSettings)"/>
-or <see cref="!:JsonSerializer.Serialize(JsonWriter, object, Type)"/>.</p>
 
     </doc-member>
 </doc-member-group>

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class DynamicContractResolver : DefaultContractResolver
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class DynamicContractResolver : DefaultContractResolver
 {
     private readonly char _startingWithChar;
 
@@ -223,7 +225,10 @@ public class Person
         get { return FirstName + &quot; &quot; + LastName; }
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Person person = new Person
 {
     FirstName = &quot;Dennis&quot;,
     LastName = &quot;Deepwater-Diver&quot;
@@ -245,6 +250,7 @@ Console.WriteLine(startingWithL);
 // {
 //   &quot;LastName&quot;: &quot;Deepwater-Diver&quot;
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

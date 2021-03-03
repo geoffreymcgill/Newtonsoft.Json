@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JArray items = JArray.Parse(@&quot;[
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JArray items = JArray.Parse(@&quot;[
   {
     'Name': 'Valid JSON',
     'Valid': true
@@ -211,6 +213,7 @@ foreach (JToken item in strictResults)
     Console.WriteLine((string)item[&quot;Name&quot;]);
 }
 // Valid JSON</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

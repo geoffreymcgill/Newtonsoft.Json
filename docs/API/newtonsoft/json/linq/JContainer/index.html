@@ -211,24 +211,24 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_listchanged" name="_listChanged" type="Nullable<ListChangedEventHandler>?" access="internal" signature="internal Nullable<ListChangedEventHandler>? _listChanged">
-        <template #name><h3>_listChanged</h3></template>
-    </doc-member>
-
     <doc-member id="field-_addingnew" name="_addingNew" type="Nullable<AddingNewEventHandler>?" access="internal" signature="internal Nullable<AddingNewEventHandler>? _addingNew">
         <template #name><h3>_addingNew</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_busy" name="_busy" type="bool" access="private" signature="private bool _busy">
+        <template #name><h3>_busy</h3></template>
     </doc-member>
 
     <doc-member id="field-_collectionchanged" name="_collectionChanged" type="Nullable<NotifyCollectionChangedEventHandler>?" access="internal" signature="internal Nullable<NotifyCollectionChangedEventHandler>? _collectionChanged">
         <template #name><h3>_collectionChanged</h3></template>
     </doc-member>
 
-    <doc-member id="field-_syncroot" name="_syncRoot" type="Nullable<object>?" access="private" signature="private Nullable<object>? _syncRoot">
-        <template #name><h3>_syncRoot</h3></template>
+    <doc-member id="field-_listchanged" name="_listChanged" type="Nullable<ListChangedEventHandler>?" access="internal" signature="internal Nullable<ListChangedEventHandler>? _listChanged">
+        <template #name><h3>_listChanged</h3></template>
     </doc-member>
 
-    <doc-member id="field-_busy" name="_busy" type="bool" access="private" signature="private bool _busy">
-        <template #name><h3>_busy</h3></template>
+    <doc-member id="field-_syncroot" name="_syncRoot" type="Nullable<object>?" access="private" signature="private Nullable<object>? _syncRoot">
+        <template #name><h3>_syncRoot</h3></template>
     </doc-member>
 </doc-member-group>
 
@@ -242,10 +242,10 @@
 
     </doc-member>
 
-    <doc-member id="property-hasvalues" name="HasValues" type="bool" signature="public sealed bool HasValues { get; }">
-        <template #name><h3>HasValues</h3></template>
+    <doc-member id="property-count" name="Count" type="int" signature="public int Count { get; }">
+        <template #name><h3>Count</h3></template>
 
-<p>Gets a value indicating whether this token has child tokens.</p>
+<p>Gets the count of child JSON tokens.</p>
 
     </doc-member>
 
@@ -256,17 +256,17 @@
 
     </doc-member>
 
+    <doc-member id="property-hasvalues" name="HasValues" type="bool" signature="public sealed bool HasValues { get; }">
+        <template #name><h3>HasValues</h3></template>
+
+<p>Gets a value indicating whether this token has child tokens.</p>
+
+    </doc-member>
+
     <doc-member id="property-last" name="Last" type="JToken?" signature="public sealed JToken? Last { get; }">
         <template #name><h3>Last</h3></template>
 
 <p>Get the last child token of this token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-count" name="Count" type="int" signature="public int Count { get; }">
-        <template #name><h3>Count</h3></template>
-
-<p>Gets the count of child JSON tokens.</p>
 
     </doc-member>
 </doc-member-group>
@@ -741,13 +741,6 @@
 <doc-member-group id="events">
     <template #title>Events</template>
 
-    <doc-member id="property-listchanged" name="ListChanged" type="ListChangedEventHandler" signature="public event ListChangedEventHandler ListChanged { add; remove; }">
-        <template #name><h3>ListChanged</h3></template>
-
-<p>Occurs when the list changes or an item in the list changes.</p>
-
-    </doc-member>
-
     <doc-member id="property-addingnew" name="AddingNew" type="AddingNewEventHandler" signature="public event AddingNewEventHandler AddingNew { add; remove; }">
         <template #name><h3>AddingNew</h3></template>
 
@@ -759,6 +752,13 @@
         <template #name><h3>CollectionChanged</h3></template>
 
 <p>Occurs when the items list of the collection has changed, or the collection is reset.</p>
+
+    </doc-member>
+
+    <doc-member id="property-listchanged" name="ListChanged" type="ListChangedEventHandler" signature="public event ListChangedEventHandler ListChanged { add; remove; }">
+        <template #name><h3>ListChanged</h3></template>
+
+<p>Occurs when the list changes or an item in the list changes.</p>
 
     </doc-member>
 </doc-member-group>

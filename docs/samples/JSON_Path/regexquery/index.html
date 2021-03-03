@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JArray packages = JArray.Parse(@&quot;[
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JArray packages = JArray.Parse(@&quot;[
   {
     'PackageId': 'Newtonsoft.Json',
     'Version': '11.0.1',
@@ -213,6 +215,7 @@ foreach (JToken item in newtonsoftPackages)
     Console.WriteLine((string) item[&quot;PackageId&quot;]);
 }
 // Newtonsoft.Json</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -216,16 +216,16 @@
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-element" name="Element" type="XElement" access="private" signature="private XElement Element { private get; }">
-        <template #name><h3>Element</h3></template>
-    </doc-member>
-
     <doc-member id="property-attributes" name="Attributes" type="List<IXmlNode>" signature="public sealed List<IXmlNode> Attributes { get; }">
         <template #name><h3>Attributes</h3></template>
     </doc-member>
 
-    <doc-member id="property-value" name="Value" type="Nullable<string>?" signature="public sealed Nullable<string>? Value { get; set; }">
-        <template #name><h3>Value</h3></template>
+    <doc-member id="property-element" name="Element" type="XElement" access="private" signature="private XElement Element { private get; }">
+        <template #name><h3>Element</h3></template>
+    </doc-member>
+
+    <doc-member id="property-isempty" name="IsEmpty" type="bool" signature="public bool IsEmpty { get; }">
+        <template #name><h3>IsEmpty</h3></template>
     </doc-member>
 
     <doc-member id="property-localname" name="LocalName" type="Nullable<string>?" signature="public sealed Nullable<string>? LocalName { get; }">
@@ -236,8 +236,8 @@
         <template #name><h3>NamespaceUri</h3></template>
     </doc-member>
 
-    <doc-member id="property-isempty" name="IsEmpty" type="bool" signature="public bool IsEmpty { get; }">
-        <template #name><h3>IsEmpty</h3></template>
+    <doc-member id="property-value" name="Value" type="Nullable<string>?" signature="public sealed Nullable<string>? Value { get; set; }">
+        <template #name><h3>Value</h3></template>
     </doc-member>
 </doc-member-group>
 

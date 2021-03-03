@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">List&lt;string&gt; errors = new List&lt;string&gt;();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">List&lt;string&gt; errors = new List&lt;string&gt;();
 
 List&lt;DateTime&gt; c = JsonConvert.DeserializeObject&lt;List&lt;DateTime&gt;&gt;(@&quot;[
   '2009-09-09T00:00:00Z',
@@ -221,6 +223,7 @@ List&lt;DateTime&gt; c = JsonConvert.DeserializeObject&lt;List&lt;DateTime&gt;&g
 // The string was not recognized as a valid DateTime. There is a unknown word starting at index 0.
 // Unexpected token parsing date. Expected String, got StartArray.
 // Cannot convert null value to System.DateTime.</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

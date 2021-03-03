@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class KnownTypesBinder : ISerializationBinder
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class KnownTypesBinder : ISerializationBinder
 {
     public IList&lt;Type&gt; KnownTypes { get; set; }
 
@@ -213,7 +215,10 @@ public class Car
     public string Maker { get; set; }
     public string Model { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">KnownTypesBinder knownTypesBinder = new KnownTypesBinder
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">KnownTypesBinder knownTypesBinder = new KnownTypesBinder
 {
     KnownTypes = new List&lt;Type&gt; { typeof(Car) }
 };
@@ -245,6 +250,7 @@ object newValue = JsonConvert.DeserializeObject(json, new JsonSerializerSettings
 
 Console.WriteLine(newValue.GetType().Name);
 // Car</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

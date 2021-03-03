@@ -211,38 +211,10 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-start" name="Start" type="State" signature="Start = 0">
-        <template #name><h3>Start</h3></template>
+    <doc-member id="field-array" name="Array" type="State" signature="Array = 6">
+        <template #name><h3>Array</h3></template>
 
-<p>A <see cref="T:Newtonsoft.Json.JsonReader"/> read method has not been called.</p>
-
-    </doc-member>
-
-    <doc-member id="field-complete" name="Complete" type="State" signature="Complete = 1">
-        <template #name><h3>Complete</h3></template>
-
-<p>The end of the file has been reached successfully.</p>
-
-    </doc-member>
-
-    <doc-member id="field-property" name="Property" type="State" signature="Property = 2">
-        <template #name><h3>Property</h3></template>
-
-<p>Reader is at a property.</p>
-
-    </doc-member>
-
-    <doc-member id="field-objectstart" name="ObjectStart" type="State" signature="ObjectStart = 3">
-        <template #name><h3>ObjectStart</h3></template>
-
-<p>Reader is at the start of an object.</p>
-
-    </doc-member>
-
-    <doc-member id="field-object" name="Object" type="State" signature="Object = 4">
-        <template #name><h3>Object</h3></template>
-
-<p>Reader is in an object.</p>
+<p>Reader is in an array.</p>
 
     </doc-member>
 
@@ -253,13 +225,6 @@
 
     </doc-member>
 
-    <doc-member id="field-array" name="Array" type="State" signature="Array = 6">
-        <template #name><h3>Array</h3></template>
-
-<p>Reader is in an array.</p>
-
-    </doc-member>
-
     <doc-member id="field-closed" name="Closed" type="State" signature="Closed = 7">
         <template #name><h3>Closed</h3></template>
 
@@ -267,17 +232,10 @@
 
     </doc-member>
 
-    <doc-member id="field-postvalue" name="PostValue" type="State" signature="PostValue = 8">
-        <template #name><h3>PostValue</h3></template>
+    <doc-member id="field-complete" name="Complete" type="State" signature="Complete = 1">
+        <template #name><h3>Complete</h3></template>
 
-<p>Reader has just read a value.</p>
-
-    </doc-member>
-
-    <doc-member id="field-constructorstart" name="ConstructorStart" type="State" signature="ConstructorStart = 9">
-        <template #name><h3>ConstructorStart</h3></template>
-
-<p>Reader is at the start of a constructor.</p>
+<p>The end of the file has been reached successfully.</p>
 
     </doc-member>
 
@@ -285,6 +243,13 @@
         <template #name><h3>Constructor</h3></template>
 
 <p>Reader is in a constructor.</p>
+
+    </doc-member>
+
+    <doc-member id="field-constructorstart" name="ConstructorStart" type="State" signature="ConstructorStart = 9">
+        <template #name><h3>ConstructorStart</h3></template>
+
+<p>Reader is at the start of a constructor.</p>
 
     </doc-member>
 
@@ -299,6 +264,41 @@
         <template #name><h3>Finished</h3></template>
 
 <p>The end of the file has been reached successfully.</p>
+
+    </doc-member>
+
+    <doc-member id="field-object" name="Object" type="State" signature="Object = 4">
+        <template #name><h3>Object</h3></template>
+
+<p>Reader is in an object.</p>
+
+    </doc-member>
+
+    <doc-member id="field-objectstart" name="ObjectStart" type="State" signature="ObjectStart = 3">
+        <template #name><h3>ObjectStart</h3></template>
+
+<p>Reader is at the start of an object.</p>
+
+    </doc-member>
+
+    <doc-member id="field-postvalue" name="PostValue" type="State" signature="PostValue = 8">
+        <template #name><h3>PostValue</h3></template>
+
+<p>Reader has just read a value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-property" name="Property" type="State" signature="Property = 2">
+        <template #name><h3>Property</h3></template>
+
+<p>Reader is at a property.</p>
+
+    </doc-member>
+
+    <doc-member id="field-start" name="Start" type="State" signature="Start = 0">
+        <template #name><h3>Start</h3></template>
+
+<p>A <see cref="T:Newtonsoft.Json.JsonReader"/> read method has not been called.</p>
 
     </doc-member>
 </doc-member-group>

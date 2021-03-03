@@ -211,13 +211,6 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-none" name="None" type="DateParseHandling" signature="None">
-        <template #name><h3>None</h3></template>
-
-<p>Date formatted strings are not parsed to a date type and are read as strings.</p>
-
-    </doc-member>
-
     <doc-member id="field-datetime" name="DateTime" type="DateParseHandling" signature="DateTime">
         <template #name><h3>DateTime</h3></template>
 
@@ -229,6 +222,13 @@
         <template #name><h3>DateTimeOffset</h3></template>
 
 <p>Date formatted strings, e.g. <c>&quot;/Date(1198908717056)/&quot;</c> and <c>&quot;2012-03-21T05:40Z&quot;</c>, are parsed to <see cref="!:System.DateTimeOffset"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="field-none" name="None" type="DateParseHandling" signature="None">
+        <template #name><h3>None</h3></template>
+
+<p>Date formatted strings are not parsed to a date type and are read as strings.</p>
 
     </doc-member>
 </doc-member-group>

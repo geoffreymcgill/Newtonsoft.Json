@@ -192,12 +192,17 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class JavaScriptSettings
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class JavaScriptSettings
 {
     public JRaw OnLoadFunction { get; set; }
     public JRaw OnUnloadFunction { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">JavaScriptSettings settings = new JavaScriptSettings
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JavaScriptSettings settings = new JavaScriptSettings
 {
     OnLoadFunction = new JRaw(&quot;OnLoad&quot;),
     OnUnloadFunction = new JRaw(&quot;function(e) { alert(e); }&quot;)
@@ -210,6 +215,7 @@ Console.WriteLine(json);
 //   &quot;OnLoadFunction&quot;: OnLoad,
 //   &quot;OnUnloadFunction&quot;: function(e) { alert(e); }
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

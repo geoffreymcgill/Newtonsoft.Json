@@ -224,171 +224,10 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-id" name="Id" type="string" signature="public string Id { get; set; }">
-        <template #name><h3>Id</h3></template>
-
-<p>Gets or sets the id.</p>
-
-    </doc-member>
-
-    <doc-member id="property-title" name="Title" type="string" signature="public string Title { get; set; }">
-        <template #name><h3>Title</h3></template>
-
-<p>Gets or sets the title.</p>
-
-    </doc-member>
-
-    <doc-member id="property-required" name="Required" type="Nullable<bool>?" signature="public Nullable<bool>? Required { get; set; }">
-        <template #name><h3>Required</h3></template>
-
-<p>Gets or sets whether the object is required.</p>
-
-    </doc-member>
-
-    <doc-member id="property-readonly" name="ReadOnly" type="Nullable<bool>?" signature="public Nullable<bool>? ReadOnly { get; set; }">
-        <template #name><h3>ReadOnly</h3></template>
-
-<p>Gets or sets whether the object is read-only.</p>
-
-    </doc-member>
-
-    <doc-member id="property-hidden" name="Hidden" type="Nullable<bool>?" signature="public Nullable<bool>? Hidden { get; set; }">
-        <template #name><h3>Hidden</h3></template>
-
-<p>Gets or sets whether the object is visible to users.</p>
-
-    </doc-member>
-
-    <doc-member id="property-transient" name="Transient" type="Nullable<bool>?" signature="public Nullable<bool>? Transient { get; set; }">
-        <template #name><h3>Transient</h3></template>
-
-<p>Gets or sets whether the object is transient.</p>
-
-    </doc-member>
-
-    <doc-member id="property-description" name="Description" type="string" signature="public string Description { get; set; }">
-        <template #name><h3>Description</h3></template>
-
-<p>Gets or sets the description of the object.</p>
-
-    </doc-member>
-
-    <doc-member id="property-type" name="Type" type="Nullable<JsonSchemaType>?" signature="public Nullable<JsonSchemaType>? Type { get; set; }">
-        <template #name><h3>Type</h3></template>
-
-<p>Gets or sets the types of values allowed by the object.</p>
-
-    </doc-member>
-
-    <doc-member id="property-pattern" name="Pattern" type="string" signature="public string Pattern { get; set; }">
-        <template #name><h3>Pattern</h3></template>
-
-<p>Gets or sets the pattern.</p>
-
-    </doc-member>
-
-    <doc-member id="property-minimumlength" name="MinimumLength" type="Nullable<int>?" signature="public Nullable<int>? MinimumLength { get; set; }">
-        <template #name><h3>MinimumLength</h3></template>
-
-<p>Gets or sets the minimum length.</p>
-
-    </doc-member>
-
-    <doc-member id="property-maximumlength" name="MaximumLength" type="Nullable<int>?" signature="public Nullable<int>? MaximumLength { get; set; }">
-        <template #name><h3>MaximumLength</h3></template>
-
-<p>Gets or sets the maximum length.</p>
-
-    </doc-member>
-
-    <doc-member id="property-divisibleby" name="DivisibleBy" type="Nullable<double>?" signature="public Nullable<double>? DivisibleBy { get; set; }">
-        <template #name><h3>DivisibleBy</h3></template>
-
-<p>Gets or sets a number that the value should be divisible by.</p>
-
-    </doc-member>
-
-    <doc-member id="property-minimum" name="Minimum" type="Nullable<double>?" signature="public Nullable<double>? Minimum { get; set; }">
-        <template #name><h3>Minimum</h3></template>
-
-<p>Gets or sets the minimum.</p>
-
-    </doc-member>
-
-    <doc-member id="property-maximum" name="Maximum" type="Nullable<double>?" signature="public Nullable<double>? Maximum { get; set; }">
-        <template #name><h3>Maximum</h3></template>
-
-<p>Gets or sets the maximum.</p>
-
-    </doc-member>
-
-    <doc-member id="property-exclusiveminimum" name="ExclusiveMinimum" type="Nullable<bool>?" signature="public Nullable<bool>? ExclusiveMinimum { get; set; }">
-        <template #name><h3>ExclusiveMinimum</h3></template>
-
-<p>Gets or sets a flag indicating whether the value can not equal the number defined by the <c>minimum</c> attribute (<see cref="P:Newtonsoft.Json.Schema.JsonSchema.Minimum"/>).</p>
-
-    </doc-member>
-
-    <doc-member id="property-exclusivemaximum" name="ExclusiveMaximum" type="Nullable<bool>?" signature="public Nullable<bool>? ExclusiveMaximum { get; set; }">
-        <template #name><h3>ExclusiveMaximum</h3></template>
-
-<p>Gets or sets a flag indicating whether the value can not equal the number defined by the <c>maximum</c> attribute (<see cref="P:Newtonsoft.Json.Schema.JsonSchema.Maximum"/>).</p>
-
-    </doc-member>
-
-    <doc-member id="property-minimumitems" name="MinimumItems" type="Nullable<int>?" signature="public Nullable<int>? MinimumItems { get; set; }">
-        <template #name><h3>MinimumItems</h3></template>
-
-<p>Gets or sets the minimum number of items.</p>
-
-    </doc-member>
-
-    <doc-member id="property-maximumitems" name="MaximumItems" type="Nullable<int>?" signature="public Nullable<int>? MaximumItems { get; set; }">
-        <template #name><h3>MaximumItems</h3></template>
-
-<p>Gets or sets the maximum number of items.</p>
-
-    </doc-member>
-
-    <doc-member id="property-items" name="Items" type="IList<JsonSchema>" signature="public IList<JsonSchema> Items { get; set; }">
-        <template #name><h3>Items</h3></template>
-
-<p>Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> of items.</p>
-
-    </doc-member>
-
-    <doc-member id="property-positionalitemsvalidation" name="PositionalItemsValidation" type="bool" signature="public bool PositionalItemsValidation { get; set; }">
-        <template #name><h3>PositionalItemsValidation</h3></template>
-
-<p>Gets or sets a value indicating whether items in an array are validated using the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> instance at their array position from <see cref="P:Newtonsoft.Json.Schema.JsonSchema.Items"/>.</p>
-
-    </doc-member>
-
     <doc-member id="property-additionalitems" name="AdditionalItems" type="JsonSchema" signature="public JsonSchema AdditionalItems { get; set; }">
         <template #name><h3>AdditionalItems</h3></template>
 
 <p>Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> of additional items.</p>
-
-    </doc-member>
-
-    <doc-member id="property-allowadditionalitems" name="AllowAdditionalItems" type="bool" signature="public bool AllowAdditionalItems { get; set; }">
-        <template #name><h3>AllowAdditionalItems</h3></template>
-
-<p>Gets or sets a value indicating whether additional items are allowed.</p>
-
-    </doc-member>
-
-    <doc-member id="property-uniqueitems" name="UniqueItems" type="bool" signature="public bool UniqueItems { get; set; }">
-        <template #name><h3>UniqueItems</h3></template>
-
-<p>Gets or sets whether the array items must be unique.</p>
-
-    </doc-member>
-
-    <doc-member id="property-properties" name="Properties" type="IDictionary<string, JsonSchema>" signature="public IDictionary<string, JsonSchema> Properties { get; set; }">
-        <template #name><h3>Properties</h3></template>
-
-<p>Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> of properties.</p>
 
     </doc-member>
 
@@ -399,10 +238,10 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-patternproperties" name="PatternProperties" type="IDictionary<string, JsonSchema>" signature="public IDictionary<string, JsonSchema> PatternProperties { get; set; }">
-        <template #name><h3>PatternProperties</h3></template>
+    <doc-member id="property-allowadditionalitems" name="AllowAdditionalItems" type="bool" signature="public bool AllowAdditionalItems { get; set; }">
+        <template #name><h3>AllowAdditionalItems</h3></template>
 
-<p>Gets or sets the pattern properties.</p>
+<p>Gets or sets a value indicating whether additional items are allowed.</p>
 
     </doc-member>
 
@@ -413,17 +252,21 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-requires" name="Requires" type="string" signature="public string Requires { get; set; }">
-        <template #name><h3>Requires</h3></template>
+    <doc-member id="property-default" name="Default" type="JToken" signature="public JToken Default { get; set; }">
+        <template #name><h3>Default</h3></template>
 
-<p>Gets or sets the required property if this property is present.</p>
+<p>Gets or sets the default value.</p>
 
     </doc-member>
 
-    <doc-member id="property-enum" name="Enum" type="IList<JToken>" signature="public IList<JToken> Enum { get; set; }">
-        <template #name><h3>Enum</h3></template>
+    <doc-member id="property-deferredreference" name="DeferredReference" type="string" access="internal" signature="internal string DeferredReference { internal get; internal set; }">
+        <template #name><h3>DeferredReference</h3></template>
+    </doc-member>
 
-<p>Gets or sets the a collection of valid enum values allowed.</p>
+    <doc-member id="property-description" name="Description" type="string" signature="public string Description { get; set; }">
+        <template #name><h3>Description</h3></template>
+
+<p>Gets or sets the description of the object.</p>
 
     </doc-member>
 
@@ -434,10 +277,31 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-default" name="Default" type="JToken" signature="public JToken Default { get; set; }">
-        <template #name><h3>Default</h3></template>
+    <doc-member id="property-divisibleby" name="DivisibleBy" type="Nullable<double>?" signature="public Nullable<double>? DivisibleBy { get; set; }">
+        <template #name><h3>DivisibleBy</h3></template>
 
-<p>Gets or sets the default value.</p>
+<p>Gets or sets a number that the value should be divisible by.</p>
+
+    </doc-member>
+
+    <doc-member id="property-enum" name="Enum" type="IList<JToken>" signature="public IList<JToken> Enum { get; set; }">
+        <template #name><h3>Enum</h3></template>
+
+<p>Gets or sets the a collection of valid enum values allowed.</p>
+
+    </doc-member>
+
+    <doc-member id="property-exclusivemaximum" name="ExclusiveMaximum" type="Nullable<bool>?" signature="public Nullable<bool>? ExclusiveMaximum { get; set; }">
+        <template #name><h3>ExclusiveMaximum</h3></template>
+
+<p>Gets or sets a flag indicating whether the value can not equal the number defined by the <c>maximum</c> attribute (<see cref="P:Newtonsoft.Json.Schema.JsonSchema.Maximum"/>).</p>
+
+    </doc-member>
+
+    <doc-member id="property-exclusiveminimum" name="ExclusiveMinimum" type="Nullable<bool>?" signature="public Nullable<bool>? ExclusiveMinimum { get; set; }">
+        <template #name><h3>ExclusiveMinimum</h3></template>
+
+<p>Gets or sets a flag indicating whether the value can not equal the number defined by the <c>minimum</c> attribute (<see cref="P:Newtonsoft.Json.Schema.JsonSchema.Minimum"/>).</p>
 
     </doc-member>
 
@@ -455,20 +319,156 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-location" name="Location" type="string" access="internal" signature="internal string Location { internal get; internal set; }">
-        <template #name><h3>Location</h3></template>
+    <doc-member id="property-hidden" name="Hidden" type="Nullable<bool>?" signature="public Nullable<bool>? Hidden { get; set; }">
+        <template #name><h3>Hidden</h3></template>
+
+<p>Gets or sets whether the object is visible to users.</p>
+
+    </doc-member>
+
+    <doc-member id="property-id" name="Id" type="string" signature="public string Id { get; set; }">
+        <template #name><h3>Id</h3></template>
+
+<p>Gets or sets the id.</p>
+
     </doc-member>
 
     <doc-member id="property-internalid" name="InternalId" type="string" access="internal" signature="internal string InternalId { internal get; }">
         <template #name><h3>InternalId</h3></template>
     </doc-member>
 
-    <doc-member id="property-deferredreference" name="DeferredReference" type="string" access="internal" signature="internal string DeferredReference { internal get; internal set; }">
-        <template #name><h3>DeferredReference</h3></template>
+    <doc-member id="property-items" name="Items" type="IList<JsonSchema>" signature="public IList<JsonSchema> Items { get; set; }">
+        <template #name><h3>Items</h3></template>
+
+<p>Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> of items.</p>
+
+    </doc-member>
+
+    <doc-member id="property-location" name="Location" type="string" access="internal" signature="internal string Location { internal get; internal set; }">
+        <template #name><h3>Location</h3></template>
+    </doc-member>
+
+    <doc-member id="property-maximum" name="Maximum" type="Nullable<double>?" signature="public Nullable<double>? Maximum { get; set; }">
+        <template #name><h3>Maximum</h3></template>
+
+<p>Gets or sets the maximum.</p>
+
+    </doc-member>
+
+    <doc-member id="property-maximumitems" name="MaximumItems" type="Nullable<int>?" signature="public Nullable<int>? MaximumItems { get; set; }">
+        <template #name><h3>MaximumItems</h3></template>
+
+<p>Gets or sets the maximum number of items.</p>
+
+    </doc-member>
+
+    <doc-member id="property-maximumlength" name="MaximumLength" type="Nullable<int>?" signature="public Nullable<int>? MaximumLength { get; set; }">
+        <template #name><h3>MaximumLength</h3></template>
+
+<p>Gets or sets the maximum length.</p>
+
+    </doc-member>
+
+    <doc-member id="property-minimum" name="Minimum" type="Nullable<double>?" signature="public Nullable<double>? Minimum { get; set; }">
+        <template #name><h3>Minimum</h3></template>
+
+<p>Gets or sets the minimum.</p>
+
+    </doc-member>
+
+    <doc-member id="property-minimumitems" name="MinimumItems" type="Nullable<int>?" signature="public Nullable<int>? MinimumItems { get; set; }">
+        <template #name><h3>MinimumItems</h3></template>
+
+<p>Gets or sets the minimum number of items.</p>
+
+    </doc-member>
+
+    <doc-member id="property-minimumlength" name="MinimumLength" type="Nullable<int>?" signature="public Nullable<int>? MinimumLength { get; set; }">
+        <template #name><h3>MinimumLength</h3></template>
+
+<p>Gets or sets the minimum length.</p>
+
+    </doc-member>
+
+    <doc-member id="property-pattern" name="Pattern" type="string" signature="public string Pattern { get; set; }">
+        <template #name><h3>Pattern</h3></template>
+
+<p>Gets or sets the pattern.</p>
+
+    </doc-member>
+
+    <doc-member id="property-patternproperties" name="PatternProperties" type="IDictionary<string, JsonSchema>" signature="public IDictionary<string, JsonSchema> PatternProperties { get; set; }">
+        <template #name><h3>PatternProperties</h3></template>
+
+<p>Gets or sets the pattern properties.</p>
+
+    </doc-member>
+
+    <doc-member id="property-positionalitemsvalidation" name="PositionalItemsValidation" type="bool" signature="public bool PositionalItemsValidation { get; set; }">
+        <template #name><h3>PositionalItemsValidation</h3></template>
+
+<p>Gets or sets a value indicating whether items in an array are validated using the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> instance at their array position from <see cref="P:Newtonsoft.Json.Schema.JsonSchema.Items"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-properties" name="Properties" type="IDictionary<string, JsonSchema>" signature="public IDictionary<string, JsonSchema> Properties { get; set; }">
+        <template #name><h3>Properties</h3></template>
+
+<p>Gets or sets the <see cref="T:Newtonsoft.Json.Schema.JsonSchema"/> of properties.</p>
+
+    </doc-member>
+
+    <doc-member id="property-readonly" name="ReadOnly" type="Nullable<bool>?" signature="public Nullable<bool>? ReadOnly { get; set; }">
+        <template #name><h3>ReadOnly</h3></template>
+
+<p>Gets or sets whether the object is read-only.</p>
+
     </doc-member>
 
     <doc-member id="property-referencesresolved" name="ReferencesResolved" type="bool" access="internal" signature="internal bool ReferencesResolved { internal get; internal set; }">
         <template #name><h3>ReferencesResolved</h3></template>
+    </doc-member>
+
+    <doc-member id="property-required" name="Required" type="Nullable<bool>?" signature="public Nullable<bool>? Required { get; set; }">
+        <template #name><h3>Required</h3></template>
+
+<p>Gets or sets whether the object is required.</p>
+
+    </doc-member>
+
+    <doc-member id="property-requires" name="Requires" type="string" signature="public string Requires { get; set; }">
+        <template #name><h3>Requires</h3></template>
+
+<p>Gets or sets the required property if this property is present.</p>
+
+    </doc-member>
+
+    <doc-member id="property-title" name="Title" type="string" signature="public string Title { get; set; }">
+        <template #name><h3>Title</h3></template>
+
+<p>Gets or sets the title.</p>
+
+    </doc-member>
+
+    <doc-member id="property-transient" name="Transient" type="Nullable<bool>?" signature="public Nullable<bool>? Transient { get; set; }">
+        <template #name><h3>Transient</h3></template>
+
+<p>Gets or sets whether the object is transient.</p>
+
+    </doc-member>
+
+    <doc-member id="property-type" name="Type" type="Nullable<JsonSchemaType>?" signature="public Nullable<JsonSchemaType>? Type { get; set; }">
+        <template #name><h3>Type</h3></template>
+
+<p>Gets or sets the types of values allowed by the object.</p>
+
+    </doc-member>
+
+    <doc-member id="property-uniqueitems" name="UniqueItems" type="bool" signature="public bool UniqueItems { get; set; }">
+        <template #name><h3>UniqueItems</h3></template>
+
+<p>Gets or sets whether the array items must be unique.</p>
+
     </doc-member>
 </doc-member-group>
 

@@ -211,66 +211,10 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-none" name="None" type="JTokenType" signature="None">
-        <template #name><h3>None</h3></template>
-
-<p>No token type has been set.</p>
-
-    </doc-member>
-
-    <doc-member id="field-object" name="Object" type="JTokenType" signature="Object">
-        <template #name><h3>Object</h3></template>
-
-<p>A JSON object.</p>
-
-    </doc-member>
-
     <doc-member id="field-array" name="Array" type="JTokenType" signature="Array">
         <template #name><h3>Array</h3></template>
 
 <p>A JSON array.</p>
-
-    </doc-member>
-
-    <doc-member id="field-constructor" name="Constructor" type="JTokenType" signature="Constructor">
-        <template #name><h3>Constructor</h3></template>
-
-<p>A JSON constructor.</p>
-
-    </doc-member>
-
-    <doc-member id="field-property" name="Property" type="JTokenType" signature="Property">
-        <template #name><h3>Property</h3></template>
-
-<p>A JSON object property.</p>
-
-    </doc-member>
-
-    <doc-member id="field-comment" name="Comment" type="JTokenType" signature="Comment">
-        <template #name><h3>Comment</h3></template>
-
-<p>A comment.</p>
-
-    </doc-member>
-
-    <doc-member id="field-integer" name="Integer" type="JTokenType" signature="Integer">
-        <template #name><h3>Integer</h3></template>
-
-<p>An integer value.</p>
-
-    </doc-member>
-
-    <doc-member id="field-float" name="Float" type="JTokenType" signature="Float">
-        <template #name><h3>Float</h3></template>
-
-<p>A float value.</p>
-
-    </doc-member>
-
-    <doc-member id="field-string" name="String" type="JTokenType" signature="String">
-        <template #name><h3>String</h3></template>
-
-<p>A string value.</p>
 
     </doc-member>
 
@@ -281,17 +225,24 @@
 
     </doc-member>
 
-    <doc-member id="field-null" name="Null" type="JTokenType" signature="Null">
-        <template #name><h3>Null</h3></template>
+    <doc-member id="field-bytes" name="Bytes" type="JTokenType" signature="Bytes">
+        <template #name><h3>Bytes</h3></template>
 
-<p>A null value.</p>
+<p>A collection of bytes value.</p>
 
     </doc-member>
 
-    <doc-member id="field-undefined" name="Undefined" type="JTokenType" signature="Undefined">
-        <template #name><h3>Undefined</h3></template>
+    <doc-member id="field-comment" name="Comment" type="JTokenType" signature="Comment">
+        <template #name><h3>Comment</h3></template>
 
-<p>An undefined value.</p>
+<p>A comment.</p>
+
+    </doc-member>
+
+    <doc-member id="field-constructor" name="Constructor" type="JTokenType" signature="Constructor">
+        <template #name><h3>Constructor</h3></template>
+
+<p>A JSON constructor.</p>
 
     </doc-member>
 
@@ -302,17 +253,10 @@
 
     </doc-member>
 
-    <doc-member id="field-raw" name="Raw" type="JTokenType" signature="Raw">
-        <template #name><h3>Raw</h3></template>
+    <doc-member id="field-float" name="Float" type="JTokenType" signature="Float">
+        <template #name><h3>Float</h3></template>
 
-<p>A raw JSON value.</p>
-
-    </doc-member>
-
-    <doc-member id="field-bytes" name="Bytes" type="JTokenType" signature="Bytes">
-        <template #name><h3>Bytes</h3></template>
-
-<p>A collection of bytes value.</p>
+<p>A float value.</p>
 
     </doc-member>
 
@@ -323,10 +267,52 @@
 
     </doc-member>
 
-    <doc-member id="field-uri" name="Uri" type="JTokenType" signature="Uri">
-        <template #name><h3>Uri</h3></template>
+    <doc-member id="field-integer" name="Integer" type="JTokenType" signature="Integer">
+        <template #name><h3>Integer</h3></template>
 
-<p>A Uri value.</p>
+<p>An integer value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-none" name="None" type="JTokenType" signature="None">
+        <template #name><h3>None</h3></template>
+
+<p>No token type has been set.</p>
+
+    </doc-member>
+
+    <doc-member id="field-null" name="Null" type="JTokenType" signature="Null">
+        <template #name><h3>Null</h3></template>
+
+<p>A null value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-object" name="Object" type="JTokenType" signature="Object">
+        <template #name><h3>Object</h3></template>
+
+<p>A JSON object.</p>
+
+    </doc-member>
+
+    <doc-member id="field-property" name="Property" type="JTokenType" signature="Property">
+        <template #name><h3>Property</h3></template>
+
+<p>A JSON object property.</p>
+
+    </doc-member>
+
+    <doc-member id="field-raw" name="Raw" type="JTokenType" signature="Raw">
+        <template #name><h3>Raw</h3></template>
+
+<p>A raw JSON value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-string" name="String" type="JTokenType" signature="String">
+        <template #name><h3>String</h3></template>
+
+<p>A string value.</p>
 
     </doc-member>
 
@@ -334,6 +320,20 @@
         <template #name><h3>TimeSpan</h3></template>
 
 <p>A TimeSpan value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-undefined" name="Undefined" type="JTokenType" signature="Undefined">
+        <template #name><h3>Undefined</h3></template>
+
+<p>An undefined value.</p>
+
+    </doc-member>
+
+    <doc-member id="field-uri" name="Uri" type="JTokenType" signature="Uri">
+        <template #name><h3>Uri</h3></template>
+
+<p>A Uri value.</p>
 
     </doc-member>
 </doc-member-group>

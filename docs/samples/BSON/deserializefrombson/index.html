@@ -192,12 +192,17 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Event
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Event
 {
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">byte[] data = Convert.FromBase64String(&quot;MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAMDgKWE8AQAAAA==&quot;);
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">byte[] data = Convert.FromBase64String(&quot;MQAAAAJOYW1lAA8AAABNb3ZpZSBQcmVtaWVyZQAJU3RhcnREYXRlAMDgKWE8AQAAAA==&quot;);
 
 MemoryStream ms = new MemoryStream(data);
 using (BsonReader reader = new BsonReader(ms))
@@ -209,6 +214,7 @@ using (BsonReader reader = new BsonReader(ms))
     Console.WriteLine(e.Name);
     // Movie Premiere
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

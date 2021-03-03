@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class AutofacContractResolver : DefaultContractResolver
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class AutofacContractResolver : DefaultContractResolver
 {
     private readonly IContainer _container;
 
@@ -254,7 +256,10 @@ public class TaskController
         get { return _logger; }
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">ContainerBuilder builder = new ContainerBuilder();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">ContainerBuilder builder = new ContainerBuilder();
 builder.RegisterType&lt;TaskRepository&gt;().As&lt;ITaskRepository&gt;();
 builder.RegisterType&lt;TaskController&gt;();
 builder.Register(c =&gt; new LogService(new DateTime(2000, 12, 12))).As&lt;ILogger&gt;();
@@ -277,6 +282,7 @@ TaskController controller = JsonConvert.DeserializeObject&lt;TaskController&gt;(
 
 Console.WriteLine(controller.Repository.GetType().Name);
 // TaskRepository</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

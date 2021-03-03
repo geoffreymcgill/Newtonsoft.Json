@@ -192,12 +192,17 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Event
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Event
 {
     public string Name { get; set; }
     public DateTime StartDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string s = &quot;MQAAAAMwACkAAAACTmFtZQAHAAAARWFzdGVyAAlTdGFydERhdGUAgDf0uj0BAAAAAA==&quot;;
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string s = &quot;MQAAAAMwACkAAAACTmFtZQAHAAAARWFzdGVyAAlTdGFydERhdGUAgDf0uj0BAAAAAA==&quot;;
 byte[] data = Convert.FromBase64String(s);
 
 MemoryStream ms = new MemoryStream(data);
@@ -215,6 +220,7 @@ using (BsonReader reader = new BsonReader(ms))
     Console.WriteLine(events[0].Name);
     // Easter
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -215,24 +215,24 @@
         <template #name><h3>_genericCollectionDefinitionType</h3></template>
     </doc-member>
 
-    <doc-member id="field-_genericwrappertype" name="_genericWrapperType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _genericWrapperType">
-        <template #name><h3>_genericWrapperType</h3></template>
+    <doc-member id="field-_generictemporarydictionarycreator" name="_genericTemporaryDictionaryCreator" type="Nullable<Func<object>>?" access="private" signature="private Nullable<Func<object>>? _genericTemporaryDictionaryCreator">
+        <template #name><h3>_genericTemporaryDictionaryCreator</h3></template>
     </doc-member>
 
     <doc-member id="field-_genericwrappercreator" name="_genericWrapperCreator" type="ObjectConstructor<object>?" access="private" signature="private ObjectConstructor<object>? _genericWrapperCreator">
         <template #name><h3>_genericWrapperCreator</h3></template>
     </doc-member>
 
-    <doc-member id="field-_generictemporarydictionarycreator" name="_genericTemporaryDictionaryCreator" type="Nullable<Func<object>>?" access="private" signature="private Nullable<Func<object>>? _genericTemporaryDictionaryCreator">
-        <template #name><h3>_genericTemporaryDictionaryCreator</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_parameterizedconstructor" name="_parameterizedConstructor" type="Nullable<ConstructorInfo>?" access="private" signature="private readonly Nullable<ConstructorInfo>? _parameterizedConstructor">
-        <template #name><h3>_parameterizedConstructor</h3></template>
+    <doc-member id="field-_genericwrappertype" name="_genericWrapperType" type="Nullable<Type>?" access="private" signature="private Nullable<Type>? _genericWrapperType">
+        <template #name><h3>_genericWrapperType</h3></template>
     </doc-member>
 
     <doc-member id="field-_overridecreator" name="_overrideCreator" type="ObjectConstructor<object>?" access="private" signature="private ObjectConstructor<object>? _overrideCreator">
         <template #name><h3>_overrideCreator</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_parameterizedconstructor" name="_parameterizedConstructor" type="Nullable<ConstructorInfo>?" access="private" signature="private readonly Nullable<ConstructorInfo>? _parameterizedConstructor">
+        <template #name><h3>_parameterizedConstructor</h3></template>
     </doc-member>
 
     <doc-member id="field-_parameterizedcreator" name="_parameterizedCreator" type="ObjectConstructor<object>?" access="private" signature="private ObjectConstructor<object>? _parameterizedCreator">
@@ -264,25 +264,6 @@
 
     </doc-member>
 
-    <doc-member id="property-keycontract" name="KeyContract" type="JsonContract?" access="internal" signature="internal JsonContract? KeyContract { internal get; internal set; }">
-        <template #name><h3>KeyContract</h3></template>
-    </doc-member>
-
-    <doc-member id="property-shouldcreatewrapper" name="ShouldCreateWrapper" type="bool" access="internal" signature="internal bool ShouldCreateWrapper { internal get; }">
-        <template #name><h3>ShouldCreateWrapper</h3></template>
-    </doc-member>
-
-    <doc-member id="property-parameterizedcreator" name="ParameterizedCreator" type="ObjectConstructor<object>?" access="internal" signature="internal ObjectConstructor<object>? ParameterizedCreator { internal get; }">
-        <template #name><h3>ParameterizedCreator</h3></template>
-    </doc-member>
-
-    <doc-member id="property-overridecreator" name="OverrideCreator" type="ObjectConstructor<object>?" signature="public ObjectConstructor<object>? OverrideCreator { get; set; }">
-        <template #name><h3>OverrideCreator</h3></template>
-
-<p>Gets or sets the function used to create the object. When set this function will override <see cref="P:Newtonsoft.Json.Serialization.JsonContract.DefaultCreator"/>.</p>
-
-    </doc-member>
-
     <doc-member id="property-hasparameterizedcreator" name="HasParameterizedCreator" type="bool" signature="public bool HasParameterizedCreator { get; set; }">
         <template #name><h3>HasParameterizedCreator</h3></template>
 
@@ -292,6 +273,25 @@
 
     <doc-member id="property-hasparameterizedcreatorinternal" name="HasParameterizedCreatorInternal" type="bool" access="internal" signature="internal bool HasParameterizedCreatorInternal { internal get; }">
         <template #name><h3>HasParameterizedCreatorInternal</h3></template>
+    </doc-member>
+
+    <doc-member id="property-keycontract" name="KeyContract" type="JsonContract?" access="internal" signature="internal JsonContract? KeyContract { internal get; internal set; }">
+        <template #name><h3>KeyContract</h3></template>
+    </doc-member>
+
+    <doc-member id="property-overridecreator" name="OverrideCreator" type="ObjectConstructor<object>?" signature="public ObjectConstructor<object>? OverrideCreator { get; set; }">
+        <template #name><h3>OverrideCreator</h3></template>
+
+<p>Gets or sets the function used to create the object. When set this function will override <see cref="P:Newtonsoft.Json.Serialization.JsonContract.DefaultCreator"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-parameterizedcreator" name="ParameterizedCreator" type="ObjectConstructor<object>?" access="internal" signature="internal ObjectConstructor<object>? ParameterizedCreator { internal get; }">
+        <template #name><h3>ParameterizedCreator</h3></template>
+    </doc-member>
+
+    <doc-member id="property-shouldcreatewrapper" name="ShouldCreateWrapper" type="bool" access="internal" signature="internal bool ShouldCreateWrapper { internal get; }">
+        <template #name><h3>ShouldCreateWrapper</h3></template>
     </doc-member>
 </doc-member-group>
 

@@ -211,20 +211,20 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_safeasync" name="_safeAsync" type="bool" access="private" signature="private readonly bool _safeAsync">
-        <template #name><h3>_safeAsync</h3></template>
+    <doc-member id="field-maximumjavascriptintegercharacterlength" name="MaximumJavascriptIntegerCharacterLength" type="int" access="private" signature="private const static int MaximumJavascriptIntegerCharacterLength">
+        <template #name><h3>MaximumJavascriptIntegerCharacterLength</h3></template>
     </doc-member>
 
     <doc-member id="field-unicodereplacementchar" name="UnicodeReplacementChar" type="char" access="private" signature="private const static char UnicodeReplacementChar">
         <template #name><h3>UnicodeReplacementChar</h3></template>
     </doc-member>
 
-    <doc-member id="field-maximumjavascriptintegercharacterlength" name="MaximumJavascriptIntegerCharacterLength" type="int" access="private" signature="private const static int MaximumJavascriptIntegerCharacterLength">
-        <template #name><h3>MaximumJavascriptIntegerCharacterLength</h3></template>
+    <doc-member id="field-_arraypool" name="_arrayPool" type="IArrayPool<char>?" access="private" signature="private IArrayPool<char>? _arrayPool">
+        <template #name><h3>_arrayPool</h3></template>
     </doc-member>
 
-    <doc-member id="field-_reader" name="_reader" type="TextReader" access="private" signature="private readonly TextReader _reader">
-        <template #name><h3>_reader</h3></template>
+    <doc-member id="field-_charpos" name="_charPos" type="int" access="private" signature="private int _charPos">
+        <template #name><h3>_charPos</h3></template>
     </doc-member>
 
     <doc-member id="field-_chars" name="_chars" type="char[]" access="private" signature="private char[] _chars">
@@ -235,20 +235,24 @@
         <template #name><h3>_charsUsed</h3></template>
     </doc-member>
 
-    <doc-member id="field-_charpos" name="_charPos" type="int" access="private" signature="private int _charPos">
-        <template #name><h3>_charPos</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_linestartpos" name="_lineStartPos" type="int" access="private" signature="private int _lineStartPos">
-        <template #name><h3>_lineStartPos</h3></template>
+    <doc-member id="field-_isendoffile" name="_isEndOfFile" type="bool" access="private" signature="private bool _isEndOfFile">
+        <template #name><h3>_isEndOfFile</h3></template>
     </doc-member>
 
     <doc-member id="field-_linenumber" name="_lineNumber" type="int" access="private" signature="private int _lineNumber">
         <template #name><h3>_lineNumber</h3></template>
     </doc-member>
 
-    <doc-member id="field-_isendoffile" name="_isEndOfFile" type="bool" access="private" signature="private bool _isEndOfFile">
-        <template #name><h3>_isEndOfFile</h3></template>
+    <doc-member id="field-_linestartpos" name="_lineStartPos" type="int" access="private" signature="private int _lineStartPos">
+        <template #name><h3>_lineStartPos</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_reader" name="_reader" type="TextReader" access="private" signature="private readonly TextReader _reader">
+        <template #name><h3>_reader</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_safeasync" name="_safeAsync" type="bool" access="private" signature="private readonly bool _safeAsync">
+        <template #name><h3>_safeAsync</h3></template>
     </doc-member>
 
     <doc-member id="field-_stringbuffer" name="_stringBuffer" type="StringBuffer" access="private" signature="private StringBuffer _stringBuffer">
@@ -258,17 +262,16 @@
     <doc-member id="field-_stringreference" name="_stringReference" type="StringReference" access="private" signature="private StringReference _stringReference">
         <template #name><h3>_stringReference</h3></template>
     </doc-member>
-
-    <doc-member id="field-_arraypool" name="_arrayPool" type="IArrayPool<char>?" access="private" signature="private IArrayPool<char>? _arrayPool">
-        <template #name><h3>_arrayPool</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-largebufferlength" name="LargeBufferLength" type="int" access="internal" signature="internal int LargeBufferLength { internal get; internal set; }">
-        <template #name><h3>LargeBufferLength</h3></template>
+    <doc-member id="property-arraypool" name="ArrayPool" type="IArrayPool<char>?" signature="public IArrayPool<char>? ArrayPool { get; set; }">
+        <template #name><h3>ArrayPool</h3></template>
+
+<p>Gets or sets the reader&#39;s character buffer pool.</p>
+
     </doc-member>
 
     <doc-member id="property-charbuffer" name="CharBuffer" type="char[]" access="internal" signature="internal char[] CharBuffer { internal get; internal set; }">
@@ -279,18 +282,8 @@
         <template #name><h3>CharPos</h3></template>
     </doc-member>
 
-    <doc-member id="property-propertynametable" name="PropertyNameTable" type="JsonNameTable?" signature="public JsonNameTable? PropertyNameTable { get; set; }">
-        <template #name><h3>PropertyNameTable</h3></template>
-
-<p>Gets or sets the reader&#39;s property name table.</p>
-
-    </doc-member>
-
-    <doc-member id="property-arraypool" name="ArrayPool" type="IArrayPool<char>?" signature="public IArrayPool<char>? ArrayPool { get; set; }">
-        <template #name><h3>ArrayPool</h3></template>
-
-<p>Gets or sets the reader&#39;s character buffer pool.</p>
-
+    <doc-member id="property-largebufferlength" name="LargeBufferLength" type="int" access="internal" signature="internal int LargeBufferLength { internal get; internal set; }">
+        <template #name><h3>LargeBufferLength</h3></template>
     </doc-member>
 
     <doc-member id="property-linenumber" name="LineNumber" type="int" signature="public int LineNumber { get; }">
@@ -304,6 +297,13 @@
         <template #name><h3>LinePosition</h3></template>
 
 <p>Gets the current line position.</p>
+
+    </doc-member>
+
+    <doc-member id="property-propertynametable" name="PropertyNameTable" type="JsonNameTable?" signature="public JsonNameTable? PropertyNameTable { get; set; }">
+        <template #name><h3>PropertyNameTable</h3></template>
+
+<p>Gets or sets the reader&#39;s property name table.</p>
 
     </doc-member>
 </doc-member-group>

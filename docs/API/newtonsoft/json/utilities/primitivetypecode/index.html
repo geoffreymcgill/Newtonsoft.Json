@@ -208,20 +208,12 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-empty" name="Empty" type="PrimitiveTypeCode" signature="Empty">
-        <template #name><h3>Empty</h3></template>
+    <doc-member id="field-biginteger" name="BigInteger" type="PrimitiveTypeCode" signature="BigInteger">
+        <template #name><h3>BigInteger</h3></template>
     </doc-member>
 
-    <doc-member id="field-object" name="Object" type="PrimitiveTypeCode" signature="Object">
-        <template #name><h3>Object</h3></template>
-    </doc-member>
-
-    <doc-member id="field-char" name="Char" type="PrimitiveTypeCode" signature="Char">
-        <template #name><h3>Char</h3></template>
-    </doc-member>
-
-    <doc-member id="field-charnullable" name="CharNullable" type="PrimitiveTypeCode" signature="CharNullable">
-        <template #name><h3>CharNullable</h3></template>
+    <doc-member id="field-bigintegernullable" name="BigIntegerNullable" type="PrimitiveTypeCode" signature="BigIntegerNullable">
+        <template #name><h3>BigIntegerNullable</h3></template>
     </doc-member>
 
     <doc-member id="field-boolean" name="Boolean" type="PrimitiveTypeCode" signature="Boolean">
@@ -232,38 +224,6 @@
         <template #name><h3>BooleanNullable</h3></template>
     </doc-member>
 
-    <doc-member id="field-sbyte" name="SByte" type="PrimitiveTypeCode" signature="SByte">
-        <template #name><h3>SByte</h3></template>
-    </doc-member>
-
-    <doc-member id="field-sbytenullable" name="SByteNullable" type="PrimitiveTypeCode" signature="SByteNullable">
-        <template #name><h3>SByteNullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-int16" name="Int16" type="PrimitiveTypeCode" signature="Int16">
-        <template #name><h3>Int16</h3></template>
-    </doc-member>
-
-    <doc-member id="field-int16nullable" name="Int16Nullable" type="PrimitiveTypeCode" signature="Int16Nullable">
-        <template #name><h3>Int16Nullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uint16" name="UInt16" type="PrimitiveTypeCode" signature="UInt16">
-        <template #name><h3>UInt16</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uint16nullable" name="UInt16Nullable" type="PrimitiveTypeCode" signature="UInt16Nullable">
-        <template #name><h3>UInt16Nullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-int32" name="Int32" type="PrimitiveTypeCode" signature="Int32">
-        <template #name><h3>Int32</h3></template>
-    </doc-member>
-
-    <doc-member id="field-int32nullable" name="Int32Nullable" type="PrimitiveTypeCode" signature="Int32Nullable">
-        <template #name><h3>Int32Nullable</h3></template>
-    </doc-member>
-
     <doc-member id="field-byte" name="Byte" type="PrimitiveTypeCode" signature="Byte">
         <template #name><h3>Byte</h3></template>
     </doc-member>
@@ -272,44 +232,16 @@
         <template #name><h3>ByteNullable</h3></template>
     </doc-member>
 
-    <doc-member id="field-uint32" name="UInt32" type="PrimitiveTypeCode" signature="UInt32">
-        <template #name><h3>UInt32</h3></template>
+    <doc-member id="field-bytes" name="Bytes" type="PrimitiveTypeCode" signature="Bytes">
+        <template #name><h3>Bytes</h3></template>
     </doc-member>
 
-    <doc-member id="field-uint32nullable" name="UInt32Nullable" type="PrimitiveTypeCode" signature="UInt32Nullable">
-        <template #name><h3>UInt32Nullable</h3></template>
+    <doc-member id="field-char" name="Char" type="PrimitiveTypeCode" signature="Char">
+        <template #name><h3>Char</h3></template>
     </doc-member>
 
-    <doc-member id="field-int64" name="Int64" type="PrimitiveTypeCode" signature="Int64">
-        <template #name><h3>Int64</h3></template>
-    </doc-member>
-
-    <doc-member id="field-int64nullable" name="Int64Nullable" type="PrimitiveTypeCode" signature="Int64Nullable">
-        <template #name><h3>Int64Nullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uint64" name="UInt64" type="PrimitiveTypeCode" signature="UInt64">
-        <template #name><h3>UInt64</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uint64nullable" name="UInt64Nullable" type="PrimitiveTypeCode" signature="UInt64Nullable">
-        <template #name><h3>UInt64Nullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-single" name="Single" type="PrimitiveTypeCode" signature="Single">
-        <template #name><h3>Single</h3></template>
-    </doc-member>
-
-    <doc-member id="field-singlenullable" name="SingleNullable" type="PrimitiveTypeCode" signature="SingleNullable">
-        <template #name><h3>SingleNullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-double" name="Double" type="PrimitiveTypeCode" signature="Double">
-        <template #name><h3>Double</h3></template>
-    </doc-member>
-
-    <doc-member id="field-doublenullable" name="DoubleNullable" type="PrimitiveTypeCode" signature="DoubleNullable">
-        <template #name><h3>DoubleNullable</h3></template>
+    <doc-member id="field-charnullable" name="CharNullable" type="PrimitiveTypeCode" signature="CharNullable">
+        <template #name><h3>CharNullable</h3></template>
     </doc-member>
 
     <doc-member id="field-datetime" name="DateTime" type="PrimitiveTypeCode" signature="DateTime">
@@ -328,12 +260,28 @@
         <template #name><h3>DateTimeOffsetNullable</h3></template>
     </doc-member>
 
+    <doc-member id="field-dbnull" name="DBNull" type="PrimitiveTypeCode" signature="DBNull">
+        <template #name><h3>DBNull</h3></template>
+    </doc-member>
+
     <doc-member id="field-decimal" name="Decimal" type="PrimitiveTypeCode" signature="Decimal">
         <template #name><h3>Decimal</h3></template>
     </doc-member>
 
     <doc-member id="field-decimalnullable" name="DecimalNullable" type="PrimitiveTypeCode" signature="DecimalNullable">
         <template #name><h3>DecimalNullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-double" name="Double" type="PrimitiveTypeCode" signature="Double">
+        <template #name><h3>Double</h3></template>
+    </doc-member>
+
+    <doc-member id="field-doublenullable" name="DoubleNullable" type="PrimitiveTypeCode" signature="DoubleNullable">
+        <template #name><h3>DoubleNullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-empty" name="Empty" type="PrimitiveTypeCode" signature="Empty">
+        <template #name><h3>Empty</h3></template>
     </doc-member>
 
     <doc-member id="field-guid" name="Guid" type="PrimitiveTypeCode" signature="Guid">
@@ -344,6 +292,54 @@
         <template #name><h3>GuidNullable</h3></template>
     </doc-member>
 
+    <doc-member id="field-int16" name="Int16" type="PrimitiveTypeCode" signature="Int16">
+        <template #name><h3>Int16</h3></template>
+    </doc-member>
+
+    <doc-member id="field-int16nullable" name="Int16Nullable" type="PrimitiveTypeCode" signature="Int16Nullable">
+        <template #name><h3>Int16Nullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-int32" name="Int32" type="PrimitiveTypeCode" signature="Int32">
+        <template #name><h3>Int32</h3></template>
+    </doc-member>
+
+    <doc-member id="field-int32nullable" name="Int32Nullable" type="PrimitiveTypeCode" signature="Int32Nullable">
+        <template #name><h3>Int32Nullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-int64" name="Int64" type="PrimitiveTypeCode" signature="Int64">
+        <template #name><h3>Int64</h3></template>
+    </doc-member>
+
+    <doc-member id="field-int64nullable" name="Int64Nullable" type="PrimitiveTypeCode" signature="Int64Nullable">
+        <template #name><h3>Int64Nullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-object" name="Object" type="PrimitiveTypeCode" signature="Object">
+        <template #name><h3>Object</h3></template>
+    </doc-member>
+
+    <doc-member id="field-sbyte" name="SByte" type="PrimitiveTypeCode" signature="SByte">
+        <template #name><h3>SByte</h3></template>
+    </doc-member>
+
+    <doc-member id="field-sbytenullable" name="SByteNullable" type="PrimitiveTypeCode" signature="SByteNullable">
+        <template #name><h3>SByteNullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-single" name="Single" type="PrimitiveTypeCode" signature="Single">
+        <template #name><h3>Single</h3></template>
+    </doc-member>
+
+    <doc-member id="field-singlenullable" name="SingleNullable" type="PrimitiveTypeCode" signature="SingleNullable">
+        <template #name><h3>SingleNullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-string" name="String" type="PrimitiveTypeCode" signature="String">
+        <template #name><h3>String</h3></template>
+    </doc-member>
+
     <doc-member id="field-timespan" name="TimeSpan" type="PrimitiveTypeCode" signature="TimeSpan">
         <template #name><h3>TimeSpan</h3></template>
     </doc-member>
@@ -352,28 +348,32 @@
         <template #name><h3>TimeSpanNullable</h3></template>
     </doc-member>
 
-    <doc-member id="field-biginteger" name="BigInteger" type="PrimitiveTypeCode" signature="BigInteger">
-        <template #name><h3>BigInteger</h3></template>
+    <doc-member id="field-uint16" name="UInt16" type="PrimitiveTypeCode" signature="UInt16">
+        <template #name><h3>UInt16</h3></template>
     </doc-member>
 
-    <doc-member id="field-bigintegernullable" name="BigIntegerNullable" type="PrimitiveTypeCode" signature="BigIntegerNullable">
-        <template #name><h3>BigIntegerNullable</h3></template>
+    <doc-member id="field-uint16nullable" name="UInt16Nullable" type="PrimitiveTypeCode" signature="UInt16Nullable">
+        <template #name><h3>UInt16Nullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-uint32" name="UInt32" type="PrimitiveTypeCode" signature="UInt32">
+        <template #name><h3>UInt32</h3></template>
+    </doc-member>
+
+    <doc-member id="field-uint32nullable" name="UInt32Nullable" type="PrimitiveTypeCode" signature="UInt32Nullable">
+        <template #name><h3>UInt32Nullable</h3></template>
+    </doc-member>
+
+    <doc-member id="field-uint64" name="UInt64" type="PrimitiveTypeCode" signature="UInt64">
+        <template #name><h3>UInt64</h3></template>
+    </doc-member>
+
+    <doc-member id="field-uint64nullable" name="UInt64Nullable" type="PrimitiveTypeCode" signature="UInt64Nullable">
+        <template #name><h3>UInt64Nullable</h3></template>
     </doc-member>
 
     <doc-member id="field-uri" name="Uri" type="PrimitiveTypeCode" signature="Uri">
         <template #name><h3>Uri</h3></template>
-    </doc-member>
-
-    <doc-member id="field-string" name="String" type="PrimitiveTypeCode" signature="String">
-        <template #name><h3>String</h3></template>
-    </doc-member>
-
-    <doc-member id="field-bytes" name="Bytes" type="PrimitiveTypeCode" signature="Bytes">
-        <template #name><h3>Bytes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-dbnull" name="DBNull" type="PrimitiveTypeCode" signature="DBNull">
-        <template #name><h3>DBNull</h3></template>
     </doc-member>
 </doc-member-group>
 
