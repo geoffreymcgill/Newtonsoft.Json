@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">StringBuilder sb = new StringBuilder();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">StringBuilder sb = new StringBuilder();
 StringWriter sw = new StringWriter(sb);
 
 using (JsonWriter writer = new JsonTextWriter(sw))
@@ -225,6 +227,7 @@ Console.WriteLine(sb.ToString());
 //     &quot;200 gigabyte hard drive&quot;
 //   ]
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

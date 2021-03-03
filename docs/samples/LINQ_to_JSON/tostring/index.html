@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{'string1':'value','integer2':99,'datetime3':'2000-05-23T00:00:00'}&quot;);
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{'string1':'value','integer2':99,'datetime3':'2000-05-23T00:00:00'}&quot;);
 
 Console.WriteLine(o.ToString());
 // {
@@ -206,6 +208,7 @@ Console.WriteLine(o.ToString(Formatting.None));
 
 Console.WriteLine(o.ToString(Formatting.None, new JavaScriptDateTimeConverter()));
 // {&quot;string1&quot;:&quot;value&quot;,&quot;integer2&quot;:99,&quot;datetime3&quot;:new Date(959032800000)}</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,12 +192,15 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;['Starcraft','Halo','Legend of Zelda']&quot;;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;['Starcraft','Halo','Legend of Zelda']&quot;;
 
 List&lt;string&gt; videogames = JsonConvert.DeserializeObject&lt;List&lt;string&gt;&gt;(json);
 
 Console.WriteLine(string.Join(&quot;, &quot;, videogames.ToArray()));
 // Starcraft, Halo, Legend of Zelda</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -211,38 +211,17 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-none" name="None" type="JsonToken" signature="None">
-        <template #name><h3>None</h3></template>
+    <doc-member id="field-boolean" name="Boolean" type="JsonToken" signature="Boolean">
+        <template #name><h3>Boolean</h3></template>
 
-<p>This is returned by the <see cref="T:Newtonsoft.Json.JsonReader"/> if a read method has not been called.</p>
-
-    </doc-member>
-
-    <doc-member id="field-startobject" name="StartObject" type="JsonToken" signature="StartObject">
-        <template #name><h3>StartObject</h3></template>
-
-<p>An object start token.</p>
+<p>A boolean.</p>
 
     </doc-member>
 
-    <doc-member id="field-startarray" name="StartArray" type="JsonToken" signature="StartArray">
-        <template #name><h3>StartArray</h3></template>
+    <doc-member id="field-bytes" name="Bytes" type="JsonToken" signature="Bytes">
+        <template #name><h3>Bytes</h3></template>
 
-<p>An array start token.</p>
-
-    </doc-member>
-
-    <doc-member id="field-startconstructor" name="StartConstructor" type="JsonToken" signature="StartConstructor">
-        <template #name><h3>StartConstructor</h3></template>
-
-<p>A constructor start token.</p>
-
-    </doc-member>
-
-    <doc-member id="field-propertyname" name="PropertyName" type="JsonToken" signature="PropertyName">
-        <template #name><h3>PropertyName</h3></template>
-
-<p>An object property name.</p>
+<p>Byte data.</p>
 
     </doc-member>
 
@@ -253,59 +232,10 @@
 
     </doc-member>
 
-    <doc-member id="field-raw" name="Raw" type="JsonToken" signature="Raw">
-        <template #name><h3>Raw</h3></template>
+    <doc-member id="field-date" name="Date" type="JsonToken" signature="Date">
+        <template #name><h3>Date</h3></template>
 
-<p>Raw JSON.</p>
-
-    </doc-member>
-
-    <doc-member id="field-integer" name="Integer" type="JsonToken" signature="Integer">
-        <template #name><h3>Integer</h3></template>
-
-<p>An integer.</p>
-
-    </doc-member>
-
-    <doc-member id="field-float" name="Float" type="JsonToken" signature="Float">
-        <template #name><h3>Float</h3></template>
-
-<p>A float.</p>
-
-    </doc-member>
-
-    <doc-member id="field-string" name="String" type="JsonToken" signature="String">
-        <template #name><h3>String</h3></template>
-
-<p>A string.</p>
-
-    </doc-member>
-
-    <doc-member id="field-boolean" name="Boolean" type="JsonToken" signature="Boolean">
-        <template #name><h3>Boolean</h3></template>
-
-<p>A boolean.</p>
-
-    </doc-member>
-
-    <doc-member id="field-null" name="Null" type="JsonToken" signature="Null">
-        <template #name><h3>Null</h3></template>
-
-<p>A null token.</p>
-
-    </doc-member>
-
-    <doc-member id="field-undefined" name="Undefined" type="JsonToken" signature="Undefined">
-        <template #name><h3>Undefined</h3></template>
-
-<p>An undefined token.</p>
-
-    </doc-member>
-
-    <doc-member id="field-endobject" name="EndObject" type="JsonToken" signature="EndObject">
-        <template #name><h3>EndObject</h3></template>
-
-<p>An object end token.</p>
+<p>A Date.</p>
 
     </doc-member>
 
@@ -323,17 +253,87 @@
 
     </doc-member>
 
-    <doc-member id="field-date" name="Date" type="JsonToken" signature="Date">
-        <template #name><h3>Date</h3></template>
+    <doc-member id="field-endobject" name="EndObject" type="JsonToken" signature="EndObject">
+        <template #name><h3>EndObject</h3></template>
 
-<p>A Date.</p>
+<p>An object end token.</p>
 
     </doc-member>
 
-    <doc-member id="field-bytes" name="Bytes" type="JsonToken" signature="Bytes">
-        <template #name><h3>Bytes</h3></template>
+    <doc-member id="field-float" name="Float" type="JsonToken" signature="Float">
+        <template #name><h3>Float</h3></template>
 
-<p>Byte data.</p>
+<p>A float.</p>
+
+    </doc-member>
+
+    <doc-member id="field-integer" name="Integer" type="JsonToken" signature="Integer">
+        <template #name><h3>Integer</h3></template>
+
+<p>An integer.</p>
+
+    </doc-member>
+
+    <doc-member id="field-none" name="None" type="JsonToken" signature="None">
+        <template #name><h3>None</h3></template>
+
+<p>This is returned by the <see cref="T:Newtonsoft.Json.JsonReader"/> if a read method has not been called.</p>
+
+    </doc-member>
+
+    <doc-member id="field-null" name="Null" type="JsonToken" signature="Null">
+        <template #name><h3>Null</h3></template>
+
+<p>A null token.</p>
+
+    </doc-member>
+
+    <doc-member id="field-propertyname" name="PropertyName" type="JsonToken" signature="PropertyName">
+        <template #name><h3>PropertyName</h3></template>
+
+<p>An object property name.</p>
+
+    </doc-member>
+
+    <doc-member id="field-raw" name="Raw" type="JsonToken" signature="Raw">
+        <template #name><h3>Raw</h3></template>
+
+<p>Raw JSON.</p>
+
+    </doc-member>
+
+    <doc-member id="field-startarray" name="StartArray" type="JsonToken" signature="StartArray">
+        <template #name><h3>StartArray</h3></template>
+
+<p>An array start token.</p>
+
+    </doc-member>
+
+    <doc-member id="field-startconstructor" name="StartConstructor" type="JsonToken" signature="StartConstructor">
+        <template #name><h3>StartConstructor</h3></template>
+
+<p>A constructor start token.</p>
+
+    </doc-member>
+
+    <doc-member id="field-startobject" name="StartObject" type="JsonToken" signature="StartObject">
+        <template #name><h3>StartObject</h3></template>
+
+<p>An object start token.</p>
+
+    </doc-member>
+
+    <doc-member id="field-string" name="String" type="JsonToken" signature="String">
+        <template #name><h3>String</h3></template>
+
+<p>A string.</p>
+
+    </doc-member>
+
+    <doc-member id="field-undefined" name="Undefined" type="JsonToken" signature="Undefined">
+        <template #name><h3>Undefined</h3></template>
+
+<p>An undefined token.</p>
 
     </doc-member>
 </doc-member-group>

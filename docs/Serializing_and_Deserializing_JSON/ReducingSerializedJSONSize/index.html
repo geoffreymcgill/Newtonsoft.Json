@@ -194,7 +194,9 @@
     </h2>
 </doc-anchor-target>
 <p>By default Json.NET will include all of a class&#39;s public properties and fields in the JSON it creates. Adding the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonignoreattribute/">JsonIgnoreAttribute</a> to a property tells the serializer to always skip writing it to the JSON result.</p>
-<pre v-highlight:csharp><code v-pre title="Opt-out Serialization Example">public class Car
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Opt-out Serialization Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Car
 {
     // included in JSON
     public string Model { get; set; }
@@ -205,8 +207,11 @@
     [JsonIgnore]
     public DateTime LastModified { get; set; }
 }</code></pre>
+</doc-codeblock></div>
 <p>If a class has many properties and you only want to serialize a small subset of them, then adding JsonIgnore to all the others will be tedious and error prone. The way to tackle this scenario is to add the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute">DataContractAttribute</a> to the class and <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute">DataMemberAttribute</a> to the properties to serialize. This is opt-in serialization - only the properties you mark up will be serialized, unlike opt-out serialization using JsonIgnoreAttribute.</p>
-<pre v-highlight:csharp><code v-pre title="Opt-in Serialization Example">[DataContract]
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Opt-in Serialization Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">[DataContract]
 public class Computer
 {
     // included in JSON
@@ -222,6 +227,7 @@ public class Computer
     public decimal WholeSalePrice { get; set; }
     public DateTime NextShipmentDate { get; set; }
 }</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="formatting">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#formatting">#</doc-anchor-trigger>
@@ -236,7 +242,9 @@ public class Computer
     </h2>
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/nullvaluehandling/">NullValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a null value. By setting a value of NullValueHandling.Ignore the JsonSerializer skips writing any properties that have a value of null.</p>
-<pre v-highlight:csharp><code v-pre title="NullValueHandling Class">public class Movie
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">NullValueHandling Class</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Movie
 {
     public string Name { get; set; }
     public string Description { get; set; }
@@ -245,7 +253,10 @@ public class Computer
     public DateTime? ReleaseDate { get; set; }
     public List&lt;string&gt; ReleaseCountries { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="NullValueHandling Ignore Example">Movie movie = new Movie();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">NullValueHandling Ignore Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Movie movie = new Movie();
 movie.Name = &quot;Bad Boys III&quot;;
 movie.Description = &quot;It's no Bad Boys&quot;;
 
@@ -270,6 +281,7 @@ string ignored = JsonConvert.SerializeObject(movie,
 //   &quot;Name&quot;: &quot;Bad Boys III&quot;,
 //   &quot;Description&quot;: &quot;It's no Bad Boys&quot;
 // }</code></pre>
+</doc-codeblock></div>
 <p>NullValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of NullValueHandling will override the setting on the JsonSerializer for that property.</p>
 <doc-anchor-target id="defaultvaluehandling">
     <h2>
@@ -280,7 +292,9 @@ string ignored = JsonConvert.SerializeObject(movie,
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/defaultvaluehandling/">DefaultValueHandling</a> is an option on the JsonSerializer and controls how the serializer handles properties with a default value. Setting a value of DefaultValueHandling.Ignore will make the JsonSerializer skip writing any properties that have a default value to the JSON result. For object references this will be null. For value types like int and DateTime the serializer will skip the default uninitialized value for that value type.</p>
 <p>Json.NET also allows you to customize what the default value of an individual
 property is using the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.componentmodel.defaultvalueattribute">DefaultValueAttribute</a>. For example, if a string property called Department always returns an empty string in its default state and you don&#39;t want that empty string in your JSON, then placing the DefaultValueAttribute on Department with that value will mean Department is no longer written to JSON unless it has a value.</p>
-<pre v-highlight:csharp><code v-pre title="DefaultValueHandling Class">public class Invoice
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">DefaultValueHandling Class</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Invoice
 {
     public string Company { get; set; }
     public decimal Amount { get; set; }
@@ -297,7 +311,10 @@ property is using the <a href="https://docs.microsoft.com/en-us/dotnet/api/syste
     [DefaultValue(&quot;&quot;)]
     public string FollowUpEmailAddress { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="DefaultValueHandling Ignore Example">Invoice invoice = new Invoice
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">DefaultValueHandling Ignore Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Invoice invoice = new Invoice
 {
     Company = &quot;Acme Ltd.&quot;,
     Amount = 50.0m,
@@ -328,6 +345,7 @@ string ignored = JsonConvert.SerializeObject(invoice,
 //   &quot;Company&quot;: &quot;Acme Ltd.&quot;,
 //   &quot;Amount&quot;: 50.0
 // }</code></pre>
+</doc-codeblock></div>
 <p>DefaultValueHandling can also be customized on individual properties using the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonpropertyattribute/">JsonPropertyAttribute</a>. The JsonPropertyAttribute value of DefaultValueHandling will override the setting on the JsonSerializer for that property.</p>
 <doc-anchor-target id="icontractresolver">
     <h2>
@@ -336,7 +354,9 @@ string ignored = JsonConvert.SerializeObject(invoice,
     </h2>
 </doc-anchor-target>
 <p>For more flexibility, the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a> provides an interface to customize almost every aspect of how a .NET object gets serialized to JSON, including changing serialization behavior at runtime.</p>
-<pre v-highlight:csharp><code v-pre title="IContractResolver Class">public class DynamicContractResolver : DefaultContractResolver
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">IContractResolver Class</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class DynamicContractResolver : DefaultContractResolver
 {
     private readonly char _startingWithChar;
 
@@ -365,7 +385,10 @@ public class Book
     public int AuthorAge { get; set; }
     public string AuthorCountry { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="IContractResolver Example">Book book = new Book
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">IContractResolver Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Book book = new Book
 {
     BookName = &quot;The Gathering Storm&quot;,
     BookPrice = 16.19m,
@@ -390,6 +413,7 @@ string startingWithB = JsonConvert.SerializeObject(book, Formatting.Indented,
 //   &quot;BookName&quot;: &quot;The Gathering Storm&quot;,
 //   &quot;BookPrice&quot;: 16.19
 // }</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">[JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">[JsonObject(NamingStrategyType = typeof(CamelCaseNamingStrategy))]
 public class User
 {
     public string FirstName { get; set; }
@@ -200,7 +202,10 @@ public class User
     [JsonProperty(NamingStrategyType = typeof(SnakeCaseNamingStrategy))]
     public int SnakeRating { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">User user = new User
 {
     FirstName = &quot;Tom&quot;,
     LastName = &quot;Riddle&quot;,
@@ -215,6 +220,7 @@ Console.WriteLine(json);
 //   &quot;lastName&quot;: &quot;Riddle&quot;,
 //   &quot;snake_rating&quot;: 10
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">// settings will automatically be used by JsonConvert.SerializeObject/DeserializeObject
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">// settings will automatically be used by JsonConvert.SerializeObject/DeserializeObject
 JsonConvert.DefaultSettings = () =&gt; new JsonSerializerSettings
 {
     Formatting = Formatting.Indented,
@@ -216,6 +218,7 @@ json = JsonConvert.SerializeObject(s);
 //   &quot;department&quot;: &quot;IT&quot;,
 //   &quot;jobTitle&quot;: &quot;Web Dude&quot;
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

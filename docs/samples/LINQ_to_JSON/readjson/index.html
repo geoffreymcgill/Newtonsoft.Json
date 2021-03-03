@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o1 = JObject.Parse(File.ReadAllText(@&quot;c:\videogames.json&quot;));
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o1 = JObject.Parse(File.ReadAllText(@&quot;c:\videogames.json&quot;));
 
 // read JSON directly from a file
 using (StreamReader file = File.OpenText(@&quot;c:\videogames.json&quot;))
@@ -200,6 +202,7 @@ using (JsonTextReader reader = new JsonTextReader(file))
 {
     JObject o2 = (JObject)JToken.ReadFrom(reader);
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

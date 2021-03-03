@@ -211,17 +211,17 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-default" name="Default" type="ConstructorHandling" signature="Default">
-        <template #name><h3>Default</h3></template>
-
-<p>First attempt to use the public default constructor, then fall back to a single parameterized constructor, then to the non-public default constructor.</p>
-
-    </doc-member>
-
     <doc-member id="field-allownonpublicdefaultconstructor" name="AllowNonPublicDefaultConstructor" type="ConstructorHandling" signature="AllowNonPublicDefaultConstructor">
         <template #name><h3>AllowNonPublicDefaultConstructor</h3></template>
 
 <p>Json.NET will use a non-public default constructor before falling back to a parameterized constructor.</p>
+
+    </doc-member>
+
+    <doc-member id="field-default" name="Default" type="ConstructorHandling" signature="Default">
+        <template #name><h3>Default</h3></template>
+
+<p>First attempt to use the public default constructor, then fall back to a single parameterized constructor, then to the non-public default constructor.</p>
 
     </doc-member>
 </doc-member-group>

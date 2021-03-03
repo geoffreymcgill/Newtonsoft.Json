@@ -216,39 +216,40 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_reader" name="_reader" type="JsonReader" access="private" signature="private readonly JsonReader _reader">
-        <template #name><h3>_reader</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stack" name="_stack" type="Stack<SchemaScope>" access="private" signature="private readonly Stack<SchemaScope> _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_schema" name="_schema" type="JsonSchema" access="private" signature="private JsonSchema _schema">
-        <template #name><h3>_schema</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_model" name="_model" type="JsonSchemaModel" access="private" signature="private JsonSchemaModel _model">
-        <template #name><h3>_model</h3></template>
+    <doc-member id="field-emptyschemalist" name="EmptySchemaList" type="IList<JsonSchemaModel>" access="private" signature="private readonly static IList<JsonSchemaModel> EmptySchemaList">
+        <template #name><h3>EmptySchemaList</h3></template>
     </doc-member>
 
     <doc-member id="field-_currentscope" name="_currentScope" type="SchemaScope" access="private" signature="private SchemaScope _currentScope">
         <template #name><h3>_currentScope</h3></template>
     </doc-member>
 
-    <doc-member id="field-emptyschemalist" name="EmptySchemaList" type="IList<JsonSchemaModel>" access="private" signature="private readonly static IList<JsonSchemaModel> EmptySchemaList">
-        <template #name><h3>EmptySchemaList</h3></template>
+    <doc-member id="field-_model" name="_model" type="JsonSchemaModel" access="private" signature="private JsonSchemaModel _model">
+        <template #name><h3>_model</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_reader" name="_reader" type="JsonReader" access="private" signature="private readonly JsonReader _reader">
+        <template #name><h3>_reader</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_schema" name="_schema" type="JsonSchema" access="private" signature="private JsonSchema _schema">
+        <template #name><h3>_schema</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stack" name="_stack" type="Stack<SchemaScope>" access="private" signature="private readonly Stack<SchemaScope> _stack">
+        <template #name><h3>_stack</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-value" name="Value" type="object" signature="public sealed object Value { get; }">
-        <template #name><h3>Value</h3></template>
+    <doc-member id="property-currentmemberschemas" name="CurrentMemberSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentMemberSchemas { private get; }">
+        <template #name><h3>CurrentMemberSchemas</h3></template>
+    </doc-member>
 
-<p>Gets the text value of the current JSON token.</p>
-
+    <doc-member id="property-currentschemas" name="CurrentSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentSchemas { private get; }">
+        <template #name><h3>CurrentSchemas</h3></template>
     </doc-member>
 
     <doc-member id="property-depth" name="Depth" type="int" signature="public sealed int Depth { get; }">
@@ -272,26 +273,11 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-tokentype" name="TokenType" type="JsonToken" signature="public sealed JsonToken TokenType { get; }">
-        <template #name><h3>TokenType</h3></template>
+    <doc-member id="property-reader" name="Reader" type="JsonReader" signature="public JsonReader Reader { get; }">
+        <template #name><h3>Reader</h3></template>
 
-<p>Gets the type of the current JSON token.</p>
+<p>Gets the <see cref="T:Newtonsoft.Json.JsonReader"/> used to construct this <see cref="T:Newtonsoft.Json.JsonValidatingReader"/>.</p>
 
-    </doc-member>
-
-    <doc-member id="property-valuetype" name="ValueType" type="Type" signature="public sealed Type ValueType { get; }">
-        <template #name><h3>ValueType</h3></template>
-
-<p>Gets the .NET type for the current JSON token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-currentschemas" name="CurrentSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentSchemas { private get; }">
-        <template #name><h3>CurrentSchemas</h3></template>
-    </doc-member>
-
-    <doc-member id="property-currentmemberschemas" name="CurrentMemberSchemas" type="IList<JsonSchemaModel>" access="private" signature="private IList<JsonSchemaModel> CurrentMemberSchemas { private get; }">
-        <template #name><h3>CurrentMemberSchemas</h3></template>
     </doc-member>
 
     <doc-member id="property-schema" name="Schema" type="JsonSchema" signature="public JsonSchema Schema { get; set; }">
@@ -301,10 +287,24 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     </doc-member>
 
-    <doc-member id="property-reader" name="Reader" type="JsonReader" signature="public JsonReader Reader { get; }">
-        <template #name><h3>Reader</h3></template>
+    <doc-member id="property-tokentype" name="TokenType" type="JsonToken" signature="public sealed JsonToken TokenType { get; }">
+        <template #name><h3>TokenType</h3></template>
 
-<p>Gets the <see cref="T:Newtonsoft.Json.JsonReader"/> used to construct this <see cref="T:Newtonsoft.Json.JsonValidatingReader"/>.</p>
+<p>Gets the type of the current JSON token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-value" name="Value" type="object" signature="public sealed object Value { get; }">
+        <template #name><h3>Value</h3></template>
+
+<p>Gets the text value of the current JSON token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-valuetype" name="ValueType" type="Type" signature="public sealed Type ValueType { get; }">
+        <template #name><h3>ValueType</h3></template>
+
+<p>Gets the .NET type for the current JSON token.</p>
 
     </doc-member>
 </doc-member-group>

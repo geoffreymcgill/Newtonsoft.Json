@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class BlogPost
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class BlogPost
 {
     public string Title { get; set; }
     public string AuthorName { get; set; }
@@ -200,7 +202,10 @@
     public string Body { get; set; }
     public DateTime PostedDate { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;[
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;[
   {
     'Title': 'Json.NET is awesome!',
     'Author': {
@@ -227,6 +232,7 @@ IList&lt;BlogPost&gt; blogPosts = blogPostArray.Select(p =&gt; new BlogPost
 Console.WriteLine(blogPosts[0].Body);
 // &lt;h3&gt;Title!&lt;/h3&gt;
 // &lt;p&gt;Content!&lt;/p&gt;</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -186,7 +186,7 @@
     </h1>
 </doc-anchor-target>
 <p>This sample loads a <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a> from a file.</p>
-<doc-alert type="warning"><p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
+<doc-alert type="warning" title="CAUTION"><p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
 </doc-alert>
 <doc-anchor-target id="sample">
     <h2>
@@ -194,7 +194,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">// read file into a string and parse JsonSchema from the string
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">// read file into a string and parse JsonSchema from the string
 JsonSchema schema1 = JsonSchema.Parse(File.ReadAllText(@&quot;c:\schema.json&quot;));
 
 // read JsonSchema directly from a file
@@ -203,6 +205,7 @@ using (JsonTextReader reader = new JsonTextReader(file))
 {
     JsonSchema schema2 = JsonSchema.Read(reader);
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

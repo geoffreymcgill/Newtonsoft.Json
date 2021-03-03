@@ -208,56 +208,36 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-year" name="Year" type="int" signature="public int Year">
-        <template #name><h3>Year</h3></template>
-    </doc-member>
-
-    <doc-member id="field-month" name="Month" type="int" signature="public int Month">
-        <template #name><h3>Month</h3></template>
-    </doc-member>
-
     <doc-member id="field-day" name="Day" type="int" signature="public int Day">
         <template #name><h3>Day</h3></template>
-    </doc-member>
-
-    <doc-member id="field-hour" name="Hour" type="int" signature="public int Hour">
-        <template #name><h3>Hour</h3></template>
-    </doc-member>
-
-    <doc-member id="field-minute" name="Minute" type="int" signature="public int Minute">
-        <template #name><h3>Minute</h3></template>
-    </doc-member>
-
-    <doc-member id="field-second" name="Second" type="int" signature="public int Second">
-        <template #name><h3>Second</h3></template>
     </doc-member>
 
     <doc-member id="field-fraction" name="Fraction" type="int" signature="public int Fraction">
         <template #name><h3>Fraction</h3></template>
     </doc-member>
 
-    <doc-member id="field-zonehour" name="ZoneHour" type="int" signature="public int ZoneHour">
-        <template #name><h3>ZoneHour</h3></template>
+    <doc-member id="field-hour" name="Hour" type="int" signature="public int Hour">
+        <template #name><h3>Hour</h3></template>
     </doc-member>
 
-    <doc-member id="field-zoneminute" name="ZoneMinute" type="int" signature="public int ZoneMinute">
-        <template #name><h3>ZoneMinute</h3></template>
+    <doc-member id="field-lzhh" name="LzHH" type="int" access="private" signature="private readonly static int LzHH">
+        <template #name><h3>LzHH</h3></template>
     </doc-member>
 
-    <doc-member id="field-zone" name="Zone" type="ParserTimeZone" signature="public ParserTimeZone Zone">
-        <template #name><h3>Zone</h3></template>
+    <doc-member id="field-lzhh_" name="LzHH_" type="int" access="private" signature="private readonly static int LzHH_">
+        <template #name><h3>LzHH_</h3></template>
     </doc-member>
 
-    <doc-member id="field-_text" name="_text" type="char[]" access="private" signature="private char[] _text">
-        <template #name><h3>_text</h3></template>
+    <doc-member id="field-lzhh_mm" name="LzHH_mm" type="int" access="private" signature="private readonly static int LzHH_mm">
+        <template #name><h3>LzHH_mm</h3></template>
     </doc-member>
 
-    <doc-member id="field-_end" name="_end" type="int" access="private" signature="private int _end">
-        <template #name><h3>_end</h3></template>
+    <doc-member id="field-lzhh_mm_" name="LzHH_mm_" type="int" access="private" signature="private readonly static int LzHH_mm_">
+        <template #name><h3>LzHH_mm_</h3></template>
     </doc-member>
 
-    <doc-member id="field-power10" name="Power10" type="int[]" access="private" signature="private readonly static int[] Power10">
-        <template #name><h3>Power10</h3></template>
+    <doc-member id="field-lzhh_mm_ss" name="LzHH_mm_ss" type="int" access="private" signature="private readonly static int LzHH_mm_ss">
+        <template #name><h3>LzHH_mm_ss</h3></template>
     </doc-member>
 
     <doc-member id="field-lzyyyy" name="Lzyyyy" type="int" access="private" signature="private readonly static int Lzyyyy">
@@ -284,26 +264,6 @@
         <template #name><h3>Lzyyyy_MM_ddT</h3></template>
     </doc-member>
 
-    <doc-member id="field-lzhh" name="LzHH" type="int" access="private" signature="private readonly static int LzHH">
-        <template #name><h3>LzHH</h3></template>
-    </doc-member>
-
-    <doc-member id="field-lzhh_" name="LzHH_" type="int" access="private" signature="private readonly static int LzHH_">
-        <template #name><h3>LzHH_</h3></template>
-    </doc-member>
-
-    <doc-member id="field-lzhh_mm" name="LzHH_mm" type="int" access="private" signature="private readonly static int LzHH_mm">
-        <template #name><h3>LzHH_mm</h3></template>
-    </doc-member>
-
-    <doc-member id="field-lzhh_mm_" name="LzHH_mm_" type="int" access="private" signature="private readonly static int LzHH_mm_">
-        <template #name><h3>LzHH_mm_</h3></template>
-    </doc-member>
-
-    <doc-member id="field-lzhh_mm_ss" name="LzHH_mm_ss" type="int" access="private" signature="private readonly static int LzHH_mm_ss">
-        <template #name><h3>LzHH_mm_ss</h3></template>
-    </doc-member>
-
     <doc-member id="field-lz_" name="Lz_" type="int" access="private" signature="private readonly static int Lz_">
         <template #name><h3>Lz_</h3></template>
     </doc-member>
@@ -314,6 +274,46 @@
 
     <doc-member id="field-maxfractiondigits" name="MaxFractionDigits" type="short" access="private" signature="private const static short MaxFractionDigits">
         <template #name><h3>MaxFractionDigits</h3></template>
+    </doc-member>
+
+    <doc-member id="field-minute" name="Minute" type="int" signature="public int Minute">
+        <template #name><h3>Minute</h3></template>
+    </doc-member>
+
+    <doc-member id="field-month" name="Month" type="int" signature="public int Month">
+        <template #name><h3>Month</h3></template>
+    </doc-member>
+
+    <doc-member id="field-power10" name="Power10" type="int[]" access="private" signature="private readonly static int[] Power10">
+        <template #name><h3>Power10</h3></template>
+    </doc-member>
+
+    <doc-member id="field-second" name="Second" type="int" signature="public int Second">
+        <template #name><h3>Second</h3></template>
+    </doc-member>
+
+    <doc-member id="field-year" name="Year" type="int" signature="public int Year">
+        <template #name><h3>Year</h3></template>
+    </doc-member>
+
+    <doc-member id="field-zone" name="Zone" type="ParserTimeZone" signature="public ParserTimeZone Zone">
+        <template #name><h3>Zone</h3></template>
+    </doc-member>
+
+    <doc-member id="field-zonehour" name="ZoneHour" type="int" signature="public int ZoneHour">
+        <template #name><h3>ZoneHour</h3></template>
+    </doc-member>
+
+    <doc-member id="field-zoneminute" name="ZoneMinute" type="int" signature="public int ZoneMinute">
+        <template #name><h3>ZoneMinute</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_end" name="_end" type="int" access="private" signature="private int _end">
+        <template #name><h3>_end</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_text" name="_text" type="char[]" access="private" signature="private char[] _text">
+        <template #name><h3>_text</h3></template>
     </doc-member>
 </doc-member-group>
 

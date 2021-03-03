@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Account
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Account
 {
     public string FullName { get; set; }
     public string EmailAddress { get; set; }
@@ -200,7 +202,10 @@
     [JsonIgnore]
     public string PasswordHash { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Account account = new Account
 {
     FullName = &quot;Joe User&quot;,
     EmailAddress = &quot;joe@example.com&quot;,
@@ -211,6 +216,7 @@ string json = JsonConvert.SerializeObject(account);
 
 Console.WriteLine(json);
 // {&quot;FullName&quot;:&quot;Joe User&quot;,&quot;EmailAddress&quot;:&quot;joe@example.com&quot;}</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -194,7 +194,9 @@
 </doc-anchor-target>
 <p>SelectToken is a method on JToken and takes a string path to a child token. SelectToken returns the child token or a null reference if a token couldn&#39;t be found at the path&#39;s location.</p>
 <p>The path is made up of property names and array indexes separated by periods, e.g. <code v-pre>Manufacturers[0].Name</code>.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken Example">JObject o = JObject.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">SelectToken Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
     'Lambton Quay',
     'Willis Street'
@@ -233,6 +235,7 @@ decimal productPrice = (decimal)o.SelectToken(&quot;Manufacturers[0].Products[0]
 
 string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Name&quot;);
 // Elbow Grease</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="selecttoken-with-jsonpath">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selecttoken-with-jsonpath">#</doc-anchor-trigger>
@@ -240,7 +243,9 @@ string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Na
     </h2>
 </doc-anchor-target>
 <p>SelectToken supports JSONPath queries. Find out more about JSONPath <a href="https://goessner.net/articles/JsonPath/">here</a>.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken With JSONPath">JObject o = JObject.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">SelectToken With JSONPath</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
     'Lambton Quay',
     'Willis Street'
@@ -286,6 +291,7 @@ foreach (JToken item in pricyProducts)
 }
 // Anvil
 // Elbow Grease</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="selecttoken-with-linq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#selecttoken-with-linq">#</doc-anchor-trigger>
@@ -293,7 +299,9 @@ foreach (JToken item in pricyProducts)
     </h2>
 </doc-anchor-target>
 <p>SelectToken can be used in combination with standard LINQ methods.</p>
-<pre v-highlight:csharp><code v-pre title="SelectToken With LINQ Example">IList&lt;string&gt; storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToList();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">SelectToken With LINQ Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">IList&lt;string&gt; storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToList();
 // Lambton Quay
 // Willis Street
 
@@ -303,6 +311,7 @@ IList&lt;string&gt; firstProductNames = o[&quot;Manufacturers&quot;].Select(m =&
 
 decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectToken(&quot;Products[0].Price&quot;));
 // 149.95</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
@@ -310,7 +319,7 @@ decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectT
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="">LINQ to JSON</a></li>
+<li><a href="..">LINQ to JSON</a></li>
 <li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-selecttoken">SelectToken()</a></li>
 </ul>
 

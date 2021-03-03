@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class User
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class User
 {
     public string UserName { get; private set; }
     public bool Enabled { get; private set; }
@@ -208,7 +210,10 @@
         Enabled = enabled;
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,
   &quot;&quot;Enabled&quot;&quot;: true
 }&quot;;
@@ -217,6 +222,7 @@ User user = JsonConvert.DeserializeObject&lt;User&gt;(json);
 
 Console.WriteLine(user.UserName);
 // domain\username</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class XmlJsonWriter : JsonWriter
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class XmlJsonWriter : JsonWriter
 {
     private readonly XmlWriter _writer;
     private string _propertyName;
@@ -467,7 +469,10 @@
         }
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">var user = new
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">var user = new
 {
     Name = &quot;James&quot;,
     Age = 30,
@@ -500,6 +505,7 @@ Console.WriteLine(sw.ToString());
 //    &lt;Item type=&quot;String&quot;&gt;Administrator&lt;/Item&gt;
 //  &lt;/Roles&gt;
 //&lt;/Root&gt;</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

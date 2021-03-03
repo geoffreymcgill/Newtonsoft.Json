@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">[JsonObject(MemberSerialization.OptIn)]
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">[JsonObject(MemberSerialization.OptIn)]
 public class File
 {
     // excluded from serialization
@@ -205,7 +207,10 @@ public class File
     [JsonProperty]
     public int Size { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">File file = new File
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">File file = new File
 {
     Id = Guid.NewGuid(),
     Name = &quot;ImportantLegalDocuments.docx&quot;,
@@ -219,6 +224,7 @@ Console.WriteLine(json);
 //   &quot;Name&quot;: &quot;ImportantLegalDocuments.docx&quot;,
 //   &quot;Size&quot;: 51200
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

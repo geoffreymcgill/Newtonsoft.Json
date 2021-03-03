@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Flight
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Flight
 {
     public string Destination { get; set; }
     public DateTime DepartureDate { get; set; }
@@ -200,7 +202,10 @@
     public DateTime DepartureDateLocal { get; set; }
     public TimeSpan Duration { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Flight flight = new Flight
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Flight flight = new Flight
 {
     Destination = &quot;Dubai&quot;,
     DepartureDate = new DateTime(2013, 1, 21, 0, 0, 0, DateTimeKind.Unspecified),
@@ -264,6 +269,7 @@ Console.WriteLine(jsonWithUnspecifiedTimeZone);
 //   &quot;DepartureDateLocal&quot;: &quot;2013-01-21T00:00:00&quot;,
 //   &quot;Duration&quot;: &quot;05:30:00&quot;
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,13 +192,18 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class DailyHighScores
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class DailyHighScores
 {
     public DateTime Date { get; set; }
     public string Game { get; set; }
     public Dictionary&lt;string, int&gt; UserPoints { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">DailyHighScores dailyHighScores = new DailyHighScores
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">DailyHighScores dailyHighScores = new DailyHighScores
 {
     Date = new DateTime(2016, 6, 27, 0, 0, 0, DateTimeKind.Utc),
     Game = &quot;Donkey Kong&quot;,
@@ -234,6 +239,7 @@ Console.WriteLine(json);
 //     &quot;JessicaN&quot;: 1000
 //   }
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

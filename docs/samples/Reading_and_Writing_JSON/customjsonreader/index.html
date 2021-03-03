@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class XmlJsonReader : JsonReader
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class XmlJsonReader : JsonReader
 {
     private readonly Stack&lt;JTokenType&gt; _stateStack;
     private readonly XmlReader _reader;
@@ -418,7 +420,10 @@
         return (Value != null) ? (DateTimeOffset?)Convert.ToDateTime(Value) : null;
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string xml = @&quot;&lt;Root type=&quot;&quot;Object&quot;&quot;&gt;
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string xml = @&quot;&lt;Root type=&quot;&quot;Object&quot;&quot;&gt;
   &lt;Null type=&quot;&quot;Null&quot;&quot; /&gt;
   &lt;String type=&quot;&quot;String&quot;&quot;&gt;This is a string!&lt;/String&gt;
   &lt;Char type=&quot;&quot;String&quot;&quot;&gt;!&lt;/Char&gt;
@@ -476,6 +481,7 @@ using (XmlJsonReader reader = new XmlJsonReader(xmlReader))
     //  &quot;Constructor&quot;: new Date(2000, 12, 30)
     //}
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -211,52 +211,16 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_equalitycomparer" name="_equalityComparer" type="JTokenEqualityComparer?" access="private" signature="private static JTokenEqualityComparer? _equalityComparer">
-        <template #name><h3>_equalityComparer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_parent" name="_parent" type="JContainer?" access="private" signature="private JContainer? _parent">
-        <template #name><h3>_parent</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_previous" name="_previous" type="JToken?" access="private" signature="private JToken? _previous">
-        <template #name><h3>_previous</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_next" name="_next" type="JToken?" access="private" signature="private JToken? _next">
-        <template #name><h3>_next</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_annotations" name="_annotations" type="Nullable<object>?" access="private" signature="private Nullable<object>? _annotations">
-        <template #name><h3>_annotations</h3></template>
+    <doc-member id="field-bigintegertypes" name="BigIntegerTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BigIntegerTypes">
+        <template #name><h3>BigIntegerTypes</h3></template>
     </doc-member>
 
     <doc-member id="field-booleantypes" name="BooleanTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BooleanTypes">
         <template #name><h3>BooleanTypes</h3></template>
     </doc-member>
 
-    <doc-member id="field-numbertypes" name="NumberTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] NumberTypes">
-        <template #name><h3>NumberTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-bigintegertypes" name="BigIntegerTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BigIntegerTypes">
-        <template #name><h3>BigIntegerTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-stringtypes" name="StringTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] StringTypes">
-        <template #name><h3>StringTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-guidtypes" name="GuidTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] GuidTypes">
-        <template #name><h3>GuidTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-timespantypes" name="TimeSpanTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] TimeSpanTypes">
-        <template #name><h3>TimeSpanTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uritypes" name="UriTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] UriTypes">
-        <template #name><h3>UriTypes</h3></template>
+    <doc-member id="field-bytestypes" name="BytesTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BytesTypes">
+        <template #name><h3>BytesTypes</h3></template>
     </doc-member>
 
     <doc-member id="field-chartypes" name="CharTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] CharTypes">
@@ -267,8 +231,44 @@
         <template #name><h3>DateTimeTypes</h3></template>
     </doc-member>
 
-    <doc-member id="field-bytestypes" name="BytesTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BytesTypes">
-        <template #name><h3>BytesTypes</h3></template>
+    <doc-member id="field-guidtypes" name="GuidTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] GuidTypes">
+        <template #name><h3>GuidTypes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-numbertypes" name="NumberTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] NumberTypes">
+        <template #name><h3>NumberTypes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-stringtypes" name="StringTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] StringTypes">
+        <template #name><h3>StringTypes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-timespantypes" name="TimeSpanTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] TimeSpanTypes">
+        <template #name><h3>TimeSpanTypes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-uritypes" name="UriTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] UriTypes">
+        <template #name><h3>UriTypes</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_annotations" name="_annotations" type="Nullable<object>?" access="private" signature="private Nullable<object>? _annotations">
+        <template #name><h3>_annotations</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_equalitycomparer" name="_equalityComparer" type="JTokenEqualityComparer?" access="private" signature="private static JTokenEqualityComparer? _equalityComparer">
+        <template #name><h3>_equalityComparer</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_next" name="_next" type="JToken?" access="private" signature="private JToken? _next">
+        <template #name><h3>_next</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_parent" name="_parent" type="JContainer?" access="private" signature="private JContainer? _parent">
+        <template #name><h3>_parent</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_previous" name="_previous" type="JToken?" access="private" signature="private JToken? _previous">
+        <template #name><h3>_previous</h3></template>
     </doc-member>
 </doc-member-group>
 
@@ -282,10 +282,52 @@
 
     </doc-member>
 
+    <doc-member id="property-first" name="First" type="JToken?" signature="public virtual JToken? First { get; }">
+        <template #name><h3>First</h3></template>
+
+<p>Get the first child token of this token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-hasvalues" name="HasValues" type="bool" signature="public abstract bool HasValues { get; }">
+        <template #name><h3>HasValues</h3></template>
+
+<p>Gets a value indicating whether this token has child tokens.</p>
+
+    </doc-member>
+
+    <doc-member id="property-last" name="Last" type="JToken?" signature="public virtual JToken? Last { get; }">
+        <template #name><h3>Last</h3></template>
+
+<p>Get the last child token of this token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-next" name="Next" type="JToken?" signature="public JToken? Next { get; internal set; }">
+        <template #name><h3>Next</h3></template>
+
+<p>Gets the next sibling token of this node.</p>
+
+    </doc-member>
+
     <doc-member id="property-parent" name="Parent" type="JContainer?" signature="public JContainer? Parent { get; internal set; }">
         <template #name><h3>Parent</h3></template>
 
 <p>Gets or sets the parent.</p>
+
+    </doc-member>
+
+    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
+        <template #name><h3>Path</h3></template>
+
+<p>Gets the path of the JSON token.</p>
+
+    </doc-member>
+
+    <doc-member id="property-previous" name="Previous" type="JToken?" signature="public JToken? Previous { get; internal set; }">
+        <template #name><h3>Previous</h3></template>
+
+<p>Gets the previous sibling token of this node.</p>
 
     </doc-member>
 
@@ -300,48 +342,6 @@
         <template #name><h3>Type</h3></template>
 
 <p>Gets the node type for this <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
-
-    </doc-member>
-
-    <doc-member id="property-hasvalues" name="HasValues" type="bool" signature="public abstract bool HasValues { get; }">
-        <template #name><h3>HasValues</h3></template>
-
-<p>Gets a value indicating whether this token has child tokens.</p>
-
-    </doc-member>
-
-    <doc-member id="property-next" name="Next" type="JToken?" signature="public JToken? Next { get; internal set; }">
-        <template #name><h3>Next</h3></template>
-
-<p>Gets the next sibling token of this node.</p>
-
-    </doc-member>
-
-    <doc-member id="property-previous" name="Previous" type="JToken?" signature="public JToken? Previous { get; internal set; }">
-        <template #name><h3>Previous</h3></template>
-
-<p>Gets the previous sibling token of this node.</p>
-
-    </doc-member>
-
-    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
-        <template #name><h3>Path</h3></template>
-
-<p>Gets the path of the JSON token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-first" name="First" type="JToken?" signature="public virtual JToken? First { get; }">
-        <template #name><h3>First</h3></template>
-
-<p>Get the first child token of this token.</p>
-
-    </doc-member>
-
-    <doc-member id="property-last" name="Last" type="JToken?" signature="public virtual JToken? Last { get; }">
-        <template #name><h3>Last</h3></template>
-
-<p>Get the last child token of this token.</p>
 
     </doc-member>
 </doc-member-group>

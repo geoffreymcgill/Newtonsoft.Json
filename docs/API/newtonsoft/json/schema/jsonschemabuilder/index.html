@@ -208,24 +208,24 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_stack" name="_stack" type="IList<JsonSchema>" access="private" signature="private readonly IList<JsonSchema> _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
-        <template #name><h3>_resolver</h3></template>
+    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
+        <template #name><h3>_currentSchema</h3></template>
     </doc-member>
 
     <doc-member id="field-_documentschemas" name="_documentSchemas" type="IDictionary<string, JsonSchema>" access="private" signature="private readonly IDictionary<string, JsonSchema> _documentSchemas">
         <template #name><h3>_documentSchemas</h3></template>
     </doc-member>
 
-    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
-        <template #name><h3>_currentSchema</h3></template>
+    <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private readonly JsonSchemaResolver _resolver">
+        <template #name><h3>_resolver</h3></template>
     </doc-member>
 
     <doc-member id="field-_rootschema" name="_rootSchema" type="JObject" access="private" signature="private JObject _rootSchema">
         <template #name><h3>_rootSchema</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stack" name="_stack" type="IList<JsonSchema>" access="private" signature="private readonly IList<JsonSchema> _stack">
+        <template #name><h3>_stack</h3></template>
     </doc-member>
 </doc-member-group>
 

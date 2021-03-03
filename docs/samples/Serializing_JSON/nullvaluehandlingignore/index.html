@@ -192,14 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Person
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Person
 {
     public string Name { get; set; }
     public int Age { get; set; }
     public Person Partner { get; set; }
     public decimal? Salary { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Person person = new Person
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Person person = new Person
 {
     Name = &quot;Nigal Newborn&quot;,
     Age = 1
@@ -225,6 +230,7 @@ Console.WriteLine(jsonIgnoreNullValues);
 //   &quot;Name&quot;: &quot;Nigal Newborn&quot;,
 //   &quot;Age&quot;: 1
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public enum UserStatus
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public enum UserStatus
 {
     NotConfirmed,
     Active,
@@ -206,7 +208,10 @@ public class User
     [JsonConverter(typeof(StringEnumConverter))]
     public UserStatus Status { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">User user = new User
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">User user = new User
 {
     UserName = @&quot;domain\username&quot;,
     Status = UserStatus.Deleted
@@ -219,6 +224,7 @@ Console.WriteLine(json);
 //   &quot;UserName&quot;: &quot;domain\\username&quot;,
 //   &quot;Status&quot;: &quot;Deleted&quot;
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

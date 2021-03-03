@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">var definition = new { Name = &quot;&quot; };
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">var definition = new { Name = &quot;&quot; };
 
 string json1 = @&quot;{'Name':'James'}&quot;;
 var customer1 = JsonConvert.DeserializeAnonymousType(json1, definition);
@@ -205,6 +207,7 @@ var customer2 = JsonConvert.DeserializeAnonymousType(json2, definition);
 
 Console.WriteLine(customer2.Name);
 // Mike</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

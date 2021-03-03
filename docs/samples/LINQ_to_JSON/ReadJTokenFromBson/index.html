@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">byte[] data = Convert.FromBase64String(&quot;KQAAAAJuYW1lMQAHAAAAdmFsdWUxAAJuYW1lMgAHAAAAdmFsdWUyAAA=&quot;);
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">byte[] data = Convert.FromBase64String(&quot;KQAAAAJuYW1lMQAHAAAAdmFsdWUxAAJuYW1lMgAHAAAAdmFsdWUyAAA=&quot;);
 MemoryStream ms = new MemoryStream(data);
 
 JObject o;
@@ -205,6 +207,7 @@ string value = (string)o[&quot;name1&quot;];
 
 Console.WriteLine(value);
 // value1</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

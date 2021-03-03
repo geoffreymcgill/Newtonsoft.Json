@@ -211,8 +211,12 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-isnullable" name="IsNullable" type="bool" access="internal" signature="internal bool IsNullable">
-        <template #name><h3>IsNullable</h3></template>
+    <doc-member id="field-contracttype" name="ContractType" type="JsonContractType" access="internal" signature="internal JsonContractType ContractType">
+        <template #name><h3>ContractType</h3></template>
+    </doc-member>
+
+    <doc-member id="field-internalreadtype" name="InternalReadType" type="ReadType" access="internal" signature="internal ReadType InternalReadType">
+        <template #name><h3>InternalReadType</h3></template>
     </doc-member>
 
     <doc-member id="field-isconvertable" name="IsConvertable" type="bool" access="internal" signature="internal bool IsConvertable">
@@ -223,16 +227,12 @@
         <template #name><h3>IsEnum</h3></template>
     </doc-member>
 
-    <doc-member id="field-nonnullableunderlyingtype" name="NonNullableUnderlyingType" type="Type" access="internal" signature="internal Type NonNullableUnderlyingType">
-        <template #name><h3>NonNullableUnderlyingType</h3></template>
+    <doc-member id="field-isinstantiable" name="IsInstantiable" type="bool" access="internal" signature="internal bool IsInstantiable">
+        <template #name><h3>IsInstantiable</h3></template>
     </doc-member>
 
-    <doc-member id="field-internalreadtype" name="InternalReadType" type="ReadType" access="internal" signature="internal ReadType InternalReadType">
-        <template #name><h3>InternalReadType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-contracttype" name="ContractType" type="JsonContractType" access="internal" signature="internal JsonContractType ContractType">
-        <template #name><h3>ContractType</h3></template>
+    <doc-member id="field-isnullable" name="IsNullable" type="bool" access="internal" signature="internal bool IsNullable">
+        <template #name><h3>IsNullable</h3></template>
     </doc-member>
 
     <doc-member id="field-isreadonlyorfixedsize" name="IsReadOnlyOrFixedSize" type="bool" access="internal" signature="internal bool IsReadOnlyOrFixedSize">
@@ -243,8 +243,12 @@
         <template #name><h3>IsSealed</h3></template>
     </doc-member>
 
-    <doc-member id="field-isinstantiable" name="IsInstantiable" type="bool" access="internal" signature="internal bool IsInstantiable">
-        <template #name><h3>IsInstantiable</h3></template>
+    <doc-member id="field-nonnullableunderlyingtype" name="NonNullableUnderlyingType" type="Type" access="internal" signature="internal Type NonNullableUnderlyingType">
+        <template #name><h3>NonNullableUnderlyingType</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_createdtype" name="_createdType" type="Type" access="private" signature="private Type _createdType">
+        <template #name><h3>_createdType</h3></template>
     </doc-member>
 
     <doc-member id="field-_ondeserializedcallbacks" name="_onDeserializedCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onDeserializedCallbacks">
@@ -255,6 +259,10 @@
         <template #name><h3>_onDeserializingCallbacks</h3></template>
     </doc-member>
 
+    <doc-member id="field-_onerrorcallbacks" name="_onErrorCallbacks" type="Nullable<List<SerializationErrorCallback>>?" access="private" signature="private Nullable<List<SerializationErrorCallback>>? _onErrorCallbacks">
+        <template #name><h3>_onErrorCallbacks</h3></template>
+    </doc-member>
+
     <doc-member id="field-_onserializedcallbacks" name="_onSerializedCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onSerializedCallbacks">
         <template #name><h3>_onSerializedCallbacks</h3></template>
     </doc-member>
@@ -262,23 +270,15 @@
     <doc-member id="field-_onserializingcallbacks" name="_onSerializingCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onSerializingCallbacks">
         <template #name><h3>_onSerializingCallbacks</h3></template>
     </doc-member>
-
-    <doc-member id="field-_onerrorcallbacks" name="_onErrorCallbacks" type="Nullable<List<SerializationErrorCallback>>?" access="private" signature="private Nullable<List<SerializationErrorCallback>>? _onErrorCallbacks">
-        <template #name><h3>_onErrorCallbacks</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_createdtype" name="_createdType" type="Type" access="private" signature="private Type _createdType">
-        <template #name><h3>_createdType</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
-    <doc-member id="property-underlyingtype" name="UnderlyingType" type="Type" signature="public Type UnderlyingType { get; }">
-        <template #name><h3>UnderlyingType</h3></template>
+    <doc-member id="property-converter" name="Converter" type="JsonConverter?" signature="public JsonConverter? Converter { get; set; }">
+        <template #name><h3>Converter</h3></template>
 
-<p>Gets the underlying type for the contract.</p>
+<p>Gets or sets the default <see cref="T:Newtonsoft.Json.JsonConverter" /> for this contract.</p>
 
     </doc-member>
 
@@ -289,17 +289,17 @@
 
     </doc-member>
 
-    <doc-member id="property-isreference" name="IsReference" type="Nullable<bool>?" signature="public Nullable<bool>? IsReference { get; set; }">
-        <template #name><h3>IsReference</h3></template>
+    <doc-member id="property-defaultcreator" name="DefaultCreator" type="Nullable<Func<object>>?" signature="public Nullable<Func<object>>? DefaultCreator { get; set; }">
+        <template #name><h3>DefaultCreator</h3></template>
 
-<p>Gets or sets whether this type contract is serialized as a reference.</p>
+<p>Gets or sets the default creator method used to create the object.</p>
 
     </doc-member>
 
-    <doc-member id="property-converter" name="Converter" type="JsonConverter?" signature="public JsonConverter? Converter { get; set; }">
-        <template #name><h3>Converter</h3></template>
+    <doc-member id="property-defaultcreatornonpublic" name="DefaultCreatorNonPublic" type="bool" signature="public bool DefaultCreatorNonPublic { get; set; }">
+        <template #name><h3>DefaultCreatorNonPublic</h3></template>
 
-<p>Gets or sets the default <see cref="T:Newtonsoft.Json.JsonConverter" /> for this contract.</p>
+<p>Gets or sets a value indicating whether the default creator is non-public.</p>
 
     </doc-member>
 
@@ -309,6 +309,13 @@
 <p>Gets the internally resolved <see cref="T:Newtonsoft.Json.JsonConverter"/> for the contract&#39;s type.
 This converter is used as a fallback converter when no other converter is resolved.
 Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> will always override this converter.</p>
+
+    </doc-member>
+
+    <doc-member id="property-isreference" name="IsReference" type="Nullable<bool>?" signature="public Nullable<bool>? IsReference { get; set; }">
+        <template #name><h3>IsReference</h3></template>
+
+<p>Gets or sets whether this type contract is serialized as a reference.</p>
 
     </doc-member>
 
@@ -326,6 +333,13 @@ Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> wil
 
     </doc-member>
 
+    <doc-member id="property-onerrorcallbacks" name="OnErrorCallbacks" type="IList<SerializationErrorCallback>" signature="public IList<SerializationErrorCallback> OnErrorCallbacks { get; }">
+        <template #name><h3>OnErrorCallbacks</h3></template>
+
+<p>Gets or sets all method called when an error is thrown during the serialization of the object.</p>
+
+    </doc-member>
+
     <doc-member id="property-onserializedcallbacks" name="OnSerializedCallbacks" type="IList<SerializationCallback>" signature="public IList<SerializationCallback> OnSerializedCallbacks { get; }">
         <template #name><h3>OnSerializedCallbacks</h3></template>
 
@@ -340,24 +354,10 @@ Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> wil
 
     </doc-member>
 
-    <doc-member id="property-onerrorcallbacks" name="OnErrorCallbacks" type="IList<SerializationErrorCallback>" signature="public IList<SerializationErrorCallback> OnErrorCallbacks { get; }">
-        <template #name><h3>OnErrorCallbacks</h3></template>
+    <doc-member id="property-underlyingtype" name="UnderlyingType" type="Type" signature="public Type UnderlyingType { get; }">
+        <template #name><h3>UnderlyingType</h3></template>
 
-<p>Gets or sets all method called when an error is thrown during the serialization of the object.</p>
-
-    </doc-member>
-
-    <doc-member id="property-defaultcreator" name="DefaultCreator" type="Nullable<Func<object>>?" signature="public Nullable<Func<object>>? DefaultCreator { get; set; }">
-        <template #name><h3>DefaultCreator</h3></template>
-
-<p>Gets or sets the default creator method used to create the object.</p>
-
-    </doc-member>
-
-    <doc-member id="property-defaultcreatornonpublic" name="DefaultCreatorNonPublic" type="bool" signature="public bool DefaultCreatorNonPublic { get; set; }">
-        <template #name><h3>DefaultCreatorNonPublic</h3></template>
-
-<p>Gets or sets a value indicating whether the default creator is non-public.</p>
+<p>Gets the underlying type for the contract.</p>
 
     </doc-member>
 </doc-member-group>

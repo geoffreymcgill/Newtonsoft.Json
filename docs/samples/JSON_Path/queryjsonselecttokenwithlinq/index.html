@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
     'Lambton Quay',
     'Willis Street'
@@ -238,6 +240,7 @@ decimal totalPrice = o[&quot;Manufacturers&quot;].Sum(m =&gt; (decimal)m.SelectT
 
 Console.WriteLine(totalPrice);
 // 149.95</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

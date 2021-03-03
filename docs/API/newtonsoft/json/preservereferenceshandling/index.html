@@ -212,6 +212,20 @@ Note that references cannot be preserved when a value is set via a non-default c
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
+    <doc-member id="field-all" name="All" type="PreserveReferencesHandling" signature="All">
+        <template #name><h3>All</h3></template>
+
+<p>Preserve references when serializing.</p>
+
+    </doc-member>
+
+    <doc-member id="field-arrays" name="Arrays" type="PreserveReferencesHandling" signature="Arrays">
+        <template #name><h3>Arrays</h3></template>
+
+<p>Preserve references when serializing into a JSON array structure.</p>
+
+    </doc-member>
+
     <doc-member id="field-none" name="None" type="PreserveReferencesHandling" signature="None">
         <template #name><h3>None</h3></template>
 
@@ -223,20 +237,6 @@ Note that references cannot be preserved when a value is set via a non-default c
         <template #name><h3>Objects</h3></template>
 
 <p>Preserve references when serializing into a JSON object structure.</p>
-
-    </doc-member>
-
-    <doc-member id="field-arrays" name="Arrays" type="PreserveReferencesHandling" signature="Arrays">
-        <template #name><h3>Arrays</h3></template>
-
-<p>Preserve references when serializing into a JSON array structure.</p>
-
-    </doc-member>
-
-    <doc-member id="field-all" name="All" type="PreserveReferencesHandling" signature="All">
-        <template #name><h3>All</h3></template>
-
-<p>Preserve references when serializing.</p>
 
     </doc-member>
 </doc-member-group>

@@ -215,12 +215,12 @@
         <template #name><h3>_commentHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_lineinfohandling" name="_lineInfoHandling" type="LineInfoHandling" access="private" signature="private LineInfoHandling _lineInfoHandling">
-        <template #name><h3>_lineInfoHandling</h3></template>
-    </doc-member>
-
     <doc-member id="field-_duplicatepropertynamehandling" name="_duplicatePropertyNameHandling" type="DuplicatePropertyNameHandling" access="private" signature="private DuplicatePropertyNameHandling _duplicatePropertyNameHandling">
         <template #name><h3>_duplicatePropertyNameHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_lineinfohandling" name="_lineInfoHandling" type="LineInfoHandling" access="private" signature="private LineInfoHandling _lineInfoHandling">
+        <template #name><h3>_lineInfoHandling</h3></template>
     </doc-member>
 </doc-member-group>
 
@@ -235,19 +235,19 @@ The default value is <see cref="F:Newtonsoft.Json.Linq.CommentHandling.Ignore" /
 
     </doc-member>
 
-    <doc-member id="property-lineinfohandling" name="LineInfoHandling" type="LineInfoHandling" signature="public LineInfoHandling LineInfoHandling { get; set; }">
-        <template #name><h3>LineInfoHandling</h3></template>
-
-<p>Gets or sets how JSON line info is handled when loading JSON.
-The default value is <see cref="F:Newtonsoft.Json.Linq.LineInfoHandling.Load" />.</p>
-
-    </doc-member>
-
     <doc-member id="property-duplicatepropertynamehandling" name="DuplicatePropertyNameHandling" type="DuplicatePropertyNameHandling" signature="public DuplicatePropertyNameHandling DuplicatePropertyNameHandling { get; set; }">
         <template #name><h3>DuplicatePropertyNameHandling</h3></template>
 
 <p>Gets or sets how duplicate property names in JSON objects are handled when loading JSON.
 The default value is <see cref="F:Newtonsoft.Json.Linq.DuplicatePropertyNameHandling.Replace" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-lineinfohandling" name="LineInfoHandling" type="LineInfoHandling" signature="public LineInfoHandling LineInfoHandling { get; set; }">
+        <template #name><h3>LineInfoHandling</h3></template>
+
+<p>Gets or sets how JSON line info is handled when loading JSON.
+The default value is <see cref="F:Newtonsoft.Json.Linq.LineInfoHandling.Load" />.</p>
 
     </doc-member>
 </doc-member-group>

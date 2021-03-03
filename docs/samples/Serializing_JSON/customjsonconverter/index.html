@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class KeysJsonConverter : JsonConverter
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class KeysJsonConverter : JsonConverter
 {
     private readonly Type[] _types;
 
@@ -242,7 +244,10 @@ public class Employee
     public string LastName { get; set; }
     public IList&lt;string&gt; Roles { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Employee employee = new Employee
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Employee employee = new Employee
 {
     FirstName = &quot;James&quot;,
     LastName = &quot;Newton-King&quot;,
@@ -272,6 +277,7 @@ Employee newEmployee = JsonConvert.DeserializeObject&lt;Employee&gt;(json, new K
 
 Console.WriteLine(newEmployee.FirstName);
 // James</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

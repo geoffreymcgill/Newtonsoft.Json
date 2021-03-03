@@ -187,13 +187,18 @@
 </doc-anchor-target>
 <p>Often when working with large JSON documents you&#39;re only interested in a small fragment of information. This scenario can be annoying when you want to deserialize that JSON fragment into .NET objects because you have to define .NET classes for the entire JSON result.</p>
 <p>With Json.NET it is easy to get around this problem. Using LINQ to JSON you can extract the pieces of JSON you want to deserialize before passing them to the Json.NET serializer.</p>
-<pre v-highlight:csharp><code v-pre title="Fragments Object">public class SearchResult
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Fragments Object</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class SearchResult
 {
     public string Title { get; set; }
     public string Content { get; set; }
     public string Url { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Deserializing Partial JSON Fragment Example">string googleSearchText = @&quot;{
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Deserializing Partial JSON Fragment Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string googleSearchText = @&quot;{
   'responseData': {
     'results': [
       {
@@ -266,6 +271,7 @@ foreach (JToken result in results)
 // Title = &lt;b&gt;Paris Hilton&lt;/b&gt;
 // Content = Self: Zoolander. Socialite &lt;b&gt;Paris Hilton&lt;/b&gt;...
 // Url = http://www.imdb.com/name/nm0385296/</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

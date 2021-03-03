@@ -192,14 +192,19 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Account
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Account
 {
     public string Email { get; set; }
     public bool Active { get; set; }
     public DateTime CreatedDate { get; set; }
     public IList&lt;string&gt; Roles { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Account account = new Account
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Account account = new Account
 {
     Email = &quot;james@example.com&quot;,
     Active = true,
@@ -215,6 +220,7 @@ string json = JsonConvert.SerializeObject(account);
 // {&quot;Email&quot;:&quot;james@example.com&quot;,&quot;Active&quot;:true,&quot;CreatedDate&quot;:&quot;2013-01-20T00:00:00Z&quot;,&quot;Roles&quot;:[&quot;User&quot;,&quot;Admin&quot;]}
 
 Console.WriteLine(json);</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

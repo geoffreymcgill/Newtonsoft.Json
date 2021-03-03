@@ -220,6 +220,10 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
         <template #name><h3>_contractResolver</h3></template>
     </doc-member>
 
+    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
+        <template #name><h3>_currentSchema</h3></template>
+    </doc-member>
+
     <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private JsonSchemaResolver _resolver">
         <template #name><h3>_resolver</h3></template>
     </doc-member>
@@ -227,21 +231,10 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
     <doc-member id="field-_stack" name="_stack" type="IList<TypeSchema>" access="private" signature="private readonly IList<TypeSchema> _stack">
         <template #name><h3>_stack</h3></template>
     </doc-member>
-
-    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
-        <template #name><h3>_currentSchema</h3></template>
-    </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
-
-    <doc-member id="property-undefinedschemaidhandling" name="UndefinedSchemaIdHandling" type="UndefinedSchemaIdHandling" signature="public UndefinedSchemaIdHandling UndefinedSchemaIdHandling { get; set; }">
-        <template #name><h3>UndefinedSchemaIdHandling</h3></template>
-
-<p>Gets or sets how undefined schemas are handled by the serializer.</p>
-
-    </doc-member>
 
     <doc-member id="property-contractresolver" name="ContractResolver" type="IContractResolver" signature="public IContractResolver ContractResolver { get; set; }">
         <template #name><h3>ContractResolver</h3></template>
@@ -252,6 +245,13 @@ JSON Schema validation has been moved to its own package. See <see href="https:/
 
     <doc-member id="property-currentschema" name="CurrentSchema" type="JsonSchema" access="private" signature="private JsonSchema CurrentSchema { private get; }">
         <template #name><h3>CurrentSchema</h3></template>
+    </doc-member>
+
+    <doc-member id="property-undefinedschemaidhandling" name="UndefinedSchemaIdHandling" type="UndefinedSchemaIdHandling" signature="public UndefinedSchemaIdHandling UndefinedSchemaIdHandling { get; set; }">
+        <template #name><h3>UndefinedSchemaIdHandling</h3></template>
+
+<p>Gets or sets how undefined schemas are handled by the serializer.</p>
+
     </doc-member>
 </doc-member-group>
 

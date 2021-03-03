@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o1 = new JObject
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o1 = new JObject
 {
     { &quot;String&quot;, &quot;A string!&quot; },
     { &quot;Items&quot;, new JArray(1, 2) }
@@ -223,6 +225,7 @@ Console.WriteLine(JToken.DeepEquals(o1, o2));
 
 Console.WriteLine(Object.ReferenceEquals(o1, o2));
 // false</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

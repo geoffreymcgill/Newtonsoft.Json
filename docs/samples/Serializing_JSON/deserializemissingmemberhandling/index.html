@@ -192,12 +192,17 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Account
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Account
 {
     public string FullName { get; set; }
     public bool Deleted { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'FullName': 'Dan Deleted',
   'Deleted': true,
   'DeletedDate': '2013-01-20T00:00:00'
@@ -215,6 +220,7 @@ catch (JsonSerializationException ex)
     Console.WriteLine(ex.Message);
     // Could not find member 'DeletedDate' on object of type 'Account'. Path 'DeletedDate', line 4, position 23.
 }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

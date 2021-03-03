@@ -205,7 +205,9 @@ setting to MicrosoftDateFormat.</p>
     </h2>
 </doc-anchor-target>
 <p>With no standard for dates in JSON, the number of possible different formats when interoping with other systems is endless. Fortunately Json.NET has a solution to deal with reading and writing custom dates: JsonConverters. A JsonConverter is used to override how a type is serialized.</p>
-<pre v-highlight:csharp><code v-pre title="DateTime JsonConverters Example">public class LogEntry
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">DateTime JsonConverters Example</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class LogEntry
 {
     public string Details { get; set; }
     public DateTime LogDate { get; set; }
@@ -234,6 +236,7 @@ public void WriteJsonDates()
     string javascriptJson = JsonConvert.SerializeObject(entry, new JavaScriptDateTimeConverter());
     // {&quot;Details&quot;:&quot;Application started.&quot;,&quot;LogDate&quot;:new Date(1234656000000)}
 }</code></pre>
+</doc-codeblock></div>
 <p>Simply pass the JsonConverter you wish to use to the Json.NET serializer.</p>
 <doc-anchor-target id="javascriptdatetimeconverter">
     <h2>
@@ -249,8 +252,8 @@ public void WriteJsonDates()
         <span>IsoDateTimeConverter</span>
     </h2>
 </doc-anchor-target>
-<doc-alert type="primary"><p>From Json.NET 4.5 and onwards dates are written using the ISO 8601 format by default, and using this converter is unnecessary.</p>
-</doc-alert>
+<div><p>From Json.NET 4.5 and onwards dates are written using the ISO 8601 format by default, and using this converter is unnecessary.</p>
+</div>
 <p>IsoDateTimeConverter serializes a DateTime to an <a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> formatted string: <code v-pre>&quot;2009-02-15T00:00:00Z&quot;</code></p>
 <p>The IsoDateTimeConverter class has a property, DateTimeFormat, to further customize the formatted string.</p>
 <doc-anchor-target id="see-also">

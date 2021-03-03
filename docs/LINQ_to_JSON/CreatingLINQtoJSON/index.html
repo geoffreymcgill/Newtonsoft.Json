@@ -193,7 +193,9 @@
     </h2>
 </doc-anchor-target>
 <p>Setting values and creating objects and arrays one at a time gives you total control, but it is more verbose than other options.</p>
-<pre v-highlight:csharp><code v-pre title="Creating JSON">JArray array = new JArray();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Creating JSON</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JArray array = new JArray();
 JValue text = new JValue(&quot;Manual text&quot;);
 JValue date = new JValue(new DateTime(2000, 5, 23));
 
@@ -205,6 +207,7 @@ string json = array.ToString();
 //   &quot;Manual text&quot;,
 //   &quot;2000-05-23T00:00:00&quot;
 // ]</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="creating-json-with-linq">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-json-with-linq">#</doc-anchor-trigger>
@@ -212,7 +215,9 @@ string json = array.ToString();
     </h2>
 </doc-anchor-target>
 <p>Declaratively creating JSON objects using LINQ is a fast way to create JSON from collections of values.</p>
-<pre v-highlight:csharp><code v-pre title="Creating JSON Declaratively">List&lt;Post&gt; posts = GetPosts();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Creating JSON Declaratively</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">List&lt;Post&gt; posts = GetPosts();
 
 JObject rss =
     new JObject(
@@ -263,6 +268,7 @@ Console.WriteLine(rss.ToString());
 //    ]
 //  }
 //}</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="creating-json-from-an-object">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-json-from-an-object">#</doc-anchor-trigger>
@@ -271,7 +277,9 @@ Console.WriteLine(rss.ToString());
 </doc-anchor-target>
 <p>The last option is to create a JSON object from a non-JSON type using the <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jobject/#method-fromobject">FromObject</a> method. Internally, FromObject will use the JsonSerializer to serialize the object to LINQ to JSON objects instead of text.</p>
 <p>The example below shows creating a JSON object from an anonymous object, but any .NET type can be used with FromObject to create JSON.</p>
-<pre v-highlight:csharp><code v-pre title="Creating JSON from an Object">JObject o = JObject.FromObject(new
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Creating JSON from an Object</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.FromObject(new
 {
     channel = new
     {
@@ -290,6 +298,7 @@ Console.WriteLine(rss.ToString());
             }
     }
 });</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
@@ -297,7 +306,7 @@ Console.WriteLine(rss.ToString());
     </h2>
 </doc-anchor-target>
 <ul>
-<li><a href="">LINQ to JSON</a></li>
+<li><a href="..">LINQ to JSON</a></li>
 <li><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jobject/#method-fromobject">JObject.FromObject</a></li>
 </ul>
 

@@ -219,8 +219,8 @@
         <template #name><h3>StateArrayTempate</h3></template>
     </doc-member>
 
-    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
-        <template #name><h3>_stack</h3></template>
+    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
+        <template #name><h3>_culture</h3></template>
     </doc-member>
 
     <doc-member id="field-_currentposition" name="_currentPosition" type="JsonPosition" access="private" signature="private JsonPosition _currentPosition">
@@ -231,37 +231,44 @@
         <template #name><h3>_currentState</h3></template>
     </doc-member>
 
-    <doc-member id="field-_formatting" name="_formatting" type="Formatting" access="private" signature="private Formatting _formatting">
-        <template #name><h3>_formatting</h3></template>
-    </doc-member>
-
     <doc-member id="field-_dateformathandling" name="_dateFormatHandling" type="DateFormatHandling" access="private" signature="private DateFormatHandling _dateFormatHandling">
         <template #name><h3>_dateFormatHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
-        <template #name><h3>_dateTimeZoneHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stringescapehandling" name="_stringEscapeHandling" type="StringEscapeHandling" access="private" signature="private StringEscapeHandling _stringEscapeHandling">
-        <template #name><h3>_stringEscapeHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_floatformathandling" name="_floatFormatHandling" type="FloatFormatHandling" access="private" signature="private FloatFormatHandling _floatFormatHandling">
-        <template #name><h3>_floatFormatHandling</h3></template>
     </doc-member>
 
     <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
         <template #name><h3>_dateFormatString</h3></template>
     </doc-member>
 
-    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
-        <template #name><h3>_culture</h3></template>
+    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
+        <template #name><h3>_dateTimeZoneHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_floatformathandling" name="_floatFormatHandling" type="FloatFormatHandling" access="private" signature="private FloatFormatHandling _floatFormatHandling">
+        <template #name><h3>_floatFormatHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_formatting" name="_formatting" type="Formatting" access="private" signature="private Formatting _formatting">
+        <template #name><h3>_formatting</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
+        <template #name><h3>_stack</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stringescapehandling" name="_stringEscapeHandling" type="StringEscapeHandling" access="private" signature="private StringEscapeHandling _stringEscapeHandling">
+        <template #name><h3>_stringEscapeHandling</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
+
+    <doc-member id="property-autocompleteonclose" name="AutoCompleteOnClose" type="bool" signature="public bool AutoCompleteOnClose { get; set; }">
+        <template #name><h3>AutoCompleteOnClose</h3></template>
+
+<p>Gets or sets a value indicating whether the JSON should be auto-completed when this writer is closed.</p>
+
+    </doc-member>
 
     <doc-member id="property-closeoutput" name="CloseOutput" type="bool" signature="public bool CloseOutput { get; set; }">
         <template #name><h3>CloseOutput</h3></template>
@@ -270,10 +277,65 @@
 
     </doc-member>
 
-    <doc-member id="property-autocompleteonclose" name="AutoCompleteOnClose" type="bool" signature="public bool AutoCompleteOnClose { get; set; }">
-        <template #name><h3>AutoCompleteOnClose</h3></template>
+    <doc-member id="property-containerpath" name="ContainerPath" type="string" access="internal" signature="internal string ContainerPath { internal get; }">
+        <template #name><h3>ContainerPath</h3></template>
+    </doc-member>
 
-<p>Gets or sets a value indicating whether the JSON should be auto-completed when this writer is closed.</p>
+    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
+        <template #name><h3>Culture</h3></template>
+
+<p>Gets or sets the culture used when writing JSON. Defaults to <see cref="!:CultureInfo.InvariantCulture"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public DateFormatHandling DateFormatHandling { get; set; }">
+        <template #name><h3>DateFormatHandling</h3></template>
+
+<p>Gets or sets how dates are written to JSON text.</p>
+
+    </doc-member>
+
+    <doc-member id="property-dateformatstring" name="DateFormatString" type="Nullable<string>?" signature="public Nullable<string>? DateFormatString { get; set; }">
+        <template #name><h3>DateFormatString</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text.</p>
+
+    </doc-member>
+
+    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
+        <template #name><h3>DateTimeZoneHandling</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled when writing JSON text.</p>
+
+    </doc-member>
+
+    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public FloatFormatHandling FloatFormatHandling { get; set; }">
+        <template #name><h3>FloatFormatHandling</h3></template>
+
+<p>Gets or sets how special floating point numbers, e.g. <see cref="!:Double.NaN"/>,
+<see cref="!:Double.PositiveInfinity"/> and <see cref="!:Double.NegativeInfinity"/>,
+are written to JSON text.</p>
+
+    </doc-member>
+
+    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public Formatting Formatting { get; set; }">
+        <template #name><h3>Formatting</h3></template>
+
+<p>Gets or sets a value indicating how JSON text output should be formatted.</p>
+
+    </doc-member>
+
+    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
+        <template #name><h3>Path</h3></template>
+
+<p>Gets the path of the writer.</p>
+
+    </doc-member>
+
+    <doc-member id="property-stringescapehandling" name="StringEscapeHandling" type="StringEscapeHandling" signature="public StringEscapeHandling StringEscapeHandling { get; set; }">
+        <template #name><h3>StringEscapeHandling</h3></template>
+
+<p>Gets or sets how strings are escaped when writing JSON text.</p>
 
     </doc-member>
 
@@ -288,68 +350,6 @@
         <template #name><h3>WriteState</h3></template>
 
 <p>Gets the state of the writer.</p>
-
-    </doc-member>
-
-    <doc-member id="property-containerpath" name="ContainerPath" type="string" access="internal" signature="internal string ContainerPath { internal get; }">
-        <template #name><h3>ContainerPath</h3></template>
-    </doc-member>
-
-    <doc-member id="property-path" name="Path" type="string" signature="public string Path { get; }">
-        <template #name><h3>Path</h3></template>
-
-<p>Gets the path of the writer.</p>
-
-    </doc-member>
-
-    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public Formatting Formatting { get; set; }">
-        <template #name><h3>Formatting</h3></template>
-
-<p>Gets or sets a value indicating how JSON text output should be formatted.</p>
-
-    </doc-member>
-
-    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public DateFormatHandling DateFormatHandling { get; set; }">
-        <template #name><h3>DateFormatHandling</h3></template>
-
-<p>Gets or sets how dates are written to JSON text.</p>
-
-    </doc-member>
-
-    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
-        <template #name><h3>DateTimeZoneHandling</h3></template>
-
-<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled when writing JSON text.</p>
-
-    </doc-member>
-
-    <doc-member id="property-stringescapehandling" name="StringEscapeHandling" type="StringEscapeHandling" signature="public StringEscapeHandling StringEscapeHandling { get; set; }">
-        <template #name><h3>StringEscapeHandling</h3></template>
-
-<p>Gets or sets how strings are escaped when writing JSON text.</p>
-
-    </doc-member>
-
-    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public FloatFormatHandling FloatFormatHandling { get; set; }">
-        <template #name><h3>FloatFormatHandling</h3></template>
-
-<p>Gets or sets how special floating point numbers, e.g. <see cref="!:Double.NaN"/>,
-<see cref="!:Double.PositiveInfinity"/> and <see cref="!:Double.NegativeInfinity"/>,
-are written to JSON text.</p>
-
-    </doc-member>
-
-    <doc-member id="property-dateformatstring" name="DateFormatString" type="Nullable<string>?" signature="public Nullable<string>? DateFormatString { get; set; }">
-        <template #name><h3>DateFormatString</h3></template>
-
-<p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text.</p>
-
-    </doc-member>
-
-    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public CultureInfo Culture { get; set; }">
-        <template #name><h3>Culture</h3></template>
-
-<p>Gets or sets the culture used when writing JSON. Defaults to <see cref="!:CultureInfo.InvariantCulture"/>.</p>
 
     </doc-member>
 </doc-member-group>

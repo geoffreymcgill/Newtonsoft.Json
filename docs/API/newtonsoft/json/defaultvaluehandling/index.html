@@ -211,14 +211,6 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-include" name="Include" type="DefaultValueHandling" signature="Include">
-        <template #name><h3>Include</h3></template>
-
-<p>Include members where the member value is the same as the member&#39;s default value when serializing objects.
-Included members are written to JSON. Has no effect when deserializing.</p>
-
-    </doc-member>
-
     <doc-member id="field-ignore" name="Ignore" type="DefaultValueHandling" signature="Ignore">
         <template #name><h3>Ignore</h3></template>
 
@@ -230,18 +222,26 @@ placing the <see cref="!:DefaultValueAttribute"/> on the property.</p>
 
     </doc-member>
 
-    <doc-member id="field-populate" name="Populate" type="DefaultValueHandling" signature="Populate">
-        <template #name><h3>Populate</h3></template>
-
-<p>Members with a default value but no JSON will be set to their default value when deserializing.</p>
-
-    </doc-member>
-
     <doc-member id="field-ignoreandpopulate" name="IgnoreAndPopulate" type="DefaultValueHandling" signature="IgnoreAndPopulate">
         <template #name><h3>IgnoreAndPopulate</h3></template>
 
 <p>Ignore members where the member value is the same as the member&#39;s default value when serializing objects
 and set members to their default value when deserializing.</p>
+
+    </doc-member>
+
+    <doc-member id="field-include" name="Include" type="DefaultValueHandling" signature="Include">
+        <template #name><h3>Include</h3></template>
+
+<p>Include members where the member value is the same as the member&#39;s default value when serializing objects.
+Included members are written to JSON. Has no effect when deserializing.</p>
+
+    </doc-member>
+
+    <doc-member id="field-populate" name="Populate" type="DefaultValueHandling" signature="Populate">
+        <template #name><h3>Populate</h3></template>
+
+<p>Members with a default value but no JSON will be set to their default value when deserializing.</p>
 
     </doc-member>
 </doc-member-group>

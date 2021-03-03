@@ -211,10 +211,10 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-replace" name="Replace" type="DuplicatePropertyNameHandling" signature="Replace">
-        <template #name><h3>Replace</h3></template>
+    <doc-member id="field-error" name="Error" type="DuplicatePropertyNameHandling" signature="Error">
+        <template #name><h3>Error</h3></template>
 
-<p>Replace the existing value when there is a duplicate property. The value of the last property in the JSON object will be used.</p>
+<p>Throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/> when a duplicate property is encountered.</p>
 
     </doc-member>
 
@@ -225,10 +225,10 @@
 
     </doc-member>
 
-    <doc-member id="field-error" name="Error" type="DuplicatePropertyNameHandling" signature="Error">
-        <template #name><h3>Error</h3></template>
+    <doc-member id="field-replace" name="Replace" type="DuplicatePropertyNameHandling" signature="Replace">
+        <template #name><h3>Replace</h3></template>
 
-<p>Throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/> when a duplicate property is encountered.</p>
+<p>Replace the existing value when there is a duplicate property. The value of the last property in the JSON object will be used.</p>
 
     </doc-member>
 </doc-member-group>

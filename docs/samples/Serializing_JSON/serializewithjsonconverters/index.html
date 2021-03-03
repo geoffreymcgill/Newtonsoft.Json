@@ -193,7 +193,9 @@ to customize how JSON is serialized.</p>
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">List&lt;StringComparison&gt; stringComparisons = new List&lt;StringComparison&gt;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">List&lt;StringComparison&gt; stringComparisons = new List&lt;StringComparison&gt;
 {
     StringComparison.CurrentCulture,
     StringComparison.Ordinal
@@ -215,6 +217,7 @@ List&lt;StringComparison&gt; newStringComparsions = JsonConvert.DeserializeObjec
 
 Console.WriteLine(string.Join(&quot;, &quot;, newStringComparsions.Select(c =&gt; c.ToString()).ToArray()));
 // CurrentCulture, Ordinal</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

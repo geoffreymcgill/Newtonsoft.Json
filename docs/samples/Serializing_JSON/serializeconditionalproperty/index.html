@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Employee
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Employee
 {
     public string Name { get; set; }
     public Employee Manager { get; set; }
@@ -203,7 +205,10 @@
         return (Manager != this);
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Employee joe = new Employee();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Employee joe = new Employee();
 joe.Name = &quot;Joe Employee&quot;;
 Employee mike = new Employee();
 mike.Name = &quot;Mike Manager&quot;;
@@ -228,6 +233,7 @@ Console.WriteLine(json);
 //     &quot;Name&quot;: &quot;Mike Manager&quot;
 //   }
 // ]</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

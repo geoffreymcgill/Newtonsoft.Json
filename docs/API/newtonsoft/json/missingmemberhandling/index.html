@@ -211,17 +211,17 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-ignore" name="Ignore" type="MissingMemberHandling" signature="Ignore">
-        <template #name><h3>Ignore</h3></template>
-
-<p>Ignore a missing member and do not attempt to deserialize it.</p>
-
-    </doc-member>
-
     <doc-member id="field-error" name="Error" type="MissingMemberHandling" signature="Error">
         <template #name><h3>Error</h3></template>
 
 <p>Throw a <see cref="T:Newtonsoft.Json.JsonSerializationException"/> when a missing member is encountered during deserialization.</p>
+
+    </doc-member>
+
+    <doc-member id="field-ignore" name="Ignore" type="MissingMemberHandling" signature="Ignore">
+        <template #name><h3>Ignore</h3></template>
+
+<p>Ignore a missing member and do not attempt to deserialize it.</p>
 
     </doc-member>
 </doc-member-group>

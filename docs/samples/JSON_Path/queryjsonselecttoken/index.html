@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Usage">JObject o = JObject.Parse(@&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
     'Lambton Quay',
     'Willis Street'
@@ -237,6 +239,7 @@ string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Na
 
 Console.WriteLine(productName);
 // Elbow Grease</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

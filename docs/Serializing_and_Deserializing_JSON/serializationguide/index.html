@@ -359,8 +359,8 @@
 </doc-anchor-target>
 <p>Serialization of values that are convertible by a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> (i.e. CanConvert returns true for its type) is completely overridden by the JsonConverter. The test to see whether a value can be converted by the JsonSerializer takes precedence over all other tests.</p>
 <p>JsonConverters can be defined and specified in a number of places: in an attribute on a member, in an attribute on a class, and added to the JsonSerializer&#39;s converters collection. The priority of which JsonConverter is used is the JsonConverter defined by attribute on a member, then the JsonConverter defined by an attribute on a class, and finally any converters passed to the JsonSerializer.</p>
-<doc-alert type="primary"><p>Because a JsonConverter creates a new value, a converter will not work with readonly properties because there is no way to assign the new value to the property. Either change the property to have a public setter or place a JsonPropertyAttribute or DataMemberAttribute on the property.</p>
-</doc-alert>
+<div><p>Because a JsonConverter creates a new value, a converter will not work with readonly properties because there is no way to assign the new value to the property. Either change the property to have a public setter or place a JsonPropertyAttribute or DataMemberAttribute on the property.</p>
+</div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>

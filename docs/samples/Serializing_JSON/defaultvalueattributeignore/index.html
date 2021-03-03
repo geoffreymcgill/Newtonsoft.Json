@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Customer
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Customer
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -203,7 +205,10 @@
         get { return FirstName + &quot; &quot; + LastName; }
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Customer customer = new Customer();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Customer customer = new Customer();
 
 string jsonIncludeDefaultValues = JsonConvert.SerializeObject(customer, Formatting.Indented);
 
@@ -221,6 +226,7 @@ string jsonIgnoreDefaultValues = JsonConvert.SerializeObject(customer, Formattin
 
 Console.WriteLine(jsonIgnoreDefaultValues);
 // {}</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

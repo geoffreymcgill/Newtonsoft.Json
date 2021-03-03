@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class DirectoryAccount
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class DirectoryAccount
 {
     // normal deserialization
     public string DisplayName { get; set; }
@@ -220,7 +222,10 @@
         _additionalData = new Dictionary&lt;string, JToken&gt;();
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">string json = @&quot;{
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'DisplayName': 'John Smith',
   'SAMAccountName': 'contoso\\johns'
 }&quot;;
@@ -235,6 +240,7 @@ Console.WriteLine(account.Domain);
 
 Console.WriteLine(account.UserName);
 // johns</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

@@ -208,16 +208,16 @@
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-typecodemap" name="TypeCodeMap" type="Dictionary<Type, PrimitiveTypeCode>" access="private" signature="private readonly static Dictionary<Type, PrimitiveTypeCode> TypeCodeMap">
-        <template #name><h3>TypeCodeMap</h3></template>
+    <doc-member id="field-castconverters" name="CastConverters" type="ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?> CastConverters">
+        <template #name><h3>CastConverters</h3></template>
     </doc-member>
 
     <doc-member id="field-primitivetypecodes" name="PrimitiveTypeCodes" type="TypeInformation[]" access="private" signature="private readonly static TypeInformation[] PrimitiveTypeCodes">
         <template #name><h3>PrimitiveTypeCodes</h3></template>
     </doc-member>
 
-    <doc-member id="field-castconverters" name="CastConverters" type="ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?>" access="private" signature="private readonly static ThreadSafeStore<StructMultiKey<Type, Type>, Nullable<Func<Nullable<object>?, Nullable<object>?>>?> CastConverters">
-        <template #name><h3>CastConverters</h3></template>
+    <doc-member id="field-typecodemap" name="TypeCodeMap" type="Dictionary<Type, PrimitiveTypeCode>" access="private" signature="private readonly static Dictionary<Type, PrimitiveTypeCode> TypeCodeMap">
+        <template #name><h3>TypeCodeMap</h3></template>
     </doc-member>
 </doc-member-group>
 

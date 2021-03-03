@@ -212,88 +212,56 @@ The <see cref="T:Newtonsoft.Json.JsonSerializer"/> enables you to control how ob
 <doc-member-group id="fields">
     <template #title>Fields</template>
 
-    <doc-member id="field-_typenamehandling" name="_typeNameHandling" type="TypeNameHandling" access="internal" signature="internal TypeNameHandling _typeNameHandling">
-        <template #name><h3>_typeNameHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_typenameassemblyformathandling" name="_typeNameAssemblyFormatHandling" type="TypeNameAssemblyFormatHandling" access="internal" signature="internal TypeNameAssemblyFormatHandling _typeNameAssemblyFormatHandling">
-        <template #name><h3>_typeNameAssemblyFormatHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_preservereferenceshandling" name="_preserveReferencesHandling" type="PreserveReferencesHandling" access="internal" signature="internal PreserveReferencesHandling _preserveReferencesHandling">
-        <template #name><h3>_preserveReferencesHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_referenceloophandling" name="_referenceLoopHandling" type="ReferenceLoopHandling" access="internal" signature="internal ReferenceLoopHandling _referenceLoopHandling">
-        <template #name><h3>_referenceLoopHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_missingmemberhandling" name="_missingMemberHandling" type="MissingMemberHandling" access="internal" signature="internal MissingMemberHandling _missingMemberHandling">
-        <template #name><h3>_missingMemberHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_objectcreationhandling" name="_objectCreationHandling" type="ObjectCreationHandling" access="internal" signature="internal ObjectCreationHandling _objectCreationHandling">
-        <template #name><h3>_objectCreationHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_nullvaluehandling" name="_nullValueHandling" type="NullValueHandling" access="internal" signature="internal NullValueHandling _nullValueHandling">
-        <template #name><h3>_nullValueHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_defaultvaluehandling" name="_defaultValueHandling" type="DefaultValueHandling" access="internal" signature="internal DefaultValueHandling _defaultValueHandling">
-        <template #name><h3>_defaultValueHandling</h3></template>
+    <doc-member id="field-_checkadditionalcontent" name="_checkAdditionalContent" type="Nullable<bool>?" access="private" signature="private Nullable<bool>? _checkAdditionalContent">
+        <template #name><h3>_checkAdditionalContent</h3></template>
     </doc-member>
 
     <doc-member id="field-_constructorhandling" name="_constructorHandling" type="ConstructorHandling" access="internal" signature="internal ConstructorHandling _constructorHandling">
         <template #name><h3>_constructorHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_metadatapropertyhandling" name="_metadataPropertyHandling" type="MetadataPropertyHandling" access="internal" signature="internal MetadataPropertyHandling _metadataPropertyHandling">
-        <template #name><h3>_metadataPropertyHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_converters" name="_converters" type="JsonConverterCollection?" access="internal" signature="internal JsonConverterCollection? _converters">
-        <template #name><h3>_converters</h3></template>
+    <doc-member id="field-_context" name="_context" type="StreamingContext" access="internal" signature="internal StreamingContext _context">
+        <template #name><h3>_context</h3></template>
     </doc-member>
 
     <doc-member id="field-_contractresolver" name="_contractResolver" type="IContractResolver" access="internal" signature="internal IContractResolver _contractResolver">
         <template #name><h3>_contractResolver</h3></template>
     </doc-member>
 
-    <doc-member id="field-_tracewriter" name="_traceWriter" type="ITraceWriter?" access="internal" signature="internal ITraceWriter? _traceWriter">
-        <template #name><h3>_traceWriter</h3></template>
+    <doc-member id="field-_converters" name="_converters" type="JsonConverterCollection?" access="internal" signature="internal JsonConverterCollection? _converters">
+        <template #name><h3>_converters</h3></template>
     </doc-member>
 
-    <doc-member id="field-_equalitycomparer" name="_equalityComparer" type="Nullable<IEqualityComparer>?" access="internal" signature="internal Nullable<IEqualityComparer>? _equalityComparer">
-        <template #name><h3>_equalityComparer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_serializationbinder" name="_serializationBinder" type="ISerializationBinder" access="internal" signature="internal ISerializationBinder _serializationBinder">
-        <template #name><h3>_serializationBinder</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_context" name="_context" type="StreamingContext" access="internal" signature="internal StreamingContext _context">
-        <template #name><h3>_context</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_referenceresolver" name="_referenceResolver" type="IReferenceResolver?" access="private" signature="private IReferenceResolver? _referenceResolver">
-        <template #name><h3>_referenceResolver</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_formatting" name="_formatting" type="Nullable<Formatting>?" access="private" signature="private Nullable<Formatting>? _formatting">
-        <template #name><h3>_formatting</h3></template>
+    <doc-member id="field-_culture" name="_culture" type="CultureInfo" access="private" signature="private CultureInfo _culture">
+        <template #name><h3>_culture</h3></template>
     </doc-member>
 
     <doc-member id="field-_dateformathandling" name="_dateFormatHandling" type="Nullable<DateFormatHandling>?" access="private" signature="private Nullable<DateFormatHandling>? _dateFormatHandling">
         <template #name><h3>_dateFormatHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="Nullable<DateTimeZoneHandling>?" access="private" signature="private Nullable<DateTimeZoneHandling>? _dateTimeZoneHandling">
-        <template #name><h3>_dateTimeZoneHandling</h3></template>
+    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
+        <template #name><h3>_dateFormatString</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_dateformatstringset" name="_dateFormatStringSet" type="bool" access="private" signature="private bool _dateFormatStringSet">
+        <template #name><h3>_dateFormatStringSet</h3></template>
     </doc-member>
 
     <doc-member id="field-_dateparsehandling" name="_dateParseHandling" type="Nullable<DateParseHandling>?" access="private" signature="private Nullable<DateParseHandling>? _dateParseHandling">
         <template #name><h3>_dateParseHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="Nullable<DateTimeZoneHandling>?" access="private" signature="private Nullable<DateTimeZoneHandling>? _dateTimeZoneHandling">
+        <template #name><h3>_dateTimeZoneHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_defaultvaluehandling" name="_defaultValueHandling" type="DefaultValueHandling" access="internal" signature="internal DefaultValueHandling _defaultValueHandling">
+        <template #name><h3>_defaultValueHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_equalitycomparer" name="_equalityComparer" type="Nullable<IEqualityComparer>?" access="internal" signature="internal Nullable<IEqualityComparer>? _equalityComparer">
+        <template #name><h3>_equalityComparer</h3></template>
     </doc-member>
 
     <doc-member id="field-_floatformathandling" name="_floatFormatHandling" type="Nullable<FloatFormatHandling>?" access="private" signature="private Nullable<FloatFormatHandling>? _floatFormatHandling">
@@ -304,12 +272,8 @@ The <see cref="T:Newtonsoft.Json.JsonSerializer"/> enables you to control how ob
         <template #name><h3>_floatParseHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_stringescapehandling" name="_stringEscapeHandling" type="Nullable<StringEscapeHandling>?" access="private" signature="private Nullable<StringEscapeHandling>? _stringEscapeHandling">
-        <template #name><h3>_stringEscapeHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_culture" name="_culture" type="CultureInfo" access="private" signature="private CultureInfo _culture">
-        <template #name><h3>_culture</h3></template>
+    <doc-member id="field-_formatting" name="_formatting" type="Nullable<Formatting>?" access="private" signature="private Nullable<Formatting>? _formatting">
+        <template #name><h3>_formatting</h3></template>
     </doc-member>
 
     <doc-member id="field-_maxdepth" name="_maxDepth" type="Nullable<int>?" access="private" signature="private Nullable<int>? _maxDepth">
@@ -320,28 +284,57 @@ The <see cref="T:Newtonsoft.Json.JsonSerializer"/> enables you to control how ob
         <template #name><h3>_maxDepthSet</h3></template>
     </doc-member>
 
-    <doc-member id="field-_checkadditionalcontent" name="_checkAdditionalContent" type="Nullable<bool>?" access="private" signature="private Nullable<bool>? _checkAdditionalContent">
-        <template #name><h3>_checkAdditionalContent</h3></template>
+    <doc-member id="field-_metadatapropertyhandling" name="_metadataPropertyHandling" type="MetadataPropertyHandling" access="internal" signature="internal MetadataPropertyHandling _metadataPropertyHandling">
+        <template #name><h3>_metadataPropertyHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
-        <template #name><h3>_dateFormatString</h3></template>
+    <doc-member id="field-_missingmemberhandling" name="_missingMemberHandling" type="MissingMemberHandling" access="internal" signature="internal MissingMemberHandling _missingMemberHandling">
+        <template #name><h3>_missingMemberHandling</h3></template>
     </doc-member>
 
-    <doc-member id="field-_dateformatstringset" name="_dateFormatStringSet" type="bool" access="private" signature="private bool _dateFormatStringSet">
-        <template #name><h3>_dateFormatStringSet</h3></template>
+    <doc-member id="field-_nullvaluehandling" name="_nullValueHandling" type="NullValueHandling" access="internal" signature="internal NullValueHandling _nullValueHandling">
+        <template #name><h3>_nullValueHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_objectcreationhandling" name="_objectCreationHandling" type="ObjectCreationHandling" access="internal" signature="internal ObjectCreationHandling _objectCreationHandling">
+        <template #name><h3>_objectCreationHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_preservereferenceshandling" name="_preserveReferencesHandling" type="PreserveReferencesHandling" access="internal" signature="internal PreserveReferencesHandling _preserveReferencesHandling">
+        <template #name><h3>_preserveReferencesHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_referenceloophandling" name="_referenceLoopHandling" type="ReferenceLoopHandling" access="internal" signature="internal ReferenceLoopHandling _referenceLoopHandling">
+        <template #name><h3>_referenceLoopHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_referenceresolver" name="_referenceResolver" type="IReferenceResolver?" access="private" signature="private IReferenceResolver? _referenceResolver">
+        <template #name><h3>_referenceResolver</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_serializationbinder" name="_serializationBinder" type="ISerializationBinder" access="internal" signature="internal ISerializationBinder _serializationBinder">
+        <template #name><h3>_serializationBinder</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_stringescapehandling" name="_stringEscapeHandling" type="Nullable<StringEscapeHandling>?" access="private" signature="private Nullable<StringEscapeHandling>? _stringEscapeHandling">
+        <template #name><h3>_stringEscapeHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_tracewriter" name="_traceWriter" type="ITraceWriter?" access="internal" signature="internal ITraceWriter? _traceWriter">
+        <template #name><h3>_traceWriter</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_typenameassemblyformathandling" name="_typeNameAssemblyFormatHandling" type="TypeNameAssemblyFormatHandling" access="internal" signature="internal TypeNameAssemblyFormatHandling _typeNameAssemblyFormatHandling">
+        <template #name><h3>_typeNameAssemblyFormatHandling</h3></template>
+    </doc-member>
+
+    <doc-member id="field-_typenamehandling" name="_typeNameHandling" type="TypeNameHandling" access="internal" signature="internal TypeNameHandling _typeNameHandling">
+        <template #name><h3>_typeNameHandling</h3></template>
     </doc-member>
 </doc-member-group>
 
 <doc-member-group id="properties">
     <template #title>Properties</template>
-
-    <doc-member id="property-referenceresolver" name="ReferenceResolver" type="IReferenceResolver?" signature="public virtual IReferenceResolver? ReferenceResolver { get; set; }">
-        <template #name><h3>ReferenceResolver</h3></template>
-
-<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.IReferenceResolver"/> used by the serializer when resolving references.</p>
-
-    </doc-member>
 
     <doc-member id="property-binder" name="Binder" type="SerializationBinder" signature="public virtual SerializationBinder Binder { get; set; }">
         <template #name><h3>Binder</h3></template>
@@ -350,17 +343,90 @@ The <see cref="T:Newtonsoft.Json.JsonSerializer"/> enables you to control how ob
 
     </doc-member>
 
-    <doc-member id="property-serializationbinder" name="SerializationBinder" type="ISerializationBinder" signature="public virtual ISerializationBinder SerializationBinder { get; set; }">
-        <template #name><h3>SerializationBinder</h3></template>
+    <doc-member id="property-checkadditionalcontent" name="CheckAdditionalContent" type="bool" signature="public virtual bool CheckAdditionalContent { get; set; }">
+        <template #name><h3>CheckAdditionalContent</h3></template>
 
-<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.ISerializationBinder"/> used by the serializer when resolving type names.</p>
+<p>Gets a value indicating whether there will be a check for additional JSON content after deserializing an object.
+The default value is <c>false</c>.</p>
 
     </doc-member>
 
-    <doc-member id="property-tracewriter" name="TraceWriter" type="ITraceWriter?" signature="public virtual ITraceWriter? TraceWriter { get; set; }">
-        <template #name><h3>TraceWriter</h3></template>
+    <doc-member id="property-constructorhandling" name="ConstructorHandling" type="ConstructorHandling" signature="public virtual ConstructorHandling ConstructorHandling { get; set; }">
+        <template #name><h3>ConstructorHandling</h3></template>
 
-<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.ITraceWriter"/> used by the serializer when writing trace messages.</p>
+<p>Gets or sets how constructors are used during deserialization.
+The default value is <see cref="F:Newtonsoft.Json.ConstructorHandling.Default" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-context" name="Context" type="StreamingContext" signature="public virtual StreamingContext Context { get; set; }">
+        <template #name><h3>Context</h3></template>
+
+<p>Gets or sets the <see cref="!:StreamingContext"/> used by the serializer when invoking serialization callback methods.</p>
+
+    </doc-member>
+
+    <doc-member id="property-contractresolver" name="ContractResolver" type="IContractResolver" signature="public virtual IContractResolver ContractResolver { get; set; }">
+        <template #name><h3>ContractResolver</h3></template>
+
+<p>Gets or sets the contract resolver used by the serializer when
+serializing .NET objects to JSON and vice versa.</p>
+
+    </doc-member>
+
+    <doc-member id="property-converters" name="Converters" type="JsonConverterCollection" signature="public virtual JsonConverterCollection Converters { get; }">
+        <template #name><h3>Converters</h3></template>
+
+<p>Gets a collection <see cref="T:Newtonsoft.Json.JsonConverter"/> that will be used during serialization.</p>
+
+    </doc-member>
+
+    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public virtual CultureInfo Culture { get; set; }">
+        <template #name><h3>Culture</h3></template>
+
+<p>Gets or sets the culture used when reading JSON.
+The default value is <see cref="!:CultureInfo.InvariantCulture"/>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public virtual DateFormatHandling DateFormatHandling { get; set; }">
+        <template #name><h3>DateFormatHandling</h3></template>
+
+<p>Gets or sets how dates are written to JSON text.
+The default value is <see cref="F:Newtonsoft.Json.DateFormatHandling.IsoDateFormat" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-dateformatstring" name="DateFormatString" type="string" signature="public virtual string DateFormatString { get; set; }">
+        <template #name><h3>DateFormatString</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text,
+and the expected date format when reading JSON text.
+The default value is <c>&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss.FFFFFFFK&quot;</c>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public virtual DateParseHandling DateParseHandling { get; set; }">
+        <template #name><h3>DateParseHandling</h3></template>
+
+<p>Gets or sets how date formatted strings, e.g. <c>&quot;/Date(1198908717056)/&quot;</c> and <c>&quot;2012-03-21T05:40Z&quot;</c>, are parsed when reading JSON.
+The default value is <see cref="F:Newtonsoft.Json.DateParseHandling.DateTime" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public virtual DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
+        <template #name><h3>DateTimeZoneHandling</h3></template>
+
+<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled during serialization and deserialization.
+The default value is <see cref="F:Newtonsoft.Json.DateTimeZoneHandling.RoundtripKind" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling" signature="public virtual DefaultValueHandling DefaultValueHandling { get; set; }">
+        <template #name><h3>DefaultValueHandling</h3></template>
+
+<p>Gets or sets how default values are handled during serialization and deserialization.
+The default value is <see cref="F:Newtonsoft.Json.DefaultValueHandling.Include" />.</p>
 
     </doc-member>
 
@@ -371,43 +437,46 @@ The <see cref="T:Newtonsoft.Json.JsonSerializer"/> enables you to control how ob
 
     </doc-member>
 
-    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling" signature="public virtual TypeNameHandling TypeNameHandling { get; set; }">
-        <template #name><h3>TypeNameHandling</h3></template>
+    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public virtual FloatFormatHandling FloatFormatHandling { get; set; }">
+        <template #name><h3>FloatFormatHandling</h3></template>
 
-<p>Gets or sets how type name writing and reading is handled by the serializer.
-The default value is <see cref="F:Newtonsoft.Json.TypeNameHandling.None" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-typenameassemblyformat" name="TypeNameAssemblyFormat" type="FormatterAssemblyStyle" signature="public virtual FormatterAssemblyStyle TypeNameAssemblyFormat { get; set; }">
-        <template #name><h3>TypeNameAssemblyFormat</h3></template>
-
-<p>Gets or sets how a type name assembly is written and resolved by the serializer.
-The default value is <see cref="!:FormatterAssemblyStyle.Simple" />.</p>
+<p>Gets or sets how special floating point numbers, e.g. <see cref="!:Double.NaN"/>,
+<see cref="!:Double.PositiveInfinity"/> and <see cref="!:Double.NegativeInfinity"/>,
+are written as JSON text.
+The default value is <see cref="F:Newtonsoft.Json.FloatFormatHandling.String" />.</p>
 
     </doc-member>
 
-    <doc-member id="property-typenameassemblyformathandling" name="TypeNameAssemblyFormatHandling" type="TypeNameAssemblyFormatHandling" signature="public virtual TypeNameAssemblyFormatHandling TypeNameAssemblyFormatHandling { get; set; }">
-        <template #name><h3>TypeNameAssemblyFormatHandling</h3></template>
+    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public virtual FloatParseHandling FloatParseHandling { get; set; }">
+        <template #name><h3>FloatParseHandling</h3></template>
 
-<p>Gets or sets how a type name assembly is written and resolved by the serializer.
-The default value is <see cref="F:Newtonsoft.Json.TypeNameAssemblyFormatHandling.Simple" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-preservereferenceshandling" name="PreserveReferencesHandling" type="PreserveReferencesHandling" signature="public virtual PreserveReferencesHandling PreserveReferencesHandling { get; set; }">
-        <template #name><h3>PreserveReferencesHandling</h3></template>
-
-<p>Gets or sets how object references are preserved by the serializer.
-The default value is <see cref="F:Newtonsoft.Json.PreserveReferencesHandling.None" />.</p>
+<p>Gets or sets how floating point numbers, e.g. 1.0 and 9.9, are parsed when reading JSON text.
+The default value is <see cref="F:Newtonsoft.Json.FloatParseHandling.Double" />.</p>
 
     </doc-member>
 
-    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling" signature="public virtual ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
-        <template #name><h3>ReferenceLoopHandling</h3></template>
+    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public virtual Formatting Formatting { get; set; }">
+        <template #name><h3>Formatting</h3></template>
 
-<p>Gets or sets how reference loops (e.g. a class referencing itself) is handled.
-The default value is <see cref="F:Newtonsoft.Json.ReferenceLoopHandling.Error" />.</p>
+<p>Indicates how JSON text output is formatted.
+The default value is <see cref="F:Newtonsoft.Json.Formatting.None" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public virtual Nullable<int>? MaxDepth { get; set; }">
+        <template #name><h3>MaxDepth</h3></template>
+
+<p>Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
+A null value means there is no maximum.
+The default value is <c>128</c>.</p>
+
+    </doc-member>
+
+    <doc-member id="property-metadatapropertyhandling" name="MetadataPropertyHandling" type="MetadataPropertyHandling" signature="public virtual MetadataPropertyHandling MetadataPropertyHandling { get; set; }">
+        <template #name><h3>MetadataPropertyHandling</h3></template>
+
+<p>Gets or sets how metadata properties are used during deserialization.
+The default value is <see cref="F:Newtonsoft.Json.MetadataPropertyHandling.Default" />.</p>
 
     </doc-member>
 
@@ -427,14 +496,6 @@ The default value is <see cref="F:Newtonsoft.Json.NullValueHandling.Include" />.
 
     </doc-member>
 
-    <doc-member id="property-defaultvaluehandling" name="DefaultValueHandling" type="DefaultValueHandling" signature="public virtual DefaultValueHandling DefaultValueHandling { get; set; }">
-        <template #name><h3>DefaultValueHandling</h3></template>
-
-<p>Gets or sets how default values are handled during serialization and deserialization.
-The default value is <see cref="F:Newtonsoft.Json.DefaultValueHandling.Include" />.</p>
-
-    </doc-member>
-
     <doc-member id="property-objectcreationhandling" name="ObjectCreationHandling" type="ObjectCreationHandling" signature="public virtual ObjectCreationHandling ObjectCreationHandling { get; set; }">
         <template #name><h3>ObjectCreationHandling</h3></template>
 
@@ -443,91 +504,33 @@ The default value is <see cref="F:Newtonsoft.Json.ObjectCreationHandling.Auto" /
 
     </doc-member>
 
-    <doc-member id="property-constructorhandling" name="ConstructorHandling" type="ConstructorHandling" signature="public virtual ConstructorHandling ConstructorHandling { get; set; }">
-        <template #name><h3>ConstructorHandling</h3></template>
+    <doc-member id="property-preservereferenceshandling" name="PreserveReferencesHandling" type="PreserveReferencesHandling" signature="public virtual PreserveReferencesHandling PreserveReferencesHandling { get; set; }">
+        <template #name><h3>PreserveReferencesHandling</h3></template>
 
-<p>Gets or sets how constructors are used during deserialization.
-The default value is <see cref="F:Newtonsoft.Json.ConstructorHandling.Default" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-metadatapropertyhandling" name="MetadataPropertyHandling" type="MetadataPropertyHandling" signature="public virtual MetadataPropertyHandling MetadataPropertyHandling { get; set; }">
-        <template #name><h3>MetadataPropertyHandling</h3></template>
-
-<p>Gets or sets how metadata properties are used during deserialization.
-The default value is <see cref="F:Newtonsoft.Json.MetadataPropertyHandling.Default" />.</p>
+<p>Gets or sets how object references are preserved by the serializer.
+The default value is <see cref="F:Newtonsoft.Json.PreserveReferencesHandling.None" />.</p>
 
     </doc-member>
 
-    <doc-member id="property-converters" name="Converters" type="JsonConverterCollection" signature="public virtual JsonConverterCollection Converters { get; }">
-        <template #name><h3>Converters</h3></template>
+    <doc-member id="property-referenceloophandling" name="ReferenceLoopHandling" type="ReferenceLoopHandling" signature="public virtual ReferenceLoopHandling ReferenceLoopHandling { get; set; }">
+        <template #name><h3>ReferenceLoopHandling</h3></template>
 
-<p>Gets a collection <see cref="T:Newtonsoft.Json.JsonConverter"/> that will be used during serialization.</p>
-
-    </doc-member>
-
-    <doc-member id="property-contractresolver" name="ContractResolver" type="IContractResolver" signature="public virtual IContractResolver ContractResolver { get; set; }">
-        <template #name><h3>ContractResolver</h3></template>
-
-<p>Gets or sets the contract resolver used by the serializer when
-serializing .NET objects to JSON and vice versa.</p>
+<p>Gets or sets how reference loops (e.g. a class referencing itself) is handled.
+The default value is <see cref="F:Newtonsoft.Json.ReferenceLoopHandling.Error" />.</p>
 
     </doc-member>
 
-    <doc-member id="property-context" name="Context" type="StreamingContext" signature="public virtual StreamingContext Context { get; set; }">
-        <template #name><h3>Context</h3></template>
+    <doc-member id="property-referenceresolver" name="ReferenceResolver" type="IReferenceResolver?" signature="public virtual IReferenceResolver? ReferenceResolver { get; set; }">
+        <template #name><h3>ReferenceResolver</h3></template>
 
-<p>Gets or sets the <see cref="!:StreamingContext"/> used by the serializer when invoking serialization callback methods.</p>
-
-    </doc-member>
-
-    <doc-member id="property-formatting" name="Formatting" type="Formatting" signature="public virtual Formatting Formatting { get; set; }">
-        <template #name><h3>Formatting</h3></template>
-
-<p>Indicates how JSON text output is formatted.
-The default value is <see cref="F:Newtonsoft.Json.Formatting.None" />.</p>
+<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.IReferenceResolver"/> used by the serializer when resolving references.</p>
 
     </doc-member>
 
-    <doc-member id="property-dateformathandling" name="DateFormatHandling" type="DateFormatHandling" signature="public virtual DateFormatHandling DateFormatHandling { get; set; }">
-        <template #name><h3>DateFormatHandling</h3></template>
+    <doc-member id="property-serializationbinder" name="SerializationBinder" type="ISerializationBinder" signature="public virtual ISerializationBinder SerializationBinder { get; set; }">
+        <template #name><h3>SerializationBinder</h3></template>
 
-<p>Gets or sets how dates are written to JSON text.
-The default value is <see cref="F:Newtonsoft.Json.DateFormatHandling.IsoDateFormat" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-datetimezonehandling" name="DateTimeZoneHandling" type="DateTimeZoneHandling" signature="public virtual DateTimeZoneHandling DateTimeZoneHandling { get; set; }">
-        <template #name><h3>DateTimeZoneHandling</h3></template>
-
-<p>Gets or sets how <see cref="!:DateTime"/> time zones are handled during serialization and deserialization.
-The default value is <see cref="F:Newtonsoft.Json.DateTimeZoneHandling.RoundtripKind" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-dateparsehandling" name="DateParseHandling" type="DateParseHandling" signature="public virtual DateParseHandling DateParseHandling { get; set; }">
-        <template #name><h3>DateParseHandling</h3></template>
-
-<p>Gets or sets how date formatted strings, e.g. <c>&quot;/Date(1198908717056)/&quot;</c> and <c>&quot;2012-03-21T05:40Z&quot;</c>, are parsed when reading JSON.
-The default value is <see cref="F:Newtonsoft.Json.DateParseHandling.DateTime" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-floatparsehandling" name="FloatParseHandling" type="FloatParseHandling" signature="public virtual FloatParseHandling FloatParseHandling { get; set; }">
-        <template #name><h3>FloatParseHandling</h3></template>
-
-<p>Gets or sets how floating point numbers, e.g. 1.0 and 9.9, are parsed when reading JSON text.
-The default value is <see cref="F:Newtonsoft.Json.FloatParseHandling.Double" />.</p>
-
-    </doc-member>
-
-    <doc-member id="property-floatformathandling" name="FloatFormatHandling" type="FloatFormatHandling" signature="public virtual FloatFormatHandling FloatFormatHandling { get; set; }">
-        <template #name><h3>FloatFormatHandling</h3></template>
-
-<p>Gets or sets how special floating point numbers, e.g. <see cref="!:Double.NaN"/>,
-<see cref="!:Double.PositiveInfinity"/> and <see cref="!:Double.NegativeInfinity"/>,
-are written as JSON text.
-The default value is <see cref="F:Newtonsoft.Json.FloatFormatHandling.String" />.</p>
+<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.ISerializationBinder"/> used by the serializer when resolving type names.</p>
 
     </doc-member>
 
@@ -539,37 +542,34 @@ The default value is <see cref="F:Newtonsoft.Json.StringEscapeHandling.Default" 
 
     </doc-member>
 
-    <doc-member id="property-dateformatstring" name="DateFormatString" type="string" signature="public virtual string DateFormatString { get; set; }">
-        <template #name><h3>DateFormatString</h3></template>
+    <doc-member id="property-tracewriter" name="TraceWriter" type="ITraceWriter?" signature="public virtual ITraceWriter? TraceWriter { get; set; }">
+        <template #name><h3>TraceWriter</h3></template>
 
-<p>Gets or sets how <see cref="!:DateTime"/> and <see cref="!:DateTimeOffset"/> values are formatted when writing JSON text,
-and the expected date format when reading JSON text.
-The default value is <c>&quot;yyyy&#39;-&#39;MM&#39;-&#39;dd&#39;T&#39;HH&#39;:&#39;mm&#39;:&#39;ss.FFFFFFFK&quot;</c>.</p>
+<p>Gets or sets the <see cref="T:Newtonsoft.Json.Serialization.ITraceWriter"/> used by the serializer when writing trace messages.</p>
 
     </doc-member>
 
-    <doc-member id="property-culture" name="Culture" type="CultureInfo" signature="public virtual CultureInfo Culture { get; set; }">
-        <template #name><h3>Culture</h3></template>
+    <doc-member id="property-typenameassemblyformat" name="TypeNameAssemblyFormat" type="FormatterAssemblyStyle" signature="public virtual FormatterAssemblyStyle TypeNameAssemblyFormat { get; set; }">
+        <template #name><h3>TypeNameAssemblyFormat</h3></template>
 
-<p>Gets or sets the culture used when reading JSON.
-The default value is <see cref="!:CultureInfo.InvariantCulture"/>.</p>
-
-    </doc-member>
-
-    <doc-member id="property-maxdepth" name="MaxDepth" type="Nullable<int>?" signature="public virtual Nullable<int>? MaxDepth { get; set; }">
-        <template #name><h3>MaxDepth</h3></template>
-
-<p>Gets or sets the maximum depth allowed when reading JSON. Reading past this depth will throw a <see cref="T:Newtonsoft.Json.JsonReaderException"/>.
-A null value means there is no maximum.
-The default value is <c>128</c>.</p>
+<p>Gets or sets how a type name assembly is written and resolved by the serializer.
+The default value is <see cref="!:FormatterAssemblyStyle.Simple" />.</p>
 
     </doc-member>
 
-    <doc-member id="property-checkadditionalcontent" name="CheckAdditionalContent" type="bool" signature="public virtual bool CheckAdditionalContent { get; set; }">
-        <template #name><h3>CheckAdditionalContent</h3></template>
+    <doc-member id="property-typenameassemblyformathandling" name="TypeNameAssemblyFormatHandling" type="TypeNameAssemblyFormatHandling" signature="public virtual TypeNameAssemblyFormatHandling TypeNameAssemblyFormatHandling { get; set; }">
+        <template #name><h3>TypeNameAssemblyFormatHandling</h3></template>
 
-<p>Gets a value indicating whether there will be a check for additional JSON content after deserializing an object.
-The default value is <c>false</c>.</p>
+<p>Gets or sets how a type name assembly is written and resolved by the serializer.
+The default value is <see cref="F:Newtonsoft.Json.TypeNameAssemblyFormatHandling.Simple" />.</p>
+
+    </doc-member>
+
+    <doc-member id="property-typenamehandling" name="TypeNameHandling" type="TypeNameHandling" signature="public virtual TypeNameHandling TypeNameHandling { get; set; }">
+        <template #name><h3>TypeNameHandling</h3></template>
+
+<p>Gets or sets how type name writing and reading is handled by the serializer.
+The default value is <see cref="F:Newtonsoft.Json.TypeNameHandling.None" />.</p>
 
     </doc-member>
 </doc-member-group>

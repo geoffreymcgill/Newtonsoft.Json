@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class Employee
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class Employee
 {
     private List&lt;string&gt; _roles;
 
@@ -221,7 +223,10 @@
         errorContext.Handled = true;
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">Employee person = new Employee
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">Employee person = new Employee
 {
     Name = &quot;George Michael Bluth&quot;,
     Age = 16,
@@ -237,6 +242,7 @@ Console.WriteLine(json);
 //   &quot;Age&quot;: 16,
 //   &quot;Title&quot;: &quot;Mister Manager&quot;
 // }</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

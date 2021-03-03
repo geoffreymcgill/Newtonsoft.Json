@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class VersionConverter : JsonConverter&lt;Version&gt;
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class VersionConverter : JsonConverter&lt;Version&gt;
 {
     public override void WriteJson(JsonWriter writer, Version value, JsonSerializer serializer)
     {
@@ -212,7 +214,10 @@ public class NuGetPackage
     public string PackageId { get; set; }
     public Version Version { get; set; }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">NuGetPackage p1 = new NuGetPackage
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">NuGetPackage p1 = new NuGetPackage
 {
     PackageId = &quot;Newtonsoft.Json&quot;,
     Version = new Version(10, 0, 4)
@@ -230,6 +235,7 @@ NuGetPackage p2 = JsonConvert.DeserializeObject&lt;NuGetPackage&gt;(json, new Ve
 
 Console.WriteLine(p2.Version.ToString());
 // 10.0.4</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

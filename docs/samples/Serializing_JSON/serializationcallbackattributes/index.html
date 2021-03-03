@@ -192,7 +192,9 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<pre v-highlight:csharp><code v-pre title="Types">public class SerializationEventTestObject
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Types</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">public class SerializationEventTestObject
 {
     // 2222
     // This member is serialized and deserialized with no change.
@@ -242,7 +244,10 @@
         Member4 = &quot;This value was set after deserialization.&quot;;
     }
 }</code></pre>
-<pre v-highlight:csharp><code v-pre title="Usage">SerializationEventTestObject obj = new SerializationEventTestObject();
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Usage</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">SerializationEventTestObject obj = new SerializationEventTestObject();
 
 Console.WriteLine(obj.Member1);
 // 11
@@ -279,6 +284,7 @@ Console.WriteLine(obj.Member3);
 // This value was set during deserialization
 Console.WriteLine(obj.Member4);
 // This value was set after deserialization.</code></pre>
+</doc-codeblock></div>
 
     
                 <!-- Required only on API pages -->

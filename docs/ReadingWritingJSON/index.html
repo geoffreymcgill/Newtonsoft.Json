@@ -192,10 +192,12 @@
         <span>JsonTextReader and JsonTextWriter</span>
     </h2>
 </doc-anchor-target>
-<doc-alert type="primary"><p>JsonReader and JsonWriter are low-level classes and are primarily for internal use by Json.NET. To quickly work with JSON, either the serializer - <a href="../Serializing_and_Deserializing_JSON">Serializing and Deserializing JSON</a> - or using <a href="../LINQ_to_JSON">LINQ to JSON</a> is recommended.</p>
-</doc-alert>
+<div><p>JsonReader and JsonWriter are low-level classes and are primarily for internal use by Json.NET. To quickly work with JSON, either the serializer - <a href="../Serializing_and_Deserializing_JSON">Serializing and Deserializing JSON</a> - or using <a href="../LINQ_to_JSON">LINQ to JSON</a> is recommended.</p>
+</div>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a> are used to read and write JSON text. The JsonTextWriter has a number of settings on it to control how JSON is formatted when it is written. These options include formatting, indentation character, indent count, and quote character.</p>
-<pre v-highlight:csharp><code v-pre title="Writing JSON with JsonTextWriter">StringBuilder sb = new StringBuilder();
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Writing JSON with JsonTextWriter</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">StringBuilder sb = new StringBuilder();
 StringWriter sw = new StringWriter(sb);
 
 using (JsonWriter writer = new JsonTextWriter(sw))
@@ -227,8 +229,11 @@ using (JsonWriter writer = new JsonTextWriter(sw))
 //     &quot;200 gigabyte hard drive&quot;
 //   ]
 // }</code></pre>
+</doc-codeblock></div>
 <p>JsonTextReader has settings on it for reading different date formats, time zones, and the cultures when reading text values.</p>
-<pre v-highlight:csharp><code v-pre title="Reading JSON with JsonTextReader">string json = @&quot;{
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Reading JSON with JsonTextReader</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
    'CPU': 'Intel',
    'PSU': '500W',
    'Drives': [
@@ -265,6 +270,7 @@ while (reader.Read())
 // Token: String, Value: 200 gigabyte hard drive
 // Token: EndArray
 // Token: EndObject</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="jtokenreader-and-jtokenwriter">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#jtokenreader-and-jtokenwriter">#</doc-anchor-trigger>
@@ -272,7 +278,9 @@ while (reader.Read())
     </h2>
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenwriter/">JTokenWriter</a> read and write LINQ to JSON objects. They are located in the <a href="N:Newtonsoft.Json.Linq">Newtonsoft.Json.Linq</a> namespace. These objects allow you to use LINQ to JSON objects with objects that read and write JSON, such as the JsonSerializer. For example you can deserialize from a LINQ to JSON object into a regular .NET object and vice versa.</p>
-<pre v-highlight:csharp><code v-pre title="Deserializing with JTokenReader">JObject o = new JObject(
+<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-title">Deserializing with JTokenReader</div>
+<pre class="language-csharp"><code v-pre class="language-csharp">JObject o = new JObject(
     new JProperty(&quot;Name&quot;, &quot;John Smith&quot;),
     new JProperty(&quot;BirthDate&quot;, new DateTime(1983, 3, 20))
     );
@@ -282,6 +290,7 @@ Person p = (Person)serializer.Deserialize(new JTokenReader(o), typeof(Person));
 
 Console.WriteLine(p.Name);
 // John Smith</code></pre>
+</doc-codeblock></div>
 <doc-anchor-target id="see-also">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#see-also">#</doc-anchor-trigger>
