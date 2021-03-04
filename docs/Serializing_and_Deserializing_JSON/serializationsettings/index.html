@@ -347,7 +347,9 @@ The Json.NET deserializer will continue setting a field/property if the JSON val
         <span>TypeNameHandling</span>
     </h2>
 </doc-anchor-target>
-<doc-alert type="warning" title="CAUTION"><p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> should be used with caution when your application deserializes JSON from an external source.</p>
+<doc-alert type="warning">
+<template #title>CAUTION</template>
+<p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> should be used with caution when your application deserializes JSON from an external source.</p>
 <p>Incoming types should be validated with a custom <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/iserializationbinder/">ISerializationBinder</a> when deserializing with a value other than <code v-pre>TypeNameHandling.None</code>.</p>
 </doc-alert>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/typenamehandling/">TypeNameHandling</a> controls whether Json.NET includes .NET type names during serialization with a <code v-pre>$type</code> property and reads .NET type names from that property to determine what type to create during
