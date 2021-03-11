@@ -187,7 +187,7 @@
 </doc-anchor-target>
 <p>Json.NET supports the JSON Schema standard via the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> classes. It sits under the <a href="N:Newtonsoft.Json.Schema">Schema</a> namespace.</p>
 <p>JSON Schema is used to validate the structure and data types of a piece of JSON, similar to XML Schema for XML. You can read more about JSON Schema at <a href="http://json-schema.org/">json-schema.org</a>.</p>
-<doc-alert type="warning">
+<doc-alert variant="warning">
 <template #title>CAUTION</template>
 <p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
 </doc-alert>
@@ -198,7 +198,7 @@
     </h2>
 </doc-anchor-target>
 <p>The simplest way to check if JSON is valid is to load the JSON into a JObject or JArray and then use the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema)</a> method with the JSON Schema.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Validate JSON with IsValid</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string schemaJson = @&quot;{
   'description': 'A person',
@@ -223,8 +223,8 @@ JObject person = JObject.Parse(@&quot;{
 bool valid = person.IsValid(schema);
 // true</code></pre>
 </doc-codeblock></div>
-<p String="">To get validation error messages, use the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema,IList@)</a> or <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-validate">Validate(JToken,JsonSchema,ValidationEventHandler)</a> overloads.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<p>To get validation error messages, use the <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-isvalid">IsValid(JToken,JsonSchema,IList{String}@)</a> or <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/extensions/#method-validate">Validate(JToken,JsonSchema,ValidationEventHandler)</a> overloads.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Validate JSON with IsValid</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">JsonSchema schema = JsonSchema.Parse(schemaJson);
 
@@ -240,7 +240,7 @@ bool valid = person.IsValid(schema, out messages);
 // Invalid type. Expected String but got Float. Line 3, position 51.</code></pre>
 </doc-codeblock></div>
 <p>Internally IsValid uses <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a> to perform the JSON Schema validation. To skip the overhead of loading JSON into a JObject/JArray, validating the JSON, and then deserializing the JSON into a class, JsonValidatingReader can be used with JsonSerializer to validate JSON while the object is being deserialized.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Validate JSON with JsonValidatingReader</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'name': 'James',
@@ -265,7 +265,7 @@ Person p = serializer.Deserialize&lt;Person&gt;(validatingReader);</code></pre>
     </h2>
 </doc-anchor-target>
 <p>The simplest way to get a <a href="/Newtonsoft.Json/api/newtonsoft/json/schema/jsonschema/">JsonSchema</a> object is to load it from a string or a file.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Creating JSON Schemas from strings or files</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">// load from a string
 JsonSchema schema1 = JsonSchema.Parse(@&quot;{'type':'object'}&quot;);
@@ -279,7 +279,7 @@ using (TextReader reader = File.OpenText(@&quot;c:\schema\Person.json&quot;))
 }</code></pre>
 </doc-codeblock></div>
 <p>It is also possible to create JsonSchema objects in code.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Create new JSON Schemas in code</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">JsonSchema schema = new JsonSchema();
 schema.Type = JsonSchemaType.Object;

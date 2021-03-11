@@ -186,7 +186,7 @@
     </h1>
 </doc-anchor-target>
 <p>This sample validates JSON while deserializing an object using <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/">JsonValidatingReader</a>.</p>
-<doc-alert type="warning">
+<doc-alert variant="warning">
 <template #title>CAUTION</template>
 <p><strong>Obsolete.</strong> JSON Schema validation has been moved to its own package. See <a href="https://www.newtonsoft.com/jsonschema">https://www.newtonsoft.com/jsonschema</a> for more details.</p>
 </doc-alert>
@@ -196,7 +196,7 @@
         <span>Sample</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Types</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class Person
 {
@@ -204,7 +204,7 @@
     public IList&lt;string&gt; Hobbies { get; set; }
 }</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Usage</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string schemaJson = @&quot;{
   'description': 'A person',

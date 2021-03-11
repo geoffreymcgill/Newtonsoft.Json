@@ -193,7 +193,7 @@
     </h2>
 </doc-anchor-target>
 <p>To conditionally serialize a property, add a method that returns boolean with the same name as the property and then prefix the method name with ShouldSerialize. The result of the method determines whether the property is serialized. If the method returns true then the property will be serialized, if it returns false then the property will be skipped.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Employee class with a ShouldSerialize method</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class Employee
 {
@@ -207,7 +207,7 @@
     }
 }</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">ShouldSerialize output</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">Employee joe = new Employee();
 joe.Name = &quot;Joe Employee&quot;;
@@ -240,7 +240,7 @@ string json = JsonConvert.SerializeObject(new[] { joe, mike }, Formatting.Indent
     </h2>
 </doc-anchor-target>
 <p>ShouldSerialize can also be set using an <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/icontractresolver/">IContractResolver</a>. Conditionally serializing a property using an IContractResolver is useful if you don&#39;t want to place a ShouldSerialize method on a class or you didn&#39;t declare the class and are unable to.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Conditional properties with IContractResolver</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class ShouldSerializeContractResolver : DefaultContractResolver
 {

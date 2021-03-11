@@ -195,7 +195,7 @@
 <div><p>JsonReader and JsonWriter are low-level classes and are primarily for internal use by Json.NET. To quickly work with JSON, either the serializer - <a href="../Serializing_and_Deserializing_JSON">Serializing and Deserializing JSON</a> - or using <a href="../LINQ_to_JSON">LINQ to JSON</a> is recommended.</p>
 </div>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/">JsonTextReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/jsontextwriter/">JsonTextWriter</a> are used to read and write JSON text. The JsonTextWriter has a number of settings on it to control how JSON is formatted when it is written. These options include formatting, indentation character, indent count, and quote character.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Writing JSON with JsonTextWriter</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">StringBuilder sb = new StringBuilder();
 StringWriter sw = new StringWriter(sb);
@@ -231,7 +231,7 @@ using (JsonWriter writer = new JsonTextWriter(sw))
 // }</code></pre>
 </doc-codeblock></div>
 <p>JsonTextReader has settings on it for reading different date formats, time zones, and the cultures when reading text values.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Reading JSON with JsonTextReader</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
    'CPU': 'Intel',
@@ -278,7 +278,7 @@ while (reader.Read())
     </h2>
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/">JTokenReader</a> and <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenwriter/">JTokenWriter</a> read and write LINQ to JSON objects. They are located in the <a href="N:Newtonsoft.Json.Linq">Newtonsoft.Json.Linq</a> namespace. These objects allow you to use LINQ to JSON objects with objects that read and write JSON, such as the JsonSerializer. For example you can deserialize from a LINQ to JSON object into a regular .NET object and vice versa.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Deserializing with JTokenReader</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">JObject o = new JObject(
     new JProperty(&quot;Name&quot;, &quot;John Smith&quot;),

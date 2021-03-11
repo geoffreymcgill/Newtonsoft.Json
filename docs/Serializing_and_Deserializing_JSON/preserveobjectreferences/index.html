@@ -186,7 +186,7 @@
     </h1>
 </doc-anchor-target>
 <p>By default Json.NET will serialize all objects it encounters by value. If a list contains two Person references and both references point to the same object, then the JsonSerializer will write out all the names and values for each reference.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Preserve Object References Off</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">Person p = new Person
 {
@@ -221,7 +221,7 @@ string json = JsonConvert.SerializeObject(people, Formatting.Indented);
     </h2>
 </doc-anchor-target>
 <p>Setting <a href="/Newtonsoft.Json/api/newtonsoft/json/preservereferenceshandling/">PreserveReferencesHandling</a> will track object references when serializing and deserializing JSON.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Preserve Object References On</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = JsonConvert.SerializeObject(people, Formatting.Indented,
     new JsonSerializerSettings { PreserveReferencesHandling = PreserveReferencesHandling.Objects });
@@ -268,7 +268,7 @@ bool equal = Object.ReferenceEquals(p1, p2);
 </doc-anchor-target>
 <p>The PreserveReferencesHandling setting on the JsonSerializer will change how all objects are serialized and deserialized. For fine grain control over which objects and members should be serialized as a reference there is the IsReference property on the JsonObjectAttribute, JsonArrayAttribute and JsonPropertyAttribute.</p>
 <p>Setting IsReference on JsonObjectAttribute or JsonArrayAttribute to true will mean the JsonSerializer will always serialize the type the attribute is against as a reference. Setting IsReference on the JsonPropertyAttribute to true will serialize only that property as a reference.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">IsReference</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">[JsonObject(IsReference = true)]
 public class EmployeeReference

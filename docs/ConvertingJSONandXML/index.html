@@ -214,7 +214,7 @@
 </doc-anchor-target>
 <p>The JsonConvert has two helper methods for converting between JSON and XML. The first is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-serializexmlnode">SerializeXmlNode()</a>.</p>
 <p>This method takes an XmlNode and serializes it to JSON text.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Converting XML to JSON with SerializeXmlNode</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string xml = @&quot;&lt;?xml version='1.0' standalone='no'?&gt;
 &lt;root&gt;
@@ -255,7 +255,7 @@ string jsonText = JsonConvert.SerializeXmlNode(doc);
 </doc-codeblock></div>
 <p>Because multiple nodes with the same name at the same level are grouped together into an array, the conversion process can produce different JSON depending on the number of nodes. For example, if some XML for a user has a single <code v-pre>&lt;Role&gt;</code> node, then that role will be text against a JSON <code v-pre>&quot;Role&quot;</code> property, but if the user has multiple <code v-pre>&lt;Role&gt;</code> nodes, then the role values will be placed in a JSON array.</p>
 <p>To fix this situation a custom XML attribute can be added to force a JSON array to be created.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Attribute to Force a JSON Array</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">         string xml = @&quot;&lt;person id='1'&gt;
   &lt;name&gt;Alan&lt;/name&gt;
@@ -305,7 +305,7 @@ string jsonText = JsonConvert.SerializeXmlNode(doc);
 </doc-anchor-target>
 <p>The second helper method on JsonConvert is <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconvert/#method-deserializexmlnode">DeserializeXmlNode()</a>. This method takes JSON text and deserializes it into an XmlNode.</p>
 <p>Because valid XML must have one root element, the JSON passed to DeserializeXmlNode should have one property in the root JSON object. If the root JSON object has multiple properties, then the overload that also takes an element name should be used. A root element with that name will be inserted into the deserialized XmlNode.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Converting JSON to XML with DeserializeXmlNode</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   '?xml': {

@@ -203,7 +203,7 @@
     </h2>
 </doc-anchor-target>
 <p><a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/camelcasepropertynamescontractresolver/">CamelCasePropertyNamesContractResolver</a> inherits from DefaultContractResolver and simply overrides the JSON property name to be written in <a href="http://en.wikipedia.org/wiki/CamelCase">camelcase</a>.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">ContractResolver</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">Product product = new Product
 {
@@ -237,7 +237,7 @@ string json =
         <span>Custom IContractResolver Examples</span>
     </h2>
 </doc-anchor-target>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Use JsonConverter with IContractResolver</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class ConverterContractResolver : DefaultContractResolver
 {
@@ -258,7 +258,7 @@ string json =
 }</code></pre>
 </doc-codeblock></div>
 <p>This example sets a <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> for a type using an IContractResolver. Using a contract resolver here is useful because DateTime is not your own type and it is not possible to place a JsonConverterAttribute on it.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Conditional properties with IContractResolver</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class ShouldSerializeContractResolver : DefaultContractResolver
 {
