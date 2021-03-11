@@ -193,7 +193,7 @@
     </h2>
 </doc-anchor-target>
 <p>JSON values can be read from a string using <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-parse">Parse(string)</a>.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Parsing a JSON Object from text</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   CPU: 'Intel',
@@ -205,7 +205,7 @@
 
 JObject o = JObject.Parse(json);</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Parsing a JSON Array from text</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;[
   'Small',
@@ -222,7 +222,7 @@ JArray a = JArray.Parse(json);</code></pre>
     </h2>
 </doc-anchor-target>
 <p>JSON can also be loaded directly from a file using <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-readfrom">ReadFrom(JsonReader)</a>.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Reading JSON from a file</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">using (StreamReader reader = File.OpenText(@&quot;c:\person.json&quot;))
 {

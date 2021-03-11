@@ -193,7 +193,7 @@
     </h2>
 </doc-anchor-target>
 <p>A trace writer can be assigned using properties on JsonSerializerSettings or JsonSerializer.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Debugging serialization using MemoryTraceWriter</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">Staff staff = new Staff();
 staff.Name = &quot;Arnie Admin&quot;;
@@ -232,7 +232,7 @@ Console.WriteLine(traceWriter);
     </h2>
 </doc-anchor-target>
 <p>To write messages using your existing logging framework, just implement a custom version of ITraceWriter.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Custom NLog TraceWriter</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class NLogTraceWriter : ITraceWriter
 {

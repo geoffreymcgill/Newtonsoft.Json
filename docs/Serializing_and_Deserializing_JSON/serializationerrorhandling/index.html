@@ -194,7 +194,7 @@
     </h2>
 </doc-anchor-target>
 <p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/#event-error">JsonSerializer.Error</a> event is an event handler found on <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a>. The error event is raised whenever an exception is thrown while serializing or deserializing JSON. Like all settings found on JsonSerializer, it can also be set on <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializersettings/">JsonSerializerSettings</a> and passed to the serialization methods on JsonConvert.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Serialization Error Handling</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">List&lt;string&gt; errors = new List&lt;string&gt;();
 
@@ -229,7 +229,7 @@ List&lt;DateTime&gt; c = JsonConvert.DeserializeObject&lt;List&lt;DateTime&gt;&g
 <p>In this example we are deserializing a JSON array to a collection of DateTimes. On the JsonSerializerSettings a handler has been assigned to the <code v-pre>Error</code> event which will log the error message and mark the error as handled.</p>
 <p>The result of deserializing the JSON is three successfully deserialized dates and three error messages: one for the badly formatted string (&quot;I am not a date and will error!&quot;), one for the nested JSON array, and one for the null value since the list doesn&#39;t allow nullable DateTimes. The event handler has logged these messages and Json.NET has continued on deserializing the JSON because the errors were marked as handled.</p>
 <p>One thing to note with error handling in Json.NET is that an unhandled error will bubble up and raise the event on each of its parents. For example an unhandled error when serializing a collection of objects will be raised twice, once against the object and then again on the collection. This will let you handle an error either where it occurred or on one of its parents.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Parent Error Handling</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">List&lt;string&gt; errors = new List&lt;string&gt;();
 
@@ -251,7 +251,7 @@ serializer.Error += delegate(object sender, ErrorEventArgs args)
     </h2>
 </doc-anchor-target>
 <p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a> works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn&#39;t matter.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Serialization Error Handling Attribute</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class PersonError
 {
@@ -287,7 +287,7 @@ serializer.Error += delegate(object sender, ErrorEventArgs args)
 exception when no roles have been set. The HandleError method will set
 the error when serializing Roles as handled and allow Json.NET to
 continue serializing the class.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Serialization Error Handling Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">PersonError person = new PersonError
 {

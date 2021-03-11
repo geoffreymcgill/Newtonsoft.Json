@@ -204,7 +204,7 @@
 <p>As well as using the built-in Json.NET attributes, Json.NET also looks for the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.serializableattribute">SerializableAttribute</a> (if IgnoreSerializableAttribute on DefaultContractResolver is set to false) <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute">DataContractAttribute</a>, <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datamemberattribute">DataMemberAttribute</a>, and <a href="https://docs.microsoft.com/en-us/dotnet/api/system.nonserializedattribute">NonSerializedAttribute</a> and attributes when determining how JSON is to be serialized and deserialized.</p>
 <div><p>Json.NET attributes take precedence over standard .NET serialization attributes (e.g. if both JsonPropertyAttribute and DataMemberAttribute are present on a property and both customize the name, the name from JsonPropertyAttribute will be used).</p>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Serialization Attributes Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">[JsonObject(MemberSerialization.OptIn)]
 public class Person
@@ -282,7 +282,7 @@ public class Person
 <p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverterattribute/">JsonConverterAttribute</a> specifies which <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconverter/">JsonConverter</a> is used to convert an object.</p>
 <p>The attribute can be placed on a class or a member. When placed on a class, the JsonConverter specified by the attribute will be the default way of serializing that class. When the attribute is on a field or property, then the specified JsonConverter will always be used to serialize that value.</p>
 <p>The priority of which JsonConverter is used is member attribute, then class attribute, and finally any converters passed to the JsonSerializer.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">JsonConverterAttribute Property Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public enum UserStatus
 {
@@ -311,7 +311,7 @@ public class User
 <div><p>All extension data values will be written during serialization, even if a property the same name has already been written.</p>
 </div>
 <p>This example shows the JsonExtensionDataAttribute being applied to a field, unmatched JSON properties being added to the field&#39;s collection during deserialization.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Types</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class DirectoryAccount
 {
@@ -342,7 +342,7 @@ public class User
     }
 }</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Usage</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'DisplayName': 'John Smith',
@@ -367,7 +367,7 @@ Console.WriteLine(account.UserName);
     </h2>
 </doc-anchor-target>
 <p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonconstructorattribute/">JsonConstructorAttribute</a> instructs the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> to use a specific constructor when deserializing a class. It can be used to create a class using a parameterized constructor instead of the default constructor, or to pick which specific parameterized constructor to use if there are multiple.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Types</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class User
 {
@@ -386,7 +386,7 @@ Console.WriteLine(account.UserName);
     }
 }</code></pre>
 </doc-codeblock></div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Usage</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   &quot;&quot;UserName&quot;&quot;: &quot;&quot;domain\\username&quot;&quot;,

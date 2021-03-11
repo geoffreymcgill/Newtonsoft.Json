@@ -193,7 +193,7 @@
     </h2>
 </doc-anchor-target>
 <p>The simplest way to get a value from LINQ to JSON is to use the <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#property-item">JToken.Item(object)</a> index on JObject/JArray and then cast the returned <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jvalue/">JValue</a> to the type you want.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Getting JSON Values</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string json = @&quot;{
   'channel': {
@@ -247,7 +247,7 @@ IList&lt;string&gt; categoriesText = categories.Select(c =&gt; (string)c).ToList
 <p>JObject/JArray can also be queried using LINQ. <a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns the children values of a JObject/JArray as an <code v-pre>IEnumerable&lt;JToken&gt;</code> that can then be queried with the standard Where/OrderBy/Select LINQ operators.</p>
 <div><p><a href="/Newtonsoft.Json/api/newtonsoft/json/linq/jtoken/#method-children">JToken.Children</a> returns all the children of a token. If it is a JObject it will return a collection of properties to work with, and if it is a JArray you will get a collection of the array&#39;s values.</p>
 </div>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Querying JSON</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">var postTitles =
     from p in rss[&quot;channel&quot;][&quot;item&quot;]
@@ -278,7 +278,7 @@ foreach (var c in categories)
 //CodePlex - Count: 1</code></pre>
 </doc-codeblock></div>
 <p>LINQ to JSON can also be used to manually convert JSON to a .NET object.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Deserializing Using LINQ Objects</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class Shortie
 {
@@ -295,7 +295,7 @@ public class ShortieException
 }</code></pre>
 </doc-codeblock></div>
 <p>Manually serializing and deserializing between .NET objects is useful when you are working with JSON that doesn&#39;t closely match your .NET objects.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Deserializing Using LINQ Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">string jsonText = @&quot;{
   'short': {

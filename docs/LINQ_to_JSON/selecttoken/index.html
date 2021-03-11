@@ -194,7 +194,7 @@
 </doc-anchor-target>
 <p>SelectToken is a method on JToken and takes a string path to a child token. SelectToken returns the child token or a null reference if a token couldn&#39;t be found at the path&#39;s location.</p>
 <p>The path is made up of property names and array indexes separated by periods, e.g. <code v-pre>Manufacturers[0].Name</code>.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">SelectToken Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
@@ -243,7 +243,7 @@ string productName = (string)o.SelectToken(&quot;Manufacturers[1].Products[0].Na
     </h2>
 </doc-anchor-target>
 <p>SelectToken supports JSONPath queries. Find out more about JSONPath <a href="https://goessner.net/articles/JsonPath/">here</a>.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">SelectToken With JSONPath</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">JObject o = JObject.Parse(@&quot;{
   'Stores': [
@@ -299,7 +299,7 @@ foreach (JToken item in pricyProducts)
     </h2>
 </doc-anchor-target>
 <p>SelectToken can be used in combination with standard LINQ methods.</p>
-<div class="codeblock-wrapper"><doc-codeblock line-numbers>
+<div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">SelectToken With LINQ Example</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">IList&lt;string&gt; storeNames = o.SelectToken(&quot;Stores&quot;).Select(s =&gt; (string)s).ToList();
 // Lambton Quay
