@@ -1,6 +1,6 @@
 {
   "input": "docs",
-  "output": "retype-docs",
+  "output": "retype",
 
   "base": "Newtonsoft.Json",
 
@@ -54,7 +54,7 @@
       {
         "text": "Contact",
         "link": "https://www.newtonsoft.com/contact"
-      },
+      }
     ]
   }
 }
