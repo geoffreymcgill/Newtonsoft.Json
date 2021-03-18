@@ -945,13 +945,15 @@ namespace Newtonsoft.Json.Tests
                 jsonWriter.WriteToken(JsonToken.StartArray);
                 jsonWriter.WriteToken(JsonToken.Integer, 1);
                 jsonWriter.WriteToken(JsonToken.StartObject);
-                jsonWriter.WriteToken(JsonToken.PropertyName, "string");
+                jsonWriter.WriteToken(JsonToken.PropertyName, "integer");
                 jsonWriter.WriteToken(JsonToken.Integer, int.MaxValue);
+                jsonWriter.WriteToken(JsonToken.PropertyName, "null-string");
+                jsonWriter.WriteToken(JsonToken.String, null);
                 jsonWriter.WriteToken(JsonToken.EndObject);
                 jsonWriter.WriteToken(JsonToken.EndArray);
             }
 
-            Assert.AreEqual(@"[1,{""string"":2147483647}]", sb.ToString());
+            Assert.AreEqual(@"[1,{""integer"":2147483647,""null-string"":null}]", sb.ToString());
         }
 
         [Test]
@@ -1217,7 +1219,7 @@ _____'propertyName': NaN,
         {
             JsonWriter.State[][] stateArray = JsonWriter.BuildStateArray();
 
-            var valueStates = JsonWriter.StateArrayTempate[7];
+            var valueStates = JsonWriter.StateArrayTemplate[7];
 
             foreach (JsonToken valueToken in GetValues(typeof(JsonToken)))
             {

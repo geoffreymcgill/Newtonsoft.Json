@@ -3515,13 +3515,9 @@ Path '', line 1, position 1.");
         {
             string json = @"[]";
 
-            ExceptionAssert.Throws<InvalidCastException>(
+            ExceptionAssert.Throws<JsonSerializationException>(
                 () => { JsonConvert.DeserializeObject<JObject>(json); },
-                new[]
-                {
-                    "Unable to cast object of type 'Newtonsoft.Json.Linq.JArray' to type 'Newtonsoft.Json.Linq.JObject'.",
-                    "Cannot cast from source type to destination type." // mono
-                });
+                "Deserialized JSON type 'Newtonsoft.Json.Linq.JArray' is not compatible with expected type 'Newtonsoft.Json.Linq.JObject'. Path '', line 1, position 2.");
         }
 
         [Test]
@@ -8000,10 +7996,10 @@ This is just junk, though.";
         public void SetMaxDepth_DepthExceeded()
         {
             JsonTextReader reader = new JsonTextReader(new StringReader("[[['text']]]"));
-            Assert.AreEqual(128, reader.MaxDepth);
+            Assert.AreEqual(64, reader.MaxDepth);
 
             JsonSerializerSettings settings = new JsonSerializerSettings();
-            Assert.AreEqual(128, settings.MaxDepth);
+            Assert.AreEqual(64, settings.MaxDepth);
             Assert.AreEqual(false, settings._maxDepthSet);
 
             // Default should be the same
@@ -8034,7 +8030,7 @@ This is just junk, though.";
 
             serializer.Deserialize(reader);
 
-            Assert.AreEqual(128, reader.MaxDepth);
+            Assert.AreEqual(64, reader.MaxDepth);
         }
     }
 }
