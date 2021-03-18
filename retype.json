@@ -1,8 +1,8 @@
 {
-  "input": "./docs-src",
-  "output": "./docs",
+  "input": "docs",
+  "output": "retype-docs",
 
-  "base": "/Newtonsoft.Json/",
+  "base": "Newtonsoft.Json",
 
   "code": [{
     "input": "Src/Newtonsoft.Json"
