@@ -14,7 +14,7 @@ Json.NET is a popular high-performance JSON framework for .NET.
 - [x] Supports [.NET Standard 2.0](https://github.com/dotnet/standard/blob/master/docs/versions.md) .NET 2, .NET 3.5, .NET 4, .NET 4.5, Silverlight, Windows Phone and Windows 8 Store
 
 !!!
-The JSON serializer in Json.NET is a good choice when the JSON you are reading or writing maps closely to a .NET class. :rocket:
+The JSON serializer in Json.NET is a good choice when the JSON you are reading or writing maps closely to a .NET class.
 !!!
 
 LINQ to JSON is good for situations where you are only interested in getting values from JSON, you don't have a class to serialize or deserialize to,  or the JSON is radically different from your class and you need to manually read  and write from your objects.
