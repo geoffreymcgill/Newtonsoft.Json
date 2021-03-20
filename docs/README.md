@@ -1,5 +1,5 @@
 ﻿---
-icon: rocket
+icon: home
 ---
 # Introduction
 

@@ -10,8 +10,9 @@
 
   "identity": 
   {
-    "title": "Json.NET",
-    "label": "Docs"
+    "label": "Docs",
+    "logo": "/static/jsonnet-logo.svg",
+    "logoDark": "/static/jsonnet-logo-dark.svg"
   },
 
   "links": [
