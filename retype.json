@@ -1,6 +1,6 @@
 {
   "input": "docs",
-  "output": "retype",
+  "output": ".retype",
 
   "base": "Newtonsoft.Json",
 
