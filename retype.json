@@ -8,7 +8,7 @@
     "input": "Src/Newtonsoft.Json"
   }],
 
-  "identity": 
+  "branding":
   {
     "label": "Docs",
     "logo": "/static/jsonnet-logo.svg",
