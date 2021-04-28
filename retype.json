@@ -8,6 +8,11 @@
     "input": "Src/Newtonsoft.Json"
   }],
 
+  "edit": {
+    "repo": "https://github.com/geoffreymcgill/Newtonsoft.Json",
+    "base": "docs"
+  },
+
   "branding":
   {
     "label": "Docs",
