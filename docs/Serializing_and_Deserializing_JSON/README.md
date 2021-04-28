@@ -1,4 +1,8 @@
-﻿# Serializing and Deserializing JSON
+﻿---
+icon: sync
+label: Serialize and Deserialize
+---
+# Serializing and Deserializing JSON
 
 The quickest method of converting between JSON text and a .NET object is using the [JsonSerializer](/api/newtonsoft/json/jsonserializer/). The JsonSerializer converts .NET objects into their JSON equivalent and back again by mapping the .NET object property names to the JSON property names and copies the values for you.
 

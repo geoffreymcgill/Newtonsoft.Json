@@ -1,4 +1,7 @@
-﻿# LINQ to JSON
+﻿---
+icon: tools
+---
+# LINQ to JSON
 
 LINQ to JSON is an API for working with JSON objects. It has been designed with LINQ in mind to enable quick querying and creation of JSON objects. LINQ to JSON sits under the [Newtonsoft.Json.Linq](N:Newtonsoft.Json.Linq) namespace.
 

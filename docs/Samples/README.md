@@ -1,3 +1,6 @@
+---
+icon: file-code
+---
 # Samples
 
 - **Serializing JSON** - Serializing and deserializing JSON, serializer settings and serialization attributes
