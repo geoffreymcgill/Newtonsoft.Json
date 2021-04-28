@@ -10,6 +10,7 @@
 
   "edit": {
     "repo": "https://github.com/geoffreymcgill/Newtonsoft.Json",
+    "branch": "master",
     "base": "docs"
   },
 
@@ -36,13 +37,6 @@
     {
       "text": "GitHub",
       "link": "https://github.com/JamesNK/Newtonsoft.Json"
-    }
-  ],
-
-  "nav": [
-    {
-      "path": "/",
-      "icon": "home"
     }
   ],
 
