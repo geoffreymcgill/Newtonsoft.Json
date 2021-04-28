@@ -2,9 +2,9 @@
 
 This sample saves a [JsonSchema](/api/newtonsoft/json/schema/jsonschema/) to a file.
 
-:::caution
-**Obsolete.** JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.
-:::
+!!!warning Obsolete
+JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.
+!!!
 
 ## Sample
 

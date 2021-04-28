@@ -4,9 +4,9 @@ Json.NET supports the JSON Schema standard via the [JsonSchema](/api/newtonsoft/
 
 JSON Schema is used to validate the structure and data types of a piece of JSON, similar to XML Schema for XML. You can read more about JSON Schema at [json-schema.org](http://json-schema.org/).
 
-:::caution
-**Obsolete.** JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.
-:::
+!!!warning Obsolete
+JSON Schema validation has been moved to its own package. See [https://www.newtonsoft.com/jsonschema](https://www.newtonsoft.com/jsonschema) for more details.
+!!!
 
 ## Validating with JSON Schema
 

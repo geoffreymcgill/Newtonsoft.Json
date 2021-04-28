@@ -66,7 +66,7 @@ DefaultValueHandling can also be customized on individual properties with JsonPr
 
 Member | Description
 --- | ---
-`Auto` | By default Json.NET will attempt to set JSON values onto existing objects and add JSON values to existing collections during deserialization. 
+`Auto` | By default Json.NET will attempt to set JSON values onto existing objects and add JSON values to existing collections during deserialization.
 `Reuse` | Same behaviour as auto.
 `Replace` | Json.NET will always recreate objects and collections before setting values to them during deserialization.
 
@@ -74,11 +74,11 @@ ObjectCreationHandling can also be customized on individual properties with Json
 
 ## TypeNameHandling
 
-:::caution
+!!!warning Obsolete
 [TypeNameHandling](/api/newtonsoft/json/typenamehandling/) should be used with caution when your application deserializes JSON from an external source.
 
 Incoming types should be validated with a custom [ISerializationBinder](/api/newtonsoft/json/serialization/iserializationbinder/) when deserializing with a value other than `TypeNameHandling.None`.
-:::
+!!!
 
 [TypeNameHandling](/api/newtonsoft/json/typenamehandling/) controls whether Json.NET includes .NET type names during serialization with a `$type` property and reads .NET type names from that property to determine what type to create during
 deserialization.
@@ -133,7 +133,7 @@ Member | Description
 Member | Description
 --- | ---
 `Default` | By default Json.NET will first look for a constructor marked with the JsonConstructorAttribute, then look for a public default constructor (a constructor that doesn't take any arguments), then check if the class has a single public constructor with arguments and finally check for a non-public default constructor. If the class has multiple public constructors with arguments an error will be thrown. This can be fixed by marking one of the constructors with the JsonConstructorAttribute.
-`AllowNonPublicDefaultConstructor` | Json.NET will use a classes private default constructor before constructors with arguments if available. 
+`AllowNonPublicDefaultConstructor` | Json.NET will use a classes private default constructor before constructors with arguments if available.
 
 ## Converters
 
