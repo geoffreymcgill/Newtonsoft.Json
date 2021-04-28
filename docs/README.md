@@ -5,12 +5,12 @@ icon: home
 
 Json.NET is a popular high-performance JSON framework for .NET.
 
-![Json.NET logo](jsonnet-logo.png)
+![](jsonnet-logo.png)
 
 ## Benefits and Features
 
 - [x] Flexible JSON serializer for converting between .NET objects and JSON
-- [x] LINQ to JSON for manually reading and writing JSON 
+- [x] LINQ to JSON for manually reading and writing JSON
 - [x] High performance: faster than .NET's built-in JSON serializers
 - [x] Write indented, easy-to-read JSON
 - [x] Convert JSON to and from XML
