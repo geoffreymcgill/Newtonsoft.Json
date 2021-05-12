@@ -212,33 +212,13 @@
 <p>Represents a writer that provides a fast, non-cached, forward-only way of generating JSON data.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_current" name="_current" type="JToken?" access="private" signature="private JToken? _current">
-        <template #name><h3>_current</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_parent" name="_parent" type="JContainer?" access="private" signature="private JContainer? _parent">
-        <template #name><h3>_parent</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_token" name="_token" type="JContainer?" access="private" signature="private JContainer? _token">
-        <template #name><h3>_token</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_value" name="_value" type="JValue?" access="private" signature="private JValue? _value">
-        <template #name><h3>_value</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
     <doc-member id="property-currenttoken" name="CurrentToken" type="JToken?" signature="public JToken? CurrentToken { get; }">
         <template #name><h3>CurrentToken</h3></template>
 
-<p>Gets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> at the writer&#39;s current position.</p>
+<p>Gets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> at the writer&#x27;s current position.</p>
 
     </doc-member>
 
@@ -275,40 +255,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-addparent" name="AddParent" returns="void" params="JContainer" access="private" signature="private void AddParent(JContainer container)">
-        <template #name><h3>AddParent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="container" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-overload-group overload-id="group-addvalue">
-        <doc-member id="method-addvalue" overload-id="group-addvalue" name="AddValue" returns="void" params="Nullable<object>?, JsonToken" access="private" signature="private void AddValue(Nullable<object>? value, JsonToken token)">
-            <template #name><h3>AddValue</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
-                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-addvalue-1" overload-id="group-addvalue" name="AddValue" returns="void" params="JValue?, JsonToken" access="internal" signature="internal void AddValue(JValue? value, JsonToken token)">
-            <template #name><h3>AddValue</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="Newtonsoft.Json.Linq.JValue?"></doc-parameter>
-                    <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
-
     <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
         <template #name><h3>Close</h3></template>
 
@@ -322,10 +268,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
 
 <p>Flushes whatever is in the buffer to the underlying <see cref="T:Newtonsoft.Json.Linq.JContainer"/>.</p>
 
-    </doc-member>
-
-    <doc-member id="method-removeparent" name="RemoveParent" returns="void" access="private" signature="private void RemoveParent()">
-        <template #name><h3>RemoveParent</h3></template>
     </doc-member>
 
     <doc-member id="method-writecomment" name="WriteComment" returns="void" params="Nullable<string>?" signature="public sealed void WriteComment(Nullable<string>? text)">
@@ -412,33 +354,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
 
 <p>Writes the beginning of a JSON object.</p>
 
-    </doc-member>
-
-    <doc-member id="method-writetoken" name="WriteToken" returns="void" params="JsonReader, bool, bool, bool" access="internal" signature="internal sealed void WriteToken(JsonReader reader, bool writeChildren, bool writeDateConstructorAsDate, bool writeComments)">
-        <template #name><h3>WriteToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="writeChildren" type="bool"></doc-parameter>
-                <doc-parameter name="writeDateConstructorAsDate" type="bool"></doc-parameter>
-                <doc-parameter name="writeComments" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-writetokenasync" name="WriteTokenAsync" returns="Task" params="JsonReader, bool, bool, bool, CancellationToken" access="internal" signature="internal sealed Task WriteTokenAsync(JsonReader reader, bool writeChildren, bool writeDateConstructorAsDate, bool writeComments, CancellationToken cancellationToken)">
-        <template #name><h3>WriteTokenAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="writeChildren" type="bool"></doc-parameter>
-                <doc-parameter name="writeDateConstructorAsDate" type="bool"></doc-parameter>
-                <doc-parameter name="writeComments" type="bool"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-writeundefined" name="WriteUndefined" returns="void" signature="public sealed void WriteUndefined()">
@@ -752,7 +667,7 @@ An error will be raised if the value cannot be written as a single JSON token.</
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

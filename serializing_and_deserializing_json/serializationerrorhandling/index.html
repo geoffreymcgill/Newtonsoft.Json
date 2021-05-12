@@ -15,6 +15,7 @@
     <link href="/Newtonsoft.Json/resources/css/retype.css" rel="stylesheet" />
 
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/prism.js" defer></script>
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/retype.js" defer></script>
 </head>
     <body>
@@ -231,7 +232,7 @@ List&lt;DateTime&gt; c = JsonConvert.DeserializeObject&lt;List&lt;DateTime&gt;&g
 // Cannot convert null value to System.DateTime.</code></pre>
 </doc-codeblock></div>
 <p>In this example we are deserializing a JSON array to a collection of DateTimes. On the JsonSerializerSettings a handler has been assigned to the <code v-pre>Error</code> event which will log the error message and mark the error as handled.</p>
-<p>The result of deserializing the JSON is three successfully deserialized dates and three error messages: one for the badly formatted string (&quot;I am not a date and will error!&quot;), one for the nested JSON array, and one for the null value since the list doesn&#39;t allow nullable DateTimes. The event handler has logged these messages and Json.NET has continued on deserializing the JSON because the errors were marked as handled.</p>
+<p>The result of deserializing the JSON is three successfully deserialized dates and three error messages: one for the badly formatted string (&quot;I am not a date and will error!&quot;), one for the nested JSON array, and one for the null value since the list doesn&#x27;t allow nullable DateTimes. The event handler has logged these messages and Json.NET has continued on deserializing the JSON because the errors were marked as handled.</p>
 <p>One thing to note with error handling in Json.NET is that an unhandled error will bubble up and raise the event on each of its parents. For example an unhandled error when serializing a collection of objects will be raised twice, once against the object and then again on the collection. This will let you handle an error either where it occurred or on one of its parents.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Parent Error Handling</div>
@@ -247,14 +248,14 @@ serializer.Error += delegate(object sender, ErrorEventArgs args)
     }
 };</code></pre>
 </doc-codeblock></div>
-<p>If you aren&#39;t immediately handling an error and only want to perform an action against it once, then you can check to see whether the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/erroreventargs/">ErrorEventArgs</a>&#39;s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.</p>
+<p>If you aren&#x27;t immediately handling an error and only want to perform an action against it once, then you can check to see whether the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/erroreventargs/">ErrorEventArgs</a>&#x27;s CurrentObject is equal to the OriginalObject. OriginalObject is the object that threw the error and CurrentObject is the object that the event is being raised against. They will only equal the first time the event is raised against the OriginalObject.</p>
 <doc-anchor-target id="onerrorattribute">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#onerrorattribute">#</doc-anchor-trigger>
         <span>OnErrorAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a> works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn&#39;t matter.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/onerrorattribute/">OnErrorAttribute</a> works much like the other [SerializationAttributes](.NET serialization attributes) that Json.NET supports. To use it you simply place the attribute on a method that takes the correct parameters: a StreamingContext and an ErrorContext. The name of the method doesn&#x27;t matter.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Serialization Error Handling Attribute</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class PersonError
@@ -377,7 +378,7 @@ Console.WriteLine(json);
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

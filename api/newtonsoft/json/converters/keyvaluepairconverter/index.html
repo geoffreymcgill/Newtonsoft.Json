@@ -212,22 +212,6 @@
 <p>Converts a <see cref="!:KeyValuePair&lt;TKey,TValue&gt;"/> to and from JSON.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-keyname" name="KeyName" type="string" access="private" signature="private const static string KeyName">
-        <template #name><h3>KeyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-reflectionobjectpertype" name="ReflectionObjectPerType" type="ThreadSafeStore<Type, ReflectionObject>" access="private" signature="private readonly static ThreadSafeStore<Type, ReflectionObject> ReflectionObjectPerType">
-        <template #name><h3>ReflectionObjectPerType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-valuename" name="ValueName" type="string" access="private" signature="private const static string ValueName">
-        <template #name><h3>ValueName</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
@@ -242,16 +226,6 @@
 
 <p>Determines whether this instance can convert the specified object type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-initializereflectionobject" name="InitializeReflectionObject" returns="ReflectionObject" params="Type" access="private" signature="private static ReflectionObject InitializeReflectionObject(Type t)">
-        <template #name><h3>InitializeReflectionObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public sealed Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
@@ -313,7 +287,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

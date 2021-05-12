@@ -212,22 +212,6 @@
 <p>Converts a binary value to and from a base 64 string value.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-binarytoarrayname" name="BinaryToArrayName" type="string" access="private" signature="private const static string BinaryToArrayName">
-        <template #name><h3>BinaryToArrayName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-binarytypename" name="BinaryTypeName" type="string" access="private" signature="private const static string BinaryTypeName">
-        <template #name><h3>BinaryTypeName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_reflectionobject" name="_reflectionObject" type="ReflectionObject?" access="private" signature="private static ReflectionObject? _reflectionObject">
-        <template #name><h3>_reflectionObject</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
@@ -242,36 +226,6 @@
 
 <p>Determines whether this instance can convert the specified object type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-ensurereflectionobject" name="EnsureReflectionObject" returns="void" params="Type" access="private" signature="private static void EnsureReflectionObject(Type t)">
-        <template #name><h3>EnsureReflectionObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getbytearray" name="GetByteArray" returns="byte[]" params="object" access="private" signature="private byte[] GetByteArray(object value)">
-        <template #name><h3>GetByteArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readbytearray" name="ReadByteArray" returns="byte[]" params="JsonReader" access="private" signature="private byte[] ReadByteArray(JsonReader reader)">
-        <template #name><h3>ReadByteArray</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public sealed Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
@@ -333,7 +287,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

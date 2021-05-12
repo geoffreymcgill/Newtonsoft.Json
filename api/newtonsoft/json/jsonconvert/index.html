@@ -218,49 +218,49 @@
     <doc-member id="field-false" name="False" type="string" signature="public readonly static string False">
         <template #name><h3>False</h3></template>
 
-<p>Represents JavaScript&#39;s boolean value <c>false</c> as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s boolean value <c>false</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-nan" name="NaN" type="string" signature="public readonly static string NaN">
         <template #name><h3>NaN</h3></template>
 
-<p>Represents JavaScript&#39;s <c>NaN</c> as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s <c>NaN</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-negativeinfinity" name="NegativeInfinity" type="string" signature="public readonly static string NegativeInfinity">
         <template #name><h3>NegativeInfinity</h3></template>
 
-<p>Represents JavaScript&#39;s negative infinity as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s negative infinity as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-null" name="Null" type="string" signature="public readonly static string Null">
         <template #name><h3>Null</h3></template>
 
-<p>Represents JavaScript&#39;s <c>null</c> as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s <c>null</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-positiveinfinity" name="PositiveInfinity" type="string" signature="public readonly static string PositiveInfinity">
         <template #name><h3>PositiveInfinity</h3></template>
 
-<p>Represents JavaScript&#39;s positive infinity as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s positive infinity as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-true" name="True" type="string" signature="public readonly static string True">
         <template #name><h3>True</h3></template>
 
-<p>Represents JavaScript&#39;s boolean value <c>true</c> as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s boolean value <c>true</c> as a string. This field is read-only.</p>
 
     </doc-member>
 
     <doc-member id="field-undefined" name="Undefined" type="string" signature="public readonly static string Undefined">
         <template #name><h3>Undefined</h3></template>
 
-<p>Represents JavaScript&#39;s <c>undefined</c> as a string. This field is read-only.</p>
+<p>Represents JavaScript&#x27;s <c>undefined</c> as a string. This field is read-only.</p>
 
     </doc-member>
 </doc-member-group>
@@ -552,43 +552,6 @@ writes a Json.NET array attribute for collections, and encodes special character
         </doc-member>
     </doc-overload-group>
 
-    <doc-overload-group overload-id="group-ensuredecimalplace">
-        <doc-member id="method-ensuredecimalplace" overload-id="group-ensuredecimalplace" name="EnsureDecimalPlace" returns="string" params="string" access="private" signature="private static string EnsureDecimalPlace(string text)">
-            <template #name><h3>EnsureDecimalPlace</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="text" type="string"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-ensuredecimalplace-1" overload-id="group-ensuredecimalplace" name="EnsureDecimalPlace" returns="string" params="double, string" access="private" signature="private static string EnsureDecimalPlace(double value, string text)">
-            <template #name><h3>EnsureDecimalPlace</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="double"></doc-parameter>
-                    <doc-parameter name="text" type="string"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
-
-    <doc-member id="method-ensurefloatformat" name="EnsureFloatFormat" returns="string" params="double, string, FloatFormatHandling, char, bool" access="private" signature="private static string EnsureFloatFormat(double value, string text, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
-        <template #name><h3>EnsureFloatFormat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="double"></doc-parameter>
-                <doc-parameter name="text" type="string"></doc-parameter>
-                <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                <doc-parameter name="nullable" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-overload-group overload-id="group-populateobject">
         <doc-member id="method-populateobject" overload-id="group-populateobject" name="PopulateObject" returns="void" params="string, object" signature="public static void PopulateObject(string value, object target)">
             <template #name><h3>PopulateObject</h3></template>
@@ -737,18 +700,6 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-serializeobjectinternal" name="SerializeObjectInternal" returns="string" params="Nullable<object>?, Nullable<Type>?, JsonSerializer" access="private" signature="private static string SerializeObjectInternal(Nullable<object>? value, Nullable<Type>? type, JsonSerializer jsonSerializer)">
-        <template #name><h3>SerializeObjectInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
-                <doc-parameter name="type" type="System.Nullable<Type>?"></doc-parameter>
-                <doc-parameter name="jsonSerializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-overload-group overload-id="group-serializexmlnode">
         <doc-member id="method-serializexmlnode" overload-id="group-serializexmlnode" name="SerializeXmlNode" returns="string" params="Nullable<XmlNode>?" signature="public static string SerializeXmlNode(Nullable<XmlNode>? node)">
@@ -1140,40 +1091,7 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-23" overload-id="group-tostring" name="ToString" returns="string" params="Guid, char" access="internal" signature="internal static string ToString(Guid value, char quoteChar)">
-            <template #name><h3>ToString</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="Guid"></doc-parameter>
-                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-tostring-24" overload-id="group-tostring" name="ToString" returns="string" params="TimeSpan, char" access="internal" signature="internal static string ToString(TimeSpan value, char quoteChar)">
-            <template #name><h3>ToString</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="TimeSpan"></doc-parameter>
-                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-tostring-25" overload-id="group-tostring" name="ToString" returns="string" params="Uri, char" access="internal" signature="internal static string ToString(Uri value, char quoteChar)">
-            <template #name><h3>ToString</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="Uri"></doc-parameter>
-                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-tostring-26" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<string>?, char, StringEscapeHandling" signature="public static string ToString(Nullable<string>? value, char delimiter, StringEscapeHandling stringEscapeHandling)">
+        <doc-member id="method-tostring-23" overload-id="group-tostring" name="ToString" returns="string" params="Nullable<string>?, char, StringEscapeHandling" signature="public static string ToString(Nullable<string>? value, char delimiter, StringEscapeHandling stringEscapeHandling)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
@@ -1188,7 +1106,7 @@ writes a Json.NET array attribute for collections, and encodes special character
 
         </doc-member>
 
-        <doc-member id="method-tostring-27" overload-id="group-tostring" name="ToString" returns="string" params="DateTime, DateFormatHandling, DateTimeZoneHandling" signature="public static string ToString(DateTime value, DateFormatHandling format, DateTimeZoneHandling timeZoneHandling)">
+        <doc-member id="method-tostring-24" overload-id="group-tostring" name="ToString" returns="string" params="DateTime, DateFormatHandling, DateTimeZoneHandling" signature="public static string ToString(DateTime value, DateFormatHandling format, DateTimeZoneHandling timeZoneHandling)">
             <template #name><h3>ToString</h3></template>
 
             <template #parameters>
@@ -1202,43 +1120,7 @@ writes a Json.NET array attribute for collections, and encodes special character
 <p>Converts the <see cref="!:DateTime"/> to its JSON string representation using the <see cref="T:Newtonsoft.Json.DateFormatHandling"/> specified.</p>
 
         </doc-member>
-
-        <doc-member id="method-tostring-28" overload-id="group-tostring" name="ToString" returns="string" params="float, FloatFormatHandling, char, bool" access="internal" signature="internal static string ToString(float value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
-            <template #name><h3>ToString</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="float"></doc-parameter>
-                    <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                    <doc-parameter name="nullable" type="bool"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-tostring-29" overload-id="group-tostring" name="ToString" returns="string" params="double, FloatFormatHandling, char, bool" access="internal" signature="internal static string ToString(double value, FloatFormatHandling floatFormatHandling, char quoteChar, bool nullable)">
-            <template #name><h3>ToString</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="double"></doc-parameter>
-                    <doc-parameter name="floatFormatHandling" type="Newtonsoft.Json.FloatFormatHandling"></doc-parameter>
-                    <doc-parameter name="quoteChar" type="char"></doc-parameter>
-                    <doc-parameter name="nullable" type="bool"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-tostringinternal" name="ToStringInternal" returns="string" params="BigInteger" access="private" signature="private static string ToStringInternal(BigInteger value)">
-        <template #name><h3>ToStringInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="BigInteger"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 </doc-member-group>
 
 
@@ -1268,7 +1150,7 @@ writes a Json.NET array attribute for collections, and encodes special character
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

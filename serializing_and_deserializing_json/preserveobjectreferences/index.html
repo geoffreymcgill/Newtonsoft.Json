@@ -15,6 +15,7 @@
     <link href="/Newtonsoft.Json/resources/css/retype.css" rel="stylesheet" />
 
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/prism.js" defer></script>
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/retype.js" defer></script>
 </head>
     <body>
@@ -261,8 +262,8 @@ bool equal = Object.ReferenceEquals(p1, p2);
 </doc-codeblock></div>
 <p>The first Person in the list is serialized with the addition of an object ID. The second Person in JSON is now only a reference to the first.</p>
 <p>With PreserveReferencesHandling on, now only one Person object is created on deserialization and the list contains two references to it, mirroring what we started with.</p>
-<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can&#39;t control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
-<div><p>References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a> types are an example of a class whose values are populated with a non-default constructor and won&#39;t work with PreserveReferencesHandling.</p>
+<p>Metadata properties like <code v-pre>$id</code> must be located at the beginning of a JSON object to be successfully detected during deserialization. If you can&#x27;t control the order of properties in your JSON object then <a href="/Newtonsoft.Json/api/newtonsoft/json/metadatapropertyhandling/">MetadataPropertyHandling</a> can be used to remove this restriction.</p>
+<div><p>References cannot be preserved when a value is set via a non-default constructor. With a non-default constructor, child values must be created before the parent value so they can be passed into the constructor, making tracking reference impossible. <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a> types are an example of a class whose values are populated with a non-default constructor and won&#x27;t work with PreserveReferencesHandling.</p>
 </div>
 <doc-anchor-target id="isreference">
     <h2>
@@ -353,7 +354,7 @@ public class EmployeeReference
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

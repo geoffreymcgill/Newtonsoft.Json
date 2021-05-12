@@ -15,6 +15,7 @@
     <link href="/Newtonsoft.Json/resources/css/retype.css" rel="stylesheet" />
 
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/config.js" defer></script>
+    <script type="text/javascript" src="/Newtonsoft.Json/resources/js/prism.js" defer></script>
     <script type="text/javascript" src="/Newtonsoft.Json/resources/js/retype.js" defer></script>
 </head>
     <body>
@@ -241,10 +242,10 @@ public class Person
         <span>JsonObjectAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>The MemberSerialization flag on this attribute specifies whether member serialization is opt-in (a member must have the JsonProperty or DataMember attribute to be serialized), opt-out (everything is serialized by default but can be ignored with the JsonIgnoreAttribute, Json.NET&#39;s default behavior) or fields (all public and private fields are serialized and properties are ignored).</p>
+<p>The MemberSerialization flag on this attribute specifies whether member serialization is opt-in (a member must have the JsonProperty or DataMember attribute to be serialized), opt-out (everything is serialized by default but can be ignored with the JsonIgnoreAttribute, Json.NET&#x27;s default behavior) or fields (all public and private fields are serialized and properties are ignored).</p>
 <p>Placing the <a href="https://docs.microsoft.com/en-us/dotnet/api/system.runtime.serialization.datacontractattribute">DataContractAttribute</a> on a type is another way to default member serialization to opt-in.</p>
 <p>The NamingStrategy setting on this attributes can be set to a <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/namingstrategy/">NamingStrategy</a> type that specifies how property names are serialized.</p>
-<p>Json.NET serializes .NET classes that implement IEnumerable as a JSON array populated with the IEnumerable values. Placing the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonobjectattribute/">JsonObjectAttribute</a> overrides this behavior and forces the serializer to serialize the class&#39;s fields and properties.</p>
+<p>Json.NET serializes .NET classes that implement IEnumerable as a JSON array populated with the IEnumerable values. Placing the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonobjectattribute/">JsonObjectAttribute</a> overrides this behavior and forces the serializer to serialize the class&#x27;s fields and properties.</p>
 <doc-anchor-target id="jsonarrayattributejsondictionaryattribute">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#jsonarrayattributejsondictionaryattribute">#</doc-anchor-trigger>
@@ -266,7 +267,7 @@ public class Person
 <li>It includes non-public properties in serialization and deserialization.</li>
 <li>It can be used to customize type name, reference, null, and default value handling for the property value.</li>
 <li>It can be used to customize the <a href="/Newtonsoft.Json/api/newtonsoft/json/serialization/namingstrategy/">NamingStrategy</a> of the serialized property name.</li>
-<li>It can be used to customize the property&#39;s collection items JsonConverter, type name handling, and reference handling.</li>
+<li>It can be used to customize the property&#x27;s collection items JsonConverter, type name handling, and reference handling.</li>
 </ul>
 <p>The DataMemberAttribute can be used as a substitute for JsonPropertyAttribute.</p>
 <doc-anchor-target id="jsonignoreattribute">
@@ -311,10 +312,10 @@ public class User
         <span>JsonExtensionDataAttribute</span>
     </h2>
 </doc-anchor-target>
-<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonextensiondataattribute/">JsonExtensionDataAttribute</a> instructs the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> to deserialize properties with no matching field or property on the type into the specified collection. During serialization the values in this collection are written back to the instance&#39;s JSON object.</p>
+<p>The <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonextensiondataattribute/">JsonExtensionDataAttribute</a> instructs the <a href="/Newtonsoft.Json/api/newtonsoft/json/jsonserializer/">JsonSerializer</a> to deserialize properties with no matching field or property on the type into the specified collection. During serialization the values in this collection are written back to the instance&#x27;s JSON object.</p>
 <div><p>All extension data values will be written during serialization, even if a property the same name has already been written.</p>
 </div>
-<p>This example shows the JsonExtensionDataAttribute being applied to a field, unmatched JSON properties being added to the field&#39;s collection during deserialization.</p>
+<p>This example shows the JsonExtensionDataAttribute being applied to a field, unmatched JSON properties being added to the field&#x27;s collection during deserialization.</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <div class="codeblock-title">Types</div>
 <pre class="language-csharp"><code v-pre class="language-csharp">public class DirectoryAccount
@@ -473,7 +474,7 @@ Console.WriteLine(user.UserName);
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

@@ -212,70 +212,6 @@
 <p>Contract details for a <see cref="!:System.Type"/> used by the <see cref="T:Newtonsoft.Json.JsonSerializer"/>.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-contracttype" name="ContractType" type="JsonContractType" access="internal" signature="internal JsonContractType ContractType">
-        <template #name><h3>ContractType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-internalreadtype" name="InternalReadType" type="ReadType" access="internal" signature="internal ReadType InternalReadType">
-        <template #name><h3>InternalReadType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-isconvertable" name="IsConvertable" type="bool" access="internal" signature="internal bool IsConvertable">
-        <template #name><h3>IsConvertable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-isenum" name="IsEnum" type="bool" access="internal" signature="internal bool IsEnum">
-        <template #name><h3>IsEnum</h3></template>
-    </doc-member>
-
-    <doc-member id="field-isinstantiable" name="IsInstantiable" type="bool" access="internal" signature="internal bool IsInstantiable">
-        <template #name><h3>IsInstantiable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-isnullable" name="IsNullable" type="bool" access="internal" signature="internal bool IsNullable">
-        <template #name><h3>IsNullable</h3></template>
-    </doc-member>
-
-    <doc-member id="field-isreadonlyorfixedsize" name="IsReadOnlyOrFixedSize" type="bool" access="internal" signature="internal bool IsReadOnlyOrFixedSize">
-        <template #name><h3>IsReadOnlyOrFixedSize</h3></template>
-    </doc-member>
-
-    <doc-member id="field-issealed" name="IsSealed" type="bool" access="internal" signature="internal bool IsSealed">
-        <template #name><h3>IsSealed</h3></template>
-    </doc-member>
-
-    <doc-member id="field-nonnullableunderlyingtype" name="NonNullableUnderlyingType" type="Type" access="internal" signature="internal Type NonNullableUnderlyingType">
-        <template #name><h3>NonNullableUnderlyingType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_createdtype" name="_createdType" type="Type" access="private" signature="private Type _createdType">
-        <template #name><h3>_createdType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_ondeserializedcallbacks" name="_onDeserializedCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onDeserializedCallbacks">
-        <template #name><h3>_onDeserializedCallbacks</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_ondeserializingcallbacks" name="_onDeserializingCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onDeserializingCallbacks">
-        <template #name><h3>_onDeserializingCallbacks</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_onerrorcallbacks" name="_onErrorCallbacks" type="Nullable<List<SerializationErrorCallback>>?" access="private" signature="private Nullable<List<SerializationErrorCallback>>? _onErrorCallbacks">
-        <template #name><h3>_onErrorCallbacks</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_onserializedcallbacks" name="_onSerializedCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onSerializedCallbacks">
-        <template #name><h3>_onSerializedCallbacks</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_onserializingcallbacks" name="_onSerializingCallbacks" type="Nullable<List<SerializationCallback>>?" access="private" signature="private Nullable<List<SerializationCallback>>? _onSerializingCallbacks">
-        <template #name><h3>_onSerializingCallbacks</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -310,7 +246,7 @@
     <doc-member id="property-internalconverter" name="InternalConverter" type="JsonConverter?" signature="public JsonConverter? InternalConverter { get; internal set; }">
         <template #name><h3>InternalConverter</h3></template>
 
-<p>Gets the internally resolved <see cref="T:Newtonsoft.Json.JsonConverter"/> for the contract&#39;s type.
+<p>Gets the internally resolved <see cref="T:Newtonsoft.Json.JsonConverter"/> for the contract&#x27;s type.
 This converter is used as a fallback converter when no other converter is resolved.
 Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> will always override this converter.</p>
 
@@ -366,96 +302,6 @@ Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> wil
     </doc-member>
 </doc-member-group>
 
-<doc-member-group id="methods">
-    <template #title>Methods</template>
-
-    <doc-member id="method-.ctor" name=".ctor" returns="void" params="Type" access="internal" signature="internal JsonContract(Type underlyingType)">
-        <template #name><h3>.ctor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="underlyingType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-createserializationcallback" name="CreateSerializationCallback" returns="SerializationCallback" params="MethodInfo" access="internal" signature="internal static SerializationCallback CreateSerializationCallback(MethodInfo callbackMethodInfo)">
-        <template #name><h3>CreateSerializationCallback</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="callbackMethodInfo" type="MethodInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-createserializationerrorcallback" name="CreateSerializationErrorCallback" returns="SerializationErrorCallback" params="MethodInfo" access="internal" signature="internal static SerializationErrorCallback CreateSerializationErrorCallback(MethodInfo callbackMethodInfo)">
-        <template #name><h3>CreateSerializationErrorCallback</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="callbackMethodInfo" type="MethodInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-invokeondeserialized" name="InvokeOnDeserialized" returns="void" params="object, StreamingContext" access="internal" signature="internal void InvokeOnDeserialized(object o, StreamingContext context)">
-        <template #name><h3>InvokeOnDeserialized</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-invokeondeserializing" name="InvokeOnDeserializing" returns="void" params="object, StreamingContext" access="internal" signature="internal void InvokeOnDeserializing(object o, StreamingContext context)">
-        <template #name><h3>InvokeOnDeserializing</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-invokeonerror" name="InvokeOnError" returns="void" params="object, StreamingContext, ErrorContext" access="internal" signature="internal void InvokeOnError(object o, StreamingContext context, ErrorContext errorContext)">
-        <template #name><h3>InvokeOnError</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-                <doc-parameter name="errorContext" type="Newtonsoft.Json.Serialization.ErrorContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-invokeonserialized" name="InvokeOnSerialized" returns="void" params="object, StreamingContext" access="internal" signature="internal void InvokeOnSerialized(object o, StreamingContext context)">
-        <template #name><h3>InvokeOnSerialized</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-invokeonserializing" name="InvokeOnSerializing" returns="void" params="object, StreamingContext" access="internal" signature="internal void InvokeOnSerializing(object o, StreamingContext context)">
-        <template #name><h3>InvokeOnSerializing</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-</doc-member-group>
-
 
     
                 <!-- Required only on API pages -->
@@ -483,7 +329,7 @@ Setting <see cref="P:Newtonsoft.Json.Serialization.JsonContract.Converter"/> wil
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

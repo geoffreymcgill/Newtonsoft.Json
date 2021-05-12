@@ -212,21 +212,13 @@
 <p>Represents a JSON array.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_values" name="_values" type="List<JToken>" access="private" signature="private readonly List<JToken> _values">
-        <template #name><h3>_values</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
     <doc-member id="property-childrentokens" name="ChildrenTokens" type="IList<JToken>" access="protected" signature="protected sealed IList<JToken> ChildrenTokens { protected get; }">
         <template #name><h3>ChildrenTokens</h3></template>
 
-<p>Gets the container&#39;s children tokens.</p>
+<p>Gets the container&#x27;s children tokens.</p>
 
     </doc-member>
 
@@ -316,10 +308,6 @@
 
     </doc-member>
 
-    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal sealed JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
-    </doc-member>
-
     <doc-member id="method-contains" name="Contains" returns="bool" params="JToken" signature="public bool Contains(JToken item)">
         <template #name><h3>Contains</h3></template>
 
@@ -345,16 +333,6 @@
 
 <p>Copies the elements of the <see cref="T:Newtonsoft.Json.Linq.JArray"/> to an array, starting at a particular array index.</p>
 
-    </doc-member>
-
-    <doc-member id="method-deepequals" name="DeepEquals" returns="bool" params="JToken" access="internal" signature="internal sealed bool DeepEquals(JToken node)">
-        <template #name><h3>DeepEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-fromobject">
@@ -386,10 +364,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="int" access="internal" signature="internal sealed int GetDeepHashCode()">
-        <template #name><h3>GetDeepHashCode</h3></template>
-    </doc-member>
-
     <doc-member id="method-getenumerator" name="GetEnumerator" returns="IEnumerator<JToken>" signature="public IEnumerator<JToken> GetEnumerator()">
         <template #name><h3>GetEnumerator</h3></template>
 
@@ -408,16 +382,6 @@
 
 <p>Determines the index of a specific item in the <see cref="T:Newtonsoft.Json.Linq.JArray"/>.</p>
 
-    </doc-member>
-
-    <doc-member id="method-indexofitem" name="IndexOfItem" returns="int" params="JToken?" access="internal" signature="internal sealed int IndexOfItem(JToken? item)">
-        <template #name><h3>IndexOfItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-insert" name="Insert" returns="void" params="int, JToken" signature="public void Insert(int index, JToken item)">
@@ -493,17 +457,6 @@
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-mergeitem" name="MergeItem" returns="void" params="object, JsonMergeSettings?" access="internal" signature="internal sealed void MergeItem(object content, JsonMergeSettings? settings)">
-        <template #name><h3>MergeItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="object"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonMergeSettings?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-overload-group overload-id="group-parse">
         <doc-member id="method-parse" overload-id="group-parse" name="Parse" returns="JArray" params="string" signature="public static JArray Parse(string json)">
@@ -617,7 +570,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

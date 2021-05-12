@@ -212,18 +212,6 @@
 <p>Represents a value in JSON (string, integer, date, etc).</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_value" name="_value" type="Nullable<object>?" access="private" signature="private Nullable<object>? _value">
-        <template #name><h3>_value</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_valuetype" name="_valueType" type="JTokenType" access="private" signature="private JTokenType _valueType">
-        <template #name><h3>_valueType</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -447,56 +435,7 @@
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Linq.JValue"/> class with the given value.</p>
 
         </doc-member>
-
-        <doc-member id="method-.ctor-15" overload-id="group-.ctor" name=".ctor" returns="void" params="Nullable<object>?, JTokenType" access="internal" signature="internal JValue(Nullable<object>? value, JTokenType type)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
-                    <doc-parameter name="type" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal sealed JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
-    </doc-member>
-
-    <doc-member id="method-compare" name="Compare" returns="int" params="JTokenType, Nullable<object>?, Nullable<object>?" access="internal" signature="internal static int Compare(JTokenType valueType, Nullable<object>? objA, Nullable<object>? objB)">
-        <template #name><h3>Compare</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="valueType" type="Newtonsoft.Json.Linq.JTokenType"></doc-parameter>
-                <doc-parameter name="objA" type="System.Nullable<object>?"></doc-parameter>
-                <doc-parameter name="objB" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-comparebiginteger" name="CompareBigInteger" returns="int" params="BigInteger, object" access="private" signature="private static int CompareBigInteger(BigInteger i1, object i2)">
-        <template #name><h3>CompareBigInteger</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="i1" type="BigInteger"></doc-parameter>
-                <doc-parameter name="i2" type="object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-comparefloat" name="CompareFloat" returns="int" params="object, object" access="private" signature="private static int CompareFloat(object objA, object objB)">
-        <template #name><h3>CompareFloat</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objA" type="object"></doc-parameter>
-                <doc-parameter name="objB" type="object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-member id="method-compareto" name="CompareTo" returns="int" params="JValue" signature="public int CompareTo(JValue obj)">
         <template #name><h3>CompareTo</h3></template>
@@ -551,16 +490,6 @@
 
     </doc-member>
 
-    <doc-member id="method-deepequals" name="DeepEquals" returns="bool" params="JToken" access="internal" signature="internal sealed bool DeepEquals(JToken node)">
-        <template #name><h3>DeepEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="node" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-overload-group overload-id="group-equals">
         <doc-member id="method-equals" overload-id="group-equals" name="Equals" returns="bool" params="object" signature="public sealed bool Equals(object obj)">
             <template #name><h3>Equals</h3></template>
@@ -589,10 +518,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="int" access="internal" signature="internal sealed int GetDeepHashCode()">
-        <template #name><h3>GetDeepHashCode</h3></template>
-    </doc-member>
-
     <doc-member id="method-gethashcode" name="GetHashCode" returns="int" signature="public sealed int GetHashCode()">
         <template #name><h3>GetHashCode</h3></template>
 
@@ -611,40 +536,6 @@
 
 <p>Returns the <see cref="!:DynamicMetaObject"/> responsible for binding operations performed on this object.</p>
 
-    </doc-member>
-
-    <doc-member id="method-getstringvaluetype" name="GetStringValueType" returns="JTokenType" params="Nullable<JTokenType>?" access="private" signature="private static JTokenType GetStringValueType(Nullable<JTokenType>? current)">
-        <template #name><h3>GetStringValueType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="current" type="System.Nullable<Newtonsoft.Json.Linq.JTokenType>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getvaluetype" name="GetValueType" returns="JTokenType" params="Nullable<JTokenType>?, Nullable<object>?" access="private" signature="private static JTokenType GetValueType(Nullable<JTokenType>? current, Nullable<object>? value)">
-        <template #name><h3>GetValueType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="current" type="System.Nullable<Newtonsoft.Json.Linq.JTokenType>?"></doc-parameter>
-                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-operation" name="Operation" returns="bool" params="ExpressionType, Nullable<object>?, Nullable<object>?, Nullable<object>?" access="private" signature="private static bool Operation(ExpressionType operation, Nullable<object>? objA, Nullable<object>? objB, out Nullable<object>? result)">
-        <template #name><h3>Operation</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="operation" type="ExpressionType"></doc-parameter>
-                <doc-parameter name="objA" type="System.Nullable<object>?"></doc-parameter>
-                <doc-parameter name="objB" type="System.Nullable<object>?"></doc-parameter>
-                <doc-parameter name="result" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-tostring">
@@ -695,17 +586,6 @@
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-valuesequals" name="ValuesEquals" returns="bool" params="JValue, JValue" access="private" signature="private static bool ValuesEquals(JValue v1, JValue v2)">
-        <template #name><h3>ValuesEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="v1" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-                <doc-parameter name="v2" type="Newtonsoft.Json.Linq.JValue"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-member id="method-writeto" name="WriteTo" returns="void" params="JsonWriter, JsonConverter[]" signature="public sealed void WriteTo(JsonWriter writer, params JsonConverter[] converters)">
         <template #name><h3>WriteTo</h3></template>
@@ -764,7 +644,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

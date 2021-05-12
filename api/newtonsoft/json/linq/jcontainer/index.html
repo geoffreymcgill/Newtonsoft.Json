@@ -212,37 +212,13 @@
 <p>Represents a token that can contain other tokens.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_addingnew" name="_addingNew" type="Nullable<AddingNewEventHandler>?" access="internal" signature="internal Nullable<AddingNewEventHandler>? _addingNew">
-        <template #name><h3>_addingNew</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_busy" name="_busy" type="bool" access="private" signature="private bool _busy">
-        <template #name><h3>_busy</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_collectionchanged" name="_collectionChanged" type="Nullable<NotifyCollectionChangedEventHandler>?" access="internal" signature="internal Nullable<NotifyCollectionChangedEventHandler>? _collectionChanged">
-        <template #name><h3>_collectionChanged</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_listchanged" name="_listChanged" type="Nullable<ListChangedEventHandler>?" access="internal" signature="internal Nullable<ListChangedEventHandler>? _listChanged">
-        <template #name><h3>_listChanged</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_syncroot" name="_syncRoot" type="Nullable<object>?" access="private" signature="private Nullable<object>? _syncRoot">
-        <template #name><h3>_syncRoot</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
     <doc-member id="property-childrentokens" name="ChildrenTokens" type="IList<JToken>" access="protected" signature="protected abstract IList<JToken> ChildrenTokens { protected get; }">
         <template #name><h3>ChildrenTokens</h3></template>
 
-<p>Gets the container&#39;s children tokens.</p>
+<p>Gets the container&#x27;s children tokens.</p>
 
     </doc-member>
 
@@ -278,22 +254,6 @@
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
-    <doc-overload-group overload-id="group-.ctor">
-        <doc-member id="method-.ctor" overload-id="group-.ctor" name=".ctor" returns="void" access="internal" signature="internal JContainer()">
-            <template #name><h3>.ctor</h3></template>
-        </doc-member>
-
-        <doc-member id="method-.ctor-1" overload-id="group-.ctor" name=".ctor" returns="void" params="JContainer" access="internal" signature="internal JContainer(JContainer other)">
-            <template #name><h3>.ctor</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="other" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
-
     <doc-member id="method-add" name="Add" returns="void" params="Nullable<object>?" signature="public virtual void Add(Nullable<object>? content)">
         <template #name><h3>Add</h3></template>
 
@@ -305,16 +265,6 @@
 
 <p>Adds the specified content as children of this <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
 
-    </doc-member>
-
-    <doc-member id="method-addandskipparentcheck" name="AddAndSkipParentCheck" returns="void" params="JToken" access="internal" signature="internal void AddAndSkipParentCheck(JToken token)">
-        <template #name><h3>AddAndSkipParentCheck</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-addfirst" name="AddFirst" returns="void" params="Nullable<object>?" signature="public void AddFirst(Nullable<object>? content)">
@@ -330,68 +280,11 @@
 
     </doc-member>
 
-    <doc-member id="method-checkreentrancy" name="CheckReentrancy" returns="void" access="internal" signature="internal void CheckReentrancy()">
-        <template #name><h3>CheckReentrancy</h3></template>
-    </doc-member>
-
     <doc-member id="method-children" name="Children" returns="JEnumerable<JToken>" signature="public sealed JEnumerable<JToken> Children()">
         <template #name><h3>Children</h3></template>
 
 <p>Returns a collection of the child tokens of this token, in document order.</p>
 
-    </doc-member>
-
-    <doc-member id="method-clearitems" name="ClearItems" returns="void" access="internal" signature="internal virtual void ClearItems()">
-        <template #name><h3>ClearItems</h3></template>
-    </doc-member>
-
-    <doc-member id="method-containsitem" name="ContainsItem" returns="bool" params="JToken?" access="internal" signature="internal virtual bool ContainsItem(JToken? item)">
-        <template #name><h3>ContainsItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-contentsequal" name="ContentsEqual" returns="bool" params="JContainer" access="internal" signature="internal bool ContentsEqual(JContainer container)">
-        <template #name><h3>ContentsEqual</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="container" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-contentshashcode" name="ContentsHashCode" returns="int" access="internal" signature="internal int ContentsHashCode()">
-        <template #name><h3>ContentsHashCode</h3></template>
-    </doc-member>
-
-    <doc-member id="method-copyitemsto" name="CopyItemsTo" returns="void" params="Array, int" access="internal" signature="internal virtual void CopyItemsTo(Array array, int arrayIndex)">
-        <template #name><h3>CopyItemsTo</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="array" type="Array"></doc-parameter>
-                <doc-parameter name="arrayIndex" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-createchildrencollection" name="CreateChildrenCollection" returns="IList<JToken>" access="internal" signature="internal virtual IList<JToken> CreateChildrenCollection()">
-        <template #name><h3>CreateChildrenCollection</h3></template>
-    </doc-member>
-
-    <doc-member id="method-createfromcontent" name="CreateFromContent" returns="JToken" params="Nullable<object>?" access="internal" signature="internal static JToken CreateFromContent(Nullable<object>? content)">
-        <template #name><h3>CreateFromContent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-createwriter" name="CreateWriter" returns="JsonWriter" signature="public JsonWriter CreateWriter()">
@@ -413,90 +306,6 @@
 
 <p>Returns a collection of the tokens that contain this token, and all descendant tokens of this token, in document order.</p>
 
-    </doc-member>
-
-    <doc-member id="method-ensureparenttoken" name="EnsureParentToken" returns="JToken" params="JToken?, bool" access="internal" signature="internal JToken EnsureParentToken(JToken? item, bool skipParentCheck)">
-        <template #name><h3>EnsureParentToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-                <doc-parameter name="skipParentCheck" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-ensurevalue" name="EnsureValue" returns="JToken?" params="object" access="private" signature="private JToken? EnsureValue(object value)">
-        <template #name><h3>EnsureValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="object"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getdescendants" name="GetDescendants" returns="IEnumerable<JToken>" params="bool" access="internal" signature="internal IEnumerable<JToken> GetDescendants(bool self)">
-        <template #name><h3>GetDescendants</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="self" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getitem" name="GetItem" returns="JToken" params="int" access="internal" signature="internal virtual JToken GetItem(int index)">
-        <template #name><h3>GetItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-indexofitem" name="IndexOfItem" returns="int" params="JToken?" access="internal" signature="internal abstract int IndexOfItem(JToken? item)">
-        <template #name><h3>IndexOfItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-insertitem" name="InsertItem" returns="bool" params="int, JToken?, bool" access="internal" signature="internal virtual bool InsertItem(int index, JToken? item, bool skipParentCheck)">
-        <template #name><h3>InsertItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="int"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-                <doc-parameter name="skipParentCheck" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-ismulticontent" name="IsMultiContent" returns="bool" params="Nullable<object>?" access="internal" signature="internal bool IsMultiContent(Nullable<object>? content)">
-        <template #name><h3>IsMultiContent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-istokenunchanged" name="IsTokenUnchanged" returns="bool" params="JToken, JToken?" access="internal" signature="internal static bool IsTokenUnchanged(JToken currentValue, JToken? newValue)">
-        <template #name><h3>IsTokenUnchanged</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="currentValue" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="newValue" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-merge">
@@ -527,29 +336,6 @@
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-mergeenumerablecontent" name="MergeEnumerableContent" returns="void" params="JContainer, IEnumerable, JsonMergeSettings?" access="internal" signature="internal static void MergeEnumerableContent(JContainer target, IEnumerable content, JsonMergeSettings? settings)">
-        <template #name><h3>MergeEnumerableContent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-                <doc-parameter name="content" type="IEnumerable"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonMergeSettings?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-mergeitem" name="MergeItem" returns="void" params="object, JsonMergeSettings?" access="internal" signature="internal abstract void MergeItem(object content, JsonMergeSettings? settings)">
-        <template #name><h3>MergeItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="object"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonMergeSettings?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-member id="method-onaddingnew" name="OnAddingNew" returns="void" params="AddingNewEventArgs" access="protected" signature="protected virtual void OnAddingNew(AddingNewEventArgs e)">
         <template #name><h3>OnAddingNew</h3></template>
@@ -590,90 +376,11 @@
 
     </doc-member>
 
-    <doc-member id="method-readcontentfrom" name="ReadContentFrom" returns="void" params="JsonReader, JsonLoadSettings?" access="internal" signature="internal void ReadContentFrom(JsonReader r, JsonLoadSettings? settings)">
-        <template #name><h3>ReadContentFrom</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="r" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readcontentfromasync" name="ReadContentFromAsync" returns="Task" params="JsonReader, JsonLoadSettings?, CancellationToken" access="private" signature="private async Task ReadContentFromAsync(JsonReader reader, JsonLoadSettings? settings, CancellationToken cancellationToken = null)">
-        <template #name><h3>ReadContentFromAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readproperty" name="ReadProperty" returns="JProperty?" params="JsonReader, JsonLoadSettings?, IJsonLineInfo?, JContainer" access="private" signature="private static JProperty? ReadProperty(JsonReader r, JsonLoadSettings? settings, IJsonLineInfo? lineInfo, JContainer parent)">
-        <template #name><h3>ReadProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="r" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-                <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
-                <doc-parameter name="parent" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readtokenfrom" name="ReadTokenFrom" returns="void" params="JsonReader, JsonLoadSettings?" access="internal" signature="internal void ReadTokenFrom(JsonReader reader, JsonLoadSettings? options)">
-        <template #name><h3>ReadTokenFrom</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="options" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readtokenfromasync" name="ReadTokenFromAsync" returns="Task" params="JsonReader, JsonLoadSettings?, CancellationToken" access="internal" signature="internal async Task ReadTokenFromAsync(JsonReader reader, JsonLoadSettings? options, CancellationToken cancellationToken = null)">
-        <template #name><h3>ReadTokenFromAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="options" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-removeall" name="RemoveAll" returns="void" signature="public void RemoveAll()">
         <template #name><h3>RemoveAll</h3></template>
 
 <p>Removes the child nodes from this token.</p>
 
-    </doc-member>
-
-    <doc-member id="method-removeitem" name="RemoveItem" returns="bool" params="JToken?" access="internal" signature="internal virtual bool RemoveItem(JToken? item)">
-        <template #name><h3>RemoveItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-removeitemat" name="RemoveItemAt" returns="void" params="int" access="internal" signature="internal virtual void RemoveItemAt(int index)">
-        <template #name><h3>RemoveItemAt</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-replaceall" name="ReplaceAll" returns="void" params="object" signature="public void ReplaceAll(object content)">
@@ -687,61 +394,6 @@
 
 <p>Replaces the child nodes of this token with the specified content.</p>
 
-    </doc-member>
-
-    <doc-member id="method-replaceitem" name="ReplaceItem" returns="void" params="JToken, JToken" access="internal" signature="internal virtual void ReplaceItem(JToken existing, JToken replacement)">
-        <template #name><h3>ReplaceItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="existing" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="replacement" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-setitem" name="SetItem" returns="void" params="int, JToken?" access="internal" signature="internal virtual void SetItem(int index, JToken? item)">
-        <template #name><h3>SetItem</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="int"></doc-parameter>
-                <doc-parameter name="item" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-tryadd" name="TryAdd" returns="bool" params="Nullable<object>?" access="internal" signature="internal bool TryAdd(Nullable<object>? content)">
-        <template #name><h3>TryAdd</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-tryaddinternal" name="TryAddInternal" returns="bool" params="int, Nullable<object>?, bool" access="internal" signature="internal bool TryAddInternal(int index, Nullable<object>? content, bool skipParentCheck)">
-        <template #name><h3>TryAddInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="index" type="int"></doc-parameter>
-                <doc-parameter name="content" type="System.Nullable<object>?"></doc-parameter>
-                <doc-parameter name="skipParentCheck" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-validatetoken" name="ValidateToken" returns="void" params="JToken, JToken?" access="internal" signature="internal virtual void ValidateToken(JToken o, JToken? existing)">
-        <template #name><h3>ValidateToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="existing" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-values" name="Values" returns="IEnumerable<T?>" signature="public sealed IEnumerable<T?> Values<T>()">
@@ -804,7 +456,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

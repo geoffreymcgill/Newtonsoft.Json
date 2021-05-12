@@ -215,26 +215,6 @@
 </doc-alert>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_contractresolver" name="_contractResolver" type="IContractResolver" access="private" signature="private IContractResolver _contractResolver">
-        <template #name><h3>_contractResolver</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentschema" name="_currentSchema" type="JsonSchema" access="private" signature="private JsonSchema _currentSchema">
-        <template #name><h3>_currentSchema</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_resolver" name="_resolver" type="JsonSchemaResolver" access="private" signature="private JsonSchemaResolver _resolver">
-        <template #name><h3>_resolver</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stack" name="_stack" type="IList<TypeSchema>" access="private" signature="private readonly IList<TypeSchema> _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -243,10 +223,6 @@
 
 <p>Gets or sets the contract resolver.</p>
 
-    </doc-member>
-
-    <doc-member id="property-currentschema" name="CurrentSchema" type="JsonSchema" access="private" signature="private JsonSchema CurrentSchema { private get; }">
-        <template #name><h3>CurrentSchema</h3></template>
     </doc-member>
 
     <doc-member id="property-undefinedschemaidhandling" name="UndefinedSchemaIdHandling" type="UndefinedSchemaIdHandling" signature="public UndefinedSchemaIdHandling UndefinedSchemaIdHandling { get; set; }">
@@ -259,17 +235,6 @@
 
 <doc-member-group id="methods">
     <template #title>Methods</template>
-
-    <doc-member id="method-addnulltype" name="AddNullType" returns="JsonSchemaType" params="JsonSchemaType, Required" access="private" signature="private JsonSchemaType AddNullType(JsonSchemaType type, Required valueRequired)">
-        <template #name><h3>AddNullType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
-                <doc-parameter name="valueRequired" type="Newtonsoft.Json.Required"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-overload-group overload-id="group-generate">
         <doc-member id="method-generate" overload-id="group-generate" name="Generate" returns="JsonSchema" params="Type" signature="public JsonSchema Generate(Type type)">
@@ -328,120 +293,6 @@
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-generateinternal" name="GenerateInternal" returns="JsonSchema" params="Type, Required, bool" access="private" signature="private JsonSchema GenerateInternal(Type type, Required valueRequired, bool required)">
-        <template #name><h3>GenerateInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="valueRequired" type="Newtonsoft.Json.Required"></doc-parameter>
-                <doc-parameter name="required" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-generateiserializablecontract" name="GenerateISerializableContract" returns="void" params="Type, JsonISerializableContract" access="private" signature="private void GenerateISerializableContract(Type type, JsonISerializableContract contract)">
-        <template #name><h3>GenerateISerializableContract</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonISerializableContract"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-generateobjectschema" name="GenerateObjectSchema" returns="void" params="Type, JsonObjectContract" access="private" signature="private void GenerateObjectSchema(Type type, JsonObjectContract contract)">
-        <template #name><h3>GenerateObjectSchema</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getdescription" name="GetDescription" returns="string" params="Type" access="private" signature="private string GetDescription(Type type)">
-        <template #name><h3>GetDescription</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getjsonschematype" name="GetJsonSchemaType" returns="JsonSchemaType" params="Type, Required" access="private" signature="private JsonSchemaType GetJsonSchemaType(Type type, Required valueRequired)">
-        <template #name><h3>GetJsonSchemaType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="valueRequired" type="Newtonsoft.Json.Required"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-gettitle" name="GetTitle" returns="string" params="Type" access="private" signature="private string GetTitle(Type type)">
-        <template #name><h3>GetTitle</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-gettypeid" name="GetTypeId" returns="string" params="Type, bool" access="private" signature="private string GetTypeId(Type type, bool explicitOnly)">
-        <template #name><h3>GetTypeId</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="explicitOnly" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-overload-group overload-id="group-hasflag">
-        <doc-member id="method-hasflag" overload-id="group-hasflag" name="HasFlag" returns="bool" params="DefaultValueHandling, DefaultValueHandling" access="private" signature="private bool HasFlag(DefaultValueHandling value, DefaultValueHandling flag)">
-            <template #name><h3>HasFlag</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
-                    <doc-parameter name="flag" type="Newtonsoft.Json.DefaultValueHandling"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-hasflag-1" overload-id="group-hasflag" name="HasFlag" returns="bool" params="Nullable<JsonSchemaType>?, JsonSchemaType" access="internal" signature="internal static bool HasFlag(Nullable<JsonSchemaType>? value, JsonSchemaType flag)">
-            <template #name><h3>HasFlag</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="value" type="System.Nullable<Newtonsoft.Json.Schema.JsonSchemaType>?"></doc-parameter>
-                    <doc-parameter name="flag" type="Newtonsoft.Json.Schema.JsonSchemaType"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
-
-    <doc-member id="method-pop" name="Pop" returns="TypeSchema" access="private" signature="private TypeSchema Pop()">
-        <template #name><h3>Pop</h3></template>
-    </doc-member>
-
-    <doc-member id="method-push" name="Push" returns="void" params="TypeSchema" access="private" signature="private void Push(TypeSchema typeSchema)">
-        <template #name><h3>Push</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="typeSchema" type="Newtonsoft.Json.Schema.JsonSchemaGenerator.TypeSchema"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 </doc-member-group>
 
 
@@ -471,7 +322,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

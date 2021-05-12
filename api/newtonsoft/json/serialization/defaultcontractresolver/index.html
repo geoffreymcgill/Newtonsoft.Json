@@ -212,30 +212,6 @@
 <p>Used by <see cref="T:Newtonsoft.Json.JsonSerializer"/> to resolve a <see cref="T:Newtonsoft.Json.Serialization.JsonContract"/> for a given <see cref="!:System.Type"/>.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-blacklistedtypenames" name="BlacklistedTypeNames" type="string[]" access="private" signature="private readonly static string[] BlacklistedTypeNames">
-        <template #name><h3>BlacklistedTypeNames</h3></template>
-    </doc-member>
-
-    <doc-member id="field-builtinconverters" name="BuiltInConverters" type="JsonConverter[]" access="private" signature="private readonly static JsonConverter[] BuiltInConverters">
-        <template #name><h3>BuiltInConverters</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_contractcache" name="_contractCache" type="ThreadSafeStore<Type, JsonContract>" access="private" signature="private readonly ThreadSafeStore<Type, JsonContract> _contractCache">
-        <template #name><h3>_contractCache</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_instance" name="_instance" type="IContractResolver" access="private" signature="private readonly static IContractResolver _instance">
-        <template #name><h3>_instance</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_nametable" name="_nameTable" type="DefaultJsonNameTable" access="private" signature="private readonly DefaultJsonNameTable _nameTable">
-        <template #name><h3>_nameTable</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -282,10 +258,6 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
-    <doc-member id="property-instance" name="Instance" type="IContractResolver" access="internal" signature="internal static IContractResolver Instance { internal get; }">
-        <template #name><h3>Instance</h3></template>
-    </doc-member>
-
     <doc-member id="property-namingstrategy" name="NamingStrategy" type="NamingStrategy?" signature="public NamingStrategy? NamingStrategy { get; set; }">
         <template #name><h3>NamingStrategy</h3></template>
 
@@ -309,16 +281,6 @@ This value is determined by the runtime permissions available.</p>
 
 <p>Initializes a new instance of the <see cref="T:Newtonsoft.Json.Serialization.DefaultContractResolver"/> class.</p>
 
-    </doc-member>
-
-    <doc-member id="method-canconverttostring" name="CanConvertToString" returns="bool" params="Type" access="internal" signature="internal static bool CanConvertToString(Type type)">
-        <template #name><h3>CanConvertToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-createarraycontract" name="CreateArrayContract" returns="JsonArrayContract" params="Type" access="protected" signature="protected virtual JsonArrayContract CreateArrayContract(Type objectType)">
@@ -494,16 +456,6 @@ This value is determined by the runtime permissions available.</p>
 
     </doc-member>
 
-    <doc-member id="method-createshouldserializetest" name="CreateShouldSerializeTest" returns="Nullable<Predicate<object>>?" params="MemberInfo" access="private" signature="private Nullable<Predicate<object>>? CreateShouldSerializeTest(MemberInfo member)">
-        <template #name><h3>CreateShouldSerializeTest</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-createstringcontract" name="CreateStringContract" returns="JsonStringContract" params="Type" access="protected" signature="protected virtual JsonStringContract CreateStringContract(Type objectType)">
         <template #name><h3>CreateStringContract</h3></template>
 
@@ -515,106 +467,6 @@ This value is determined by the runtime permissions available.</p>
 
 <p>Creates a <see cref="T:Newtonsoft.Json.Serialization.JsonStringContract"/> for the given type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-filtermembers" name="FilterMembers" returns="bool" params="MemberInfo" access="private" signature="private static bool FilterMembers(MemberInfo member)">
-        <template #name><h3>FilterMembers</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getattributeconstructor" name="GetAttributeConstructor" returns="Nullable<ConstructorInfo>?" params="Type" access="private" signature="private Nullable<ConstructorInfo>? GetAttributeConstructor(Type objectType)">
-        <template #name><h3>GetAttributeConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getcallbackmethodsfortype" name="GetCallbackMethodsForType" returns="void" params="Type, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationCallback>>?, Nullable<List<SerializationErrorCallback>>?" access="private" signature="private void GetCallbackMethodsForType(Type type, out Nullable<List<SerializationCallback>>? onSerializing, out Nullable<List<SerializationCallback>>? onSerialized, out Nullable<List<SerializationCallback>>? onDeserializing, out Nullable<List<SerializationCallback>>? onDeserialized, out Nullable<List<SerializationErrorCallback>>? onError)">
-        <template #name><h3>GetCallbackMethodsForType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-                <doc-parameter name="onSerializing" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
-                <doc-parameter name="onSerialized" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
-                <doc-parameter name="onDeserializing" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
-                <doc-parameter name="onDeserialized" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationCallback>>?"></doc-parameter>
-                <doc-parameter name="onError" type="System.Nullable<List<Newtonsoft.Json.Serialization.SerializationErrorCallback>>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getclasshierarchyfortype" name="GetClassHierarchyForType" returns="List<Type>" params="Type" access="private" signature="private List<Type> GetClassHierarchyForType(Type type)">
-        <template #name><h3>GetClassHierarchyForType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getclrtypefullname" name="GetClrTypeFullName" returns="string" params="Type" access="internal" signature="internal static string GetClrTypeFullName(Type type)">
-        <template #name><h3>GetClrTypeFullName</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getdefaultcreator" name="GetDefaultCreator" returns="Func<object>" params="Type" access="private" signature="private Func<object> GetDefaultCreator(Type createdType)">
-        <template #name><h3>GetDefaultCreator</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="createdType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getextensiondatamemberfortype" name="GetExtensionDataMemberForType" returns="MemberInfo" params="Type" access="private" signature="private MemberInfo GetExtensionDataMemberForType(Type type)">
-        <template #name><h3>GetExtensionDataMemberForType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getimmutableconstructor" name="GetImmutableConstructor" returns="Nullable<ConstructorInfo>?" params="Type, JsonPropertyCollection" access="private" signature="private Nullable<ConstructorInfo>? GetImmutableConstructor(Type objectType, JsonPropertyCollection memberProperties)">
-        <template #name><h3>GetImmutableConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-                <doc-parameter name="memberProperties" type="Newtonsoft.Json.Serialization.JsonPropertyCollection"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getnametable" name="GetNameTable" returns="DefaultJsonNameTable" access="internal" signature="internal virtual DefaultJsonNameTable GetNameTable()">
-        <template #name><h3>GetNameTable</h3></template>
-    </doc-member>
-
-    <doc-member id="method-getparameterizedconstructor" name="GetParameterizedConstructor" returns="Nullable<ConstructorInfo>?" params="Type" access="private" signature="private Nullable<ConstructorInfo>? GetParameterizedConstructor(Type objectType)">
-        <template #name><h3>GetParameterizedConstructor</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-getresolvedpropertyname" name="GetResolvedPropertyName" returns="string" params="string" signature="public string GetResolvedPropertyName(string propertyName)">
@@ -641,83 +493,6 @@ This value is determined by the runtime permissions available.</p>
 
 <p>Gets the serializable members for the type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-initializecontract" name="InitializeContract" returns="void" params="JsonContract" access="private" signature="private void InitializeContract(JsonContract contract)">
-        <template #name><h3>InitializeContract</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-isconcurrentorobservablecollection" name="IsConcurrentOrObservableCollection" returns="bool" params="Type" access="private" signature="private static bool IsConcurrentOrObservableCollection(Type t)">
-        <template #name><h3>IsConcurrentOrObservableCollection</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-isiconvertible" name="IsIConvertible" returns="bool" params="Type" access="internal" signature="internal static bool IsIConvertible(Type t)">
-        <template #name><h3>IsIConvertible</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-isjsonprimitivetype" name="IsJsonPrimitiveType" returns="bool" params="Type" access="internal" signature="internal static bool IsJsonPrimitiveType(Type t)">
-        <template #name><h3>IsJsonPrimitiveType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-isvalidcallback" name="IsValidCallback" returns="bool" params="MethodInfo, ParameterInfo[], Type, Nullable<MethodInfo>?, Nullable<Type>?" access="private" signature="private static bool IsValidCallback(MethodInfo method, ParameterInfo[] parameters, Type attributeType, Nullable<MethodInfo>? currentCallback, ref Nullable<Type>? prevAttributeType)">
-        <template #name><h3>IsValidCallback</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="method" type="MethodInfo"></doc-parameter>
-                <doc-parameter name="parameters" type="ParameterInfo[]"></doc-parameter>
-                <doc-parameter name="attributeType" type="Type"></doc-parameter>
-                <doc-parameter name="currentCallback" type="System.Nullable<MethodInfo>?"></doc-parameter>
-                <doc-parameter name="prevAttributeType" type="System.Nullable<Type>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-matchproperty" name="MatchProperty" returns="JsonProperty?" params="JsonPropertyCollection, string, Type" access="private" signature="private JsonProperty? MatchProperty(JsonPropertyCollection properties, string name, Type type)">
-        <template #name><h3>MatchProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="properties" type="Newtonsoft.Json.Serialization.JsonPropertyCollection"></doc-parameter>
-                <doc-parameter name="name" type="string"></doc-parameter>
-                <doc-parameter name="type" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-resolvecallbackmethods" name="ResolveCallbackMethods" returns="void" params="JsonContract, Type" access="private" signature="private void ResolveCallbackMethods(JsonContract contract, Type t)">
-        <template #name><h3>ResolveCallbackMethods</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract"></doc-parameter>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-resolvecontract" name="ResolveContract" returns="JsonContract" params="Type" signature="public virtual JsonContract ResolveContract(Type type)">
@@ -784,85 +559,6 @@ This value is determined by the runtime permissions available.</p>
 <p>Resolves the name of the property.</p>
 
     </doc-member>
-
-    <doc-member id="method-setextensiondatadelegates" name="SetExtensionDataDelegates" returns="void" params="JsonObjectContract, MemberInfo" access="private" signature="private static void SetExtensionDataDelegates(JsonObjectContract contract, MemberInfo member)">
-        <template #name><h3>SetExtensionDataDelegates</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonObjectContract"></doc-parameter>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-setisspecifiedactions" name="SetIsSpecifiedActions" returns="void" params="JsonProperty, MemberInfo, bool" access="private" signature="private void SetIsSpecifiedActions(JsonProperty property, MemberInfo member, bool allowNonPublicAccess)">
-        <template #name><h3>SetIsSpecifiedActions</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="member" type="MemberInfo"></doc-parameter>
-                <doc-parameter name="allowNonPublicAccess" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-setpropertysettingsfromattributes" name="SetPropertySettingsFromAttributes" returns="void" params="JsonProperty, object, string, Type, MemberSerialization, bool" access="private" signature="private void SetPropertySettingsFromAttributes(JsonProperty property, object attributeProvider, string name, Type declaringType, MemberSerialization memberSerialization, out bool allowNonPublicAccess)">
-        <template #name><h3>SetPropertySettingsFromAttributes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="property" type="Newtonsoft.Json.Serialization.JsonProperty"></doc-parameter>
-                <doc-parameter name="attributeProvider" type="object"></doc-parameter>
-                <doc-parameter name="name" type="string"></doc-parameter>
-                <doc-parameter name="declaringType" type="Type"></doc-parameter>
-                <doc-parameter name="memberSerialization" type="Newtonsoft.Json.MemberSerialization"></doc-parameter>
-                <doc-parameter name="allowNonPublicAccess" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-shouldserializeentitymember" name="ShouldSerializeEntityMember" returns="bool" params="MemberInfo" access="private" signature="private bool ShouldSerializeEntityMember(MemberInfo memberInfo)">
-        <template #name><h3>ShouldSerializeEntityMember</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="memberInfo" type="MemberInfo"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-shouldskipdeserialized" name="ShouldSkipDeserialized" returns="bool" params="Type" access="private" signature="private static bool ShouldSkipDeserialized(Type t)">
-        <template #name><h3>ShouldSkipDeserialized</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-shouldskipserializing" name="ShouldSkipSerializing" returns="bool" params="Type" access="private" signature="private static bool ShouldSkipSerializing(Type t)">
-        <template #name><h3>ShouldSkipSerializing</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-throwunabletoserializeerror" name="ThrowUnableToSerializeError" returns="void" params="object, StreamingContext" access="private" signature="private static void ThrowUnableToSerializeError(object o, StreamingContext context)">
-        <template #name><h3>ThrowUnableToSerializeError</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="context" type="StreamingContext"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 </doc-member-group>
 
 
@@ -892,7 +588,7 @@ This value is determined by the runtime permissions available.</p>
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

@@ -212,26 +212,6 @@
 <p>Converts a F# discriminated union type to and from JSON.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-casepropertyname" name="CasePropertyName" type="string" access="private" signature="private const static string CasePropertyName">
-        <template #name><h3>CasePropertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-fieldspropertyname" name="FieldsPropertyName" type="string" access="private" signature="private const static string FieldsPropertyName">
-        <template #name><h3>FieldsPropertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-unioncache" name="UnionCache" type="ThreadSafeStore<Type, Union>" access="private" signature="private readonly static ThreadSafeStore<Type, Union> UnionCache">
-        <template #name><h3>UnionCache</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uniontypelookupcache" name="UnionTypeLookupCache" type="ThreadSafeStore<Type, Type>" access="private" signature="private readonly static ThreadSafeStore<Type, Type> UnionTypeLookupCache">
-        <template #name><h3>UnionTypeLookupCache</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
@@ -246,26 +226,6 @@
 
 <p>Determines whether this instance can convert the specified object type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-createunion" name="CreateUnion" returns="Union" params="Type" access="private" signature="private static Union CreateUnion(Type t)">
-        <template #name><h3>CreateUnion</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-createuniontypelookup" name="CreateUnionTypeLookup" returns="Type" params="Type" access="private" signature="private static Type CreateUnionTypeLookup(Type t)">
-        <template #name><h3>CreateUnionTypeLookup</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public sealed Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
@@ -327,7 +287,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

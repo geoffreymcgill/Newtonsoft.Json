@@ -212,30 +212,6 @@
 <p>Converts an Entity Framework <see cref="T:System.Data.EntityKeyMember"/> to and from JSON.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-entitykeymemberfulltypename" name="EntityKeyMemberFullTypeName" type="string" access="private" signature="private const static string EntityKeyMemberFullTypeName">
-        <template #name><h3>EntityKeyMemberFullTypeName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-keypropertyname" name="KeyPropertyName" type="string" access="private" signature="private const static string KeyPropertyName">
-        <template #name><h3>KeyPropertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-typepropertyname" name="TypePropertyName" type="string" access="private" signature="private const static string TypePropertyName">
-        <template #name><h3>TypePropertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-valuepropertyname" name="ValuePropertyName" type="string" access="private" signature="private const static string ValuePropertyName">
-        <template #name><h3>ValuePropertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_reflectionobject" name="_reflectionObject" type="ReflectionObject?" access="private" signature="private static ReflectionObject? _reflectionObject">
-        <template #name><h3>_reflectionObject</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="methods">
     <template #title>Methods</template>
 
@@ -250,27 +226,6 @@
 
 <p>Determines whether this instance can convert the specified object type.</p>
 
-    </doc-member>
-
-    <doc-member id="method-ensurereflectionobject" name="EnsureReflectionObject" returns="void" params="Type" access="private" signature="private static void EnsureReflectionObject(Type objectType)">
-        <template #name><h3>EnsureReflectionObject</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="objectType" type="Type"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readandassertproperty" name="ReadAndAssertProperty" returns="void" params="JsonReader, string" access="private" signature="private static void ReadAndAssertProperty(JsonReader reader, string propertyName)">
-        <template #name><h3>ReadAndAssertProperty</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="reader" type="Newtonsoft.Json.JsonReader"></doc-parameter>
-                <doc-parameter name="propertyName" type="string"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-readjson" name="ReadJson" returns="Nullable<object>?" params="JsonReader, Type, Nullable<object>?, JsonSerializer" signature="public sealed Nullable<object>? ReadJson(JsonReader reader, Type objectType, Nullable<object>? existingValue, JsonSerializer serializer)">
@@ -332,7 +287,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

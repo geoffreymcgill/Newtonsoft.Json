@@ -212,32 +212,8 @@
 <p>The default JSON name table implementation.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-hashcoderandomizer" name="HashCodeRandomizer" type="int" access="private" signature="private readonly static int HashCodeRandomizer">
-        <template #name><h3>HashCodeRandomizer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_count" name="_count" type="int" access="private" signature="private int _count">
-        <template #name><h3>_count</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_entries" name="_entries" type="Entry[]" access="private" signature="private Entry[] _entries">
-        <template #name><h3>_entries</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_mask" name="_mask" type="int" access="private" signature="private int _mask">
-        <template #name><h3>_mask</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="methods">
     <template #title>Methods</template>
-
-    <doc-member id="method-.cctor" name=".cctor" returns="void" access="private" signature="private static DefaultJsonNameTable()">
-        <template #name><h3>.cctor</h3></template>
-    </doc-member>
 
     <doc-member id="method-.ctor" name=".ctor" returns="void" signature="public DefaultJsonNameTable()">
         <template #name><h3>.ctor</h3></template>
@@ -259,17 +235,6 @@
 
     </doc-member>
 
-    <doc-member id="method-addentry" name="AddEntry" returns="string" params="string, int" access="private" signature="private string AddEntry(string str, int hashCode)">
-        <template #name><h3>AddEntry</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="str" type="string"></doc-parameter>
-                <doc-parameter name="hashCode" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-get" name="Get" returns="Nullable<string>?" params="char[], int, int" signature="public sealed Nullable<string>? Get(char[] key, int start, int length)">
         <template #name><h3>Get</h3></template>
 
@@ -283,23 +248,6 @@
 
 <p>Gets a string containing the same characters as the specified range of characters in the given array.</p>
 
-    </doc-member>
-
-    <doc-member id="method-grow" name="Grow" returns="void" access="private" signature="private void Grow()">
-        <template #name><h3>Grow</h3></template>
-    </doc-member>
-
-    <doc-member id="method-textequals" name="TextEquals" returns="bool" params="string, char[], int, int" access="private" signature="private static bool TextEquals(string str1, char[] str2, int str2Start, int str2Length)">
-        <template #name><h3>TextEquals</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="str1" type="string"></doc-parameter>
-                <doc-parameter name="str2" type="char[]"></doc-parameter>
-                <doc-parameter name="str2Start" type="int"></doc-parameter>
-                <doc-parameter name="str2Length" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 </doc-member-group>
 
@@ -330,7 +278,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

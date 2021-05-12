@@ -212,70 +212,6 @@
 <p>Represents an abstract JSON token.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-bigintegertypes" name="BigIntegerTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BigIntegerTypes">
-        <template #name><h3>BigIntegerTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-booleantypes" name="BooleanTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BooleanTypes">
-        <template #name><h3>BooleanTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-bytestypes" name="BytesTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] BytesTypes">
-        <template #name><h3>BytesTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-chartypes" name="CharTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] CharTypes">
-        <template #name><h3>CharTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-datetimetypes" name="DateTimeTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] DateTimeTypes">
-        <template #name><h3>DateTimeTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-guidtypes" name="GuidTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] GuidTypes">
-        <template #name><h3>GuidTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-numbertypes" name="NumberTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] NumberTypes">
-        <template #name><h3>NumberTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-stringtypes" name="StringTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] StringTypes">
-        <template #name><h3>StringTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-timespantypes" name="TimeSpanTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] TimeSpanTypes">
-        <template #name><h3>TimeSpanTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-uritypes" name="UriTypes" type="JTokenType[]" access="private" signature="private readonly static JTokenType[] UriTypes">
-        <template #name><h3>UriTypes</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_annotations" name="_annotations" type="Nullable<object>?" access="private" signature="private Nullable<object>? _annotations">
-        <template #name><h3>_annotations</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_equalitycomparer" name="_equalityComparer" type="JTokenEqualityComparer?" access="private" signature="private static JTokenEqualityComparer? _equalityComparer">
-        <template #name><h3>_equalityComparer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_next" name="_next" type="JToken?" access="private" signature="private JToken? _next">
-        <template #name><h3>_next</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_parent" name="_parent" type="JContainer?" access="private" signature="private JContainer? _parent">
-        <template #name><h3>_parent</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_previous" name="_previous" type="JToken?" access="private" signature="private JToken? _previous">
-        <template #name><h3>_previous</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -352,10 +288,6 @@
 
 <doc-member-group id="methods">
     <template #title>Methods</template>
-
-    <doc-member id="method-.ctor" name=".ctor" returns="void" access="internal" signature="internal JToken()">
-        <template #name><h3>.ctor</h3></template>
-    </doc-member>
 
     <doc-member id="method-addafterself" name="AddAfterSelf" returns="void" params="Nullable<object>?" signature="public void AddAfterSelf(Nullable<object>? content)">
         <template #name><h3>AddAfterSelf</h3></template>
@@ -484,21 +416,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-clonetoken" name="CloneToken" returns="JToken" access="internal" signature="internal abstract JToken CloneToken()">
-        <template #name><h3>CloneToken</h3></template>
-    </doc-member>
-
-    <doc-member id="method-copyannotations" name="CopyAnnotations" returns="void" params="JToken, JToken" access="internal" signature="internal void CopyAnnotations(JToken target, JToken source)">
-        <template #name><h3>CopyAnnotations</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="target" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="source" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-createreader" name="CreateReader" returns="JsonReader" signature="public JsonReader CreateReader()">
         <template #name><h3>CreateReader</h3></template>
 
@@ -513,40 +430,18 @@
 
     </doc-member>
 
-    <doc-overload-group overload-id="group-deepequals">
-        <doc-member id="method-deepequals" overload-id="group-deepequals" name="DeepEquals" returns="bool" params="JToken" access="internal" signature="internal abstract bool DeepEquals(JToken node)">
-            <template #name><h3>DeepEquals</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="node" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-deepequals-1" overload-id="group-deepequals" name="DeepEquals" returns="bool" params="JToken?, JToken?" signature="public static bool DeepEquals(JToken? t1, JToken? t2)">
-            <template #name><h3>DeepEquals</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="t1" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-                    <doc-parameter name="t2" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
-                </doc-parameters>
-            </template>
-
-<p>Compares the values of two tokens, including the values of all descendant tokens.</p>
-
-        </doc-member>
-    </doc-overload-group>
-
-    <doc-member id="method-ensurevalue" name="EnsureValue" returns="JValue?" params="JToken" access="private" signature="private static JValue? EnsureValue(JToken value)">
-        <template #name><h3>EnsureValue</h3></template>
+    <doc-member id="method-deepequals" name="DeepEquals" returns="bool" params="JToken?, JToken?" signature="public static bool DeepEquals(JToken? t1, JToken? t2)">
+        <template #name><h3>DeepEquals</h3></template>
 
         <template #parameters>
             <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
+                <doc-parameter name="t1" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
+                <doc-parameter name="t2" type="Newtonsoft.Json.Linq.JToken?"></doc-parameter>
             </doc-parameters>
         </template>
+
+<p>Compares the values of two tokens, including the values of all descendant tokens.</p>
+
     </doc-member>
 
     <doc-overload-group overload-id="group-fromobject">
@@ -578,31 +473,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-fromobjectinternal" name="FromObjectInternal" returns="JToken" params="object, JsonSerializer" access="internal" signature="internal static JToken FromObjectInternal(object o, JsonSerializer jsonSerializer)">
-        <template #name><h3>FromObjectInternal</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="object"></doc-parameter>
-                <doc-parameter name="jsonSerializer" type="Newtonsoft.Json.JsonSerializer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getancestors" name="GetAncestors" returns="IEnumerable<JToken>" params="bool" access="internal" signature="internal IEnumerable<JToken> GetAncestors(bool self)">
-        <template #name><h3>GetAncestors</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="self" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getdeephashcode" name="GetDeepHashCode" returns="int" access="internal" signature="internal abstract int GetDeepHashCode()">
-        <template #name><h3>GetDeepHashCode</h3></template>
-    </doc-member>
-
     <doc-member id="method-getmetaobject" name="GetMetaObject" returns="DynamicMetaObject" params="Expression" access="protected" signature="protected virtual DynamicMetaObject GetMetaObject(Expression parameter)">
         <template #name><h3>GetMetaObject</h3></template>
 
@@ -614,16 +484,6 @@
 
 <p>Returns the <see cref="!:DynamicMetaObject"/> responsible for binding operations performed on this object.</p>
 
-    </doc-member>
-
-    <doc-member id="method-gettype" name="GetType" returns="string" params="JToken" access="private" signature="private static string GetType(JToken token)">
-        <template #name><h3>GetType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-overload-group overload-id="group-load">
@@ -903,50 +763,6 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-overload-group overload-id="group-setlineinfo">
-        <doc-member id="method-setlineinfo" overload-id="group-setlineinfo" name="SetLineInfo" returns="void" params="IJsonLineInfo?, JsonLoadSettings?" access="internal" signature="internal void SetLineInfo(IJsonLineInfo? lineInfo, JsonLoadSettings? settings)">
-            <template #name><h3>SetLineInfo</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="lineInfo" type="Newtonsoft.Json.IJsonLineInfo?"></doc-parameter>
-                    <doc-parameter name="settings" type="Newtonsoft.Json.Linq.JsonLoadSettings?"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-
-        <doc-member id="method-setlineinfo-1" overload-id="group-setlineinfo" name="SetLineInfo" returns="void" params="int, int" access="internal" signature="internal void SetLineInfo(int lineNumber, int linePosition)">
-            <template #name><h3>SetLineInfo</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="lineNumber" type="int"></doc-parameter>
-                    <doc-parameter name="linePosition" type="int"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
-
-    <doc-member id="method-tobiginteger" name="ToBigInteger" returns="BigInteger" params="JToken" access="private" signature="private static BigInteger ToBigInteger(JToken value)">
-        <template #name><h3>ToBigInteger</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-tobigintegernullable" name="ToBigIntegerNullable" returns="Nullable<BigInteger>?" params="JToken" access="private" signature="private static Nullable<BigInteger>? ToBigIntegerNullable(JToken value)">
-        <template #name><h3>ToBigIntegerNullable</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-overload-group overload-id="group-toobject">
         <doc-member id="method-toobject" overload-id="group-toobject" name="ToObject" returns="T?" signature="public T? ToObject<T>()">
             <template #name><h3>ToObject&lt;T&gt;</h3></template>
@@ -1018,18 +834,6 @@
 
         </doc-member>
     </doc-overload-group>
-
-    <doc-member id="method-validatetoken" name="ValidateToken" returns="bool" params="JToken, JTokenType[], bool" access="private" signature="private static bool ValidateToken(JToken o, JTokenType[] validTypes, bool nullable)">
-        <template #name><h3>ValidateToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="o" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-                <doc-parameter name="validTypes" type="Newtonsoft.Json.Linq.JTokenType[]"></doc-parameter>
-                <doc-parameter name="nullable" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 
     <doc-member id="method-value" name="Value" returns="T?" params="object" signature="public virtual T? Value<T>(object key)">
         <template #name><h3>Value&lt;T&gt;</h3></template>
@@ -1124,7 +928,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

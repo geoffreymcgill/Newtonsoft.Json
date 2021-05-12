@@ -212,33 +212,13 @@
 <p>Represents a reader that provides fast, non-cached, forward-only access to serialized JSON data.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_current" name="_current" type="JToken?" access="private" signature="private JToken? _current">
-        <template #name><h3>_current</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_initialpath" name="_initialPath" type="Nullable<string>?" access="private" signature="private Nullable<string>? _initialPath">
-        <template #name><h3>_initialPath</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_parent" name="_parent" type="JToken?" access="private" signature="private JToken? _parent">
-        <template #name><h3>_parent</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_root" name="_root" type="JToken" access="private" signature="private readonly JToken _root">
-        <template #name><h3>_root</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
     <doc-member id="property-currenttoken" name="CurrentToken" type="JToken?" signature="public JToken? CurrentToken { get; }">
         <template #name><h3>CurrentToken</h3></template>
 
-<p>Gets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> at the reader&#39;s current position.</p>
+<p>Gets the <see cref="T:Newtonsoft.Json.Linq.JToken"/> at the reader&#x27;s current position.</p>
 
     </doc-member>
 
@@ -282,75 +262,11 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-getendtoken" name="GetEndToken" returns="Nullable<JsonToken>?" params="JContainer" access="private" signature="private Nullable<JsonToken>? GetEndToken(JContainer c)">
-        <template #name><h3>GetEndToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="c" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-read" name="Read" returns="bool" signature="public sealed bool Read()">
         <template #name><h3>Read</h3></template>
 
 <p>Reads the next JSON token from the underlying <see cref="T:Newtonsoft.Json.Linq.JToken"/>.</p>
 
-    </doc-member>
-
-    <doc-member id="method-readinto" name="ReadInto" returns="bool" params="JContainer" access="private" signature="private bool ReadInto(JContainer c)">
-        <template #name><h3>ReadInto</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="c" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readover" name="ReadOver" returns="bool" params="JToken" access="private" signature="private bool ReadOver(JToken t)">
-        <template #name><h3>ReadOver</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="t" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readtoend" name="ReadToEnd" returns="bool" access="private" signature="private bool ReadToEnd()">
-        <template #name><h3>ReadToEnd</h3></template>
-    </doc-member>
-
-    <doc-member id="method-safetostring" name="SafeToString" returns="Nullable<string>?" params="Nullable<object>?" access="private" signature="private Nullable<string>? SafeToString(Nullable<object>? value)">
-        <template #name><h3>SafeToString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="System.Nullable<object>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-setend" name="SetEnd" returns="bool" params="JContainer" access="private" signature="private bool SetEnd(JContainer c)">
-        <template #name><h3>SetEnd</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="c" type="Newtonsoft.Json.Linq.JContainer"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-settoken" name="SetToken" returns="void" params="JToken" access="private" signature="private void SetToken(JToken token)">
-        <template #name><h3>SetToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Linq.JToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 </doc-member-group>
 
@@ -381,7 +297,7 @@
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

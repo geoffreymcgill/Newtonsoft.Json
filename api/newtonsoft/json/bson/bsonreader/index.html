@@ -212,70 +212,6 @@
 <p>Represents a reader that provides fast, non-cached, forward-only access to serialized BSON data.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-maxcharbytessize" name="MaxCharBytesSize" type="int" access="private" signature="private const static int MaxCharBytesSize">
-        <template #name><h3>MaxCharBytesSize</h3></template>
-    </doc-member>
-
-    <doc-member id="field-seqrange1" name="SeqRange1" type="byte[]" access="private" signature="private readonly static byte[] SeqRange1">
-        <template #name><h3>SeqRange1</h3></template>
-    </doc-member>
-
-    <doc-member id="field-seqrange2" name="SeqRange2" type="byte[]" access="private" signature="private readonly static byte[] SeqRange2">
-        <template #name><h3>SeqRange2</h3></template>
-    </doc-member>
-
-    <doc-member id="field-seqrange3" name="SeqRange3" type="byte[]" access="private" signature="private readonly static byte[] SeqRange3">
-        <template #name><h3>SeqRange3</h3></template>
-    </doc-member>
-
-    <doc-member id="field-seqrange4" name="SeqRange4" type="byte[]" access="private" signature="private readonly static byte[] SeqRange4">
-        <template #name><h3>SeqRange4</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_bsonreaderstate" name="_bsonReaderState" type="BsonReaderState" access="private" signature="private BsonReaderState _bsonReaderState">
-        <template #name><h3>_bsonReaderState</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_bytebuffer" name="_byteBuffer" type="byte[]" access="private" signature="private byte[] _byteBuffer">
-        <template #name><h3>_byteBuffer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_charbuffer" name="_charBuffer" type="char[]" access="private" signature="private char[] _charBuffer">
-        <template #name><h3>_charBuffer</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentcontext" name="_currentContext" type="ContainerContext" access="private" signature="private ContainerContext _currentContext">
-        <template #name><h3>_currentContext</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentelementtype" name="_currentElementType" type="BsonType" access="private" signature="private BsonType _currentElementType">
-        <template #name><h3>_currentElementType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_datetimekindhandling" name="_dateTimeKindHandling" type="DateTimeKind" access="private" signature="private DateTimeKind _dateTimeKindHandling">
-        <template #name><h3>_dateTimeKindHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_jsonnet35binarycompatibility" name="_jsonNet35BinaryCompatibility" type="bool" access="private" signature="private bool _jsonNet35BinaryCompatibility">
-        <template #name><h3>_jsonNet35BinaryCompatibility</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_reader" name="_reader" type="BinaryReader" access="private" signature="private readonly BinaryReader _reader">
-        <template #name><h3>_reader</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_readrootvalueasarray" name="_readRootValueAsArray" type="bool" access="private" signature="private bool _readRootValueAsArray">
-        <template #name><h3>_readRootValueAsArray</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stack" name="_stack" type="List<ContainerContext>" access="private" signature="private readonly List<ContainerContext> _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -362,70 +298,12 @@
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-bytesinsequence" name="BytesInSequence" returns="int" params="byte" access="private" signature="private int BytesInSequence(byte b)">
-        <template #name><h3>BytesInSequence</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="b" type="byte"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
         <template #name><h3>Close</h3></template>
 
-<p>Changes the reader&#39;s state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
+<p>Changes the reader&#x27;s state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
 If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, the underlying <see cref="!:Stream"/> is also closed.</p>
 
-    </doc-member>
-
-    <doc-member id="method-ensurebuffers" name="EnsureBuffers" returns="void" access="private" signature="private void EnsureBuffers()">
-        <template #name><h3>EnsureBuffers</h3></template>
-    </doc-member>
-
-    <doc-member id="method-getlastfullcharstop" name="GetLastFullCharStop" returns="int" params="int" access="private" signature="private int GetLastFullCharStop(int start)">
-        <template #name><h3>GetLastFullCharStop</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="start" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-getstring" name="GetString" returns="string" params="int" access="private" signature="private string GetString(int length)">
-        <template #name><h3>GetString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="length" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-moveposition" name="MovePosition" returns="void" params="int" access="private" signature="private void MovePosition(int count)">
-        <template #name><h3>MovePosition</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="count" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-popcontext" name="PopContext" returns="void" access="private" signature="private void PopContext()">
-        <template #name><h3>PopContext</h3></template>
-    </doc-member>
-
-    <doc-member id="method-pushcontext" name="PushContext" returns="void" params="ContainerContext" access="private" signature="private void PushContext(ContainerContext newContext)">
-        <template #name><h3>PushContext</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="newContext" type="Newtonsoft.Json.Bson.BsonReader.ContainerContext"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-read" name="Read" returns="bool" signature="public sealed bool Read()">
@@ -434,82 +312,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 <p>Reads the next JSON token from the underlying <see cref="!:Stream"/>.</p>
 
     </doc-member>
-
-    <doc-member id="method-readbinary" name="ReadBinary" returns="byte[]" params="BsonBinaryType" access="private" signature="private byte[] ReadBinary(out BsonBinaryType binaryType)">
-        <template #name><h3>ReadBinary</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="binaryType" type="Newtonsoft.Json.Bson.BsonBinaryType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readbyte" name="ReadByte" returns="byte" access="private" signature="private byte ReadByte()">
-        <template #name><h3>ReadByte</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readbytes" name="ReadBytes" returns="byte[]" params="int" access="private" signature="private byte[] ReadBytes(int count)">
-        <template #name><h3>ReadBytes</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="count" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readcodewscope" name="ReadCodeWScope" returns="bool" access="private" signature="private bool ReadCodeWScope()">
-        <template #name><h3>ReadCodeWScope</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readdouble" name="ReadDouble" returns="double" access="private" signature="private double ReadDouble()">
-        <template #name><h3>ReadDouble</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readelement" name="ReadElement" returns="string" access="private" signature="private string ReadElement()">
-        <template #name><h3>ReadElement</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readint32" name="ReadInt32" returns="int" access="private" signature="private int ReadInt32()">
-        <template #name><h3>ReadInt32</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readint64" name="ReadInt64" returns="long" access="private" signature="private long ReadInt64()">
-        <template #name><h3>ReadInt64</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readlengthstring" name="ReadLengthString" returns="string" access="private" signature="private string ReadLengthString()">
-        <template #name><h3>ReadLengthString</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readnormal" name="ReadNormal" returns="bool" access="private" signature="private bool ReadNormal()">
-        <template #name><h3>ReadNormal</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readreference" name="ReadReference" returns="bool" access="private" signature="private bool ReadReference()">
-        <template #name><h3>ReadReference</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readstring" name="ReadString" returns="string" access="private" signature="private string ReadString()">
-        <template #name><h3>ReadString</h3></template>
-    </doc-member>
-
-    <doc-overload-group overload-id="group-readtype">
-        <doc-member id="method-readtype" overload-id="group-readtype" name="ReadType" returns="BsonType" access="private" signature="private BsonType ReadType()">
-            <template #name><h3>ReadType</h3></template>
-        </doc-member>
-
-        <doc-member id="method-readtype-1" overload-id="group-readtype" name="ReadType" returns="void" params="BsonType" access="private" signature="private void ReadType(BsonType type)">
-            <template #name><h3>ReadType</h3></template>
-
-            <template #parameters>
-                <doc-parameters>
-                    <doc-parameter name="type" type="Newtonsoft.Json.Bson.BsonType"></doc-parameter>
-                </doc-parameters>
-            </template>
-        </doc-member>
-    </doc-overload-group>
 </doc-member-group>
 
 
@@ -539,7 +341,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 

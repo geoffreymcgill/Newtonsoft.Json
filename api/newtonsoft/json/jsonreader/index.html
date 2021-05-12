@@ -212,62 +212,6 @@
 <p>Represents a reader that provides fast, non-cached, forward-only access to serialized JSON data.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_culture" name="_culture" type="Nullable<CultureInfo>?" access="private" signature="private Nullable<CultureInfo>? _culture">
-        <template #name><h3>_culture</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentposition" name="_currentPosition" type="JsonPosition" access="private" signature="private JsonPosition _currentPosition">
-        <template #name><h3>_currentPosition</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_currentstate" name="_currentState" type="State" access="internal" signature="internal State _currentState">
-        <template #name><h3>_currentState</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_dateformatstring" name="_dateFormatString" type="Nullable<string>?" access="private" signature="private Nullable<string>? _dateFormatString">
-        <template #name><h3>_dateFormatString</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_dateparsehandling" name="_dateParseHandling" type="DateParseHandling" access="internal" signature="internal DateParseHandling _dateParseHandling">
-        <template #name><h3>_dateParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_datetimezonehandling" name="_dateTimeZoneHandling" type="DateTimeZoneHandling" access="private" signature="private DateTimeZoneHandling _dateTimeZoneHandling">
-        <template #name><h3>_dateTimeZoneHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_floatparsehandling" name="_floatParseHandling" type="FloatParseHandling" access="internal" signature="internal FloatParseHandling _floatParseHandling">
-        <template #name><h3>_floatParseHandling</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_hasexceededmaxdepth" name="_hasExceededMaxDepth" type="bool" access="private" signature="private bool _hasExceededMaxDepth">
-        <template #name><h3>_hasExceededMaxDepth</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_maxdepth" name="_maxDepth" type="Nullable<int>?" access="private" signature="private Nullable<int>? _maxDepth">
-        <template #name><h3>_maxDepth</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_quotechar" name="_quoteChar" type="char" access="internal" signature="internal char _quoteChar">
-        <template #name><h3>_quoteChar</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_stack" name="_stack" type="Nullable<List<JsonPosition>>?" access="private" signature="private Nullable<List<JsonPosition>>? _stack">
-        <template #name><h3>_stack</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_tokentype" name="_tokenType" type="JsonToken" access="private" signature="private JsonToken _tokenType">
-        <template #name><h3>_tokenType</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_value" name="_value" type="Nullable<object>?" access="private" signature="private Nullable<object>? _value">
-        <template #name><h3>_value</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -393,13 +337,9 @@ be read from a continuous stream without erroring.</p>
     <doc-member id="method-close" name="Close" returns="void" signature="public virtual void Close()">
         <template #name><h3>Close</h3></template>
 
-<p>Changes the reader&#39;s state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
+<p>Changes the reader&#x27;s state to <see cref="F:Newtonsoft.Json.JsonReader.State.Closed"/>.
 If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, the source is also closed.</p>
 
-    </doc-member>
-
-    <doc-member id="method-createunexpectedendexception" name="CreateUnexpectedEndException" returns="JsonReaderException" access="internal" signature="internal JsonReaderException CreateUnexpectedEndException()">
-        <template #name><h3>CreateUnexpectedEndException</h3></template>
     </doc-member>
 
     <doc-member id="method-dispose" name="Dispose" returns="void" params="bool" access="protected" signature="protected virtual void Dispose(bool disposing)">
@@ -415,119 +355,11 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-getcontenttoken" name="GetContentToken" returns="JsonToken" access="private" signature="private JsonToken GetContentToken()">
-        <template #name><h3>GetContentToken</h3></template>
-    </doc-member>
-
-    <doc-member id="method-getposition" name="GetPosition" returns="JsonPosition" params="int" access="internal" signature="internal JsonPosition GetPosition(int depth)">
-        <template #name><h3>GetPosition</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="depth" type="int"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-gettypeforclosetoken" name="GetTypeForCloseToken" returns="JsonContainerType" params="JsonToken" access="private" signature="private JsonContainerType GetTypeForCloseToken(JsonToken token)">
-        <template #name><h3>GetTypeForCloseToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-movetocontent" name="MoveToContent" returns="bool" access="internal" signature="internal bool MoveToContent()">
-        <template #name><h3>MoveToContent</h3></template>
-    </doc-member>
-
-    <doc-member id="method-movetocontentasync" name="MoveToContentAsync" returns="Task<bool>" params="CancellationToken" access="internal" signature="internal Task<bool> MoveToContentAsync(CancellationToken cancellationToken)">
-        <template #name><h3>MoveToContentAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-movetocontentfromnoncontentasync" name="MoveToContentFromNonContentAsync" returns="Task<bool>" params="CancellationToken" access="private" signature="private async Task<bool> MoveToContentFromNonContentAsync(CancellationToken cancellationToken)">
-        <template #name><h3>MoveToContentFromNonContentAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-peek" name="Peek" returns="JsonContainerType" access="private" signature="private JsonContainerType Peek()">
-        <template #name><h3>Peek</h3></template>
-    </doc-member>
-
-    <doc-member id="method-pop" name="Pop" returns="JsonContainerType" access="private" signature="private JsonContainerType Pop()">
-        <template #name><h3>Pop</h3></template>
-    </doc-member>
-
-    <doc-member id="method-push" name="Push" returns="void" params="JsonContainerType" access="private" signature="private void Push(JsonContainerType value)">
-        <template #name><h3>Push</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="Newtonsoft.Json.JsonContainerType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-read" name="Read" returns="bool" signature="public abstract bool Read()">
         <template #name><h3>Read</h3></template>
 
 <p>Reads the next JSON token from the source.</p>
 
-    </doc-member>
-
-    <doc-member id="method-readandassert" name="ReadAndAssert" returns="void" access="internal" signature="internal void ReadAndAssert()">
-        <template #name><h3>ReadAndAssert</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readandmovetocontent" name="ReadAndMoveToContent" returns="bool" access="internal" signature="internal bool ReadAndMoveToContent()">
-        <template #name><h3>ReadAndMoveToContent</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readandmovetocontentasync" name="ReadAndMoveToContentAsync" returns="Task<bool>" params="CancellationToken" access="internal" signature="internal async Task<bool> ReadAndMoveToContentAsync(CancellationToken cancellationToken)">
-        <template #name><h3>ReadAndMoveToContentAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readarrayelementintobytearrayreportdone" name="ReadArrayElementIntoByteArrayReportDone" returns="bool" params="List<byte>" access="private" signature="private bool ReadArrayElementIntoByteArrayReportDone(List<byte> buffer)">
-        <template #name><h3>ReadArrayElementIntoByteArrayReportDone</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="buffer" type="List<byte>"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readarrayintobytearray" name="ReadArrayIntoByteArray" returns="byte[]" access="internal" signature="internal byte[] ReadArrayIntoByteArray()">
-        <template #name><h3>ReadArrayIntoByteArray</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readarrayintobytearrayasync" name="ReadArrayIntoByteArrayAsync" returns="Task<byte[]>" params="CancellationToken" access="internal" signature="internal async Task<byte[]> ReadArrayIntoByteArrayAsync(CancellationToken cancellationToken)">
-        <template #name><h3>ReadArrayIntoByteArrayAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
     </doc-member>
 
     <doc-member id="method-readasboolean" name="ReadAsBoolean" returns="Nullable<bool>?" signature="public virtual Nullable<bool>? ReadAsBoolean()">
@@ -703,120 +535,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
     </doc-member>
 
-    <doc-member id="method-readbooleanstring" name="ReadBooleanString" returns="Nullable<bool>?" params="Nullable<string>?" access="internal" signature="internal Nullable<bool>? ReadBooleanString(Nullable<string>? s)">
-        <template #name><h3>ReadBooleanString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readdatetimeoffsetstring" name="ReadDateTimeOffsetString" returns="Nullable<DateTimeOffset>?" params="Nullable<string>?" access="internal" signature="internal Nullable<DateTimeOffset>? ReadDateTimeOffsetString(Nullable<string>? s)">
-        <template #name><h3>ReadDateTimeOffsetString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readdatetimestring" name="ReadDateTimeString" returns="Nullable<DateTime>?" params="Nullable<string>?" access="internal" signature="internal Nullable<DateTime>? ReadDateTimeString(Nullable<string>? s)">
-        <template #name><h3>ReadDateTimeString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readdecimalstring" name="ReadDecimalString" returns="Nullable<decimal>?" params="Nullable<string>?" access="internal" signature="internal Nullable<decimal>? ReadDecimalString(Nullable<string>? s)">
-        <template #name><h3>ReadDecimalString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readdoublestring" name="ReadDoubleString" returns="Nullable<double>?" params="Nullable<string>?" access="internal" signature="internal Nullable<double>? ReadDoubleString(Nullable<string>? s)">
-        <template #name><h3>ReadDoubleString</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readerreadandassert" name="ReaderReadAndAssert" returns="void" access="internal" signature="internal void ReaderReadAndAssert()">
-        <template #name><h3>ReaderReadAndAssert</h3></template>
-    </doc-member>
-
-    <doc-member id="method-readerreadandassertasync" name="ReaderReadAndAssertAsync" returns="Task" params="CancellationToken" access="internal" signature="internal async Task ReaderReadAndAssertAsync(CancellationToken cancellationToken)">
-        <template #name><h3>ReaderReadAndAssertAsync</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="cancellationToken" type="CancellationToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readfortype" name="ReadForType" returns="bool" params="JsonContract?, bool" access="internal" signature="internal bool ReadForType(JsonContract? contract, bool hasConverter)">
-        <template #name><h3>ReadForType</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
-                <doc-parameter name="hasConverter" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readfortypeandassert" name="ReadForTypeAndAssert" returns="void" params="JsonContract?, bool" access="internal" signature="internal void ReadForTypeAndAssert(JsonContract? contract, bool hasConverter)">
-        <template #name><h3>ReadForTypeAndAssert</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="contract" type="Newtonsoft.Json.Serialization.JsonContract?"></doc-parameter>
-                <doc-parameter name="hasConverter" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readint32string" name="ReadInt32String" returns="Nullable<int>?" params="Nullable<string>?" access="internal" signature="internal Nullable<int>? ReadInt32String(Nullable<string>? s)">
-        <template #name><h3>ReadInt32String</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="s" type="System.Nullable<string>?"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-readintowrappedtypeobject" name="ReadIntoWrappedTypeObject" returns="void" access="internal" signature="internal void ReadIntoWrappedTypeObject()">
-        <template #name><h3>ReadIntoWrappedTypeObject</h3></template>
-    </doc-member>
-
-    <doc-member id="method-setfinished" name="SetFinished" returns="void" access="private" signature="private void SetFinished()">
-        <template #name><h3>SetFinished</h3></template>
-    </doc-member>
-
-    <doc-member id="method-setpostvaluestate" name="SetPostValueState" returns="void" params="bool" access="internal" signature="internal void SetPostValueState(bool updateIndex)">
-        <template #name><h3>SetPostValueState</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="updateIndex" type="bool"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-setstatebasedoncurrent" name="SetStateBasedOnCurrent" returns="void" access="protected" signature="protected void SetStateBasedOnCurrent()">
         <template #name><h3>SetStateBasedOnCurrent</h3></template>
 
@@ -887,20 +605,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 <p>Asynchronously skips the children of the current token.</p>
 
     </doc-member>
-
-    <doc-member id="method-updatescopewithfinishedvalue" name="UpdateScopeWithFinishedValue" returns="void" access="private" signature="private void UpdateScopeWithFinishedValue()">
-        <template #name><h3>UpdateScopeWithFinishedValue</h3></template>
-    </doc-member>
-
-    <doc-member id="method-validateend" name="ValidateEnd" returns="void" params="JsonToken" access="private" signature="private void ValidateEnd(JsonToken endToken)">
-        <template #name><h3>ValidateEnd</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="endToken" type="Newtonsoft.Json.JsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
 </doc-member-group>
 
 
@@ -930,7 +634,7 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 
@@ -961,6 +665,6 @@ If <see cref="P:Newtonsoft.Json.JsonReader.CloseInput"/> is set to <c>true</c>, 
 
         <div id="docs-overlay-target"></div>
 
-        <script>window.__DOCS__ = { "title": "JsonReader", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonReader","children":[{"label":"BsonReader","href":"/Newtonsoft.Json/api/newtonsoft/json/bson/bsonreader/"},{"label":"JsonTextReader","href":"/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/"},{"label":"JsonValidatingReader","href":"/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/"},{"label":"JTokenReader","href":"/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/"},{"label":"TraceJsonReader","href":"/Newtonsoft.Json/api/newtonsoft/json/serialization/tracejsonreader/"}]}]}] }</script>
+        <script>window.__DOCS__ = { "title": "JsonReader", icon: "file", relatedClasses: [{"title":"Hierarchy","isGroup":true,"children":[{"label":"JsonReader","children":[{"label":"BsonReader","href":"/Newtonsoft.Json/api/newtonsoft/json/bson/bsonreader/"},{"label":"JsonTextReader","href":"/Newtonsoft.Json/api/newtonsoft/json/jsontextreader/"},{"label":"JsonValidatingReader","href":"/Newtonsoft.Json/api/newtonsoft/json/jsonvalidatingreader/"},{"label":"JTokenReader","href":"/Newtonsoft.Json/api/newtonsoft/json/linq/jtokenreader/"}]}]}] }</script>
     </body>
 </html>

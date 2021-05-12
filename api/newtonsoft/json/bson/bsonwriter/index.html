@@ -212,26 +212,6 @@
 <p>Represents a writer that provides a fast, non-cached, forward-only way of generating BSON data.</p>
 
 
-<doc-member-group id="fields">
-    <template #title>Fields</template>
-
-    <doc-member id="field-_parent" name="_parent" type="BsonToken" access="private" signature="private BsonToken _parent">
-        <template #name><h3>_parent</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_propertyname" name="_propertyName" type="string" access="private" signature="private string _propertyName">
-        <template #name><h3>_propertyName</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_root" name="_root" type="BsonToken" access="private" signature="private BsonToken _root">
-        <template #name><h3>_root</h3></template>
-    </doc-member>
-
-    <doc-member id="field-_writer" name="_writer" type="BsonBinaryWriter" access="private" signature="private readonly BsonBinaryWriter _writer">
-        <template #name><h3>_writer</h3></template>
-    </doc-member>
-</doc-member-group>
-
 <doc-member-group id="properties">
     <template #title>Properties</template>
 
@@ -275,37 +255,6 @@ When set to <see cref="!:DateTimeKind.Unspecified" /> no conversion will occur.<
         </doc-member>
     </doc-overload-group>
 
-    <doc-member id="method-addparent" name="AddParent" returns="void" params="BsonToken" access="private" signature="private void AddParent(BsonToken container)">
-        <template #name><h3>AddParent</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="container" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-addtoken" name="AddToken" returns="void" params="BsonToken" access="internal" signature="internal void AddToken(BsonToken token)">
-        <template #name><h3>AddToken</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="token" type="Newtonsoft.Json.Bson.BsonToken"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
-    <doc-member id="method-addvalue" name="AddValue" returns="void" params="object, BsonType" access="private" signature="private void AddValue(object value, BsonType type)">
-        <template #name><h3>AddValue</h3></template>
-
-        <template #parameters>
-            <doc-parameters>
-                <doc-parameter name="value" type="object"></doc-parameter>
-                <doc-parameter name="type" type="Newtonsoft.Json.Bson.BsonType"></doc-parameter>
-            </doc-parameters>
-        </template>
-    </doc-member>
-
     <doc-member id="method-close" name="Close" returns="void" signature="public sealed void Close()">
         <template #name><h3>Close</h3></template>
 
@@ -320,10 +269,6 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
 
 <p>Flushes whatever is in the buffer to the underlying <see cref="!:Stream"/> and also flushes the underlying stream.</p>
 
-    </doc-member>
-
-    <doc-member id="method-removeparent" name="RemoveParent" returns="void" access="private" signature="private void RemoveParent()">
-        <template #name><h3>RemoveParent</h3></template>
     </doc-member>
 
     <doc-member id="method-writecomment" name="WriteComment" returns="void" params="string" signature="public sealed void WriteComment(string text)">
@@ -407,7 +352,7 @@ If <see cref="P:Newtonsoft.Json.JsonWriter.AutoCompleteOnClose"/> is set to <c>t
             </doc-parameters>
         </template>
 
-<p>Writes raw JSON where a value is expected and updates the writer&#39;s state.</p>
+<p>Writes raw JSON where a value is expected and updates the writer&#x27;s state.</p>
 
     </doc-member>
 
@@ -763,7 +708,7 @@ An error will raised if the value cannot be written as a single JSON token.</p>
 </ul>
 
     </div>
-    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>&#169; 2021 Newtonsoft</p>
+    <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>© 2021 Newtonsoft</p>
 </div>
 </footer>
 
